@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+/**
+ * Einheitlicher Bild-Wrapper um astro:assets <Image>.
+ * Garantiert festes Seitenverhältnis (CLS-sicher), object-cover und Marken-Radius.
+ * `priority` markiert das LCP-Bild (eager + fetchpriority high); sonst lazy.
+ */
+interface Props {
+  readonly src: ImageMetadata;
+  readonly alt: string;
+  /** Seitenverhältnis als CSS-Wert, z. B. "4/3", "16/9", "1/1", "21/9". */
+  readonly aspect?: string;
+  readonly class?: string;
+  readonly priority?: boolean;
+  readonly sizes?: string;
+  readonly widths?: readonly number[];
+  readonly rounded?: boolean;
+}
+
+const {
+  src,
+  alt,
+  aspect = '4/3',
+  class: className = '',
+  priority = false,
+  sizes = '(min-width: 1024px) 50vw, 100vw',
+  widths = [400, 640, 960, 1280],
+  rounded = true,
+} = Astro.props;
+---
+
+<div
+  class:list={[
+    'relative overflow-hidden bg-gray-100',
+    rounded && 'rounded-[var(--radius-card)]',
+    className,
+  ]}
+  style={`aspect-ratio: ${aspect};`}
+>
+  <Image
+    src={src}
+    alt={alt}
+    widths={[...widths]}
+    sizes={sizes}
+    loading={priority ? 'eager' : 'lazy'}
+    fetchpriority={priority ? 'high' : 'auto'}
+    decoding={priority ? 'auto' : 'async'}
+    class="absolute inset-0 h-full w-full object-cover"
+  />
+  <slot />
+</div>
