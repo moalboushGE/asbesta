@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const items = [
+  { icon: 'lucide:award', title: 'Fachbetrieb nach GefStoffV', sub: '§ 8 Gefahrstoffverordnung' },
+  { icon: 'lucide:shield-check', title: 'TRGS 519 / 521 / 524', sub: 'Sachkundig zertifiziert' },
+  { icon: 'lucide:wind', title: 'Freimessung VDI 3492', sub: 'Raumluftmessung & Freigabe' },
+  { icon: 'lucide:file-check-2', title: 'Lückenlose Dokumentation', sub: 'Anzeige & Entsorgungsnachweis' },
+];
+---
+
+<section class="bg-white">
+  <div class="reveal mx-auto max-w-6xl px-4 py-14 lg:px-8">
+    <p class="text-sm font-semibold uppercase tracking-wider text-red-700">Geprüfte Qualität</p>
+    <h2 class="mt-2 text-2xl sm:text-3xl">Zertifizierung &amp; Nachweise</h2>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        items.map((item) => (
+          <div class="flex items-start gap-3 rounded-[var(--radius-card)] border border-gray-200 p-5">
+            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-red-50 text-red-700">
+              <Icon name={item.icon} class="h-5 w-5" />
+            </span>
+            <span>
+              <span class="block font-sans text-sm font-semibold text-ink-900">{item.title}</span>
+              <span class="mt-0.5 block text-sm text-gray-500">{item.sub}</span>
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

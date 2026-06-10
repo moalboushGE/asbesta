@@ -1,0 +1,12 @@
+---
+import { Icon } from 'astro-icon/components';
+import { site } from '../../data/site';
+---
+
+<a
+  href={site.whatsapp.href}
+  class="fixed bottom-5 right-5 z-40 hidden items-center gap-2 rounded-full bg-red-600 px-4 py-3 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-red-700 md:inline-flex"
+  aria-label="Per WhatsApp anfragen"
+>
+  <Icon name="lucide:message-circle" class="h-5 w-5" />WhatsApp
+</a>
