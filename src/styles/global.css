@@ -1,36 +1,31 @@
 @import 'tailwindcss';
 
-/* Design-Tokens als Single Source of Truth (Plan Kap. 2.3 / 8.1). */
+/* Design-Tokens als Single Source of Truth – Marke: Schwarz + Rot + Weiss (Logo). */
 @theme {
-  /* Brand-Grün */
-  --color-green-50: #ecfdf3;
-  --color-green-100: #d1fadf;
-  --color-green-300: #6ce9a6;
-  --color-green-500: #16a34a;
-  --color-green-600: #15803d;
-  --color-green-700: #0f6e37;
-  --color-green-800: #0a5128;
+  /* Brand-Rot (Logo-Akzent / CTA) */
+  --color-red-50: #fdeceb;
+  --color-red-100: #fbd5d2;
+  --color-red-300: #f08c84;
+  --color-red-500: #e2231a;
+  --color-red-600: #c81912;
+  --color-red-700: #a8140e;
+  --color-red-800: #7c0e09;
 
-  /* Ink / Dunkel (Seriosität) */
-  --color-ink-700: #1e4a57;
-  --color-ink-800: #12313c;
-  --color-ink-900: #0b2027;
-
-  /* Signal / Notfall (sparsam) */
-  --color-signal-100: #fdebd8;
-  --color-signal-500: #ea6a12;
-  --color-signal-600: #c2540a;
+  /* Ink / Schwarz (Logo-Schwarz – Header, dunkle Sektionen, Overlays) */
+  --color-ink-700: #333;
+  --color-ink-800: #1f1f1f;
+  --color-ink-900: #141414;
 
   /* Neutral */
-  --color-gray-50: #f7f9f8;
-  --color-gray-100: #eef1f0;
-  --color-gray-200: #dde3e1;
-  --color-gray-400: #9aa6a2;
-  --color-gray-500: #6b7873;
-  --color-gray-700: #3a4742;
-  --color-gray-900: #172420;
+  --color-gray-50: #f6f6f6;
+  --color-gray-100: #ededed;
+  --color-gray-200: #e0e0e0;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #6e6e6e;
+  --color-gray-700: #3a3a3a;
+  --color-gray-900: #171717;
 
-  /* Semantik */
+  /* Semantik (Formular-Zustaende; nie Farbe allein) */
   --color-success: #15803d;
   --color-warning: #b45309;
   --color-danger: #b42318;
@@ -38,11 +33,11 @@
 
   /* Typografie */
   --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Fraunces Variable', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-display: 'Archivo Variable', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
 
-  /* Radius */
-  --radius-btn: 0.75rem;
-  --radius-card: 1rem;
+  /* Radius (bewusst variiert – kein uniformer Einheitsradius) */
+  --radius-btn: 0.5rem;
+  --radius-card: 0.875rem;
 }
 
 @layer base {
@@ -62,17 +57,16 @@
   h1,
   h2,
   h3 {
-    color: var(--color-gray-900);
+    color: var(--color-ink-900);
     font-family: var(--font-display);
-    font-weight: 600;
-    font-optical-sizing: auto;
-    letter-spacing: -0.01em;
+    font-weight: 800;
+    letter-spacing: -0.02em;
     text-wrap: balance;
   }
 
   :where(a, button, input, textarea, select, [tabindex]):focus-visible {
     border-radius: 2px;
-    outline: 3px solid var(--color-green-600);
+    outline: 3px solid var(--color-red-600);
     outline-offset: 2px;
   }
 }

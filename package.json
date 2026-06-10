@@ -18,15 +18,17 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "latest",
-    "@fontsource-variable/fraunces": "latest",
+    "@fontsource-variable/archivo": "^5.2.8",
     "@fontsource-variable/inter": "latest",
     "@iconify-json/lucide": "latest",
     "astro": "latest",
-    "astro-icon": "latest"
+    "astro-icon": "latest",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@astrojs/check": "latest",
     "@eslint/js": "latest",
+    "@tailwindcss/vite": "latest",
     "astro-eslint-parser": "latest",
     "eslint": "latest",
     "eslint-plugin-astro": "latest",
@@ -39,7 +41,6 @@
     "stylelint": "latest",
     "stylelint-config-standard": "latest",
     "tailwindcss": "latest",
-    "@tailwindcss/vite": "latest",
     "typescript": "latest",
     "typescript-eslint": "latest"
   }

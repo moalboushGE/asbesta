@@ -1,0 +1,13 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../assets/asbesta-logo.jpeg';
+
+/** Marken-Logo (Original-Wortmarke, Schwarz/Rot). Hinweis: SVG-/Negativ-Variante als Folge-Asset empfohlen. */
+interface Props {
+  readonly class?: string;
+}
+
+const { class: className = 'h-10 w-auto' } = Astro.props;
+---
+
+<Image src={logo} alt="Asbesta Schadstoffsanierung" class={className} loading="eager" />

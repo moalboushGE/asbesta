@@ -6,7 +6,7 @@ import { leistungen } from '../../data/leistungen';
 <section id="leistungen" class="bg-white">
   <div class="mx-auto max-w-6xl px-4 py-16 lg:px-8 lg:py-24">
     <div class="max-w-2xl">
-      <p class="text-sm font-semibold uppercase tracking-wider text-green-700">Leistungen</p>
+      <p class="text-sm font-semibold uppercase tracking-wider text-red-700">Leistungen</p>
       <h2 class="mt-2 text-3xl sm:text-4xl">Alles aus einer Hand – vom Gutachten bis zur Übergabe</h2>
       <p class="mt-4 text-gray-700">
         Zertifizierte Asbest- und Schadstoffsanierung für private Bauherren, Hausverwaltungen,
@@ -20,14 +20,14 @@ import { leistungen } from '../../data/leistungen';
           <li>
             <a
               href={`/leistungen/${l.slug}/`}
-              class="group flex h-full flex-col rounded-[var(--radius-card)] border border-gray-200 bg-white p-6 transition-colors hover:border-green-600"
+              class="group flex h-full flex-col rounded-[var(--radius-card)] border border-gray-200 bg-white p-6 transition-colors hover:border-red-600"
             >
-              <span class="grid h-11 w-11 place-items-center rounded-lg bg-green-50 text-green-700">
+              <span class="grid h-11 w-11 place-items-center rounded-lg bg-red-50 text-red-700">
                 <Icon name={l.icon} class="h-6 w-6" />
               </span>
               <h3 class="mt-4 font-sans text-lg font-semibold text-ink-900">{l.title}</h3>
               <p class="mt-2 flex-1 text-sm text-gray-700">{l.summary}</p>
-              <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-green-700">
+              <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-red-700">
                 Mehr erfahren
                 <Icon
                   name="lucide:arrow-right"

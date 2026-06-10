@@ -11,7 +11,7 @@ import Badge from '../ui/Badge.astro';
       <p
         class="mb-5 inline-flex items-center gap-2 rounded-full border border-gray-200 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gray-500"
       >
-        <span class="h-2 w-2 rounded-full bg-green-500"></span>{site.subClaim}
+        <span class="h-2 w-2 rounded-full bg-red-500"></span>{site.subClaim}
       </p>
       <h1 class="text-4xl leading-[1.08] sm:text-5xl lg:text-[3.5rem]">{site.claim}</h1>
       <p class="mt-6 max-w-2xl text-lg text-gray-700">{site.intro}</p>
@@ -45,14 +45,14 @@ import Badge from '../ui/Badge.astro';
         </div>
         <dl class="mt-6 space-y-4">
           <div class="flex items-start gap-3">
-            <Icon name="lucide:clock" class="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
+            <Icon name="lucide:clock" class="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
             <div>
               <dt class="text-sm font-semibold text-ink-900">Schnelle Rückmeldung</dt>
               <dd class="text-sm text-gray-700">{site.responseTime}</dd>
             </div>
           </div>
           <div class="flex items-start gap-3">
-            <Icon name="lucide:map-pin" class="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
+            <Icon name="lucide:map-pin" class="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
             <div>
               <dt class="text-sm font-semibold text-ink-900">Aus Marl – für ganz NRW</dt>
               <dd class="text-sm text-gray-700">
