@@ -1,3 +1,6 @@
+# lokale Harness-/Tool-Dateien
+.claude/
+
 # dependencies
 node_modules/
 
