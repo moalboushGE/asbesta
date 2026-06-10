@@ -1,0 +1,95 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/patterns/Breadcrumb.astro';
+import Button from '../components/ui/Button.astro';
+import StatsBand from '../components/sections/StatsBand.astro';
+import Zertifizierung from '../components/sections/Zertifizierung.astro';
+import AblaufSteps from '../components/sections/AblaufSteps.astro';
+import CtaSection from '../components/sections/CtaSection.astro';
+import { site } from '../data/site';
+
+const title = 'Über uns – Asbesta Schadstoffsanierung aus Marl';
+const description =
+  'Asbesta: inhabergeführter Fachbetrieb für Asbest- und Schadstoffsanierung aus Marl, seit über 15 Jahren in ganz NRW. Zertifiziert nach TRGS 519/521/524, persönlich und termintreu.';
+
+const werte = [
+  {
+    icon: 'lucide:handshake',
+    title: 'Persönlich & inhabergeführt',
+    text: 'Sie sprechen direkt mit dem Inhaber – ohne Umwege, von der ersten Anfrage bis zur dokumentierten Übergabe.',
+  },
+  {
+    icon: 'lucide:wallet',
+    title: 'Faire Festpreise',
+    text: 'Kostenlose Besichtigung und transparentes Festpreis-Angebot – ohne versteckte Kosten.',
+  },
+  {
+    icon: 'lucide:shield-check',
+    title: 'Geprüfte Sicherheit',
+    text: 'Sachkundige Mitarbeiter nach TRGS 519, arbeitsmedizinische Vorsorge und volle Betriebshaftpflicht.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="border-b border-gray-200 bg-gradient-to-br from-red-50 via-white to-gray-50">
+    <div class="mx-auto max-w-4xl px-4 py-12 lg:px-8 lg:py-16">
+      <Breadcrumb items={[{ name: 'Start', href: '/' }, { name: 'Über uns' }]} />
+      <h1 class="mt-6 text-4xl sm:text-5xl">
+        Spezialisten für Schadstoffe. <span class="text-red-600">Aus Marl. Für ganz NRW.</span>
+      </h1>
+      <p class="mt-5 max-w-2xl text-lg text-gray-700">
+        Asbesta ist Ihr inhabergeführter Fachbetrieb für Asbest- und Schadstoffsanierung – seit über
+        15 Jahren in ganz Nordrhein-Westfalen im Einsatz.
+      </p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <Button href={site.phone.href} variant="primary">
+          <Icon name="lucide:phone" class="h-4 w-4" />Jetzt anrufen
+        </Button>
+        <Button href="/kontakt/" variant="ghost">
+          <Icon name="lucide:clipboard-list" class="h-4 w-4" />Kostenlose Anfrage
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <article class="mx-auto max-w-3xl px-4 py-12 leading-relaxed text-gray-700 lg:px-8 lg:py-16">
+    <p class="text-lg">
+      Asbesta Schadstoffsanierung steht für hochqualifizierte Sanierungsarbeiten in Wohngebäuden,
+      Gewerbeobjekten und Industrieanlagen. Vom ersten Anruf bis zur dokumentierten Übergabe sind wir
+      Ihr verlässlicher Partner – persönlich, transparent und absolut zuverlässig.
+    </p>
+    <p class="mt-4">
+      Wir arbeiten nach den strengsten Vorgaben der Gefahrstoffverordnung. Unsere Mitarbeiter sind
+      sachkundig nach TRGS 519, 521 und 524, stehen unter arbeitsmedizinischer Vorsorge und sind voll
+      betriebshaftpflichtversichert. Jede anzeigepflichtige Sanierung wird objektbezogen bei der
+      zuständigen Bezirksregierung angezeigt und mit Entsorgungsnachweis sowie Freimessung nach VDI
+      3492 lückenlos dokumentiert.
+    </p>
+    <p class="mt-4">
+      Vom privaten Bauherrn über Hausverwaltungen bis zu Industrie und öffentlichen Auftraggebern: Mit
+      über 1.000 abgeschlossenen Projekten kennen wir die Bausubstanz des Ruhrgebiets und Rheinlands
+      aus erster Hand – und holen Sie sicher, sauber und termingerecht aus dem Asbest-Problem heraus.
+    </p>
+
+    <div class="mt-10 grid gap-4 sm:grid-cols-3">
+      {
+        werte.map((w) => (
+          <div class="rounded-[var(--radius-card)] border border-gray-200 p-6">
+            <span class="grid h-11 w-11 place-items-center rounded-full bg-red-50 text-red-700">
+              <Icon name={w.icon} class="h-6 w-6" />
+            </span>
+            <h2 class="mt-4 font-sans text-base font-semibold text-ink-900">{w.title}</h2>
+            <p class="mt-2 text-sm text-gray-700">{w.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </article>
+
+  <StatsBand />
+  <Zertifizierung />
+  <AblaufSteps />
+  <CtaSection />
+</BaseLayout>
