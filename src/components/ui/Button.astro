@@ -1,0 +1,21 @@
+---
+/** Marken-Button. Default Grün; Notfall-Variante Signal-Orange. Tap-Target >= 44 px. */
+interface Props {
+  readonly href: string;
+  readonly variant?: 'primary' | 'emergency' | 'ghost';
+  readonly class?: string;
+}
+
+const { href, variant = 'primary', class: className = '' } = Astro.props;
+
+const base =
+  'inline-flex min-h-11 items-center justify-center gap-2 rounded-[var(--radius-btn)] px-5 py-3 text-sm font-semibold leading-none transition-colors focus-visible:outline-none';
+
+const variants: Record<NonNullable<Props['variant']>, string> = {
+  primary: 'bg-green-600 text-white hover:bg-green-700 active:bg-green-800',
+  emergency: 'bg-signal-600 text-white hover:bg-signal-500 active:bg-signal-600',
+  ghost: 'border border-gray-200 bg-white text-ink-900 hover:border-green-600 hover:text-green-700',
+};
+---
+
+<a href={href} class:list={[base, variants[variant], className]}><slot /></a>

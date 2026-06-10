@@ -1,0 +1,15 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "entry": ["src/pages/**/*.astro", "astro.config.mjs", "scripts/*.mjs"],
+  "project": ["src/**/*.{ts,astro}", "scripts/**/*.mjs"],
+  "ignoreDependencies": [
+    "@iconify-json/lucide",
+    "@fontsource-variable/inter",
+    "@fontsource-variable/fraunces",
+    "prettier-plugin-astro",
+    "@astrojs/check",
+    "stylelint-config-standard",
+    "astro-eslint-parser",
+    "globals"
+  ]
+}

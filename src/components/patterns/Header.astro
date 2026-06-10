@@ -1,0 +1,63 @@
+---
+import { Icon } from 'astro-icon/components';
+import { site } from '../../data/site';
+import Button from '../ui/Button.astro';
+---
+
+<header class="sticky top-0 z-40 border-b border-gray-200 bg-white/95 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 lg:px-8">
+    <a href="/" class="flex items-center gap-2.5" aria-label="Asbesta – Startseite">
+      <span class="grid h-9 w-9 place-items-center rounded-lg bg-green-600 text-white">
+        <Icon name="lucide:shield-check" class="h-5 w-5" />
+      </span>
+      <span class="leading-none">
+        <span class="block font-display text-xl font-semibold tracking-tight text-ink-900"
+          >ASBESTA</span
+        >
+        <span class="block text-[0.7rem] font-medium uppercase tracking-[0.16em] text-gray-500"
+          >Schadstoffsanierung</span
+        >
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-7 md:flex" aria-label="Hauptnavigation">
+      {
+        site.nav.map((item) => (
+          <a
+            href={item.href}
+            class="text-sm font-medium text-gray-700 transition-colors hover:text-green-700"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="hidden items-center gap-4 md:flex">
+      <a
+        href={site.phone.href}
+        class="flex items-center gap-2 text-sm font-semibold text-ink-900 hover:text-green-700"
+      >
+        <Icon name="lucide:phone" class="h-4 w-4 text-green-600" />{site.phone.display}
+      </a>
+      <Button href="#kontakt" variant="primary">Kostenlose Anfrage</Button>
+    </div>
+  </div>
+
+  <div
+    class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-gray-200 bg-white md:hidden"
+  >
+    <a
+      href={site.phone.href}
+      class="flex items-center justify-center gap-2 py-3 text-sm font-semibold text-ink-900"
+    >
+      <Icon name="lucide:phone" class="h-5 w-5 text-green-600" />Anrufen
+    </a>
+    <a
+      href={site.whatsapp.href}
+      class="flex items-center justify-center gap-2 border-l border-gray-200 py-3 text-sm font-semibold text-ink-900"
+    >
+      <Icon name="lucide:message-circle" class="h-5 w-5 text-green-600" />WhatsApp
+    </a>
+  </div>
+</header>

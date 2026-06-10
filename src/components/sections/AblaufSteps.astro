@@ -1,0 +1,24 @@
+---
+import { ablauf } from '../../data/inhalte';
+---
+
+<section id="ablauf" class="bg-white">
+  <div class="mx-auto max-w-6xl px-4 py-16 lg:px-8 lg:py-24">
+    <div class="max-w-2xl">
+      <p class="text-sm font-semibold uppercase tracking-wider text-green-700">Ablauf</p>
+      <h2 class="mt-2 text-3xl sm:text-4xl">In fünf Schritten zur sauberen Übergabe</h2>
+    </div>
+
+    <ol class="mt-10 grid gap-6 md:grid-cols-5">
+      {
+        ablauf.map((s) => (
+          <li class="rounded-[var(--radius-card)] border border-gray-200 p-6">
+            <span class="font-display text-3xl font-semibold text-green-600">{s.nr}</span>
+            <h3 class="mt-3 font-sans text-base font-semibold text-ink-900">{s.title}</h3>
+            <p class="mt-1.5 text-sm text-gray-700">{s.text}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

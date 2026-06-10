@@ -1,0 +1,46 @@
+{
+  "name": "asbesta-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check",
+    "lint": "eslint .",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "stylelint": "stylelint \"src/**/*.css\"",
+    "knip": "knip",
+    "check": "pnpm typecheck && pnpm lint && pnpm stylelint",
+    "shoot": "node scripts/shoot.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "latest",
+    "@fontsource-variable/fraunces": "latest",
+    "@fontsource-variable/inter": "latest",
+    "@iconify-json/lucide": "latest",
+    "astro": "latest",
+    "astro-icon": "latest"
+  },
+  "devDependencies": {
+    "@astrojs/check": "latest",
+    "@eslint/js": "latest",
+    "astro-eslint-parser": "latest",
+    "eslint": "latest",
+    "eslint-plugin-astro": "latest",
+    "eslint-plugin-sonarjs": "latest",
+    "globals": "latest",
+    "knip": "latest",
+    "playwright": "latest",
+    "prettier": "latest",
+    "prettier-plugin-astro": "latest",
+    "stylelint": "latest",
+    "stylelint-config-standard": "latest",
+    "tailwindcss": "latest",
+    "@tailwindcss/vite": "latest",
+    "typescript": "latest",
+    "typescript-eslint": "latest"
+  }
+}

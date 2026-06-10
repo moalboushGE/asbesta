@@ -1,0 +1,17 @@
+---
+import { Icon } from 'astro-icon/components';
+
+/** Vertrauens-/Zertifikats-Badge mit Icon. */
+interface Props {
+  readonly label: string;
+  readonly icon?: string;
+}
+
+const { label, icon = 'lucide:badge-check' } = Astro.props;
+---
+
+<span
+  class="inline-flex items-center gap-1.5 rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-800"
+>
+  <Icon name={icon} class="h-3.5 w-3.5" />{label}
+</span>

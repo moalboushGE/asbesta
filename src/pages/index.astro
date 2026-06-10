@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import TrustBar from '../components/sections/TrustBar.astro';
+import LeistungenGrid from '../components/sections/LeistungenGrid.astro';
+import Gruende from '../components/sections/Gruende.astro';
+import AblaufSteps from '../components/sections/AblaufSteps.astro';
+import Bewertungen from '../components/sections/Bewertungen.astro';
+import CtaSection from '../components/sections/CtaSection.astro';
+
+const title = 'Asbestsanierung Marl & NRW | Asbesta Schadstoffsanierung';
+const description =
+  'Zertifizierte Asbest- und Schadstoffsanierung nach TRGS 519 aus Marl für ganz NRW. Festpreis, kostenlose Besichtigung, lückenloser Entsorgungsnachweis. Jetzt anfragen.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Hero />
+  <TrustBar />
+  <LeistungenGrid />
+  <Gruende />
+  <AblaufSteps />
+  <Bewertungen />
+  <CtaSection />
+</BaseLayout>
