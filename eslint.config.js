@@ -28,4 +28,9 @@ export default tseslint.config(
       'sonarjs/no-duplicate-string': 'off',
     },
   },
+  {
+    // Datendateien sind deklarativer Content (kein "God-Component") -> Groessen-Budget hier aus.
+    files: ['src/data/**/*.ts'],
+    rules: { 'max-lines': 'off' },
+  },
 );

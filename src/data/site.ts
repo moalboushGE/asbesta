@@ -35,9 +35,9 @@ export const site = {
     { value: '100 %', label: 'zertifiziert & versichert' },
   ] as readonly Stat[],
   nav: [
-    { label: 'Leistungen', href: '#leistungen' },
-    { label: 'Ablauf', href: '#ablauf' },
-    { label: 'Bewertungen', href: '#bewertungen' },
-    { label: 'Kontakt', href: '#kontakt' },
+    { label: 'Leistungen', href: '/leistungen/' },
+    { label: 'Ablauf', href: '/#ablauf' },
+    { label: 'Bewertungen', href: '/#bewertungen' },
+    { label: 'Kontakt', href: '/#kontakt' },
   ] as readonly NavItem[],
 } as const;

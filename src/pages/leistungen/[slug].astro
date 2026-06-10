@@ -1,0 +1,135 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/patterns/Breadcrumb.astro';
+import SchemaGraph from '../../components/schema/SchemaGraph.astro';
+import Button from '../../components/ui/Button.astro';
+import { site } from '../../data/site';
+import { leistungen } from '../../data/leistungen';
+import { leistungenDetail } from '../../data/leistungen-detail';
+import { buildServiceGraph } from '../../lib/schema';
+
+export function getStaticPaths() {
+  return leistungen.flatMap((l) => {
+    const detail = leistungenDetail[l.slug];
+    return detail ? [{ params: { slug: l.slug }, props: { leistung: l, detail } }] : [];
+  });
+}
+
+const { leistung, detail } = Astro.props;
+const path = `/leistungen/${leistung.slug}/`;
+const origin = Astro.site?.origin ?? 'https://www.asbesta-schadstoffsanierung.de';
+const graph = buildServiceGraph({
+  origin,
+  title: leistung.title,
+  description: detail.metaDescription,
+  path,
+  faqs: detail.faqs,
+});
+const weitere = leistungen.filter((l) => l.slug !== leistung.slug).slice(0, 6);
+---
+
+<BaseLayout title={detail.metaTitle} description={detail.metaDescription}>
+  <SchemaGraph slot="head" graph={graph} />
+
+  <section class="border-b border-gray-200 bg-gray-50">
+    <div class="mx-auto max-w-4xl px-4 py-10 lg:px-8 lg:py-14">
+      <Breadcrumb
+        items={[
+          { name: 'Start', href: '/' },
+          { name: 'Leistungen', href: '/leistungen/' },
+          { name: leistung.title },
+        ]}
+      />
+      <div class="mt-6 flex items-center gap-4">
+        <span class="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-red-50 text-red-700">
+          <Icon name={leistung.icon} class="h-7 w-7" />
+        </span>
+        <h1 class="text-3xl sm:text-4xl">{leistung.title}</h1>
+      </div>
+      <p class="mt-5 max-w-2xl text-lg text-gray-700">{detail.heroIntro}</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <Button href={site.phone.href} variant="primary">
+          <Icon name="lucide:phone" class="h-4 w-4" />Jetzt anrufen
+        </Button>
+        <Button href={site.whatsapp.href} variant="ghost">
+          <Icon name="lucide:message-circle" class="h-4 w-4" />WhatsApp
+        </Button>
+        <Button href="/#kontakt" variant="ghost">
+          <Icon name="lucide:clipboard-list" class="h-4 w-4" />Kostenlose Anfrage
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <article class="mx-auto max-w-4xl px-4 py-12 lg:px-8 lg:py-16">
+    {detail.einleitung.map((absatz) => <p class="mt-4 leading-relaxed text-gray-700 first:mt-0">{absatz}</p>)}
+
+    <h2 class="mt-12 text-2xl">Leistungsumfang</h2>
+    <ul class="mt-5 grid gap-3 sm:grid-cols-2">
+      {
+        detail.leistungsumfang.map((item) => (
+          <li class="flex items-start gap-2.5 text-gray-700">
+            <Icon name="lucide:check" class="mt-1 h-4 w-4 shrink-0 text-red-600" />
+            <span>{item}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2 class="mt-12 text-2xl">So gehen wir vor</h2>
+    <ol class="mt-5 space-y-5">
+      {
+        detail.ablauf.map((schritt, index) => (
+          <li class="flex gap-4">
+            <span class="font-display text-xl font-extrabold tabular-nums text-red-600">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <div>
+              <h3 class="font-sans text-base font-semibold text-ink-900">{schritt.titel}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-gray-700">{schritt.text}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+
+    <h2 class="mt-12 text-2xl">Häufige Fragen</h2>
+    <div class="mt-5 divide-y divide-gray-200 border-y border-gray-200">
+      {
+        detail.faqs.map((faq) => (
+          <details class="group py-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-sans font-semibold text-ink-900 [&::-webkit-details-marker]:hidden">
+              <span>{faq.frage}</span>
+              <Icon
+                name="lucide:plus"
+                class="h-5 w-5 shrink-0 text-red-600 transition-transform group-open:rotate-45"
+              />
+            </summary>
+            <p class="mt-3 leading-relaxed text-gray-700">{faq.antwort}</p>
+          </details>
+        ))
+      }
+    </div>
+  </article>
+
+  <section class="border-t border-gray-200 bg-gray-50">
+    <div class="mx-auto max-w-4xl px-4 py-10 lg:px-8">
+      <h2 class="text-xl">Weitere Leistungen</h2>
+      <ul class="mt-4 flex flex-wrap gap-2">
+        {
+          weitere.map((l) => (
+            <li>
+              <a
+                href={`/leistungen/${l.slug}/`}
+                class="inline-flex rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
+              >
+                {l.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

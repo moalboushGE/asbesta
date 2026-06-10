@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/patterns/Breadcrumb.astro';
+import LeistungenGrid from '../../components/sections/LeistungenGrid.astro';
+import CtaSection from '../../components/sections/CtaSection.astro';
+
+const title = 'Leistungen: Asbest- & Schadstoffsanierung in NRW | Asbesta';
+const description =
+  'Alle Leistungen von Asbesta: Asbestsanierung nach TRGS 519, KMF- und PAK-Sanierung, Materialanalyse, Abbruch, Floor-Flex, Welleternit und mehr – zertifiziert in ganz NRW.';
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="border-b border-gray-200 bg-gray-50">
+    <div class="mx-auto max-w-6xl px-4 py-10 lg:px-8 lg:py-14">
+      <Breadcrumb items={[{ name: 'Start', href: '/' }, { name: 'Leistungen' }]} />
+      <h1 class="mt-6 text-3xl sm:text-4xl">Unsere Leistungen</h1>
+      <p class="mt-4 max-w-2xl text-lg text-gray-700">
+        Zertifizierte Asbest- und Schadstoffsanierung – fachgerecht, dokumentiert und in ganz NRW.
+        Wählen Sie eine Leistung für alle Details.
+      </p>
+    </div>
+  </section>
+  <LeistungenGrid />
+  <CtaSection />
+</BaseLayout>

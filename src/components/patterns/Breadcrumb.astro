@@ -1,0 +1,37 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Crumb {
+  readonly name: string;
+  readonly href?: string;
+}
+
+interface Props {
+  readonly items: readonly Crumb[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav aria-label="Brotkrumen">
+  <ol class="flex flex-wrap items-center gap-1.5 text-sm text-gray-500">
+    {
+      items.map((crumb, index) => (
+        <li class="flex items-center gap-1.5">
+          {crumb.href ? (
+            <a href={crumb.href} class="hover:text-red-700">
+              {crumb.name}
+            </a>
+          ) : (
+            <span aria-current="page" class="font-medium text-ink-900">
+              {crumb.name}
+            </span>
+          )}
+          {index < items.length - 1 && (
+            <Icon name="lucide:chevron-right" class="h-4 w-4 text-gray-400" />
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>

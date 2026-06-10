@@ -26,7 +26,8 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : As
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:locale" content="de_DE" />
-    <meta name="theme-color" content="#0b2027" />
+    <meta name="theme-color" content="#141414" />
+    <slot name="head" />
   </head>
   <body>
     <a

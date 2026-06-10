@@ -1,0 +1,11 @@
+---
+/** Rendert ein JSON-LD @graph in den <head> (via slot="head"). */
+interface Props {
+  readonly graph: readonly unknown[];
+}
+
+const { graph } = Astro.props;
+const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+---
+
+<script type="application/ld+json" is:inline set:html={json} />
