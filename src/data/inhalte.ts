@@ -1,10 +1,4 @@
-/** Inhaltsbausteine der Startseite (Gründe, Ablauf, Bewertungen). */
-
-export interface Grund {
-  readonly icon: string;
-  readonly title: string;
-  readonly text: string;
-}
+/** Inhaltsbausteine der Startseite (Ablauf, Bewertungen). */
 
 export interface Schritt {
   readonly nr: string;
@@ -17,39 +11,6 @@ export interface Bewertung {
   readonly ort: string;
   readonly text: string;
 }
-
-export const gruende: readonly Grund[] = [
-  {
-    icon: 'lucide:zap',
-    title: 'Schnell',
-    text: 'Termine kurzfristig – auch im Notfall. Rückmeldung innerhalb von 24 Stunden.',
-  },
-  {
-    icon: 'lucide:shield-check',
-    title: 'Professionell',
-    text: 'Zertifiziert nach TRGS 519, 521 und 524. Fachbetrieb nach Gefahrstoffverordnung.',
-  },
-  {
-    icon: 'lucide:calendar-check',
-    title: 'Pünktlich',
-    text: 'Verbindliche Termine und eine garantierte, dokumentierte Übergabe.',
-  },
-  {
-    icon: 'lucide:sparkles',
-    title: 'Sauber',
-    text: 'Staubarme Verfahren, Unterdruckhaltung und besenreine Übergabe.',
-  },
-  {
-    icon: 'lucide:handshake',
-    title: 'Persönlich',
-    text: 'Ein fester Ansprechpartner – direkter Kontakt zum Inhaber, ohne Umwege.',
-  },
-  {
-    icon: 'lucide:recycle',
-    title: 'Fachgerechte Entsorgung',
-    text: 'Komplettentsorgung mit lückenlosem Entsorgungsnachweis.',
-  },
-];
 
 export const ablauf: readonly Schritt[] = [
   {
