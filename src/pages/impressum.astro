@@ -1,0 +1,49 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { site } from '../data/site';
+---
+
+<LegalLayout
+  title="Impressum"
+  description="Impressum der Asbesta Schadstoffsanierung, Venusweg 24, 45770 Marl."
+>
+  <h2>Angaben gemäß § 5 DDG</h2>
+  <p>
+    {site.legalName}<br />
+    {site.legal.owner}<br />
+    {site.address.street}<br />
+    {site.address.zip} {site.address.city}
+  </p>
+
+  <h2>Kontakt</h2>
+  <p>
+    Telefon: <a href={site.phone.href}>{site.phone.display}</a><br />
+    E-Mail: <a href={`mailto:${site.email}`}>{site.email}</a>
+  </p>
+
+  <h2>Umsatzsteuer-Identifikationsnummer</h2>
+  <p>{site.legal.ustId}</p>
+
+  <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+  <p>{site.legal.owner} (Anschrift wie oben).</p>
+
+  <h2>Berufsbezogene Angaben</h2>
+  <p>
+    Zertifizierter Fachbetrieb für Asbest- und Schadstoffsanierung nach Gefahrstoffverordnung
+    (GefStoffV) sowie TRGS 519, 521 und 524. Betriebshaftpflichtversicherung vorhanden.
+  </p>
+
+  <h2>Verbraucherstreitbeilegung</h2>
+  <p>
+    Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer
+    Verbraucherschlichtungsstelle teilzunehmen (§ 36 VSBG).
+  </p>
+
+  <h2>Haftung für Inhalte und Links</h2>
+  <p>
+    Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit,
+    Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Für Inhalte
+    externer Links sind ausschließlich deren Betreiber verantwortlich; zum Zeitpunkt der Verlinkung
+    waren keine Rechtsverstöße erkennbar.
+  </p>
+</LegalLayout>

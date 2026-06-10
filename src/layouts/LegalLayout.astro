@@ -1,0 +1,36 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '../components/patterns/Breadcrumb.astro';
+
+interface Props {
+  readonly title: string;
+  readonly description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="border-b border-gray-200 bg-gray-50">
+    <div class="mx-auto max-w-3xl px-4 py-10 lg:px-8">
+      <Breadcrumb items={[{ name: 'Start', href: '/' }, { name: title }]} />
+      <h1 class="mt-6 text-3xl sm:text-4xl">{title}</h1>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-3xl px-4 py-10 lg:px-8">
+    <p
+      class="mb-8 rounded-[var(--radius-card)] border border-signal-500/40 bg-signal-100 px-4 py-3 text-sm text-ink-900"
+    >
+      <strong>Hinweis:</strong> Dieser Rechtstext ist ein Entwurf. Vor Veröffentlichung ist er anwaltlich
+      bzw. durch einen Datenschutzbeauftragten zu prüfen und mit den tatsächlichen Angaben (z. B.
+      Inhaber, USt-IdNr., konkret eingesetzte Dienste) zu vervollständigen.
+    </p>
+
+    <article
+      class="space-y-4 text-gray-700 [&_a]:text-red-700 [&_a]:underline [&_h2]:mt-10 [&_h2]:text-xl [&_h3]:mt-6 [&_h3]:font-sans [&_h3]:text-base [&_h3]:font-semibold [&_h3]:text-ink-900 [&_li]:mt-1 [&_p]:leading-relaxed [&_ul]:list-disc [&_ul]:pl-6"
+    >
+      <slot />
+    </article>
+  </div>
+</BaseLayout>

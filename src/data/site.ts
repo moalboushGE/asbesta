@@ -28,6 +28,12 @@ export const site = {
     country: 'Deutschland',
   },
   responseTime: 'Rückmeldung innerhalb von 24 Stunden',
+  legal: {
+    owner: '[Inhaber: Vor- und Nachname eintragen]',
+    ustId: '[USt-IdNr. gemäß § 27a UStG eintragen]',
+    supervisoryAuthority:
+      'Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)',
+  },
   certifications: ['TRGS 519', 'TRGS 521', 'TRGS 524', 'Fachbetrieb nach GefStoffV'],
   stats: [
     { value: '1.000+', label: 'abgeschlossene Projekte' },

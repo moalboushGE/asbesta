@@ -1,0 +1,81 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { site } from '../data/site';
+---
+
+<LegalLayout
+  title="Datenschutzerklärung"
+  description="Informationen zur Verarbeitung personenbezogener Daten nach DSGVO auf der Website der Asbesta Schadstoffsanierung."
+>
+  <h2>1. Verantwortlicher</h2>
+  <p>
+    Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br />
+    {site.legalName}, {site.legal.owner}, {site.address.street}, {site.address.zip}
+    {site.address.city}.<br />
+    Telefon: <a href={site.phone.href}>{site.phone.display}</a>, E-Mail:
+    <a href={`mailto:${site.email}`}>{site.email}</a>.
+  </p>
+
+  <h2>2. Grundsätzliches</h2>
+  <p>
+    Wir verarbeiten personenbezogene Daten nur im Rahmen der gesetzlichen Bestimmungen (DSGVO, BDSG,
+    TDDDG). Rechtsgrundlagen sind insbesondere Art. 6 Abs. 1 lit. a (Einwilligung), lit. b
+    (Vertrag/Anbahnung) und lit. f (berechtigtes Interesse) DSGVO.
+  </p>
+
+  <h2>3. Hosting</h2>
+  <p>
+    Diese Website wird bei Cloudflare (Cloudflare Pages) als statische Seite ausgeliefert. Beim Aufruf
+    werden technisch notwendige Server-Logdaten (z. B. IP-Adresse, Datum/Uhrzeit, abgerufene Ressource,
+    User-Agent) verarbeitet, um die Auslieferung und Sicherheit zu gewährleisten (Art. 6 Abs. 1 lit. f
+    DSGVO). Mit dem Hosting-Dienstleister besteht ein Vertrag zur Auftragsverarbeitung (AVV).
+  </p>
+
+  <h2>4. Kontaktaufnahme</h2>
+  <p>
+    Wenn Sie uns per Kontaktformular, E-Mail, Telefon oder WhatsApp kontaktieren, verarbeiten wir die
+    von Ihnen übermittelten Daten (z. B. Name, Kontaktdaten, Ort, gewünschte Leistung, Nachricht sowie
+    optional hochgeladene Bilder) zur Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. b bzw. f DSGVO).
+    Die Daten werden gelöscht, sobald sie nicht mehr erforderlich sind und keine gesetzlichen
+    Aufbewahrungsfristen entgegenstehen.
+  </p>
+  <h3>Hinweis zu WhatsApp</h3>
+  <p>
+    WhatsApp ist ein Dienst der Meta Platforms Ireland Ltd. Bei einer Kontaktaufnahme über WhatsApp
+    gelten zusätzlich deren Datenschutzbestimmungen; eine Datenübermittlung in Drittländer ist möglich.
+    Übermitteln Sie über WhatsApp bitte keine sensiblen Daten. Alternativ erreichen Sie uns per Telefon,
+    E-Mail oder Formular.
+  </p>
+
+  <h2>5. Schriftarten</h2>
+  <p>
+    Schriftarten werden lokal von unserem Server ausgeliefert (Self-Hosting). Es findet keine
+    Verbindung zu Servern Dritter und keine Übertragung Ihrer IP-Adresse an Dritte zu diesem Zweck
+    statt.
+  </p>
+
+  <h2>6. Reichweitenmessung</h2>
+  <p>
+    Sofern eingesetzt, erfolgt die Reichweitenmessung mit einem cookielosen, datensparsamen
+    Analysewerkzeug ohne Bildung von Nutzerprofilen und ohne Setzen von Cookies, die eine Einwilligung
+    erfordern würden. Die konkrete Ausgestaltung wird vor Livegang final festgelegt und hier ergänzt.
+  </p>
+
+  <h2>7. Ihre Rechte</h2>
+  <p>Ihnen stehen nach der DSGVO insbesondere folgende Rechte zu:</p>
+  <ul>
+    <li>Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17)</li>
+    <li>Einschränkung der Verarbeitung (Art. 18) und Datenübertragbarkeit (Art. 20)</li>
+    <li>Widerspruch gegen die Verarbeitung (Art. 21) und Widerruf erteilter Einwilligungen (Art. 7 Abs. 3)</li>
+  </ul>
+  <p>
+    Zudem haben Sie das Recht auf Beschwerde bei einer Aufsichtsbehörde, für uns zuständig:
+    {site.legal.supervisoryAuthority}.
+  </p>
+
+  <h2>8. Aktualität</h2>
+  <p>
+    Diese Datenschutzerklärung ist ein Entwurf (Stand 2026-06-10) und wird vor Veröffentlichung
+    geprüft und an die tatsächlich eingesetzten Dienste angepasst.
+  </p>
+</LegalLayout>
