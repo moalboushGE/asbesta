@@ -33,11 +33,11 @@
 
   /* Typografie */
   --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Archivo Variable', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Fraunces Variable', ui-serif, Georgia, 'Times New Roman', serif;
 
-  /* Radius (bewusst variiert – kein uniformer Einheitsradius) */
+  /* Radius */
   --radius-btn: 0.5rem;
-  --radius-card: 0.875rem;
+  --radius-card: 1.25rem;
 }
 
 @layer base {
@@ -59,8 +59,9 @@
   h3 {
     color: var(--color-ink-900);
     font-family: var(--font-display);
-    font-weight: 800;
-    letter-spacing: -0.02em;
+    font-weight: 600;
+    font-optical-sizing: auto;
+    letter-spacing: -0.01em;
     text-wrap: balance;
   }
 
