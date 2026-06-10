@@ -96,3 +96,44 @@ export function buildServiceGraph(args: ServiceGraphArgs): unknown[] {
   }
   return graph;
 }
+
+export interface LocationGraphArgs {
+  readonly origin: string;
+  readonly city: string;
+  readonly description: string;
+  readonly path: string;
+  readonly faqs: readonly FaqItem[];
+}
+
+export function buildLocationGraph(args: LocationGraphArgs): unknown[] {
+  const url = args.origin + args.path;
+  const graph: unknown[] = [
+    // Sitz bleibt Marl (organizationNode); die Stadt ist Servicegebiet - KEINE fiktive Lokaladresse.
+    organizationNode(args.origin),
+    {
+      '@type': 'Service',
+      name: `Asbest- und Schadstoffsanierung ${args.city}`,
+      serviceType: 'Schadstoffsanierung',
+      provider: { '@id': args.origin + '/' + ORG_ID },
+      areaServed: { '@type': 'City', name: args.city },
+      url,
+    },
+    {
+      '@type': 'WebPage',
+      '@id': url,
+      url,
+      name: `Asbest- und Schadstoffsanierung in ${args.city}`,
+      description: args.description,
+      isPartOf: { '@id': args.origin + '/' + ORG_ID },
+    },
+    breadcrumbNode(args.origin, [
+      { name: 'Start', url: '/' },
+      { name: 'Standorte', url: '/standorte/' },
+      { name: args.city, url: args.path },
+    ]),
+  ];
+  if (args.faqs.length > 0) {
+    graph.push(faqNode(args.faqs));
+  }
+  return graph;
+}

@@ -1,0 +1,152 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/patterns/Breadcrumb.astro';
+import SchemaGraph from '../../components/schema/SchemaGraph.astro';
+import Button from '../../components/ui/Button.astro';
+import AblaufSteps from '../../components/sections/AblaufSteps.astro';
+import CtaSection from '../../components/sections/CtaSection.astro';
+import { site } from '../../data/site';
+import { standorte, type Standort } from '../../data/standorte';
+import { standorteDetail } from '../../data/standorte-detail';
+import { leistungen } from '../../data/leistungen';
+import { buildLocationGraph } from '../../lib/schema';
+
+export function getStaticPaths() {
+  return standorte.flatMap((s) => {
+    const detail = standorteDetail[s.slug];
+    return detail ? [{ params: { stadt: s.slug }, props: { stadt: s, detail } }] : [];
+  });
+}
+
+const { stadt, detail } = Astro.props;
+const path = `/standorte/${stadt.slug}/`;
+const origin = Astro.site?.origin ?? 'https://www.asbesta-schadstoffsanierung.de';
+const graph = buildLocationGraph({
+  origin,
+  city: stadt.name,
+  description: detail.metaDescription,
+  path,
+  faqs: detail.localFaqs,
+});
+const nachbarn = stadt.nearby
+  .map((slug) => standorte.find((s) => s.slug === slug))
+  .filter((s): s is Standort => s !== undefined);
+const topLeistungen = leistungen.slice(0, 6);
+---
+
+<BaseLayout title={detail.metaTitle} description={detail.metaDescription}>
+  <SchemaGraph slot="head" graph={graph} />
+
+  <section class="border-b border-gray-200 bg-gray-50">
+    <div class="mx-auto max-w-4xl px-4 py-10 lg:px-8 lg:py-14">
+      <Breadcrumb
+        items={[{ name: 'Start', href: '/' }, { name: 'Standorte', href: '/standorte/' }, { name: stadt.name }]}
+      />
+      <h1 class="mt-6 text-3xl sm:text-4xl">Asbest- &amp; Schadstoffsanierung in {stadt.name}</h1>
+      <p class="mt-5 max-w-2xl text-lg text-gray-700">{detail.heroIntro}</p>
+      <p class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-ink-900">
+        <Icon name="lucide:map-pin" class="h-4 w-4 text-red-600" />{detail.anfahrt}
+      </p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <Button href={site.phone.href} variant="primary">
+          <Icon name="lucide:phone" class="h-4 w-4" />Jetzt anrufen
+        </Button>
+        <Button href={site.whatsapp.href} variant="ghost">
+          <Icon name="lucide:message-circle" class="h-4 w-4" />WhatsApp
+        </Button>
+        <Button href="/#kontakt" variant="ghost">
+          <Icon name="lucide:clipboard-list" class="h-4 w-4" />Kostenlose Anfrage
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <article class="mx-auto max-w-4xl px-4 py-12 lg:px-8 lg:py-16">
+    <h2 class="text-2xl">Asbest &amp; Schadstoffe in {stadt.name}</h2>
+    {detail.lokalKontext.map((absatz) => <p class="mt-4 leading-relaxed text-gray-700">{absatz}</p>)}
+
+    <h2 class="mt-12 text-2xl">Einsatzgebiet in {stadt.name}</h2>
+    <p class="mt-4 text-gray-700">
+      Wir sind in allen Stadtteilen von {stadt.name} fuer Sie im Einsatz, unter anderem:
+    </p>
+    <ul class="mt-4 flex flex-wrap gap-2">
+      {
+        detail.stadtteile.map((teil) => (
+          <li class="rounded-full border border-gray-200 bg-white px-3 py-1 text-sm text-gray-700">
+            {teil}
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2 class="mt-12 text-2xl">Unsere Leistungen in {stadt.name}</h2>
+    <ul class="mt-5 grid gap-3 sm:grid-cols-2">
+      {
+        topLeistungen.map((l) => (
+          <li>
+            <a
+              href={`/leistungen/${l.slug}/`}
+              class="group flex items-start gap-3 rounded-[var(--radius-card)] border border-gray-200 p-4 transition-colors hover:border-red-600"
+            >
+              <Icon name={l.icon} class="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
+              <span>
+                <span class="font-sans font-semibold text-ink-900">{l.title}</span>
+                <span class="mt-0.5 block text-sm text-gray-700">{l.summary}</span>
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="mt-5">
+      <a href="/leistungen/" class="inline-flex items-center gap-1 text-sm font-semibold text-red-700">
+        Alle Leistungen ansehen<Icon name="lucide:arrow-right" class="h-4 w-4" />
+      </a>
+    </p>
+
+    <h2 class="mt-12 text-2xl">Häufige Fragen aus {stadt.name}</h2>
+    <div class="mt-5 divide-y divide-gray-200 border-y border-gray-200">
+      {
+        detail.localFaqs.map((faq) => (
+          <details class="group py-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-sans font-semibold text-ink-900 [&::-webkit-details-marker]:hidden">
+              <span>{faq.frage}</span>
+              <Icon
+                name="lucide:plus"
+                class="h-5 w-5 shrink-0 text-red-600 transition-transform group-open:rotate-45"
+              />
+            </summary>
+            <p class="mt-3 leading-relaxed text-gray-700">{faq.antwort}</p>
+          </details>
+        ))
+      }
+    </div>
+  </article>
+
+  <AblaufSteps />
+
+  {
+    nachbarn.length > 0 && (
+      <section class="border-t border-gray-200 bg-gray-50">
+        <div class="mx-auto max-w-4xl px-4 py-10 lg:px-8">
+          <h2 class="text-xl">Auch in Ihrer Nähe</h2>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            {nachbarn.map((n) => (
+              <li>
+                <a
+                  href={`/standorte/${n.slug}/`}
+                  class="inline-flex rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
+                >
+                  {n.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
+
+  <CtaSection />
+</BaseLayout>

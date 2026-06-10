@@ -42,7 +42,7 @@ export const site = {
   ] as readonly Stat[],
   nav: [
     { label: 'Leistungen', href: '/leistungen/' },
-    { label: 'Ablauf', href: '/#ablauf' },
+    { label: 'Standorte', href: '/standorte/' },
     { label: 'Bewertungen', href: '/#bewertungen' },
     { label: 'Kontakt', href: '/#kontakt' },
   ] as readonly NavItem[],

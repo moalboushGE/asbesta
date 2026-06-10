@@ -1,0 +1,59 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/patterns/Breadcrumb.astro';
+import CtaSection from '../../components/sections/CtaSection.astro';
+import { standorte } from '../../data/standorte';
+import { standorteDetail } from '../../data/standorte-detail';
+
+const cities = standorte.flatMap((s) => {
+  const detail = standorteDetail[s.slug];
+  return detail ? [{ stadt: s, detail }] : [];
+});
+
+const title = 'Standorte: Asbestsanierung in NRW (Marl, Essen, Köln u. a.) | Asbesta';
+const description =
+  'Asbest- und Schadstoffsanierung vor Ort in Marl, Herten, Gladbeck, Gelsenkirchen, Bottrop, Essen, Oberhausen, Düsseldorf und Köln. Zertifiziert nach TRGS 519.';
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="border-b border-gray-200 bg-gray-50">
+    <div class="mx-auto max-w-6xl px-4 py-10 lg:px-8 lg:py-14">
+      <Breadcrumb items={[{ name: 'Start', href: '/' }, { name: 'Standorte' }]} />
+      <h1 class="mt-6 text-3xl sm:text-4xl">Unsere Standorte in NRW</h1>
+      <p class="mt-4 max-w-2xl text-lg text-gray-700">
+        Von unserem Sitz in Marl aus sind wir in ganz Nordrhein-Westfalen im Einsatz. Wählen Sie Ihre
+        Stadt für lokale Informationen rund um Asbest- und Schadstoffsanierung.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-12 lg:px-8 lg:py-16">
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          cities.map(({ stadt, detail }) => (
+            <li>
+              <a
+                href={`/standorte/${stadt.slug}/`}
+                class="group flex h-full flex-col rounded-[var(--radius-card)] border border-gray-200 p-6 transition-colors hover:border-red-600"
+              >
+                <span class="flex items-center gap-2">
+                  <Icon name="lucide:map-pin" class="h-5 w-5 text-red-600" />
+                  <span class="font-display text-lg font-bold text-ink-900">{stadt.name}</span>
+                </span>
+                <span class="mt-2 flex-1 text-sm text-gray-700">{detail.heroIntro}</span>
+                <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-red-700">
+                  Mehr erfahren
+                  <Icon name="lucide:arrow-right" class="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <CtaSection />
+</BaseLayout>
