@@ -62,8 +62,8 @@ export const heroImage: SiteImage = {
   credit: P(6195952),
 };
 
-/** Reihenfolge entspricht den fünf Ablauf-Schritten in src/data/inhalte.ts. */
-export const ablaufImages: readonly SiteImage[] = [
+/** Reihenfolge entspricht den fünf Ablauf-Schritten in src/data/inhalte.ts. Zugriff über ablaufImage(). */
+const ablaufImages: readonly SiteImage[] = [
   {
     src: ablauf01,
     alt: 'Mitarbeiter mit Bauhelm am Telefon prüft Unterlagen – Anfrage und Beratung',
@@ -87,7 +87,8 @@ export const ablaufImages: readonly SiteImage[] = [
   },
 ];
 
-export const leistungImages: Record<string, SiteImage> = {
+/** Zugriff über leistungImage(slug). */
+const leistungImages: Record<string, SiteImage> = {
   asbestsanierung: {
     src: lAsbestsanierung,
     alt: 'Saniererin in Vollschutz mit Helm und Visier in einer abgeschotteten Asbest-Sanierungszone',
@@ -176,4 +177,14 @@ const stadtImagePool: readonly SiteImage[] = [
 /** Liefert ein kontextuelles Stadt-Bild anhand eines stabilen Index (z. B. Position im Städte-Array). */
 export function stadtImage(index: number): SiteImage {
   return stadtImagePool[index % stadtImagePool.length] ?? heroImage;
+}
+
+/** Liefert das Ablauf-Bild zu einem Schritt-Index (typsicher, mit Fallback). */
+export function ablaufImage(index: number): SiteImage {
+  return ablaufImages[index] ?? heroImage;
+}
+
+/** Liefert das Themenbild zu einer Leistung (typsicher, mit Fallback). */
+export function leistungImage(slug: string): SiteImage {
+  return leistungImages[slug] ?? heroImage;
 }

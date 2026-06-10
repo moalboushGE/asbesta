@@ -3,11 +3,13 @@ import { Icon } from 'astro-icon/components';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/patterns/Breadcrumb.astro';
 import Button from '../components/ui/Button.astro';
+import Figure from '../components/ui/Figure.astro';
 import StatsBand from '../components/sections/StatsBand.astro';
 import Zertifizierung from '../components/sections/Zertifizierung.astro';
 import AblaufSteps from '../components/sections/AblaufSteps.astro';
 import CtaSection from '../components/sections/CtaSection.astro';
 import { site } from '../data/site';
+import { ueberUnsImage } from '../data/images';
 
 const title = 'Über uns – Asbesta Schadstoffsanierung aus Marl';
 const description =
@@ -53,6 +55,16 @@ const werte = [
       </div>
     </div>
   </section>
+
+  <div class="mx-auto max-w-4xl px-4 pt-10 lg:px-8">
+    <Figure
+      src={ueberUnsImage.src}
+      alt={ueberUnsImage.alt}
+      aspect="16/9"
+      sizes="(min-width: 896px) 832px, 100vw"
+      class="shadow-sm ring-1 ring-black/5"
+    />
+  </div>
 
   <article class="mx-auto max-w-3xl px-4 py-12 leading-relaxed text-gray-700 lg:px-8 lg:py-16">
     <p class="text-lg">

@@ -4,9 +4,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/patterns/Breadcrumb.astro';
 import SchemaGraph from '../../components/schema/SchemaGraph.astro';
 import Button from '../../components/ui/Button.astro';
+import Figure from '../../components/ui/Figure.astro';
 import { site } from '../../data/site';
 import { leistungen } from '../../data/leistungen';
 import { leistungenDetail } from '../../data/leistungen-detail';
+import { leistungImage } from '../../data/images';
 import { standorte } from '../../data/standorte';
 import { kombiDetail } from '../../data/kombi-detail';
 import { buildServiceGraph } from '../../lib/schema';
@@ -28,6 +30,7 @@ const graph = buildServiceGraph({
   path,
   faqs: detail.faqs,
 });
+const bild = leistungImage(leistung.slug);
 const weitere = leistungen.filter((l) => l.slug !== leistung.slug).slice(0, 6);
 const kombiStaedte = standorte.filter((s) => kombiDetail[`${leistung.slug}/${s.slug}`]);
 ---
@@ -64,6 +67,16 @@ const kombiStaedte = standorte.filter((s) => kombiDetail[`${leistung.slug}/${s.s
       </div>
     </div>
   </section>
+
+  <div class="mx-auto max-w-4xl px-4 pt-10 lg:px-8">
+    <Figure
+      src={bild.src}
+      alt={bild.alt}
+      aspect="16/9"
+      sizes="(min-width: 896px) 832px, 100vw"
+      class="shadow-sm ring-1 ring-black/5"
+    />
+  </div>
 
   <article class="mx-auto max-w-4xl px-4 py-12 lg:px-8 lg:py-16">
     {detail.einleitung.map((absatz) => <p class="mt-4 leading-relaxed text-gray-700 first:mt-0">{absatz}</p>)}
