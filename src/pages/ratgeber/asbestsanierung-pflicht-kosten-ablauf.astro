@@ -1,0 +1,297 @@
+---
+import RatgeberArticleLayout from '../../layouts/RatgeberArticleLayout.astro';
+import Figure from '../../components/ui/Figure.astro';
+import Callout from '../../components/ui/Callout.astro';
+import { getArtikel } from '../../data/ratgeber';
+import { leistungImage } from '../../data/images';
+import dachAsbest from '../../assets/images/ratgeber/dach-asbestzement.jpg';
+import boden from '../../assets/images/ratgeber/boden.jpg';
+
+const artikel = getArtikel('asbestsanierung-pflicht-kosten-ablauf');
+if (!artikel) throw new Error('Ratgeber-Artikel nicht gefunden.');
+const psa = leistungImage('asbestsanierung');
+
+const toc = [
+  { id: 'was-ist-asbest', label: 'Was ist Asbest – und warum sanieren?' },
+  { id: 'pflicht', label: 'Wann ist die Sanierung Pflicht?' },
+  { id: 'wo', label: 'Wo steckt Asbest im Haus?' },
+  { id: 'kosten', label: 'Was kostet eine Asbestsanierung?' },
+  { id: 'ablauf', label: 'Ablauf Schritt für Schritt' },
+  { id: 'bindung', label: 'Schwach oder fest gebunden?' },
+  { id: 'verdacht', label: 'Asbest-Verdacht: Was tun?' },
+  { id: 'foerderung', label: 'Förderung & Steuer' },
+  { id: 'fachbetrieb', label: 'Warum ein Fachbetrieb?' },
+];
+---
+
+<RatgeberArticleLayout artikel={artikel} toc={toc}>
+  <p>
+    Asbest galt jahrzehntelang als Wunderbaustoff: feuerfest, isolierend und billig. Heute wissen
+    wir, dass die feinen Fasern Lungenkrebs und Asbestose auslösen können – oft erst Jahrzehnte nach
+    dem Einatmen. Wer ein Gebäude aus der Zeit vor 1993 saniert, umbaut oder abreißt, stößt deshalb
+    fast zwangsläufig auf die Frage: Wann ist eine Asbestsanierung Pflicht, was kostet sie und wie
+    läuft sie ab? Dieser Ratgeber beantwortet die wichtigsten Punkte kompakt und praxisnah.
+  </p>
+
+  <h2 id="was-ist-asbest">Was ist Asbest – und warum ist die Sanierung so wichtig?</h2>
+  <p>
+    Asbest ist eine Sammelbezeichnung für natürlich vorkommende, faserige Minerale. Genau diese
+    Faserstruktur macht den Stoff so gefährlich: Bei Beschädigung zerfällt das Material in
+    mikroskopisch kleine Fasern, die lungengängig sind und sich dauerhaft im Gewebe festsetzen. Die
+    Folgeerkrankungen – Asbestose, Lungen- und Rippenfellkrebs – treten häufig erst 15 bis 40 Jahre
+    später auf. Deshalb ist Asbest in Deutschland seit 1993 vollständig verboten.
+  </p>
+  <p>
+    Das Verbot löst aber nicht das Altlasten-Problem: In Millionen Bestandsgebäuden ist Asbest bis
+    heute verbaut. Solange das Material fest gebunden und unbeschädigt ist, geht von ihm zunächst
+    keine akute Gefahr aus. Kritisch wird es, sobald gebohrt, gesägt, gebrochen oder abgerissen wird
+    – oder wenn Witterung und Alter das Material mürbe gemacht haben. Dann ist eine fachgerechte
+    Sanierung der einzig sichere Weg.
+  </p>
+
+  <h2 id="pflicht">Wann ist eine Asbestsanierung Pflicht?</h2>
+  <p>
+    Eine pauschale „Austauschpflicht" für jedes asbesthaltige Bauteil gibt es nicht. Maßgeblich ist,
+    <strong>was Sie mit dem Gebäude vorhaben</strong>. Sobald an asbesthaltigen Materialien gearbeitet
+    wird, greifen die strengen Vorgaben der Gefahrstoffverordnung (GefStoffV) und der Technischen
+    Regeln für Gefahrstoffe, insbesondere der <strong>TRGS 519</strong>. Konkret bedeutet das:
+  </p>
+  <ul>
+    <li>
+      <strong>Arbeiten nur durch Sachkundige:</strong> Asbestsanierungen dürfen ausschließlich von
+      Fachbetrieben mit Sachkundenachweis nach TRGS 519 ausgeführt werden – nicht in Eigenregie.
+    </li>
+    <li>
+      <strong>Anzeigepflicht:</strong> Sanierungs- und Abbrucharbeiten sind der zuständigen Behörde
+      (Bezirksregierung bzw. Amt für Arbeitsschutz) vorab anzuzeigen, in der Regel mindestens sieben
+      Tage vor Beginn.
+    </li>
+    <li>
+      <strong>Pflichten für Arbeitgeber und Eigentümer:</strong> Wer Arbeiten beauftragt, muss vorab
+      klären, ob Asbest vorhanden ist, und Beschäftigte sowie ausführende Betriebe informieren.
+    </li>
+  </ul>
+  <p>
+    Mit der <strong>novellierten Gefahrstoffverordnung</strong> (in Kraft seit Dezember 2024) wurde
+    diese Linie noch einmal verschärft: Vor Arbeiten an Gebäuden, die vor 1993 errichtet wurden, gilt
+    eine ausdrückliche Erkundungs- und Informationspflicht. Auftraggeber müssen verfügbare
+    Informationen zum Baualter und zu möglichen Asbestvorkommen bereitstellen, damit ausführende
+    Betriebe die Gefährdung richtig einschätzen können.
+  </p>
+  <Callout variant="tipp" title="Experten-Tipp der Asbesta Fachredaktion">
+    <p>
+      Lassen Sie bei Gebäuden mit Baujahr vor 1993 <strong>vor</strong> jeder Sanierung oder
+      Modernisierung den Asbest-Status klären. Eine Materialprobe kostet wenig, verhindert aber teure
+      Baustopps, Bußgelder und Gesundheitsrisiken, wenn später unerwartet Asbest auftaucht.
+    </p>
+  </Callout>
+
+  <h2 id="wo">Wo steckt Asbest im Haus?</h2>
+  <p>
+    Asbest wurde in tausenden Produkten verarbeitet. Bei Gebäuden bis Baujahr 1993 sollten Sie vor
+    allem an diesen Stellen mit asbesthaltigen Materialien rechnen:
+  </p>
+  <ul>
+    <li>
+      <strong>Dach und Fassade:</strong> Welleternit-Platten, Dachschindeln und
+      <a href="/leistungen/fassadenplatten-ausbauen/">Fassadenplatten</a> aus Asbestzement.
+    </li>
+    <li>
+      <strong>Bodenbeläge:</strong> <a href="/leistungen/floor-flex-entfernen/">Floor-Flex-Platten</a>,
+      Cushion-Vinyl und der darunterliegende
+      <a href="/leistungen/bitumenkleber-entfernen/">schwarze Bitumenkleber</a>.
+    </li>
+    <li>
+      <strong>Innenräume:</strong> Spritzasbest, Brandschutzverkleidungen, Putze und Spachtelmassen,
+      Fensterbänke sowie Dichtungen und Rohrisolierungen.
+    </li>
+    <li>
+      <strong>Haustechnik:</strong> Nachtspeicheröfen, Heizungsdichtungen und Lüftungskanäle.
+    </li>
+  </ul>
+  <Figure
+    src={dachAsbest}
+    alt="Nahaufnahme eines verwitterten Asbestzement-Wellplattendachs"
+    aspect="16/9"
+    sizes="(min-width: 768px) 768px, 100vw"
+    class="my-6 ring-1 ring-black/5"
+  />
+  <p>
+    Besonders heikel sind schwach gebundene Produkte wie Spritzasbest – sie setzen schon bei geringer
+    Berührung Fasern frei. Fest gebundene Materialien wie Asbestzement sind im unbeschädigten Zustand
+    weniger kritisch, müssen aber spätestens bei Beschädigung oder Rückbau fachgerecht entfernt
+    werden.
+  </p>
+
+  <h2 id="kosten">Was kostet eine Asbestsanierung?</h2>
+  <p>
+    Die Kosten hängen von Material, Menge, Bindungsart, Zugänglichkeit und Entsorgung ab. Als grobe
+    Orientierung für Deutschland (Stand 2026) dienen folgende Richtwerte – der verbindliche Preis
+    ergibt sich immer erst nach einer Besichtigung:
+  </p>
+  <div class="my-6 overflow-x-auto">
+    <table>
+      <thead>
+        <tr>
+          <th>Bereich</th>
+          <th>Richtpreis pro m²</th>
+          <th>Hinweis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Asbestzement-Dach / Welleternit</td>
+          <td>40–100 €</td>
+          <td>abhängig von Dachneigung, Höhe und Zugang</td>
+        </tr>
+        <tr>
+          <td>Fassadenplatten</td>
+          <td>40–100 €</td>
+          <td>inkl. Demontage und Gerüst</td>
+        </tr>
+        <tr>
+          <td>Bodenbeläge (Floor-Flex, Cushion-Vinyl inkl. Kleber)</td>
+          <td>50–120 €</td>
+          <td>je nach Klebersorte und Untergrund</td>
+        </tr>
+        <tr>
+          <td>Schwach gebundene Putze / Spritzasbest</td>
+          <td>100–250 €</td>
+          <td>aufwendige Vollschutz-Maßnahmen nötig</td>
+        </tr>
+        <tr>
+          <td>Entsorgung asbesthaltiger Abfälle</td>
+          <td>ca. 100–300 € / Tonne</td>
+          <td>Deponiegebühr, separat zu kalkulieren</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    <strong>Rechenbeispiel:</strong> Für das Abnehmen und Entsorgen eines Asbestzement-Daches eines
+    Einfamilienhauses mit rund 120 m² liegen die Gesamtkosten erfahrungsgemäß zwischen etwa 6.000 und
+    15.000 €. Hinzu kommen je nach Projekt Kosten für Gerüst, Materialanalyse (oft 30–80 € pro Probe)
+    sowie die abschließende Freimessung.
+  </p>
+  <Callout variant="hinweis" title="Kostentransparenz statt Schätzung">
+    <p>
+      Diese Spannen sind Orientierungswerte. Asbesta erstellt nach einer kostenlosen Besichtigung ein
+      <strong>transparentes Festpreis-Angebot</strong> ohne versteckte Kosten – inklusive Entsorgung
+      und Freimessung. <a href="/kontakt/">Fordern Sie hier Ihr Angebot an.</a>
+    </p>
+  </Callout>
+
+  <h2 id="ablauf">Ablauf einer Asbestsanierung Schritt für Schritt</h2>
+  <p>
+    Eine fachgerechte Asbestsanierung folgt einem klar geregelten Ablauf. So sieht er bei Asbesta in
+    der Praxis aus:
+  </p>
+  <ol>
+    <li>
+      <strong>Beprobung und Analyse:</strong> Wir entnehmen Materialproben und lassen sie im Labor
+      untersuchen. Erst das Ergebnis der <a href="/leistungen/materialanalyse/">Materialanalyse</a>
+      zeigt, ob und welcher Asbest vorliegt.
+    </li>
+    <li>
+      <strong>Anzeige bei der Behörde:</strong> Die Arbeiten werden mit Arbeitsplan bei der
+      zuständigen Behörde angezeigt – inklusive Schutzmaßnahmen und Entsorgungsweg.
+    </li>
+    <li>
+      <strong>Einrichten des Arbeitsbereichs:</strong> Bei schwach gebundenem Asbest entsteht ein
+      abgeschotteter Bereich mit Schwarz-Weiß-Schleuse und Unterdruckhaltung, damit keine Fasern nach
+      außen gelangen.
+    </li>
+    <li>
+      <strong>Staubarme Sanierung:</strong> Das Material wird mit speziellen Verfahren befeuchtet,
+      kontrolliert ausgebaut und sofort staubdicht verpackt.
+    </li>
+    <li>
+      <strong>Entsorgung mit Nachweis:</strong> Die Abfälle werden als Gefahrstoff deklariert und auf
+      zugelassenen Deponien entsorgt – mit lückenlosem Entsorgungsnachweis.
+    </li>
+    <li>
+      <strong>Freimessung nach VDI 3492:</strong> Eine Raumluftmessung bestätigt, dass die
+      Faserkonzentration unter dem Grenzwert liegt.
+    </li>
+    <li>
+      <strong>Dokumentierte Übergabe:</strong> Sie erhalten eine vollständige Schlussdokumentation –
+      wichtig für Behörden, Versicherung und einen späteren Verkauf.
+    </li>
+  </ol>
+  <Figure
+    src={psa.src}
+    alt={psa.alt}
+    aspect="16/9"
+    sizes="(min-width: 768px) 768px, 100vw"
+    class="my-6 ring-1 ring-black/5"
+  />
+
+  <h2 id="bindung">Schwach oder fest gebunden: der entscheidende Unterschied</h2>
+  <p>
+    Für Aufwand, Schutzmaßnahmen und Kosten ist entscheidend, wie der Asbest gebunden ist:
+  </p>
+  <ul>
+    <li>
+      <strong>Fest gebundener Asbest</strong> (z. B. Asbestzement in Welleternit oder Fassadenplatten)
+      hat einen hohen Zementanteil. Die Fasern sind fest eingebunden; bei zerstörungsfreiem Ausbau ist
+      die Freisetzung gering.
+    </li>
+    <li>
+      <strong>Schwach gebundener Asbest</strong> (z. B. Spritzasbest, Leichtbauplatten) enthält einen
+      hohen Asbestanteil und setzt schon bei geringer Beanspruchung Fasern frei. Hier sind die
+      Anforderungen deutlich höher.
+    </li>
+  </ul>
+  <p>
+    Die TRGS 519 unterscheidet entsprechend die nötige Sachkunde: für Tätigkeiten geringen Umfangs
+    (Anlage 4) und für umfassende Sanierungen, insbesondere mit schwach gebundenem Asbest (Anlage 3).
+    Welche Einstufung gilt, klärt der Fachbetrieb anhand der Materialanalyse.
+  </p>
+
+  <h2 id="verdacht">Asbest-Verdacht: Was Sie jetzt tun sollten</h2>
+  <Callout variant="warnung" title="Niemals selbst bearbeiten">
+    <p>
+      Bohren, sägen, schleifen, brechen oder Hochdruckreinigen Sie verdächtige Materialien
+      <strong>auf keinen Fall</strong> – dabei werden die gefährlichen Fasern erst freigesetzt.
+      Vermeiden Sie jede unnötige Beschädigung und betreten Sie betroffene Bereiche möglichst nicht.
+    </p>
+  </Callout>
+  <p>
+    Haben Sie einen Verdacht, gehen Sie besonnen vor: Dokumentieren Sie die verdächtige Stelle mit
+    einem Foto, halten Sie das Baujahr bereit und holen Sie einen Fachbetrieb hinzu. Dieser entnimmt
+    fachgerecht eine Probe und lässt sie analysieren. Erst das Laborergebnis bringt Sicherheit – eine
+    Sichtprüfung allein reicht nicht aus.
+  </p>
+  <Figure
+    src={boden}
+    alt="Alten Bodenbelag und Klebstoffreste werden mit dem Spachtel vom Untergrund entfernt"
+    aspect="16/9"
+    sizes="(min-width: 768px) 768px, 100vw"
+    class="my-6 ring-1 ring-black/5"
+  />
+
+  <h2 id="foerderung">Förderung und steuerliche Vorteile</h2>
+  <p>
+    Eine eigene Förderung nur für die Asbestentfernung gibt es nicht. Wird die Sanierung jedoch mit
+    einer energetischen Maßnahme verbunden – etwa einem neuen, gedämmten Dach nach Ausbau des
+    Asbestdaches – kommen Förderprogramme von KfW und BAFA sowie der Steuerbonus nach § 35c EStG für
+    energetische Sanierungen in Betracht. Für reine Handwerkerleistungen lässt sich häufig § 35a EStG
+    nutzen. Lassen Sie sich dazu individuell steuerlich beraten.
+  </p>
+
+  <h2 id="fachbetrieb">Warum ein zertifizierter Fachbetrieb entscheidend ist</h2>
+  <p>
+    Asbestsanierung ist kein Heimwerkerprojekt. Ein zugelassener Fachbetrieb bringt Sachkunde nach
+    TRGS 519, die richtige Schutzausrüstung, die Anzeige bei der Behörde, eine rechtssichere
+    Entsorgung und die abschließende Freimessung mit – alles aus einer Hand. Das schützt Ihre
+    Gesundheit, erfüllt die gesetzlichen Pflichten und gibt Ihnen eine belastbare Dokumentation.
+  </p>
+  <p>
+    Asbesta ist Ihr inhabergeführter Fachbetrieb für
+    <a href="/leistungen/asbestsanierung/">Asbestsanierung</a> und Schadstoffsanierung in ganz
+    Nordrhein-Westfalen – von der ersten Probe bis zur dokumentierten Übergabe. Ob
+    <a href="/leistungen/welleternit-ausbauen/">Welleternit-Dach</a>, Bodenbelag oder Innenraum: Wir
+    beraten Sie ehrlich und nennen Ihnen einen fairen Festpreis. <a href="/kontakt/">Jetzt kostenlose
+    Anfrage stellen.</a>
+  </p>
+</RatgeberArticleLayout>

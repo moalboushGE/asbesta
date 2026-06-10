@@ -47,8 +47,8 @@ const P = (id: number): string => `Pexels (Pexels-Lizenz) · pexels.com/photo/${
 // Wiederverwendete Motive (Ablauf + Stadt-Pool / Leistung + Stadt-Pool)
 const imgBesichtigung: SiteImage = {
   src: ablauf02,
-  alt: 'Sanierungsteam in Warnwesten und Helmen bei der Besichtigung am Gebäude',
-  credit: P(18111488),
+  alt: 'Fachkraft mit Helm und Warnweste begutachtet ein Gebäude vor Ort – Besichtigung',
+  credit: P(8293678),
 };
 const imgAsbestzement: SiteImage = {
   src: lAsbestzement,
@@ -101,8 +101,8 @@ const leistungImages: Record<string, SiteImage> = {
   },
   materialanalyse: {
     src: lMaterialanalyse,
-    alt: 'Laborfachkraft untersucht Materialproben unter dem Mikroskop',
-    credit: P(37785181),
+    alt: 'Materialprobe unter dem Labormikroskop bei der Asbest-Analyse',
+    credit: P(8851782),
   },
   'floor-flex-entfernen': {
     src: lFloorFlex,
@@ -111,8 +111,8 @@ const leistungImages: Record<string, SiteImage> = {
   },
   'bitumenkleber-entfernen': {
     src: lBitumenkleber,
-    alt: 'Akkuschrauber und Werkzeug auf einem für die Bodensanierung vorbereiteten Untergrund',
-    credit: P(8487757),
+    alt: 'Alten Bodenbelag und Klebstoffreste mit dem Spachtel vom Untergrund entfernen',
+    credit: P(5691702),
   },
   'welleternit-ausbauen': {
     src: lWelleternit,
@@ -142,8 +142,8 @@ const leistungImages: Record<string, SiteImage> = {
   },
   'pak-sanierung': {
     src: lPak,
-    alt: 'Kontrollierter Rückbau eines Gebäudes mit Abbruchkran',
-    credit: P(6726785),
+    alt: 'Kontrollierter Rückbau eines Gebäudes mit Abbruchbagger',
+    credit: P(34891691),
   },
   'luftanalysen-vdi-3492': {
     src: lLuftanalysen,
@@ -162,8 +162,8 @@ export const ueberUnsImage: SiteImage = {
 const stadtImagePool: readonly SiteImage[] = [
   {
     src: imgStadt1,
-    alt: 'Sanierungsfachkraft mit Sicherheitsgurt entsorgt Bauschutt in einen Container',
-    credit: P(34019842),
+    alt: 'Verwittertes Asbestzement-Wellplattendach an einem älteren Gebäude',
+    credit: P(13548818),
   },
   {
     src: imgStadt2,

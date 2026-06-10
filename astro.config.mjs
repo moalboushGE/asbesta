@@ -21,8 +21,9 @@ export default defineConfig({
         } else if (path === '/leistungen/' || path === '/standorte/') {
           priority = 0.9;
           changefreq = 'weekly';
-        } else if (path === '/kontakt/') {
+        } else if (path === '/kontakt/' || path === '/ratgeber/') {
           priority = 0.8;
+          // Ratgeber-Artikel (/ratgeber/[slug]/) erben den Default 0.7 / monthly.
         } else if (path === '/impressum/' || path === '/datenschutz/') {
           priority = 0.2;
           changefreq = 'yearly';

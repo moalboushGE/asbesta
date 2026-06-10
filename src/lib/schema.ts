@@ -183,6 +183,58 @@ export function buildServiceLocationGraph(args: ServiceLocationGraphArgs): unkno
   return graph;
 }
 
+export interface ArticleGraphArgs {
+  readonly origin: string;
+  readonly title: string;
+  readonly description: string;
+  readonly path: string;
+  /** Absolute Bild-URL (z. B. origin + Hero-Pfad). */
+  readonly image: string;
+  /** ISO-Datum (YYYY-MM-DD). */
+  readonly datePublished: string;
+  readonly dateModified: string;
+  readonly author: string;
+  readonly faqs: readonly FaqItem[];
+}
+
+/** Ratgeber-Beitrag: Article (E-E-A-T) + WebPage + Breadcrumb + optional FAQPage. */
+export function buildArticleGraph(args: ArticleGraphArgs): unknown[] {
+  const url = args.origin + args.path;
+  const graph: unknown[] = [
+    organizationNode(args.origin),
+    {
+      '@type': 'Article',
+      '@id': url + '#article',
+      headline: args.title,
+      description: args.description,
+      image: args.image,
+      datePublished: args.datePublished,
+      dateModified: args.dateModified,
+      author: { '@type': 'Organization', name: args.author, url: args.origin + '/' },
+      publisher: { '@id': args.origin + '/' + ORG_ID },
+      mainEntityOfPage: url,
+      inLanguage: 'de-DE',
+    },
+    {
+      '@type': 'WebPage',
+      '@id': url,
+      url,
+      name: args.title,
+      description: args.description,
+      isPartOf: { '@id': args.origin + '/' + ORG_ID },
+    },
+    breadcrumbNode(args.origin, [
+      { name: 'Start', url: '/' },
+      { name: 'Ratgeber', url: '/ratgeber/' },
+      { name: args.title, url: args.path },
+    ]),
+  ];
+  if (args.faqs.length > 0) {
+    graph.push(faqNode(args.faqs));
+  }
+  return graph;
+}
+
 /** Voller Startseiten-Graph: Entity-Hub (Organization/LocalBusiness) + WebSite + WebPage (speakable). */
 export function buildHomeGraph(origin: string): unknown[] {
   const orgId = origin + '/' + ORG_ID;

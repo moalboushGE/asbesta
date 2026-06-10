@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon/components';
+
+/** Hervorgehobene Box im Fließtext: Hinweis, Experten-Tipp oder Warnung. */
+interface Props {
+  readonly variant?: 'hinweis' | 'tipp' | 'warnung';
+  readonly title?: string;
+}
+
+const { variant = 'hinweis', title } = Astro.props;
+
+const styles = {
+  hinweis: { box: 'border-gray-200 bg-gray-50', icon: 'lucide:info', ic: 'text-gray-600' },
+  tipp: { box: 'border-red-200 bg-red-50', icon: 'lucide:lightbulb', ic: 'text-red-600' },
+  warnung: {
+    box: 'border-signal-500/40 bg-signal-100',
+    icon: 'lucide:triangle-alert',
+    ic: 'text-signal-600',
+  },
+}[variant];
+---
+
+<aside class:list={['my-6 flex gap-3 rounded-[var(--radius-card)] border p-4', styles.box]}>
+  <Icon name={styles.icon} class:list={['mt-0.5 h-5 w-5 shrink-0', styles.ic]} aria-hidden="true" />
+  <div class="text-sm leading-relaxed text-gray-700 [&_a]:font-semibold [&_a]:text-red-700 [&_a]:underline [&>*+*]:mt-2">
+    {title && <p class="font-sans font-semibold text-ink-900">{title}</p>}
+    <slot />
+  </div>
+</aside>
