@@ -137,3 +137,46 @@ export function buildLocationGraph(args: LocationGraphArgs): unknown[] {
   }
   return graph;
 }
+
+export interface ServiceLocationGraphArgs {
+  readonly origin: string;
+  readonly leistungTitle: string;
+  readonly leistungPath: string;
+  readonly city: string;
+  readonly description: string;
+  readonly path: string;
+  readonly faqs: readonly FaqItem[];
+}
+
+export function buildServiceLocationGraph(args: ServiceLocationGraphArgs): unknown[] {
+  const url = args.origin + args.path;
+  const graph: unknown[] = [
+    organizationNode(args.origin),
+    {
+      '@type': 'Service',
+      name: `${args.leistungTitle} ${args.city}`,
+      serviceType: args.leistungTitle,
+      provider: { '@id': args.origin + '/' + ORG_ID },
+      areaServed: { '@type': 'City', name: args.city },
+      url,
+    },
+    {
+      '@type': 'WebPage',
+      '@id': url,
+      url,
+      name: `${args.leistungTitle} in ${args.city}`,
+      description: args.description,
+      isPartOf: { '@id': args.origin + '/' + ORG_ID },
+    },
+    breadcrumbNode(args.origin, [
+      { name: 'Start', url: '/' },
+      { name: 'Leistungen', url: '/leistungen/' },
+      { name: args.leistungTitle, url: args.leistungPath },
+      { name: args.city, url: args.path },
+    ]),
+  ];
+  if (args.faqs.length > 0) {
+    graph.push(faqNode(args.faqs));
+  }
+  return graph;
+}

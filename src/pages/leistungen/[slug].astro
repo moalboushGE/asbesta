@@ -7,6 +7,8 @@ import Button from '../../components/ui/Button.astro';
 import { site } from '../../data/site';
 import { leistungen } from '../../data/leistungen';
 import { leistungenDetail } from '../../data/leistungen-detail';
+import { standorte } from '../../data/standorte';
+import { kombiDetail } from '../../data/kombi-detail';
 import { buildServiceGraph } from '../../lib/schema';
 
 export function getStaticPaths() {
@@ -27,6 +29,7 @@ const graph = buildServiceGraph({
   faqs: detail.faqs,
 });
 const weitere = leistungen.filter((l) => l.slug !== leistung.slug).slice(0, 6);
+const kombiStaedte = standorte.filter((s) => kombiDetail[`${leistung.slug}/${s.slug}`]);
 ---
 
 <BaseLayout title={detail.metaTitle} description={detail.metaDescription}>
@@ -112,6 +115,28 @@ const weitere = leistungen.filter((l) => l.slug !== leistung.slug).slice(0, 6);
       }
     </div>
   </article>
+
+  {
+    kombiStaedte.length > 0 && (
+      <section class="border-t border-gray-200 bg-white">
+        <div class="mx-auto max-w-4xl px-4 py-10 lg:px-8">
+          <h2 class="text-xl">{leistung.title} – vor Ort in Ihrer Stadt</h2>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            {kombiStaedte.map((s) => (
+              <li>
+                <a
+                  href={`/leistungen/${leistung.slug}/${s.slug}/`}
+                  class="inline-flex rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
+                >
+                  {leistung.title} {s.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
 
   <section class="border-t border-gray-200 bg-gray-50">
     <div class="mx-auto max-w-4xl px-4 py-10 lg:px-8">

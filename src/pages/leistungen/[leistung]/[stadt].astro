@@ -1,0 +1,139 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/patterns/Breadcrumb.astro';
+import SchemaGraph from '../../../components/schema/SchemaGraph.astro';
+import Button from '../../../components/ui/Button.astro';
+import CtaSection from '../../../components/sections/CtaSection.astro';
+import { site } from '../../../data/site';
+import { leistungen } from '../../../data/leistungen';
+import { standorte } from '../../../data/standorte';
+import { kombiDetail } from '../../../data/kombi-detail';
+import { buildServiceLocationGraph } from '../../../lib/schema';
+
+export function getStaticPaths() {
+  return Object.entries(kombiDetail).map(([key, detail]) => {
+    const parts = key.split('/');
+    return { params: { leistung: parts[0] ?? '', stadt: parts[1] ?? '' }, props: { detail } };
+  });
+}
+
+const { detail } = Astro.props;
+const leistung = leistungen.find((l) => l.slug === detail.leistung);
+const stadt = standorte.find((s) => s.slug === detail.stadt);
+const leistungTitle = leistung ? leistung.title : detail.leistung;
+const stadtName = stadt ? stadt.name : detail.stadt;
+const leistungPath = `/leistungen/${detail.leistung}/`;
+const stadtPath = `/standorte/${detail.stadt}/`;
+const path = `/leistungen/${detail.leistung}/${detail.stadt}/`;
+const origin = Astro.site?.origin ?? 'https://www.asbesta-schadstoffsanierung.de';
+const graph = buildServiceLocationGraph({
+  origin,
+  leistungTitle,
+  leistungPath,
+  city: stadtName,
+  description: detail.metaDescription,
+  path,
+  faqs: detail.comboFaqs,
+});
+const weitereInStadt = leistungen.filter(
+  (l) => l.slug !== detail.leistung && kombiDetail[`${l.slug}/${detail.stadt}`],
+);
+---
+
+<BaseLayout title={detail.metaTitle} description={detail.metaDescription}>
+  <SchemaGraph slot="head" graph={graph} />
+
+  <section class="border-b border-gray-200 bg-gray-50">
+    <div class="mx-auto max-w-4xl px-4 py-10 lg:px-8 lg:py-14">
+      <Breadcrumb
+        items={[
+          { name: 'Start', href: '/' },
+          { name: 'Leistungen', href: '/leistungen/' },
+          { name: leistungTitle, href: leistungPath },
+          { name: stadtName },
+        ]}
+      />
+      <div class="mt-6 flex items-center gap-4">
+        {leistung && (
+          <span class="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-red-50 text-red-700">
+            <Icon name={leistung.icon} class="h-7 w-7" />
+          </span>
+        )}
+        <h1 class="text-3xl sm:text-4xl">{leistungTitle} in {stadtName}</h1>
+      </div>
+      <p class="mt-5 max-w-2xl text-lg text-gray-700">{detail.intro}</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <Button href={site.phone.href} variant="primary">
+          <Icon name="lucide:phone" class="h-4 w-4" />Jetzt anrufen
+        </Button>
+        <Button href="/kontakt/" variant="ghost">
+          <Icon name="lucide:clipboard-list" class="h-4 w-4" />Kostenlose Anfrage
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <article class="mx-auto max-w-4xl px-4 py-12 lg:px-8 lg:py-16">
+    {detail.lokalServiceKontext.map((absatz) => <p class="mt-4 leading-relaxed text-gray-700 first:mt-0">{absatz}</p>)}
+
+    <div class="mt-10 grid gap-3 sm:grid-cols-2">
+      <a
+        href={leistungPath}
+        class="flex items-center justify-between gap-3 rounded-[var(--radius-card)] border border-gray-200 p-4 transition-colors hover:border-red-600"
+      >
+        <span class="text-sm font-semibold text-ink-900">Alles zu {leistungTitle}</span>
+        <Icon name="lucide:arrow-right" class="h-4 w-4 text-red-600" />
+      </a>
+      <a
+        href={stadtPath}
+        class="flex items-center justify-between gap-3 rounded-[var(--radius-card)] border border-gray-200 p-4 transition-colors hover:border-red-600"
+      >
+        <span class="text-sm font-semibold text-ink-900">Asbest &amp; Schadstoffe in {stadtName}</span>
+        <Icon name="lucide:arrow-right" class="h-4 w-4 text-red-600" />
+      </a>
+    </div>
+
+    <h2 class="mt-12 text-2xl">Häufige Fragen: {leistungTitle} in {stadtName}</h2>
+    <div class="mt-5 divide-y divide-gray-200 border-y border-gray-200">
+      {
+        detail.comboFaqs.map((faq) => (
+          <details class="group py-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-sans font-semibold text-ink-900 [&::-webkit-details-marker]:hidden">
+              <span>{faq.frage}</span>
+              <Icon
+                name="lucide:plus"
+                class="h-5 w-5 shrink-0 text-red-600 transition-transform group-open:rotate-45"
+              />
+            </summary>
+            <p class="mt-3 leading-relaxed text-gray-700">{faq.antwort}</p>
+          </details>
+        ))
+      }
+    </div>
+  </article>
+
+  {
+    weitereInStadt.length > 0 && (
+      <section class="border-t border-gray-200 bg-gray-50">
+        <div class="mx-auto max-w-4xl px-4 py-10 lg:px-8">
+          <h2 class="text-xl">Weitere Leistungen in {stadtName}</h2>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            {weitereInStadt.map((l) => (
+              <li>
+                <a
+                  href={`/leistungen/${l.slug}/${detail.stadt}/`}
+                  class="inline-flex rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
+                >
+                  {l.title} {stadtName}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
+
+  <CtaSection />
+</BaseLayout>

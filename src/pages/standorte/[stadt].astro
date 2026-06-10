@@ -10,6 +10,7 @@ import { site } from '../../data/site';
 import { standorte, type Standort } from '../../data/standorte';
 import { standorteDetail } from '../../data/standorte-detail';
 import { leistungen } from '../../data/leistungen';
+import { kombiDetail } from '../../data/kombi-detail';
 import { buildLocationGraph } from '../../lib/schema';
 
 export function getStaticPaths() {
@@ -86,7 +87,9 @@ const topLeistungen = leistungen.slice(0, 6);
         topLeistungen.map((l) => (
           <li>
             <a
-              href={`/leistungen/${l.slug}/`}
+              href={kombiDetail[`${l.slug}/${stadt.slug}`]
+                ? `/leistungen/${l.slug}/${stadt.slug}/`
+                : `/leistungen/${l.slug}/`}
               class="group flex items-start gap-3 rounded-[var(--radius-card)] border border-gray-200 p-4 transition-colors hover:border-red-600"
             >
               <Icon name={l.icon} class="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
