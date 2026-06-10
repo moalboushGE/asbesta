@@ -1,4 +1,6 @@
 import { site } from '../data/site';
+import { leistungen } from '../data/leistungen';
+import { standorte } from '../data/standorte';
 
 /** JSON-LD-Builder (framework-frei, unit-testbar – Plan Kap. 8.1). */
 
@@ -179,4 +181,50 @@ export function buildServiceLocationGraph(args: ServiceLocationGraphArgs): unkno
     graph.push(faqNode(args.faqs));
   }
   return graph;
+}
+
+/** Voller Startseiten-Graph: Entity-Hub (Organization/LocalBusiness) + WebSite + WebPage (speakable). */
+export function buildHomeGraph(origin: string): unknown[] {
+  const orgId = origin + '/' + ORG_ID;
+  return [
+    {
+      '@type': ['Organization', 'HomeAndConstructionBusiness'],
+      '@id': orgId,
+      name: site.legalName,
+      alternateName: site.name,
+      url: origin + '/',
+      telephone: site.phone.href.replace('tel:', ''),
+      email: site.email,
+      image: origin + '/og.png',
+      logo: origin + '/og.png',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: site.address.street,
+        postalCode: site.address.zip,
+        addressLocality: site.address.city,
+        addressRegion: site.address.region,
+        addressCountry: 'DE',
+      },
+      geo: { '@type': 'GeoCoordinates', latitude: 51.6539, longitude: 7.0917 },
+      areaServed: ['Nordrhein-Westfalen', ...standorte.map((s) => s.name)],
+      knowsAbout: leistungen.map((l) => l.title),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': origin + '/#website',
+      url: origin + '/',
+      name: site.legalName,
+      inLanguage: 'de-DE',
+      publisher: { '@id': orgId },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': origin + '/',
+      url: origin + '/',
+      name: 'Asbestsanierung Marl & NRW | Asbesta Schadstoffsanierung',
+      isPartOf: { '@id': origin + '/#website' },
+      about: { '@id': orgId },
+      speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
+    },
+  ];
 }

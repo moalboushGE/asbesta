@@ -26,7 +26,10 @@ const browser = await chromium.launch();
 try {
   for (const route of ROUTES) {
     for (const vp of VIEWPORTS) {
-      const page = await browser.newPage({ viewport: { width: vp.width, height: vp.height } });
+      const page = await browser.newPage({
+        viewport: { width: vp.width, height: vp.height },
+        reducedMotion: 'reduce',
+      });
       await page.goto(BASE + route.path, { waitUntil: 'networkidle', timeout: 30000 });
       await page.waitForTimeout(300);
       await page.screenshot({ path: `${OUT}/${route.name}-${vp.name}.png`, fullPage: true });

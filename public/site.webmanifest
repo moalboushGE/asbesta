@@ -1,0 +1,11 @@
+{
+  "name": "Asbesta Schadstoffsanierung",
+  "short_name": "Asbesta",
+  "description": "Zertifizierte Asbest- und Schadstoffsanierung nach TRGS 519 aus Marl für ganz NRW.",
+  "start_url": "/",
+  "display": "browser",
+  "lang": "de",
+  "theme_color": "#141414",
+  "background_color": "#ffffff",
+  "icons": [{ "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any maskable" }]
+}

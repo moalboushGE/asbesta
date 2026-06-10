@@ -21,6 +21,7 @@
       }
     ],
     "import-notation": "string",
+    "property-no-unknown": [true, { "ignoreProperties": ["animation-timeline", "animation-range"] }],
     "value-keyword-case": null,
     "custom-property-empty-line-before": null,
     "comment-empty-line-before": null

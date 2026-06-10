@@ -7,13 +7,18 @@ import Gruende from '../components/sections/Gruende.astro';
 import AblaufSteps from '../components/sections/AblaufSteps.astro';
 import Bewertungen from '../components/sections/Bewertungen.astro';
 import CtaSection from '../components/sections/CtaSection.astro';
+import SchemaGraph from '../components/schema/SchemaGraph.astro';
+import { buildHomeGraph } from '../lib/schema';
 
+const origin = Astro.site?.origin ?? 'https://www.asbesta-schadstoffsanierung.de';
+const homeGraph = buildHomeGraph(origin);
 const title = 'Asbestsanierung Marl & NRW | Asbesta Schadstoffsanierung';
 const description =
   'Zertifizierte Asbest- und Schadstoffsanierung nach TRGS 519 aus Marl für ganz NRW. Festpreis, kostenlose Besichtigung, lückenloser Entsorgungsnachweis. Jetzt anfragen.';
 ---
 
 <BaseLayout title={title} description={description}>
+  <SchemaGraph slot="head" graph={homeGraph} />
   <Hero />
   <TrustBar />
   <LeistungenGrid />

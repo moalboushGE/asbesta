@@ -80,3 +80,32 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Sanfte Scroll-Reveal-Animation – reine CSS (kein JS), nur bei Browser-Support und ohne reduzierte Bewegung. */
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 18%;
+    }
+  }
+}
+
+/* Rendering-Performance auf langen Seiten: nicht sichtbare Bereiche werden uebersprungen. */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
