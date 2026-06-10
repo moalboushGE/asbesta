@@ -12,6 +12,8 @@ interface Props {
 
 const { title, description } = Astro.props;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : Astro.url.pathname;
+const origin = Astro.site?.origin ?? 'https://www.asbesta-schadstoffsanierung.de';
+const ogImage = `${origin}/og.png`;
 ---
 
 <!doctype html>
@@ -20,12 +22,20 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : As
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:locale" content="de_DE" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Asbesta Schadstoffsanierung" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
     <meta name="theme-color" content="#141414" />
     <slot name="head" />
   </head>
