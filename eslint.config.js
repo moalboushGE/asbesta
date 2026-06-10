@@ -7,7 +7,7 @@ import globals from 'globals';
 // Engineering- & Qualitaets-Charta (Plan Kap. 8.2/8.3): Komplexitaets- & Groessen-Budgets
 // gegen "God-Components", plus SonarJS fuer kognitive Komplexitaet.
 export default tseslint.config(
-  { ignores: ['dist/', '.astro/', 'node_modules/', 'screenshots/', 'sitemap*.xml'] },
+  { ignores: ['dist/', '.astro/', 'node_modules/', 'screenshots/', 'sitemap*.xml', 'functions/'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   ...astro.configs.recommended,

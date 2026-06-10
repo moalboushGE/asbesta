@@ -1,0 +1,68 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/patterns/Breadcrumb.astro';
+import ContactForm from '../components/sections/ContactForm.astro';
+import { site } from '../data/site';
+
+const title = 'Kontakt & kostenlose Anfrage | Asbesta Schadstoffsanierung';
+const description =
+  'Kontakt zu Asbesta für Asbest- und Schadstoffsanierung in NRW: Telefon, WhatsApp oder Anfrageformular. Kostenlose Besichtigung, Rückmeldung innerhalb von 24 Stunden.';
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="border-b border-gray-200 bg-gray-50">
+    <div class="mx-auto max-w-5xl px-4 py-10 lg:px-8 lg:py-14">
+      <Breadcrumb items={[{ name: 'Start', href: '/' }, { name: 'Kontakt' }]} />
+      <h1 class="mt-6 text-3xl sm:text-4xl">Kontakt &amp; kostenlose Anfrage</h1>
+      <p class="mt-4 max-w-2xl text-lg text-gray-700">
+        {site.responseTime}. Rufen Sie an, schreiben Sie per WhatsApp oder nutzen Sie das Formular –
+        wir melden uns zügig mit einem fairen Festpreis.
+      </p>
+    </div>
+  </section>
+
+  <div class="mx-auto grid max-w-5xl gap-10 px-4 py-12 lg:grid-cols-5 lg:px-8 lg:py-16">
+    <div class="lg:col-span-3">
+      <h2 class="text-2xl">Anfrage senden</h2>
+      <p class="mt-2 text-sm text-gray-700">Schildern Sie kurz Ihr Anliegen – wir melden uns zeitnah.</p>
+      <div class="mt-6"><ContactForm /></div>
+    </div>
+
+    <aside class="lg:col-span-2">
+      <div class="rounded-[var(--radius-card)] border border-gray-200 bg-gray-50 p-6">
+        <h2 class="font-sans text-lg font-semibold text-ink-900">Direkt erreichen</h2>
+        <ul class="mt-4 space-y-4 text-sm">
+          <li class="flex items-start gap-3">
+            <Icon name="lucide:phone" class="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
+            <span>
+              <span class="block font-semibold text-ink-900">Telefon</span>
+              <a href={site.phone.href} class="text-gray-700 hover:text-red-700">{site.phone.display}</a>
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <Icon name="lucide:message-circle" class="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
+            <span>
+              <span class="block font-semibold text-ink-900">WhatsApp</span>
+              <a href={site.whatsapp.href} class="text-gray-700 hover:text-red-700">Nachricht &amp; Fotos senden</a>
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <Icon name="lucide:map-pin" class="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
+            <span>
+              <span class="block font-semibold text-ink-900">Anschrift</span>
+              <span class="text-gray-700">{site.address.street}, {site.address.zip} {site.address.city}</span>
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <Icon name="lucide:clock" class="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
+            <span>
+              <span class="block font-semibold text-ink-900">Erreichbarkeit</span>
+              <span class="text-gray-700">{site.responseTime}; Termine kurzfristig, auch im Notfall.</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>

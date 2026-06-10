@@ -12,7 +12,14 @@ import Button from '../ui/Button.astro';
       versteckte Kosten.
     </p>
     <div class="mt-8 flex flex-wrap justify-center gap-3">
-      <Button href={site.phone.href} variant="primary">
+      <Button href="/kontakt/" variant="primary">
+        <Icon name="lucide:clipboard-list" class="h-4 w-4" />Kostenlose Anfrage
+      </Button>
+      <Button
+        href={site.phone.href}
+        variant="ghost"
+        class="border-white/20 bg-transparent text-white hover:border-white hover:text-white"
+      >
         <Icon name="lucide:phone" class="h-4 w-4" />{site.phone.display}
       </Button>
       <Button

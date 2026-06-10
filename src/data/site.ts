@@ -44,6 +44,6 @@ export const site = {
     { label: 'Leistungen', href: '/leistungen/' },
     { label: 'Standorte', href: '/standorte/' },
     { label: 'Bewertungen', href: '/#bewertungen' },
-    { label: 'Kontakt', href: '/#kontakt' },
+    { label: 'Kontakt', href: '/kontakt/' },
   ] as readonly NavItem[],
 } as const;
