@@ -55,9 +55,10 @@ const punkte = [
                 <Icon name={p.icon} class="h-6 w-6" />
               </span>
               <span
+                aria-hidden="true"
                 class:list={[
                   'font-display text-3xl font-extrabold',
-                  p.dark ? 'text-white/25' : 'text-gray-200',
+                  p.dark ? 'text-red-300' : 'text-red-600',
                 ]}
               >
                 {p.nr}

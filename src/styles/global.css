@@ -83,14 +83,14 @@
 }
 
 /* Sanfte Scroll-Reveal-Animation – reine CSS (kein JS), nur bei Browser-Support und ohne reduzierte Bewegung. */
+/* Bewusst nur Transform (kein Opacity-Fade): so bleiben Inhalte fuer Kontrast/Assistive
+   stets sichtbar, auch wenn sie unter der Falz noch nicht „enthuellt" sind. */
 @keyframes reveal-rise {
   from {
-    opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(20px);
   }
 
   to {
-    opacity: 1;
     transform: translateY(0);
   }
 }
