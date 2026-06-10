@@ -1,0 +1,23 @@
+# Cloudflare Pages – 301-Redirects der Alt-Domain (WordPress) auf die neue Struktur.
+# HINWEIS: Vollstaendige Abdeckung der ~1.960 Alt-URLs benoetigt den Crawl-/GSC-Export
+# der Alt-Domain. Bis dahin sichert der Splat-Fallback am Ende gegen 404.
+# (Explizite Leistung-x-Stadt-Redirects werden bei Bedarf erganzt, sobald die Alt-URLs vorliegen.)
+
+# --- Hauptseiten ---
+/firma            /                301
+/firma/           /                301
+/leistungen       /leistungen/     301
+/unserservice     /leistungen/     301
+/unserservice/    /leistungen/     301
+/bewertungen      /#bewertungen    301
+/bewertungen/     /#bewertungen    301
+/kontakt          /kontakt/        301
+/kontakt-2        /kontakt/        301
+/kontakt-2/       /kontakt/        301
+/impressum        /impressum/      301
+/datenschutz      /datenschutz/    301
+
+# --- Fallback fuer alte Leistungs-/Stadt-URLs ohne exakte Zielseite ---
+# Faengt /leistungen/<leistung>-<stadt> (Alt-Schema) ab und leitet auf den Leistungs-Hub.
+# (Bestehende neue Seiten wie /leistungen/asbestsanierung/ sind statische Assets und werden NICHT umgeleitet.)
+/leistungen/*     /leistungen/     301
