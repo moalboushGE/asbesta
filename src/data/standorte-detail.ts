@@ -584,5 +584,241 @@ export const standorteDetail: Record<string, StandortDetail> = {
         "antwort": "Ja. Asbesta ist ein zugelassener Fachbetrieb nach TRGS 519 und arbeitet zudem nach TRGS 521 und 524 sowie nach den Vorgaben der GefStoffV. In über 15 Jahren haben wir mehr als 1.000 Projekte im Ruhrgebiet abgewickelt - sicher, behördlich angemeldet, dokumentiert und mit abschließender Freimessung nach VDI 3492."
       }
     ]
+  },
+  "datteln": {
+    "metaTitle": "Asbestsanierung Datteln | Schadstoffsanierung TRGS 519",
+    "metaDescription": "Asbest- & Schadstoffsanierung in Datteln vom zertifizierten Fachbetrieb (TRGS 519). Aus der Nachbarstadt Marl in 12 Min vor Ort. Jetzt kostenlos anfragen.",
+    "heroIntro": "Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Datteln? Asbesta ist Ihr zertifizierter Fachbetrieb nach TRGS 519 - und da unser Firmensitz im direkt benachbarten Marl liegt, sind wir in rund 12 Minuten bei Ihnen vor Ort, ob in der Stadtmitte, in Horneburg oder im ländlichen Ahsen. Von der Materialanalyse über die staubdichte Entfernung bis zur Freimessung nach VDI 3492 übernehmen wir Ihr Projekt sicher und behördenkonform aus einer Hand.",
+    "anfahrt": "ca. 7 km / 12 Min ab unserem Standort Marl (Venusweg 24) - Datteln ist unsere direkte Nachbarstadt mit sehr kurzen Wegen in alle Ortsteile",
+    "lokalKontext": [
+      "Datteln am nördlichen Rand des Kreises Recklinghausen ist eng mit der Geschichte von Bergbau und Wasserstraßen verbunden - und genau das prägt bis heute die Bausubstanz. Mit der Zeche Emscher-Lippe entwickelte sich das einstige Ackerbürgerstädtchen zur Industriestadt, und rund um die Schachtanlagen entstanden über Jahrzehnte Zechen- und Arbeitersiedlungen sowie Werkswohnungen. Zugleich wuchs Datteln als Kanalstadt am größten Kanalknotenpunkt Europas, wo Dortmund-Ems-Kanal, Datteln-Hamm-Kanal und Wesel-Datteln-Kanal zusammentreffen. Gebäude aus den 1950er- bis frühen 1990er-Jahren, wie sie diese Epoche prägen, bergen ein erhöhtes Risiko für asbesthaltige Baustoffe und sind der typische Anlass für eine fachgerechte Sanierung.",
+      "In den Arbeiter- und Zechensiedlungen sowie im verdichteten Nachkriegs-Wohnbau der Stadtmitte treffen wir regelmäßig auf klassische Fundstellen: Floor-Flex-Platten und Cushion-Vinyl-Beläge mit schwarzem Bitumenkleber im Bodenaufbau, asbesthaltige Fensterbänke, Spachtelmassen und Fliesenkleber. An Dächern, Garagen, Schuppen und Nebengebäuden findet sich häufig Welleternit, an nachträglich verkleideten Fassaden kommen Asbestzementplatten vor. Diese Materialien werden bei Modernisierung, Dachausbau, Heizungstausch oder Abriss freigelegt - und dürfen nur unter den strengen Schutzmaßnahmen der TRGS 519 entfernt werden.",
+      "Eine Besonderheit Dattelns sind die ländlich geprägten Ortsteile Ahsen, Hagem und Pelkum mit ihren Höfen, Stallungen und Scheunen. Dort dominieren großflächige Welleternit-Dächer und Asbestzement-Wellplatten, die über die Jahre verwittert sind und beim Brechen Fasern freisetzen. Im Gewerbe- und Industriebestand entlang der Kanäle und rund um das Umfeld des Kraftwerks Datteln 4 kommen zusätzlich künstliche Mineralfasern (KMF) in alten Dämmungen sowie PAK-belastete Kleber, Teer- und Bitumenabdichtungen vor. Vor jeder Maßnahme klären wir mit einer Materialanalyse, ob und welche Schadstoffe verbaut sind.",
+      "Für Eigentümer, Hausverwaltungen, Landwirte und Gewerbebetriebe in Datteln übernehmen wir die komplette Bandbreite aus einer Hand: Probenahme und Laboranalyse, Erstellung des Arbeits- und Sicherheitsplans, die vorgeschriebene Anzeige bei der zuständigen Bezirksregierung Münster, staubdichte Sanierung mit Schwarz-Weiß-Schleuse und Unterdruckhaltung sowie die fachgerechte Entsorgung mit lückenlosem Nachweis. Den Abschluss bildet eine Freimessung nach VDI 3492. Weil unser Firmensitz im direkt benachbarten Marl liegt, sind wir bei Ortsterminen, Notfällen und kurzfristigen Anfragen in Datteln besonders schnell vor Ort."
+    ],
+    "stadtteile": [
+      "Stadtmitte",
+      "Horneburg",
+      "Meckinghoven",
+      "Ahsen",
+      "Hagem",
+      "Pelkum",
+      "Markfeld",
+      "Klostern",
+      "Bockum",
+      "Natrop"
+    ],
+    "localFaqs": [
+      {
+        "frage": "Wie schnell sind Sie von Marl aus in Datteln vor Ort?",
+        "antwort": "Datteln ist die direkte Nachbarstadt unseres Firmensitzes in Marl - die Anfahrt beträgt nur rund 7 km bzw. etwa 12 Minuten. Dadurch sind wir für Ortstermine, Beratungen und kurzfristige Einsätze in allen Dattelner Ortsteilen besonders schnell verfügbar, von der Stadtmitte bis nach Ahsen."
+      },
+      {
+        "frage": "In welchen Dattelner Gebäuden ist mit Asbest zu rechnen?",
+        "antwort": "Erhöhtes Risiko besteht vor allem bei Gebäuden aus den 1950er- bis frühen 1990er-Jahren - etwa in den Zechen- und Arbeitersiedlungen rund um die ehemalige Zeche Emscher-Lippe sowie im Nachkriegs-Wohnbau der Stadtmitte. Typische Fundstellen sind Floor-Flex-Böden mit Bitumenkleber, Welleternit-Dächer, Asbestzement-Fassadenplatten und Fensterbänke. In den ländlichen Ortsteilen kommen großflächige Welleternit-Dächer an Höfen und Scheunen hinzu."
+      },
+      {
+        "frage": "Sanieren Sie auch Welleternit-Dächer an Höfen und Scheunen in Ahsen, Hagem oder Pelkum?",
+        "antwort": "Ja. In den ländlich geprägten Ortsteilen sanieren wir regelmäßig Welleternit-Dächer und Asbestzement-Wellplatten an Stallungen, Scheunen, Schuppen und Carports. Wir demontieren die oft großflächigen und verwitterten Platten staubarm nach TRGS 519, verpacken sie sicher und entsorgen sie ordnungsgemäß inklusive Entsorgungsnachweis."
+      },
+      {
+        "frage": "Welche Behörde ist für die Asbest-Anzeige in Datteln zuständig?",
+        "antwort": "Für Datteln ist die Bezirksregierung Münster die zuständige Behörde für die Anzeige von Asbestarbeiten nach TRGS 519. Als Fachbetrieb übernehmen wir diese Anzeige für Sie und kümmern uns um die gesamte vorgeschriebene Dokumentation - von der Materialanalyse über die Entsorgungsnachweise bis zur abschließenden Freimessung."
+      },
+      {
+        "frage": "Übernehmen Sie nach der Sanierung in Datteln auch die Freimessung?",
+        "antwort": "Ja. Nach Abschluss der Arbeiten führen wir bei Sanierungen in geschlossenen Räumen eine Freimessung der Raumluft nach VDI 3492 durch. Erst wenn die Faserkonzentration die zulässigen Grenzwerte unterschreitet, geben wir die Räume oder das Gebäude wieder frei - für Ihre Sicherheit und eine rechtssichere Dokumentation Ihres Projekts in Datteln."
+      }
+    ]
+  },
+  "haltern": {
+    "metaTitle": "Asbestsanierung Haltern am See | TRGS 519 Fachbetrieb",
+    "metaDescription": "Asbest- & Schadstoffsanierung in Haltern am See vom zertifizierten Fachbetrieb (TRGS 519). Nur ca. 12 km ab Marl - schnell vor Ort. Jetzt anfragen.",
+    "heroIntro": "Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Haltern am See? Asbesta ist Ihr zertifizierter Fachbetrieb nach TRGS 519 - mit Sitz im nahen Marl sind wir in rund 18 Minuten bei Ihnen vor Ort, ob in Haltern-Mitte, Sythen oder den ländlichen Ortsteilen Lippramsdorf und Flaesheim. Von der Materialanalyse über die staubdichte Entfernung bis zur abschließenden Freimessung übernehmen wir Ihr Projekt sicher und behördenkonform aus einer Hand.",
+    "anfahrt": "ca. 12 km / 18 Min ab unserem Firmensitz Marl (Venusweg 24) - Haltern am See liegt direkt nördlich, meist über die B58 oder B51 gut erreichbar",
+    "lokalKontext": [
+      "Haltern am See markiert den Übergang vom nördlichen Ruhrgebiet ins ländlich geprägte Münsterland - und genau diese Lage prägt auch die Bausubstanz. Anders als die stark vom Steinkohlebergbau geprägten Nachbarstädte ist Haltern weniger von Zechensiedlungen, dafür umso mehr von der historischen Altstadt, ausgedehntem Einfamilienhausbestand und ländlichen Höfen geprägt. Rund um den Halterner Stausee dominiert der Tourismus, während die Ortsteile Lippramsdorf, Flaesheim, Sythen und Lavesum bis heute landwirtschaftlich geprägt sind. Wer hier ein Haus aus den 1950er- bis frühen 1990er-Jahren modernisiert oder ein altes Nebengebäude abreißt, stößt jedoch ebenso häufig auf asbesthaltige Baustoffe wie in den Bergbaustädten der Region.",
+      "Besonders auffällig ist in Haltern der große Bestand an landwirtschaftlichen Gebäuden: An Scheunen, Stallungen und Maschinenhallen in Lippramsdorf, Flaesheim, Sythen und Lavesum finden sich großflächige Asbestzement-Dächer und -Fassaden aus Welleternit, die über Jahrzehnte als günstige, witterungsbeständige Eindeckung verbaut wurden. Diese Wellplatten gelten heute als stark sanierungsbedürftig, weil sie durch Witterung verwittern und Fasern freisetzen können. Bei der Demontage solcher großen Dachflächen ist eine Anzeige der Arbeiten nach TRGS 519 zwingend - wir übernehmen Planung, kontrollierten Rückbau und die fachgerechte Entsorgung der Platten.",
+      "Im Nachkriegs- und Siedlungswohnungsbau von Haltern-Mitte und Sythen, das durch die ehemalige Zeche Sythen geprägt ist, treffen wir regelmäßig auf typische Innenraum-Asbestquellen: Floor-Flex-Bodenplatten, Cushion-Vinyl-Beläge und schwarzen Bitumenkleber unter alten Fußböden sowie asbesthaltige Fensterbänke, Spachtelmassen und Putze. In Einfamilienhäusern aus den 1960er- und 1970er-Jahren kommen zusätzlich künstliche Mineralfasern (KMF) in alten Dämmungen und PAK-belastete Teer- und Bitumenanstriche vor. All diese Materialien werden bei Renovierung, Dachausbau oder Abriss zur Gefahr und dürfen nur unter den Schutzmaßnahmen der TRGS 519 entfernt werden.",
+      "Für Eigentümer, Landwirte, Hausverwaltungen und Gewerbebetriebe in Haltern übernehmen wir die komplette Bandbreite: Materialprobenahme und Laboranalyse zur sicheren Identifikation, Erstellung des Arbeits- und Sicherheitsplans, die behördliche Anzeige bei der zuständigen Bezirksregierung Münster, die staubdichte Sanierung sowie die abschließende Luftmessung nach VDI 3492 zur Freigabe. Da unser Firmensitz im benachbarten Marl liegt, sind wir bei Ortsterminen, Notfällen und kurzfristigen Anfragen in Haltern am See besonders schnell vor Ort - mit über 15 Jahren Erfahrung und mehr als 1.000 abgeschlossenen Projekten im nördlichen Ruhrgebiet und Münsterland."
+    ],
+    "stadtteile": [
+      "Haltern-Mitte",
+      "Lippramsdorf",
+      "Flaesheim",
+      "Hullern",
+      "Sythen",
+      "Lavesum",
+      "Holtwick",
+      "Hamm-Bossendorf",
+      "Eppendorf",
+      "Lehmbrack"
+    ],
+    "localFaqs": [
+      {
+        "frage": "Wie schnell sind Sie von Marl aus in Haltern am See vor Ort?",
+        "antwort": "Haltern am See liegt nur rund 12 km bzw. etwa 18 Minuten von unserem Firmensitz in Marl entfernt - meist über die B58 oder B51. Dadurch sind wir für Ortstermine, Beratungen und kurzfristige Einsätze in allen Halterner Stadtteilen, von Haltern-Mitte über Sythen bis Lavesum, besonders schnell verfügbar."
+      },
+      {
+        "frage": "Wir haben ein altes Asbestzement-Dach auf der Scheune in Lippramsdorf - übernehmen Sie auch landwirtschaftliche Gebäude?",
+        "antwort": "Ja. Die großflächigen Welleternit-Dächer und -Fassaden an Scheunen, Stallungen und Maschinenhallen in Lippramsdorf, Flaesheim, Sythen und Lavesum sind ein typischer Anlass für unsere Arbeit. Wir demontieren die Asbestzementplatten kontrolliert und staubarm, melden die Arbeiten ordnungsgemäß an und entsorgen das Material fachgerecht inklusive vollständiger Dokumentation."
+      },
+      {
+        "frage": "Welche Behörde ist für die Asbest-Anzeige in Haltern am See zuständig?",
+        "antwort": "Haltern am See gehört zum Regierungsbezirk Münster. Die nach TRGS 519 vorgeschriebene Anzeige asbesthaltiger Arbeiten erfolgt daher bei der Bezirksregierung Münster. Diese behördliche Anmeldung übernehmen wir als zertifizierter Fachbetrieb für Sie, sodass Ihre Sanierung in Haltern von Beginn an rechtssicher abläuft."
+      },
+      {
+        "frage": "In welchen Halterner Gebäuden ist mit Asbest zu rechnen?",
+        "antwort": "Besonders betroffen sind landwirtschaftliche Gebäude mit Welleternit-Dächern in den ländlichen Ortsteilen sowie Wohnhäuser aus den 1950er- bis frühen 1990er-Jahren in Haltern-Mitte und Sythen. Typisch sind dort Floor-Flex-Böden, Bitumenkleber, Cushion-Vinyl, Asbestzement-Fensterbänke und -Fassadenplatten. In Häusern der 1960er/70er kommen zusätzlich KMF-Dämmungen und PAK-belastete Anstriche vor."
+      },
+      {
+        "frage": "Was kostet eine Asbestsanierung in Haltern am See?",
+        "antwort": "Pauschale Preise nennen wir aus Seriosität erst nach einer Sichtung vor Ort, da Materialart, Menge, Zustand und Zugänglichkeit entscheidend sind - ein einzelnes Scheunendach in Flaesheim verlangt einen anderen Aufwand als sanierte Böden in einem Wohnhaus. Wir entnehmen fachgerecht Materialproben, lassen diese im Labor analysieren und erstellen Ihnen anschließend ein transparentes, auf Ihr Objekt zugeschnittenes Angebot."
+      }
+    ]
+  },
+  "castrop-rauxel": {
+    "metaTitle": "Asbestsanierung Castrop-Rauxel | Schadstoffsanierung TRGS 519",
+    "metaDescription": "Asbest- & Schadstoffsanierung in Castrop-Rauxel vom zertifizierten Fachbetrieb (TRGS 519). Materialanalyse, Freimessung & Entsorgung. Schnell vor Ort ab Marl.",
+    "heroIntro": "Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Castrop-Rauxel? Asbesta ist Ihr zertifizierter Fachbetrieb nach TRGS 519 für die ehemalige Bergbaustadt im Kreis Recklinghausen - von unserem Sitz im benachbarten Marl sind wir in rund 25 Minuten bei Ihnen, ob in Castrop-Mitte, Ickern, Habinghorst oder Henrichenburg. Von der Materialprobe über die staubdichte Demontage bis zur Freimessung nach VDI 3492 übernehmen wir Ihr Projekt sicher und behördenkonform aus einer Hand.",
+    "anfahrt": "ca. 18 km / 25 Min ab unserem Firmensitz Marl (Venusweg 24) - Castrop-Rauxel liegt direkt im südlichen Nachbarkreis und ist gut über A42 und A45 erreichbar",
+    "lokalKontext": [
+      "Castrop-Rauxel ist eine klassische Bergbaustadt im Kreis Recklinghausen, deren Stadtbild bis heute von den ehemaligen Zechen Erin, Victor und Ickern geprägt ist. Rund um diese Schachtanlagen entstanden in der Hochphase des Steinkohlebergbaus zahlreiche Zechen- und Arbeitersiedlungen, etwa in Schwerin, Habinghorst und Ickern, dazu ein dichter Geschoss- und Reihenhausbestand der Nachkriegszeit sowie Gartenstadt-Quartiere. Viele dieser Gebäude stammen aus den 1950er- bis 1980er-Jahren - einer Zeit, in der asbesthaltige Baustoffe Standard waren. Genau diese Bausubstanz bestimmt heute den Sanierungsbedarf: Wer ein Haus aus den Zechen- und Aufbaujahren modernisiert, umbaut oder abreißt, stößt fast zwangsläufig auf asbesthaltige Materialien.",
+      "In den Arbeiter- und Zechenkolonien sowie im Siedlungswohnungsbau dieser Epoche treffen wir regelmäßig auf Welleternit-Dächer, Asbestzement-Fassadenplatten und Wellplatten an Garagen, Schuppen und Nebengebäuden. Im Innenausbau sind Floor-Flex-Bodenplatten, Cushion-Vinyl-Beläge und schwarzer Bitumenkleber unter alten Fußböden typisch, dazu asbesthaltige Fensterbänke, Spachtelmassen und Putze. Bei energetischen Modernisierungen, beim Dachausbau oder beim Rückbau alter Nebengebäude werden solche Materialien freigelegt - hier ist eine fachgerechte Sanierung nach TRGS 519 zwingend vorgeschrieben. Wir identifizieren das Material vorab über eine Laboranalyse und sanieren anschließend staubdicht und dokumentiert.",
+      "Neben Asbest spielen in Castrop-Rauxel weitere Schadstoffe eine Rolle. Im Geschosswohnungsbau und in Zweckbauten der 1960er- und 1970er-Jahre finden sich künstliche Mineralfasern (KMF) in alten Dämmungen sowie PAK-belastete Teer- und Bitumenprodukte, etwa in Parkettklebern und Abdichtungen. Im Umfeld der ehemaligen Schachtanlagen und Industrieflächen kommen zudem Gewerbe- und Hallenobjekte mit belasteten Materialien vor. Für jeden dieser Fälle bieten wir Materialanalysen, kontrollierten Rückbau und Luftmessungen nach VDI 3492 an - abgestimmt auf den jeweiligen Bautyp, ob denkmalnahe Kolonie, Reihenhaus oder Gewerbebau.",
+      "Zu beachten ist, dass asbesthaltige Arbeiten vor Beginn bei der zuständigen Behörde angezeigt werden müssen. Für Castrop-Rauxel ist dies die Bezirksregierung Münster, bei der wir die vorgeschriebene Anzeige nach TRGS 519 fristgerecht einreichen. Unser Ablauf folgt einem festen Schema: Erstbegehung und Probenahme, Laboranalyse, Arbeits- und Sicherheitsplan, behördliche Anzeige, staubdichte Sanierung mit Schwarz-Weiß-Anlage, fachgerechte Entsorgung und abschließende Freimessung. Da unser Firmensitz im benachbarten Marl liegt, sind wir bei Ortsterminen, Notfällen und kurzfristigen Anfragen in Castrop-Rauxel schnell vor Ort - mit über 15 Jahren Erfahrung und mehr als 1.000 abgeschlossenen Projekten im nördlichen Ruhrgebiet."
+    ],
+    "stadtteile": [
+      "Castrop-Mitte",
+      "Rauxel",
+      "Ickern",
+      "Habinghorst",
+      "Henrichenburg",
+      "Schwerin",
+      "Behringhausen",
+      "Frohlinde",
+      "Bladenhorst",
+      "Obercastrop",
+      "Merklinde",
+      "Dingen"
+    ],
+    "localFaqs": [
+      {
+        "frage": "Wie schnell sind Sie von Marl aus in Castrop-Rauxel vor Ort?",
+        "antwort": "Castrop-Rauxel liegt nur rund 18 km bzw. etwa 25 Minuten von unserem Firmensitz in Marl entfernt und ist gut über die A42 und A45 erreichbar. Dadurch sind wir für Ortstermine, Beratungen und kurzfristige Einsätze in allen Stadtteilen - von Castrop-Mitte über Ickern bis Henrichenburg - schnell verfügbar. Rufen Sie uns einfach unter 02365 2960630 an, dann vereinbaren wir eine zeitnahe Begehung."
+      },
+      {
+        "frage": "In welchen Castrop-Rauxeler Gebäuden ist mit Asbest zu rechnen?",
+        "antwort": "Besonders betroffen ist die Bausubstanz der 1950er- bis 1980er-Jahre, also der dichte Nachkriegs- und Zechenwohnungsbau sowie die Arbeitersiedlungen rund um die ehemaligen Zechen Erin, Victor und Ickern in Stadtteilen wie Schwerin, Habinghorst und Ickern. Typisch sind Welleternit-Dächer, Asbestzement-Fassadenplatten an Neben- und Gewerbegebäuden sowie Floor-Flex-Böden, Bitumenkleber und asbesthaltige Fensterbänke im Innenausbau von Bauten bis etwa Anfang der 1990er-Jahre."
+      },
+      {
+        "frage": "Welche Behörde ist für die Asbest-Anzeige in Castrop-Rauxel zuständig?",
+        "antwort": "Für Castrop-Rauxel ist die Bezirksregierung Münster die zuständige Behörde für die Anzeige asbesthaltiger Arbeiten nach TRGS 519. Diese Anzeige muss vor Beginn der Sanierung fristgerecht eingereicht werden. Als Fachbetrieb übernehmen wir die vollständige behördliche Abwicklung für Sie - von der Anzeige über die Dokumentation bis zur abschließenden Freimessung."
+      },
+      {
+        "frage": "Sanieren Sie auch in den Zechensiedlungen und älteren Kolonien?",
+        "antwort": "Ja. In den Arbeiter- und Zechensiedlungen in Schwerin, Habinghorst, Ickern und den älteren Kolonien arbeiten wir besonders sorgfältig und passen die Sanierung an den jeweiligen Bautyp an. Dort stehen häufig Welleternit-Dächer, Asbestzement-Fassaden und Floor-Flex-Böden im Fokus, ebenso KMF-Dämmstoffe und PAK-belastete Alt-Anstriche. Wir entfernen diese Materialien staubdicht nach TRGS 519 und belegen die einwandfreie Raumluft anschließend durch eine Freimessung."
+      },
+      {
+        "frage": "Was kostet eine Asbestsanierung in Castrop-Rauxel?",
+        "antwort": "Seriöse Pauschalpreise lassen sich erst nach einer Sichtung vor Ort nennen, da Materialart, Menge, Zugänglichkeit und der jeweilige Bautyp entscheidend sind. Wir entnehmen zunächst fachgerecht Materialproben, lassen diese im Labor analysieren und erstellen Ihnen anschließend ein transparentes, auf Ihr Objekt in Castrop-Rauxel zugeschnittenes Angebot - ohne erfundene Pauschalen."
+      }
+    ]
+  },
+  "dortmund": {
+    "metaTitle": "Asbestsanierung Dortmund | Schadstoffsanierung TRGS 519",
+    "metaDescription": "Asbest- & Schadstoffsanierung in Dortmund vom zertifizierten Fachbetrieb (TRGS 519): Materialanalyse, sichere Demontage & Freimessung. Ab Marl schnell vor Ort.",
+    "heroIntro": "Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Dortmund? Asbesta ist Ihr zertifizierter Fachbetrieb nach TRGS 519 für die größte Stadt Westfalens – von unserem Sitz im benachbarten Marl sind wir über die A2/A45 in rund 30 bis 35 Minuten bei Ihnen, ob in der Innenstadt, in Hörde, Aplerbeck oder Eving. Von der Materialprobe über die staubdichte Demontage bis zur Freimessung nach VDI 3492 übernehmen wir Ihr Projekt sicher und behördenkonform.",
+    "anfahrt": "ca. 30 km / 30–35 Min ab unserem Standort Marl (Venusweg 24) – meist über die A2 und A45 erreichbar",
+    "lokalKontext": [
+      "Dortmund ist die größte Stadt Westfalens und über Jahrzehnte vom Dreiklang aus Kohle, Stahl und Bier geprägt worden. Mit Zechen wie Zollern in Bövinghausen und Hansa in Huckarde sowie dem Stahlstandort Phoenix in Hörde – heute der Phoenix-See – wuchs die Stadt rasant zur Industriemetropole. In dieser Hochphase und besonders in den Wiederaufbaujahren nach 1945 entstand ein enormer Bestand an Wohn-, Werks- und Zweckbauten, in denen asbesthaltige Baustoffe seinerzeit Standard waren. Genau dieser Gebäudebestand ist heute der typische Anlass für eine Asbest- und Schadstoffsanierung: Wer ein Objekt aus den Zechen-, Stahl- oder Aufbaujahren modernisiert oder abreißt, stößt fast zwangsläufig auf belastete Materialien.",
+      "Ein wichtiger Hinweis für Bauherren und Eigentümer in Dortmund: Die Stadt ist zwar kreisfrei, gehört aber zum Regierungsbezirk Arnsberg. Die nach TRGS 519 vorgeschriebene Anzeige asbesthaltiger Arbeiten läuft daher über die Bezirksregierung Arnsberg – nicht über Münster, wie viele aus dem nördlichen Ruhrgebiet annehmen. Wir kennen die zuständigen Wege und übernehmen die fristgerechte Anzeige, die Erstellung des Arbeits- und Sicherheitsplans sowie die komplette Dokumentation für Sie. So bleibt Ihre Sanierung in Dortmund rechtssicher und nachvollziehbar.",
+      "In den ausgedehnten Zechensiedlungen und Werkskolonien rund um die alten Schachtanlagen sowie im riesigen Nachkriegs-Geschosswohnbau der Innenstadt und des Nordens – etwa in Eving, Scharnhorst und der Nordstadt – treffen wir regelmäßig auf typische asbesthaltige Materialien. Dazu zählen Welleternit-Dächer und Asbestzement-Fassadenplatten an Wohn- und Nebengebäuden, Floor-Flex-Bodenplatten mit schwarzem Bitumenkleber, Cushion-Vinyl-Beläge sowie asbesthaltige Fensterbänke, Spachtelmassen und Putze. In Hochhäusern und Verwaltungsbauten der 1960er- und 1970er-Jahre kommen zusätzlich Brandschutzverkleidungen, künstliche Mineralfasern (KMF) in Dämmungen und PAK-belastete Kleber sowie Bitumenabdichtungen vor.",
+      "Wir gehen in Dortmund strukturiert vor: Zunächst entnehmen wir verdächtige Materialien fachgerecht und lassen sie im Labor analysieren. Auf dieser Grundlage planen wir die Sanierung nach GefStoffV, melden die Arbeiten bei der Bezirksregierung Arnsberg an und führen Demontage, Abbruch und Schadstoffentfernung mit geschultem Personal und Schwarz-Weiß-Schleuse durch. Abschließend belegen Luftmessungen nach VDI 3492 die einwandfreie Raumluft, sodass Ihr Objekt – ob Gründerzeithaus im Kreuzviertel, Zechensiedlung in Bövinghausen oder Gewerbebau in Hörde – wieder gefahrlos genutzt werden kann. Mit über 15 Jahren Erfahrung und mehr als 1.000 abgeschlossenen Projekten kennen wir die Bausubstanz des Ruhrgebiets im Detail."
+    ],
+    "stadtteile": [
+      "Innenstadt",
+      "Hörde",
+      "Aplerbeck",
+      "Hombruch",
+      "Eving",
+      "Scharnhorst",
+      "Mengede",
+      "Brackel",
+      "Lütgendortmund",
+      "Huckarde",
+      "Dorstfeld",
+      "Marten"
+    ],
+    "localFaqs": [
+      {
+        "frage": "Bei welcher Behörde wird die Asbestsanierung in Dortmund angezeigt?",
+        "antwort": "Dortmund ist kreisfrei, gehört aber zum Regierungsbezirk Arnsberg. Die nach TRGS 519 vorgeschriebene Anzeige asbesthaltiger Arbeiten erfolgt daher über die Bezirksregierung Arnsberg und nicht über Münster. Diese Anzeige sowie die gesamte behördliche Dokumentation übernehmen wir fristgerecht für Sie."
+      },
+      {
+        "frage": "Wie schnell sind Sie von Marl aus in Dortmund vor Ort?",
+        "antwort": "Unser Firmensitz liegt im benachbarten Marl am Venusweg 24. Die Anfahrt nach Dortmund beträgt über die A2/A45 nur rund 30 km bzw. etwa 30 bis 35 Minuten. Dadurch sind wir für Ortstermine, Beratungen und kurzfristige Einsätze in allen Dortmunder Stadtteilen schnell verfügbar."
+      },
+      {
+        "frage": "In welchen Dortmunder Gebäuden ist mit Asbest zu rechnen?",
+        "antwort": "Besonders betroffen sind Bauten aus der Bergbau-, Stahl- und Nachkriegszeit: die Zechensiedlungen rund um Zollern in Bövinghausen und Hansa in Huckarde, das Phoenix-Umfeld in Hörde sowie der Geschosswohnbau in Eving, Scharnhorst und der Nordstadt. Typisch sind Welleternit-Dächer, Asbestzement-Fassadenplatten, Floor-Flex-Böden mit Bitumenkleber sowie Fensterbänke, Putze und Spachtelmassen in Objekten bis Anfang der 1990er-Jahre."
+      },
+      {
+        "frage": "Was kostet eine Probenahme zur Feststellung von Asbest in Dortmund?",
+        "antwort": "Pauschale Preise nennen wir seriös erst nach Sichtung vor Ort, da Materialart, Menge und Zugänglichkeit entscheidend sind. Wir entnehmen die Materialproben fachgerecht, lassen sie im Labor analysieren und erstellen Ihnen anschließend ein transparentes, auf Ihr Objekt zugeschnittenes Angebot."
+      },
+      {
+        "frage": "Sanieren Sie auch Gewerbe- und Industrieobjekte im Dortmunder Strukturwandel-Gebiet?",
+        "antwort": "Ja. Neben Wohngebäuden übernehmen wir die Schadstoffsanierung von Gewerbe-, Hallen- und Industrieobjekten, wie sie etwa im Umfeld der ehemaligen Zechen und Stahlstandorte häufig vorkommen. Dazu gehören Materialanalysen, kontrollierter Rückbau, Abbruch und Luftmessungen nach VDI 3492 – alles dokumentiert und nach den Vorgaben der GefStoffV sowie TRGS 519/521/524."
+      }
+    ]
+  },
+  "duisburg": {
+    "metaTitle": "Asbestsanierung Duisburg | Schadstoffsanierung TRGS 519",
+    "metaDescription": "Asbest- & Schadstoffsanierung in Duisburg: zertifizierter Fachbetrieb nach TRGS 519. Werkssiedlungen, Hütten- & Hafenbestand, Materialanalyse & Luftmessung.",
+    "heroIntro": "Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Duisburg? Asbesta ist Ihr nach TRGS 519 zertifizierter Fachbetrieb - von der Materialanalyse über die abgeschottete Sanierung bis zur Freimessung nach VDI 3492. Ob Arbeitersiedlung in Marxloh, Nachkriegsbau in Meiderich oder Gewerbeobjekt am Hafen: Wir arbeiten staubdicht, behördenkonform und übernehmen die komplette Abwicklung für Sie. Von unserem Sitz im nahen Marl sind wir nach rund 40 Minuten Anfahrt bei Ihnen vor Ort.",
+    "anfahrt": "ca. 45 km / 40 Min ab unserem Firmensitz in Marl (Venusweg 24) - meist über die A52/A42. Duisburg gehört zu unserem regelmäßigen Einsatzgebiet im westlichen Ruhrgebiet.",
+    "lokalKontext": [
+      "Duisburg ist wie kaum eine andere Stadt von Stahl, Kohle und dem größten Binnenhafen der Welt geprägt - und genau das spiegelt sich in der Bausubstanz wider. Rund um die Hüttenwerke von Thyssenkrupp in Hamborn und Bruckhausen, das ehemalige Krupp-Hüttenwerk in Rheinhausen und die zahlreichen Zechen entstanden über Jahrzehnte ausgedehnte Arbeiter- und Werkssiedlungen. Viele dieser Häuser stammen aus einer Zeit, in der asbesthaltige Baustoffe Standard waren, und wurden in den 1950er- bis 1980er-Jahren mehrfach modernisiert. Wer ein solches Gebäude heute umbaut, energetisch saniert oder abreißt, stößt fast zwangsläufig auf asbesthaltige Materialien.",
+      "In den Arbeiter- und Werkssiedlungen von Hamborn, Marxloh, Meiderich und Rheinhausen treffen wir typischerweise auf Welleternit-Dächer, Asbestzement-Fassadenplatten und Fensterbänke an Häusern, Garagen und Nebengebäuden. Im Innenausbau sind Floor-Flex-Bodenplatten, Cushion-Vinyl-Beläge und der schwarze Bitumenkleber darunter häufige Fundstellen, dazu asbesthaltige Spachtelmassen, Putze und Fliesenkleber. Diese Materialien sind im verbauten Zustand oft unauffällig, werden aber bei jedem Eingriff zur Gefahr. Deshalb klären wir vor jeder Maßnahme mit einer Materialprobe und Laboranalyse, was tatsächlich verbaut ist, und sanieren anschließend streng nach TRGS 519.",
+      "Den größten Teil des Wohnungsbestands machen Gebäude der Nachkriegs- und Wiederaufbaujahre aus - der dichte Geschosswohnungsbau in Hochfeld, Wanheimerort und Walsum sowie die gründerzeitlichen Quartiere in Neudorf und Duissern. In allen Bauten vor dem Asbestverbot 1993 ist mit asbesthaltigen Produkten in Brandschutzverkleidungen, Lüftungskanälen und Dachpappen zu rechnen, hinzu kommen künstliche Mineralfasern (KMF) aus alten Dämmungen. Im ausgeprägten Industrie-, Hafen- und Gewerbebestand entlang von Ruhrort, Hochfeld und den ehemaligen Hütten- und Zechenflächen kommen zusätzlich PAK-belastete Klebstoffe, teerhaltige Bitumenabdichtungen und großflächige Welleternit-Hallendächer vor.",
+      "Duisburg gehört zum Regierungsbezirk Düsseldorf, weshalb asbesthaltige Abbruch- und Sanierungsarbeiten nach TRGS 519 bei der Bezirksregierung Düsseldorf anzuzeigen sind. Diese behördliche Anzeige übernehmen wir als Fachbetrieb nach GefStoffV für Sie. Wir analysieren zunächst die verdächtigen Materialien im Labor, erstellen den Arbeits- und Sicherheitsplan und führen die Sanierung mit geschultem Personal, Schwarz-Weiß-Schleuse und Unterdruckhaltung durch. Abschließend belegen Luftmessungen nach VDI 3492 die einwandfreie Raumluft, sodass Ihr Objekt wieder gefahrlos genutzt werden kann - dokumentiert und mit lückenlosem Entsorgungsnachweis."
+    ],
+    "stadtteile": [
+      "Mitte",
+      "Hamborn",
+      "Marxloh",
+      "Meiderich",
+      "Rheinhausen",
+      "Homberg",
+      "Walsum",
+      "Rumeln-Kaldenhausen",
+      "Hochfeld",
+      "Wanheimerort",
+      "Neudorf",
+      "Ruhrort"
+    ],
+    "localFaqs": [
+      {
+        "frage": "Wie schnell sind Sie von Marl aus in Duisburg vor Ort?",
+        "antwort": "Unser Firmensitz liegt in Marl, rund 45 km bzw. etwa 40 Minuten über die A52/A42 von Duisburg entfernt. Termine zur Besichtigung und Probenahme vergeben wir kurzfristig im gesamten Stadtgebiet - von Walsum und Hamborn im Norden bis Rheinhausen und Rumeln-Kaldenhausen im Süden."
+      },
+      {
+        "frage": "Welche asbesthaltigen Materialien kommen in Duisburger Häusern besonders häufig vor?",
+        "antwort": "In den Arbeiter- und Werkssiedlungen rund um Hütten und Zechen in Hamborn, Marxloh, Meiderich und Rheinhausen finden wir typischerweise Welleternit-Dächer, Asbestzement-Fassadenplatten und Fensterbänke sowie Floor-Flex-Böden, Cushion-Vinyl und schwarzen Bitumenkleber im Innenausbau. Im Nachkriegs-Geschosswohnbau und in Gewerbeobjekten kommen zusätzlich KMF-Dämmungen, asbesthaltige Brandschutzverkleidungen und PAK-belastete Kleber vor. Eine Materialanalyse schafft vor jeder Sanierung Klarheit."
+      },
+      {
+        "frage": "Bei welcher Behörde muss die Asbestsanierung in Duisburg angezeigt werden?",
+        "antwort": "Duisburg gehört zum Regierungsbezirk Düsseldorf. Asbesthaltige Sanierungs- und Abbrucharbeiten nach TRGS 519 sind daher bei der Bezirksregierung Düsseldorf anzuzeigen. Diese Anzeige sowie die gesamte behördliche Abwicklung übernehmen wir als Fachbetrieb nach GefStoffV für Sie."
+      },
+      {
+        "frage": "Sanieren Sie auch Gewerbe-, Hallen- und Industrieobjekte am Duisburger Hafen?",
+        "antwort": "Ja. Neben Wohngebäuden übernehmen wir die Schadstoffsanierung von Gewerbe-, Hallen- und Industrieobjekten, etwa entlang von Ruhrort, Hochfeld und den ehemaligen Hütten- und Zechenflächen. Dazu gehören die Demontage großflächiger Welleternit-Dächer, die Entfernung PAK-belasteter Kleber und teerhaltiger Bitumenabdichtungen sowie kontrollierter Rückbau und Luftmessungen nach VDI 3492 - alles dokumentiert und behördenkonform."
+      },
+      {
+        "frage": "Was kostet eine Asbestsanierung in Duisburg?",
+        "antwort": "Seriöse Pauschalpreise lassen sich erst nach einer Sichtung vor Ort nennen, da Materialart, Menge und Zugänglichkeit entscheidend sind. Wir entnehmen fachgerecht Materialproben, lassen diese im Labor analysieren und erstellen Ihnen anschließend ein transparentes, auf Ihr Duisburger Objekt zugeschnittenes Angebot - ohne erfundene Richtwerte."
+      }
+    ]
   }
 };

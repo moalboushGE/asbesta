@@ -21,4 +21,9 @@ export const standorte: readonly Standort[] = [
   { slug: 'recklinghausen', name: 'Recklinghausen', region: 'Kreis Recklinghausen', nearby: ['marl', 'herten', 'dorsten'] },
   { slug: 'dorsten', name: 'Dorsten', region: 'Kreis Recklinghausen', nearby: ['marl', 'recklinghausen', 'gladbeck'] },
   { slug: 'bochum', name: 'Bochum', region: 'Ruhrgebiet', nearby: ['gelsenkirchen', 'herten', 'essen'] },
+  { slug: 'datteln', name: 'Datteln', region: 'Kreis Recklinghausen', nearby: ['marl', 'haltern', 'recklinghausen'] },
+  { slug: 'haltern', name: 'Haltern am See', region: 'Kreis Recklinghausen', nearby: ['marl', 'datteln', 'dorsten'] },
+  { slug: 'castrop-rauxel', name: 'Castrop-Rauxel', region: 'Kreis Recklinghausen', nearby: ['recklinghausen', 'herten', 'dortmund'] },
+  { slug: 'dortmund', name: 'Dortmund', region: 'Ruhrgebiet', nearby: ['castrop-rauxel', 'bochum', 'recklinghausen'] },
+  { slug: 'duisburg', name: 'Duisburg', region: 'Ruhrgebiet', nearby: ['oberhausen', 'essen', 'duesseldorf'] },
 ];
