@@ -16,14 +16,21 @@ export interface Crumb {
 
 const ORG_ID = '#organization';
 
+/** Vollständiger, sitewide identischer LocalBusiness-Knoten (Entity-Hub für SEO/GEO).
+ *  Bewusst OHNE openingHours/priceRange/sameAs – diese erst eintragen, wenn echte Daten
+ *  bzw. ein Google-Business-Profil vorliegen (keine erfundenen Angaben). */
 function organizationNode(origin: string): Record<string, unknown> {
+  const telephone = site.phone.href.replace('tel:', '');
   return {
     '@type': ['Organization', 'HomeAndConstructionBusiness'],
     '@id': origin + '/' + ORG_ID,
     name: site.legalName,
+    alternateName: site.name,
     url: origin + '/',
-    telephone: site.phone.href.replace('tel:', ''),
-    areaServed: { '@type': 'AdministrativeArea', name: 'Nordrhein-Westfalen' },
+    telephone,
+    email: site.email,
+    image: origin + '/og.png',
+    logo: origin + '/og.png',
     address: {
       '@type': 'PostalAddress',
       streetAddress: site.address.street,
@@ -31,6 +38,16 @@ function organizationNode(origin: string): Record<string, unknown> {
       addressLocality: site.address.city,
       addressRegion: site.address.region,
       addressCountry: 'DE',
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: 51.6539, longitude: 7.0917 },
+    areaServed: ['Nordrhein-Westfalen', ...standorte.map((s) => s.name)],
+    knowsAbout: leistungen.map((l) => l.title),
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone,
+      contactType: 'customer service',
+      areaServed: 'DE',
+      availableLanguage: ['de'],
     },
   };
 }
@@ -239,28 +256,7 @@ export function buildArticleGraph(args: ArticleGraphArgs): unknown[] {
 export function buildHomeGraph(origin: string): unknown[] {
   const orgId = origin + '/' + ORG_ID;
   return [
-    {
-      '@type': ['Organization', 'HomeAndConstructionBusiness'],
-      '@id': orgId,
-      name: site.legalName,
-      alternateName: site.name,
-      url: origin + '/',
-      telephone: site.phone.href.replace('tel:', ''),
-      email: site.email,
-      image: origin + '/og.png',
-      logo: origin + '/og.png',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: site.address.street,
-        postalCode: site.address.zip,
-        addressLocality: site.address.city,
-        addressRegion: site.address.region,
-        addressCountry: 'DE',
-      },
-      geo: { '@type': 'GeoCoordinates', latitude: 51.6539, longitude: 7.0917 },
-      areaServed: ['Nordrhein-Westfalen', ...standorte.map((s) => s.name)],
-      knowsAbout: leistungen.map((l) => l.title),
-    },
+    organizationNode(origin),
     {
       '@type': 'WebSite',
       '@id': origin + '/#website',

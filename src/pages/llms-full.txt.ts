@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro';
 import { site } from '../data/site';
 import { leistungen } from '../data/leistungen';
 import { leistungenDetail } from '../data/leistungen-detail';
+import { standorte } from '../data/standorte';
 import { resolveOrigin } from '../lib/origin';
 
 // llms-full.txt: ausfuehrlicher Volltext (Firma + alle Leistungen) fuer LLM-Kontext.
@@ -22,7 +23,7 @@ export const GET: APIRoute = (context) => {
 
 ${site.intro}
 
-Standort: ${site.address.street}, ${site.address.zip} ${site.address.city} (${site.address.region}). Einsatzgebiet: ganz Nordrhein-Westfalen (Ruhrgebiet, Muensterland, Rheinland, Sauerland).
+Standort: ${site.address.street}, ${site.address.zip} ${site.address.city} (${site.address.region}). Einsatzgebiet: Nordrhein-Westfalen, Schwerpunkt Ruhrgebiet / Emscher-Lippe-Region und Rheinland. Eigene Standortseiten: ${standorte.map((s) => s.name).join(', ')}.
 Kontakt: Telefon ${site.phone.display}, WhatsApp ${site.whatsapp.href}.
 Zertifizierung & Qualifikation: ${site.certifications.join(', ')}; sachkundige Mitarbeiter nach TRGS 519 Anlage 3; arbeitsmedizinische Vorsorge; volle Betriebshaftpflicht.
 Kennzahlen: ${site.stats.map((s) => `${s.value} ${s.label}`).join(', ')}.

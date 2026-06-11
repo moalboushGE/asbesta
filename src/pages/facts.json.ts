@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { site } from '../data/site';
 import { leistungen } from '../data/leistungen';
+import { standorte } from '../data/standorte';
 import { resolveOrigin } from '../lib/origin';
 
 // facts.json: maschinenlesbare Firmenfakten (Single Source of Truth fuer AI-Crawler & Entwickler).
@@ -8,7 +9,7 @@ export const GET: APIRoute = (context) => {
   const origin = resolveOrigin(context.site);
 
   const facts = {
-    updated: '2026-06-10',
+    updated: '2026-06-11',
     organization: {
       name: site.legalName,
       shortName: site.name,
@@ -23,7 +24,8 @@ export const GET: APIRoute = (context) => {
         region: site.address.region,
         country: site.address.country,
       },
-      areaServed: 'Nordrhein-Westfalen (Ruhrgebiet, Muensterland, Rheinland, Sauerland)',
+      areaServed: 'Nordrhein-Westfalen, Schwerpunkt Ruhrgebiet / Emscher-Lippe-Region und Rheinland',
+      serviceCities: standorte.map((s) => s.name),
       certifications: site.certifications,
       ownerLed: true,
       insurance: 'Betriebshaftpflicht',
@@ -40,7 +42,7 @@ export const GET: APIRoute = (context) => {
       url: `${origin}/leistungen/${l.slug}/`,
     })),
     disclaimer:
-      'Arbeiten an asbesthaltigen Materialien duerfen in Deutschland nur durch sachkundige Fachbetriebe nach TRGS 519 ausgefuehrt werden.',
+      'Arbeiten an asbesthaltigen Materialien dürfen in Deutschland nur durch sachkundige Fachbetriebe nach TRGS 519 ausgeführt werden.',
   };
 
   return new Response(JSON.stringify(facts, null, 2), {
