@@ -1,0 +1,235 @@
+---
+import RatgeberArticleLayout from '../../layouts/RatgeberArticleLayout.astro';
+import Figure from '../../components/ui/Figure.astro';
+import Callout from '../../components/ui/Callout.astro';
+import { getArtikel } from '../../data/ratgeber';
+import { leistungImage } from '../../data/images';
+import boden from '../../assets/images/ratgeber/boden.jpg';
+
+const artikel = getArtikel('asbest-bodenbelag');
+if (!artikel) throw new Error('Ratgeber-Artikel nicht gefunden.');
+const cv = leistungImage('cushion-vinyl-entfernen');
+
+const toc = [
+  { id: 'floor-flex', label: 'Floor-Flex-Platten' },
+  { id: 'cushion-vinyl', label: 'Cushion-Vinyl (CV-Belag)' },
+  { id: 'schwarzkleber', label: 'Der schwarze Bitumenkleber' },
+  { id: 'erkennen', label: 'Asbest im Boden erkennen' },
+  { id: 'gefahr', label: 'Erst beim Entfernen gefährlich' },
+  { id: 'ablauf', label: 'Sichere Entfernung Schritt für Schritt' },
+  { id: 'selbst', label: 'Selbst entfernen oder überkleben?' },
+  { id: 'kosten', label: 'Was kostet die Entfernung?' },
+  { id: 'fachbetrieb', label: 'Warum ein Fachbetrieb?' },
+];
+---
+
+<RatgeberArticleLayout artikel={artikel} toc={toc}>
+  <p>
+    Beim Entkernen einer Altbauwohnung kommt unter dem Teppich der alte Boden zum Vorschein: harte,
+    bunt gemusterte Vinyl-Platten oder ein vergilbter PVC-Belag, darunter ein schwarzer, harter
+    Kleber auf dem Estrich. Genau hier versteckt sich in Gebäuden bis Baujahr 1993 sehr häufig Asbest.
+    Das Tückische: Solange der Boden unbeschädigt liegt, ist die Gefahr gering – kritisch wird es erst
+    beim Herausreißen, Schleifen oder Abstemmen. Dieser Ratgeber zeigt, woran Sie asbesthaltige
+    Bodenbeläge erkennen und wie sie sicher entfernt werden.
+  </p>
+
+  <h2 id="floor-flex">Floor-Flex-Platten: der Klassiker</h2>
+  <p>
+    <a href="/leistungen/floor-flex-entfernen/">Floor-Flex-Platten</a> sind harte
+    Vinyl-Asbest-Bodenplatten, die von den 1960er- bis in die 1980er-Jahre millionenfach verlegt
+    wurden – typischerweise im Format <strong>25 × 25 cm</strong>, in vielen Farben und Mustern
+    (Marmorierung, Sprenkel). Sie enthalten <strong>fest gebundenen Asbest</strong>, der die Platten
+    stabil und strapazierfähig machte.
+  </p>
+  <p>
+    Floor-Flex finden sich besonders häufig in Wohnungen, Fluren, Kellern, Schulen und öffentlichen
+    Gebäuden dieser Jahrzehnte. Verlegt wurden sie fast immer auf schwarzem Bitumenkleber – der für
+    sich genommen ebenfalls asbestverdächtig ist (siehe unten). Intakt sind die Platten relativ
+    unkritisch; brechen sie beim Herausnehmen, werden Fasern frei.
+  </p>
+
+  <h2 id="cushion-vinyl">Cushion-Vinyl: der elastische Bruder</h2>
+  <p>
+    <a href="/leistungen/cushion-vinyl-entfernen/">Cushion-Vinyl</a> (CV-Belag) ist ein elastischer,
+    mehrschichtiger Bodenbelag in Bahnenform, oft mit einer geschäumten Trägerschicht. In Belägen bis
+    in die 1980er-Jahre kann diese Rückenschicht <strong>Asbestpappe</strong> enthalten. Anders als
+    bei Floor-Flex liegt der Asbest hier also in einer schwach gebundenen Trägerschicht – das macht
+    CV-Beläge beim Aufnehmen tendenziell heikler, weil die Pappe leichter zerfasert.
+  </p>
+  <p>
+    Optisch lässt sich asbesthaltiges Cushion-Vinyl nicht von asbestfreiem unterscheiden. Auch hier
+    gilt: Erst die Materialprobe schafft Klarheit.
+  </p>
+
+  <h2 id="schwarzkleber">Der schwarze Bitumenkleber darunter</h2>
+  <p>
+    Unter alten Belägen sitzt fast immer ein schwarzer, harter
+    <a href="/leistungen/bitumenkleber-entfernen/">Bitumenkleber</a> – der berüchtigte
+    „Schwarzkleber". Ihm wurde bis in die 1990er-Jahre häufig Asbest beigemischt, um Klebkraft und
+    Hitzebeständigkeit zu erhöhen. Selbst wenn der eigentliche Belag schon entfernt ist, bleibt dieser
+    Kleber als kritische Restschicht auf dem Estrich zurück.
+  </p>
+  <Callout variant="warnung" title="Niemals trocken abschleifen oder abstemmen">
+    <p>
+      Den schwarzen Kleber <strong>auf keinen Fall</strong> trocken abschleifen, abfräsen oder
+      abstemmen, um den Boden „belegreif" zu machen. Genau dabei entstehen die größten Fasermengen.
+      Die Entfernung gehört in ein staubarmes, fachgerechtes Verfahren.
+    </p>
+  </Callout>
+
+  <h2 id="erkennen">Woran erkenne ich asbesthaltigen Boden?</h2>
+  <p>
+    Wie bei Asbest generell ist das <strong>Baujahr</strong> der wichtigste Hinweis: Bei Böden, die
+    vor 1993 verlegt wurden, besteht Asbestverdacht. Dazu kommen typische Indizien:
+  </p>
+  <ul>
+    <li>harte, spröde Vinyl-Platten im Format 25 × 25 cm (Floor-Flex);</li>
+    <li>elastische, mehrschichtige PVC-/CV-Bahnen mit grauer, pappartiger Rückseite;</li>
+    <li>schwarzer, harter, glänzender Kleber auf dem Estrich;</li>
+    <li>mehrere Belagsschichten übereinander aus verschiedenen Jahrzehnten.</li>
+  </ul>
+  <p>
+    Sicher unterscheiden lassen sich asbesthaltige und asbestfreie Beläge optisch jedoch nicht.
+    Klarheit bringt nur die <a href="/leistungen/materialanalyse/">Materialanalyse</a> einer Probe im
+    Labor. Wie Sie Asbest allgemein im Haus erkennen, lesen Sie auch im Ratgeber
+    <a href="/ratgeber/asbest-erkennen/">„Asbest erkennen: Baujahr, Fundorte &amp; Materialprobe"</a>.
+  </p>
+  <Figure
+    src={boden}
+    alt="Alter Bodenbelag und schwarze Klebstoffreste werden mit dem Spachtel vom Estrich gelöst"
+    aspect="16/9"
+    sizes="(min-width: 768px) 768px, 100vw"
+    class="my-6 ring-1 ring-black/5"
+  />
+
+  <h2 id="gefahr">Warum der Boden erst beim Entfernen gefährlich wird</h2>
+  <p>
+    Fest gebundener Asbest in Floor-Flex-Platten oder Kleber gibt im intakten, ungestörten Zustand
+    kaum Fasern ab. Das Risiko entsteht bei der <strong>mechanischen Bearbeitung</strong>: Reißen,
+    Brechen, Schleifen, Fräsen oder Abstemmen zerlegt das Material in lungengängige Fasern, die sich
+    in der Raumluft verteilen und über Jahre eine Gefahr bleiben. Deshalb ist gerade die Renovierung
+    – wenn der alte Boden „mal eben" raus soll – der kritische Moment.
+  </p>
+  <p>
+    Aus diesem Grund regelt die <strong>TRGS 519</strong> Arbeiten an asbesthaltigen Bodenbelägen
+    verbindlich: Sie dürfen nur von sachkundigen Fachbetrieben mit den passenden Schutzmaßnahmen
+    ausgeführt werden.
+  </p>
+
+  <h2 id="ablauf">Sichere Entfernung Schritt für Schritt</h2>
+  <p>
+    Die fachgerechte Sanierung asbesthaltiger Böden folgt einem klaren Ablauf:
+  </p>
+  <ol>
+    <li>
+      <strong>Probe &amp; Festpreis:</strong> Wir nehmen eine Materialprobe von Belag und Kleber,
+      lassen sie analysieren und erstellen nach der Besichtigung einen transparenten Festpreis.
+    </li>
+    <li>
+      <strong>Anzeige &amp; Abschottung:</strong> Bei Asbestnachweis melden wir die Arbeiten an und
+      richten den Arbeitsbereich mit Abschottung, Unterdruckhaltung und Schwarz-Weiß-Schleuse ein.
+    </li>
+    <li>
+      <strong>Staubarme Entfernung:</strong> Belag und Kleber werden im emissionsarmen Verfahren
+      (z. B. BT 13 der TRGS 519) rückstandslos vom Estrich gelöst – nicht trocken geschliffen.
+    </li>
+    <li>
+      <strong>Entsorgung mit Nachweis:</strong> Das Material wird staubdicht verpackt und als
+      gefährlicher Abfall mit lückenlosem Entsorgungsnachweis entsorgt.
+    </li>
+    <li>
+      <strong>Freimessung &amp; Übergabe:</strong> Eine Freimessung nach
+      <a href="/leistungen/luftanalysen-vdi-3492/">VDI 3492</a> bestätigt die Faserfreiheit; der
+      belegreife Estrich wird dokumentiert übergeben.
+    </li>
+  </ol>
+  <Figure
+    src={cv.src}
+    alt={cv.alt}
+    aspect="16/9"
+    sizes="(min-width: 768px) 768px, 100vw"
+    class="my-6 ring-1 ring-black/5"
+  />
+
+  <h2 id="selbst">Selbst entfernen oder einfach überkleben?</h2>
+  <p>
+    Beides ist mit Vorsicht zu genießen. Das <strong>eigenhändige Herausreißen</strong>
+    asbesthaltiger Böden ist nach TRGS 519 nicht zulässig und gefährdet Ihre Gesundheit – die
+    Sanierung gehört in fachkundige Hände.
+  </p>
+  <p>
+    Das <strong>Überkleben oder Überdecken</strong> eines intakten, fest sitzenden Belags ist im
+    Einzelfall zwar möglich, verschiebt das Problem aber nur auf die nächste Sanierung – dann meist
+    teurer, weil mehrere Schichten zu entfernen sind. Wichtig: Bohren, schleifen oder fräsen Sie
+    niemals auf gut Glück über altem Belag, und verlegen Sie keinen neuen Boden, der später ein
+    Aufschwimmen oder Anschleifen des Untergrunds nötig macht, ohne den Asbest-Status zu kennen.
+  </p>
+  <Callout variant="tipp" title="Experten-Tipp der Asbesta Fachredaktion">
+    <p>
+      Klären Sie vor jeder Bodensanierung den Asbest-Status von Belag <strong>und</strong> Kleber per
+      Probe. So vermeiden Sie einen teuren Baustopp, wenn beim Schleifen plötzlich Asbest auftaucht –
+      und Sie wissen vorab, ob der Boden einfach raus kann oder eine Schutzsanierung braucht.
+    </p>
+  </Callout>
+
+  <h2 id="kosten">Was kostet die Entfernung?</h2>
+  <p>
+    Die Kosten hängen von Belagsart, Klebersorte, Untergrund, Fläche und Zugänglichkeit ab. Als grobe
+    Orientierung für Deutschland (Stand 2026):
+  </p>
+  <div class="my-6 overflow-x-auto">
+    <table>
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>Richtwert</th>
+          <th>Hinweis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Floor-Flex- / CV-Belag entfernen</td>
+          <td>25–60 € / m²</td>
+          <td>je nach Verklebung und Fläche</td>
+        </tr>
+        <tr>
+          <td>Schwarzen Bitumenkleber abtragen (BT 13)</td>
+          <td>20–50 € / m²</td>
+          <td>emissionsarmes, staubarmes Verfahren</td>
+        </tr>
+        <tr>
+          <td>Gesamt: Belag + Kleber, belegreif</td>
+          <td>50–120 € / m²</td>
+          <td>inkl. Entsorgung und Freimessung</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    <strong>Rechenbeispiel:</strong> Für eine rund 40 m² große Wohnung liegen die Gesamtkosten für die
+    Entfernung von Belag und Kleber inklusive Entsorgung erfahrungsgemäß zwischen etwa 2.000 und
+    4.800 €. Den verbindlichen Preis nennen wir als Festpreis nach Besichtigung und Probe.
+  </p>
+  <Callout variant="hinweis" title="Festpreis und belegreifer Estrich">
+    <p>
+      Asbesta entfernt Belag und Schwarzkleber rückstandslos und übergibt einen belegreifen Estrich –
+      zum transparenten Festpreis ohne versteckte Kosten, inklusive Entsorgungsnachweis und
+      Freimessung. <a href="/kontakt/">Fordern Sie hier Ihr Angebot an.</a>
+    </p>
+  </Callout>
+
+  <h2 id="fachbetrieb">Warum ein zertifizierter Fachbetrieb entscheidend ist</h2>
+  <p>
+    Asbesthaltige Böden zu entfernen ist kein Heimwerkerprojekt. Ein zugelassener Fachbetrieb bringt
+    Sachkunde nach TRGS 519, das emissionsarme Verfahren, die Behördenanzeige, die rechtssichere
+    Entsorgung und die abschließende Freimessung mit – damit der neue Boden auf einem sauberen,
+    nachweislich faserfreien Estrich liegt.
+  </p>
+  <p>
+    Asbesta ist Ihr inhabergeführter Fachbetrieb für
+    <a href="/leistungen/floor-flex-entfernen/">Floor-Flex-</a> und
+    <a href="/leistungen/bitumenkleber-entfernen/">Bitumenkleber-Entfernung</a> sowie
+    <a href="/leistungen/asbestsanierung/">Asbestsanierung</a> in ganz Nordrhein-Westfalen – von der
+    ersten Probe bis zum belegreifen Boden. <a href="/kontakt/">Jetzt kostenlose Anfrage stellen.</a>
+  </p>
+</RatgeberArticleLayout>

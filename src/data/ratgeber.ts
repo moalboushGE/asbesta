@@ -3,6 +3,7 @@ import type { ImageMetadata } from 'astro';
 import heroDach from '../assets/images/ratgeber/hero-dach.jpg';
 import heroAsbestdach from '../assets/images/leistungen/welleternit-ausbauen.jpg';
 import heroErkennen from '../assets/images/leistungen/materialanalyse.jpg';
+import heroBoden from '../assets/images/leistungen/floor-flex-entfernen.jpg';
 
 export interface RatgeberFaq {
   readonly frage: string;
@@ -28,6 +29,60 @@ export interface RatgeberArtikel {
 }
 
 export const ratgeberArtikel: readonly RatgeberArtikel[] = [
+  {
+    slug: 'asbest-bodenbelag',
+    title: 'Asbest im Bodenbelag: Floor-Flex, Cushion-Vinyl & schwarzer Kleber',
+    metaTitle: 'Asbest im Bodenbelag erkennen & entfernen | Asbesta',
+    metaDescription:
+      'Floor-Flex, Cushion-Vinyl und schwarzer Bitumenkleber: Asbest im alten Bodenbelag erkennen, Gefahren verstehen und nach TRGS 519 sicher entfernen lassen.',
+    excerpt:
+      'Harte Vinyl-Platten, alter PVC-Belag, schwarzer Kleber auf dem Estrich – in Böden bis Baujahr 1993 steckt häufig Asbest. Woran Sie Floor-Flex, Cushion-Vinyl und Bitumenkleber erkennen, warum sie erst beim Entfernen gefährlich werden und wie die Sanierung abläuft.',
+    kategorie: 'Ratgeber Asbest',
+    datePublished: '2026-06-11',
+    dateModified: '2026-06-11',
+    author: 'Asbesta Fachredaktion',
+    authorRole: 'Fachbetrieb mit Sachkunde nach TRGS 519',
+    lesezeitMin: 11,
+    heroImage: heroBoden,
+    heroAlt: 'Fachkraft entfernt einen alten, asbestverdächtigen Bodenbelag vom Untergrund',
+    faqs: [
+      {
+        frage: 'Woran erkenne ich asbesthaltigen Bodenbelag?',
+        antwort:
+          'Verdächtig sind vor allem Böden bis Baujahr 1993: harte, oft 25×25 cm große Vinyl-Asbest-Platten (Floor-Flex), elastische Cushion-Vinyl-Bahnen sowie der schwarze, harte Bitumenkleber darunter. Optisch lässt sich Asbest aber nicht sicher feststellen – auch der Kleber kann asbestfrei oder asbesthaltig sein. Sicherheit gibt nur eine Materialprobe im Labor. Reißen Sie verdächtige Beläge bis dahin nicht heraus.',
+      },
+      {
+        frage: 'Was sind Floor-Flex-Platten?',
+        antwort:
+          'Floor-Flex-Platten sind harte Vinyl-Asbest-Bodenplatten, die von den 1960er- bis in die 1980er-Jahre millionenfach verlegt wurden – meist im Format 25×25 cm, in vielen Farben und Mustern. Sie enthalten fest gebundenen Asbest und wurden fast immer mit schwarzem, ebenfalls asbestverdächtigem Bitumenkleber verklebt. Solange sie unbeschädigt liegen, ist die Gefahr gering; beim Brechen, Schleifen oder Herausreißen werden jedoch Fasern frei.',
+      },
+      {
+        frage: 'Ist der schwarze Kleber unter altem PVC immer Asbest?',
+        antwort:
+          'Nicht zwingend, aber er steht unter dringendem Verdacht. Schwarzer Bitumenkleber („Schwarzkleber") unter Belägen, die vor den 1990er-Jahren verlegt wurden, enthält häufig Asbest, das die Klebkraft verbessern sollte. Sicher ist nur die Laboranalyse einer Probe. Gefährlich wird der festhaftende Kleber vor allem, wenn er später abgeschliffen oder abgestemmt wird.',
+      },
+      {
+        frage: 'Darf ich den alten Belag selbst herausreißen?',
+        antwort:
+          'Bei Asbestverdacht raten wir dringend ab. Das Herausreißen, Brechen oder Abschleifen asbesthaltiger Bodenplatten und Kleber setzt lungengängige Fasern frei. Die Entfernung ist nach TRGS 519 eine erlaubnis- und anzeigepflichtige Tätigkeit, die staubarm und mit Schutzmaßnahmen erfolgen muss. Lassen Sie vorab eine Probe nehmen und die Arbeiten von einem Fachbetrieb ausführen.',
+      },
+      {
+        frage: 'Kann ich einfach einen neuen Boden darüber verlegen?',
+        antwort:
+          'Ein intakter, fest sitzender asbesthaltiger Belag darf in manchen Fällen überdeckt statt entfernt werden – das verschiebt das Problem aber nur und ist bei der nächsten Sanierung teurer. Sobald der Untergrund uneben ist, geschliffen oder gefräst werden muss oder Sie sicher gehen wollen, ist die fachgerechte Entfernung der richtige Weg. Bohren, schleifen oder fräsen Sie nie auf gut Glück über altem Belag.',
+      },
+      {
+        frage: 'Was kostet die Entfernung pro Quadratmeter?',
+        antwort:
+          'Als grobe Orientierung liegt die fachgerechte Entfernung von Belag plus schwarzem Kleber – inklusive Entsorgung – häufig bei rund 50 bis 120 € pro Quadratmeter, je nach Klebersorte, Untergrund, Fläche und Zugänglichkeit. Den verbindlichen Preis nennen wir als Festpreis nach einer kostenlosen Besichtigung und Materialprobe.',
+      },
+      {
+        frage: 'Ist der Estrich nach der Entfernung wieder nutzbar?',
+        antwort:
+          'Ja. Wir entfernen Belag und Bitumenkleber rückstandslos, sodass der Estrich frei von Klebe- und Faserresten und anschließend belegreif ist. Nach der Feinreinigung belegt eine Freimessung der Raumluft, dass die Räume wieder sicher genutzt werden können – dann kann ein neuer Bodenbelag verlegt werden.',
+      },
+    ],
+  },
   {
     slug: 'asbest-erkennen',
     title: 'Asbest erkennen: Baujahr, Fundorte & Materialprobe',
