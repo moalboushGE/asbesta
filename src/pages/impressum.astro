@@ -21,8 +21,14 @@ import { site } from '../data/site';
     E-Mail: <a href={`mailto:${site.email}`}>{site.email}</a>
   </p>
 
-  <h2>Umsatzsteuer-Identifikationsnummer</h2>
-  <p>{site.legal.ustId}</p>
+  {
+    site.legal.ustId && (
+      <>
+        <h2>Umsatzsteuer-Identifikationsnummer</h2>
+        <p>{site.legal.ustId}</p>
+      </>
+    )
+  }
 
   <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
   <p>{site.legal.owner} (Anschrift wie oben).</p>
