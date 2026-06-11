@@ -1,0 +1,338 @@
+---
+import RatgeberArticleLayout from '../../layouts/RatgeberArticleLayout.astro';
+import Figure from '../../components/ui/Figure.astro';
+import Callout from '../../components/ui/Callout.astro';
+import { getArtikel } from '../../data/ratgeber';
+import { leistungImage } from '../../data/images';
+import dachAsbest from '../../assets/images/ratgeber/dach-asbestzement.jpg';
+
+const artikel = getArtikel('asbestdach-entsorgen-kosten-ablauf');
+if (!artikel) throw new Error('Ratgeber-Artikel nicht gefunden.');
+const psa = leistungImage('asbestsanierung');
+
+const toc = [
+  { id: 'erkennen', label: 'Asbestdach erkennen' },
+  { id: 'gefahr', label: 'Warum es gefährlich ist' },
+  { id: 'pflicht', label: 'Muss das Dach raus?' },
+  { id: 'kosten', label: 'Was kostet die Entsorgung?' },
+  { id: 'ablauf', label: 'Ablauf Schritt für Schritt' },
+  { id: 'selbst', label: 'Selbst abbauen – erlaubt?' },
+  { id: 'entsorgung', label: 'Fachgerechte Entsorgung' },
+  { id: 'neues-dach', label: 'Neues Dach & Förderung' },
+  { id: 'fachbetrieb', label: 'Warum ein Fachbetrieb?' },
+];
+---
+
+<RatgeberArticleLayout artikel={artikel} toc={toc}>
+  <p>
+    Graue, leicht gewellte Platten auf dem Haus-, Garagen- oder Scheunendach – für Millionen Gebäude
+    in Deutschland ein vertrauter Anblick. Was viele Eigentümer nicht wissen: Bis zum Verbot 1993
+    wurden diese Faserzement-Dächer fast immer mit Asbest hergestellt. Solange sie unbeschädigt
+    liegen, ist die Gefahr gering – doch spätestens bei Verwitterung, Umbau oder Abriss stellt sich
+    die Frage: Muss das Asbestdach weg, was kostet die Entsorgung und wie läuft sie ab? Dieser
+    Ratgeber beantwortet die wichtigsten Punkte kompakt, ehrlich und praxisnah.
+  </p>
+
+  <h2 id="erkennen">Asbestdach erkennen: Woran Sie Welleternit erkennen</h2>
+  <p>
+    Das mit Abstand häufigste Asbestprodukt am Dach sind <strong>Asbestzement-Wellplatten</strong>,
+    umgangssprachlich oft „Welleternit" oder „Eternit" genannt – nach dem bekanntesten Hersteller.
+    Verbaut wurden sie als günstige, leichte und witterungsbeständige Eindeckung vor allem auf
+    Garagen, Carports, Schuppen, Scheunen, Ställen und Nebengebäuden, aber auch auf Wohnhäusern.
+    Daneben kommt Asbestzement als ebene Dachschindel, als Ortgang- und Firstabdeckung sowie an
+    angrenzenden <a href="/leistungen/fassadenplatten-ausbauen/">Fassadenplatten</a> vor.
+  </p>
+  <p>
+    Diese Anhaltspunkte deuten auf ein Asbestdach hin:
+  </p>
+  <ul>
+    <li>
+      <strong>Baujahr vor 1993:</strong> Wurde das Dach vor dem Asbestverbot eingedeckt oder zuletzt
+      saniert, ist Asbest sehr wahrscheinlich. Besonders die Jahrzehnte von 1960 bis Anfang der
+      1990er sind betroffen.
+    </li>
+    <li>
+      <strong>Typische Optik:</strong> graue (seltener bräunliche oder grünlich vermooste), matte
+      Wellplatten mit rauer, faseriger Oberfläche – im Lauf der Jahre oft ausgeblichen, vermoost und
+      brüchig.
+    </li>
+    <li>
+      <strong>Herstellerstempel:</strong> Auf der Unterseite vieler Platten ist ein Prägestempel mit
+      Hersteller und Datum zu finden. Platten mit der Kennzeichnung „NT" (asbestfrei) wurden erst
+      nach dem Verbot produziert.
+    </li>
+    <li>
+      <strong>Bruchbild:</strong> An gebrochenen Kanten sind bei asbesthaltigem Material feine,
+      silbrig-graue Fasern erkennbar – diese Stellen sollten Sie aber nicht berühren oder gar
+      anbohren.
+    </li>
+  </ul>
+  <Figure
+    src={dachAsbest}
+    alt="Nahaufnahme eines verwitterten, vermoosten Asbestzement-Wellplattendachs"
+    aspect="16/9"
+    sizes="(min-width: 768px) 768px, 100vw"
+    class="my-6 ring-1 ring-black/5"
+  />
+  <p>
+    Wichtig: Eine sichere Aussage liefert keine Sichtprüfung, sondern nur die Laboranalyse einer
+    fachgerecht entnommenen Probe. Im Rahmen einer <a href="/leistungen/materialanalyse/"
+    >Materialanalyse</a> klären wir vor jeder Maßnahme zweifelsfrei, ob und welcher Asbest vorliegt –
+    die Grundlage für jede weitere Entscheidung.
+  </p>
+
+  <h2 id="gefahr">Warum ein Asbestdach gefährlich wird</h2>
+  <p>
+    Asbest ist ein natürliches Fasermineral, das jahrzehntelang als „Wunderbaustoff" galt:
+    feuerfest, witterungsbeständig und billig. Seine Gefahr liegt in der Faserstruktur. Werden die
+    Fasern frei, sind sie lungengängig, setzen sich dauerhaft im Gewebe fest und können – oft erst
+    15 bis 40 Jahre später – Asbestose sowie Lungen- und Rippenfellkrebs auslösen. Deshalb ist
+    Asbest in Deutschland seit 1993 vollständig verboten.
+  </p>
+  <p>
+    Asbestzement-Platten zählen zu den <strong>fest gebundenen</strong> Asbestprodukten: Die Fasern
+    sind in einer Zementmatrix eingebunden, und solange die Platte intakt ist, gibt sie kaum Fasern
+    ab. Genau das ändert sich am Dach jedoch im Lauf der Zeit. Wind, Regen, Frost, Hagel und UV-
+    Strahlung tragen die Oberfläche ab, Moos und Algen lockern sie zusätzlich auf. Die Platten
+    werden mürbe, die Bindung lässt nach – und schon das bloße Abregnen oder ein Sturm kann dann
+    Fasern lösen, die sich über die Dachfläche und in der Dachrinne verteilen.
+  </p>
+  <Callout variant="warnung" title="Niemals reinigen, schleifen oder durchbohren">
+    <p>
+      Hochdruckreinigen, Abschleifen, Anbohren, Sägen oder Begehen eines Asbestdachs setzt die
+      gefährlichen Fasern erst recht frei – <strong>auf keinen Fall selbst durchführen</strong>. Auch
+      das beliebte „Überstreichen" oder Beschichten verbietet sich: Es bindet die Fasern nicht
+      dauerhaft und ist als Sanierungsverfahren unzulässig.
+    </p>
+  </Callout>
+
+  <h2 id="pflicht">Muss ich mein Asbestdach entfernen?</h2>
+  <p>
+    Eine pauschale „Austauschpflicht" für jedes Asbestdach gibt es nicht. Maßgeblich ist,
+    <strong>was Sie mit dem Dach vorhaben</strong> und in welchem Zustand es ist. Ein fest
+    gebundenes, unbeschädigtes und ungestörtes Asbestzementdach darf grundsätzlich liegen bleiben.
+    Sobald jedoch an ihm gearbeitet wird oder es eine Gefahr darstellt, greifen die strengen Vorgaben
+    der Gefahrstoffverordnung (GefStoffV) und der <strong>TRGS 519</strong>. Konkret heißt das, eine
+    fachgerechte Entfernung ist erforderlich, wenn:
+  </p>
+  <ul>
+    <li>
+      das Dach umgedeckt, ausgebaut, aufgestockt oder das Gebäude abgerissen wird – jeder Eingriff
+      ans Material löst die Sanierungspflicht aus;
+    </li>
+    <li>
+      die Platten beschädigt, gebrochen oder durch Verwitterung mürbe sind und Fasern freisetzen
+      können;
+    </li>
+    <li>
+      eine neue Nutzung, eine Photovoltaik-Anlage oder eine energetische Sanierung ansteht, die eine
+      Bearbeitung des Daches voraussetzt.
+    </li>
+  </ul>
+  <p>
+    Mit der <strong>novellierten Gefahrstoffverordnung</strong> (in Kraft seit Dezember 2024) wurde
+    diese Linie verschärft: Vor Arbeiten an Gebäuden, die vor 1993 errichtet wurden, gilt eine
+    ausdrückliche Erkundungs- und Informationspflicht. Wer Arbeiten beauftragt, muss vorab klären
+    lassen, ob Asbest vorhanden ist, und ausführende Betriebe entsprechend informieren. Anzeige- und
+    erlaubnispflichtig sind die Arbeiten ohnehin: Asbestsanierungen am Dach werden vor Beginn bei der
+    zuständigen Behörde (Bezirksregierung bzw. Amt für Arbeitsschutz) angezeigt.
+  </p>
+  <p>
+    Einen ausführlichen Überblick über die rechtlichen Pflichten, Bindungsarten und den
+    Gesamtablauf finden Sie in unserem Ratgeber
+    <a href="/ratgeber/asbestsanierung-pflicht-kosten-ablauf/">„Asbestsanierung: Pflicht, Kosten &amp;
+    Ablauf"</a>.
+  </p>
+
+  <h2 id="kosten">Was kostet die Asbestdach-Entsorgung?</h2>
+  <p>
+    Die Kosten hängen von Dachfläche, Plattenzustand, Dachneigung, Höhe, Zugänglichkeit und
+    Gerüstbedarf ab. Als grobe Orientierung für Deutschland (Stand 2026) dienen folgende Richtwerte –
+    der verbindliche Preis ergibt sich immer erst nach einer Besichtigung:
+  </p>
+  <div class="my-6 overflow-x-auto">
+    <table>
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>Richtwert</th>
+          <th>Hinweis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Asbest-Wellplatten abnehmen (Demontage)</td>
+          <td>25–55 € / m²</td>
+          <td>zerstörungsfrei, je nach Dachneigung und Höhe</td>
+        </tr>
+        <tr>
+          <td>Entsorgung als gefährlicher Abfall</td>
+          <td>100–300 € / Tonne</td>
+          <td>Deponiegebühr inkl. Big Bags, separat zu kalkulieren</td>
+        </tr>
+        <tr>
+          <td>Gerüst &amp; Absturzsicherung</td>
+          <td>6–14 € / m²</td>
+          <td>abhängig von Höhe und Standzeit</td>
+        </tr>
+        <tr>
+          <td>Asbestdach komplett (abnehmen + entsorgen)</td>
+          <td>40–100 € / m²</td>
+          <td>Orientierungsspanne inklusive der obigen Posten</td>
+        </tr>
+        <tr>
+          <td>Neue Dacheindeckung (optional)</td>
+          <td>ab 60–150 € / m²</td>
+          <td>ohne Asbestbezug, je nach Material und Dämmung</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    <strong>Rechenbeispiel:</strong> Für das Abnehmen und Entsorgen eines Asbestzement-Daches auf
+    einem Einfamilienhaus mit rund 120 m² Dachfläche liegen die Kosten erfahrungsgemäß zwischen etwa
+    5.000 und 12.000 €. Hinzu kommen je nach Projekt die Materialanalyse (oft 30–80 € pro Probe)
+    sowie – bei zusätzlichen Innenarbeiten – eine abschließende Freimessung. Wollen Sie das Dach im
+    selben Zug neu eindecken oder dämmen, kommen die Kosten für die neue Dachkonstruktion hinzu.
+  </p>
+  <Callout variant="hinweis" title="Kostentransparenz statt Schätzung">
+    <p>
+      Diese Spannen sind Orientierungswerte. Asbesta erstellt nach einer kostenlosen Besichtigung ein
+      <strong>transparentes Festpreis-Angebot</strong> ohne versteckte Kosten – inklusive Demontage,
+      Entsorgung und Nachweis. <a href="/kontakt/">Fordern Sie hier Ihr Angebot an.</a>
+    </p>
+  </Callout>
+
+  <h2 id="ablauf">Asbestdach entfernen: der Ablauf Schritt für Schritt</h2>
+  <p>
+    Eine fachgerechte Asbestdach-Sanierung folgt einem klar geregelten Ablauf. So sieht er bei
+    Asbesta in der Praxis aus:
+  </p>
+  <ol>
+    <li>
+      <strong>Besichtigung und Probe:</strong> Wir begutachten Dachfläche, Plattenzustand und Zugang
+      kostenfrei und sichern bei Bedarf eine Materialprobe zur
+      <a href="/leistungen/materialanalyse/">Laboranalyse</a>. Erst das Ergebnis bestätigt den
+      Asbestgehalt.
+    </li>
+    <li>
+      <strong>Festpreis und Behördenanzeige:</strong> Sie erhalten einen transparenten Festpreis. Die
+      Arbeiten werden mit Arbeits- und Sicherheitsplan vor Beginn bei der zuständigen Behörde
+      angezeigt – inklusive Schutzmaßnahmen und Entsorgungsweg.
+    </li>
+    <li>
+      <strong>Gerüst und Absturzsicherung:</strong> Vor dem Ausbau richten wir Gerüst, Absturz- und
+      Verkehrssicherung ein und stellen die persönliche Schutzausrüstung samt Atemschutz bereit.
+    </li>
+    <li>
+      <strong>Vorbehandlung:</strong> Stark verwitterte Platten werden mit einem faserbindenden
+      Mittel (Restfaserbinder) behandelt, damit beim Abnehmen möglichst keine Fasern aufgewirbelt
+      werden.
+    </li>
+    <li>
+      <strong>Zerstörungsfreier Ausbau:</strong> Die Wellplatten werden Bahn für Bahn demontiert –
+      Befestigungen gelöst statt durchtrennt, die Platten weder geworfen noch gebrochen. So bleibt die
+      Faserfreisetzung minimal.
+    </li>
+    <li>
+      <strong>Staubdichte Verpackung:</strong> Die Platten werden sofort in gekennzeichnete Big Bags
+      bzw. reißfeste Folie verpackt und kontrolliert abtransportiert.
+    </li>
+    <li>
+      <strong>Entsorgung mit Nachweis:</strong> Die Entsorgung erfolgt als gefährlicher Abfall über
+      zugelassene Deponien – mit lückenlosem Entsorgungsnachweis.
+    </li>
+    <li>
+      <strong>Dokumentierte Übergabe:</strong> Sie erhalten eine Schlussdokumentation. Bei
+      angrenzenden Innenarbeiten belegt zusätzlich eine Freimessung nach VDI 3492 die Faserfreiheit.
+    </li>
+  </ol>
+  <Figure
+    src={psa.src}
+    alt={psa.alt}
+    aspect="16/9"
+    sizes="(min-width: 768px) 768px, 100vw"
+    class="my-6 ring-1 ring-black/5"
+  />
+
+  <h2 id="selbst">Darf ich mein Asbestdach selbst abbauen?</h2>
+  <p>
+    Die kurze Antwort: Lassen Sie es bleiben. Der Ausbau asbesthaltiger Dachplatten ist nach
+    TRGS 519 eine erlaubnis- und anzeigepflichtige Tätigkeit, die Sachkunde, geeignete
+    Schutzausrüstung und eine zugelassene Entsorgung voraussetzt. Wer ohne diese Voraussetzungen
+    Platten löst, sie über die Dachkante wirft, flext oder hochdruckreinigt, setzt in kurzer Zeit
+    enorme Fasermengen frei – und gefährdet damit sich selbst, Familie und Nachbarschaft.
+  </p>
+  <p>
+    Hinzu kommen rechtliche und finanzielle Risiken: Unsachgemäßes Entfernen und vor allem die
+    unsachgemäße Entsorgung asbesthaltiger Abfälle sind Ordnungswidrigkeiten und können empfindliche
+    Bußgelder nach sich ziehen. Auch Versicherungsschutz und ein späterer Hausverkauf können leiden,
+    wenn keine fachgerechte, dokumentierte Sanierung nachweisbar ist. Der sichere und am Ende oft
+    günstigere Weg ist deshalb der Fachbetrieb.
+  </p>
+
+  <h2 id="entsorgung">Wie wird ein Asbestdach fachgerecht entsorgt?</h2>
+  <p>
+    Asbesthaltige Wellplatten gelten als <strong>gefährlicher Abfall</strong> und tragen den
+    Abfallschlüssel AVV 17 06 05*. Sie dürfen nicht in den Hausmüll, nicht in den Bauschuttcontainer
+    und nicht unverpackt auf den Wertstoffhof. Die fachgerechte Entsorgung läuft so ab:
+  </p>
+  <ul>
+    <li>
+      <strong>Staubdichte Verpackung:</strong> direkt nach dem Ausbau in gekennzeichneten Big Bags
+      oder reißfester, doppelter Folie, ohne die Platten zu brechen.
+    </li>
+    <li>
+      <strong>Zugelassene Deponie:</strong> Der Abtransport erfolgt zu einer für asbesthaltige
+      Abfälle zugelassenen Annahmestelle bzw. Deponie.
+    </li>
+    <li>
+      <strong>Entsorgungsnachweis:</strong> Sie erhalten einen lückenlosen Nachweis über Menge und
+      Verbleib – wichtig für Behörden, Versicherung und einen späteren Verkauf.
+    </li>
+  </ul>
+  <p>
+    Kleinere Mengen aus privaten Haushalten nehmen manche kommunale Entsorger nur nach
+    Voranmeldung und in zugelassenen, vorab erworbenen Asbest-Säcken an. Für ein komplettes Dach ist
+    der Fachbetrieb jedoch der richtige Weg, weil Ausbau, Verpackung, Transport und Nachweis aus
+    einer Hand kommen.
+  </p>
+
+  <h2 id="neues-dach">Neues Dach und Förderung: die Chance nutzen</h2>
+  <p>
+    Ist das Asbestdach erst einmal herunter, lohnt sich der Blick nach vorn. Steht ohnehin ein Gerüst,
+    lässt sich der Ausbau ideal mit einer neuen, gedämmten Dacheindeckung oder einer Photovoltaik-
+    Anlage verbinden – das spart Gerüstkosten und bringt das Dach energetisch auf den neuesten Stand.
+  </p>
+  <Callout variant="tipp" title="Experten-Tipp der Asbesta Fachredaktion">
+    <p>
+      Planen Sie die Asbestdach-Entfernung und die neue Eindeckung als <strong>ein</strong> Projekt.
+      So nutzen Sie das Gerüst nur einmal und schaffen die Voraussetzung für Förderprogramme zur
+      energetischen Sanierung. Wir koordinieren den Asbestausbau termingerecht mit Ihrem Dachdecker.
+    </p>
+  </Callout>
+  <p>
+    Eine eigene Förderung nur für die Asbestentfernung gibt es nicht. Wird der Dachausbau aber mit
+    einer energetischen Maßnahme kombiniert – etwa neuer Dämmung – kommen Förderprogramme von KfW und
+    BAFA sowie der Steuerbonus nach § 35c EStG für energetische Sanierungen in Betracht. Für reine
+    Handwerkerleistungen lässt sich häufig § 35a EStG nutzen. Lassen Sie sich dazu individuell
+    steuerlich beraten.
+  </p>
+
+  <h2 id="fachbetrieb">Warum ein zertifizierter Fachbetrieb entscheidend ist</h2>
+  <p>
+    Ein Asbestdach abzunehmen ist kein Heimwerkerprojekt. Ein zugelassener Fachbetrieb bringt
+    Sachkunde nach TRGS 519, die richtige Schutzausrüstung, die Anzeige bei der Behörde, einen
+    zerstörungsfreien Ausbau, die rechtssichere Entsorgung und die Dokumentation mit – alles aus
+    einer Hand. Das schützt Ihre Gesundheit, erfüllt die gesetzlichen Pflichten und gibt Ihnen eine
+    belastbare Nachweiskette.
+  </p>
+  <p>
+    Asbesta ist Ihr inhabergeführter Fachbetrieb für das
+    <a href="/leistungen/welleternit-ausbauen/">Ausbauen von Welleternit- und Wellasbestplatten</a>
+    sowie für <a href="/leistungen/asbestsanierung/">Asbestsanierung</a> und Schadstoffsanierung in
+    ganz Nordrhein-Westfalen – von der ersten Probe bis zur dokumentierten Übergabe. Ob einzelnes
+    Garagendach, große Hallenfläche oder Wohnhaus: Wir beraten Sie ehrlich und nennen Ihnen einen
+    fairen Festpreis. <a href="/kontakt/">Jetzt kostenlose Anfrage stellen.</a>
+  </p>
+</RatgeberArticleLayout>

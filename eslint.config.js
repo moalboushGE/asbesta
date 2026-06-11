@@ -33,4 +33,9 @@ export default tseslint.config(
     files: ['src/data/**/*.ts'],
     rules: { 'max-lines': 'off' },
   },
+  {
+    // Ratgeber-Beitraege sind redaktioneller Langform-Content (Prosa, keine Logik) -> Groessen-Budget hier aus.
+    files: ['src/pages/ratgeber/**/*.astro'],
+    rules: { 'max-lines': 'off' },
+  },
 );

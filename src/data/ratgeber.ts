@@ -1,6 +1,7 @@
 /** Ratgeber-/Blog-Beiträge (SSOT für Übersicht, Artikel-Header, Schema, Sitemap). */
 import type { ImageMetadata } from 'astro';
 import heroDach from '../assets/images/ratgeber/hero-dach.jpg';
+import heroAsbestdach from '../assets/images/leistungen/welleternit-ausbauen.jpg';
 
 export interface RatgeberFaq {
   readonly frage: string;
@@ -26,6 +27,60 @@ export interface RatgeberArtikel {
 }
 
 export const ratgeberArtikel: readonly RatgeberArtikel[] = [
+  {
+    slug: 'asbestdach-entsorgen-kosten-ablauf',
+    title: 'Asbestdach entsorgen: Erkennen, Kosten, Pflicht & Ablauf',
+    metaTitle: 'Asbestdach entsorgen: Kosten, Pflicht & Ablauf (2026) | Asbesta Ratgeber',
+    metaDescription:
+      'Asbestdach erkennen, Kosten pro m², Entfernungspflicht nach TRGS 519 und Ablauf der Entsorgung – der komplette Ratgeber 2026 mit Kostentabelle und FAQ vom Fachbetrieb.',
+    excerpt:
+      'Graue Welleternit-Platten auf Dach oder Garage? Wann ein Asbestdach raus muss, was die Entsorgung pro Quadratmeter kostet und wie der Ausbau nach TRGS 519 abläuft – mit Kostentabelle, Schritt-für-Schritt-Ablauf und den häufigsten Fragen.',
+    kategorie: 'Ratgeber Asbest',
+    datePublished: '2026-06-11',
+    dateModified: '2026-06-11',
+    author: 'Asbesta Fachredaktion',
+    authorRole: 'Fachbetrieb mit Sachkunde nach TRGS 519',
+    lesezeitMin: 12,
+    heroImage: heroAsbestdach,
+    heroAlt: 'Arbeiter in Schutzkleidung trägt asbesthaltige Wellplatten von einem Dach ab',
+    faqs: [
+      {
+        frage: 'Woran erkenne ich, ob mein Dach Asbest enthält?',
+        antwort:
+          'Ein starkes Indiz ist das Baujahr: Wellplatten und Faserzement-Dächer, die vor 1993 verbaut wurden, enthalten mit hoher Wahrscheinlichkeit Asbest. Typisch sind graue, leicht gewellte Faserzementplatten („Welleternit"), oft mit Moosbewuchs und verwitterter Oberfläche; auf der Plattenunterseite findet sich teilweise ein Herstellerstempel mit Datum. Sicherheit gibt aber nur eine Materialprobe, die im Labor analysiert wird – eine Sichtprüfung allein reicht nicht aus.',
+      },
+      {
+        frage: 'Muss ich ein intaktes Asbestdach entfernen?',
+        antwort:
+          'Eine generelle Austauschpflicht für jedes Asbestdach gibt es nicht. Solange die Platten fest gebunden, unbeschädigt und ungestört sind, dürfen sie zunächst liegen bleiben. Sobald Sie jedoch am Dach arbeiten lassen, es umbauen, abreißen oder das Material beschädigt bzw. stark verwittert ist, greift die Sanierungspflicht nach Gefahrstoffverordnung und TRGS 519 – dann darf nur ein Fachbetrieb ran.',
+      },
+      {
+        frage: 'Was kostet es, ein Asbestdach entsorgen zu lassen?',
+        antwort:
+          'Als grobe Orientierung liegen Abbau und Entsorgung eines Asbestzement-Daches in Deutschland meist bei rund 35 bis 80 € pro Quadratmeter, je nach Dachneigung, Höhe, Zugänglichkeit und Gerüstbedarf. Hinzu kommen Deponiegebühren (ca. 100–300 € pro Tonne) und ggf. die Materialprobe. Den verbindlichen Preis nennen wir als Festpreis erst nach einer kostenlosen Besichtigung.',
+      },
+      {
+        frage: 'Darf ich mein Asbestdach selbst abbauen?',
+        antwort:
+          'Davon ist dringend abzuraten, und für die meisten Fälle ist es nicht zulässig. Der Ausbau asbesthaltiger Dachplatten ist nach TRGS 519 eine erlaubnis- und anzeigepflichtige Tätigkeit, die Sachkunde, Schutzausrüstung und eine fachgerechte Entsorgung voraussetzt. Wer Platten bricht, flext oder hochdruckreinigt, setzt massenhaft Fasern frei und gefährdet sich und die Nachbarschaft – außerdem drohen Bußgelder.',
+      },
+      {
+        frage: 'Kann man ein Asbestdach beschichten oder überdecken statt entfernen?',
+        antwort:
+          'Nein. Das Beschichten, Überdecken, Abschleifen oder Hochdruckreinigen asbesthaltiger Dächer ist unzulässig, weil dabei besonders viele Fasern freigesetzt werden. Diese vermeintlichen „Sanierungen" lösen das Problem nicht, sondern verschärfen es und erschweren die spätere fachgerechte Entsorgung. Der einzig sichere Weg ist der kontrollierte Ausbau und die Entsorgung durch einen Fachbetrieb.',
+      },
+      {
+        frage: 'Wie wird ein Asbestdach fachgerecht entsorgt?',
+        antwort:
+          'Die Platten werden möglichst zerstörungsfrei abgenommen, staubdicht in gekennzeichneten Big Bags verpackt und als gefährlicher Abfall (Abfallschlüssel AVV 17 06 05*) über zugelassene Deponien entsorgt. Sie erhalten einen lückenlosen Entsorgungsnachweis. Asbesthaltige Platten gehören keinesfalls in den Hausmüll oder unverpackt auf den Wertstoffhof.',
+      },
+      {
+        frage: 'Gibt es Förderung, wenn ich das Asbestdach durch ein neues, gedämmtes Dach ersetze?',
+        antwort:
+          'Eine eigene „Asbest-Förderung" gibt es nicht. Wird der Dachausbau aber mit einer energetischen Maßnahme kombiniert – etwa einer neuen Dämmung oder Photovoltaik – sind KfW-/BAFA-Förderungen und der Steuerbonus nach § 35c EStG möglich. Für reine Handwerkerleistungen lässt sich häufig § 35a EStG nutzen. Lassen Sie sich dazu individuell steuerlich beraten.',
+      },
+    ],
+  },
   {
     slug: 'asbestsanierung-pflicht-kosten-ablauf',
     title: 'Asbestsanierung: Pflicht, Kosten & Ablauf',
