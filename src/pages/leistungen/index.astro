@@ -1,15 +1,27 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/patterns/Breadcrumb.astro';
+import SchemaGraph from '../../components/schema/SchemaGraph.astro';
 import LeistungenGrid from '../../components/sections/LeistungenGrid.astro';
 import CtaSection from '../../components/sections/CtaSection.astro';
+import { leistungen } from '../../data/leistungen';
+import { buildCollectionGraph } from '../../lib/schema';
 
 const title = 'Leistungen: Asbest- & Schadstoffsanierung in NRW | Asbesta';
 const description =
-  'Alle Leistungen von Asbesta: Asbestsanierung nach TRGS 519, KMF- und PAK-Sanierung, Materialanalyse, Abbruch, Floor-Flex, Welleternit und mehr – zertifiziert in ganz NRW.';
+  'Asbestsanierung nach TRGS 519, KMF- & PAK-Sanierung, Materialanalyse, Abbruch, Floor-Flex, Welleternit und mehr – alle Asbesta-Leistungen, zertifiziert in NRW.';
+const origin = Astro.site?.origin ?? 'https://www.asbesta-schadstoffsanierung.de';
+const graph = buildCollectionGraph(origin, {
+  name: 'Leistungen',
+  crumb: 'Leistungen',
+  description,
+  path: '/leistungen/',
+  items: leistungen.map((l) => ({ name: l.title, url: `${origin}/leistungen/${l.slug}/` })),
+});
 ---
 
 <BaseLayout title={title} description={description}>
+  <SchemaGraph slot="head" graph={graph} />
   <section class="border-b border-gray-200 bg-gradient-to-br from-red-50 via-white to-gray-50">
     <div class="mx-auto max-w-6xl px-4 py-10 lg:px-8 lg:py-14">
       <Breadcrumb items={[{ name: 'Start', href: '/' }, { name: 'Leistungen' }]} />

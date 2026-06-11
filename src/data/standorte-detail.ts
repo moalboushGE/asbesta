@@ -18,7 +18,7 @@ export interface StandortDetail {
 export const standorteDetail: Record<string, StandortDetail> = {
   "marl": {
     "metaTitle": "Asbestsanierung Marl | Schadstoffsanierung vor Ort",
-    "metaDescription": "Asbest- & Schadstoffsanierung in Marl direkt von unserem Firmensitz. Zertifiziert nach TRGS 519, 15+ Jahre Erfahrung. Jetzt kostenlos beraten lassen: 02365 2960630.",
+    "metaDescription": "Asbest- & Schadstoffsanierung in Marl direkt von unserem Firmensitz. Zertifiziert nach TRGS 519, 15+ Jahre Erfahrung.",
     "heroIntro": "Asbesta hat seinen Firmensitz direkt in Marl am Venusweg 24 - Ihre Asbest- und Schadstoffsanierung kommt hier also unmittelbar vor Ort und ohne Anfahrtswege zu Ihnen. Als zertifizierter Fachbetrieb nach TRGS 519 sanieren wir Wohnhäuser, Zechensiedlungen, Gewerbe- und Industrieobjekte in ganz Marl fachgerecht und gesetzeskonform.",
     "anfahrt": "Direkt vor Ort - unser Firmensitz am Venusweg 24, 45770 Marl. Kurze Wege in alle Stadtteile, von Marl-Mitte bis Sinsen-Lenkerbeck.",
     "lokalKontext": [
@@ -154,7 +154,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
   },
   "gelsenkirchen": {
     "metaTitle": "Asbestsanierung Gelsenkirchen | Schadstoffsanierung",
-    "metaDescription": "Asbest- & Schadstoffsanierung in Gelsenkirchen: zertifizierter Fachbetrieb nach TRGS 519. Zechensiedlungen, Nachkriegsbau, Gewerbe. Jetzt anrufen: +49 2365 2960630.",
+    "metaDescription": "Asbest- & Schadstoffsanierung in Gelsenkirchen: zertifizierter Fachbetrieb nach TRGS 519. Zechensiedlungen, Nachkriegsbau, Gewerbe.",
     "heroIntro": "Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Gelsenkirchen? Asbesta ist Ihr zertifizierter Fachbetrieb nach TRGS 519 - von der Materialanalyse über die sichere Entfernung bis zur Freimessung nach VDI 3492. Ob Zechensiedlung in Ückendorf, Nachkriegsbau in Buer oder Gewerbeimmobilie an der Schalker Straße: Wir arbeiten staubdicht, behördenkonform und übernehmen die komplette Abwicklung.",
     "anfahrt": "ca. 20-26 km / rund 25 Min ab unserem Standort Marl - Gelsenkirchen gehört zu unserem täglichen Einsatzgebiet im nördlichen Ruhrgebiet.",
     "lokalKontext": [
@@ -347,7 +347,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
   },
   "duesseldorf": {
     "metaTitle": "Asbestsanierung Düsseldorf | Schadstoffsanierung vom Fachbetrieb",
-    "metaDescription": "Asbest- & Schadstoffsanierung in Düsseldorf: zertifizierter Fachbetrieb nach TRGS 519, Materialanalyse & Luftmessung. Jetzt kostenlos beraten lassen: 02365 2960630.",
+    "metaDescription": "Asbest- & Schadstoffsanierung in Düsseldorf: zertifizierter Fachbetrieb nach TRGS 519, Materialanalyse & Luftmessung.",
     "heroIntro": "Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Düsseldorf? Asbesta ist Ihr zertifizierter Ansprechpartner nach TRGS 519 - von der Materialanalyse über die abgeschottete Sanierung bis zur Freimessung nach VDI 3492. Wir arbeiten in der gesamten Landeshauptstadt, von der Altstadt bis Benrath, und sind nach kurzer Anfahrt aus Marl schnell bei Ihnen vor Ort.",
     "anfahrt": "ca. 60 km / 55 Min ab unserem Standort Marl (über A52/A57)",
     "lokalKontext": [

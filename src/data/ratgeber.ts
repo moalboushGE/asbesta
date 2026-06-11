@@ -224,7 +224,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
     title: 'Asbest erkennen: Baujahr, Fundorte & Materialprobe',
     metaTitle: 'Asbest erkennen: Baujahr, Fundorte & Materialprobe | Asbesta',
     metaDescription:
-      'Woran erkennt man Asbest? Das Baujahr vor 1993, typische Fundorte im Haus und warum nur eine Materialprobe im Labor Sicherheit gibt – der Ratgeber vom Fachbetrieb.',
+      'Woran erkennt man Asbest? Baujahr vor 1993, typische Fundorte im Haus und warum nur eine Materialprobe Sicherheit gibt – der Ratgeber vom Fachbetrieb.',
     excerpt:
       'Graue Wellplatten, alter Bodenkleber, Spachtelmasse – steckt da Asbest drin? Woran Sie ein Asbestrisiko erkennen: das Baujahr als wichtigstes Indiz, typische Fundorte im Haus und warum endgültige Sicherheit nur eine Materialprobe im Labor bringt.',
     kategorie: 'Ratgeber Asbest',
@@ -276,9 +276,9 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   {
     slug: 'asbestdach-entsorgen-kosten-ablauf',
     title: 'Asbestdach entsorgen: Erkennen, Kosten, Pflicht & Ablauf',
-    metaTitle: 'Asbestdach entsorgen: Kosten, Pflicht & Ablauf (2026) | Asbesta Ratgeber',
+    metaTitle: 'Asbestdach entsorgen: Kosten, Pflicht & Ablauf | Asbesta',
     metaDescription:
-      'Asbestdach erkennen, Kosten pro m², Entfernungspflicht nach TRGS 519 und Ablauf der Entsorgung – der komplette Ratgeber 2026 mit Kostentabelle und FAQ vom Fachbetrieb.',
+      'Asbestdach erkennen, Kosten pro m², Entfernungspflicht nach TRGS 519 und Ablauf der Entsorgung – mit Kostentabelle und FAQ vom Fachbetrieb.',
     excerpt:
       'Graue Welleternit-Platten auf Dach oder Garage? Wann ein Asbestdach raus muss, was die Entsorgung pro Quadratmeter kostet und wie der Ausbau nach TRGS 519 abläuft – mit Kostentabelle, Schritt-für-Schritt-Ablauf und den häufigsten Fragen.',
     kategorie: 'Ratgeber Asbest',
@@ -330,9 +330,9 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   {
     slug: 'asbestsanierung-pflicht-kosten-ablauf',
     title: 'Asbestsanierung: Pflicht, Kosten & Ablauf',
-    metaTitle: 'Asbestsanierung: Pflicht, Kosten & Ablauf (2026) | Asbesta Ratgeber',
+    metaTitle: 'Asbestsanierung: Pflicht, Kosten & Ablauf | Asbesta',
     metaDescription:
-      'Wann ist eine Asbestsanierung Pflicht, was kostet sie pro m² und wie läuft sie nach TRGS 519 ab? Der komplette Ratgeber 2026 mit Kostentabelle, Ablauf und FAQ vom Fachbetrieb.',
+      'Wann ist eine Asbestsanierung Pflicht, was kostet sie pro m² und wie läuft sie nach TRGS 519 ab? Der Ratgeber mit Kostentabelle, Ablauf und FAQ vom Fachbetrieb.',
     excerpt:
       'Wann ist eine Asbestsanierung Pflicht, was kostet sie pro Quadratmeter und wie läuft sie nach TRGS 519 ab? Der komplette Überblick – mit Kostentabelle, Schritt-für-Schritt-Ablauf und Antworten auf die häufigsten Fragen.',
     kategorie: 'Ratgeber Asbest',

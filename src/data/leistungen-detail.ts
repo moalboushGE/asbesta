@@ -23,7 +23,7 @@ export interface LeistungDetail {
 export const leistungenDetail: Record<string, LeistungDetail> = {
   "asbestsanierung": {
     "metaTitle": "Asbestsanierung nach TRGS 519 in NRW | Asbesta",
-    "metaDescription": "Zertifizierte Asbestsanierung nach TRGS 519 in ganz NRW. Fachgerechte Demontage, Unterdruckhaltung, Freimessung und Entsorgungsnachweis. Jetzt kostenfrei besichtigen lassen.",
+    "metaDescription": "Zertifizierte Asbestsanierung nach TRGS 519 in ganz NRW. Fachgerechte Demontage, Unterdruckhaltung, Freimessung und Entsorgungsnachweis.",
     "heroIntro": "Asbest ist krebserregend und darf nur von Fachbetrieben mit Sachkunde nach TRGS 519 entfernt werden. Asbesta saniert asbesthaltige Materialien in ganz NRW sicher, behördlich angezeigt und mit lückenlosem Entsorgungsnachweis.",
     "einleitung": [
       "Asbest wurde bis zum bundesweiten Verbot 1993 in unzähligen Baumaterialien verarbeitet - von Dachplatten und Fassadenverkleidungen über Bodenkleber und Flex-Platten bis zu Spachtelmassen, Rohrisolierungen und Brandschutzfeuerungen. Werden diese Materialien beschädigt, gebohrt, gebrochen oder abgerissen, setzen sie lungengängige Fasern frei, die nachweislich Asbestose, Lungen- und Rippenfellkrebs verursachen können. Aus diesem Grund regelt die TRGS 519 (Technische Regeln für Gefahrstoffe) Abbruch-, Sanierungs- und Instandhaltungsarbeiten an asbesthaltigen Materialien verbindlich.",
@@ -86,7 +86,7 @@ export const leistungenDetail: Record<string, LeistungDetail> = {
   },
   "abbrucharbeiten": {
     "metaTitle": "Abbrucharbeiten in NRW | Rückbau & Teilabbruch | Asbesta",
-    "metaDescription": "Abbrucharbeiten in ganz NRW: fachgerechter Rückbau, Teilabbruch und Entkernung mit vorheriger Schadstofferkundung, sauberer Trennung und Entsorgungsnachweis. Jetzt anfragen.",
+    "metaDescription": "Abbrucharbeiten in ganz NRW: fachgerechter Rückbau, Teilabbruch und Entkernung mit vorheriger Schadstofferkundung, sauberer Trennung und Entsorgungsnachweis.",
     "heroIntro": "Wir führen Abbruch-, Rückbau- und Teilabbrucharbeiten in ganz NRW durch – mit vorheriger Schadstofferkundung, sortenreiner Trennung und lückenlosem Entsorgungsnachweis. So wird aus dem Abriss ein kontrollierter, dokumentierter Prozess statt eines unkalkulierbaren Risikos.",
     "einleitung": [
       "Abbrucharbeiten umfassen weit mehr als das reine Niederlegen von Bauteilen. Vor jedem Eingriff steht die Erkundung der verbauten Stoffe: In Gebäuden vor 1995 sind asbesthaltige Materialien, künstliche Mineralfasern (KMF), PAK-haltige Klebstoffe und PCB-belastete Fugenmassen verbreitet. Erst wenn diese Schadstoffe identifiziert und – wo erforderlich – vorab durch eine Sanierung entfernt sind, beginnt der eigentliche Abbruch. Dieses Vorgehen ist nicht optional, sondern ergibt sich aus der Gefahrstoffverordnung und der TRGS 519 für asbesthaltige Bauteile.",
@@ -334,7 +334,7 @@ export const leistungenDetail: Record<string, LeistungDetail> = {
   },
   "welleternit-ausbauen": {
     "metaTitle": "Welleternit / Wellasbestplatten ausbauen in NRW | Asbesta",
-    "metaDescription": "Wellasbestplatten und Welleternit fachgerecht ausbauen lassen - zertifiziert nach TRGS 519. Asbesta saniert Asbestdächer in ganz NRW. Festpreis & Entsorgungsnachweis.",
+    "metaDescription": "Wellasbestplatten und Welleternit fachgerecht ausbauen lassen - zertifiziert nach TRGS 519. Asbesta saniert Asbestdächer in ganz NRW.",
     "heroIntro": "Asbesthaltige Welleternit- und Wellasbestplatten gehören zu den häufigsten Asbestprodukten an Dächern und Fassaden in NRW. Asbesta baut sie emissionsarm nach TRGS 519 aus - mit transparentem Festpreis, ordnungsgemäßer Entsorgung und vollständiger Dokumentation.",
     "einleitung": [
       "Welleternit, oft auch als Wellasbest oder Asbestzement-Wellplatte bezeichnet, wurde jahrzehntelang als kostengünstiges und witterungsbeständiges Dach- und Fassadenmaterial verbaut. Bis zum Asbestverbot 1993 enthielten diese Faserzementplatten in der Regel Chrysotil (Weißasbest), teils auch Krokydolith. Solange die Platten intakt und fest verbaut sind, gelten sie als schwach gebundenes bis fest gebundenes Material - sobald jedoch Bohren, Sägen, Brechen oder die Verwitterung der Oberfläche ins Spiel kommt, können lungengängige Asbestfasern freigesetzt werden. Genau deshalb ist der Ausbau eine erlaubnispflichtige Tätigkeit, die nach TRGS 519 ausschließlich durch sachkundige Fachbetriebe erfolgen darf.",
@@ -397,7 +397,7 @@ export const leistungenDetail: Record<string, LeistungDetail> = {
   },
   "fassadenplatten-ausbauen": {
     "metaTitle": "Fassadenplatten ausbauen (Asbest) | Asbesta NRW",
-    "metaDescription": "Asbesthaltige Fassadenplatten ausbauen lassen in ganz NRW: Fachbetrieb nach TRGS 519, emissionsarme Demontage, Entsorgungsnachweis. Jetzt kostenfrei besichtigen lassen.",
+    "metaDescription": "Asbesthaltige Fassadenplatten ausbauen lassen in ganz NRW: Fachbetrieb nach TRGS 519, emissionsarme Demontage, Entsorgungsnachweis.",
     "heroIntro": "Wir bauen asbesthaltige Fassadenplatten in ganz NRW staubarm, vorschriftskonform nach TRGS 519 und mit lückenlosem Entsorgungsnachweis aus. Kostenfreie Besichtigung und transparenter Festpreis inklusive.",
     "einleitung": [
       "Asbestzement-Fassadenplatten - oft unter dem Markennamen Eternit bekannt - wurden bis 1993 millionenfach an Außenwänden, Giebeln und vorgehängten Fassaden verbaut. Sie bestehen aus einem Zement-Gemisch mit eingebundenen Asbestfasern (in der Regel fest gebundener Asbest) und gelten optisch als unscheinbare graue oder farbig beschichtete Platten. Solange sie unbeschädigt sind, geben sie kaum Fasern ab - beim Ausbau, Brechen, Bohren oder durch jahrzehntelange Verwitterung werden jedoch lungengängige Fasern frei, die nachweislich Krebs auslösen können.",
@@ -460,7 +460,7 @@ export const leistungenDetail: Record<string, LeistungDetail> = {
   },
   "asbestzement-ausbauen": {
     "metaTitle": "Asbestzement ausbauen in NRW | TRGS 519 Fachbetrieb Asbesta",
-    "metaDescription": "Asbestzement (Faserzement) fachgerecht ausbauen lassen: zertifizierter Fachbetrieb nach TRGS 519 in ganz NRW. Kostenfreie Besichtigung, Festpreis, Entsorgungsnachweis. Jetzt anfragen.",
+    "metaDescription": "Asbestzement (Faserzement) fachgerecht ausbauen lassen: zertifizierter Fachbetrieb nach TRGS 519 in ganz NRW.",
     "heroIntro": "Asbestzement-Bauteile sicher und gesetzeskonform demontieren - durch den zertifizierten Fachbetrieb Asbesta nach TRGS 519, in ganz NRW.",
     "einleitung": [
       "Asbestzement, auch als Faserzement bekannt, wurde jahrzehntelang in unzähligen Bauteilen verarbeitet: Dach- und Fassadenplatten (Welleternit), Blumenkästen, Lüftungskanäle, Wasserrohre, Fensterbänke und Zwischenwände. Solange das Material unbeschädigt verbaut ist, bleiben die Asbestfasern weitgehend gebunden. Sobald Asbestzement jedoch bohrt, brechen, sägen oder verwittern Sie es, können lungengängige Fasern freigesetzt werden - mit erheblichem Gesundheitsrisiko. Aus diesem Grund darf der Ausbau ausschließlich durch einen sachkundigen Fachbetrieb erfolgen.",
@@ -521,7 +521,7 @@ export const leistungenDetail: Record<string, LeistungDetail> = {
       }
     ]
   },
-  "fensterbänke-ausbauen": {
+  "fensterbaenke-ausbauen": {
     "metaTitle": "Asbest-Fensterbänke ausbauen in NRW | Asbesta",
     "metaDescription": "Asbesthaltige Fensterbänke fachgerecht ausbauen und entsorgen nach TRGS 519. Asbesta saniert in ganz NRW mit Festpreis, Freimessung und Entsorgungsnachweis.",
     "heroIntro": "Asbesthaltige Fensterbänke aus Asbestzement entfernen wir staubarm und rechtssicher nach TRGS 519 - inklusive Entsorgungsnachweis. Kostenfreie Besichtigung in ganz NRW.",
@@ -649,7 +649,7 @@ export const leistungenDetail: Record<string, LeistungDetail> = {
   },
   "kmf-sanierung": {
     "metaTitle": "KMF-Sanierung nach TRGS 521 in NRW | Asbesta",
-    "metaDescription": "Alte Mineralwolle (Glas- und Steinwolle) fachgerecht ausbauen und entsorgen nach TRGS 521. Asbesta saniert KMF in ganz NRW mit Festpreis, Staubschutz und Entsorgungsnachweis.",
+    "metaDescription": "Alte Mineralwolle (Glas- und Steinwolle) fachgerecht ausbauen und entsorgen nach TRGS 521. Asbesta saniert KMF in ganz NRW mit Festpreis, Staubschutz und.",
     "heroIntro": "Alte Glas- und Steinwolle vor 1996 gilt als krebsverdächtig und darf nur staubarm und fachgerecht ausgebaut werden. Asbesta saniert künstliche Mineralfasern (KMF) in ganz NRW nach TRGS 521 - mit Staubschutz, sachkundigem Personal und lückenlosem Entsorgungsnachweis.",
     "einleitung": [
       "Künstliche Mineralfasern (KMF) sind Dämmstoffe aus Glaswolle, Steinwolle oder Schlackenwolle, die jahrzehntelang zur Wärme- und Schalldämmung verbaut wurden - in Dachschrägen, Zwischendecken, Trockenbauwänden, Rohrleitungen, hinter Heizkörpern und in technischen Anlagen. Entscheidend für die Gefährdungsbeurteilung ist das Alter: Mineralwolle, die vor 1996 hergestellt wurde, enthält häufig sogenannte 'alte' Fasern, die wegen ihrer Geometrie und Beständigkeit als krebsverdächtig (Kategorie 1B/2) eingestuft sind. Erst seit Juni 2000 dürfen in Deutschland nur noch biologisch abbaubare, nachweislich unbedenkliche Mineralfasern in den Verkehr gebracht werden, die das RAL-Gütezeichen tragen.",
@@ -712,7 +712,7 @@ export const leistungenDetail: Record<string, LeistungDetail> = {
   },
   "pak-sanierung": {
     "metaTitle": "PAK-Sanierung in NRW | Fachbetrieb Asbesta",
-    "metaDescription": "PAK-Sanierung vom Fachbetrieb: Teerklebstoff, Parkett-Kleber & Dachpappe fachgerecht entfernen. Probenahme, Festpreis, Entsorgungsnachweis. NRW-weit. Jetzt anfragen.",
+    "metaDescription": "PAK-Sanierung vom Fachbetrieb: Teerklebstoff, Parkett-Kleber & Dachpappe fachgerecht entfernen. Probenahme, Festpreis, Entsorgungsnachweis. NRW-weit.",
     "heroIntro": "Wir sanieren PAK-belastete Bauteile wie Teerklebstoffe unter Altparkett, schwarze Kleberreste und teerhaltige Dachbahnen fachgerecht und staubarm. Als Fachbetrieb nach GefStoffV arbeiten wir in ganz NRW mit Probenahme, Festpreis und lückenlosem Entsorgungsnachweis.",
     "einleitung": [
       "Polyzyklische aromatische Kohlenwasserstoffe (PAK) entstehen bei der unvollständigen Verbrennung organischer Stoffe und gelangten über Jahrzehnte vor allem als Steinkohlenteer in Bauprodukte. Typisch sind schwarze, teerartige Klebstoffe unter altem Parkett und Holzpflaster, teerhaltige Dachpappen und Bitumenbahnen, alte Korkdämmungen sowie Teerkork und bestimmte Fugenmassen. Der maßgebliche Leitschadstoff ist Benzo[a]pyren (BaP), der als krebserzeugend gilt und über Staub und Ausgasung in die Raumluft gelangen kann.",

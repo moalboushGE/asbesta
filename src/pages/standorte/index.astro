@@ -2,21 +2,32 @@
 import { Icon } from 'astro-icon/components';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/patterns/Breadcrumb.astro';
+import SchemaGraph from '../../components/schema/SchemaGraph.astro';
 import CtaSection from '../../components/sections/CtaSection.astro';
 import { standorte } from '../../data/standorte';
 import { standorteDetail } from '../../data/standorte-detail';
+import { buildCollectionGraph } from '../../lib/schema';
 
 const cities = standorte.flatMap((s) => {
   const detail = standorteDetail[s.slug];
   return detail ? [{ stadt: s, detail }] : [];
 });
 
-const title = 'Standorte: Asbestsanierung in NRW (Marl, Essen, Köln u. a.) | Asbesta';
+const title = 'Standorte: Asbestsanierung in ganz NRW | Asbesta';
 const description =
   'Asbest- und Schadstoffsanierung vor Ort in Marl, Herten, Gladbeck, Gelsenkirchen, Bottrop, Essen, Oberhausen, Düsseldorf und Köln. Zertifiziert nach TRGS 519.';
+const origin = Astro.site?.origin ?? 'https://www.asbesta-schadstoffsanierung.de';
+const graph = buildCollectionGraph(origin, {
+  name: 'Standorte',
+  crumb: 'Standorte',
+  description,
+  path: '/standorte/',
+  items: cities.map(({ stadt }) => ({ name: stadt.name, url: `${origin}/standorte/${stadt.slug}/` })),
+});
 ---
 
 <BaseLayout title={title} description={description}>
+  <SchemaGraph slot="head" graph={graph} />
   <section class="border-b border-gray-200 bg-gradient-to-br from-red-50 via-white to-gray-50">
     <div class="mx-auto max-w-6xl px-4 py-10 lg:px-8 lg:py-14">
       <Breadcrumb items={[{ name: 'Start', href: '/' }, { name: 'Standorte' }]} />

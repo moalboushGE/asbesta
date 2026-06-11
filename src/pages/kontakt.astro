@@ -2,15 +2,26 @@
 import { Icon } from 'astro-icon/components';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/patterns/Breadcrumb.astro';
+import SchemaGraph from '../components/schema/SchemaGraph.astro';
 import ContactForm from '../components/sections/ContactForm.astro';
 import { site } from '../data/site';
+import { buildBasicPageGraph } from '../lib/schema';
 
 const title = 'Kontakt & kostenlose Anfrage | Asbesta Schadstoffsanierung';
 const description =
-  'Kontakt zu Asbesta für Asbest- und Schadstoffsanierung in NRW: Telefon, WhatsApp oder Anfrageformular. Kostenlose Besichtigung, Rückmeldung innerhalb von 24 Stunden.';
+  'Kontakt zu Asbesta für Asbest- & Schadstoffsanierung in NRW: Telefon, WhatsApp oder Anfrageformular. Kostenlose Besichtigung, Antwort innerhalb von 24 Stunden.';
+const origin = Astro.site?.origin ?? 'https://www.asbesta-schadstoffsanierung.de';
+const graph = buildBasicPageGraph(origin, {
+  type: 'ContactPage',
+  name: 'Kontakt & kostenlose Anfrage',
+  crumb: 'Kontakt',
+  description,
+  path: '/kontakt/',
+});
 ---
 
 <BaseLayout title={title} description={description}>
+  <SchemaGraph slot="head" graph={graph} />
   <section class="border-b border-gray-200 bg-gradient-to-br from-red-50 via-white to-gray-50">
     <div class="mx-auto max-w-5xl px-4 py-10 lg:px-8 lg:py-14">
       <Breadcrumb items={[{ name: 'Start', href: '/' }, { name: 'Kontakt' }]} />

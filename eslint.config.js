@@ -38,4 +38,9 @@ export default tseslint.config(
     files: ['src/pages/ratgeber/**/*.astro'],
     rules: { 'max-lines': 'off' },
   },
+  {
+    // schema.ts ist eine Sammlung kleiner, reiner JSON-LD-Builder (deklarativ, keine God-Component).
+    files: ['src/lib/schema.ts'],
+    rules: { 'max-lines': 'off' },
+  },
 );

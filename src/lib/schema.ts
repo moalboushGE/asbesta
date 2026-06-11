@@ -64,6 +64,66 @@ export function breadcrumbNode(origin: string, crumbs: readonly Crumb[]): Record
   };
 }
 
+export interface ListEntry {
+  readonly name: string;
+  readonly url: string;
+}
+
+/** Hub-Seite: Organization + CollectionPage + ItemList + Breadcrumb (z. B. /leistungen, /standorte). */
+export function buildCollectionGraph(
+  origin: string,
+  args: { name: string; crumb: string; description: string; path: string; items: readonly ListEntry[] },
+): unknown[] {
+  const url = origin + args.path;
+  return [
+    organizationNode(origin),
+    {
+      '@type': 'CollectionPage',
+      '@id': url,
+      url,
+      name: args.name,
+      description: args.description,
+      isPartOf: { '@id': origin + '/' + ORG_ID },
+    },
+    {
+      '@type': 'ItemList',
+      itemListElement: args.items.map((it, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: it.name,
+        url: it.url,
+      })),
+    },
+    breadcrumbNode(origin, [
+      { name: 'Start', url: '/' },
+      { name: args.crumb, url: args.path },
+    ]),
+  ];
+}
+
+/** Einfache indexierbare Seite: Organization + WebPage/ContactPage/AboutPage + Breadcrumb. */
+export function buildBasicPageGraph(
+  origin: string,
+  args: { type: string; name: string; crumb: string; description: string; path: string },
+): unknown[] {
+  const url = origin + args.path;
+  return [
+    organizationNode(origin),
+    {
+      '@type': args.type,
+      '@id': url,
+      url,
+      name: args.name,
+      description: args.description,
+      isPartOf: { '@id': origin + '/' + ORG_ID },
+    },
+    breadcrumbNode(origin, [
+      { name: 'Start', url: '/' },
+      { name: args.crumb, url: args.path },
+    ]),
+  ];
+}
+
 export function faqNode(faqs: readonly FaqItem[]): Record<string, unknown> {
   return {
     '@type': 'FAQPage',
