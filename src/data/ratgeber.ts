@@ -2,6 +2,7 @@
 import type { ImageMetadata } from 'astro';
 import heroDach from '../assets/images/ratgeber/hero-dach.jpg';
 import heroAsbestdach from '../assets/images/leistungen/welleternit-ausbauen.jpg';
+import heroErkennen from '../assets/images/leistungen/materialanalyse.jpg';
 
 export interface RatgeberFaq {
   readonly frage: string;
@@ -27,6 +28,60 @@ export interface RatgeberArtikel {
 }
 
 export const ratgeberArtikel: readonly RatgeberArtikel[] = [
+  {
+    slug: 'asbest-erkennen',
+    title: 'Asbest erkennen: Baujahr, Fundorte & Materialprobe',
+    metaTitle: 'Asbest erkennen: Baujahr, Fundorte & Materialprobe | Asbesta',
+    metaDescription:
+      'Woran erkennt man Asbest? Das Baujahr vor 1993, typische Fundorte im Haus und warum nur eine Materialprobe im Labor Sicherheit gibt – der Ratgeber vom Fachbetrieb.',
+    excerpt:
+      'Graue Wellplatten, alter Bodenkleber, Spachtelmasse – steckt da Asbest drin? Woran Sie ein Asbestrisiko erkennen: das Baujahr als wichtigstes Indiz, typische Fundorte im Haus und warum endgültige Sicherheit nur eine Materialprobe im Labor bringt.',
+    kategorie: 'Ratgeber Asbest',
+    datePublished: '2026-06-11',
+    dateModified: '2026-06-11',
+    author: 'Asbesta Fachredaktion',
+    authorRole: 'Fachbetrieb mit Sachkunde nach TRGS 519',
+    lesezeitMin: 11,
+    heroImage: heroErkennen,
+    heroAlt: 'Asbestfaser-Materialprobe wird im Labor unter dem Mikroskop analysiert',
+    faqs: [
+      {
+        frage: 'Woran erkenne ich, ob in meinem Haus Asbest verbaut ist?',
+        antwort:
+          'Das wichtigste Indiz ist das Baujahr: In Gebäuden, die vor dem Asbestverbot 1993 errichtet oder saniert wurden, ist Asbest wahrscheinlich – besonders aus der Hochphase von etwa 1960 bis 1990. Typische Fundorte sind Welleternit-Dächer, Asbestzement-Fassadenplatten, Floor-Flex-Bodenplatten mit schwarzem Bitumenkleber, Spritzasbest, Spachtelmassen, Fliesenkleber, Fensterbänke und Nachtspeicheröfen. Sicher feststellen lässt sich Asbest aber nur über eine Materialprobe, die im Labor analysiert wird – eine reine Sichtprüfung genügt nicht.',
+      },
+      {
+        frage: 'Ab welchem Baujahr muss ich mit Asbest rechnen?',
+        antwort:
+          'Asbest wurde in Deutschland bis zum vollständigen Verbot 1993 verbaut, mit einem Schwerpunkt zwischen den 1960er- und 1980er-Jahren. Als Faustregel gilt: Bei Gebäuden und Einbauten vor 1993 besteht Asbestverdacht – vor allem, wenn seither nicht kernsaniert wurde. Auch Modernisierungen aus dieser Zeit (neue Böden, Putze, Kleber) können Asbest eingebracht haben, selbst wenn das Gebäude älter und ursprünglich asbestfrei war.',
+      },
+      {
+        frage: 'Kann man Asbest mit bloßem Auge erkennen?',
+        antwort:
+          'Nicht zuverlässig. Manche Produkte wie graue Welleternit-Wellplatten oder Floor-Flex-Bodenplatten sind zwar verdächtig, aber Asbest steckt oft unsichtbar in Klebern, Spachtelmassen, Putzen oder Fliesenklebern. Optisch lassen sich asbesthaltige und asbestfreie Materialien meist nicht unterscheiden. Zweifelsfreie Sicherheit gibt nur die Laboranalyse einer Probe.',
+      },
+      {
+        frage: 'Darf ich selbst eine Asbestprobe nehmen?',
+        antwort:
+          'Davon raten wir dringend ab. Beim Anbohren, Abkratzen oder Brechen verdächtiger Materialien werden genau die gefährlichen Fasern freigesetzt, die Sie eigentlich vermeiden wollen. Die Probenahme sollte staubmindernd und durch sachkundiges Personal nach TRGS 519 erfolgen. Wir entnehmen die Probe fachgerecht, dokumentieren die Entnahmestelle und lassen sie in einem akkreditierten Labor untersuchen.',
+      },
+      {
+        frage: 'Was kostet eine Asbest-Analyse?',
+        antwort:
+          'Die Kosten hängen von Anzahl und Art der Proben sowie vom Untersuchungsumfang ab; eine einzelne Materialprobe liegt oft im niedrigen zweistelligen Eurobereich pro Probe. Den genauen Preis nennen wir nach einer kostenlosen Besichtigung. Gemessen am Gesundheitsrisiko und an möglichen Folgekosten einer unentdeckten Belastung ist die Analyse eine kleine, lohnende Investition.',
+      },
+      {
+        frage: 'Materialprobe oder Raumluftmessung – was brauche ich?',
+        antwort:
+          'Beide Verfahren beantworten unterschiedliche Fragen. Eine Materialprobe zeigt, ob ein bestimmtes Bauteil Asbest enthält – ideal vor Umbau, Sanierung oder Kauf. Eine Raumluftmessung nach VDI 3492 zeigt dagegen, ob aktuell Fasern frei in der Atemluft schweben – etwa bei Verdacht auf eine bestehende Belastung oder als Freimessung nach einer Sanierung. Wir beraten Sie, welches Verfahren in Ihrem Fall sinnvoll ist.',
+      },
+      {
+        frage: 'Was soll ich bei Asbestverdacht tun?',
+        antwort:
+          'Bleiben Sie besonnen und bearbeiten Sie verdächtige Materialien auf keinen Fall: nicht bohren, sägen, schleifen, brechen oder hochdruckreinigen. Vermeiden Sie jede unnötige Beschädigung, dokumentieren Sie die Stelle mit einem Foto und halten Sie das Baujahr bereit. Holen Sie dann einen Fachbetrieb hinzu, der eine Probe nimmt und das weitere Vorgehen klärt.',
+      },
+    ],
+  },
   {
     slug: 'asbestdach-entsorgen-kosten-ablauf',
     title: 'Asbestdach entsorgen: Erkennen, Kosten, Pflicht & Ablauf',

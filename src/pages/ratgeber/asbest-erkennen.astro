@@ -1,0 +1,271 @@
+---
+import RatgeberArticleLayout from '../../layouts/RatgeberArticleLayout.astro';
+import Figure from '../../components/ui/Figure.astro';
+import Callout from '../../components/ui/Callout.astro';
+import { getArtikel } from '../../data/ratgeber';
+import dachAsbest from '../../assets/images/ratgeber/dach-asbestzement.jpg';
+import boden from '../../assets/images/ratgeber/boden.jpg';
+
+const artikel = getArtikel('asbest-erkennen');
+if (!artikel) throw new Error('Ratgeber-Artikel nicht gefunden.');
+
+const toc = [
+  { id: 'baujahr', label: 'Das Baujahr als wichtigstes Indiz' },
+  { id: 'optisch', label: 'Kann man Asbest sehen?' },
+  { id: 'fundorte', label: 'Wo steckt Asbest im Haus?' },
+  { id: 'produkte', label: 'Typische asbesthaltige Produkte' },
+  { id: 'materialprobe', label: 'Sicherheit nur per Materialprobe' },
+  { id: 'raumluft', label: 'Materialprobe oder Luftmessung?' },
+  { id: 'selbst', label: 'Probe selbst nehmen?' },
+  { id: 'verdacht', label: 'Asbestverdacht: Was tun?' },
+  { id: 'fachbetrieb', label: 'Warum ein Fachbetrieb?' },
+];
+---
+
+<RatgeberArticleLayout artikel={artikel} toc={toc}>
+  <p>
+    „Ist da Asbest drin?" – diese Frage stellt sich fast jeder, der ein älteres Haus kauft, saniert
+    oder umbaut. Graue Wellplatten auf der Garage, alter Bodenkleber unter dem Teppich, bröckelige
+    Spachtelmasse: Vieles davon stammt aus einer Zeit, in der Asbest ein Standardbaustoff war. Die
+    schlechte Nachricht vorweg: Asbest lässt sich mit bloßem Auge nicht sicher erkennen. Die gute:
+    Mit dem Baujahr, den typischen Fundorten und einer Materialprobe bekommen Sie schnell Klarheit.
+    Dieser Ratgeber zeigt, woran Sie ein Asbestrisiko erkennen – und wie Sie sicher vorgehen.
+  </p>
+
+  <h2 id="baujahr">Das Baujahr: das wichtigste Indiz</h2>
+  <p>
+    Der mit Abstand verlässlichste Anhaltspunkt ist das <strong>Baujahr</strong>. Asbest wurde in
+    Deutschland erst <strong>1993 vollständig verboten</strong>. In Gebäuden, die davor errichtet oder
+    saniert wurden, ist mit asbesthaltigen Materialien zu rechnen – besonders in der Hochphase
+    zwischen den 1960er- und 1980er-Jahren, als Asbest millionenfach verarbeitet wurde.
+  </p>
+  <p>
+    Wichtig: Nicht nur das ursprüngliche Baujahr zählt. Auch ein älteres, eigentlich asbestfreies Haus
+    kann bei Modernisierungen vor 1993 asbesthaltige Materialien „nachträglich" erhalten haben – etwa
+    neue Fliesenkleber, Bodenbeläge, Putze oder Spachtelmassen. Als Faustregel gilt deshalb:
+  </p>
+  <ul>
+    <li><strong>Vor 1993 gebaut oder saniert:</strong> Asbestverdacht, Materialprobe sinnvoll.</li>
+    <li>
+      <strong>1993 bis ca. 1995:</strong> Restbestände und Verarbeitung von Altmaterial möglich –
+      Verdacht im Einzelfall.
+    </li>
+    <li><strong>Nach 1995 gebaut:</strong> Asbest sehr unwahrscheinlich.</li>
+  </ul>
+  <p>
+    Ein Blick in die Bauakte, alte Rechnungen oder Modernisierungsunterlagen hilft, das Alter
+    einzelner Bauteile einzugrenzen. Sicherheit über das konkrete Material bringt das Baujahr allein
+    aber nicht – es zeigt nur, <em>ob</em> sich eine genauere Prüfung lohnt.
+  </p>
+
+  <h2 id="optisch">Kann man Asbest mit bloßem Auge erkennen?</h2>
+  <p>
+    Nein – jedenfalls nicht zuverlässig. Manche Produkte sind zwar verdächtig, etwa graue, leicht
+    gewellte Faserzement-Platten oder die typischen Floor-Flex-Bodenplatten. Aber Asbest steckt sehr
+    oft <strong>unsichtbar</strong> in Klebern, Spachtelmassen, Putzen, Fliesenklebern oder
+    Dichtungen. Asbesthaltige und asbestfreie Varianten desselben Produkts sehen meist identisch aus.
+  </p>
+  <p>
+    Es gibt dennoch <strong>Warnzeichen</strong>, die einen Verdacht erhärten:
+  </p>
+  <ul>
+    <li>graue bis bräunliche, matte Faserzementplatten mit rauer, faseriger Oberfläche;</li>
+    <li>an Bruchkanten erkennbare feine, silbrig-graue Fasern im Materialinneren;</li>
+    <li>schwarzer, harter „Schwarzkleber" unter altem PVC, Linoleum oder Parkett;</li>
+    <li>leichte, graue Platten hinter Heizkörpern, in Treppenhäusern oder als Brandschutz;</li>
+    <li>Herstellerstempel ohne den Zusatz „NT" (asbestfrei wurde erst nach dem Verbot mit „NT"
+      gekennzeichnet).</li>
+  </ul>
+  <Callout variant="warnung" title="Verdächtiges Material nicht antasten">
+    <p>
+      Reiben, bohren, sägen, schleifen oder hochdruckreinigen Sie verdächtige Materialien
+      <strong>auf keinen Fall</strong>, um „nachzusehen". Genau dabei werden die gefährlichen Fasern
+      freigesetzt. Eine Sichtprüfung aus der Distanz ist in Ordnung – jede mechanische Bearbeitung
+      gehört in fachkundige Hände.
+    </p>
+  </Callout>
+
+  <h2 id="fundorte">Wo steckt Asbest im Haus?</h2>
+  <p>
+    Asbest wurde in tausenden Produkten verarbeitet. Bei Gebäuden bis Baujahr 1993 lohnt sich vor
+    allem an diesen Stellen ein genauer Blick:
+  </p>
+  <div class="my-6 overflow-x-auto">
+    <table>
+      <thead>
+        <tr>
+          <th>Bereich</th>
+          <th>Typische asbesthaltige Materialien</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dach &amp; Fassade</td>
+          <td>
+            <a href="/leistungen/welleternit-ausbauen/">Welleternit-Wellplatten</a>, Dachschindeln,
+            <a href="/leistungen/fassadenplatten-ausbauen/">Asbestzement-Fassadenplatten</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Böden</td>
+          <td>
+            <a href="/leistungen/floor-flex-entfernen/">Floor-Flex-Platten</a>, Cushion-Vinyl und der
+            schwarze <a href="/leistungen/bitumenkleber-entfernen/">Bitumenkleber</a> darunter
+          </td>
+        </tr>
+        <tr>
+          <td>Innenräume</td>
+          <td>Spritzasbest, Brandschutzplatten, Putze &amp; Spachtelmassen, Fliesenkleber,
+            Fensterbänke</td>
+        </tr>
+        <tr>
+          <td>Haustechnik</td>
+          <td>Nachtspeicheröfen, Heizungs- und Rohrdichtungen, Lüftungskanäle, Faserzement-Rohre</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <Figure
+    src={dachAsbest}
+    alt="Verwittertes Asbestzement-Wellplattendach – ein typischer Asbest-Fundort am Gebäude"
+    aspect="16/9"
+    sizes="(min-width: 768px) 768px, 100vw"
+    class="my-6 ring-1 ring-black/5"
+  />
+
+  <h2 id="produkte">Typische asbesthaltige Produkte im Detail</h2>
+  <p>
+    Einige Materialien begegnen uns in der Praxis immer wieder. Sie zu kennen, hilft beim Einordnen
+    eines Verdachts:
+  </p>
+  <ul>
+    <li>
+      <strong>Welleternit / Asbestzement:</strong> graue Wellplatten auf Dächern und an Fassaden von
+      Garagen, Schuppen, Ställen und Wohnhäusern. Fest gebunden – im intakten Zustand wenig kritisch,
+      bei Verwitterung oder Bearbeitung gefährlich.
+    </li>
+    <li>
+      <strong>Floor-Flex &amp; Cushion-Vinyl:</strong> harte Vinyl-Asbest-Bodenplatten (oft 25×25 cm)
+      und elastische CV-Beläge, fast immer mit schwarzem, asbesthaltigem Bitumenkleber auf dem
+      Estrich.
+    </li>
+    <li>
+      <strong>Spritzasbest:</strong> grau-flockige Beschichtung an Decken, Trägern und in
+      Treppenhäusern, vor allem in Hochhäusern und Zweckbauten. Schwach gebunden und besonders
+      gefährlich.
+    </li>
+    <li>
+      <strong>Putze, Spachtel- und Fliesenkleber:</strong> Asbest wurde zur Verbesserung der
+      Eigenschaften beigemischt – optisch nicht erkennbar.
+    </li>
+    <li>
+      <strong>Nachtspeicheröfen:</strong> ältere Geräte enthalten häufig asbesthaltige Bauteile im
+      Inneren.
+    </li>
+  </ul>
+  <Figure
+    src={boden}
+    alt="Alter Bodenbelag und schwarze Klebstoffreste werden vom Untergrund gelöst"
+    aspect="16/9"
+    sizes="(min-width: 768px) 768px, 100vw"
+    class="my-6 ring-1 ring-black/5"
+  />
+
+  <h2 id="materialprobe">Sicherheit gibt nur die Materialprobe</h2>
+  <p>
+    Endgültige Gewissheit bringt ausschließlich die Laboranalyse einer Probe. Bei einer
+    <a href="/leistungen/materialanalyse/">Materialanalyse</a> wird ein kleines Stück des verdächtigen
+    Materials entnommen und im akkreditierten Labor untersucht – licht- und bei Bedarf
+    rasterelektronenmikroskopisch (REM/EDX) nach VDI 3866. So lassen sich auch geringste Asbestgehalte
+    in Klebern, Putzen oder Fugen zweifelsfrei nachweisen.
+  </p>
+  <p>
+    Das Ergebnis ist die Grundlage für alle weiteren Entscheidungen: Es zeigt nicht nur, <em>ob</em>
+    Asbest enthalten ist, sondern auch welche Art – und damit, ob es sich um fest oder schwach
+    gebundenes Material handelt. Davon hängen Schutzmaßnahmen, Aufwand und Kosten einer späteren
+    Sanierung ab.
+  </p>
+  <Callout variant="tipp" title="Experten-Tipp der Asbesta Fachredaktion">
+    <p>
+      Klären Sie den Asbest-Status <strong>vor</strong> dem Kauf einer Immobilie oder vor Beginn einer
+      Sanierung. Eine Probe kostet wenig, schafft aber Planungssicherheit und schützt vor teuren
+      Überraschungen, wenn mitten im Umbau plötzlich Asbest auftaucht und die Baustelle stoppt.
+    </p>
+  </Callout>
+
+  <h2 id="raumluft">Materialprobe oder Raumluftmessung?</h2>
+  <p>
+    Beide Verfahren beantworten unterschiedliche Fragen – und ergänzen sich:
+  </p>
+  <ul>
+    <li>
+      <strong>Materialprobe:</strong> zeigt, ob ein bestimmtes <em>Bauteil</em> Asbest enthält. Ideal
+      vor Umbau, Sanierung, Abriss oder Immobilienkauf.
+    </li>
+    <li>
+      <strong>Raumluftmessung nach <a href="/leistungen/luftanalysen-vdi-3492/">VDI 3492</a>:</strong>
+      zeigt, ob aktuell <em>Fasern frei in der Atemluft</em> schweben – also ob eine akute Gefährdung
+      besteht. Sie dient als Erfolgskontrolle (Freimessung) nach einer Sanierung oder bei Verdacht auf
+      eine bestehende Belastung durch beschädigte Materialien.
+    </li>
+  </ul>
+  <p>
+    Welches Verfahren sinnvoll ist, hängt von Ihrer Frage ab. Geht es um ein konkretes Bauteil, ist
+    die Materialprobe der richtige Weg; geht es um die Luftqualität eines genutzten Raums, die
+    Raumluftmessung. Wir beraten Sie dazu im Einzelfall.
+  </p>
+
+  <h2 id="selbst">Darf ich die Probe selbst nehmen?</h2>
+  <p>
+    Davon raten wir dringend ab. So harmlos das Abkratzen einer Spachtelprobe wirkt – beim Anbohren,
+    Brechen oder Abkratzen werden genau die lungengängigen Fasern frei, die das eigentliche Risiko
+    darstellen. Ohne Schutzausrüstung, Staubminderung und sichere Verpackung gefährden Sie sich selbst
+    und andere im Haushalt.
+  </p>
+  <p>
+    Sachkundiges Personal nach TRGS 519 entnimmt die Probe staubmindernd, dokumentiert jede
+    Entnahmestelle und sorgt für eine sichere Verpackung und einen aussagekräftigen Laborbefund. So
+    ist das Ergebnis nicht nur sicher gewonnen, sondern auch belastbar – etwa gegenüber Käufern,
+    Behörden oder Versicherungen.
+  </p>
+
+  <h2 id="verdacht">Asbestverdacht: Was Sie jetzt tun sollten</h2>
+  <p>
+    Haben Sie einen konkreten Verdacht, gehen Sie besonnen vor:
+  </p>
+  <ol>
+    <li><strong>Nicht bearbeiten:</strong> kein Bohren, Sägen, Schleifen, Brechen oder
+      Hochdruckreinigen – und unnötige Beschädigung vermeiden.</li>
+    <li><strong>Dokumentieren:</strong> die verdächtige Stelle aus der Distanz fotografieren und das
+      Baujahr des Bauteils notieren.</li>
+    <li><strong>Bereich meiden:</strong> betroffene Räume möglichst wenig nutzen, bis Klarheit
+      besteht.</li>
+    <li><strong>Fachbetrieb hinzuziehen:</strong> Probe nehmen lassen, Laborergebnis abwarten und das
+      weitere Vorgehen besprechen.</li>
+  </ol>
+  <Callout variant="hinweis" title="Klarheit zum Festpreis">
+    <p>
+      Asbesta nimmt die Probe fachgerecht, lässt sie im akkreditierten Labor analysieren und erklärt
+      Ihnen das Ergebnis verständlich – inklusive einer ehrlichen Empfehlung zum weiteren Vorgehen.
+      <a href="/kontakt/">Fordern Sie hier Ihre Beratung an.</a>
+    </p>
+  </Callout>
+
+  <h2 id="fachbetrieb">Warum ein zertifizierter Fachbetrieb entscheidend ist</h2>
+  <p>
+    Asbest sicher zu erkennen und zu bewerten ist kein Heimwerkerthema. Ein zugelassener Fachbetrieb
+    bringt Sachkunde nach TRGS 519, die richtige Schutzausrüstung, eine fachgerechte Probenahme und
+    die Anbindung an ein akkreditiertes Labor mit. So erhalten Sie ein belastbares Ergebnis – und im
+    Bedarfsfall alles Weitere aus einer Hand: von der <a href="/leistungen/materialanalyse/"
+    >Materialanalyse</a> über die <a href="/leistungen/asbestsanierung/">Sanierung nach TRGS 519</a>
+    bis zur dokumentierten Freigabe.
+  </p>
+  <p>
+    Asbesta ist Ihr inhabergeführter Fachbetrieb für Asbest- und Schadstoffsanierung in ganz
+    Nordrhein-Westfalen. Sie haben einen Verdacht oder wollen vor Kauf, Umbau oder Sanierung auf
+    Nummer sicher gehen? Wir beraten Sie ehrlich und nennen Ihnen einen fairen Festpreis.
+    <a href="/kontakt/">Jetzt kostenlose Anfrage stellen.</a> Mehr zum Ablauf einer Sanierung lesen Sie
+    im Ratgeber <a href="/ratgeber/asbestsanierung-pflicht-kosten-ablauf/">„Asbestsanierung: Pflicht,
+    Kosten &amp; Ablauf"</a>.
+  </p>
+</RatgeberArticleLayout>
