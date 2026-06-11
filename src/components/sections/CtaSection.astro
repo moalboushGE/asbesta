@@ -15,18 +15,10 @@ import Button from '../ui/Button.astro';
       <Button href="/kontakt/" variant="primary">
         <Icon name="lucide:clipboard-list" class="h-4 w-4" />Kostenlose Anfrage
       </Button>
-      <Button
-        href={site.phone.href}
-        variant="ghost"
-        class="border-white/20 bg-transparent text-white hover:border-white hover:text-white"
-      >
+      <Button href={site.phone.href} variant="primary">
         <Icon name="lucide:phone" class="h-4 w-4" />{site.phone.display}
       </Button>
-      <Button
-        href={site.whatsapp.href}
-        variant="ghost"
-        class="border-white/20 bg-transparent text-white hover:border-white hover:text-white"
-      >
+      <Button href={site.whatsapp.href} variant="primary">
         <Icon name="lucide:message-circle" class="h-4 w-4" />WhatsApp
       </Button>
     </div>
