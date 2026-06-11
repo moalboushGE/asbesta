@@ -4,6 +4,7 @@ import heroDach from '../assets/images/ratgeber/hero-dach.jpg';
 import heroAsbestdach from '../assets/images/leistungen/welleternit-ausbauen.jpg';
 import heroErkennen from '../assets/images/leistungen/materialanalyse.jpg';
 import heroBoden from '../assets/images/leistungen/floor-flex-entfernen.jpg';
+import { ratgeberFigure } from './ratgeber-content';
 
 export interface RatgeberFaq {
   readonly frage: string;
@@ -29,6 +30,141 @@ export interface RatgeberArtikel {
 }
 
 export const ratgeberArtikel: readonly RatgeberArtikel[] = [
+  {
+    slug: "asbest-hauskauf",
+    title: "Asbest beim Hauskauf: Pflichten, Risiken & Kosten",
+    metaTitle: "Asbest beim Hauskauf: Pflichten, Risiken & Kosten | Asbesta",
+    metaDescription: "Asbest beim Hauskauf: Offenbarungspflicht des Verkäufers, Grenzen von \"gekauft wie gesehen\", Gutachten vor dem Kauf, Kosten-Richtwerte und Verhandlungstipps.",
+    excerpt: "Ältere Häuser sind günstig – bergen aber oft Asbest. Welche Aufklärungspflichten der Verkäufer hat, warum \"gekauft wie gesehen\" Sie nicht immer schützt und wie Sie mit einem Gutachten vor dem Kauf und cleverer Verhandlung teure Überraschungen vermeiden.",
+    kategorie: "Ratgeber Asbest",
+    datePublished: "2026-06-11",
+    dateModified: "2026-06-11",
+    author: "Asbesta Fachredaktion",
+    authorRole: "Fachbetrieb mit Sachkunde nach TRGS 519",
+    lesezeitMin: 12,
+    heroImage: ratgeberFigure("materialanalyse"),
+    heroAlt: "Materialprobe wird im Labor unter dem Mikroskop auf Asbestfasern untersucht – Schadstoffgutachten vor dem Hauskauf",
+    faqs: [
+      {
+        "frage": "Muss der Verkäufer mir Asbest im Haus mitteilen?",
+        "antwort": "Über einen ihm bekannten, gesundheitsrelevanten Asbestmangel, den Sie bei einer üblichen Besichtigung nicht erkennen können, muss der Verkäufer von sich aus aufklären. Verschweigt er eine ihm bekannte Belastung bewusst, kann das eine arglistige Täuschung sein – dann hilft ihm auch ein vereinbarter Gewährleistungsausschluss nicht. Weiß der Verkäufer dagegen nichts von Asbest und hatte auch keinen konkreten Anlass für einen Verdacht, handelt er nicht arglistig. Auf Nachfrage muss er aber stets wahrheitsgemäß antworten. Diese Einordnung ersetzt keine Rechtsberatung im Einzelfall."
+      },
+      {
+        "frage": "Schützt mich die Klausel \"gekauft wie gesehen\" als Käufer wirklich?",
+        "antwort": "Ein Gewährleistungsausschluss wie \"gekauft wie gesehen\" ist beim privaten Immobilienverkauf üblich und grundsätzlich wirksam, hat aber klare Grenzen. Er greift nicht, wenn der Verkäufer einen bekannten Mangel arglistig verschwiegen oder eine bestimmte Eigenschaft ausdrücklich zugesichert hat. Außerdem deckt \"wie gesehen\" vor allem sichtbare Mängel ab – verborgene Asbestbelastungen in Klebern, Putzen oder unter Belägen sind nicht automatisch erfasst. Verlassen Sie sich trotzdem nicht allein darauf: Arglist nachzuweisen ist schwierig. Sicherer ist es, vor dem Kauf ein Gutachten erstellen zu lassen."
+      },
+      {
+        "frage": "Lohnt sich ein Asbestgutachten vor dem Kauf?",
+        "antwort": "In aller Regel ja. Die Kosten für eine Begehung und einige Materialproben sind im Vergleich zum Kaufpreis gering, schaffen aber Gewissheit statt Vermutung. Ein bestätigter Befund verschafft Ihnen eine sachliche Grundlage, um Sanierungskosten in die Kaufpreisverhandlung einzubringen – oder bewahrt Sie vor einem teuren Fehlkauf. Wichtig ist, das Gutachten vor der Unterschrift einzuplanen, idealerweise mit einer Klausel, die Ihnen bei positivem Befund ein Rücktritts- oder Nachverhandlungsrecht sichert."
+      },
+      {
+        "frage": "Wie bringe ich Sanierungskosten in die Kaufpreisverhandlung ein?",
+        "antwort": "Am wirkungsvollsten mit konkreten Zahlen statt pauschaler Abschläge. Lassen Sie Fundorte, Mengen und Bindungsart im Gutachten dokumentieren und holen Sie eine fundierte Kostenschätzung oder ein Festpreis-Angebot für die Sanierung ein. Diesen Betrag argumentieren Sie sachlich als Wertminderung gegenüber einem asbestfreien Vergleichsobjekt. Faire Lösungen sind ein Preisnachlass in Höhe der Sanierungskosten, eine Sanierung durch den Verkäufer vor Übergabe oder ein hinterlegter Einbehalt bis zur Erledigung der Arbeiten."
+      },
+      {
+        "frage": "Ab welchem Baujahr muss ich beim Hauskauf mit Asbest rechnen?",
+        "antwort": "Asbest wurde in Deutschland bis zum vollständigen Verbot 1993 verbaut, mit einem Schwerpunkt zwischen den 1960er- und 1980er-Jahren. Als Faustregel gilt: Bei Gebäuden vor 1993 besteht Asbestverdacht – besonders, wenn seither nicht kernsaniert wurde. Auch Modernisierungen aus dieser Zeit, etwa neue Böden, Kleber oder Putze, können Asbest eingebracht haben, selbst in einem älteren, ursprünglich asbestfreien Haus. Sicherheit gibt nur eine Materialprobe im Labor, nicht das Baujahr allein."
+      },
+      {
+        "frage": "Mindert Asbest den Wert einer Immobilie?",
+        "antwort": "Ja, ein bestätigter Asbestbefund mindert in der Regel den Wert – nicht, weil das Haus unbewohnbar wäre, sondern weil dem Käufer absehbare Sanierungs- und Entsorgungskosten entstehen. Die Höhe der Minderung orientiert sich an den zu erwartenden Kosten, die je nach Material, Menge und Zugänglichkeit stark schwanken. Umgekehrt kann eine bereits fachgerecht durchgeführte und dokumentierte Asbestsanierung ein älteres Haus deutlich attraktiver machen, weil sie dem Käufer das Risiko nimmt und den Verkauf beschleunigt."
+      },
+      {
+        "frage": "Gibt es eine Förderung für die Asbestsanierung nach dem Kauf?",
+        "antwort": "Eine eigene Förderung nur für die Asbestentfernung gibt es nicht. Wird die Sanierung jedoch mit einer energetischen Maßnahme kombiniert – etwa einem neuen, gedämmten Dach nach Ausbau eines Asbestdaches –, kommen KfW- und BAFA-Förderungen sowie der Steuerbonus nach § 35c EStG in Betracht. Für reine Handwerkerleistungen lässt sich häufig § 35a EStG nutzen. Welche Variante passt, klärt eine individuelle steuerliche oder energetische Beratung; die Asbestentfernung selbst planen wir transparent dazu."
+      }
+    ],
+  },
+  {
+    slug: "gefstoffv-novelle-2024",
+    title: "GefStoffV-Novelle 2024: die neuen Asbest-Pflichten erklärt",
+    metaTitle: "GefStoffV-Novelle 2024: neue Asbest-Pflichten | Asbesta",
+    metaDescription: "Novellierte Gefahrstoffverordnung 2024: neue Erkundungs- & Informationspflicht für Gebäude vor 1993. Was Eigentümer, Verwalter & Handwerker jetzt beachten.",
+    excerpt: "Seit Dezember 2024 gilt die novellierte Gefahrstoffverordnung mit neuen Asbest-Pflichten. Wir erklären verständlich die Erkundungs- und Informationspflicht bei Gebäuden vor 1993, die Aufgaben von Eigentümern, Hausverwaltungen und Handwerkern – und die wichtigsten Praxisschritte.",
+    kategorie: "Ratgeber Asbest",
+    datePublished: "2026-06-11",
+    dateModified: "2026-06-11",
+    author: "Asbesta Fachredaktion",
+    authorRole: "Fachbetrieb mit Sachkunde nach TRGS 519",
+    lesezeitMin: 12,
+    heroImage: ratgeberFigure("asbestsanierung"),
+    heroAlt: "Asbest-Fachkräfte in Schutzausrüstung bei einer Sanierung gemäß der novellierten Gefahrstoffverordnung 2024",
+    faqs: [
+      {
+        "frage": "Ab welchem Baujahr greift die neue Asbest-Erkundungspflicht?",
+        "antwort": "Maßgeblich ist der Stichtag des Asbestverbots: Gebäude, die vor dem 31. Oktober 1993 errichtet wurden, gelten als potenziell asbestbelastet. Bei Bau-, Sanierungs- oder Abbrucharbeiten an solchen Gebäuden ist vorab zu klären, ob asbesthaltige Materialien betroffen sein können. Bei jüngeren Gebäuden ist Asbest aufgrund des Verbots in der Regel kein Thema. Im Zweifel sollten Sie das Baujahr und vorhandene Unterlagen vor Beginn der Arbeiten prüfen lassen."
+      },
+      {
+        "frage": "Muss ich als privater Eigentümer selbst ein Asbest-Gutachten beauftragen?",
+        "antwort": "Die Novelle verlangt vom Veranlasser vor allem eine Informations- und Mitwirkungspflicht: Sie müssen dem beauftragten Betrieb alle vorliegenden Informationen, insbesondere zum Baujahr und zu bekannten Asbestvorkommen, zur Verfügung stellen. Ein vollständiges Gutachten müssen Sie als Laie nicht selbst erstellen. In der Praxis ist es jedoch sinnvoll, bei Unsicherheit vor Arbeitsbeginn eine Materialanalyse zu beauftragen, damit der Betrieb die Gefährdung korrekt beurteilen kann. Asbesta übernimmt Probenahme und Laboranalyse gern für Sie."
+      },
+      {
+        "frage": "Was ändert sich konkret für Handwerksbetriebe?",
+        "antwort": "Handwerksbetriebe müssen das Baualter eines Gebäudes verpflichtend in ihre Gefährdungsbeurteilung einbeziehen und bei Unsicherheit eine Erkundung veranlassen, bevor sie an Altbausubstanz arbeiten. Das betrifft viele Gewerke, etwa Elektriker, Maler, Fliesenleger oder Sanitärbetriebe. Tätigkeiten an asbesthaltigen Materialien dürfen nur mit der erforderlichen Sachkunde und Ausstattung ausgeführt werden. Fehlt diese, sollte ein spezialisierter Fachbetrieb hinzugezogen werden."
+      },
+      {
+        "frage": "Was bedeutet das Ampelmodell der Gefahrstoffverordnung?",
+        "antwort": "Das Modell ordnet Tätigkeiten nach der zu erwartenden Asbestfaser-Konzentration in der Luft in drei Bereiche ein: gering (unter 10.000 Fasern/m³), mittel (unter 100.000 Fasern/m³) und hoch (über 100.000 Fasern/m³). Je höher das Risiko, desto strenger die erforderlichen Schutzmaßnahmen. Hohe Risiken bleiben qualifizierten Fachbetrieben vorbehalten. In welchen Bereich eine konkrete Tätigkeit fällt, ermittelt der sachkundige Betrieb anhand von Material, Bindungsart und Arbeitsverfahren."
+      },
+      {
+        "frage": "Was ist der Unterschied zwischen Sachkunde nach Anlage 3 und Anlage 4 der TRGS 519?",
+        "antwort": "Die Sachkunde nach Anlage 3 ist die umfassende Qualifikation für Abbruch-, Sanierungs- und Instandhaltungsarbeiten an allen asbesthaltigen Materialien, einschließlich der anspruchsvollen schwach gebundenen Produkte. Die Anlage 4 konzentriert sich auf Asbestzement-Produkte, Tätigkeiten mit geringer Exposition und Arbeiten geringen Umfangs. Beide Nachweise sind nach Bestehen in der Regel sechs Jahre gültig und lassen sich durch Fortbildung verlängern. Welche Qualifikation nötig ist, hängt von der konkreten Aufgabe ab."
+      },
+      {
+        "frage": "Welche Konsequenzen drohen bei einem Verstoß gegen die GefStoffV?",
+        "antwort": "Verstöße gegen die Asbest-Vorgaben können als Ordnungswidrigkeit mit Bußgeldern geahndet werden, in schweren Fällen sind auch strafrechtliche Folgen möglich. Hinzu kommen mittelbare Folgen wie ein behördlicher Baustopp, eine aufwendige Dekontamination kontaminierter Räume sowie Haftungs- und Versicherungsfragen. Für Betriebe kommt der Reputationsverlust hinzu. Durch einen sauberen, dokumentierten Ablauf mit vorheriger Klärung lassen sich diese Risiken nahezu vollständig vermeiden."
+      },
+      {
+        "frage": "Wie läuft eine Materialanalyse vor Sanierungsbeginn ab?",
+        "antwort": "Zunächst werden die Bauteile festgelegt, die bei der geplanten Maßnahme berührt werden. Anschließend entnehmen Sachkundige staubarm und sicher Materialproben, die ein akkreditiertes Labor auf Asbest untersucht. Auf Basis des Befundes werden Verfahren, Schutzmaßnahmen und Kosten bestimmt und der Befund wird zu den Bauunterlagen genommen. Eine Materialprobe ist im Verhältnis zu den Folgekosten eines unentdeckten Befundes günstig; den verbindlichen Preis nennen wir nach kurzer Klärung des Aufwands."
+      }
+    ],
+  },
+  {
+    slug: "asbest-entsorgen",
+    title: "Asbest entsorgen: Kosten, Vorschriften & der richtige Weg",
+    metaTitle: "Asbest entsorgen: Kosten, Vorschriften & Weg | Asbesta",
+    metaDescription: "Asbest richtig entsorgen: Abfallschlüssel AVV 17 06 05*, zugelassene Big Bags, Deponie, Entsorgungsnachweis und Kosten. Was erlaubt ist und was Bußgeld kostet.",
+    excerpt: "Asbest ist gefährlicher Abfall und gehört weder in den Hausmüll noch in den Bauschuttcontainer. Wie Sie asbesthaltige Abfälle staubdicht verpacken, korrekt deklarieren (AVV 17 06 05*) und über zugelassene Deponien entsorgen lassen – mit Kostenorientierung, Bußgeld-Warnung und dem Unterschied zwischen privater Kleinmenge und Fachbetrieb.",
+    kategorie: "Ratgeber Asbest",
+    datePublished: "2026-06-11",
+    dateModified: "2026-06-11",
+    author: "Asbesta Fachredaktion",
+    authorRole: "Fachbetrieb mit Sachkunde nach TRGS 519",
+    lesezeitMin: 12,
+    heroImage: ratgeberFigure("welleternit-ausbauen"),
+    heroAlt: "Arbeiter in Schutzkleidung verpackt abgebaute Asbestzement-Wellplatten staubdicht in einen gekennzeichneten Big Bag",
+    faqs: [
+      {
+        "frage": "Welcher Abfallschlüssel gilt für Asbest?",
+        "antwort": "Asbesthaltige Baustoffe wie Asbestzement-Platten von Dach und Fassade werden unter dem Abfallschlüssel AVV 17 06 05* geführt; das Sternchen kennzeichnet einen gefährlichen Abfall. Asbesthaltige Dämmmaterialien, etwa schwach gebundene Dämmungen, laufen unter AVV 17 06 01*. Diese Deklaration muss auf den Begleitpapieren stehen und bestimmt, auf welcher Deponie der Abfall angenommen wird. Welcher Schlüssel im Einzelfall gilt, klärt zuverlässig eine Materialanalyse im Labor."
+      },
+      {
+        "frage": "Darf ich Asbest in den Bauschuttcontainer oder Hausmüll werfen?",
+        "antwort": "Nein, auf keinen Fall. Asbest ist gefährlicher Abfall und gehört weder in den Hausmüll noch in einen normalen Bauschutt- oder Mischabfallcontainer. Eine einzelne Asbestplatte verunreinigt die gesamte Containerladung, die dann kostenpflichtig als Sonderabfall behandelt werden muss. Die illegale Entsorgung ist eine Ordnungswidrigkeit und kann je nach Bundesland und Menge Bußgelder im vier- bis fünfstelligen Bereich nach sich ziehen."
+      },
+      {
+        "frage": "Wie muss Asbest für die Entsorgung verpackt werden?",
+        "antwort": "Asbesthaltige Abfälle müssen staubdicht in zugelassenen, gekennzeichneten Behältnissen verpackt werden – in der Regel in reißfesten Asbest-Big-Bags oder in doppelter, verklebter PE-Folie ab 0,2 mm Stärke. Jede Verpackung muss den Warnhinweis Asbest tragen, sonst verweigert die Deponie die Annahme. Die Platten werden dabei möglichst zerstörungsfrei ausgebaut und nicht gebrochen, vorhandener Staub wird zuvor mit Bindemitteln gebunden. Für private Kleinmengen schreiben kommunale Annahmestellen spezielle Asbestsäcke vor."
+      },
+      {
+        "frage": "Kann ich kleine Mengen Asbest selbst zum Wertstoffhof bringen?",
+        "antwort": "In vielen Kommunen ja, aber nur unter strengen Bedingungen. Kleinmengen fest gebundener Asbestzement-Abfälle werden meist nur nach vorheriger Voranmeldung, in zugelassenen und gekennzeichneten Asbestsäcken und in begrenzter Menge angenommen. Lose, unverpackte Platten oder volle Anhänger lehnen die Annahmestellen ab. Da die Regeln je nach Entsorgungsträger unterschiedlich sind, sollten Sie vorab bei Ihrem örtlichen Abfallwirtschaftsbetrieb nachfragen. Schon das Abnehmen muss staubarm und ohne Beschädigung erfolgen."
+      },
+      {
+        "frage": "Was kostet die Entsorgung von Asbest?",
+        "antwort": "Die Kosten setzen sich aus Ausbau, Verpackung, Transport und Deponiegebühr zusammen. Als grobe Orientierung liegt die Deponiegebühr für asbesthaltigen Abfall (AVV 17 06 05*) bei rund 100 bis 300 € pro Tonne, zugelassene Big Bags kosten etwa 20 bis 60 € pro Stück, der Ausbau von Asbestzement etwa 35 bis 100 € pro Quadratmeter. Für ein Einfamilienhaus-Dach von rund 120 m² liegen die Gesamtkosten häufig zwischen 6.000 und 15.000 €. Den verbindlichen Preis nennen wir als Festpreis nach einer kostenlosen Besichtigung."
+      },
+      {
+        "frage": "Was ist ein Entsorgungsnachweis und warum brauche ich ihn?",
+        "antwort": "Der Entsorgungsnachweis dokumentiert lückenlos, dass die asbesthaltigen Abfälle korrekt deklariert, transportiert und auf einer zugelassenen Deponie abgelagert wurden. Bei gefährlichen Abfällen begleiten Begleit- und Übernahmescheine den Weg vom Erzeuger bis zur Entsorgungsanlage. Für Sie als Eigentümer ist der Nachweis ein Beleg für die rechtskonforme Entsorgung, ein Vertrauensvorteil beim Hausverkauf und ein belastbares Dokument gegenüber Behörden und Versicherung. Ein Fachbetrieb stellt Ihnen diesen Nachweis nach Abschluss aus."
+      },
+      {
+        "frage": "Muss die Asbestentsorgung angemeldet werden?",
+        "antwort": "Ja, je nach Fall auf unterschiedliche Weise. Private Kleinmengen müssen vorab bei der kommunalen Annahmestelle angemeldet werden. Sanierungs- und Abbrucharbeiten mit Asbest sind der zuständigen Behörde – in NRW meist der Bezirksregierung bzw. dem Amt für Arbeitsschutz – in der Regel mindestens sieben Tage vor Beginn anzuzeigen. Zusätzlich wird die Anlieferung an der Deponie vorab angemeldet. Diese behördlichen Schritte und die korrekte Deklaration übernimmt der Fachbetrieb vollständig für Sie."
+      }
+    ],
+  },
   {
     slug: 'asbest-bodenbelag',
     title: 'Asbest im Bodenbelag: Floor-Flex, Cushion-Vinyl & schwarzer Kleber',

@@ -1,0 +1,79 @@
+---
+import RatgeberArticleLayout from '../../layouts/RatgeberArticleLayout.astro';
+import Figure from '../../components/ui/Figure.astro';
+import Callout from '../../components/ui/Callout.astro';
+import { getArtikel } from '../../data/ratgeber';
+import { ratgeberContent, getContent, ratgeberFigure } from '../../data/ratgeber-content';
+
+/** Dynamischer Renderer für datengetriebene Ratgeber-Beiträge (Block-Schema aus ratgeber-content.ts).
+ *  Handgebaute Beiträge bleiben eigene .astro-Dateien; diese Route erzeugt nur Slugs aus ratgeberContent. */
+export function getStaticPaths() {
+  return Object.keys(ratgeberContent).map((slug) => ({ params: { slug }, props: { slug } }));
+}
+
+const { slug } = Astro.props as { slug: string };
+const artikel = getArtikel(slug);
+const content = getContent(slug);
+if (!artikel || !content) throw new Error('Ratgeber-Beitrag nicht gefunden: ' + slug);
+---
+
+<RatgeberArticleLayout artikel={artikel} toc={content.toc}>
+  {
+    content.body.map((b) => (
+      <Fragment>
+        {b.type === 'h2' && <h2 id={b.id}>{b.text}</h2>}
+        {b.type === 'p' && <p set:html={b.html} />}
+        {b.type === 'ul' && (
+          <ul>
+            {b.items.map((i) => (
+              <li set:html={i} />
+            ))}
+          </ul>
+        )}
+        {b.type === 'ol' && (
+          <ol>
+            {b.items.map((i) => (
+              <li set:html={i} />
+            ))}
+          </ol>
+        )}
+        {b.type === 'callout' && (
+          <Callout variant={b.variant} title={b.title}>
+            <p set:html={b.html} />
+          </Callout>
+        )}
+        {b.type === 'figure' && (
+          <Figure
+            src={ratgeberFigure(b.image)}
+            alt={b.alt}
+            aspect="16/9"
+            sizes="(min-width: 768px) 768px, 100vw"
+            class="my-6 ring-1 ring-black/5"
+          />
+        )}
+        {b.type === 'table' && (
+          <div class="my-6 overflow-x-auto">
+            <table>
+              <thead>
+                <tr>
+                  {b.headers.map((h) => (
+                    <th set:html={h} />
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {b.rows.map((r) => (
+                  <tr>
+                    {r.map((c) => (
+                      <td set:html={c} />
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </Fragment>
+    ))
+  }
+</RatgeberArticleLayout>
