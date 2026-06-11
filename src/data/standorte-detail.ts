@@ -440,5 +440,149 @@ export const standorteDetail: Record<string, StandortDetail> = {
         "antwort": "Ja. Asbestzement-Produkte wie Welleternit-Dächer auf Garagen und Nebengebäuden, Fassadenplatten und Fensterbänke gehören zu unseren häufigsten Aufträgen – sowohl bei Privathäusern in Stadtteilen wie Sülz oder Rodenkirchen als auch bei Gewerbeobjekten in Ossendorf, Kalk oder Porz. Wir demontieren, verpacken und entsorgen fachgerecht."
       }
     ]
+  },
+  "recklinghausen": {
+    "metaTitle": "Asbestsanierung Recklinghausen | Schadstoffe TRGS 519",
+    "metaDescription": "Asbest- & Schadstoffsanierung in Recklinghausen vom zertifizierten Fachbetrieb (TRGS 519). Aus der Nachbarstadt Marl in 15 Min vor Ort. Jetzt anfragen.",
+    "heroIntro": "Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Recklinghausen? Asbesta ist Ihr zertifizierter Fachbetrieb nach TRGS 519 - und da unser Firmensitz im direkt benachbarten Marl liegt, sind wir in rund 15 Minuten bei Ihnen vor Ort, ob in der Altstadt, in Hochlarmark oder in Hillerheide. Von der Materialanalyse über die staubdichte Entfernung bis zur Freimessung nach VDI 3492 übernehmen wir Ihr Projekt sicher und behördenkonform aus einer Hand.",
+    "anfahrt": "ca. 8 km / 15 Min ab unserem Standort Marl (Venusweg 24) - Recklinghausen ist unsere direkte Nachbarstadt und Kreisstadt unseres Kreises",
+    "lokalKontext": [
+      "Recklinghausen ist die Kreisstadt des Kreises Recklinghausen und wie das gesamte nördliche Ruhrgebiet tief vom Steinkohlebergbau geprägt. Rund um die ehemaligen Zechen König Ludwig, General Blumenthal und Recklinghausen II wuchsen die Arbeiterquartiere im Süden der Stadt heran, während sich im Zentrum eine gut erhaltene Altstadt mit gründerzeitlichem Bestand hält. Genau diese Bandbreite - vom historischen Stadthaus über die Zechensiedlung bis zum Nachkriegswohnungsbau - bestimmt heute den Sanierungsbedarf in Recklinghausen. Wer hier ein Haus aus den Aufbau- und Bergbaujahren modernisiert oder abreißt, stößt fast zwangsläufig auf asbesthaltige Baustoffe.",
+      "In den ausgedehnten Zechen- und Arbeitersiedlungen im Süden - etwa der Dreieckssiedlung in Hochlarmark und Bruch oder den Werkskolonien rund um König Ludwig - finden sich in den verputzten Siedlungshäusern häufig Welleternit-Dächer, Asbestzement-Fassadenplatten und asbesthaltige Fensterbänke an Garagen, Schuppen und Nebengebäuden. Im Innenausbau treten regelmäßig Floor-Flex-Platten, Cushion-Vinyl-Beläge und schwarzer Bitumenkleber unter alten Fußböden auf. Diese Materialien werden bei energetischen Modernisierungen, beim Dachausbau oder beim Rückbau alter Nebengebäude freigelegt - eine fachgerechte Sanierung nach TRGS 519 ist dann zwingend erforderlich.",
+      "Der Geschosswohnungsbau der Nachkriegs- und Wiederaufbaujahre, wie er das Bild in Hillerheide, im Osten und in Teilen von Recklinghausen-Süd prägt, gilt als besonders asbestrelevant. Bis zum Asbestverbot 1993 wurden asbesthaltige Produkte in Putzen, Spachtelmassen, Brandschutzverkleidungen und Lüftungskanälen verbaut. In den gründerzeitlichen Altbauten der Altstadt geht es dagegen weniger um klassische Asbestzementprodukte als um spätere Eingriffe und Reparaturen sowie um künstliche Mineralfasern (KMF) in nachträglichen Dämmungen und PAK-belastete Teer- und Bitumenanstriche. Auch im Gewerbe- und Industriebau der Strukturwandel-Ära kommen solche Schadstoffe häufig vor.",
+      "Für Eigentümer, Hausverwaltungen, Gewerbebetriebe und die öffentliche Hand in Recklinghausen übernehmen wir die komplette Bandbreite: Materialprobenahme und Laboranalyse zur sicheren Identifikation, die nach GefStoffV vorgeschriebene Anzeige der Asbestarbeiten bei der zuständigen Bezirksregierung Münster, die staubdichte Sanierung mit Schwarz-Weiß-Anlage sowie die abschließende Luftmessung nach VDI 3492 zur Freigabe. Da unser Firmensitz im direkt benachbarten Marl liegt, sind wir bei Ortsterminen, Notfällen und kurzfristigen Anfragen in der Kreisstadt besonders schnell vor Ort - mit über 15 Jahren Erfahrung und mehr als 1.000 abgeschlossenen Projekten."
+    ],
+    "stadtteile": [
+      "Altstadt",
+      "Recklinghausen-Süd",
+      "Hillerheide",
+      "König Ludwig",
+      "Suderwich",
+      "Röllinghausen",
+      "Hochlarmark",
+      "Stuckenbusch",
+      "Speckhorn",
+      "Ost",
+      "West",
+      "Bockholt"
+    ],
+    "localFaqs": [
+      {
+        "frage": "Wie schnell sind Sie von Marl aus in Recklinghausen vor Ort?",
+        "antwort": "Recklinghausen ist die direkte Nachbarstadt unseres Firmensitzes in Marl und zugleich die Kreisstadt unseres Kreises. Die Anfahrt beträgt nur rund 8 km bzw. etwa 15 Minuten. Dadurch sind wir für Ortstermine, Beratungen und kurzfristige Einsätze in allen Recklinghäuser Stadtteilen - von der Altstadt bis Suderwich - besonders schnell verfügbar."
+      },
+      {
+        "frage": "In welchen Recklinghäuser Gebäuden ist mit Asbest zu rechnen?",
+        "antwort": "Besonders betroffen sind Gebäude aus der Bergbau- und Nachkriegszeit, etwa in den Zechen- und Arbeitersiedlungen rund um die ehemaligen Zechen König Ludwig, General Blumenthal und Recklinghausen II sowie in der Dreieckssiedlung in Hochlarmark und Bruch. Typisch sind Welleternit-Dächer, Asbestzement-Fassadenplatten an Neben- und Gewerbegebäuden sowie Floor-Flex-Böden, Bitumenkleber und Fensterbänke im Innenausbau von Bauten bis etwa Anfang der 1990er-Jahre."
+      },
+      {
+        "frage": "Welche Behörde ist für die Asbest-Anzeige in Recklinghausen zuständig?",
+        "antwort": "Für Recklinghausen ist die Bezirksregierung Münster als Arbeitsschutzbehörde zuständig. Asbestarbeiten müssen nach TRGS 519 und GefStoffV vor Beginn dort angezeigt werden. Diese Anzeige sowie die gesamte behördliche Dokumentation übernehmen wir für Sie, sodass Ihre Sanierung in Recklinghausen rechtssicher und nachweisbar abläuft."
+      },
+      {
+        "frage": "Was kostet eine Probenahme zur Feststellung von Asbest?",
+        "antwort": "Pauschale Preise nennen wir seriös erst nach Sichtung vor Ort, da Materialart, Menge und Zugänglichkeit entscheidend sind. Wir entnehmen fachgerecht Materialproben in Recklinghausen, lassen diese im Labor analysieren und erstellen Ihnen anschließend ein transparentes, auf Ihr Objekt zugeschnittenes Angebot - ganz ohne versteckte Kosten."
+      },
+      {
+        "frage": "Sanieren Sie auch in der gründerzeitlichen Altstadt von Recklinghausen?",
+        "antwort": "Ja. In den gut erhaltenen Altbauten der Recklinghäuser Altstadt arbeiten wir besonders behutsam und mit Rücksicht auf den Bestand. Dort stehen häufig künstliche Mineralfasern (KMF) aus nachträglichen Dämmungen, PAK-belastete Alt-Anstriche sowie asbesthaltige Materialien aus späteren Umbauten im Fokus, die wir staubdicht und fachgerecht entfernen und anschließend per Freimessung freigeben."
+      }
+    ]
+  },
+  "dorsten": {
+    "metaTitle": "Asbestsanierung Dorsten | Schadstoffsanierung TRGS 519",
+    "metaDescription": "Asbest- & Schadstoffsanierung in Dorsten vom zertifizierten Fachbetrieb (TRGS 519). Direkt aus Marl - schnell vor Ort in Wulfen, Hervest & Co. Jetzt beraten.",
+    "heroIntro": "Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Dorsten? Asbesta ist Ihr zertifizierter Fachbetrieb nach TRGS 519 - mit Sitz im benachbarten Marl sind wir in rund 15 bis 20 Minuten bei Ihnen vor Ort, ob in der historischen Altstadt, in den Zechensiedlungen von Hervest und Wulfen oder im ländlichen Norden um Lembeck und Rhade. Von der Materialanalyse über die sichere Entfernung bis zur abschließenden Freimessung übernehmen wir alles aus einer Hand.",
+    "anfahrt": "ca. 10 km / 15-20 Min ab unserem Firmensitz in Marl - über die B225 sind wir schnell in Dorsten",
+    "lokalKontext": [
+      "Dorsten liegt an der Lippe genau am Übergang vom Ruhrgebiet ins ländliche Münsterland - und diese Doppelnatur prägt bis heute den Sanierungsbedarf in der Stadt. Im Süden und Osten hat der Steinkohlebergbau seine Spuren hinterlassen: Rund um die Zeche Fürst Leopold in Hervest und die Zeche Wulfen entstanden in der Hochphase des Bergbaus ganze Zechensiedlungen, Werkswohnungen und Betriebsgebäude. Viele dieser Bauten stammen aus einer Zeit, in der asbesthaltige Baustoffe schlicht Standard waren. Genau diese Bausubstanz aus den 1920er- bis 1980er-Jahren bestimmt einen Großteil der Anfragen, die uns aus Dorsten erreichen.",
+      "Eine Dorstener Besonderheit ist die 'Neue Stadt Wulfen' - eine modellhafte Großsiedlung der 1960er- und 1970er-Jahre, die seriell und in Großtafelbauweise errichtet wurde. Gerade dieser industrielle Bautyp birgt ein erhöhtes Asbest- und KMF-Risiko: In Fassadenelementen, Brüstungsplatten, Nachtspeicherheizungen, Lüftungsschächten und Bodenbelägen jener Epoche finden wir regelmäßig Asbestzement, Floor-Flex-Platten, schwarzen Bitumenkleber sowie künstliche Mineralfasern (KMF) in Dämmungen. Bei Modernisierung, energetischer Sanierung oder Rückbau werden solche Materialien freigelegt und müssen zwingend nach TRGS 519 behandelt werden. Wir analysieren das Material vorab, erstellen den Arbeits- und Sicherheitsplan und sanieren anschließend staubdicht und dokumentiert.",
+      "Ein ganz anderes Bild zeigt der ländlich-bäuerliche Norden mit Lembeck, Rhade und Deuten: Hier dominieren Höfe, Scheunen, Stallungen und Nebengebäude mit großflächigen Asbestzement-Dächern aus Welleternit. Auf Dächern, an Fassaden und in Garagen vieler Hofstellen kommen Wellplatten und Asbestzementplatten vor, die bei Witterung verwittern und bei unsachgemäßer Demontage gefährliche Fasern freisetzen. In der historischen Fachwerk-Altstadt geht es dagegen weniger um klassische Zementprodukte als um spätere Eingriffe - asbesthaltige Spachtelmassen, Putze, Fliesenkleber sowie PAK-belastete Teer- und Bitumenanstriche unter alten Böden und Abdichtungen. Jede Bausubstanz erfordert ein eigenes, behutsames Vorgehen.",
+      "Die zuständige Arbeitsschutzbehörde für die nach TRGS 519 vorgeschriebene Anzeige asbesthaltiger Arbeiten ist in Dorsten - das zum Kreis Recklinghausen gehört - die Bezirksregierung Münster. Wir übernehmen für Sie die komplette Abwicklung: Materialprobenahme und Analyse zur sicheren Identifikation, die fristgerechte behördliche Anzeige, die staubdichte Sanierung mit Schwarz-Weiß-Schleuse und Unterdruckhaltung, die fachgerechte Verpackung und Entsorgung der asbesthaltigen Abfälle sowie abschließende Luftmessungen nach VDI 3492 zur Freigabe. Da unser Firmensitz im nur etwa 10 Kilometer entfernten Marl liegt, sind wir bei Ortsterminen, akuten Funden und kurzfristigen Anfragen in ganz Dorsten besonders schnell vor Ort."
+    ],
+    "stadtteile": [
+      "Altstadt / Innenstadt",
+      "Hervest",
+      "Holsterhausen",
+      "Wulfen",
+      "Hardt",
+      "Feldmark",
+      "Östrich",
+      "Lembeck",
+      "Rhade",
+      "Deuten",
+      "Altendorf-Ulfkotte",
+      "Wienbach"
+    ],
+    "localFaqs": [
+      {
+        "frage": "Wie schnell sind Sie von Marl aus in Dorsten vor Ort?",
+        "antwort": "Unser Firmensitz liegt im benachbarten Marl, die Anfahrt nach Dorsten beträgt über die B225 nur rund 10 Kilometer bzw. etwa 15 bis 20 Minuten. Dadurch sind wir für Ortstermine, Beratungen und kurzfristige Einsätze in allen Dorstener Stadtteilen - von der Altstadt über Hervest und Wulfen bis nach Lembeck und Rhade - besonders schnell verfügbar."
+      },
+      {
+        "frage": "Welche asbesthaltigen Materialien sind in Dorstener Häusern besonders verbreitet?",
+        "antwort": "In den Zechensiedlungen rund um Hervest und Wulfen finden wir häufig Floor-Flex-Bodenplatten, schwarzen Bitumenkleber, Welleternit-Dächer und Asbestzement an Nebengebäuden. In der seriell errichteten Neuen Stadt Wulfen kommen zusätzlich Asbest in Fassaden- und Brüstungselementen sowie KMF-Dämmungen vor. Im ländlichen Norden um Lembeck, Rhade und Deuten dominieren großflächige Asbestzement-Dächer auf Scheunen und Höfen, in der Fachwerk-Altstadt eher asbesthaltige Spachtelmassen, Putze und PAK-belastete Anstriche."
+      },
+      {
+        "frage": "Warum ist die Neue Stadt Wulfen ein besonderer Fall bei der Asbestsanierung?",
+        "antwort": "Die Neue Stadt Wulfen wurde in den 1960er- und 1970er-Jahren als modellhafte Großsiedlung seriell und in Großtafelbauweise errichtet - einer Epoche, in der Asbest und künstliche Mineralfasern (KMF) im industriellen Bauen weit verbreitet waren. Entsprechend treffen wir hier in Fassadenelementen, Bodenbelägen, Lüftungsschächten und Dämmungen regelmäßig auf belastete Materialien. Vor jeder Modernisierung empfehlen wir deshalb eine Materialanalyse, damit die Sanierung sicher und nach TRGS 519 geplant werden kann."
+      },
+      {
+        "frage": "Welche Behörde ist für die Asbest-Anzeige in Dorsten zuständig?",
+        "antwort": "Dorsten gehört zum Kreis Recklinghausen, die zuständige Arbeitsschutzbehörde für die nach TRGS 519 vorgeschriebene Anzeige asbesthaltiger Arbeiten ist die Bezirksregierung Münster. Diese fristgerechte Anzeige übernehmen wir als Fachbetrieb für Sie - ebenso wie den Arbeits- und Sicherheitsplan, die Entsorgung und die abschließende Dokumentation Ihrer Sanierung."
+      },
+      {
+        "frage": "Sanieren Sie auch Asbestzement-Dächer auf Höfen und Scheunen im Dorstener Norden?",
+        "antwort": "Ja. Gerade im ländlichen Norden um Lembeck, Rhade und Deuten demontieren wir großflächige Asbestzement- und Welleternit-Dächer auf Scheunen, Ställen, Garagen und Nebengebäuden. Wir arbeiten staubarm, gut beschichtet und verzichten auf alles, was Fasern freisetzt - inklusive fachgerechter Verpackung, Entsorgung und behördlicher Anzeige. Auf Wunsch beraten wir Sie auch zur anschließenden Neueindeckung."
+      }
+    ]
+  },
+  "bochum": {
+    "metaTitle": "Asbestsanierung Bochum | Schadstoffsanierung TRGS 519",
+    "metaDescription": "Asbest- & Schadstoffsanierung in Bochum vom zertifizierten Fachbetrieb (TRGS 519). Materialanalyse, sicherer Rückbau & Freimessung. Schnell vor Ort ab Marl.",
+    "heroIntro": "Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Bochum? Asbesta ist Ihr zertifizierter Fachbetrieb nach TRGS 519 - von unserem Sitz im benachbarten Marl sind wir in rund 30 Minuten bei Ihnen, ob in der Innenstadt, in Wattenscheid, Langendreer oder Querenburg. Von der Materialanalyse über den staubdichten Rückbau bis zur Freimessung nach VDI 3492 übernehmen wir Ihr Projekt sicher und behördenkonform aus einer Hand.",
+    "anfahrt": "ca. 25 km / 30 Min ab unserem Standort Marl (Venusweg 24) - meist über die A43 erreichbar.",
+    "lokalKontext": [
+      "Bochum ist eine der großen kreisfreien Städte des Ruhrgebiets und über mehr als ein Jahrhundert von Schwerindustrie und Bergbau geformt worden. Mit dem Bochumer Verein und Krupp entstand früh ein Zentrum der Stahlproduktion, dazu kamen zahlreiche Zechen wie die Zeche Hannover in Hordel. Rund um diese Werke und Schächte wuchs in kurzer Zeit eine dichte Wohn- und Industriebebauung - von der Arbeitersiedlung bis zum Verwaltungs- und Hallenbau. Genau dieser historisch gewachsene Bestand ist heute der typische Anlass für eine Asbest- und Schadstoffsanierung, denn bis zum endgültigen Asbestverbot 1993 galten asbesthaltige Baustoffe als Standard.",
+      "Eine wichtige Besonderheit betrifft die Zuständigkeit der Behörde: Obwohl Bochum mitten im westfälischen Ruhrgebiet liegt, gehört die Stadt zum Regierungsbezirk Arnsberg. Die nach TRGS 519 vorgeschriebene Anzeige asbesthaltiger Arbeiten läuft in Bochum daher über die Bezirksregierung Arnsberg - und nicht, wie viele annehmen, über Münster. Wir übernehmen diese fristgerechte Anzeige für Sie ebenso wie den Arbeits- und Sicherheitsplan nach GefStoffV. So ist Ihre Sanierung in Bochum von Anfang an rechtssicher dokumentiert und behördlich angemeldet.",
+      "Die dichten Nachkriegs- und Geschosswohnbauten in der Innenstadt und in Wattenscheid sowie die ausgedehnten Hochschul- und Zweckbauten der 1960er- und 1970er-Jahre rund um die Ruhr-Universität in Querenburg gelten als besonders asbestrelevant. Hier treffen wir regelmäßig auf Floor-Flex-Platten und Cushion-Vinyl mit schwarzem Bitumenkleber, auf asbesthaltige Spachtelmassen, Putze, Brandschutzverkleidungen und Lüftungskanäle. Hinzu kommen künstliche Mineralfasern (KMF) aus alten Dämmungen und PAK-belastete Teer- und Parkettkleber. An Dächern und Fassaden vieler Siedlungs- und Nebengebäude in Werne, Weitmar, Linden oder Dahlhausen finden sich zudem Welleternit und Asbestzementplatten.",
+      "In den denkmalgeschützten Arbeiter- und Zechensiedlungen - etwa der Dahlhauser Heide, der sogenannten Kappeskolonie in Hordel - sowie in der Gründerzeitbebauung von Ehrenfeld und Wiemelhausen arbeiten wir besonders behutsam und stimmen die Sanierung auf den Bestands- und Denkmalschutz ab. Wir analysieren zunächst die verdächtigen Materialien im Labor, planen die Sanierung nach GefStoffV und führen den Rückbau mit geschultem Personal und Schwarz-Weiß-Schleuse durch. Abschließend belegen Luftmessungen nach VDI 3492 die einwandfreie Raumluft, sodass Ihr Objekt wieder gefahrlos genutzt werden kann. Mit über 15 Jahren Erfahrung und mehr als 1.000 abgeschlossenen Projekten kennen wir die Bausubstanz des Ruhrgebiets im Detail."
+    ],
+    "stadtteile": [
+      "Innenstadt",
+      "Wattenscheid",
+      "Langendreer",
+      "Werne",
+      "Weitmar",
+      "Linden",
+      "Dahlhausen",
+      "Hordel",
+      "Hamme",
+      "Grumme",
+      "Querenburg",
+      "Wiemelhausen"
+    ],
+    "localFaqs": [
+      {
+        "frage": "Welche Behörde ist für die Asbest-Anzeige in Bochum zuständig?",
+        "antwort": "Anders als oft vermutet, läuft die Anzeige nach TRGS 519 für Bochum nicht über Münster, sondern über die Bezirksregierung Arnsberg - denn Bochum gehört trotz seiner Lage im westlichen Ruhrgebiet zum Regierungsbezirk Arnsberg. Wir übernehmen die fristgerechte Anzeige der asbesthaltigen Arbeiten ebenso wie den Arbeits- und Sicherheitsplan nach GefStoffV für Sie."
+      },
+      {
+        "frage": "Wie schnell sind Sie von Marl aus in Bochum vor Ort?",
+        "antwort": "Bochum liegt rund 25 km bzw. etwa 30 Minuten von unserem Firmensitz in Marl entfernt und ist über die A43 gut erreichbar. Dadurch sind wir für Ortstermine, Beratungen und kurzfristige Einsätze in allen Bochumer Stadtteilen - von der Innenstadt über Wattenscheid bis Querenburg - zuverlässig und zeitnah verfügbar."
+      },
+      {
+        "frage": "In welchen Bochumer Gebäuden ist mit Asbest zu rechnen?",
+        "antwort": "Besonders betroffen sind die dichten Nachkriegs- und Geschosswohnbauten der Innenstadt und in Wattenscheid sowie die Hochschul- und Zweckbauten der 1960er/70er rund um die Ruhr-Universität in Querenburg. Typisch sind Floor-Flex-Böden, Bitumenkleber, Cushion-Vinyl, asbesthaltige Putze und Spachtelmassen sowie Welleternit und Asbestzementplatten an Dächern und Fassaden von Siedlungs- und Nebengebäuden in Werne, Weitmar oder Dahlhausen."
+      },
+      {
+        "frage": "Sanieren Sie auch in den denkmalgeschützten Zechensiedlungen in Hordel?",
+        "antwort": "Ja. In der denkmalgeschützten Dahlhauser Heide, der sogenannten Kappeskolonie in Hordel, sowie in den Gründerzeitquartieren von Ehrenfeld und Wiemelhausen arbeiten wir besonders behutsam und unter Berücksichtigung des Denkmalschutzes. Im Fokus stehen dort häufig asbesthaltige Materialien aus späteren Umbauten, KMF-Dämmungen und PAK-belastete Alt-Anstriche, die wir staubdicht und fachgerecht entfernen."
+      },
+      {
+        "frage": "Sind Sie für die Asbestsanierung in Bochum zertifiziert?",
+        "antwort": "Ja. Asbesta ist ein zugelassener Fachbetrieb nach TRGS 519 und arbeitet zudem nach TRGS 521 und 524 sowie nach den Vorgaben der GefStoffV. In über 15 Jahren haben wir mehr als 1.000 Projekte im Ruhrgebiet abgewickelt - sicher, behördlich angemeldet, dokumentiert und mit abschließender Freimessung nach VDI 3492."
+      }
+    ]
   }
 };
