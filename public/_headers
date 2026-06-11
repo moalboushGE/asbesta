@@ -9,9 +9,10 @@
   Permissions-Policy: geolocation=(), microphone=(), camera=(), browsing-topics=()
   Content-Security-Policy: default-src 'self'; script-src 'self' static.cloudflareinsights.com; connect-src 'self' cloudflareinsights.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
 
-# Immutable, gehashte Assets
+# Immutable, gehashte Assets (Fonts werden als gehashte /_astro/*.woff2 emittiert)
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
 
-/fonts/*
-  Cache-Control: public, max-age=31536000, immutable
+# HTML: am Edge cachebar, aber bei Content-Updates sofort revalidieren
+/*
+  Cache-Control: public, max-age=0, must-revalidate

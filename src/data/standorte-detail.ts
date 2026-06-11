@@ -50,7 +50,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
       },
       {
         "frage": "Wie schnell können Sie bei einem Asbestverdacht in Marl vor Ort sein?",
-        "antwort": "Da unser Standort in Marl liegt, sind wir bei dringenden Fällen sehr kurzfristig bei Ihnen - egal ob in Sinsen-Lenkerbeck, Hüls oder im Zentrum. Rufen Sie uns einfach unter 02365 2960630 an, dann vereinbaren wir eine zeitnahe Begehung."
+        "antwort": "Da unser Standort in Marl liegt, sind wir bei dringenden Fällen sehr kurzfristig bei Ihnen - egal ob in Sinsen-Lenkerbeck, Hüls oder im Zentrum. Rufen Sie uns einfach unter +49 2365 2960630 an, dann vereinbaren wir eine zeitnahe Begehung."
       },
       {
         "frage": "Sanieren Sie auch Gewerbe- und Industrieobjekte im Umfeld des Chemieparks Marl?",
@@ -632,7 +632,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ]
   },
   "haltern": {
-    "metaTitle": "Asbestsanierung Haltern am See | TRGS 519 Fachbetrieb",
+    "metaTitle": "Asbest- & Schadstoffsanierung Haltern am See | Asbesta",
     "metaDescription": "Asbest- & Schadstoffsanierung in Haltern am See vom zertifizierten Fachbetrieb (TRGS 519). Nur ca. 12 km ab Marl - schnell vor Ort. Jetzt anfragen.",
     "heroIntro": "Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Haltern am See? Asbesta ist Ihr zertifizierter Fachbetrieb nach TRGS 519 - mit Sitz im nahen Marl sind wir in rund 18 Minuten bei Ihnen vor Ort, ob in Haltern-Mitte, Sythen oder den ländlichen Ortsteilen Lippramsdorf und Flaesheim. Von der Materialanalyse über die staubdichte Entfernung bis zur abschließenden Freimessung übernehmen wir Ihr Projekt sicher und behördenkonform aus einer Hand.",
     "anfahrt": "ca. 12 km / 18 Min ab unserem Firmensitz Marl (Venusweg 24) - Haltern am See liegt direkt nördlich, meist über die B58 oder B51 gut erreichbar",
@@ -705,7 +705,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
     "localFaqs": [
       {
         "frage": "Wie schnell sind Sie von Marl aus in Castrop-Rauxel vor Ort?",
-        "antwort": "Castrop-Rauxel liegt nur rund 18 km bzw. etwa 25 Minuten von unserem Firmensitz in Marl entfernt und ist gut über die A42 und A45 erreichbar. Dadurch sind wir für Ortstermine, Beratungen und kurzfristige Einsätze in allen Stadtteilen - von Castrop-Mitte über Ickern bis Henrichenburg - schnell verfügbar. Rufen Sie uns einfach unter 02365 2960630 an, dann vereinbaren wir eine zeitnahe Begehung."
+        "antwort": "Castrop-Rauxel liegt nur rund 18 km bzw. etwa 25 Minuten von unserem Firmensitz in Marl entfernt und ist gut über die A42 und A45 erreichbar. Dadurch sind wir für Ortstermine, Beratungen und kurzfristige Einsätze in allen Stadtteilen - von Castrop-Mitte über Ickern bis Henrichenburg - schnell verfügbar. Rufen Sie uns einfach unter +49 2365 2960630 an, dann vereinbaren wir eine zeitnahe Begehung."
       },
       {
         "frage": "In welchen Castrop-Rauxeler Gebäuden ist mit Asbest zu rechnen?",

@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { site } from '../data/site';
 import { leistungen } from '../data/leistungen';
+import { standorte } from '../data/standorte';
 import { resolveOrigin } from '../lib/origin';
 
 // entities.json: Entitaeten + sameAs-Verknuepfungen fuer Entity-/Knowledge-Graph (GEO).
@@ -26,13 +27,14 @@ export const GET: APIRoute = (context) => {
   ];
 
   const data = {
-    updated: '2026-06-10',
+    updated: '2026-06-11',
     entities: [
       {
         type: ['Organization', 'HomeAndConstructionBusiness'],
         name: site.legalName,
         url: origin + '/',
-        areaServed: 'Nordrhein-Westfalen',
+        areaServed: 'Nordrhein-Westfalen, Schwerpunkt Ruhrgebiet / Emscher-Lippe-Region und Rheinland',
+        serviceCities: standorte.map((s) => s.name),
         // sameAs: hier spaeter offizielle Profile (Google Business, Wikidata, LinkedIn) eintragen
         sameAs: [] as string[],
         knowsAbout: leistungen.map((l) => l.title),

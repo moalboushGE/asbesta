@@ -41,6 +41,7 @@ import { standorte } from '../../data/standorte';
         <p>{site.address.street}</p>
         <p>{site.address.zip} {site.address.city}</p>
         <p><a href={site.phone.href} class="hover:text-red-700">{site.phone.display}</a></p>
+        <p><a href={`mailto:${site.email}`} class="hover:text-red-700">{site.email}</a></p>
       </address>
     </div>
 

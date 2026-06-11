@@ -33,7 +33,9 @@ export default defineConfig({
           // Lokale Landingpages: wichtiger fürs Local-SEO als Default 0.7.
           priority = 0.8;
         }
-        return { ...item, priority, changefreq, lastmod: new Date().toISOString() };
+        // Fester Release-Stempel statt new Date(): sonst springen bei JEDEM Deploy alle lastmod-Werte
+        // auf "jetzt" und Google verwirft das Signal. Bei echten Inhaltsupdates manuell anheben.
+        return { ...item, priority, changefreq, lastmod: '2026-06-11T00:00:00+00:00' };
       },
     }),
   ],
