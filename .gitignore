@@ -31,3 +31,8 @@ Thumbs.db
 /test-results/
 /playwright-report/
 /blob-report/
+
+# Browser-MCP-Artefakte
+.playwright-mcp/
+verify-*.png
+resp-*.png

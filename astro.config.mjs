@@ -29,6 +29,9 @@ export default defineConfig({
           changefreq = 'yearly';
         } else if (/^\/leistungen\/[^/]+\/[^/]+\/$/.test(path)) {
           priority = 0.6;
+        } else if (/^\/standorte\/[^/]+\/$/.test(path)) {
+          // Lokale Landingpages: wichtiger fürs Local-SEO als Default 0.7.
+          priority = 0.8;
         }
         return { ...item, priority, changefreq, lastmod: new Date().toISOString() };
       },

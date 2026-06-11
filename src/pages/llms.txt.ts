@@ -24,11 +24,11 @@ ${leistungsLinks}
 ## Wichtige Seiten
 - [Startseite](${origin}/)
 - [Alle Leistungen](${origin}/leistungen/)
-- [Kontakt](${origin}/#kontakt)
+- [Kontakt](${origin}/kontakt/)
 
 ## Maschinenlesbare Daten
 - [Strukturierte Fakten (JSON)](${origin}/facts.json)
-- [Entitaeten (JSON)](${origin}/entities.json)
+- [Entitäten (JSON)](${origin}/entities.json)
 - [Volltext fuer LLMs](${origin}/llms-full.txt)
 
 ## Hinweis

@@ -16,6 +16,13 @@
   --color-ink-800: #1f1f1f;
   --color-ink-900: #141414;
 
+  /* Signal-Orange (Warnung/Notfall – nie Farbe allein; Kontrast AA-geprüft) */
+  --color-signal-100: #ffedd5;
+  --color-signal-400: #fb923c;
+  --color-signal-500: #ea580c;
+  --color-signal-600: #c2410c;
+  --color-signal-700: #9a3412;
+
   /* Neutral */
   --color-gray-50: #f6f6f6;
   --color-gray-100: #ededed;

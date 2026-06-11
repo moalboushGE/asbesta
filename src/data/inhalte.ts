@@ -6,12 +6,6 @@ export interface Schritt {
   readonly text: string;
 }
 
-export interface Bewertung {
-  readonly name: string;
-  readonly ort: string;
-  readonly text: string;
-}
-
 export const ablauf: readonly Schritt[] = [
   {
     nr: '01',
@@ -37,33 +31,5 @@ export const ablauf: readonly Schritt[] = [
     nr: '05',
     title: 'Entsorgung & Übergabe',
     text: 'Inklusive Entsorgungsnachweis, Freimessung und Schlussdokumentation.',
-  },
-];
-
-export const bewertungen: readonly Bewertung[] = [
-  {
-    name: 'Familie Krüger',
-    ort: 'Marl',
-    text: 'Schnell, professionell, pünktlich und freundlich. Jederzeit wieder.',
-  },
-  {
-    name: 'M. Hoffmann',
-    ort: 'Recklinghausen',
-    text: 'Von der Planung bis zur Entsorgung war alles durchweg professionell.',
-  },
-  {
-    name: 'S. Becker',
-    ort: 'Gelsenkirchen',
-    text: 'Top Arbeit – sauber und absolut zuverlässig ausgeführt.',
-  },
-  {
-    name: 'R. Klein',
-    ort: 'Dorsten',
-    text: 'Unkomplizierte, schnelle und professionelle Ausführung.',
-  },
-  {
-    name: 'Hausverwaltung NRW',
-    ort: 'Bochum',
-    text: 'Ein verlässlicher Partner für gleich mehrere unserer Objekte.',
   },
 ];
