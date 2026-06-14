@@ -31,6 +31,61 @@ export interface RatgeberArtikel {
 
 export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   {
+    slug: 'asbest-fassadenplatten-erkennen',
+    title: 'Asbest in Fassadenplatten erkennen und sicher entfernen',
+    metaTitle: 'Asbest-Fassadenplatten erkennen & entfernen | Asbesta',
+    metaDescription:
+      'Asbestzement-Fassadenplatten erkennen, Gefahr verstehen und nach TRGS 519 sicher entfernen lassen. Merkmale, Ablauf, Kosten 2026 und Entsorgung im Überblick.',
+    excerpt:
+      'Graue Asbestzement-Fassadenplatten wurden bis 1993 millionenfach verbaut und sitzen bis heute an unzähligen Häusern. Wie Sie sie erkennen, wann sie raus müssen und wie der staubarme Ausbau nach TRGS 519 abläuft – verständlich und ehrlich erklärt.',
+    kategorie: 'Ratgeber Asbest',
+    datePublished: '2026-06-14',
+    dateModified: '2026-06-14',
+    author: 'Asbesta Fachredaktion',
+    authorRole: 'Fachbetrieb mit Sachkunde nach TRGS 519',
+    lesezeitMin: 12,
+    heroImage: ratgeberFigure('fassadenplatten-ausbauen'),
+    heroAlt:
+      'Handwerker mit Helm auf einem Gerüst bei Arbeiten an einer grauen Asbestzement-Gebäudefassade',
+    faqs: [
+      {
+        frage: 'Woran erkenne ich Asbest in Fassadenplatten?',
+        antwort:
+          'Ein erster Anhaltspunkt ist das Baujahr: Asbestzement wurde bis zum Verbot 1993 verbaut. Typisch sind kleinformatige, graue Platten oder Schindeln, oft 30x60 oder 40x40 Zentimeter, an Wetterseiten und Giebeln. Manche tragen einen Herstellerstempel auf der Rückseite. Optische Merkmale liefern aber nur einen Verdacht. Sicherheit gibt ausschließlich eine Laboranalyse einer fachgerecht entnommenen Materialprobe.',
+      },
+      {
+        frage: 'Ist eine intakte Asbestfassade gefährlich?',
+        antwort:
+          'Im intakten, unbearbeiteten Zustand ist fest gebundener Asbestzement vergleichsweise wenig kritisch, weil die Fasern fest in der Zementmatrix eingebunden sind. Gefährlich wird es, sobald die Oberfläche bearbeitet wird – durch Bohren, Flexen, Abschleifen oder Hochdruckreinigen. Dann werden lungengängige Fasern freigesetzt. Auch stark verwitterte, bröselnde Platten geben mit der Zeit Fasern ab und sollten fachlich beurteilt werden.',
+      },
+      {
+        frage: 'Darf ich Asbest-Fassadenplatten selbst überstreichen oder reinigen?',
+        antwort:
+          'Nein. Überstreichen mit dem Ziel der Beschichtung, Abschleifen und Hochdruckreinigen sind bei Asbestzement unzulässig, weil dabei Fasern freigesetzt oder mit dem Wasser verteilt werden. Auch das Bohren und Sägen ist für Laien tabu. Erlaubt ist im Grunde nur das unveränderte Belassen der intakten Platten. Sobald Sie eingreifen wollen, muss ein zertifizierter Fachbetrieb nach TRGS 519 ran.',
+      },
+      {
+        frage: 'Wann müssen Asbest-Fassadenplatten entfernt werden?',
+        antwort:
+          'Eine generelle Austauschpflicht für intakte Fassaden gibt es nicht. Ein Ausbau wird aber nötig bei sichtbarer Beschädigung, starker Verwitterung, bei Umbau- oder Anbaumaßnahmen und vor allem bei einer energetischen Fassadendämmung. Sobald in die Platten eingegriffen oder eine Dämmung darüber montiert werden soll, ist die fachgerechte Demontage nach TRGS 519 der sichere und rechtskonforme Weg.',
+      },
+      {
+        frage: 'Was kostet die Entfernung einer Asbestfassade?',
+        antwort:
+          'Als grobe Orientierung (Stand 2026) liegen die Kosten häufig bei rund 40 bis 100 Euro pro Quadratmeter. Die Spanne hängt stark von Gerüst, Gebäudehöhe, Zugänglichkeit, Plattenformat und Entsorgungsmenge ab. Pauschalpreise aus dem Internet sind unseriös. Einen verbindlichen Festpreis erhalten Sie erst nach einer kostenlosen Besichtigung vor Ort, bei der wir Fläche, Zustand und Aufwand konkret aufnehmen.',
+      },
+      {
+        frage: 'Wie wird Asbest aus der Fassade entsorgt?',
+        antwort:
+          'Asbesthaltige Fassadenplatten sind gefährlicher Abfall und tragen den Abfallschlüssel AVV 17 06 05*. Sie werden staubarm demontiert, nicht gebrochen, und in zugelassenen, reißfesten Big-Bags oder verschweißten Folien verpackt. Der Transport erfolgt durch zertifizierte Entsorger zu einer dafür zugelassenen Deponie. Über den gesamten Weg wird die Entsorgung dokumentiert, sodass Sie einen lückenlosen Nachweis erhalten.',
+      },
+      {
+        frage: 'Kann ich die Asbestsanierung mit einer Fassadendämmung verbinden?',
+        antwort:
+          'Ja, das ist oft sogar sinnvoll. Wenn die alten Asbestplatten ohnehin entfernt werden müssen, bietet sich der gleichzeitige Aufbau einer modernen, gedämmten Fassade an. Gerüst und Baustelle sind dann nur einmal nötig. Für die energetische Sanierung gibt es unter Umständen Förderungen. Welche Programme greifen, hängt vom Einzelfall ab – bitte prüfen Sie die aktuellen Bedingungen oder lassen Sie sich dazu gesondert beraten.',
+      },
+    ],
+  },
+  {
     slug: 'spritzasbest-erkennen-sanieren',
     title: 'Spritzasbest erkennen und sicher sanieren lassen',
     metaTitle: 'Spritzasbest erkennen & sanieren | Asbesta',

@@ -47,6 +47,336 @@ export function ratgeberFigure(key: string): ImageMetadata {
 }
 
 export const ratgeberContent: Record<string, RatgeberContent> = {
+  'asbest-fassadenplatten-erkennen': {
+    toc: [
+      {
+        id: 'asbestfassade-verbreitung',
+        label: 'Warum so viele Fassaden Asbest enthalten',
+      },
+      {
+        id: 'erkennen',
+        label: 'Asbest-Fassadenplatten erkennen',
+      },
+      {
+        id: 'gefahr',
+        label: 'Wie gefährlich ist eine Asbestfassade?',
+      },
+      {
+        id: 'verboten',
+        label: 'Was Sie auf keinen Fall tun dürfen',
+      },
+      {
+        id: 'wann-raus',
+        label: 'Wann die Platten raus müssen',
+      },
+      {
+        id: 'ablauf',
+        label: 'Ablauf des Ausbaus nach TRGS 519',
+      },
+      {
+        id: 'kosten',
+        label: 'Kosten zur Orientierung',
+      },
+      {
+        id: 'entsorgung',
+        label: 'Entsorgung und Nachweis',
+      },
+      {
+        id: 'daemmung',
+        label: 'Gelegenheit: Fassadendämmung mitdenken',
+      },
+      {
+        id: 'fachbetrieb',
+        label: 'Warum ein zertifizierter Fachbetrieb',
+      },
+    ],
+    body: [
+      {
+        type: 'p',
+        html: 'Graue, leicht verwitterte Platten an der Wetterseite, an Giebeln, Anbauten oder Balkonbrüstungen – wer ein Haus aus der Zeit bis 1993 besitzt, kennt dieses Bild. Häufig handelt es sich dabei um <strong>Asbestzement-Fassadenplatten</strong>, die jahrzehntelang als robuste, witterungsbeständige Verkleidung galten. Sie wurden in Deutschland in enormen Mengen verbaut, weil sie billig, langlebig und nahezu wartungsfrei waren. Solange diese Platten intakt sind und niemand sie bearbeitet, gehen von ihnen vergleichsweise geringe Gefahren aus. Kritisch wird es, sobald gebohrt, geflext, geschliffen oder mit dem Hochdruckreiniger gearbeitet wird – oder wenn die Fassade gedämmt werden soll.',
+      },
+      {
+        type: 'p',
+        html: 'Genau hier liegt das Problem: Viele Eigentümer wissen gar nicht, dass ihre Fassade asbesthaltig sein könnte, und beginnen mit Renovierungsarbeiten, die das Material aufschließen. Dieser Ratgeber erklärt Schritt für Schritt, wie Sie eine Asbestfassade erkennen, wie gefährlich sie wirklich ist, wann sie entfernt werden muss und wie der Ausbau nach <strong>TRGS 519</strong> sicher und rechtskonform abläuft. Außerdem ordnen wir die Kosten ein und zeigen, warum sich der Rückbau oft mit einer modernen Dämmung verbinden lässt. Der Fokus liegt dabei ausdrücklich auf der <strong>Fassade</strong> – das Welleternit-Dach behandeln wir in einem eigenen Beitrag.',
+      },
+      {
+        type: 'h2',
+        id: 'asbestfassade-verbreitung',
+        text: 'Warum so viele Fassaden Asbest enthalten',
+      },
+      {
+        type: 'p',
+        html: 'Asbestzement war über Jahrzehnte ein beliebter Baustoff: günstig, leicht, formstabil, nicht brennbar und extrem witterungsbeständig. Diese Kombination machte ihn zum Standardmaterial für Fassadenverkleidungen, die der Witterung besonders ausgesetzt sind – Wetterseiten, Giebel, Gauben, Anbauten und Balkonbrüstungen. Die Platten ließen sich leicht zuschneiden, einfach befestigen und hielten Regen, Frost und Sonne über Jahrzehnte stand, ohne zu faulen oder zu rosten. Für Bauherren der Nachkriegszeit bis in die frühen 1990er war das ein nahezu ideales Produkt.',
+      },
+      {
+        type: 'p',
+        html: 'Erst mit dem deutschen <strong>Asbest-Totalverbot 1993</strong> endete die Verwendung endgültig. Alles, was davor verbaut wurde, kann asbesthaltig sein – und ein erheblicher Teil dieser Fassaden steht bis heute. Gerade weil Asbestzement so haltbar ist, wurden viele Verkleidungen nie ausgetauscht und sind nach wie vor in Gebrauch. Das bedeutet: Wer ein Haus aus den 1960er- bis frühen 1990er-Jahren besitzt oder kauft, sollte eine asbesthaltige Fassade grundsätzlich in Betracht ziehen, bevor er Modernisierungen plant.',
+      },
+      {
+        type: 'p',
+        html: 'Typische Einsatzorte waren dabei nicht nur große Wandflächen. Asbestzement-Schindeln und -Platten finden sich ebenso an einzelnen Bauteilen: an Giebeldreiecken, an der Verkleidung von Dachgauben, an Balkonbrüstungen, an Garagen und Schuppen oder als Schutzverkleidung an besonders bewitterten Hausecken. Manchmal wurde nur die Wetterseite eines Gebäudes verkleidet, während die übrigen Wände verputzt blieben. Diese fleckenhafte Verteilung ist ein Grund, warum eine asbesthaltige Fassade leicht übersehen wird – und warum eine genaue Bestandsaufnahme vor jeder Sanierung so wichtig ist.',
+      },
+      {
+        type: 'p',
+        html: 'Anders als beim losen, schwach gebundenen Asbest in Spritzasbest oder alten Nachtspeicheröfen liegt in der Fassade meist <strong>fest gebundener Asbestzement</strong> vor. Die Fasern sind dabei fest in eine Zementmatrix eingebunden, die sie wie ein Bindemittel umschließt. Das macht die Platten im intakten Zustand deutlich weniger kritisch als schwach gebundene Produkte – aber eben nicht harmlos, sobald die Matrix mechanisch zerstört wird. Wie Sie Asbest grundsätzlich im Haus aufspüren, beschreibt unser Beitrag <a href="/ratgeber/asbest-erkennen/">Asbest erkennen</a> ausführlicher.',
+      },
+      {
+        type: 'figure',
+        image: 'fassadenplatten-ausbauen',
+        alt: 'Graue kleinformatige Asbestzement-Fassadenplatten an der Wetterseite eines älteren Wohnhauses',
+      },
+      {
+        type: 'h2',
+        id: 'erkennen',
+        text: 'Asbest-Fassadenplatten erkennen',
+      },
+      {
+        type: 'p',
+        html: 'Den ersten und wichtigsten Hinweis liefert das <strong>Baujahr beziehungsweise das Verkleidungsalter</strong>. Wurde die Fassade vor 1993 angebracht, ist Asbest möglich. Da nachträgliche Verkleidungen häufig erst Jahre nach dem eigentlichen Hausbau erfolgten, lohnt auch ein Blick in Bauunterlagen, Rechnungen oder Sanierungsbelege. Daneben gibt es typische optische Merkmale, die einen Verdacht erhärten – ersetzen können sie eine Analyse jedoch nicht.',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Kleinformatige Platten oder Schindeln, häufig 30x60 oder 40x40 Zentimeter',
+          'Graue, oft leicht raue oder verwitterte Oberfläche, teils mit Moos- oder Algenbewuchs',
+          'Schuppen- oder rautenförmige Verlegung an Giebeln und Wetterseiten',
+          'Sichtbare, oft genagelte oder geklammerte Befestigung auf einer Holzlattung',
+          'Möglicher Herstellerstempel oder eine Prägung auf der Rückseite einzelner Platten',
+        ],
+      },
+      {
+        type: 'p',
+        html: 'Wichtig: Auch zementgebundene Faserplatten <em>ohne</em> Asbest sehen oft sehr ähnlich aus, weil nach 1993 optisch vergleichbare, aber asbestfreie Produkte verkauft wurden. Diese moderneren Platten verwenden statt Asbest andere Verstärkungsfasern wie Zellulose oder Kunststoff, lassen sich von außen aber kaum unterscheiden. Vom Aussehen allein lässt sich also nie sicher auf Asbest schließen. Gewissheit bringt nur eine <strong>Laboranalyse</strong> einer fachgerecht entnommenen Materialprobe – wie sie unsere <a href="/leistungen/materialanalyse/">Materialanalyse</a> liefert.',
+      },
+      {
+        type: 'p',
+        html: 'Besonders trügerisch ist die Lage bei Häusern, an denen über die Jahre einzelne Platten ausgetauscht wurden. Dann mischen sich womöglich alte asbesthaltige mit neueren asbestfreien Platten auf derselben Wand. Eine einzelne Probe reicht in solchen Fällen oft nicht aus. Im Zweifel sollten mehrere repräsentative Stellen beprobt werden, damit das Ergebnis die gesamte Fassade verlässlich abbildet. Genau diese Einschätzung trifft ein erfahrener Fachbetrieb bei der Besichtigung vor Ort.',
+      },
+      {
+        type: 'callout',
+        variant: 'warnung',
+        title: 'Keine Probe in Eigenregie herausbrechen',
+        html: '<p>Reißen oder brechen Sie zur Probenahme keine Platte heraus. Schon das Abbrechen einer Ecke kann Fasern freisetzen. Die Probe sollte staubarm, angefeuchtet und mit Schutzmaßnahmen entnommen werden – das übernimmt im Zweifel der Fachbetrieb sicher für Sie und legt zugleich fest, wie viele Proben für ein belastbares Ergebnis nötig sind.</p>',
+      },
+      {
+        type: 'h2',
+        id: 'gefahr',
+        text: 'Wie gefährlich ist eine Asbestfassade?',
+      },
+      {
+        type: 'p',
+        html: 'Die Gefahr von Asbest geht von feinen, lungengängigen Fasern aus, die eingeatmet werden und Jahrzehnte später schwere Erkrankungen auslösen können. Entscheidend ist daher, ob und wie viele Fasern freigesetzt werden. Bei fest gebundenem Asbestzement sind die Fasern im Normalzustand in der Zementmatrix gefangen – eine intakte, unbearbeitete Fassade setzt nur sehr wenige Fasern frei. Das unterscheidet die Fassadenplatte deutlich von schwach gebundenen Materialien, die schon bei leichter Berührung stäuben.',
+      },
+      {
+        type: 'p',
+        html: 'Das ändert sich schlagartig, sobald die Oberfläche <strong>mechanisch bearbeitet</strong> wird. Bohren, Flexen, Sägen, Abschleifen und Hochdruckreinigen zerstören die Matrix und schleudern große Mengen Fasern in die Luft beziehungsweise verteilen sie mit dem Wasser. Schon wenige Minuten unsachgemäßer Arbeit können eine Faserbelastung erzeugen, die weit über jedem zulässigen Grenzwert liegt – und die freigesetzten Fasern lagern sich auch im Umfeld ab, etwa auf Terrassen, im Garten oder in Nachbargrundstücken.',
+      },
+      {
+        type: 'p',
+        html: 'Hinzu kommt der Faktor Zeit. Auch <strong>starke Verwitterung</strong> über die Jahre lässt die Oberfläche auskreiden und absanden, sodass nach und nach Fasern frei werden – ganz ohne aktives Zutun. Eine bröselige, moosbewachsene Platte, deren oberste Zementschicht bereits abgewittert ist, ist deshalb anders zu bewerten als eine glatte, intakte Platte. Solche stark gealterten Fassaden geben kontinuierlich Fasern ab und sollten fachlich beurteilt und in der Regel zurückgebaut werden.',
+      },
+      {
+        type: 'callout',
+        variant: 'tipp',
+        title: 'Im Zweifel: intakt lassen und beobachten',
+        html: '<p>Solange eine Asbestfassade unbeschädigt ist und kein Umbau ansteht, ist das unveränderte Belassen oft die unkritischste Variante. Kontrollieren Sie die Platten regelmäßig auf Risse und Abplatzungen – und planen Sie den fachgerechten Ausbau rechtzeitig, bevor Sanierungsarbeiten anstehen, statt ihn unter Zeitdruck improvisieren zu müssen.</p>',
+      },
+      {
+        type: 'h2',
+        id: 'verboten',
+        text: 'Was Sie auf keinen Fall tun dürfen',
+      },
+      {
+        type: 'p',
+        html: 'Im Umgang mit Asbestzement gibt es klare Tabus. Die folgenden Arbeiten sind in Eigenregie <strong>unzulässig und gefährlich</strong>, weil sie erhebliche Faserfreisetzung verursachen. Sie verstoßen zudem gegen geltende Arbeitsschutz- und Gefahrstoffvorschriften und können bei Schäden auch rechtliche Folgen haben:',
+      },
+      {
+        type: 'ul',
+        items: [
+          '<strong>Hochdruckreinigen</strong> der Fassade – verteilt Fasern mit dem Spritzwasser großflächig',
+          '<strong>Abschleifen</strong> oder Abbürsten der Oberfläche zur „Auffrischung“',
+          '<strong>Überstreichen</strong> als vermeintliche Versiegelung gilt nicht als zugelassene Sanierung',
+          '<strong>Bohren, Sägen oder Flexen</strong> – etwa für Befestigungen, Leitungen oder beim Abbau',
+          'Trockenes Abkehren oder Abklopfen von Schmutz und Bewuchs',
+        ],
+      },
+      {
+        type: 'p',
+        html: 'Besonders verbreitet ist der Irrglaube, man könne eine verwitterte Asbestfassade einfach mit dem Hochdruckreiniger „auffrischen“ oder mit Farbe „versiegeln“. Beides ist falsch und gefährlich: Der Hochdruckstrahl löst Fasern aus der angegriffenen Oberfläche und verteilt sie unkontrolliert mit dem Wasser. Und ein einfacher Anstrich gilt nicht als zugelassene Sanierungsmaßnahme – er bindet die Fasern nicht dauerhaft und löst das eigentliche Problem nicht, sondern verzögert es nur.',
+      },
+      {
+        type: 'p',
+        html: 'Wer eine Asbestfassade verändern will, kommt um einen <strong>zertifizierten Fachbetrieb nach TRGS 519</strong> nicht herum. Das ist kein bürokratischer Selbstzweck, sondern schützt Sie, Ihre Familie, die Nachbarschaft und die ausführenden Handwerker vor einer dauerhaften Faserbelastung. Die Vorschriften der TRGS 519 fassen den Stand der Technik zusammen und sind für jeden verbindlich, der gewerblich mit Asbest arbeitet.',
+      },
+      {
+        type: 'figure',
+        image: 'asbestzement-ausbauen',
+        alt: 'Fachkraft in Schutzanzug beim staubarmen Demontieren einer Asbestzement-Fassadenplatte von der Lattung',
+      },
+      {
+        type: 'h2',
+        id: 'wann-raus',
+        text: 'Wann die Platten raus müssen',
+      },
+      {
+        type: 'p',
+        html: 'Eine pauschale gesetzliche Pflicht, jede intakte Asbestfassade sofort zu entfernen, gibt es nicht. Eine bestehende, unbeschädigte Verkleidung darf grundsätzlich erhalten bleiben. In vielen Fällen wird der Ausbau aber notwendig oder dringend empfehlenswert – spätestens dann, wenn ohnehin Arbeiten an der Gebäudehülle geplant sind:',
+      },
+      {
+        type: 'ul',
+        items: [
+          '<strong>Sichtbare Schäden:</strong> Risse, Abplatzungen, gebrochene oder herabgefallene Platten',
+          '<strong>Starke Verwitterung:</strong> auskreidende, absandende, moosdurchsetzte Oberflächen',
+          '<strong>Umbau und Anbau:</strong> sobald an oder hinter der Fassade gearbeitet wird',
+          '<strong>Energetische Sanierung:</strong> bevor eine Fassadendämmung montiert werden soll',
+          '<strong>Verkauf oder Modernisierung:</strong> wenn die Fassade ohnehin erneuert wird',
+        ],
+      },
+      {
+        type: 'p',
+        html: 'Gerade die <strong>energetische Fassadendämmung</strong> ist ein häufiger Anlass: Eine Dämmung lässt sich nicht einfach über asbesthaltige Platten montieren, ohne in diese einzugreifen. Das Anbohren für Dübel, das Anbringen einer Unterkonstruktion oder das Aufkleben von Dämmplatten würde die Asbestmatrix verletzen und Fasern freisetzen. Hier ist der geordnete Rückbau der Altfassade der erste und einzig saubere Schritt, bevor die neue, gedämmte Fassade aufgebaut wird.',
+      },
+      {
+        type: 'p',
+        html: 'Auch beim Hauskauf oder vor einer Modernisierung lohnt es sich, das Thema frühzeitig auf den Tisch zu legen, statt es später unter Zeitdruck lösen zu müssen. Wer den Zustand seiner Fassade kennt, kann Sanierung und Budget realistisch planen. Mehr zum sicheren Umgang mit dem Plattenmaterial selbst lesen Sie auf unserer Leistungsseite <a href="/leistungen/asbestzement-ausbauen/">Asbestzement ausbauen</a>.',
+      },
+      {
+        type: 'p',
+        html: 'Wichtig ist, dass die genannten Anlässe sich in der Praxis oft überschneiden. Häufig fällt erst bei der Planung einer Dämmung auf, dass die alten Platten bereits Risse zeigen oder stark verwittert sind – dann sprechen gleich mehrere Gründe für den Rückbau. Umgekehrt entdecken Eigentümer beschädigte Platten manchmal erst, nachdem ein Sturm einzelne Schindeln heruntergerissen hat. Reagieren Sie in solchen Fällen nicht mit eigenen Reparaturversuchen, sondern lassen Sie den Schaden fachlich bewerten. So vermeiden Sie, dass aus einem kleinen Defekt durch unsachgemäßes Handeln eine großflächige Faserbelastung wird.',
+      },
+      {
+        type: 'h2',
+        id: 'ablauf',
+        text: 'Ablauf des Ausbaus nach TRGS 519',
+      },
+      {
+        type: 'p',
+        html: 'Der fachgerechte Ausbau einer Asbestfassade folgt einem geregelten, staubarmen Verfahren. Die Arbeiten sind nach TRGS 519 <strong>anzeige- und erlaubnispflichtig</strong> – das heißt, sie dürfen nur von einem sachkundigen, behördlich anerkannten Fachbetrieb ausgeführt und müssen vorab der zuständigen Behörde angezeigt werden. Ziel ist es, von der Probenahme bis zur Entsorgung jede Faserfreisetzung so weit wie möglich zu vermeiden. Typischerweise läuft eine Fassadensanierung in diesen Schritten ab:',
+      },
+      {
+        type: 'ol',
+        items: [
+          '<strong>Besichtigung und Probenahme:</strong> Aufnahme von Fläche, Zustand und Zugang, fachgerechte Materialprobe und Laboranalyse zur sicheren Bestätigung des Asbestgehalts.',
+          '<strong>Planung und Anzeige:</strong> Festlegung der Schutzmaßnahmen, des Arbeitsverfahrens und fristgerechte Anzeige der Arbeiten bei der zuständigen Behörde.',
+          '<strong>Gerüst und Baustelleneinrichtung:</strong> Aufbau eines tragfähigen Gerüsts, Absperrung des Arbeitsbereichs und Bereitstellung der persönlichen Schutzausrüstung.',
+          '<strong>Staubbindung:</strong> Anfeuchten beziehungsweise Vorbehandeln der Platten und Verwendung staubarmer Werkzeuge, um die Faserfreisetzung zu minimieren.',
+          '<strong>Zerstörungsarme Demontage:</strong> Lösen der Befestigungen und Abnehmen der Platten möglichst ganz, ohne sie zu brechen oder zu zersägen.',
+          '<strong>Verpackung:</strong> Sofortiges, staubdichtes Verpacken in zugelassene Big-Bags oder verschweißte Folien, klar als Asbest gekennzeichnet.',
+          '<strong>Abtransport und Entsorgung:</strong> Transport durch zertifizierte Entsorger zu einer zugelassenen Deponie mit lückenloser Dokumentation.',
+          '<strong>Feinreinigung und Übergabe:</strong> Reinigung des Arbeitsbereichs, abschließende Kontrolle und Übergabe der Entsorgungsnachweise an Sie.',
+        ],
+      },
+      {
+        type: 'p',
+        html: 'Entscheidend ist, dass die Platten möglichst <strong>zerstörungsarm</strong> abgenommen werden. Statt sie abzuflexen oder zu brechen, werden die Befestigungen vorsichtig gelöst und die Platten ganz von der Lattung genommen. So bleibt die Faserfreisetzung minimal. Anschließend wandern sie ohne Zwischenlagerung direkt in die staubdichte Verpackung. Dieses geordnete Vorgehen ist der Kern jeder sauberen Asbestsanierung und unterscheidet den Fachbetrieb vom unzulässigen Schwarzbau.',
+      },
+      {
+        type: 'callout',
+        variant: 'hinweis',
+        title: 'Kostenlose Besichtigung anfragen',
+        html: '<p>Sie vermuten Asbest an Ihrer Fassade oder planen eine Sanierung? Wir kommen vorbei, beurteilen die Platten und erstellen Ihnen einen verbindlichen Festpreis nach der Besichtigung. Vereinbaren Sie jetzt Ihren Termin über unser <a href="/kontakt/">Kontaktformular</a> oder telefonisch.</p>',
+      },
+      {
+        type: 'h2',
+        id: 'kosten',
+        text: 'Kosten zur Orientierung',
+      },
+      {
+        type: 'p',
+        html: 'Pauschalpreise lassen sich bei einer Asbestfassade seriös nicht nennen, weil der Aufwand stark vom Einzelfall abhängt: Gebäudehöhe und damit Gerüstbedarf, Zugänglichkeit, Plattenformat, Verlegeart, Zustand und die zu entsorgende Menge spielen alle hinein. Eine kleine, gut erreichbare Giebelfläche im Erdgeschoss verursacht ganz andere Kosten als eine mehrstöckige, schwer zugängliche Wand. Die folgende Tabelle gibt eine <strong>grobe Orientierung (Stand 2026)</strong> – der verbindliche Festpreis steht erst nach der kostenlosen Besichtigung fest.',
+      },
+      {
+        type: 'table',
+        headers: ['Kostenposition', 'Grobe Orientierung (Stand 2026)', 'Anmerkung'],
+        rows: [
+          [
+            'Ausbau und Entsorgung Fassadenplatten',
+            'ca. 40–100 €/m²',
+            'je nach Höhe, Zugang und Plattenformat',
+          ],
+          ['Gerüststellung', 'ca. 6–12 €/m² Fassade', 'abhängig von Standzeit und Gebäudehöhe'],
+          [
+            'Materialanalyse je Probe',
+            'ca. 50–120 € pro Probe',
+            'Laborkosten zur sicheren Bestätigung',
+          ],
+          [
+            'Deponiegebühr Asbest',
+            'ca. 150–350 € pro Tonne',
+            'regional unterschiedlich, AVV 17 06 05*',
+          ],
+        ],
+      },
+      {
+        type: 'p',
+        html: 'Die genannten Werte sind eine grobe Orientierung (Stand 2026) und ersetzen kein Angebot. Sie zeigen vor allem, dass sich Gesamtkosten aus mehreren Posten zusammensetzen – die reine Quadratmeterzahl allein sagt wenig aus. Den konkreten Aufwand und damit den verbindlichen Festpreis ermitteln wir bei der kostenlosen Besichtigung vor Ort. Eine Einordnung der reinen Entsorgungsseite – auch im Vergleich zum Dach – finden Sie in unserem Beitrag <a href="/ratgeber/asbestdach-entsorgen-kosten-ablauf/">Asbestdach entsorgen: Kosten und Ablauf</a>.',
+      },
+      {
+        type: 'p',
+        html: 'Vorsicht ist bei vermeintlichen Schnäppchen geboten. Wer Asbest deutlich unter den marktüblichen Spannen anbietet, spart erfahrungsgemäß an genau den Stellen, die teuer und gesetzlich vorgeschrieben sind – etwa an der behördlichen Anzeige, der korrekten Verpackung oder der ordnungsgemäßen Deponierung. Eine unsachgemäße Entsorgung kann am Ende deutlich teurer werden als die fachgerechte Sanierung. Achten Sie deshalb immer auf Sachkundenachweise und einen lückenlosen Entsorgungsnachweis.',
+      },
+      {
+        type: 'h2',
+        id: 'entsorgung',
+        text: 'Entsorgung und Nachweis',
+      },
+      {
+        type: 'p',
+        html: 'Asbesthaltige Fassadenplatten sind <strong>gefährlicher Abfall</strong>. Sie werden unter dem Abfallschlüssel <strong>AVV 17 06 05*</strong> geführt – das Sternchen kennzeichnet die Gefährlichkeit. Daraus folgen klare Regeln: Die Platten dürfen nicht gebrochen, nicht zwischengelagert wie Bauschutt und nicht über den normalen Container oder Sperrmüll entsorgt werden. Auch das Aufmischen mit anderem Bauschutt ist unzulässig, weil Asbest sortenrein erfasst werden muss.',
+      },
+      {
+        type: 'p',
+        html: 'Stattdessen werden sie staubdicht in zugelassene <strong>Big-Bags</strong> oder verschweißte Folien verpackt, von zertifizierten Entsorgern abgeholt und auf einer dafür zugelassenen Deponie endgelagert. Über jeden Schritt – von der Übergabe bis zur Annahme auf der Deponie – entsteht ein <strong>Entsorgungsnachweis</strong>, den Sie als Eigentümer erhalten und aufbewahren sollten. Dieser Nachweis belegt im Streit- oder Verkaufsfall, dass das Material ordnungsgemäß beseitigt wurde. Wie die Entsorgung im Detail geregelt ist, vertieft unser Ratgeber <a href="/ratgeber/asbest-entsorgen/">Asbest entsorgen</a>.',
+      },
+      {
+        type: 'p',
+        html: 'Für Sie als Auftraggeber bedeutet das vor allem eines: Lassen Sie sich die Entsorgungspapiere immer aushändigen. Ein seriöser Fachbetrieb dokumentiert den gesamten Weg des Materials und übergibt Ihnen am Ende einen vollständigen Nachweis. Erst damit ist die Sanierung wirklich abgeschlossen – nicht schon dann, wenn die letzte Platte vom Gerüst geholt ist.',
+      },
+      {
+        type: 'figure',
+        image: 'materialanalyse',
+        alt: 'Laboranalyse einer Materialprobe zur eindeutigen Bestimmung von Asbest in Fassadenmaterial',
+      },
+      {
+        type: 'h2',
+        id: 'daemmung',
+        text: 'Gelegenheit: Fassadendämmung mitdenken',
+      },
+      {
+        type: 'p',
+        html: 'Wenn die alte Asbestfassade ohnehin runter muss, lohnt sich der Blick nach vorn: Der Rückbau ist die ideale Gelegenheit, gleich eine moderne, <strong>energetisch gedämmte Fassade</strong> aufzubauen. Gerüst, Baustelleneinrichtung und Anfahrt fallen dann nur einmal an, und Sie sparen sich eine zweite Baustelle samt zusätzlicher Kosten Jahre später. Wirtschaftlich ist es fast immer sinnvoller, beide Maßnahmen in einem Zug zu erledigen, statt erst zu sanieren und später noch einmal das Gerüst aufzustellen.',
+      },
+      {
+        type: 'p',
+        html: 'Hinzu kommt der laufende Nutzen: Eine gedämmte Fassade senkt den Heizbedarf, verbessert das Wohnklima und steigert in der Regel den Wert der Immobilie. Aus einem reinen Sanierungszwang wird so eine Investition, die sich über die Jahre auszahlt. Wichtig ist nur, beide Schritte – Asbestrückbau und Dämmaufbau – sauber aufeinander abzustimmen und von Anfang an gemeinsam zu planen.',
+      },
+      {
+        type: 'p',
+        html: 'Für energetische Sanierungsmaßnahmen gibt es unter Umständen <strong>Förderungen</strong>. Ob und welche Programme in Ihrem Fall greifen, hängt vom Einzelfall und den jeweils aktuellen Bedingungen ab – bitte sehen Sie diesen Hinweis nur als Orientierung und prüfen Sie die Konditionen aktuell oder lassen Sie sich gezielt beraten. Wie eine kombinierte Förderung beim Dach funktionieren kann, zeigt beispielhaft unser Beitrag <a href="/ratgeber/asbestdach-foerderung-neues-dach/">Asbestdach-Förderung für ein neues Dach</a>.',
+      },
+      {
+        type: 'h2',
+        id: 'fachbetrieb',
+        text: 'Warum ein zertifizierter Fachbetrieb',
+      },
+      {
+        type: 'p',
+        html: 'Asbestsanierung an der Fassade ist kein Heimwerkerprojekt. Der Gesetzgeber verlangt aus gutem Grund, dass die Arbeiten von einem <strong>nach TRGS 519 sachkundigen, behördlich anerkannten Fachbetrieb</strong> ausgeführt werden. Ein solcher Betrieb bringt die nötige Schutzausrüstung, staubarme Verfahren, die behördliche Anzeige, die korrekte Verpackung und den lückenlosen Entsorgungsnachweis mit – und schützt damit Ihre Gesundheit ebenso wie die Ihrer Nachbarn und der ausführenden Handwerker.',
+      },
+      {
+        type: 'p',
+        html: 'Genauso wichtig wie die fachliche Qualifikation ist die ehrliche Beratung. Ein guter Fachbetrieb sagt Ihnen klar, ob ein Ausbau wirklich nötig ist oder ob die intakte Fassade vorerst belassen werden kann – und drängt Sie nicht in unnötige Maßnahmen. Diese Offenheit ist uns wichtig: Sie sollen am Ende verstehen, was an Ihrer Fassade zu tun ist und warum, statt nur eine Rechnung zu bekommen.',
+      },
+      {
+        type: 'p',
+        html: 'Als <a href="/leistungen/asbestsanierung/">zertifizierter Fachbetrieb für Asbestsanierung</a> aus Marl sind wir in ganz NRW für Sie im Einsatz – von der <a href="/leistungen/materialanalyse/">Materialanalyse</a> über den fachgerechten <a href="/leistungen/fassadenplatten-ausbauen/">Ausbau der Fassadenplatten</a> bis zur dokumentierten Entsorgung. Wir beraten Sie ehrlich, beurteilen Ihre Fassade vor Ort und nennen Ihnen einen verbindlichen Festpreis nach der kostenlosen Besichtigung.',
+      },
+      {
+        type: 'p',
+        html: '<strong>Jetzt unverbindlich anfragen:</strong> Vereinbaren Sie Ihren Termin über unser <a href="/kontakt/">Kontaktformular</a> oder rufen Sie uns direkt an unter <a href="tel:+4923652960630">+49 2365 2960630</a>. Wir melden uns zeitnah und sagen Ihnen klar, was bei Ihrer Asbestfassade zu tun ist.',
+      },
+    ],
+  },
   'spritzasbest-erkennen-sanieren': {
     toc: [
       {

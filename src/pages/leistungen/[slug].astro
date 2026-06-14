@@ -16,21 +16,69 @@ import { buildServiceGraph } from '../../lib/schema';
 
 /** Relevante Ratgeber je Leistung (bidirektionale Verlinkung Leistung -> Ratgeber). */
 const RATGEBER_MAP: Record<string, readonly string[]> = {
-  'welleternit-ausbauen': ['asbestdach-entsorgen-kosten-ablauf', 'asbest-entsorgen', 'asbest-erkennen'],
-  'fassadenplatten-ausbauen': ['asbestdach-entsorgen-kosten-ablauf', 'asbest-entsorgen', 'asbestsanierung-pflicht-kosten-ablauf'],
-  'asbestzement-ausbauen': ['asbest-entsorgen', 'asbestdach-entsorgen-kosten-ablauf', 'asbestsanierung-pflicht-kosten-ablauf'],
-  'floor-flex-entfernen': ['asbest-bodenbelag', 'asbest-erkennen', 'asbestsanierung-pflicht-kosten-ablauf'],
-  'bitumenkleber-entfernen': ['asbest-bodenbelag', 'asbest-erkennen', 'asbest-entsorgen'],
-  'cushion-vinyl-entfernen': ['asbest-bodenbelag', 'asbest-erkennen', 'asbestsanierung-pflicht-kosten-ablauf'],
-  materialanalyse: ['asbest-erkennen', 'asbest-hauskauf', 'gefstoffv-novelle-2024'],
-  'luftanalysen-vdi-3492': ['asbestsanierung-pflicht-kosten-ablauf', 'asbest-erkennen', 'gefstoffv-novelle-2024'],
-  asbestsanierung: ['asbestsanierung-pflicht-kosten-ablauf', 'asbest-erkennen', 'asbest-entsorgen'],
-  abbrucharbeiten: ['asbestsanierung-pflicht-kosten-ablauf', 'asbest-entsorgen', 'gefstoffv-novelle-2024'],
-  'kmf-sanierung': ['asbestsanierung-pflicht-kosten-ablauf', 'asbest-erkennen', 'gefstoffv-novelle-2024'],
+  'welleternit-ausbauen': [
+    'asbestdach-foerderung-neues-dach',
+    'asbestdach-entsorgen-kosten-ablauf',
+    'asbest-entsorgen',
+  ],
+  'fassadenplatten-ausbauen': [
+    'asbest-fassadenplatten-erkennen',
+    'asbestdach-entsorgen-kosten-ablauf',
+    'asbest-entsorgen',
+  ],
+  'asbestzement-ausbauen': [
+    'asbest-fassadenplatten-erkennen',
+    'asbest-entsorgen',
+    'asbestdach-entsorgen-kosten-ablauf',
+  ],
+  'floor-flex-entfernen': [
+    'asbest-bodenbelag',
+    'asbest-erkennen',
+    'asbestsanierung-pflicht-kosten-ablauf',
+  ],
+  'bitumenkleber-entfernen': [
+    'asbest-bodenbelag',
+    'asbest-putz-fliesenkleber-spachtelmasse',
+    'asbest-entsorgen',
+  ],
+  'cushion-vinyl-entfernen': [
+    'asbest-bodenbelag',
+    'asbest-erkennen',
+    'asbestsanierung-pflicht-kosten-ablauf',
+  ],
+  materialanalyse: [
+    'asbest-putz-fliesenkleber-spachtelmasse',
+    'asbest-erkennen',
+    'asbest-hauskauf',
+  ],
+  'luftanalysen-vdi-3492': [
+    'spritzasbest-erkennen-sanieren',
+    'asbestsanierung-pflicht-kosten-ablauf',
+    'gefstoffv-novelle-2024',
+  ],
+  asbestsanierung: [
+    'spritzasbest-erkennen-sanieren',
+    'asbestsanierung-pflicht-kosten-ablauf',
+    'nachtspeicherofen-asbest-entsorgen',
+  ],
+  abbrucharbeiten: [
+    'asbestsanierung-pflicht-kosten-ablauf',
+    'asbest-entsorgen',
+    'gefstoffv-novelle-2024',
+  ],
+  'kmf-sanierung': ['mineralwolle-kmf-entsorgen', 'asbest-erkennen', 'gefstoffv-novelle-2024'],
   'pak-sanierung': ['asbestsanierung-pflicht-kosten-ablauf', 'asbest-erkennen', 'asbest-entsorgen'],
-  'fensterbaenke-ausbauen': ['asbest-erkennen', 'asbestsanierung-pflicht-kosten-ablauf', 'asbest-entsorgen'],
+  'fensterbaenke-ausbauen': [
+    'asbest-erkennen',
+    'asbestsanierung-pflicht-kosten-ablauf',
+    'asbest-entsorgen',
+  ],
 };
-const DEFAULT_RATGEBER = ['asbest-erkennen', 'asbestsanierung-pflicht-kosten-ablauf', 'asbest-entsorgen'];
+const DEFAULT_RATGEBER = [
+  'asbest-erkennen',
+  'asbestsanierung-pflicht-kosten-ablauf',
+  'asbest-entsorgen',
+];
 
 export function getStaticPaths() {
   return leistungen.flatMap((l) => {
@@ -101,7 +149,11 @@ const ratgeber = (RATGEBER_MAP[leistung.slug] ?? DEFAULT_RATGEBER)
   </div>
 
   <article class="mx-auto max-w-4xl px-4 py-12 lg:px-8 lg:py-16">
-    {detail.einleitung.map((absatz) => <p class="mt-4 leading-relaxed text-gray-700 first:mt-0">{absatz}</p>)}
+    {
+      detail.einleitung.map((absatz) => (
+        <p class="mt-4 leading-relaxed text-gray-700 first:mt-0">{absatz}</p>
+      ))
+    }
 
     <h2 class="mt-12 text-2xl">Leistungsumfang</h2>
     <ul class="mt-5 grid gap-3 sm:grid-cols-2">
