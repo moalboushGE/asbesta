@@ -1,6 +1,7 @@
 import { site, owner, qualifikationen } from '../data/site';
 import { leistungen } from '../data/leistungen';
 import { standorte } from '../data/standorte';
+import { bewertungen, bewertungAggregat, googleReviewsUrl } from '../data/bewertungen';
 
 /** JSON-LD-Builder (framework-frei, unit-testbar – Plan Kap. 8.1). */
 
@@ -59,9 +60,9 @@ function howToNode(
 /** Vollständiger, sitewide identischer LocalBusiness-Knoten (Entity-Hub für SEO/GEO).
  *  Bewusst OHNE openingHours/priceRange/sameAs – diese erst eintragen, wenn echte Daten
  *  bzw. ein Google-Business-Profil vorliegen (keine erfundenen Angaben). */
-function organizationNode(origin: string): Record<string, unknown> {
+function organizationNode(origin: string, opts?: { withReviews?: boolean }): Record<string, unknown> {
   const telephone = site.phone.href.replace('tel:', '');
-  return {
+  const node: Record<string, unknown> = {
     '@type': ['Organization', 'HomeAndConstructionBusiness'],
     '@id': origin + '/' + ORG_ID,
     name: site.legalName,
@@ -81,7 +82,7 @@ function organizationNode(origin: string): Record<string, unknown> {
       addressRegion: site.address.region,
       addressCountry: 'DE',
     },
-    geo: { '@type': 'GeoCoordinates', latitude: 51.6539, longitude: 7.0917 },
+    geo: { '@type': 'GeoCoordinates', latitude: 51.6713862, longitude: 7.1535892 },
     founder: { '@id': origin + '/' + PERSON_ID },
     areaServed: ['Nordrhein-Westfalen', ...standorte.map((s) => s.name)],
     knowsAbout: leistungen.map((l) => l.title),
@@ -92,7 +93,25 @@ function organizationNode(origin: string): Record<string, unknown> {
       areaServed: 'DE',
       availableLanguage: ['de'],
     },
+    sameAs: [googleReviewsUrl],
   };
+  // aggregateRating + review NUR wo die echten Rezensionen auch sichtbar sind (Startseite) – Google-Policy.
+  if (opts?.withReviews) {
+    node.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: bewertungAggregat.rating,
+      reviewCount: bewertungAggregat.anzahl,
+      bestRating: 5,
+      worstRating: 1,
+    };
+    node.review = bewertungen.map((b) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: b.name },
+      reviewRating: { '@type': 'Rating', ratingValue: b.rating, bestRating: 5 },
+      reviewBody: b.text,
+    }));
+  }
+  return node;
 }
 
 export function breadcrumbNode(origin: string, crumbs: readonly Crumb[]): Record<string, unknown> {
@@ -391,7 +410,7 @@ export function buildArticleGraph(args: ArticleGraphArgs): unknown[] {
 export function buildHomeGraph(origin: string): unknown[] {
   const orgId = origin + '/' + ORG_ID;
   return [
-    organizationNode(origin),
+    organizationNode(origin, { withReviews: true }),
     {
       '@type': 'WebSite',
       '@id': origin + '/#website',

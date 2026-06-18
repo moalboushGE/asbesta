@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro';
 import { site, owner, qualifikationen } from '../data/site';
 import { leistungen } from '../data/leistungen';
 import { standorte } from '../data/standorte';
+import { bewertungAggregat, googleReviewsUrl } from '../data/bewertungen';
 import { resolveOrigin } from '../lib/origin';
 
 // entities.json: Entitaeten + sameAs-Verknuepfungen fuer Entity-/Knowledge-Graph (GEO).
@@ -35,8 +36,13 @@ export const GET: APIRoute = (context) => {
         url: origin + '/',
         areaServed: 'Nordrhein-Westfalen, Schwerpunkt Ruhrgebiet / Emscher-Lippe-Region und Rheinland',
         serviceCities: standorte.map((s) => s.name),
-        // sameAs: hier spaeter offizielle Profile (Google Business, Wikidata, LinkedIn) eintragen
-        sameAs: [] as string[],
+        sameAs: [googleReviewsUrl],
+        aggregateRating: {
+          ratingValue: bewertungAggregat.rating,
+          reviewCount: bewertungAggregat.anzahl,
+          bestRating: 5,
+          source: 'Google',
+        },
         knowsAbout: leistungen.map((l) => l.title),
         founder: owner.name,
         location: {

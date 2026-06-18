@@ -4,6 +4,7 @@ import { leistungen } from '../data/leistungen';
 import { leistungenDetail } from '../data/leistungen-detail';
 import { ratgeberArtikel } from '../data/ratgeber';
 import { standorte } from '../data/standorte';
+import { bewertungAggregat, googleReviewsUrl } from '../data/bewertungen';
 import { resolveOrigin } from '../lib/origin';
 
 // facts.json: maschinenlesbare Firmenfakten (Single Source of Truth fuer AI-Crawler & Entwickler).
@@ -66,6 +67,14 @@ export const GET: APIRoute = (context) => {
       insurance: 'Betriebshaftpflicht',
       documentation: 'Freimessung nach VDI 3492 + Entsorgungsnachweis',
       responseTime: site.responseTime,
+      rating: {
+        value: bewertungAggregat.rating,
+        count: bewertungAggregat.anzahl,
+        scale: 5,
+        source: 'Google',
+        url: googleReviewsUrl,
+      },
+      sameAs: [googleReviewsUrl],
     },
     services: leistungen.map((l) => ({
       slug: l.slug,
