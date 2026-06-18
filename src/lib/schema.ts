@@ -73,7 +73,7 @@ function organizationNode(origin: string, opts?: { withReviews?: boolean }): Rec
     telephone,
     email: site.email,
     image: origin + '/og.png',
-    logo: origin + '/og.png',
+    logo: origin + '/logo.png',
     address: {
       '@type': 'PostalAddress',
       streetAddress: site.address.street,
