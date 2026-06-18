@@ -34,6 +34,12 @@ import lLuftanalysen from '../assets/images/leistungen/luftanalysen-vdi-3492.jpg
 import imgUeberUns from '../assets/images/allgemein/ueber-uns.jpg';
 import imgStadt1 from '../assets/images/allgemein/stadt-1.jpg';
 import imgStadt2 from '../assets/images/allgemein/stadt-2.jpg';
+// Qualifikationsnachweise des Inhabers (Original-Bescheinigungen, Geburtsdatum geschwärzt)
+import zTrgs519Erwerb from '../assets/images/zertifizierungen/trgs-519-anlage-3-erwerb.jpg';
+import zTrgs519Fortbildung from '../assets/images/zertifizierungen/trgs-519-anlage-3-fortbildung.jpg';
+import zAsbestzement from '../assets/images/zertifizierungen/asbestzement-anlage-4c.jpg';
+import zKontaminiert from '../assets/images/zertifizierungen/kontaminierte-bereiche-524.jpg';
+import zGeraete from '../assets/images/zertifizierungen/geraetefachkunde.jpg';
 
 export interface SiteImage {
   readonly src: ImageMetadata;
@@ -58,32 +64,32 @@ const imgAsbestzement: SiteImage = {
 
 export const heroImage: SiteImage = {
   src: heroSanierung,
-  alt: 'Fachkraft im weißen Schutzanzug mit Atemschutzmaske bei der Asbestsanierung in einem Innenraum',
-  credit: P(6195952),
+  alt: 'Fachkraft im weißen Einweg-Schutzanzug mit Atemschutzmaske (P3) und Schutzbrille – Asbestsanierung',
+  credit: P(4176922),
 };
 
 /** Reihenfolge entspricht den fünf Ablauf-Schritten in src/data/inhalte.ts. Zugriff über ablaufImage(). */
 const ablaufImages: readonly SiteImage[] = [
   {
     src: ablauf01,
-    alt: 'Mitarbeiter mit Bauhelm am Telefon prüft Unterlagen – Anfrage und Beratung',
-    credit: P(8278922),
+    alt: 'Fachkraft am Telefon mit Grundrissplänen am Schreibtisch – Anfrage und Beratung',
+    credit: P(5292227),
   },
   imgBesichtigung,
   {
     src: ablauf03,
-    alt: 'Handschlag zweier Fachkräfte in Schutzkleidung – verbindliches Festpreis-Angebot',
-    credit: P(8486896),
+    alt: 'Handschlag mit Unterlagen im Büro – verbindliches Festpreis-Angebot',
+    credit: P(8297616),
   },
   {
     src: ablauf04,
-    alt: 'Fachkraft im Schutzanzug bei der staubarmen Asbestsanierung mit Industriesauger',
-    credit: P(6195951),
+    alt: 'Hände in Schutzhandschuhen schließen den weißen Einweg-Schutzanzug – Vorbereitung der Sanierung',
+    credit: P(9545082),
   },
   {
     src: ablauf05,
-    alt: 'Techniker bei der Messung mit mobilem Prüfgerät – Freimessung und Übergabe',
-    credit: P(12203703),
+    alt: 'Fachkraft mit Helm und Klemmbrett bei der Endkontrolle im sanierten Raum – Übergabe',
+    credit: P(7937365),
   },
 ];
 
@@ -91,8 +97,8 @@ const ablaufImages: readonly SiteImage[] = [
 const leistungImages: Record<string, SiteImage> = {
   asbestsanierung: {
     src: lAsbestsanierung,
-    alt: 'Saniererin in Vollschutz mit Helm und Visier in einer abgeschotteten Asbest-Sanierungszone',
-    credit: P(11137291),
+    alt: 'Fachkraft mit Helm, Schutzbrille und FFP3-Maske vor einer entkernten Wand – Asbestsanierung',
+    credit: P(8486911),
   },
   abbrucharbeiten: {
     src: lAbbrucharbeiten,
@@ -147,15 +153,15 @@ const leistungImages: Record<string, SiteImage> = {
   },
   'luftanalysen-vdi-3492': {
     src: lLuftanalysen,
-    alt: 'Techniker führt mit einem mobilen Messgerät eine Luftmessung durch',
-    credit: P(12203702),
+    alt: 'Laborfachkraft mit Schutzbrille und Maske bei der Schadstoff-Probenauswertung am Mikroskop',
+    credit: P(5726706),
   },
 };
 
 export const ueberUnsImage: SiteImage = {
   src: imgUeberUns,
-  alt: 'Zwei Fachkräfte mit Helm und Warnweste auf einer Baustelle',
-  credit: P(8961007),
+  alt: 'Fachkraft im weißen Schutzanzug mit P3-Atemschutzmaske und Schutzbrille',
+  credit: P(3985287),
 };
 
 /** Kontextuelle Arbeitsfotos für Stadt-Seiten (rotiert per Index, Alt-Text wird seitenspezifisch gesetzt). */
@@ -187,4 +193,40 @@ export function ablaufImage(index: number): SiteImage {
 /** Liefert das Themenbild zu einer Leistung (typsicher, mit Fallback). */
 export function leistungImage(slug: string): SiteImage {
   return leistungImages[slug] ?? heroImage;
+}
+
+const C = 'Original-Qualifikationsnachweis Asbesta Schadstoffsanierung (Geburtsdatum geschwärzt)';
+
+/** Scans der echten Qualifikationsnachweise des Inhabers (Schlüssel = Slug in site.ts qualifikationen). */
+const zertifikatImages: Record<string, SiteImage> = {
+  'trgs-519-anlage-3-erwerb': {
+    src: zTrgs519Erwerb,
+    alt: 'Sachkundenachweis TRGS 519 Anlage 3 (Erwerb) – Haus der Technik e.V., Essen',
+    credit: C,
+  },
+  'trgs-519-anlage-3-fortbildung': {
+    src: zTrgs519Fortbildung,
+    alt: 'Bescheinigung Pflicht-Fortbildung Sachkundeerhalt Asbest TRGS 519 Anlage 3, gültig bis 2031',
+    credit: C,
+  },
+  'asbestzement-anlage-4c': {
+    src: zAsbestzement,
+    alt: 'Sachkundenachweis Asbestzement und schwach gebundene Asbestprodukte (TRGS 519 Anlage 4 C) – BG BAU',
+    credit: C,
+  },
+  'kontaminierte-bereiche-524': {
+    src: zKontaminiert,
+    alt: 'Sachkundenachweis für Arbeiten in kontaminierten Bereichen (DGUV 101-004, TRGS 524) – BG BAU',
+    credit: C,
+  },
+  geraetefachkunde: {
+    src: zGeraete,
+    alt: 'Teilnahmebestätigung Gerätefachkunde Asbest- und Schadstoffsanierung – MKI Industrieservice',
+    credit: C,
+  },
+};
+
+/** Liefert den Zertifikat-Scan zu einem Nachweis-Slug (typsicher, mit Fallback). */
+export function zertifikatImage(slug: string): SiteImage {
+  return zertifikatImages[slug] ?? heroImage;
 }

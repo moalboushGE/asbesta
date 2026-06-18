@@ -1,10 +1,11 @@
-// Cloudflare Pages Function: nimmt das Kontaktformular entgegen und versendet per Resend.
+// Cloudflare Pages Function: nimmt das Kontaktformular entgegen und versendet per Brevo.
 // Wird von Cloudflare Pages automatisch unter /api/anfrage deployt (laeuft NICHT im lokalen Astro-Build).
-// ENV-Secrets (im Cloudflare-Dashboard setzen): RESEND_API_KEY, CONTACT_TO.
+// ENV-Secrets (im Cloudflare-Dashboard setzen): BREVO_API_KEY (Pflicht), CONTACT_TO (optional).
+// Empfaenger ist standardmaessig info@asbesta-schadstoffsanierung.de (per CONTACT_TO ueberschreibbar).
 
 interface Env {
-  RESEND_API_KEY: string;
-  CONTACT_TO: string;
+  BREVO_API_KEY: string;
+  CONTACT_TO?: string;
 }
 
 interface PagesContext {
@@ -21,6 +22,10 @@ function json(data: unknown, status = 200): Response {
 
 const SPAM_MIN_MS = 3000;
 const FIELDS = ['name', 'telefon', 'email', 'ort', 'dienstleistung', 'nachricht'];
+const DEFAULT_TO = 'info@asbesta-schadstoffsanierung.de';
+// Absenderadresse – muss in Brevo als Sender/Domain verifiziert sein (SPF/DKIM).
+const FROM_EMAIL = 'anfrage@asbesta-schadstoffsanierung.de';
+const FROM_NAME = 'Asbesta Website';
 
 export const onRequestPost = async (context: PagesContext): Promise<Response> => {
   const { request, env } = context;
@@ -46,24 +51,26 @@ export const onRequestPost = async (context: PagesContext): Promise<Response> =>
     return json({ ok: false, error: 'Bitte Pflichtfelder ausfuellen und Einwilligung erteilen.' }, 400);
   }
 
-  if (!env.RESEND_API_KEY || !env.CONTACT_TO) {
+  if (!env.BREVO_API_KEY) {
     return json({ ok: false, error: 'Server nicht konfiguriert.' }, 500);
   }
 
+  const to = env.CONTACT_TO?.trim() || DEFAULT_TO;
   const text = FIELDS.map((f) => `${f}: ${get(f)}`).join('\n');
 
-  const res = await fetch('https://api.resend.com/emails', {
+  const res = await fetch('https://api.brevo.com/v3/smtp/email', {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${env.RESEND_API_KEY}`,
+      'api-key': env.BREVO_API_KEY,
       'Content-Type': 'application/json',
+      accept: 'application/json',
     },
     body: JSON.stringify({
-      from: 'Asbesta Website <anfrage@asbesta-schadstoffsanierung.de>',
-      to: [env.CONTACT_TO],
-      reply_to: get('email'),
+      sender: { name: FROM_NAME, email: FROM_EMAIL },
+      to: [{ email: to }],
+      replyTo: { email: get('email'), name: get('name') },
       subject: `Neue Anfrage von ${get('name')}${get('ort') ? ' aus ' + get('ort') : ''}`,
-      text,
+      textContent: text,
     }),
   });
 

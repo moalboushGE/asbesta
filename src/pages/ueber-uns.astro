@@ -6,10 +6,11 @@ import SchemaGraph from '../components/schema/SchemaGraph.astro';
 import Button from '../components/ui/Button.astro';
 import Figure from '../components/ui/Figure.astro';
 import StatsBand from '../components/sections/StatsBand.astro';
+import Qualifikationen from '../components/sections/Qualifikationen.astro';
 import Zertifizierung from '../components/sections/Zertifizierung.astro';
 import AblaufSteps from '../components/sections/AblaufSteps.astro';
 import CtaSection from '../components/sections/CtaSection.astro';
-import { site } from '../data/site';
+import { site, owner } from '../data/site';
 import { ueberUnsImage } from '../data/images';
 import { buildBasicPageGraph } from '../lib/schema';
 
@@ -23,6 +24,7 @@ const graph = buildBasicPageGraph(origin, {
   crumb: 'Über uns',
   description,
   path: '/ueber-uns/',
+  withPerson: true,
 });
 
 const werte = [
@@ -80,7 +82,8 @@ const werte = [
   <article class="mx-auto max-w-3xl px-4 py-12 leading-relaxed text-gray-700 lg:px-8 lg:py-16">
     <p class="text-lg">
       Asbesta Schadstoffsanierung steht für hochqualifizierte Sanierungsarbeiten in Wohngebäuden,
-      Gewerbeobjekten und Industrieanlagen. Vom ersten Anruf bis zur dokumentierten Übergabe sind wir
+      Gewerbeobjekten und Industrieanlagen. Geführt wird der Betrieb persönlich von {owner.name},
+      sachkundig nach TRGS 519, Anlage 3. Vom ersten Anruf bis zur dokumentierten Übergabe sind wir
       Ihr verlässlicher Partner – persönlich, transparent und absolut zuverlässig.
     </p>
     <p class="mt-4">
@@ -112,6 +115,7 @@ const werte = [
   </article>
 
   <StatsBand />
+  <Qualifikationen />
   <Zertifizierung />
   <AblaufSteps />
   <CtaSection />

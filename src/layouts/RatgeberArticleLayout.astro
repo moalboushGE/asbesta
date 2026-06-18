@@ -70,6 +70,7 @@ const verwandt = ['asbestsanierung', 'welleternit-ausbauen', 'materialanalyse']
         <p class="mt-5 text-lg text-gray-700">{artikel.excerpt}</p>
         <div class="mt-6 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-sm text-gray-500">
           <span class="font-semibold text-ink-900">Von {artikel.author}</span>
+          <span class="text-gray-500">({artikel.authorRole})</span>
           <span aria-hidden="true">·</span>
           <time datetime={artikel.datePublished}>{datum}</time>
           <span aria-hidden="true">·</span>
@@ -148,12 +149,12 @@ const verwandt = ['asbestsanierung', 'welleternit-ausbauen', 'materialanalyse']
           <Icon name="lucide:shield-check" class="h-6 w-6" />
         </span>
         <div>
-          <p class="font-sans font-semibold text-ink-900">Über die {artikel.author}</p>
+          <p class="font-sans font-semibold text-ink-900">Über {artikel.author}</p>
           <p class="mt-1 text-sm leading-relaxed text-gray-700">
-            Fachredaktion der Asbesta Schadstoffsanierung – {artikel.authorRole}. Wir sanieren seit
-            über 15 Jahren Asbest und Schadstoffe in ganz Nordrhein-Westfalen und geben unser Wissen
-            aus der Praxis weiter. Dieser Beitrag dient der Orientierung und ersetzt keine
-            rechtliche Beratung im Einzelfall.
+            {artikel.author} ist {artikel.authorRole} und führt die Asbesta Schadstoffsanierung. Seit
+            über 15 Jahren sanieren wir Asbest und Schadstoffe in ganz Nordrhein-Westfalen und geben
+            unser Wissen aus der Praxis weiter. Dieser Beitrag dient der Orientierung und ersetzt
+            keine rechtliche Beratung im Einzelfall.
           </p>
         </div>
       </div>

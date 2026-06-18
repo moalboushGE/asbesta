@@ -36,3 +36,10 @@ Thumbs.db
 .playwright-mcp/
 verify-*.png
 resp-*.png
+
+# Kundendaten / Rohmaterial mit personenbezogenen Daten – NICHT versionieren
+# (Original-Zertifikate mit ungeschwaerztem Geburtsdatum; veroeffentlichte Scans
+#  liegen retuschiert unter src/assets/images/zertifizierungen/)
+zerzifizeirung/
+asbesta-schadstoffsanierung.de-Coverage-*/
+asbesta-schadstoffsanierung.de-Performance-on-Search-*/

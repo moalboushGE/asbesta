@@ -1,4 +1,4 @@
-import { site } from '../data/site';
+import { site, owner, qualifikationen } from '../data/site';
 import { leistungen } from '../data/leistungen';
 import { standorte } from '../data/standorte';
 
@@ -15,6 +15,26 @@ export interface Crumb {
 }
 
 const ORG_ID = '#organization';
+const PERSON_ID = '#owner';
+
+/** Inhaber als Person-Knoten mit echten, nachgewiesenen Qualifikationen (E-E-A-T). */
+function personNode(origin: string): Record<string, unknown> {
+  return {
+    '@type': 'Person',
+    '@id': origin + '/' + PERSON_ID,
+    name: owner.name,
+    jobTitle: owner.role,
+    worksFor: { '@id': origin + '/' + ORG_ID },
+    knowsAbout: ['Asbestsanierung', 'Schadstoffsanierung', 'TRGS 519', 'TRGS 524', 'Gefahrstoffe'],
+    hasCredential: qualifikationen.map((q) => ({
+      '@type': 'EducationalOccupationalCredential',
+      name: q.title,
+      credentialCategory: 'certification',
+      recognizedBy: { '@type': 'Organization', name: q.issuer },
+      ...(q.validUntil ? { description: `Gültig bis ${q.validUntil}.` } : {}),
+    })),
+  };
+}
 
 /** Vollständiger, sitewide identischer LocalBusiness-Knoten (Entity-Hub für SEO/GEO).
  *  Bewusst OHNE openingHours/priceRange/sameAs – diese erst eintragen, wenn echte Daten
@@ -40,6 +60,7 @@ function organizationNode(origin: string): Record<string, unknown> {
       addressCountry: 'DE',
     },
     geo: { '@type': 'GeoCoordinates', latitude: 51.6539, longitude: 7.0917 },
+    founder: { '@id': origin + '/' + PERSON_ID },
     areaServed: ['Nordrhein-Westfalen', ...standorte.map((s) => s.name)],
     knowsAbout: leistungen.map((l) => l.title),
     contactPoint: {
@@ -101,27 +122,42 @@ export function buildCollectionGraph(
   ];
 }
 
-/** Einfache indexierbare Seite: Organization + WebPage/ContactPage/AboutPage + Breadcrumb. */
+/** Einfache indexierbare Seite: Organization + WebPage/ContactPage/AboutPage + Breadcrumb.
+ *  `withPerson` ergänzt den Inhaber-Knoten (E-E-A-T) – z. B. auf der Über-uns-Seite. */
 export function buildBasicPageGraph(
   origin: string,
-  args: { type: string; name: string; crumb: string; description: string; path: string },
+  args: {
+    type: string;
+    name: string;
+    crumb: string;
+    description: string;
+    path: string;
+    withPerson?: boolean;
+  },
 ): unknown[] {
   const url = origin + args.path;
-  return [
-    organizationNode(origin),
-    {
-      '@type': args.type,
-      '@id': url,
-      url,
-      name: args.name,
-      description: args.description,
-      isPartOf: { '@id': origin + '/' + ORG_ID },
-    },
+  const page: Record<string, unknown> = {
+    '@type': args.type,
+    '@id': url,
+    url,
+    name: args.name,
+    description: args.description,
+    isPartOf: { '@id': origin + '/' + ORG_ID },
+  };
+  if (args.withPerson) {
+    page.about = { '@id': origin + '/' + PERSON_ID };
+  }
+  const graph: unknown[] = [organizationNode(origin), page];
+  if (args.withPerson) {
+    graph.push(personNode(origin));
+  }
+  graph.push(
     breadcrumbNode(origin, [
       { name: 'Start', url: '/' },
       { name: args.crumb, url: args.path },
     ]),
-  ];
+  );
+  return graph;
 }
 
 export function faqNode(faqs: readonly FaqItem[]): Record<string, unknown> {
@@ -287,11 +323,12 @@ export function buildArticleGraph(args: ArticleGraphArgs): unknown[] {
       image: args.image,
       datePublished: args.datePublished,
       dateModified: args.dateModified,
-      author: { '@type': 'Organization', name: args.author, url: args.origin + '/' },
+      author: { '@id': args.origin + '/' + PERSON_ID },
       publisher: { '@id': args.origin + '/' + ORG_ID },
       mainEntityOfPage: url,
       inLanguage: 'de-DE',
     },
+    personNode(args.origin),
     {
       '@type': 'WebPage',
       '@id': url,

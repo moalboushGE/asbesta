@@ -42,6 +42,34 @@ Astro optimiert sie beim Build automatisch zu AVIF/WebP in mehreren Größen.
 - **Empfehlung:** echte Baustellen-/Team-/Vorher-Nachher-Fotos liefern den stärksten
   Authentizitäts- und E-E-A-T-Effekt – Stockbilder nach und nach ersetzen.
 
+### Foto-Shot-Liste für echte Fotos (Phase 2 – höchste Priorität zuerst)
+
+Querformat, mind. ~1600 px, gutes Licht. Bestehende Datei mit **gleichem Namen** ersetzen → kein Code-Eingriff.
+
+1. **Team-Porträt** (`allgemein/ueber-uns.jpg`) – das Team in Firmenkleidung. *Wichtigster Austausch* (aktuell nur generisches Stock).
+2. **Sanierung im weißen Schutzanzug** (`hero/sanierung.jpg`, `ablauf/04-sanierung.jpg`, `leistungen/asbestsanierung.jpg`) – echte Person im Tyvek-Anzug + P3-Maske im abgeschotteten Bereich.
+3. **Welleternit-Dachabbau** (`leistungen/welleternit-ausbauen.jpg`, `allgemein/stadt-2.jpg`).
+4. **Boden: Floor-Flex / schwarzer Kleber** (`leistungen/floor-flex-entfernen.jpg`, `bitumenkleber-entfernen.jpg`, `ratgeber/boden.jpg`).
+5. **Materialprobe / Luftmessung** (`leistungen/materialanalyse.jpg`, `luftanalysen-vdi-3492.jpg`).
+6. **Abgeschotteter Schwarzbereich / Schleuse** + **Big-Bag-Entsorgung** (`ablauf/02-besichtigung.jpg`, `05-uebergabe.jpg`).
+7. **Vorher/Nachher**, **Fuhrpark/Firmenschild**.
+
+**Bildregel (Pflicht):** keine asiatischen Motive, keine Fremdmarken/-logos/-flaggen, kein fremdsprachiger Text – jedes Bild vor Einsatz in voller Größe prüfen.
+
+### Qualifikationsnachweise des Inhabers
+
+Die Über-uns-Seite (Sektion „Qualifikationen des Inhabers") und das Person-/`hasCredential`-Schema
+werden aus **`src/data/site.ts`** gespeist (`owner` + `qualifikationen`). Neue/erneuerte Nachweise:
+
+1. Scan retuschieren (Geburtsdatum/-ort schwärzen!) und als JPG unter
+   `src/assets/images/zertifizierungen/<slug>.jpg` ablegen.
+2. In `src/data/images.ts` (`zertifikatImages`) Import + Eintrag ergänzen.
+3. In `src/data/site.ts` (`qualifikationen`) Titel/Aussteller/Gültigkeit + `images: ['<slug>']` pflegen.
+
+UI, JSON-LD (Person + EducationalOccupationalCredential), `/facts.json` und `/entities.json` greifen
+automatisch. **Wichtig:** Die unretuschierten Original-Scans (`zerzifizeirung/`) sind per `.gitignore`
+ausgeschlossen – nie versionieren (personenbezogene Daten).
+
 ## Befehle
 
 ```bash
@@ -54,7 +82,7 @@ pnpm shoot    # Screenshots (SHOOT_ROUTES=/pfad/ node scripts/shoot.mjs)
 ## Deploy-Konfiguration (Cloudflare Pages)
 
 - Build-Befehl: `pnpm build`, Output: `dist`.
-- ENV/Secrets: `RESEND_API_KEY`, `CONTACT_TO` (Kontaktformular), `CF_ANALYTICS_TOKEN` (in `src/lib/config.ts`).
+- ENV/Secrets: `BREVO_API_KEY` (Kontaktformular, Pflicht), `CONTACT_TO` (optional, Standard: info@asbesta-schadstoffsanierung.de), `CF_ANALYTICS_TOKEN` (in `src/lib/config.ts`). Absenderadresse `anfrage@asbesta-schadstoffsanierung.de` muss in Brevo verifiziert sein (SPF/DKIM).
 - `functions/` wird von Cloudflare Pages automatisch als Pages Functions deployt.
 
 ## Laufende Pflege (Empfehlung)

@@ -10,6 +10,64 @@ export interface Stat {
   readonly label: string;
 }
 
+/** Eine nachgewiesene Qualifikation des Inhabers (echte Sachkunde-/Fachkundenachweise). */
+export interface Qualifikation {
+  readonly id: string;
+  /** Sachlich korrekter Titel des Nachweises. */
+  readonly title: string;
+  /** Ausstellende Stelle. */
+  readonly issuer: string;
+  /** Kurze, ehrliche Einordnung (wozu der Nachweis berechtigt). */
+  readonly note: string;
+  /** ISO-Datum (YYYY-MM-DD), bis wann der Nachweis nachweislich gültig ist – falls zutreffend. */
+  readonly validUntil?: string;
+  /** Bild-Slugs der zugehörigen Zertifikat-Scans (Register-Keys in src/data/images.ts). */
+  readonly images: readonly string[];
+}
+
+/** Inhaber/Sachkundiger – benannte Person hinter dem Betrieb (E-E-A-T). */
+export const owner = {
+  name: 'Abdul-Rahman Omeirat',
+  role: 'Inhaber & Sachkundiger nach TRGS 519, Anlage 3',
+  bio: 'Abdul-Rahman Omeirat führt Asbesta persönlich und ist sachkundig nach TRGS 519, Anlage 3 – dem behördlich anerkannten „großen“ Sachkundenachweis für Abbruch-, Sanierungs- und Instandhaltungsarbeiten mit Asbest. Jede anzeigepflichtige Sanierung läuft unter seiner fachlichen Verantwortung.',
+} as const;
+
+/**
+ * Nachgewiesene Qualifikationen des Inhabers (Original-Bescheinigungen liegen vor;
+ * Geburtsdatum auf den veröffentlichten Scans geschwärzt). Reihenfolge = Anzeige-Reihenfolge.
+ */
+export const qualifikationen: readonly Qualifikation[] = [
+  {
+    id: 'trgs-519-anlage-3',
+    title: 'Sachkunde Asbest nach TRGS 519, Anlage 3',
+    issuer: 'Haus der Technik e.V., Essen',
+    note: 'Der „große“ Sachkundenachweis für Abbruch-, Sanierungs- und Instandhaltungsarbeiten mit Asbest – von der Bezirksregierung Düsseldorf anerkannt. Durch die Pflicht-Fortbildung 03/2025 verlängert.',
+    validUntil: '2031-03-12',
+    images: ['trgs-519-anlage-3-erwerb', 'trgs-519-anlage-3-fortbildung'],
+  },
+  {
+    id: 'asbestzement-anlage-4c',
+    title: 'Sachkunde Asbestzement & schwach gebundene Asbestprodukte',
+    issuer: 'BG BAU – Berufsgenossenschaft der Bauwirtschaft',
+    note: 'Sachkunde für Arbeiten an Asbestzementprodukten und ASI-Arbeiten geringen Umfangs nach TRGS 519, Anhang I (Anlage 4 C) – anerkannt von der Bezirksregierung Düsseldorf.',
+    images: ['asbestzement-anlage-4c'],
+  },
+  {
+    id: 'kontaminierte-bereiche-524',
+    title: 'Sachkunde für Arbeiten in kontaminierten Bereichen',
+    issuer: 'BG BAU – Berufsgenossenschaft der Bauwirtschaft',
+    note: 'Sachkunde nach DGUV Regel 101-004 (Anhang 6 A) – erfüllt die Fachkundeanforderungen nach Anlage 2 A/2 B der TRGS 524.',
+    images: ['kontaminierte-bereiche-524'],
+  },
+  {
+    id: 'geraetefachkunde',
+    title: 'Gerätefachkunde Asbest- & Schadstoffsanierung',
+    issuer: 'MKI Industrieservice GmbH',
+    note: 'Fachkundiger Umgang mit Industriesaugern, Unterdruckhaltung, Personen- und Materialschleusen sowie Atemschutz- und Körperschutzmitteln.',
+    images: ['geraetefachkunde'],
+  },
+];
+
 export const site = {
   name: 'Asbesta',
   legalName: 'Asbesta Schadstoffsanierung',

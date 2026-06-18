@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { site } from '../data/site';
+import { site, owner, qualifikationen } from '../data/site';
 import { leistungen } from '../data/leistungen';
 import { standorte } from '../data/standorte';
 import { resolveOrigin } from '../lib/origin';
@@ -27,7 +27,7 @@ export const GET: APIRoute = (context) => {
   ];
 
   const data = {
-    updated: '2026-06-11',
+    updated: '2026-06-18',
     entities: [
       {
         type: ['Organization', 'HomeAndConstructionBusiness'],
@@ -38,10 +38,24 @@ export const GET: APIRoute = (context) => {
         // sameAs: hier spaeter offizielle Profile (Google Business, Wikidata, LinkedIn) eintragen
         sameAs: [] as string[],
         knowsAbout: leistungen.map((l) => l.title),
+        founder: owner.name,
         location: {
           name: 'Marl',
           sameAs: 'https://de.wikipedia.org/wiki/Marl',
         },
+      },
+      {
+        type: 'Person',
+        name: owner.name,
+        jobTitle: owner.role,
+        worksFor: site.legalName,
+        knowsAbout: ['Asbestsanierung', 'Schadstoffsanierung', 'TRGS 519', 'TRGS 524'],
+        hasCredential: qualifikationen.map((q) => ({
+          type: 'EducationalOccupationalCredential',
+          name: q.title,
+          recognizedBy: q.issuer,
+          ...(q.validUntil ? { validUntil: q.validUntil } : {}),
+        })),
       },
       ...leistungen.map((l) => ({
         type: 'Service',

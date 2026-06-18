@@ -1,6 +1,12 @@
 ---
 import { Icon } from 'astro-icon/components';
 
+/** `ownerHint`: blendet einen dezenten Verweis auf die persönlichen Sachkunde-Nachweise ein (z. B. Startseite). */
+interface Props {
+  readonly ownerHint?: boolean;
+}
+const { ownerHint = false } = Astro.props;
+
 const items = [
   { icon: 'lucide:award', title: 'Fachbetrieb nach GefStoffV', sub: '§ 8 Gefahrstoffverordnung' },
   { icon: 'lucide:shield-check', title: 'TRGS 519 / 521 / 524', sub: 'Sachkundig zertifiziert' },
@@ -28,5 +34,19 @@ const items = [
         ))
       }
     </div>
+    {
+      ownerHint && (
+        <p class="mt-6 text-sm text-gray-700">
+          <Icon name="lucide:user-check" class="mr-1.5 -mt-0.5 inline h-4 w-4 text-red-700" />
+          Geleitet vom sachkundigen Inhaber – Sachkunde nach TRGS 519, Anlage 3 (gültig bis 2031).{' '}
+          <a
+            href="/ueber-uns/#qualifikationen"
+            class="font-semibold text-red-700 underline-offset-2 hover:underline"
+          >
+            Nachweise ansehen
+          </a>
+        </p>
+      )
+    }
   </div>
 </section>

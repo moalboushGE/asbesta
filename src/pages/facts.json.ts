@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { site } from '../data/site';
+import { site, owner, qualifikationen } from '../data/site';
 import { leistungen } from '../data/leistungen';
 import { standorte } from '../data/standorte';
 import { resolveOrigin } from '../lib/origin';
@@ -9,7 +9,7 @@ export const GET: APIRoute = (context) => {
   const origin = resolveOrigin(context.site);
 
   const facts = {
-    updated: '2026-06-11',
+    updated: '2026-06-18',
     organization: {
       name: site.legalName,
       shortName: site.name,
@@ -27,6 +27,15 @@ export const GET: APIRoute = (context) => {
       areaServed: 'Nordrhein-Westfalen, Schwerpunkt Ruhrgebiet / Emscher-Lippe-Region und Rheinland',
       serviceCities: standorte.map((s) => s.name),
       certifications: site.certifications,
+      owner: {
+        name: owner.name,
+        role: owner.role,
+        credentials: qualifikationen.map((q) => ({
+          name: q.title,
+          issuer: q.issuer,
+          ...(q.validUntil ? { validUntil: q.validUntil } : {}),
+        })),
+      },
       ownerLed: true,
       insurance: 'Betriebshaftpflicht',
       stats: {
