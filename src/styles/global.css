@@ -40,13 +40,27 @@
   --color-danger: #b42318;
   --color-info: #175cd3;
 
-  /* Typografie – Barlow (wie alte Seite & Logo-Grotesk), Headings schwer (800). */
-  --font-sans: 'Barlow', system-ui, sans-serif;
-  --font-display: 'Barlow', system-ui, sans-serif;
+  /* Typografie – Barlow (wie alte Seite & Logo-Grotesk), Headings schwer (900).
+     'Barlow Fallback' ist ein metrik-angepasster System-Font (siehe @font-face unten),
+     der Layout-Shifts (CLS) beim Nachladen von Barlow verhindert. */
+  --font-sans: 'Barlow', 'Barlow Fallback', system-ui, sans-serif;
+  --font-display: 'Barlow', 'Barlow Fallback', system-ui, sans-serif;
 
   /* Radius */
   --radius-btn: 0.5rem;
   --radius-card: 1.25rem;
+}
+
+/* Metrik-angepasster Fallback gegen Font-Swap-CLS: Arial/Helvetica/Liberation Sans werden so
+   skaliert, dass sie denselben Platz einnehmen wie Barlow (Werte aus Barlow-Metriken/Capsize).
+   Greift auf Win/Mac/iOS/Linux; ohne passenden lokalen Font neutral (faellt auf system-ui). */
+@font-face {
+  font-family: 'Barlow Fallback';
+  src: local('Arial'), local('Helvetica Neue'), local('Liberation Sans');
+  size-adjust: 114.63%;
+  ascent-override: 95.96%;
+  descent-override: 21.81%;
+  line-gap-override: 0%;
 }
 
 @layer base {
