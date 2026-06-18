@@ -2,12 +2,19 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
+import node from '@astrojs/node';
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.asbesta-schadstoffsanierung.de',
   trailingSlash: 'always',
+  // Statische Pages werden vorgerendert (SEO/Performance); nur Endpunkte mit
+  // `export const prerender = false` (z. B. /api/anfrage) laufen on-demand im Node-Server.
+  // `mode: 'middleware'` => Build emittiert dist/server/entry.mjs (handler), den server.mjs einbindet
+  // (eigener Express-Server fuer Security-Header + 301-Redirects + statische Auslieferung, Railway-tauglich).
+  output: 'static',
+  adapter: node({ mode: 'middleware' }),
   integrations: [
     icon(),
     sitemap({

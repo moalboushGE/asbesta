@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=20.3.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "start": "node server.mjs",
     "typecheck": "astro check",
     "lint": "eslint .",
     "format:check": "prettier --check .",
@@ -17,12 +21,14 @@
     "shoot": "node scripts/shoot.mjs"
   },
   "dependencies": {
+    "@astrojs/node": "^10.1.4",
     "@astrojs/sitemap": "latest",
     "@fontsource-variable/fraunces": "^5.2.9",
     "@fontsource-variable/inter": "latest",
     "@iconify-json/lucide": "latest",
     "astro": "latest",
     "astro-icon": "latest",
+    "express": "^5.2.1",
     "sharp": "^0.34.5"
   },
   "devDependencies": {

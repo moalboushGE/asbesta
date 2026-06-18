@@ -1,0 +1,9 @@
+# Railway / Nixpacks Build-Definition fuer den Asbesta-Node-Server.
+# Install-Phase erkennt pnpm automatisch (pnpm-lock.yaml). Build erzeugt dist/, Start startet server.mjs.
+providers = ['node']
+
+[phases.build]
+cmds = ['pnpm run build']
+
+[start]
+cmd = 'node server.mjs'

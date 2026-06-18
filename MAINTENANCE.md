@@ -75,15 +75,27 @@ ausgeschlossen – nie versionieren (personenbezogene Daten).
 ```bash
 pnpm dev      # lokale Vorschau (http://localhost:4321)
 pnpm check    # Typecheck + ESLint/SonarJS + Stylelint (vor jedem Commit)
-pnpm build    # Produktions-Build
+pnpm build    # Produktions-Build (-> dist/client statisch + dist/server SSR-Handler)
+pnpm start    # Produktions-Server lokal testen (node server.mjs, Port via PORT/Default 4321)
 pnpm shoot    # Screenshots (SHOOT_ROUTES=/pfad/ node scripts/shoot.mjs)
 ```
 
-## Deploy-Konfiguration (Cloudflare Pages)
+## Deploy-Konfiguration (Railway / Node)
 
-- Build-Befehl: `pnpm build`, Output: `dist`.
-- ENV/Secrets: `BREVO_API_KEY` (Kontaktformular, Pflicht), `CONTACT_TO` (optional, Standard: info@asbesta-schadstoffsanierung.de), `CF_ANALYTICS_TOKEN` (in `src/lib/config.ts`). Absenderadresse `anfrage@asbesta-schadstoffsanierung.de` muss in Brevo verifiziert sein (SPF/DKIM).
-- `functions/` wird von Cloudflare Pages automatisch als Pages Functions deployt.
+- **Architektur:** Astro `output: 'static'` (alle Seiten vorgerendert, SEO/Performance) + `@astrojs/node`
+  (`mode: 'middleware'`). Der eigene Express-Server **`server.mjs`** liefert die statischen Seiten aus,
+  setzt Security-Header (CSP/HSTS/…), erzwingt die 301-Redirects (aus `public/_redirects` zur Laufzeit
+  geparst) und trailingSlash, und delegiert On-demand-Routen (`/api/anfrage`) an den Astro-SSR-Handler.
+- **Railway:** Build `pnpm build`, Start `node server.mjs` (in `nixpacks.toml` hinterlegt). `PORT` setzt
+  Railway automatisch; `HOST` ist `0.0.0.0`.
+- **ENV/Variables (Railway):** `BREVO_API_KEY` (Pflicht), `CONTACT_TO` (optional, Standard
+  info@asbesta-schadstoffsanierung.de). Absenderadresse `anfrage@asbesta-schadstoffsanierung.de` muss in
+  Brevo verifiziert sein (SPF/DKIM). `CF_ANALYTICS_TOKEN` (in `src/lib/config.ts`) NUR sinnvoll hinter
+  Cloudflare → auf Railway leer lassen.
+- **Domain/HTTPS:** http→https und apex→www über Railway-Custom-Domain/DNS einrichten (nicht im Code).
+- Hinweis: `public/_headers` + `public/_redirects` sind die Cloudflare-Pages-Variante (für ein
+  alternatives CF-Deploy). Auf Railway übernimmt `server.mjs` Header + Redirects (Redirect-Map wird aus
+  `_redirects` wiederverwendet, kein Duplikat).
 
 ## Laufende Pflege (Empfehlung)
 
