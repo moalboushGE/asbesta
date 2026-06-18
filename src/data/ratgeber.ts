@@ -374,9 +374,9 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
     slug: 'asbest-hauskauf',
     quellen: [{"label":"Gefahrstoffverordnung (Gesetze im Internet)","url":"https://www.gesetze-im-internet.de/gefstoffv_2010/"},{"label":"TRGS 519 (BAuA)","url":"https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519"}],
     title: 'Asbest beim Hauskauf: Pflichten, Risiken & Kosten',
-    metaTitle: 'Asbest beim Hauskauf: Pflichten, Risiken & Kosten | Asbesta',
+    metaTitle: 'Asbest beim Hauskauf: Pflichten und Kosten | Asbesta',
     metaDescription:
-      'Asbest beim Hauskauf: Offenbarungspflicht des Verkäufers, Grenzen von "gekauft wie gesehen", Gutachten vor dem Kauf, Kosten-Richtwerte und Verhandlungstipps.',
+      'Asbest beim Hauskauf: Offenbarungspflicht des Verkäufers, Gutachten vor dem Kauf, Kosten-Richtwerte und Tipps für die Preisverhandlung.',
     excerpt:
       'Ältere Häuser sind günstig – bergen aber oft Asbest. Welche Aufklärungspflichten der Verkäufer hat, warum "gekauft wie gesehen" Sie nicht immer schützt und wie Sie mit einem Gutachten vor dem Kauf und cleverer Verhandlung teure Überraschungen vermeiden.',
     kategorie: 'Ratgeber Asbest',
@@ -432,7 +432,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
     title: 'GefStoffV-Novelle 2024: die neuen Asbest-Pflichten erklärt',
     metaTitle: 'GefStoffV-Novelle 2024: neue Asbest-Pflichten | Asbesta',
     metaDescription:
-      'Novellierte Gefahrstoffverordnung 2024: neue Erkundungs- & Informationspflicht für Gebäude vor 1993. Was Eigentümer, Verwalter & Handwerker jetzt beachten.',
+      'Novellierte Gefahrstoffverordnung 2024: neue Erkundungs- und Informationspflicht für Gebäude vor 1993 – was Eigentümer und Handwerker beachten müssen.',
     excerpt:
       'Seit Dezember 2024 gilt die novellierte Gefahrstoffverordnung mit neuen Asbest-Pflichten. Wir erklären verständlich die Erkundungs- und Informationspflicht bei Gebäuden vor 1993, die Aufgaben von Eigentümern, Hausverwaltungen und Handwerkern – und die wichtigsten Praxisschritte.',
     kategorie: 'Ratgeber Asbest',
@@ -596,7 +596,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   {
     slug: 'asbest-erkennen',
     title: 'Asbest erkennen: Baujahr, Fundorte & Materialprobe',
-    metaTitle: 'Asbest erkennen: Baujahr, Fundorte & Materialprobe | Asbesta',
+    metaTitle: 'Asbest erkennen: Baujahr, Fundorte, Materialprobe | Asbesta',
     metaDescription:
       'Woran erkennt man Asbest? Baujahr vor 1993, typische Fundorte im Haus und warum nur eine Materialprobe Sicherheit gibt – der Ratgeber vom Fachbetrieb.',
     excerpt:

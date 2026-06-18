@@ -149,7 +149,7 @@ export const leistungenDetail: Record<string, LeistungDetail> = {
   },
   "materialanalyse": {
     "metaTitle": "Materialanalyse Asbest & Schadstoffe NRW | Asbesta",
-    "metaDescription": "Materialanalyse durch akkreditiertes Labor: Asbest, KMF, PAK, PCB & Schwermetalle sicher nachweisen. Probenahme in ganz NRW. Jetzt kostenfrei beraten lassen.",
+    "metaDescription": "Materialanalyse im akkreditierten Labor: Asbest, KMF, PAK, PCB und Schwermetalle sicher nachweisen. Probenahme in ganz NRW. Jetzt beraten lassen.",
     "heroIntro": "Ob ein Bauteil Asbest oder andere Schadstoffe enthält, lässt sich nur im Labor zweifelsfrei klären. Wir nehmen die Proben fachgerecht und sachkundig und lassen sie in einem akkreditierten Labor auswerten - die Grundlage jeder rechtssicheren Sanierungsentscheidung.",
     "einleitung": [
       "Eine Materialanalyse beantwortet die entscheidende Frage vor jeder Sanierung oder jedem Umbau: Welcher Gefahrstoff steckt im Bauteil und in welcher Konzentration? Mit blossem Auge oder anhand des Baujahrs lässt sich Asbest in Putzen, Klebern, Spachtelmassen oder Bodenbelägen nicht sicher erkennen. Erst die Analyse einer entnommenen Probe im Labor liefert ein belastbares, gerichtsfestes Ergebnis.",

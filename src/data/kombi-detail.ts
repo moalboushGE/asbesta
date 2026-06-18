@@ -22,7 +22,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'wuppertal',
     metaTitle: 'Asbestsanierung TRGS 519 Wuppertal | Asbesta',
     metaDescription:
-      'Anzeigepflichtige Asbestsanierung nach TRGS 519 in Wuppertal: abgeschotteter Schwarzbereich, Unterdruck, Personenschleuse und Freimessung. Asbesta aus Marl, ganz NRW.',
+      'Asbestsanierung nach TRGS 519 in Wuppertal: Schwarzbereich, Unterdruck, Personenschleuse und Freimessung. Festpreis nach kostenloser Besichtigung.',
     intro:
       'Asbesta saniert schwach gebundenen Asbest in Innenräumen Wuppertals nach den strengen Vorgaben der TRGS 519. Wir arbeiten als anzeigepflichtiger Fachbetrieb mit abgeschottetem Schwarzbereich, Unterdruckhaltung und kontrollierter Freimessung. Unser Sitz ist in Marl, von dort fahren wir rund 65 km ins Bergische Land an.',
     lokalServiceKontext: [
@@ -53,7 +53,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'wuppertal',
     metaTitle: 'Abbruch & Rückbau Wuppertal | Asbesta',
     metaDescription:
-      'Kontrollierter Abbruch & Rückbau in Wuppertal: schadstoffgetrennt nach Schadstofferkundung, TRGS 519/521/524-konform. Festpreis nach kostenloser Besichtigung.',
+      'Kontrollierter Abbruch und schadstoffgetrennter Rückbau in Wuppertal nach Schadstofferkundung. Festpreis nach kostenloser Besichtigung.',
     intro:
       'Asbesta plant und führt kontrollierten Abbruch und Rückbau in Wuppertal aus – von der Schadstofferkundung bis zum schadstoffgetrennten Rückbau. Wir kommen aus Marl ins Bergische Land und arbeiten nach TRGS 519, 521 und 524. Vor jedem Eingriff klären wir, welche Materialien verbaut sind und welche Fraktionen getrennt entsorgt werden müssen.',
     lokalServiceKontext: [
@@ -84,7 +84,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'wuppertal',
     metaTitle: 'Welleternit ausbauen Wuppertal | Asbesta',
     metaDescription:
-      'Welleternit in Wuppertal fachgerecht ausbauen: zerstörungsfreie Demontage asbesthaltiger Wellplatten nach TRGS 519, Big-Bag-Entsorgung. Festpreis nach Besichtigung.',
+      'Welleternit in Wuppertal zerstörungsfrei ausbauen: Demontage asbesthaltiger Wellplatten nach TRGS 519, Entsorgung. Jetzt Besichtigung anfragen.',
     intro:
       'Asbesta baut asbesthaltige Welleternit-Platten in Wuppertal zerstörungsfrei aus – von Garagendächern in Elberfeld bis zu Nebengebäuden in Barmen und Cronenberg. Als zertifizierter Fachbetrieb mit Sitz in Marl reisen wir rund 65 km ins Bergische an und übernehmen die staubarme Demontage samt fachgerechter Big-Bag-Entsorgung. Vor jeder Arbeit klären wir per Materialprobe, ob Asbest vorliegt.',
     lokalServiceKontext: [
@@ -146,7 +146,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'wuppertal',
     metaTitle: 'Asbestzement ausbauen Wuppertal | Asbesta',
     metaDescription:
-      'Asbestzement in Wuppertal fachgerecht ausbauen: Platten, Rohre, Kanäle und Fensterbänke nach TRGS 519. Festpreis nach kostenloser Besichtigung. Anfahrt aus Marl.',
+      'Asbestzement in Wuppertal sicher ausbauen: Platten, Rohre, Kanäle und Fensterbänke nach TRGS 519. Festpreis nach kostenloser Besichtigung.',
     intro:
       'Asbesta baut fest gebundene Asbestzement-Bauteile in Wuppertal fachgerecht aus: Wellplatten, Rohre, Kanäle und Fensterbänke. Wir kommen aus Marl in das gesamte Bergische Land und arbeiten nach TRGS 519 von der Materialanalyse bis zur dokumentierten Entsorgung.',
     lokalServiceKontext: [
@@ -177,7 +177,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'wuppertal',
     metaTitle: 'Bitumenkleber entfernen Wuppertal | Asbesta',
     metaDescription:
-      'Asbesthaltigen Bitumenkleber (Schwarzkleber) in Wuppertal fachgerecht nach TRGS 519 entfernen. Asbesta aus Marl, in ganz NRW. Festpreis nach kostenloser Besichtigung.',
+      'Asbesthaltigen Bitumenkleber in Wuppertal fachgerecht nach TRGS 519 entfernen. Asbesta aus Marl. Festpreis nach kostenloser Besichtigung.',
     intro:
       'Unter alten Bodenbelägen in Wuppertaler Altbauten und Nachkriegshäusern steckt häufig schwarzer Bitumenkleber, der bis 1993 asbesthaltig sein konnte. Asbesta entfernt diesen Schwarzkleber fachgerecht nach TRGS 519 und übergibt den Untergrund belegreif. Wir sitzen in Marl und sind in ganz NRW tätig, also auch in Wuppertal.',
     lokalServiceKontext: [
@@ -301,7 +301,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/krefeld': {
     leistung: 'asbestsanierung',
     stadt: 'krefeld',
-    metaTitle: 'Asbestsanierung Krefeld nach TRGS 519 | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Krefeld | Asbesta',
     metaDescription:
       'Anzeigepflichtige Asbestsanierung nach TRGS 519 in Krefeld: abgeschotteter Schwarzbereich, Unterdruck, Freimessung nach VDI 3492. Asbesta aus Marl, ganz NRW.',
     intro:
@@ -551,7 +551,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'krefeld',
     metaTitle: 'KMF-Sanierung Krefeld nach TRGS 521 | Asbesta',
     metaDescription:
-      'KMF-Sanierung in Krefeld: fachgerechter Ausbau alter Mineralwolle (vor 2000) nach TRGS 521 durch Asbesta aus Marl. Kostenlose Besichtigung, Festpreis – Tel. +49 2365 2960630.',
+      'KMF-Sanierung in Krefeld: Ausbau alter Mineralwolle vor 2000 nach TRGS 521 durch Asbesta aus Marl. Kostenlose Besichtigung, Festpreis.',
     intro:
       'Alte Mineralwolle aus der Zeit vor 2000 gilt als krebsverdächtig und muss nach TRGS 521 staubdicht ausgebaut und entsorgt werden. Asbesta aus Marl übernimmt die KMF-Sanierung in ganz Krefeld – vom Dachboden gründerzeitlicher Villen bis zu großen Industriearealen. Hinweis: KMF (künstliche Mineralfasern) sind kein Asbest, erfordern aber ebenfalls geschultes Vorgehen und korrekte Entsorgung.',
     lokalServiceKontext: [
@@ -582,7 +582,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'neuss',
     metaTitle: 'Asbestsanierung TRGS 519 Neuss | Asbesta',
     metaDescription:
-      'Asbestsanierung nach TRGS 519 in Neuss: abgeschotteter Schwarzbereich, Unterdruck, Personenschleuse und Freimessung nach VDI 3492. Anzeige bei der Bezirksregierung Düsseldorf.',
+      'Asbestsanierung nach TRGS 519 in Neuss: Schwarzbereich, Unterdruck, Personenschleuse und Freimessung nach VDI 3492. Jetzt anfragen.',
     intro:
       'Asbesta saniert anzeigepflichtigen Asbest nach TRGS 519 in Neuss und im gesamten Rhein-Kreis. Wir kommen aus Marl zu Ihnen, richten einen abgeschotteten Schwarzbereich mit Unterdruckhaltung und Personenschleuse ein und schließen mit der Freimessung nach VDI 3492 ab. So wird schwach gebundener Asbest in Innenräumen kontrolliert und rückstandsfrei entfernt.',
     lokalServiceKontext: [
@@ -613,7 +613,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'neuss',
     metaTitle: 'Abbruch & Rückbau Neuss | Asbesta',
     metaDescription:
-      'Kontrollierter Abbruch & Rückbau in Neuss: Schadstofferkundung vorab, schadstoffgetrennter Rückbau nach TRGS. Aus Marl in ganz NRW. Festpreis nach Besichtigung.',
+      'Kontrollierter Abbruch und Rückbau in Neuss: Schadstofferkundung vorab, schadstoffgetrennter Rückbau. Festpreis nach Besichtigung.',
     intro:
       'Asbesta plant und führt den kontrollierten Abbruch und Rückbau in Neuss durch – immer mit vorheriger Schadstofferkundung und schadstoffgetrenntem Rückbau. Vom Teilrückbau einzelner Gebäudeteile bis zum vollständigen Abbruch erfassen wir zuerst die Bausubstanz, bevor irgendetwas bewegt wird. Unser Team kommt aus Marl und ist in ganz NRW im Einsatz, also auch im Rhein-Kreis Neuss.',
     lokalServiceKontext: [
@@ -644,7 +644,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'neuss',
     metaTitle: 'Welleternit ausbauen Neuss | Asbesta',
     metaDescription:
-      'Welleternit ausbauen in Neuss: zerstörungsfreier Ausbau asbesthaltiger Asbestzement-Wellplatten nach TRGS 519, Big-Bag-Entsorgung. Anfahrt aus Marl, kostenlose Besichtigung.',
+      'Welleternit in Neuss zerstörungsfrei ausbauen: asbesthaltige Wellplatten nach TRGS 519, Entsorgung. Kostenlose Besichtigung anfragen.',
     intro:
       'Welleternit- und Asbestzement-Wellplatten an Dächern, Carports und Nebengebäuden in Neuss enthalten häufig Asbest und müssen fachgerecht ausgebaut werden. Asbesta entfernt diese Platten zerstörungsfrei, staubarm und mit lückenloser Entsorgung über Big-Bags. Wir kommen dafür aus Marl in den Rhein-Kreis Neuss.',
     lokalServiceKontext: [
@@ -799,7 +799,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'neuss',
     metaTitle: 'PAK-Sanierung Neuss: Teer & Kleber | Asbesta',
     metaDescription:
-      'PAK-Sanierung in Neuss: fachgerechte Entfernung von schwarzem Bodenkleber, Teerpappe und teerhaltigen Materialien nach TRGS 524/551. Anfahrt aus Marl, kostenlose Besichtigung.',
+      'PAK-Sanierung in Neuss: Entfernung von schwarzem Bodenkleber, Teerpappe und teerhaltigen Materialien nach TRGS 524/551. Jetzt anfragen.',
     intro:
       'Schwarzer Parkettkleber, Teerpappe oder bituminöse Altanstriche enthalten in Neuss häufig polyzyklische aromatische Kohlenwasserstoffe (PAK). Asbesta saniert diese teerhaltigen Materialien fachgerecht nach TRGS 524 und TRGS 551 – sauber abgegrenzt vom Thema Asbest. Wir kommen für Beratung und Ausführung aus Marl ins gesamte Rhein-Kreis-Gebiet.',
     lokalServiceKontext: [
@@ -830,7 +830,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'neuss',
     metaTitle: 'KMF-Sanierung Neuss nach TRGS 521 | Asbesta',
     metaDescription:
-      'KMF-Sanierung in Neuss: fachgerechter Ausbau alter Mineralwolle (vor 2000) nach TRGS 521. Asbesta aus Marl, ganz NRW. Kostenlose Besichtigung. Tel. 02365 2960630.',
+      'KMF-Sanierung in Neuss: Ausbau alter Mineralwolle vor 2000 nach TRGS 521. Asbesta aus Marl, ganz NRW. Kostenlose Besichtigung anfragen.',
     intro:
       'Alte Mineralwolle aus den Jahren vor 2000 zählt zu den krebsverdächtigen künstlichen Mineralfasern (KMF) und muss nach TRGS 521 fachgerecht ausgebaut werden. Asbesta übernimmt die KMF-Sanierung in Neuss von der Innenstadt bis Grimlinghausen. Wir reisen aus Marl an, demontieren staubarm und entsorgen die Fasern sicher in zugelassenen KMF-Säcken.',
     lokalServiceKontext: [
@@ -859,9 +859,9 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/moenchengladbach': {
     leistung: 'asbestsanierung',
     stadt: 'moenchengladbach',
-    metaTitle: 'Asbestsanierung Mönchengladbach | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Mönchengladbach | Asbesta',
     metaDescription:
-      'Asbestsanierung nach TRGS 519 in Mönchengladbach: abgeschotteter Schwarzbereich, Unterdruck, Freimessung nach VDI 3492. Asbesta aus Marl, NRW-weit. Jetzt anfragen.',
+      'Asbestsanierung nach TRGS 519 in Mönchengladbach: Schwarzbereich, Unterdruck, Freimessung nach VDI 3492. Asbesta aus Marl. Jetzt anfragen.',
     intro:
       'Schwach gebundener Asbest in Innenräumen erfordert in Mönchengladbach eine anzeigepflichtige Sanierung nach TRGS 519. Asbesta plant und führt diese Arbeiten mit abgeschottetem Schwarzbereich, Unterdruckhaltung, Personenschleuse und abschließender Freimessung nach VDI 3492 durch. Unser Betrieb sitzt in Marl und ist in ganz NRW tätig – die Anfahrt nach Mönchengladbach beträgt rund 75 Kilometer.',
     lokalServiceKontext: [
@@ -892,7 +892,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'moenchengladbach',
     metaTitle: 'Abbruch & Rückbau Mönchengladbach | Asbesta',
     metaDescription:
-      'Kontrollierter Rückbau und Abbruch in Mönchengladbach: vorherige Schadstofferkundung, schadstoffgetrennter Rückbau nach TRGS 519/521/524. Festpreis nach Besichtigung.',
+      'Kontrollierter Rückbau und Abbruch in Mönchengladbach: Schadstofferkundung vorab, schadstoffgetrennter Rückbau. Festpreis nach Besichtigung.',
     intro:
       'Asbesta plant und führt den kontrollierten Rückbau und Abbruch in Mönchengladbach durch – von der Wohnung im Gründerzeitviertel bis zur ehemaligen Textilhalle. Vor jedem Eingriff steht die Schadstofferkundung, damit Asbest, KMF und PAK getrennt erfasst und fachgerecht entsorgt werden. Wir kommen aus Marl an den Niederrhein und arbeiten in ganz NRW nach den geltenden technischen Regeln.',
     lokalServiceKontext: [
@@ -923,7 +923,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'moenchengladbach',
     metaTitle: 'Welleternit ausbauen Mönchengladbach | Asbesta',
     metaDescription:
-      'Welleternit-Ausbau in Mönchengladbach: zerstörungsfreier Abbau asbesthaltiger Wellplatten von Dach und Nebengebäuden, Big-Bag-Entsorgung nach TRGS 519. Festpreis nach Besichtigung.',
+      'Welleternit in Mönchengladbach zerstörungsfrei ausbauen: asbesthaltige Wellplatten nach TRGS 519, Big-Bag-Entsorgung. Festpreis nach Besichtigung.',
     intro:
       'Asbesta baut asbesthaltige Welleternit- und Asbestzement-Wellplatten in Mönchengladbach fachgerecht und zerstörungsfrei aus. Wir lösen die Platten von Dächern, Carports und Nebengebäuden, ohne Fasern freizusetzen, und entsorgen sie staubdicht im Big-Bag. Unser Team kommt aus Marl in den gesamten Niederrhein - ein Büro vor Ort in Mönchengladbach unterhalten wir nicht.',
     lokalServiceKontext: [
@@ -954,7 +954,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'moenchengladbach',
     metaTitle: 'Asbest-Fassadenplatten Mönchengladbach | Asbesta',
     metaDescription:
-      'Asbest-Fassadenplatten in Mönchengladbach fachgerecht ausbauen: TRGS 519, Anzeige bei der Bezirksregierung Düsseldorf, sichere Entsorgung. Festpreis nach Besichtigung.',
+      'Asbest-Fassadenplatten in Mönchengladbach fachgerecht ausbauen nach TRGS 519, sichere Entsorgung. Festpreis nach kostenloser Besichtigung.',
     intro:
       'Asbestzement-Fassadenplatten und -schindeln an Wohn- und Gewerbebauten in Mönchengladbach bauen wir fachgerecht und staubarm aus - meist vom Gerüst und häufig als Vorstufe zur energetischen Fassadensanierung. Asbesta ist in Marl ansässig und in ganz NRW tätig; nach Mönchengladbach kommen wir aus rund 75 km Entfernung zur kostenlosen Besichtigung.',
     lokalServiceKontext: [
@@ -1017,7 +1017,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'moenchengladbach',
     metaTitle: 'Bitumenkleber entfernen Mönchengladbach | Asbesta',
     metaDescription:
-      'Asbesthaltigen Bitumenkleber (Schwarzkleber) in Mönchengladbach fachgerecht nach TRGS 519 entfernen lassen. Belegreife Übergabe, Festpreis nach kostenloser Besichtigung.',
+      'Asbesthaltigen Bitumenkleber in Mönchengladbach nach TRGS 519 entfernen, belegreife Übergabe. Festpreis nach kostenloser Besichtigung.',
     intro:
       'Schwarzer Bitumenkleber unter alten Bodenbelägen enthält in Mönchengladbacher Altbauten häufig Asbest. Asbesta entfernt diesen Schwarzkleber fachgerecht nach TRGS 519 und übergibt den Untergrund belegreif. Wir kommen aus Marl und sind in ganz NRW im Einsatz – auch am Niederrhein.',
     lokalServiceKontext: [
@@ -1079,7 +1079,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'moenchengladbach',
     metaTitle: 'PAK-Sanierung Mönchengladbach | Asbesta',
     metaDescription:
-      'PAK-Sanierung in Mönchengladbach: fachgerechte Entfernung von schwarzem Bodenkleber, Teerpappe & teerhaltigen Materialien nach TRGS 524/551. Kostenlose Besichtigung.',
+      'PAK-Sanierung in Mönchengladbach: Bodenkleber, Teerpappe und teerhaltige Stoffe nach TRGS 524/551 entfernen. Kostenlose Besichtigung.',
     intro:
       'Schwarzer, teerartiger Parkett- oder Bodenkleber und alte Teerpappe enthalten häufig polyzyklische aromatische Kohlenwasserstoffe (PAK). Asbesta saniert solche Materialien in Mönchengladbach fachgerecht nach TRGS 524/551 - von der Materialanalyse über den staubdichten Rückbau bis zur ordnungsgemäßen Entsorgung. Wir kommen aus Marl und sind in ganz Mönchengladbach im Einsatz, von Gladbach bis Rheydt.',
     lokalServiceKontext: [
@@ -1141,7 +1141,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'solingen',
     metaTitle: 'Asbestsanierung TRGS 519 Solingen | Asbesta',
     metaDescription:
-      'Anzeigepflichtige Asbestsanierung nach TRGS 519 in Solingen: Schwarzbereich, Unterdruck, Personenschleuse und Freimessung. Fachbetrieb aus Marl, kostenlose Besichtigung.',
+      'Anzeigepflichtige Asbestsanierung nach TRGS 519 in Solingen: Schwarzbereich, Unterdruck, Freimessung. Sachkundiger Betrieb aus Marl.',
     intro:
       'Asbesta führt anzeigepflichtige Asbestsanierungen nach TRGS 519 in ganz Solingen durch – von Ohligs bis Gräfrath. Wir richten einen abgeschotteten Schwarzbereich mit Unterdruckhaltung, Personenschleuse und Freimessung nach VDI 3492 ein. So entfernen wir auch schwach gebundenen Asbest sicher und beweisbar sauber.',
     lokalServiceKontext: [
@@ -1172,7 +1172,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'solingen',
     metaTitle: 'Abbruch & Rückbau Solingen | Asbesta',
     metaDescription:
-      'Kontrollierter Abbruch und Rückbau in Solingen: vorherige Schadstofferkundung, schadstoffgetrennter Rückbau nach TRGS 519. Festpreis nach kostenloser Besichtigung.',
+      'Kontrollierter Abbruch und Rückbau in Solingen: Schadstofferkundung vorab, schadstoffgetrennt nach TRGS 519. Festpreis nach Besichtigung.',
     intro:
       'Asbesta plant und führt den kontrollierten Rückbau und Abbruch in Solingen durch – von der einzelnen Etage in einer bergischen Hofschaft bis zum Industriegebäude in Ohligs. Vor jeder Maßnahme steht eine Schadstofferkundung, damit belastete Materialien fachgerecht getrennt zurückgebaut werden. Wir arbeiten von Marl aus, rund 65 km entfernt, in ganz NRW.',
     lokalServiceKontext: [
@@ -1203,7 +1203,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'solingen',
     metaTitle: 'Welleternit ausbauen Solingen | Asbesta',
     metaDescription:
-      'Welleternit in Solingen ausbauen lassen: zerstörungsfreier Ausbau asbesthaltiger Asbestzement-Wellplatten nach TRGS 519, Big-Bag-Entsorgung. Festpreis nach Besichtigung.',
+      'Welleternit in Solingen ausbauen: zerstörungsfreie Demontage asbesthaltiger Wellplatten nach TRGS 519, Big-Bag-Entsorgung. Jetzt anfragen.',
     intro:
       'Asbestzement-Wellplatten, oft als Welleternit bezeichnet, sitzen in Solingen noch auf vielen Garagen-, Schuppen- und Stalldächern. Asbesta baut diese Wellplatten zerstörungsfrei und staubarm nach TRGS 519 aus. Wir kommen aus Marl ins Bergische Land und übernehmen Abbau, Verpackung im Big-Bag und die fachgerechte Entsorgung.',
     lokalServiceKontext: [
@@ -1234,7 +1234,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'solingen',
     metaTitle: 'Asbest-Fassadenplatten Solingen ausbauen | Asbesta',
     metaDescription:
-      'Asbest-Fassadenplatten in Solingen fachgerecht ausbauen: TRGS 519, Anfahrt aus Marl, Anzeige bei der Bezirksregierung Düsseldorf. Kostenlose Besichtigung anfragen.',
+      'Asbest-Fassadenplatten in Solingen fachgerecht ausbauen nach TRGS 519, Anfahrt aus Marl. Kostenlose Besichtigung anfragen.',
     intro:
       'Asbesthaltige Asbestzement-Fassadenplatten und -schindeln an Wohnhäusern in Solingen bauen wir staubarm und nach TRGS 519 zurück. Oft geschieht das am Gerüst und vor einer geplanten energetischen Fassadensanierung. Asbesta ist in Marl ansässig und betreut Solingen über die rund 65 Kilometer Anfahrt mit eigenem Fachpersonal.',
     lokalServiceKontext: [
@@ -1265,7 +1265,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'solingen',
     metaTitle: 'Asbestzement ausbauen Solingen | Asbesta',
     metaDescription:
-      'Asbestzement-Bauteile in Solingen sicher ausbauen: Platten, Rohre, Kanäle, Fensterbänke. TRGS 519, Anzeige an Bezirksregierung Düsseldorf. Festpreis nach Besichtigung.',
+      'Asbestzement in Solingen sicher ausbauen: Platten, Rohre, Kanäle, Fensterbänke nach TRGS 519. Festpreis nach kostenloser Besichtigung.',
     intro:
       'Asbesta baut fest gebundene Asbestzement-Bauteile in Solingen fachgerecht aus – von Welleternit-Platten über Rohre und Kanäle bis zu Fensterbänken. Wir arbeiten nach TRGS 519 und reisen aus Marl ins gesamte Bergische Land an. Vor jedem Ausbau steht eine Materialanalyse, danach folgt der staubarme, behördlich angezeigte Rückbau.',
     lokalServiceKontext: [
@@ -1358,7 +1358,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'solingen',
     metaTitle: 'PAK-Sanierung Solingen | Asbesta',
     metaDescription:
-      'PAK-Sanierung in Solingen: fachgerechte Entfernung von teerhaltigem Bodenkleber und Teerpappe nach TRGS 524/551. Kostenlose Besichtigung, Festpreis. Jetzt anfragen.',
+      'PAK-Sanierung in Solingen: teerhaltigen Bodenkleber und Teerpappe nach TRGS 524/551 entfernen. Kostenlose Besichtigung, Festpreis. Jetzt anfragen.',
     intro:
       'Schwarzer Parkettkleber, Teerpappe oder alte Bitumenschichten enthalten in Solingen häufig polyzyklische aromatische Kohlenwasserstoffe (PAK). Asbesta saniert solche teerhaltigen Materialien fachgerecht nach TRGS 524/551 - sachlich abgegrenzt von Asbest. Wir kommen aus Marl und sind in ganz NRW im Einsatz, auch im Bergischen Land.',
     lokalServiceKontext: [
@@ -1418,7 +1418,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/aachen': {
     leistung: 'asbestsanierung',
     stadt: 'aachen',
-    metaTitle: 'Asbestsanierung Aachen nach TRGS 519 | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Aachen | Asbesta',
     metaDescription:
       'Anzeigepflichtige Asbestsanierung in Aachen nach TRGS 519: abgeschotteter Schwarzbereich, Unterdruck, Freimessung. Asbesta aus Marl, ganz NRW. Jetzt anfragen.',
     intro:
@@ -1451,7 +1451,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'aachen',
     metaTitle: 'Abbruch & Rückbau Aachen | Asbesta',
     metaDescription:
-      'Kontrollierter Abbruch & Rückbau in Aachen mit vorheriger Schadstofferkundung und schadstoffgetrenntem Rückbau nach TRGS 519/521/524. Festpreis nach kostenloser Besichtigung.',
+      'Kontrollierter Abbruch und Rückbau in Aachen: Schadstofferkundung vorab, schadstoffgetrennt nach TRGS 519. Festpreis nach Besichtigung.',
     intro:
       'Asbesta plant und führt den kontrollierten Abbruch und Rückbau von Gebäuden und Gebäudeteilen in Aachen aus. Vor jedem Eingriff steht die Schadstofferkundung, damit Asbest, KMF und PAK getrennt erfasst und fachgerecht entsorgt werden. Wir kommen aus Marl in die StädteRegion Aachen und arbeiten von der Erkundung bis zur besenreinen Übergabe aus einer Hand.',
     lokalServiceKontext: [
@@ -1483,7 +1483,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'aachen',
     metaTitle: 'Welleternit ausbauen Aachen | Asbesta',
     metaDescription:
-      'Welleternit fachgerecht ausbauen in Aachen: zerstörungsfreier Ausbau asbesthaltiger Asbestzement-Wellplatten nach TRGS 519, Big-Bag-Entsorgung. Festpreis nach Besichtigung.',
+      'Welleternit in Aachen fachgerecht ausbauen: zerstörungsfreie Demontage asbesthaltiger Wellplatten nach TRGS 519, Big-Bag-Entsorgung. Jetzt anfragen.',
     intro:
       'Asbesta baut asbesthaltigen Welleternit von Dächern und Nebengebäuden in Aachen zerstörungsfrei aus und entsorgt die Asbestzement-Wellplatten sicher im Big-Bag. Wir reisen aus Marl an und sind in der gesamten StädteRegion Aachen tätig. Vor jeder Demontage steht die Materialanalyse, danach der Ausbau nach den Vorgaben der TRGS 519.',
     lokalServiceKontext: [
@@ -1514,7 +1514,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'aachen',
     metaTitle: 'Asbest-Fassadenplatten ausbauen Aachen | Asbesta',
     metaDescription:
-      'Asbestzement-Fassadenplatten in Aachen fachgerecht ausbauen nach TRGS 519. Asbesta aus Marl, tätig in ganz NRW. Kostenlose Besichtigung & verbindlicher Festpreis.',
+      'Asbestzement-Fassadenplatten in Aachen fachgerecht ausbauen nach TRGS 519. Asbesta aus Marl, ganz NRW. Kostenlose Besichtigung, Festpreis.',
     intro:
       'Asbestzement-Fassadenplatten und -schindeln finden sich an vielen Gebäuden in Aachen, häufig aus den Jahren vor dem Asbest-Totalverbot von 1993. Asbesta baut diese Platten staubarm und nach TRGS 519 aus – oft am Gerüst und meist als Vorbereitung einer energetischen Fassadensanierung. Wir kommen dafür aus Marl in die StädteRegion Aachen.',
     lokalServiceKontext: [
@@ -1698,9 +1698,9 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/hamm': {
     leistung: 'asbestsanierung',
     stadt: 'hamm',
-    metaTitle: 'Asbestsanierung Hamm nach TRGS 519 | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Hamm | Asbesta',
     metaDescription:
-      'Asbestsanierung in Hamm nach TRGS 519: abgeschotteter Schwarzbereich, Unterdruck, Personenschleuse und Freimessung nach VDI 3492. Asbesta aus Marl, ganz NRW. Jetzt anfragen.',
+      'Asbestsanierung in Hamm nach TRGS 519: Schwarzbereich, Unterdruck, Personenschleuse und Freimessung. Fachbetrieb aus Marl. Jetzt anfragen.',
     intro:
       'Asbesta führt in Hamm die anzeigepflichtige Asbestsanierung nach TRGS 519 mit abgeschottetem Schwarzbereich, Unterdruckhaltung und Personenschleuse durch. Gerade schwach gebundener Asbest in Innenräumen erfordert dieses Verfahren. Wir kommen aus Marl angefahren und schließen jede Sanierung mit einer Freimessung nach VDI 3492 ab.',
     lokalServiceKontext: [
@@ -1731,7 +1731,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'hamm',
     metaTitle: 'Abbruch & Rückbau Hamm | Asbesta',
     metaDescription:
-      'Kontrollierter Rückbau und Abbruch in Hamm mit vorheriger Schadstofferkundung und schadstoffgetrenntem Rückbau. Asbesta aus Marl, ganz NRW. Kostenlose Besichtigung.',
+      'Kontrollierter Abbruch und Rückbau in Hamm: vorab Schadstofferkundung, schadstoffgetrennt nach TRGS. Festpreis nach kostenloser Besichtigung.',
     intro:
       'Asbesta plant und führt den kontrollierten Rückbau und Abbruch von Gebäuden in Hamm durch – immer mit vorheriger Schadstofferkundung und schadstoffgetrenntem Rückbau. So werden Asbest, KMF und PAK-belastete Stoffe sauber getrennt, bevor die Tragstruktur fällt. Wir kommen aus Marl und sind in ganz NRW im Einsatz.',
     lokalServiceKontext: [
@@ -1762,7 +1762,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'hamm',
     metaTitle: 'Welleternit ausbauen Hamm | Asbesta',
     metaDescription:
-      'Welleternit-Ausbau in Hamm: zerstörungsfreier Abbau asbesthaltiger Asbestzement-Wellplatten von Dach und Nebengebäude, Big-Bag-Entsorgung. Anfahrt aus Marl, TRGS 519.',
+      'Welleternit in Hamm zerstörungsfrei ausbauen: asbesthaltige Wellplatten von Dach und Nebengebäude nach TRGS 519, Big-Bag-Entsorgung. Jetzt anfragen.',
     intro:
       'Asbesta baut in Hamm asbesthaltige Welleternit- und Asbestzement-Wellplatten von Dächern, Carports und Nebengebäuden zerstörungsfrei aus. Wir arbeiten nach TRGS 519, anfahrend aus Marl, und übernehmen die fachgerechte Big-Bag-Entsorgung. Vor jedem Auftrag steht eine kostenlose Besichtigung mit verbindlichem Festpreis.',
     lokalServiceKontext: [
@@ -1855,7 +1855,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'hamm',
     metaTitle: 'Bitumenkleber entfernen Hamm | Asbesta',
     metaDescription:
-      'Asbesthaltigen Bitumenkleber (Schwarzkleber) in Hamm fachgerecht entfernen - TRGS 519, Materialanalyse, belegreife Übergabe. Festpreis nach kostenloser Besichtigung.',
+      'Asbesthaltigen Bitumenkleber (Schwarzkleber) in Hamm nach TRGS 519 entfernen: Materialanalyse, belegreife Übergabe. Festpreis nach Besichtigung.',
     intro:
       'Unter alten Bodenbelägen in Hamm steckt häufig schwarzer, asbesthaltiger Bitumenkleber - der sogenannte Schwarzkleber. Asbesta aus Marl entfernt diesen Schwarzkleber in ganz Hamm fachgerecht nach TRGS 519 und übergibt den Untergrund belegreif. So entsteht eine saubere Basis für Ihren neuen Bodenbelag.',
     lokalServiceKontext: [
@@ -1977,7 +1977,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/muelheim': {
     leistung: 'asbestsanierung',
     stadt: 'muelheim',
-    metaTitle: 'Asbestsanierung Mülheim an der Ruhr | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Mülheim an der Ruhr | Asbesta',
     metaDescription:
       'Asbestsanierung nach TRGS 519 in Mülheim an der Ruhr: anzeigepflichtige Sanierung mit Schwarzbereich, Unterdruck und Freimessung. Anfahrt aus Marl, Festpreis.',
     intro:
@@ -2010,7 +2010,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'muelheim',
     metaTitle: 'Abbruch & Rückbau Mülheim an der Ruhr | Asbesta',
     metaDescription:
-      'Kontrollierter Abbruch & schadstoffgetrennter Rückbau in Mülheim an der Ruhr: Schadstofferkundung vorab, TRGS-konform aus Marl. Kostenlose Besichtigung – jetzt anfragen.',
+      'Kontrollierter Abbruch und schadstoffgetrennter Rückbau in Mülheim an der Ruhr: Erkundung vorab, TRGS-konform. Kostenlose Besichtigung anfragen.',
     intro:
       'Asbesta plant und realisiert kontrollierten Abbruch und schadstoffgetrennten Rückbau in Mülheim an der Ruhr – vom Innenausbau bis zum Komplettabriss. Vor jedem Eingriff steht die Schadstofferkundung, damit Asbest, KMF oder PAK erkannt und sicher getrennt werden. Wir arbeiten aus Marl an, rund 40 km entfernt, nach TRGS 519/521/524.',
     lokalServiceKontext: [
@@ -2041,7 +2041,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'muelheim',
     metaTitle: 'Welleternit ausbauen Mülheim an der Ruhr | Asbesta',
     metaDescription:
-      'Asbesthaltige Welleternit-Wellplatten in Mülheim an der Ruhr zerstörungsfrei ausbauen lassen. Asbesta aus Marl, TRGS 519, Big-Bag-Entsorgung, kostenlose Besichtigung.',
+      'Asbesthaltige Welleternit-Wellplatten in Mülheim an der Ruhr zerstörungsfrei ausbauen: TRGS 519, Big-Bag-Entsorgung. Kostenlose Besichtigung.',
     intro:
       'Welleternit- und Asbestzement-Wellplatten finden sich in Mülheim an der Ruhr auf vielen Dächern von Garagen, Schuppen und Nebengebäuden aus der Zeit vor 1993. Asbesta baut diese Platten zerstörungsfrei aus und entsorgt sie sicher im Big-Bag. Wir kommen aus Marl, rund 40 km entfernt, und sind in ganz NRW im Einsatz.',
     lokalServiceKontext: [
@@ -2073,7 +2073,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'muelheim',
     metaTitle: 'Asbest-Fassadenplatten Mülheim ausbauen | Asbesta',
     metaDescription:
-      'Asbest-Fassadenplatten in Mülheim an der Ruhr fachgerecht ausbauen nach TRGS 519 – Anfahrt aus Marl, kostenlose Besichtigung, verbindlicher Festpreis. Jetzt anfragen.',
+      'Asbest-Fassadenplatten in Mülheim an der Ruhr nach TRGS 519 ausbauen: Anfahrt aus Marl, verbindlicher Festpreis. Jetzt anfragen.',
     intro:
       'Sie planen in Mülheim an der Ruhr den Rückbau asbesthaltiger Asbestzement-Fassadenplatten oder -schindeln? Asbesta baut die alten Platten kontrolliert und nach TRGS 519 zurück – häufig vor einer energetischen Fassadensanierung. Wir kommen aus Marl in das gesamte Ruhrgebiet und beraten Sie vorab kostenlos vor Ort.',
     lokalServiceKontext: [
@@ -2135,7 +2135,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'muelheim',
     metaTitle: 'Bitumenkleber entfernen Mülheim a.d. Ruhr | Asbesta',
     metaDescription:
-      'Asbesthaltigen Bitumenkleber (Schwarzkleber) in Mülheim an der Ruhr fachgerecht entfernen nach TRGS 519. Materialanalyse, belegreife Übergabe, Festpreis nach Besichtigung.',
+      'Asbesthaltigen Bitumenkleber (Schwarzkleber) in Mülheim an der Ruhr nach TRGS 519 entfernen: belegreife Übergabe. Festpreis nach Besichtigung.',
     intro:
       'Unter alten Bodenbelägen in Mülheim an der Ruhr steckt oft schwarzer, asbesthaltiger Bitumenkleber (Schwarzkleber). Asbesta aus Marl entfernt diesen Schwarzkleber in ganz NRW fachgerecht nach TRGS 519 und übergibt den Untergrund belegreif. Vor jeder Maßnahme steht eine Materialanalyse, damit klar ist, ob tatsächlich Asbest gebunden ist.',
     lokalServiceKontext: [
@@ -2166,7 +2166,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'muelheim',
     metaTitle: 'Floor-Flex entfernen Mülheim an der Ruhr | Asbesta',
     metaDescription:
-      'Floor-Flex-Platten und Kleber in Mülheim an der Ruhr staubarm nach TRGS 519 entfernen. Asbesta aus Marl, ganz NRW. Kostenlose Besichtigung, verbindlicher Festpreis.',
+      'Floor-Flex-Platten und Kleber in Mülheim an der Ruhr staubarm nach TRGS 519 entfernen. Asbesta aus Marl. Kostenlose Besichtigung, Festpreis.',
     intro:
       'Floor-Flex-Bodenplatten aus den Jahren vor 1993 enthalten häufig Asbest, der beim Aufbrechen freigesetzt wird. In Mülheim an der Ruhr entfernen wir diese Vinyl-Asbest-Platten samt Bitumenkleber staubarm und fachgerecht nach TRGS 519. Asbesta plant jeden Auftrag nach einer kostenlosen Besichtigung und arbeitet von Marl aus in ganz NRW.',
     lokalServiceKontext: [
@@ -2197,7 +2197,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'muelheim',
     metaTitle: 'PAK-Sanierung Mülheim an der Ruhr | Asbesta',
     metaDescription:
-      'PAK-Sanierung in Mülheim an der Ruhr: teerhaltiger Bodenkleber, schwarzer Parkettkleber und Teerpappe fachgerecht nach TRGS 524/551. Kostenlose Besichtigung. Jetzt anfragen.',
+      'PAK-Sanierung in Mülheim an der Ruhr: teerhaltiger Bodenkleber und Teerpappe fachgerecht nach TRGS 524/551. Kostenlose Besichtigung. Jetzt anfragen.',
     intro:
       'PAK-belastete Materialien wie schwarzer Parkettkleber, teerhaltiger Bodenkleber oder alte Teerpappe stecken in vielen Mülheimer Altbauten. Asbesta saniert diese teerhaltigen Schadstoffe fachgerecht nach TRGS 524/551 - sachlich, sauber und mit verbindlichem Festpreis. Wir kommen aus Marl, rund 40 km entfernt, und sind in ganz NRW im Einsatz.',
     lokalServiceKontext: [
@@ -2258,9 +2258,9 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/bielefeld': {
     leistung: 'asbestsanierung',
     stadt: 'bielefeld',
-    metaTitle: 'Asbestsanierung Bielefeld nach TRGS 519 | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Bielefeld | Asbesta',
     metaDescription:
-      'Asbestsanierung in Bielefeld nach TRGS 519: abgeschotteter Schwarzbereich, Unterdruck, Personenschleuse und Freimessung. Asbesta aus Marl, in ganz NRW. Jetzt anfragen.',
+      'Asbestsanierung in Bielefeld nach TRGS 519: Schwarzbereich, Unterdruck, Personenschleuse und Freimessung. Asbesta aus Marl. Jetzt anfragen.',
     intro:
       'Asbesta führt anzeigepflichtige Asbestsanierungen nach TRGS 519 in Bielefeld und ganz Ostwestfalen-Lippe durch. Vor allem schwach gebundener Asbest in Innenräumen wird im abgeschotteten Schwarzbereich unter Unterdruck und mit Personenschleuse entfernt. Den Abschluss bildet die Freimessung der Raumluft nach VDI 3492. Unser Team reist aus Marl an, einen festen Standort in Bielefeld haben wir nicht.',
     lokalServiceKontext: [
@@ -2322,7 +2322,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'bielefeld',
     metaTitle: 'Welleternit ausbauen Bielefeld | Asbesta',
     metaDescription:
-      'Welleternit und Asbestzement-Wellplatten in Bielefeld zerstörungsfrei ausbauen lassen. Asbesta aus Marl, TRGS 519, Big-Bag-Entsorgung. Festpreis nach Besichtigung.',
+      'Welleternit und Asbestzement-Wellplatten in Bielefeld zerstörungsfrei ausbauen: TRGS 519, Big-Bag-Entsorgung. Festpreis nach Besichtigung.',
     intro:
       'Asbesthaltige Welleternit-Platten auf Dächern, Carports und Nebengebäuden gehören in Bielefeld fachgerecht demontiert. Asbesta baut Asbestzement-Wellplatten zerstörungsfrei aus und entsorgt sie staubdicht im Big-Bag. Wir kommen aus Marl in die kreisfreie Stadt im Herzen von Ostwestfalen-Lippe.',
     lokalServiceKontext: [
@@ -2354,7 +2354,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'bielefeld',
     metaTitle: 'Asbest-Fassadenplatten ausbauen Bielefeld | Asbesta',
     metaDescription:
-      'Asbestzement-Fassadenplatten in Bielefeld fachgerecht ausbauen nach TRGS 519 - oft am Geruest vor der Fassadensanierung. Kostenlose Besichtigung & Festpreis.',
+      'Asbestzement-Fassadenplatten in Bielefeld nach TRGS 519 ausbauen, oft am Gerüst vor der Fassadensanierung. Kostenlose Besichtigung und Festpreis.',
     intro:
       'Asbesthaltige Fassadenplatten und Schindeln aus Asbestzement finden sich in Bielefeld an vielen Bauten der 1960er- bis 1980er-Jahre. Asbesta aus Marl baut diese Platten nach TRGS 519 staubarm aus - meist am Geruest und haeufig als erster Schritt vor einer energetischen Fassadensanierung. Wir sind in ganz Ostwestfalen-Lippe taetig und kommen fuer Besichtigung und Ausbau zu Ihnen nach Bielefeld.',
     lokalServiceKontext: [
@@ -2448,7 +2448,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'bielefeld',
     metaTitle: 'Floor-Flex entfernen Bielefeld | Asbesta',
     metaDescription:
-      'Floor-Flex-Asbestplatten samt Kleber in Bielefeld staubarm entfernen nach TRGS 519. Asbesta aus Marl, ganz NRW. Kostenlose Besichtigung & Festpreis: 02365 2960630.',
+      'Floor-Flex-Platten und Kleber in Bielefeld staubarm nach TRGS 519 entfernen. Festpreis nach kostenloser Besichtigung. Asbesta aus Marl.',
     intro:
       'Floor-Flex-Bodenplatten aus Vinyl-Asbest und der darunterliegende schwarze Bitumenkleber finden sich in vielen Bielefelder Gebäuden bis Baujahr 1993. Asbesta entfernt diese Beläge staubarm und fachgerecht nach TRGS 519. Wir kommen aus Marl angefahren und sind in ganz NRW tätig.',
     lokalServiceKontext: [
@@ -2479,7 +2479,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'bielefeld',
     metaTitle: 'PAK-Sanierung Bielefeld | Asbesta',
     metaDescription:
-      'PAK-Sanierung in Bielefeld: fachgerechte Entfernung von schwarzem Bodenkleber, Teerpappe und teerhaltigen Materialien nach TRGS 524/551. Kostenlose Besichtigung.',
+      'PAK-Sanierung in Bielefeld: Bodenkleber, Teerpappe und teerhaltige Materialien fachgerecht nach TRGS 524/551 ausbauen. Jetzt anfragen.',
     intro:
       'PAK-haltige Materialien wie schwarzer Parkett- und Bodenkleber oder Teerpappe stecken in vielen Bielefelder Altbauten und müssen fachgerecht nach TRGS 524/551 saniert werden. Asbesta aus Marl übernimmt diese Arbeiten in ganz Bielefeld zuverlässig. PAK ist kein Asbest, erfordert aber ebenso geschulte Fachkräfte und sichere Entsorgung.',
     lokalServiceKontext: [
@@ -2539,9 +2539,9 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/remscheid': {
     leistung: 'asbestsanierung',
     stadt: 'remscheid',
-    metaTitle: 'Asbestsanierung Remscheid (TRGS 519) | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Remscheid | Asbesta',
     metaDescription:
-      'Asbestsanierung nach TRGS 519 in Remscheid: abgeschotteter Schwarzbereich, Unterdruck, Personenschleuse und Freimessung nach VDI 3492. Asbesta aus Marl, ganz NRW.',
+      'Asbestsanierung nach TRGS 519 in Remscheid: Schwarzbereich, Unterdruck, Personenschleuse und Freimessung. Asbesta aus Marl, ganz NRW.',
     intro:
       'Asbesta saniert in Remscheid Asbest nach TRGS 519 – fachgerecht, anzeigepflichtig und mit lückenloser Dokumentation. Wir arbeiten von Marl aus in der gesamten Region und sind nach rund 70 km Anfahrt schnell im Bergischen Land. Gerade bei schwach gebundenem Asbest in Innenräumen zählt ein abgeschotteter, sauber kontrollierter Ablauf.',
     lokalServiceKontext: [
@@ -2572,7 +2572,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'remscheid',
     metaTitle: 'Abbruch & Rückbau Remscheid | Asbesta',
     metaDescription:
-      'Kontrollierter Abbruch und schadstoffgetrennter Rückbau in Remscheid: vorherige Schadstofferkundung, TRGS-konform, aus Marl in ganz NRW. Kostenlose Besichtigung.',
+      'Kontrollierter Abbruch und schadstoffgetrennter Rückbau in Remscheid mit vorheriger Erkundung. Festpreis nach kostenloser Besichtigung.',
     intro:
       'Asbesta übernimmt in Remscheid den kontrollierten Rückbau und Abbruch von Gebäuden und Bauteilen - immer mit vorheriger Schadstofferkundung und schadstoffgetrenntem Vorgehen. So werden Asbest, KMF und PAK fachgerecht separiert, bevor die eigentliche Substanz fällt. Wir kommen aus Marl und sind in ganz NRW im Einsatz, auch im Bergischen Land.',
     lokalServiceKontext: [
@@ -2634,7 +2634,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'remscheid',
     metaTitle: 'Asbest-Fassadenplatten ausbauen Remscheid | Asbesta',
     metaDescription:
-      'Asbesthaltige Fassadenplatten in Remscheid fachgerecht ausbauen: TRGS 519, Anzeige bei der Bezirksregierung Düsseldorf, sichere Entsorgung. Festpreis nach Besichtigung.',
+      'Asbesthaltige Fassadenplatten in Remscheid fachgerecht nach TRGS 519 ausbauen und sicher entsorgen. Festpreis nach kostenloser Besichtigung.',
     intro:
       'Asbestzement-Fassadenplatten und -schindeln prägen in Remscheid viele Wohnhäuser aus den Nachkriegsjahrzehnten – oft als Verkleidung an Hangfassaden im Bergischen Land. Asbesta aus Marl baut diese Platten nach TRGS 519 fachgerecht aus, meist im Vorfeld einer energetischen Fassadensanierung. Wir kommen für ganz NRW, also auch nach Remscheid, mit dem nötigen Equipment angefahren.',
     lokalServiceKontext: [
@@ -2727,7 +2727,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'remscheid',
     metaTitle: 'Floor-Flex entfernen Remscheid | Asbesta',
     metaDescription:
-      'Floor-Flex-Asbestplatten samt Kleber in Remscheid staubarm nach TRGS 519 entfernen. Materialanalyse, sichere Entsorgung, Festpreis nach Besichtigung. Anfahrt aus Marl.',
+      'Floor-Flex-Platten samt Kleber in Remscheid staubarm nach TRGS 519 entfernen, mit Materialanalyse und sicherer Entsorgung. Jetzt anfragen.',
     intro:
       'Floor-Flex-Bodenplatten in Remscheid enthalten häufig Asbest im Vinyl und im darunterliegenden schwarzen Bitumenkleber. Asbesta entfernt diese Beläge staubarm nach TRGS 519 und entsorgt sie fachgerecht. Wir kommen aus Marl ins Bergische Land und sind in ganz NRW tätig.',
     lokalServiceKontext: [
@@ -2789,7 +2789,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'remscheid',
     metaTitle: 'KMF-Sanierung Remscheid nach TRGS 521 | Asbesta',
     metaDescription:
-      'KMF-Sanierung in Remscheid: fachgerechter Ausbau alter Mineralwolle nach TRGS 521. Asbesta aus Marl ist in ganz NRW im Bergischen Land im Einsatz. Jetzt anfragen.',
+      'KMF-Sanierung in Remscheid: alte Mineralwolle fachgerecht nach TRGS 521 ausbauen. Asbesta aus Marl im Bergischen Land. Jetzt anfragen.',
     intro:
       'Alte Mineralwolle aus den Jahren vor 2000 (KMF) gibt bei Ausbau und Sanierung lungengängige Fasern frei. In Remscheid übernimmt Asbesta den fachgerechten Ausbau dieser künstlichen Mineralfasern nach TRGS 521. Wir arbeiten aus Marl heraus und sind im gesamten Bergischen Land tätig.',
     lokalServiceKontext: [
@@ -2818,7 +2818,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/marl': {
     leistung: 'asbestsanierung',
     stadt: 'marl',
-    metaTitle: 'Asbestsanierung Marl nach TRGS 519 | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Marl | Asbesta',
     metaDescription:
       'Asbestsanierung in Marl vom Fachbetrieb am Ort: TRGS 519, Schwarz-Weiß-Schleuse, Anzeige bei der Bezirksregierung Münster, Freimessung. Jetzt beraten lassen.',
     intro:
@@ -2850,7 +2850,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/herten': {
     leistung: 'asbestsanierung',
     stadt: 'herten',
-    metaTitle: 'Asbestsanierung Herten | TRGS 519 Fachbetrieb',
+    metaTitle: 'Asbestsanierung TRGS 519 Herten | Asbesta',
     metaDescription:
       'Asbestsanierung in Herten nach TRGS 519: Schwarzbereich, Unterdruck und Freimessung in Zechenhaus, Geschosswohnung und Gewerbeobjekt. Jetzt Begehung anfragen.',
     intro:
@@ -2883,7 +2883,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/gladbeck': {
     leistung: 'asbestsanierung',
     stadt: 'gladbeck',
-    metaTitle: 'Asbestsanierung Gladbeck | TRGS 519 Fachbetrieb',
+    metaTitle: 'Asbestsanierung TRGS 519 Gladbeck | Asbesta',
     metaDescription:
       'Asbestsanierung in Gladbeck nach TRGS 519: sichere Entfernung von Asbest in Wohn- und Gewerbebauten. Zertifizierter Fachbetrieb. Jetzt beraten lassen.',
     intro:
@@ -2915,7 +2915,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/gelsenkirchen': {
     leistung: 'asbestsanierung',
     stadt: 'gelsenkirchen',
-    metaTitle: 'Asbestsanierung Gelsenkirchen | TRGS 519 Fachbetrieb',
+    metaTitle: 'Asbestsanierung TRGS 519 Gelsenkirchen | Asbesta',
     metaDescription:
       'Asbestsanierung in Gelsenkirchen nach TRGS 519: Zechensiedlungen, Nachkriegszeilen in Schalke, Buer & Ückendorf. Schwarz-Weiß-Schleuse, Freimessung.',
     intro:
@@ -2949,7 +2949,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/bottrop': {
     leistung: 'asbestsanierung',
     stadt: 'bottrop',
-    metaTitle: 'Asbestsanierung Bottrop | TRGS 519 Fachbetrieb',
+    metaTitle: 'Asbestsanierung TRGS 519 Bottrop | Asbesta',
     metaDescription:
       'Asbestsanierung in Bottrop nach TRGS 519: Wohnbau, Zechenanlagen und Kirchhellen. Zertifizierter Fachbetrieb mit Unterdruckhaltung.',
     intro:
@@ -2980,7 +2980,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/essen': {
     leistung: 'asbestsanierung',
     stadt: 'essen',
-    metaTitle: 'Asbestsanierung Essen nach TRGS 519 | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Essen | Asbesta',
     metaDescription:
       'Asbestsanierung in Essen nach TRGS 519: Schwarz-Weiß-Schleuse, Unterdruck, Freimessung. Vom Gründerzeithaus bis zum Bürobau.',
     intro:
@@ -3013,7 +3013,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/oberhausen': {
     leistung: 'asbestsanierung',
     stadt: 'oberhausen',
-    metaTitle: 'Asbestsanierung Oberhausen nach TRGS 519 | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Oberhausen | Asbesta',
     metaDescription:
       'Asbestsanierung in Oberhausen nach TRGS 519: Schwarz-Weiß-Schleuse, Unterdruck, Freimessung. Für Wohn-, Industrie- und Gewerbebauten. Jetzt beraten lassen.',
     intro:
@@ -3046,7 +3046,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/duesseldorf': {
     leistung: 'asbestsanierung',
     stadt: 'duesseldorf',
-    metaTitle: 'Asbestsanierung Düsseldorf nach TRGS 519 | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Düsseldorf | Asbesta',
     metaDescription:
       'Asbestsanierung in Düsseldorf nach TRGS 519: Schwarz-Weiß-Schleuse, Unterdruck, Freimessung. Vom Altbau bis zum Bürohochhaus.',
     intro:
@@ -3080,7 +3080,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/koeln': {
     leistung: 'asbestsanierung',
     stadt: 'koeln',
-    metaTitle: 'Asbestsanierung Köln nach TRGS 519 | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Köln | Asbesta',
     metaDescription:
       'Asbestsanierung in Köln vom Fachbetrieb nach TRGS 519: Schwarz-Weiß-Schleuse, Unterdruck, Behördenanzeige bei der Bezirksregierung Köln und Freimessung.',
     intro:
@@ -3176,7 +3176,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'welleternit-ausbauen/gladbeck': {
     leistung: 'welleternit-ausbauen',
     stadt: 'gladbeck',
-    metaTitle: 'Welleternit ausbauen Gladbeck | Asbest-Wellplatten',
+    metaTitle: 'Welleternit ausbauen Gladbeck | Asbest-Wellplatten | Asbesta',
     metaDescription:
       'Welleternit und Wellasbestplatten in Gladbeck fachgerecht ausbauen: Garagen, Schuppen, Hallen. Zertifiziert nach TRGS 519.',
     intro:
@@ -3239,7 +3239,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'welleternit-ausbauen/bottrop': {
     leistung: 'welleternit-ausbauen',
     stadt: 'bottrop',
-    metaTitle: 'Welleternit ausbauen Bottrop | Wellasbest entfernen',
+    metaTitle: 'Welleternit ausbauen Bottrop | Asbesta',
     metaDescription:
       'Wellasbestplatten und Welleternit in Bottrop fachgerecht ausbauen: zertifiziert nach TRGS 519/524, von Garage bis Industriehalle. Jetzt anfragen.',
     intro:
@@ -3696,7 +3696,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'kmf-sanierung/marl': {
     leistung: 'kmf-sanierung',
     stadt: 'marl',
-    metaTitle: 'KMF-Sanierung Marl | Glas- & Steinwolle TRGS 521',
+    metaTitle: 'KMF-Sanierung Marl | Glas- und Steinwolle | Asbesta',
     metaDescription:
       'KMF-Sanierung in Marl: fachgerechter Ausbau alter Glas- und Steinwolle-Dämmung nach TRGS 521. Zertifizierter Fachbetrieb am Ort. Jetzt anfragen.',
     intro:
@@ -3728,7 +3728,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'kmf-sanierung/herten': {
     leistung: 'kmf-sanierung',
     stadt: 'herten',
-    metaTitle: 'KMF-Sanierung Herten | alte Mineralwolle TRGS 521',
+    metaTitle: 'KMF-Sanierung Herten | alte Mineralwolle TRGS 521 | Asbesta',
     metaDescription:
       'KMF-Sanierung in Herten: alte Glas- und Steinwolle aus Dach, Zwischendecke und Trockenbau staubarm ausbauen nach TRGS 521. Schnell vor Ort ab Marl.',
     intro:
@@ -3761,7 +3761,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'kmf-sanierung/gladbeck': {
     leistung: 'kmf-sanierung',
     stadt: 'gladbeck',
-    metaTitle: 'KMF-Sanierung Gladbeck | alte Mineralwolle (TRGS 521)',
+    metaTitle: 'KMF-Sanierung Gladbeck | Asbesta',
     metaDescription:
       'KMF-Sanierung in Gladbeck: alte Glas- und Steinwolle in Dachschrägen, Zwischendecken und Trockenbau staubarm ausbauen nach TRGS 521. Ab Marl schnell vor Ort.',
     intro:
@@ -3856,7 +3856,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'kmf-sanierung/essen': {
     leistung: 'kmf-sanierung',
     stadt: 'essen',
-    metaTitle: 'KMF-Sanierung Essen | Alte Mineralwolle entfernen',
+    metaTitle: 'KMF-Sanierung Essen | Alte Mineralwolle entfernen | Asbesta',
     metaDescription:
       'KMF-Sanierung in Essen nach TRGS 521: alte Glas- und Steinwolle aus Dach, Decke und Fassade fachgerecht entfernen. Zertifizierter Fachbetrieb. Jetzt anfragen.',
     intro:
@@ -3889,7 +3889,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'kmf-sanierung/oberhausen': {
     leistung: 'kmf-sanierung',
     stadt: 'oberhausen',
-    metaTitle: 'KMF-Sanierung Oberhausen | alte Mineralwolle TRGS 521',
+    metaTitle: 'KMF-Sanierung Oberhausen | Asbesta',
     metaDescription:
       'KMF-Sanierung in Oberhausen: alte Glas- und Steinwolle aus Dachschrägen, Zwischendecken und Hallendämmungen staubarm ausbauen nach TRGS 521. Jetzt anrufen.',
     intro:
@@ -3923,7 +3923,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'kmf-sanierung/duesseldorf': {
     leistung: 'kmf-sanierung',
     stadt: 'duesseldorf',
-    metaTitle: 'KMF-Sanierung Düsseldorf | Mineralfaser nach TRGS 521',
+    metaTitle: 'KMF-Sanierung Düsseldorf | Asbesta',
     metaDescription:
       'KMF-Sanierung in Düsseldorf: fachgerechter Ausbau alter Glas- und Steinwolle nach TRGS 521. Zertifizierter Fachbetrieb. Jetzt unter +49 2365 2960630 anfragen.',
     intro:
@@ -4019,7 +4019,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestzement-ausbauen/herten': {
     leistung: 'asbestzement-ausbauen',
     stadt: 'herten',
-    metaTitle: 'Asbestzement ausbauen in Herten | TRGS 519 Fachbetrieb',
+    metaTitle: 'Asbestzement ausbauen in Herten | Asbesta',
     metaDescription:
       'Asbestzement-Bauteile in Herten fachgerecht ausbauen lassen: Fassadenplatten, Rohre, Blumenkästen und Lüftungskanäle nach TRGS 519. Schnell vor Ort ab Marl.',
     intro:
@@ -4114,7 +4114,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestzement-ausbauen/bottrop': {
     leistung: 'asbestzement-ausbauen',
     stadt: 'bottrop',
-    metaTitle: 'Asbestzement ausbauen in Bottrop | TRGS 519 Fachbetrieb',
+    metaTitle: 'Asbestzement ausbauen in Bottrop | Asbesta',
     metaDescription:
       'Asbestzement-Bauteile in Bottrop fachgerecht ausbauen: Faserzement-Platten, Rohre & Lüftungskanäle nach TRGS 519. Kostenfreie Besichtigung, Festpreis.',
     intro:
@@ -4148,7 +4148,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestzement-ausbauen/essen': {
     leistung: 'asbestzement-ausbauen',
     stadt: 'essen',
-    metaTitle: 'Asbestzement ausbauen in Essen | Faserzement-Demontage',
+    metaTitle: 'Asbestzement ausbauen in Essen | Asbesta',
     metaDescription:
       'Asbestzement in Essen ausbauen: Rohre, Blumenkästen, Lüftungskanäle, Brüstungen und Fassadenplatten fachgerecht nach TRGS 519 demontiert.',
     intro:
@@ -4217,7 +4217,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'duesseldorf',
     metaTitle: 'Asbestzement ausbauen in Düsseldorf | Asbesta',
     metaDescription:
-      'Asbestzement in Düsseldorf fachgerecht ausbauen: Fassadenplatten, Faserzementrohre, Lüftungskanäle. Zertifiziert nach TRGS 519. Jetzt anfragen: +49 2365 2960630.',
+      'Asbestzement in Düsseldorf fachgerecht ausbauen: Fassadenplatten, Rohre und Lüftungskanäle nach TRGS 519. Jetzt anfragen: 02365 2960630.',
     intro:
       'In Düsseldorf trifft man Asbestzement vor allem an Fassaden, Dachverkleidungen und in der Haustechnik von Gebäuden der 1950er- bis frühen 1990er-Jahre. Wir bauen diese Faserzement-Bauteile zerstörungsarm und nach TRGS 519 aus, vom Hochhaus in Garath bis zum Altbau in Bilk.',
     lokalServiceKontext: [
@@ -4343,7 +4343,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'gladbeck',
     metaTitle: 'Abbrucharbeiten Gladbeck nach TRGS 519 | Asbesta',
     metaDescription:
-      'Abbrucharbeiten in Gladbeck: Teilabbruch, Entkernung & Rückbau mit vorgezogener Schadstoffsanierung nach TRGS 519, sortenreiner Trennung und Begleitscheinen.',
+      'Abbrucharbeiten in Gladbeck: Teilabbruch, Entkernung und Rückbau mit vorgezogener Schadstoffsanierung nach TRGS 519, sortenrein getrennt.',
     intro:
       'Abbrucharbeiten in Gladbeck betreffen meist den Bestand der Bergbau- und Wachstumsjahre bis Anfang der 1990er – von den Bergarbeiterzeilen in Brauck und Zweckel über den Wiederaufbauwohnbau in Butendorf und Ellinghorst bis zu Gewerbe- und Hallenflächen aus der Strukturwandel-Ära. Vor jedem Rückbau steht die Schadstofferkundung: In Gebäuden vor 1995 sind Asbest, künstliche Mineralfasern (KMF), PAK und PCB verbreitet und müssen vorab fachgerecht saniert werden. Asbesta plant Teilabbruch, Entkernung und Vollabbruch so, dass belastete Bauteile zuerst raus sind, die Abbruchmassen sortenrein getrennt werden und Statik, Nachbarbebauung sowie Versorgungsleitungen geschützt bleiben. Von unserem Sitz in Marl sind wir in rund 25 Minuten über die A52/B224 in Gladbeck vor Ort.',
     lokalServiceKontext: [
@@ -4469,7 +4469,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'abbrucharbeiten/oberhausen': {
     leistung: 'abbrucharbeiten',
     stadt: 'oberhausen',
-    metaTitle: 'Abbrucharbeiten Oberhausen | Rückbau & Entkernung',
+    metaTitle: 'Abbrucharbeiten Oberhausen | Rückbau | Asbesta',
     metaDescription:
       'Abbrucharbeiten in Oberhausen: Teilabbruch, Rückbau und Entkernung mit vorheriger Schadstofferkundung, Asbestsanierung nach TRGS 519 und sortenreiner.',
     intro:
@@ -4667,7 +4667,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'gelsenkirchen',
     metaTitle: 'Bitumenkleber entfernen Gelsenkirchen | TRGS 519 | Asbesta',
     metaDescription:
-      'Bitumenkleber (Schwarzkleber) in Gelsenkirchen fachgerecht entfernen: oft asbesthaltig, Abtrag nach TRGS 519, Estrich belegreif. Materialprobe & Freimessung.',
+      'Bitumenkleber (Schwarzkleber) in Gelsenkirchen nach TRGS 519 abtragen, Estrich belegreif. Materialprobe und Freimessung. Jetzt anfragen.',
     intro:
       'In vielen Gelsenkirchener Altbauten und im dichten Geschosswohnungsbau von Schalke, Bismarck oder Bulmke-Hüllen liegt unter ausgedienten PVC-, Linoleum- oder Floor-Flex-Belägen eine festhaftende schwarze Restschicht: der sogenannte Bitumen- oder Schwarzkleber. Bis in die 1990er-Jahre wurde dieser Klebebitumen häufig asbesthaltig verarbeitet und bleibt selbst dann auf dem Estrich zurück, wenn der eigentliche Bodenbelag längst entfernt ist. Wird diese Schicht trocken geschliffen, gestemmt oder gefräst, setzt sie lungengängige Asbestfasern frei – deshalb gehört der Abtrag in die Hände eines Fachbetriebs nach TRGS 519. Asbesta aus Marl übernimmt diese Sanierung in Gelsenkirchen im emissionsarmen Verfahren, von der Materialprobe bis zur Freimessung.',
     lokalServiceKontext: [
@@ -4765,7 +4765,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'bitumenkleber-entfernen/oberhausen': {
     leistung: 'bitumenkleber-entfernen',
     stadt: 'oberhausen',
-    metaTitle: 'Bitumenkleber entfernen Oberhausen | TRGS 519',
+    metaTitle: 'Bitumenkleber entfernen Oberhausen | TRGS 519 | Asbesta',
     metaDescription:
       'Bitumenkleber entfernen in Oberhausen: asbesthaltigen Schwarzkleber emissionsarm nach TRGS 519 vom Estrich abnehmen, mit Probe & Freimessung.',
     intro:
@@ -4894,7 +4894,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'fassadenplatten-ausbauen/herten': {
     leistung: 'fassadenplatten-ausbauen',
     stadt: 'herten',
-    metaTitle: 'Fassadenplatten ausbauen Herten | TRGS 519',
+    metaTitle: 'Fassadenplatten ausbauen Herten | TRGS 519 | Asbesta',
     metaDescription:
       'Asbesthaltige Fassadenplatten in Herten fachgerecht ausbauen: emissionsarme Demontage nach TRGS 519, Anzeige bei der Bezirksregierung Münster, Entsorgung mit.',
     intro:
@@ -4959,7 +4959,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'fassadenplatten-ausbauen/gelsenkirchen': {
     leistung: 'fassadenplatten-ausbauen',
     stadt: 'gelsenkirchen',
-    metaTitle: 'Fassadenplatten ausbauen Gelsenkirchen | TRGS 519',
+    metaTitle: 'Fassadenplatten ausbauen Gelsenkirchen | TRGS 519 | Asbesta',
     metaDescription:
       'Asbest-Fassadenplatten (Eternit) in Gelsenkirchen emissionsarm ausbauen: TRGS 519, Anzeige bei der Bezirksregierung Münster, sichere Entsorgung.',
     intro:
@@ -5091,7 +5091,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'fassadenplatten-ausbauen/duesseldorf': {
     leistung: 'fassadenplatten-ausbauen',
     stadt: 'duesseldorf',
-    metaTitle: 'Fassadenplatten ausbauen Düsseldorf | TRGS 519',
+    metaTitle: 'Fassadenplatten ausbauen Düsseldorf | TRGS 519 | Asbesta',
     metaDescription:
       'Asbesthaltige Fassadenplatten in Düsseldorf ausbauen: Fachbetrieb nach TRGS 519, emissionsarme Demontage, Anzeige bei der Bezirksregierung Düsseldorf.',
     intro:
@@ -5221,7 +5221,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'gladbeck',
     metaTitle: 'PAK-Sanierung Gladbeck – Teerkleber & Co. | Asbesta',
     metaDescription:
-      'PAK-Sanierung in Gladbeck: fachgerechter Ausbau von Teerkleber, Teerkork & teerhaltigen Abdichtungen nach TRGS 524/551. Probe, Labor, Entsorgung mit Nachweis.',
+      'PAK-Sanierung in Gladbeck: Teerkleber, Teerkork und teerhaltige Abdichtungen nach TRGS 524/551 ausbauen, mit Labor und Entsorgungsnachweis.',
     intro:
       'In Gladbeck stecken polyzyklische aromatische Kohlenwasserstoffe (PAK) vor allem dort, wo in der Bergbau- und Wiederaufbauzeit Steinkohlenteer verarbeitet wurde – etwa in schwarzen, teerartig riechenden Klebern unter altem Parkett oder Holzpflaster, in teerhaltigen Dachpappen und in Teerkork-Dämmungen. Als Schadstoffsanierer aus dem benachbarten Marl (rund 18 km bzw. 25 Minuten über A52/B224 oder die Hervester Straße) bearbeiten wir solche Belastungen emissionsarm nach TRGS 524 und TRGS 551. Wichtig vorab: PAK ist kein Asbest – es geht nicht um Fasern, sondern um teerhaltige, krebserzeugende Verbindungen, deren Leitparameter Benzo[a]pyren ist. Wir klären per Materialprobe und Laboranalyse, was tatsächlich verbaut ist, und planen den Rückbau so, dass Staub und Ausgasung kontrolliert bleiben.',
     lokalServiceKontext: [
@@ -5414,7 +5414,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'koeln',
     metaTitle: 'PAK-Sanierung Köln – Teerkleber & Co. | Asbesta',
     metaDescription:
-      'PAK-Sanierung in Köln: fachgerechter Ausbau teerhaltiger Parkettkleber, Dachpappen & Teerkork nach TRGS 524/551, mit Laborprobe & Nachweis. Jetzt anfragen.',
+      'PAK-Sanierung in Köln: teerhaltige Parkettkleber, Dachpappen und Teerkork nach TRGS 524/551 ausbauen, mit Laborprobe. Jetzt anfragen.',
     intro:
       'Schwarzer, teerartig riechender Klebstoff unter altem Parkett, brüchige Dachpappen oder Teerkork-Dämmungen – wer in Kölner Altbauten und Nachkriegsbauten saniert, stößt häufig auf polyzyklische aromatische Kohlenwasserstoffe (PAK) aus Steinkohlenteer. Diese teerhaltigen Materialien, vielfach aus Gebäuden vor 1980, enthalten das krebserzeugende Benzo[a]pyren, das beim Anschleifen, Aufstemmen oder thermischen Bearbeiten über Staub und Ausgasung in die Raumluft gelangt. PAK ist dabei kein Asbest: Es geht nicht um Fasern, sondern um teerhaltige Verbindungen, die nach GefStoffV in Verbindung mit TRGS 524 und TRGS 551 emissionsarm ausgebaut und entsorgt werden müssen. Asbesta plant und führt diese Arbeiten als Fachbetrieb von Marl aus auch in Köln durch – mit Materialprobe, Laboranalyse, sortenreiner Entsorgung und durchgängigem Nachweis.',
     lokalServiceKontext: [
@@ -5443,7 +5443,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/recklinghausen': {
     leistung: 'asbestsanierung',
     stadt: 'recklinghausen',
-    metaTitle: 'Asbestsanierung Recklinghausen | TRGS 519 Fachbetrieb',
+    metaTitle: 'Asbestsanierung TRGS 519 Recklinghausen | Asbesta',
     metaDescription:
       'Asbestsanierung in Recklinghausen nach TRGS 519: Schwarzbereich, Unterdruck, Anzeige bei der Bezirksregierung Münster und Freimessung. 15 Min ab Marl. Jetzt.',
     intro:
@@ -5475,7 +5475,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/dorsten': {
     leistung: 'asbestsanierung',
     stadt: 'dorsten',
-    metaTitle: 'Asbestsanierung Dorsten nach TRGS 519 | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Dorsten | Asbesta',
     metaDescription:
       'Asbestsanierung in Dorsten nach TRGS 519: Schwarzbereich, Unterdruck, Anzeige bei der Bezirksregierung Münster und Freimessung. Fachbetrieb ab Marl. Jetzt.',
     intro:
@@ -5508,7 +5508,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/bochum': {
     leistung: 'asbestsanierung',
     stadt: 'bochum',
-    metaTitle: 'Asbestsanierung Bochum nach TRGS 519 | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Bochum | Asbesta',
     metaDescription:
       'Asbestsanierung in Bochum nach TRGS 519: Schwarz-Weiß-Schleuse, Unterdruck, Freimessung. Anzeige bei der Bezirksregierung Arnsberg. Jetzt kostenlos.',
     intro:
@@ -5573,9 +5573,9 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'welleternit-ausbauen/dorsten': {
     leistung: 'welleternit-ausbauen',
     stadt: 'dorsten',
-    metaTitle: 'Welleternit ausbauen Dorsten | Asbest-Wellplatten',
+    metaTitle: 'Welleternit ausbauen Dorsten | Asbest-Wellplatten | Asbesta',
     metaDescription:
-      'Welleternit und Wellasbestplatten in Dorsten ausbauen: Garagen, Schuppen, Hallen, Höfe in Hervest, Wulfen, Lembeck & Rhade. Fachbetrieb nach TRGS 519. Jetzt.',
+      'Welleternit und Wellasbestplatten in Dorsten ausbauen: Garagen, Schuppen, Hallen und Höfe. Fachbetrieb nach TRGS 519. Jetzt anfragen.',
     intro:
       'In Dorsten sitzt asbesthaltiger Welleternit selten im Wohnhaus selbst, sondern auf den grauen Wellplatten-Dächern von Garagen, Schuppen, Hallen und den großen Hofgebäuden im ländlichen Norden. Wir bauen diese Wellasbestplatten als nach TRGS 519 zertifizierter Fachbetrieb zerstörungsfrei aus - ohne sie zu brechen, staubdicht verpackt in zugelassene Big Bags. Von unserem Sitz im benachbarten Marl sind wir über die B225 in rund 15 bis 20 Minuten bei Ihnen vor Ort. Den Ausbau schließen wir mit lückenloser Entsorgung als gefährlicher Abfall (AVV 17 06 05*) und Entsorgungsnachweis ab.',
     lokalServiceKontext: [
@@ -5642,7 +5642,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'recklinghausen',
     metaTitle: 'Floor-Flex entfernen in Recklinghausen | Asbesta',
     metaDescription:
-      'Floor-Flex-Platten und schwarzen Bitumenkleber in Recklinghausen sicher nach TRGS 519 entfernen lassen - Altstadt, Süd, Hillerheide & Zechensiedlungen. Jetzt.',
+      'Floor-Flex-Platten und schwarzen Bitumenkleber in Recklinghausen staubarm nach TRGS 519 entfernen lassen. Jetzt kostenlose Besichtigung anfragen.',
     intro:
       'In Recklinghausen stecken Floor-Flex-Platten und der darunterliegende schwarze Bitumenkleber vor allem in den Zechen- und Arbeitersiedlungen im Süden sowie in den Nachkriegs-Wohnblocks von Hillerheide und Ost. Asbesta hebt Platten und Kleberschicht emissionsarm und staubarm nach TRGS 519 ab, befreit den Estrich rückstandsfrei und gibt ihn belegreif zurück. Da Recklinghausen die direkte Nachbarstadt und zugleich die Kreisstadt unseres eigenen Kreises ist, sind wir vom Sitz in Marl in rund 15 Minuten bei Ihnen vor Ort. Die anzeigepflichtigen Arbeiten melden wir objektbezogen bei der Bezirksregierung Münster an.',
     lokalServiceKontext: [
@@ -5735,7 +5735,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'kmf-sanierung/recklinghausen': {
     leistung: 'kmf-sanierung',
     stadt: 'recklinghausen',
-    metaTitle: 'KMF-Sanierung Recklinghausen | alte Mineralwolle TRGS 521',
+    metaTitle: 'KMF-Sanierung Recklinghausen | Asbesta',
     metaDescription:
       'KMF-Sanierung in Recklinghausen: alte Glas- und Steinwolle aus Dach, Zwischendecke und Trockenbau staubarm ausbauen nach TRGS 521. Ab Marl in 15 Min vor Ort.',
     intro:
@@ -5767,7 +5767,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'kmf-sanierung/dorsten': {
     leistung: 'kmf-sanierung',
     stadt: 'dorsten',
-    metaTitle: 'KMF-Sanierung Dorsten | alte Mineralwolle (TRGS 521)',
+    metaTitle: 'KMF-Sanierung Dorsten | Asbesta',
     metaDescription:
       'KMF-Sanierung in Dorsten: alte Glas- und Steinwolle aus Dach, Zwischendecke und Trockenbau staubarm ausbauen nach TRGS 521. Ab Marl in 15-20 Min vor Ort.',
     intro:
@@ -5800,9 +5800,9 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'kmf-sanierung/bochum': {
     leistung: 'kmf-sanierung',
     stadt: 'bochum',
-    metaTitle: 'KMF-Sanierung Bochum | alte Mineralwolle TRGS 521',
+    metaTitle: 'KMF-Sanierung Bochum | alte Mineralwolle TRGS 521 | Asbesta',
     metaDescription:
-      'KMF-Sanierung in Bochum: alte Glas- & Steinwolle aus Dach, Zwischendecke & Dämmung staubarm ausbauen nach TRGS 521. Fachbetrieb, schnell vor Ort ab Marl.',
+      'KMF-Sanierung in Bochum: alte Glas- und Steinwolle aus Dach und Dämmung staubarm nach TRGS 521 ausbauen. Jetzt ab Marl anfragen.',
     intro:
       'Alte künstliche Mineralfasern - Glas- und Steinwolle, die vor 2000 ohne RAL-Gütezeichen verbaut wurde - gelten als krebsverdächtig und gehören nach TRGS 521 fachgerecht ausgebaut, nicht einfach herausgerissen. In Bochum steckt diese alte Mineralwolle vor allem in den Dachausbauten und Zwischendecken der dichten Nachkriegs- und Hochschulbauten von der Innenstadt über Wattenscheid bis Querenburg. Asbesta entfernt diese Dämmstoffe staubarm, sortenrein und mit Entsorgungsnachweis. Von unserem Sitz in Marl sind wir über die A43 in rund 30 Minuten bei Ihnen vor Ort.',
     lokalServiceKontext: [
@@ -5868,7 +5868,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'dorsten',
     metaTitle: 'Asbestzement ausbauen in Dorsten | Asbesta TRGS 519',
     metaDescription:
-      'Asbestzement-Bauteile in Dorsten fachgerecht ausbauen: Platten, Rohre, Lüftungskanäle & Blumenkästen nach TRGS 519. Schnell ab Marl, Entsorgung mit Nachweis.',
+      'Asbestzement in Dorsten fachgerecht ausbauen: Platten, Rohre und Kanäle nach TRGS 519, Entsorgung mit Nachweis. Jetzt anfragen.',
     intro:
       'In Dorsten bauen wir fest gebundene Asbestzement-Bauteile als zertifizierter Fachbetrieb emissionsarm nach TRGS 519 aus - von Fassaden- und Wellplatten über Faserzement-Rohre und Lüftungskanäle bis zu Blumenkästen und Schornsteinabdeckungen. Von unserem Firmensitz in Marl sind wir über die B225 in rund 15 bis 20 Minuten und etwa 10 Kilometern bei Ihnen vor Ort. Jedes ausgebaute Bauteil verpacken wir staubdicht und entsorgen es als gefährlichen Abfall mit lückenlosem Nachweis. Welche Faserzement-Bauteile in welchem Dorstener Stadtteil typisch sind, lesen Sie hier.',
     lokalServiceKontext: [
@@ -5931,7 +5931,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'abbrucharbeiten/recklinghausen': {
     leistung: 'abbrucharbeiten',
     stadt: 'recklinghausen',
-    metaTitle: 'Abbrucharbeiten Recklinghausen: Rückbau & Entkernung | Asbesta',
+    metaTitle: 'Abbrucharbeiten Recklinghausen | Rückbau | Asbesta',
     metaDescription:
       'Abbrucharbeiten in Recklinghausen: Rückbau, Teilabbruch & Entkernung mit vorheriger Schadstofferkundung, Asbestsanierung nach TRGS 519 und sortenreiner.',
     intro:
@@ -5966,7 +5966,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'dorsten',
     metaTitle: 'Abbrucharbeiten Dorsten: Rückbau & Entkernung | Asbesta',
     metaDescription:
-      'Abbrucharbeiten in Dorsten: Rückbau, Teilabbruch & Entkernung mit vorheriger Schadstofferkundung. Asbest nach TRGS 519, sortenreine Trennung. Jetzt anfragen.',
+      'Abbruch, Teilabbruch und Entkernung in Dorsten mit vorheriger Schadstofferkundung, Asbest nach TRGS 519. Jetzt anfragen.',
     intro:
       'Abbrucharbeiten in Dorsten planen wir konsequent vom Schadstoff her: Bevor in einem Zechenhaus in Hervest, einem Großtafelbau in Wulfen oder einem Hof im ländlichen Norden ein Bauteil fällt, steht die Erkundung auf Asbest, KMF, PAK und PCB. Belastete Bauteile sanieren wir vorab fachgerecht - asbesthaltige nach TRGS 519 mit Anzeige bei der Bezirksregierung Münster - erst danach beginnt der eigentliche Rückbau. Von unserem Firmensitz in Marl sind wir über die B225 in rund 15 bis 20 Minuten (ca. 10 km) in Dorsten vor Ort, sodass kurzfristige Begehungen von der Altstadt bis Lembeck unkompliziert sind.',
     lokalServiceKontext: [
@@ -6129,7 +6129,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'fassadenplatten-ausbauen/recklinghausen': {
     leistung: 'fassadenplatten-ausbauen',
     stadt: 'recklinghausen',
-    metaTitle: 'Fassadenplatten ausbauen Recklinghausen | TRGS 519',
+    metaTitle: 'Fassadenplatten ausbauen Recklinghausen | TRGS 519 | Asbesta',
     metaDescription:
       'Asbest-Fassadenplatten in Recklinghausen emissionsarm ausbauen: Demontage nach TRGS 519, Anzeige bei der Bezirksregierung Münster, Entsorgung mit Nachweis.',
     intro:
@@ -6229,9 +6229,9 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'pak-sanierung/recklinghausen': {
     leistung: 'pak-sanierung',
     stadt: 'recklinghausen',
-    metaTitle: 'PAK-Sanierung Recklinghausen | Teerkleber & Co. | Asbesta',
+    metaTitle: 'PAK-Sanierung Recklinghausen | Teerkleber und Co. | Asbesta',
     metaDescription:
-      'PAK-Sanierung in Recklinghausen: fachgerechter Ausbau von Teerkleber, Teerpappe & Teerkork nach TRGS 524/551. Probe, Labor & Entsorgung mit Nachweis. Jetzt.',
+      'PAK-Sanierung in Recklinghausen: Ausbau von Teerkleber, Teerpappe und Teerkork nach TRGS 524/551, Entsorgung mit Nachweis. Jetzt anfragen.',
     intro:
       'In Recklinghausen, der Kreisstadt unseres eigenen Kreises, sind polyzyklische aromatische Kohlenwasserstoffe (PAK) ein typisches Erbe der Bergbaugeschichte: Steinkohlenteer aus den Kokereien der Zechen König Ludwig, General Blumenthal und Recklinghausen II findet sich bis heute als schwarzer, teerartig riechender Klebstoff unter Altparkett, als teerhaltige Dachpappe oder als Teerkork-Dämmung in Gebäuden vor etwa 1980. Wichtig vorab: PAK ist kein Asbest – es handelt sich nicht um Fasern, sondern um teerhaltige, krebserzeugende Verbindungen, deren Leitparameter das Benzo[a]pyren ist. Asbesta mit Sitz im benachbarten Marl, nur rund 8 km bzw. 15 Minuten entfernt, baut diese Belastungen emissionsarm nach TRGS 524 und TRGS 551 aus – mit Materialprobe, Laboranalyse und sortenreiner Entsorgung mit Nachweis. Als direkte Nachbarstadt erreichen wir Recklinghausen mit sehr kurzen Wegen.',
     lokalServiceKontext: [
@@ -6263,7 +6263,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'dorsten',
     metaTitle: 'PAK-Sanierung Dorsten – Teerkleber & Teerpappe | Asbesta',
     metaDescription:
-      'PAK-Sanierung in Dorsten: emissionsarmer Ausbau von Teerkleber, Teerkork & teerhaltigen Dachpappen nach TRGS 524/551. Materialprobe, Labor & Nachweis. Jetzt.',
+      'PAK-Sanierung in Dorsten: emissionsarmer Ausbau von Teerkleber, Teerkork und Dachpappen nach TRGS 524/551. Jetzt anfragen.',
     intro:
       'In Dorsten stecken polyzyklische aromatische Kohlenwasserstoffe (PAK) vor allem dort, wo in der Bergbau- und Wiederaufbauzeit Steinkohlenteer verarbeitet wurde: in schwarzen, teerartig riechenden Klebern unter Altparkett, in teerhaltigen Dachpappen und in Teerkork-Dämmungen aus Gebäuden vor etwa 1980. Als Fachbetrieb mit Sitz im benachbarten Marl – nur rund 10 km bzw. 15 bis 20 Minuten über die B225 entfernt – bauen wir diese Belastungen emissionsarm nach TRGS 524 und TRGS 551 aus. Wichtig vorab: PAK ist kein Asbest – es handelt sich nicht um Fasern, sondern um teerhaltige, krebserzeugende Verbindungen mit dem Leitparameter Benzo[a]pyren. Wir klären per Materialprobe und Laboranalyse, was tatsächlich verbaut ist, und planen den Rückbau so, dass Staub und Ausgasung kontrolliert bleiben.',
     lokalServiceKontext: [
@@ -6296,7 +6296,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'bochum',
     metaTitle: 'PAK-Sanierung Bochum | TRGS 524/551 | Asbesta',
     metaDescription:
-      'PAK-Sanierung in Bochum: emissionsarmer Ausbau teerhaltiger Parkettkleber, Dachpappen & Teerkork nach TRGS 524/551 - mit Laborprobe & Entsorgungsnachweis.',
+      'PAK-Sanierung in Bochum: emissionsarmer Ausbau teerhaltiger Parkettkleber und Dachpappen nach TRGS 524/551, mit Laborprobe. Jetzt anfragen.',
     intro:
       'In Bochum stecken polyzyklische aromatische Kohlenwasserstoffe (PAK) oft genau dort, wo die Stadt ihre Bergbau- und Stahlgeschichte trägt: in schwarzen, teerartig riechenden Klebern unter altem Parkett, in teerhaltigen Dachpappen und in Teerkork-Dämmungen aus Steinkohlenteer. Dieser Teer war im Revier ein billiges Nebenprodukt der heimischen Kokereien und Zechen und wurde bis etwa 1980 großflächig verbaut. Wichtig vorab: PAK ist kein Asbest - es geht nicht um Fasern, sondern um teerhaltige, krebserzeugende Verbindungen mit dem Leitparameter Benzo[a]pyren, die beim Anschleifen, Aufstemmen oder thermischen Bearbeiten als Staub und Ausgasung in die Raumluft gelangen. Asbesta saniert diese pech- und teerhaltigen Baustoffe emissionsarm nach TRGS 524 und TRGS 551, mit Materialprobe, Laborbefund und sortenreiner Entsorgung mit Nachweis - von Marl aus ist Bochum über die A43 in rund 30 Minuten erreichbar.',
     lokalServiceKontext: [
@@ -6327,7 +6327,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/datteln': {
     leistung: 'asbestsanierung',
     stadt: 'datteln',
-    metaTitle: 'Asbestsanierung Datteln nach TRGS 519 | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Datteln | Asbesta',
     metaDescription:
       'Asbestsanierung in Datteln nach TRGS 519: Schwarz-Weiß-Schleuse, Unterdruck, Anzeige bei der Bezirksregierung Münster und Freimessung. 12 Min ab Marl. Jetzt.',
     intro:
@@ -6360,7 +6360,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/haltern': {
     leistung: 'asbestsanierung',
     stadt: 'haltern',
-    metaTitle: 'Asbestsanierung Haltern am See | TRGS 519 Fachbetrieb',
+    metaTitle: 'Asbestsanierung TRGS 519 Haltern am See | Asbesta',
     metaDescription:
       'Asbestsanierung in Haltern am See nach TRGS 519: Schwarzbereich, Unterdruck, Anzeige bei der Bezirksregierung Münster und Freimessung. Ab Marl. Jetzt.',
     intro:
@@ -6393,7 +6393,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/castrop-rauxel': {
     leistung: 'asbestsanierung',
     stadt: 'castrop-rauxel',
-    metaTitle: 'Asbestsanierung Castrop-Rauxel | TRGS 519 Fachbetrieb',
+    metaTitle: 'Asbestsanierung TRGS 519 Castrop-Rauxel | Asbesta',
     metaDescription:
       'Asbestsanierung in Castrop-Rauxel nach TRGS 519: Schwarz-Weiss-Schleuse, Unterdruck, Anzeige bei der Bezirksregierung Münster und Freimessung. Ab Marl. Jetzt.',
     intro:
@@ -6425,7 +6425,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/dortmund': {
     leistung: 'asbestsanierung',
     stadt: 'dortmund',
-    metaTitle: 'Asbestsanierung Dortmund nach TRGS 519 | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Dortmund | Asbesta',
     metaDescription:
       'Asbestsanierung in Dortmund nach TRGS 519: Schwarz-Weiß-Schleuse, Unterdruck, Freimessung. Anzeige bei der Bezirksregierung Arnsberg. Jetzt beraten lassen.',
     intro:
@@ -6457,7 +6457,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'asbestsanierung/duisburg': {
     leistung: 'asbestsanierung',
     stadt: 'duisburg',
-    metaTitle: 'Asbestsanierung Duisburg nach TRGS 519 | Asbesta',
+    metaTitle: 'Asbestsanierung TRGS 519 Duisburg | Asbesta',
     metaDescription:
       'Asbestsanierung in Duisburg nach TRGS 519: Schwarz-Weiß-Schleuse, Unterdruck, Freimessung. Vom Werkssiedlungs-Altbau bis zur Hütten- und Hafenfläche.',
     intro:
@@ -6493,7 +6493,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'datteln',
     metaTitle: 'Welleternit ausbauen in Datteln | Asbesta Fachbetrieb',
     metaDescription:
-      'Wellasbestplatten in Datteln fachgerecht ausbauen: Garagen, Schuppen, Scheunen in Ahsen, Horneburg & Meckinghoven. TRGS 519 Fachbetrieb, Entsorgungsnachweis.',
+      'Wellasbestplatten in Datteln fachgerecht ausbauen: Garagen, Schuppen und Scheunen nach TRGS 519, Entsorgung mit Nachweis. Jetzt anfragen.',
     intro:
       'In Datteln sitzt asbesthaltiger Welleternit vor allem auf Garagen, Schuppen, Scheunen und Hallendächern - von der Nachkriegsbebauung der Stadtmitte bis zu den Höfen in Ahsen, Hagem und Pelkum. Wir bauen diese Wellasbestplatten als Fachbetrieb nach TRGS 519 zerstörungsfrei aus, ohne sie zu brechen, verpacken staubdicht in Big Bags und entsorgen mit lückenlosem Nachweis (AVV 17 06 05*). Als direkte Nachbarstadt von Marl erreichen wir Sie in rund 12 Minuten - die Anzeige der Arbeiten übernehmen wir bei der Bezirksregierung Münster für Sie.',
     lokalServiceKontext: [
@@ -6523,9 +6523,9 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'welleternit-ausbauen/haltern': {
     leistung: 'welleternit-ausbauen',
     stadt: 'haltern',
-    metaTitle: 'Welleternit ausbauen Haltern am See | Wellasbest',
+    metaTitle: 'Welleternit ausbauen Haltern am See | Wellasbest | Asbesta',
     metaDescription:
-      'Welleternit & Wellasbestplatten in Haltern am See ausbauen: Höfe, Scheunen, Garagen, Hallen in Lippramsdorf, Flaesheim, Sythen & Lavesum. Fachbetrieb TRGS.',
+      'Welleternit und Wellasbestplatten in Haltern am See ausbauen: Höfe, Scheunen, Garagen nach TRGS 519. Jetzt anfragen.',
     intro:
       'In Haltern am See sitzt asbesthaltiger Welleternit nur selten im Wohnhaus selbst, sondern vor allem auf den grauen Wellplatten-Dächern von Scheunen, Stallungen, Garagen, Schuppen und Hofgebäuden im ländlichen Münsterland-Umland. Wir bauen diese Wellasbestplatten als nach TRGS 519 zertifizierter Fachbetrieb zerstörungsfrei aus - ohne sie zu brechen, staubdicht verpackt in zugelassene Big Bags. Von unserem Sitz im benachbarten Marl sind wir in rund 18 Minuten bei Ihnen vor Ort. Den Ausbau schließen wir mit lückenloser Entsorgung als gefährlicher Abfall (AVV 17 06 05*) und Entsorgungsnachweis ab.',
     lokalServiceKontext: [
@@ -6556,7 +6556,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'welleternit-ausbauen/castrop-rauxel': {
     leistung: 'welleternit-ausbauen',
     stadt: 'castrop-rauxel',
-    metaTitle: 'Welleternit ausbauen Castrop-Rauxel | Asbestdach',
+    metaTitle: 'Welleternit ausbauen Castrop-Rauxel | Asbestdach | Asbesta',
     metaDescription:
       'Welleternit und Wellasbestplatten in Castrop-Rauxel ausbauen: Garagen, Schuppen, Hallen in Ickern, Habinghorst, Schwerin. Fachbetrieb nach TRGS 519. Jetzt.',
     intro:
@@ -6688,7 +6688,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'haltern',
     metaTitle: 'Floor-Flex entfernen in Haltern am See | Asbesta',
     metaDescription:
-      'Floor-Flex-Platten & schwarzen Bitumenkleber in Haltern am See sicher nach TRGS 519 entfernen lassen - Estrich danach belegreif, Freimessung. Ab Marl 18 Min.',
+      'Floor-Flex-Platten und schwarzen Bitumenkleber in Haltern am See nach TRGS 519 entfernen, Estrich danach belegreif. Jetzt anfragen.',
     intro:
       'Floor-Flex entfernen wir in Haltern am See als nahe gelegener Fachbetrieb - vom Firmensitz in Marl sind wir in rund 18 Minuten bzw. etwa 12 km vor Ort. Die quadratischen Vinyl-Asbest-Bodenplatten und der darunterliegende schwarze Bitumenkleber stecken hier vor allem im Nachkriegs-Wohnbau von Haltern-Mitte und Sythen sowie in modernisierten Hof- und Einfamilienhäusern der Münsterland-Stadtteile. Asbesta hebt Platten und Kleberschicht emissionsarm und staubarm nach TRGS 519 (Sachkunde BT 13) ab und übergibt den Estrich anschließend belegreif. Die anzeigepflichtigen Arbeiten melden wir objektbezogen bei der Bezirksregierung Münster an.',
     lokalServiceKontext: [
@@ -6783,7 +6783,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'duisburg',
     metaTitle: 'Floor-Flex entfernen in Duisburg | Asbesta',
     metaDescription:
-      'Floor-Flex-Platten & schwarzen Bitumenkleber in Duisburg asbestsicher entfernen lassen - Wohnungen, Treppenhäuser, Werkssiedlungen. Fachbetrieb nach TRGS 519.',
+      'Floor-Flex-Platten und schwarzen Bitumenkleber in Duisburg asbestsicher nach TRGS 519 entfernen lassen. Jetzt kostenlose Besichtigung anfragen.',
     intro:
       'In Duisburg stecken Floor-Flex-Platten und der schwarze Bitumenkleber darunter vor allem in den Werks- und Arbeitersiedlungen rund um die Hütten und in den dichten Nachkriegswohnungen - von Marxloh bis Rheinhausen. Asbesta hebt Platten und Kleberrückstand emissionsarm nach TRGS 519 ab und übergibt den Estrich belegreif. Den darunterliegenden Cutback-Kleber entfernen wir grundsätzlich mit, nicht nur den sichtbaren Belag. Vom Firmensitz in Marl sind wir über A52/A42 in rund 40 Minuten in jedem Duisburger Stadtteil.',
     lokalServiceKontext: [
@@ -6814,7 +6814,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'kmf-sanierung/datteln': {
     leistung: 'kmf-sanierung',
     stadt: 'datteln',
-    metaTitle: 'KMF-Sanierung Datteln | alte Mineralwolle TRGS 521',
+    metaTitle: 'KMF-Sanierung Datteln | alte Mineralwolle TRGS 521 | Asbesta',
     metaDescription:
       'KMF-Sanierung in Datteln: alte Glas- und Steinwolle aus Dach, Zwischendecke und Scheune staubarm ausbauen nach TRGS 521. Fachbetrieb aus dem Nachbarort Marl.',
     intro:
@@ -6846,7 +6846,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'kmf-sanierung/haltern': {
     leistung: 'kmf-sanierung',
     stadt: 'haltern',
-    metaTitle: 'KMF-Sanierung Haltern am See | alte Mineralwolle TRGS 521',
+    metaTitle: 'KMF-Sanierung Haltern am See | Asbesta',
     metaDescription:
       'KMF-Sanierung in Haltern am See: alte Glas- und Steinwolle aus Dach, Zwischendecke und Hofgebäude staubarm ausbauen nach TRGS 521. Ab Marl in 18 Min vor Ort.',
     intro:
@@ -6879,7 +6879,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'kmf-sanierung/castrop-rauxel': {
     leistung: 'kmf-sanierung',
     stadt: 'castrop-rauxel',
-    metaTitle: 'KMF-Sanierung Castrop-Rauxel | alte Mineralwolle',
+    metaTitle: 'KMF-Sanierung Castrop-Rauxel | alte Mineralwolle | Asbesta',
     metaDescription:
       'KMF-Sanierung in Castrop-Rauxel: alte Glas- und Steinwolle aus Dach, Zwischendecke und Trockenbau staubarm ausbauen nach TRGS 521. Ab Marl schnell vor Ort.',
     intro:
@@ -6912,7 +6912,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'kmf-sanierung/dortmund': {
     leistung: 'kmf-sanierung',
     stadt: 'dortmund',
-    metaTitle: 'KMF-Sanierung Dortmund | alte Mineralwolle TRGS 521',
+    metaTitle: 'KMF-Sanierung Dortmund | Asbesta',
     metaDescription:
       'KMF-Sanierung in Dortmund: alte Glas- und Steinwolle aus Dach, Zwischendecke und Hallendämmung staubarm ausbauen nach TRGS 521. Fachbetrieb ab Marl. Jetzt.',
     intro:
@@ -6946,7 +6946,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'kmf-sanierung/duisburg': {
     leistung: 'kmf-sanierung',
     stadt: 'duisburg',
-    metaTitle: 'KMF-Sanierung Duisburg | alte Mineralwolle TRGS 521',
+    metaTitle: 'KMF-Sanierung Duisburg | Asbesta',
     metaDescription:
       'KMF-Sanierung in Duisburg: alte Glas- und Steinwolle aus Dach, Zwischendecke und Hallendämmung staubarm ausbauen nach TRGS 521. Fachbetrieb aus Marl. Jetzt.',
     intro:
@@ -7207,9 +7207,9 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'abbrucharbeiten/castrop-rauxel': {
     leistung: 'abbrucharbeiten',
     stadt: 'castrop-rauxel',
-    metaTitle: 'Abbrucharbeiten Castrop-Rauxel | Rückbau mit Schadstoff',
+    metaTitle: 'Abbrucharbeiten Castrop-Rauxel | Asbesta',
     metaDescription:
-      'Abbruch, Teilabbruch & Entkernung in Castrop-Rauxel: vorgeschaltete Schadstofferkundung (Asbest, KMF, PAK, PCB), vorgezogene Sanierung, sortenreiner Rückbau.',
+      'Abbruch und Entkernung in Castrop-Rauxel mit vorgeschalteter Schadstofferkundung (Asbest, KMF, PAK) und sortenreinem Rückbau. Jetzt anfragen.',
     intro:
       'Abbrucharbeiten in Castrop-Rauxel planen wir nicht als reines Niederlegen, sondern als kontrollierten Rückbau mit vorgeschalteter Schadstofferkundung. Gerade im Zechen- und Nachkriegsbestand der Stadt sind Asbest, alte Mineralwolle, PAK-haltige Kleber und PCB-Fugen regelmäßig verbaut und müssen vor dem eigentlichen Abbruch fachgerecht entfernt werden. Asbesta übernimmt von der Erkundung über die vorgezogene Sanierung belasteter Bauteile bis zur sortenreinen Trennung der Abbruchmassen den gesamten Ablauf aus einer Hand. Vom Firmensitz in Marl sind wir nach Castrop-Rauxel in rund 25 Minuten vor Ort.',
     lokalServiceKontext: [
@@ -7240,7 +7240,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'abbrucharbeiten/dortmund': {
     leistung: 'abbrucharbeiten',
     stadt: 'dortmund',
-    metaTitle: 'Abbrucharbeiten Dortmund | Rückbau & TRGS 519',
+    metaTitle: 'Abbrucharbeiten Dortmund | Rückbau & TRGS 519 | Asbesta',
     metaDescription:
       'Abbrucharbeiten in Dortmund: Teilabbruch, Entkernung & Rückbau mit Schadstofferkundung, Asbestsanierung nach TRGS 519 (Bez.-Reg. Arnsberg), sortenrein.',
     intro:
@@ -7273,7 +7273,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'abbrucharbeiten/duisburg': {
     leistung: 'abbrucharbeiten',
     stadt: 'duisburg',
-    metaTitle: 'Abbrucharbeiten Duisburg | Rückbau & Entkernung',
+    metaTitle: 'Abbrucharbeiten Duisburg | Rückbau und Entkernung | Asbesta',
     metaDescription:
       'Abbrucharbeiten in Duisburg: Teilabbruch, Rückbau und Entkernung mit Schadstofferkundung, Asbestsanierung nach TRGS 519 und sortenreiner Trennung.',
     intro:
@@ -7503,7 +7503,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'fassadenplatten-ausbauen/haltern': {
     leistung: 'fassadenplatten-ausbauen',
     stadt: 'haltern',
-    metaTitle: 'Fassadenplatten ausbauen Haltern am See | TRGS 519',
+    metaTitle: 'Fassadenplatten ausbauen Haltern am See | TRGS 519 | Asbesta',
     metaDescription:
       'Asbest-Fassadenplatten in Haltern am See ausbauen: emissionsarme Demontage nach TRGS 519, Anzeige bei der Bezirksregierung Münster, Entsorgung mit Nachweis.',
     intro:
@@ -7537,7 +7537,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'fassadenplatten-ausbauen/castrop-rauxel': {
     leistung: 'fassadenplatten-ausbauen',
     stadt: 'castrop-rauxel',
-    metaTitle: 'Fassadenplatten ausbauen Castrop-Rauxel | TRGS 519',
+    metaTitle: 'Fassadenplatten ausbauen Castrop-Rauxel | TRGS 519 | Asbesta',
     metaDescription:
       'Asbest-Fassadenplatten in Castrop-Rauxel emissionsarm ausbauen: Demontage nach TRGS 519, Anzeige bei der Bezirksregierung Münster, Entsorgung mit Nachweis.',
     intro:
@@ -7603,7 +7603,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
   'fassadenplatten-ausbauen/duisburg': {
     leistung: 'fassadenplatten-ausbauen',
     stadt: 'duisburg',
-    metaTitle: 'Fassadenplatten ausbauen Duisburg | TRGS 519',
+    metaTitle: 'Fassadenplatten ausbauen Duisburg | TRGS 519 | Asbesta',
     metaDescription:
       'Asbesthaltige Fassadenplatten in Duisburg ausbauen: Fachbetrieb nach TRGS 519, emissionsarme Demontage, Anzeige bei der Bezirksregierung Düsseldorf.',
     intro:
@@ -7705,7 +7705,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'castrop-rauxel',
     metaTitle: 'PAK-Sanierung Castrop-Rauxel | Teerkleber | Asbesta',
     metaDescription:
-      'PAK-Sanierung in Castrop-Rauxel: emissionsarmer Ausbau von Teerkleber, Teerpappe & Teerkork nach TRGS 524/551. Materialprobe, Labor & sortenreine Entsorgung.',
+      'PAK-Sanierung in Castrop-Rauxel: emissionsarmer Ausbau von Teerkleber, Teerpappe und Teerkork nach TRGS 524/551. Jetzt anfragen.',
     intro:
       'PAK-Belastungen sind in Castrop-Rauxel ein typisches Erbe der Bergbaustadt: Steinkohlenteer aus den Kokereien der Zechen Erin, Victor und Ickern findet sich bis heute als schwarzer, teerartig riechender Klebstoff unter Altparkett, als teerhaltige Dachpappe oder als Teerkork-Dämmung in Gebäuden vor etwa 1980. Polyzyklische aromatische Kohlenwasserstoffe (PAK) – Leitparameter ist das krebserzeugende Benzo[a]pyren – können beim Anschleifen, Aufstemmen oder thermischen Bearbeiten über Staub und Ausgasung in die Raumluft gelangen. Asbesta mit Sitz im nahen Marl, rund 18 km bzw. 25 Minuten entfernt, übernimmt für Sie den emissionsarmen Ausbau nach TRGS 524 und TRGS 551 – mit Materialprobe, Laboranalyse und sortenreiner Entsorgung mit Nachweis. Wichtig vorab: PAK ist kein Asbest – es handelt sich nicht um Fasern, sondern um teerhaltige, gesundheitsgefährdende Verbindungen.',
     lokalServiceKontext: [
@@ -7737,7 +7737,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'dortmund',
     metaTitle: 'PAK-Sanierung Dortmund | TRGS 524/551 | Asbesta',
     metaDescription:
-      'PAK-Sanierung in Dortmund: emissionsarmer Ausbau teerhaltiger Parkettkleber, Dachpappen & Teerkork nach TRGS 524/551 - mit Laborprobe & Entsorgungsnachweis.',
+      'PAK-Sanierung in Dortmund: emissionsarmer Ausbau teerhaltiger Kleber, Dachpappen und Teerkork nach TRGS 524/551. Jetzt kostenlos anfragen.',
     intro:
       'In Dortmund verbergen sich polyzyklische aromatische Kohlenwasserstoffe (PAK) häufig genau dort, wo die größte Stadt Westfalens ihr Bergbau- und Stahlerbe trägt: in schwarzen, teerartig riechenden Klebern unter altem Parkett, in teerhaltigen Dachpappen und in Teerkork-Dämmungen aus Steinkohlenteer. Dieser Teer fiel im Revier als billiges Nebenprodukt der Zechen und Kokereien an und wurde bis etwa 1980 großflächig verbaut. Wichtig vorab: PAK ist kein Asbest - es geht nicht um Fasern, sondern um teerhaltige, krebserzeugende Verbindungen mit dem Leitparameter Benzo[a]pyren, die beim Anschleifen, Aufstemmen oder thermischen Bearbeiten als Staub und Ausgasung in die Raumluft gelangen. Asbesta saniert diese pech- und teerhaltigen Baustoffe emissionsarm nach TRGS 524 und TRGS 551, mit Materialprobe, Laborbefund und sortenreiner Entsorgung mit Nachweis - von Marl aus ist Dortmund über die A2 und A45 in rund 30 bis 35 Minuten erreichbar.',
     lokalServiceKontext: [

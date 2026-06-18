@@ -7,9 +7,9 @@ import ContactForm from '../components/sections/ContactForm.astro';
 import { site } from '../data/site';
 import { buildBasicPageGraph } from '../lib/schema';
 
-const title = 'Kontakt & kostenlose Anfrage | Asbesta Schadstoffsanierung';
+const title = 'Kontakt und Anfrage | Asbesta Schadstoffsanierung';
 const description =
-  'Kontakt zu Asbesta für Asbest- & Schadstoffsanierung in NRW: Telefon, WhatsApp oder Anfrageformular. Kostenlose Besichtigung, Antwort innerhalb von 24 Stunden.';
+  'Kontakt zu Asbesta für Asbest- und Schadstoffsanierung in NRW: Telefon, WhatsApp oder Formular. Kostenlose Besichtigung, Antwort in 24 Stunden.';
 const origin = Astro.site?.origin ?? 'https://www.asbesta-schadstoffsanierung.de';
 const graph = buildBasicPageGraph(origin, {
   type: 'ContactPage',

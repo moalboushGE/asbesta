@@ -124,7 +124,7 @@ export const neueArtikel: readonly RatgeberArtikel[] = [
     slug: "asbest-versicherung",
     title: "Asbest und Versicherung: Was die Gebäudeversicherung zahlt",
     metaTitle: "Asbest & Versicherung: Was zahlt die Police? | Asbesta",
-    metaDescription: "Zahlt die Gebäudeversicherung bei Sturm- oder Brandschaden am Asbestdach? Welche Mehrkosten gedeckt sind, worauf Sie achten und wie Sie den Schaden richtig dokumentieren.",
+    metaDescription: "Zahlt die Gebäudeversicherung bei Sturm- oder Brandschaden am Asbestdach? Was gedeckt ist, worauf Sie achten und wie Sie den Schaden dokumentieren.",
     excerpt: "Nach Sturm, Hagel oder Feuer am Asbestdach stellt sich die Frage: Was übernimmt die Gebäudeversicherung – und was bleibt am Eigentümer hängen? Wir erklären das Grundprinzip, die entscheidende Mehrkostenklausel und wie Sie den Schaden sauber dokumentieren.",
     kategorie: "Ratgeber Asbest",
     datePublished: '2026-06-18',

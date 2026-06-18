@@ -19,7 +19,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
   wuppertal: {
     metaTitle: 'Asbestsanierung Wuppertal | Asbesta',
     metaDescription:
-      'Zertifizierte Asbest- und Schadstoffsanierung in Wuppertal nach TRGS 519. Kostenlose Besichtigung, Materialanalyse und Festpreis. Fachbetrieb aus Marl, ganz NRW.',
+      'Asbest- und Schadstoffsanierung in Wuppertal nach TRGS 519. Asbesta aus Marl: Materialanalyse, sichere Entsorgung, Festpreis nach Besichtigung.',
     heroIntro:
       'Sie planen in Wuppertal eine Sanierung oder einen Umbau und vermuten Asbest oder andere Schadstoffe im Gebäude? Asbesta ist ein zertifizierter Fachbetrieb für Schadstoffsanierung mit Sitz in Marl und in ganz NRW tätig, also auch im Bergischen Land. Wir kommen für die kostenlose Besichtigung zu Ihnen ins Tal der Wupper und sagen Ihnen ehrlich, was wirklich zu tun ist.',
     anfahrt:
@@ -73,7 +73,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
   krefeld: {
     metaTitle: 'Asbestsanierung Krefeld | Asbesta',
     metaDescription:
-      'Asbestsanierung in Krefeld vom zertifizierten Fachbetrieb: Materialanalyse, sichere Entsorgung, TRGS 519. Kostenlose Besichtigung & Festpreis. Jetzt anrufen.',
+      'Asbestsanierung in Krefeld vom Fachbetrieb: Materialanalyse, sichere Entsorgung, TRGS 519. Festpreis nach kostenloser Besichtigung. Jetzt anrufen.',
     heroIntro:
       'Sie suchen einen zertifizierten Fachbetrieb für die Asbest- und Schadstoffsanierung in Krefeld? Asbesta ist von Marl aus in ganz NRW und damit auch am Niederrhein für Sie im Einsatz. Wir arbeiten nach TRGS 519, 521 und 524 – von der Materialanalyse über die fachgerechte Entfernung bis zur dokumentierten Entsorgung.',
     anfahrt:
@@ -399,7 +399,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
   muelheim: {
     metaTitle: 'Asbestsanierung Mülheim an der Ruhr | Asbesta',
     metaDescription:
-      'Zertifizierte Asbest- und Schadstoffsanierung in Mülheim an der Ruhr nach TRGS 519. Materialanalyse, sicherer Rückbau und Entsorgung aus einer Hand. Jetzt anfragen.',
+      'Asbest- und Schadstoffsanierung in Mülheim an der Ruhr nach TRGS 519: Materialanalyse, sicherer Rückbau und Entsorgung aus einer Hand. Jetzt anfragen.',
     heroIntro:
       'Sie planen eine Sanierung in Mülheim an der Ruhr und vermuten Asbest oder andere Schadstoffe im Gebäude? Asbesta ist Ihr zertifizierter Fachbetrieb für Schadstoffsanierung nach TRGS 519 und 524. Wir sitzen in Marl und sind im gesamten Ruhrgebiet unterwegs, auch entlang der Ruhr in Mülheim.',
     anfahrt:
@@ -507,7 +507,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
   remscheid: {
     metaTitle: 'Asbestsanierung Remscheid | Asbesta',
     metaDescription:
-      'Asbestsanierung in Remscheid vom zertifizierten Fachbetrieb: TRGS 519, Materialanalyse, sichere Entsorgung. Kostenlose Besichtigung und Festpreis. Jetzt anfragen.',
+      'Asbestsanierung in Remscheid vom Fachbetrieb: TRGS 519, Materialanalyse, sichere Entsorgung. Festpreis nach kostenloser Besichtigung.',
     heroIntro:
       'Sie suchen einen zertifizierten Fachbetrieb für die Asbest- und Schadstoffsanierung in Remscheid? Asbesta ist in Marl ansässig und in der gesamten Region Bergisches Land tätig - auch in der Werkzeugstadt an der Wupper. Von der Materialanalyse über die fachgerechte Sanierung nach TRGS 519 bis zur dokumentierten Entsorgung erhalten Sie alles aus einer Hand.',
     anfahrt:
@@ -559,7 +559,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   marl: {
-    metaTitle: 'Asbestsanierung Marl | Schadstoffsanierung vor Ort',
+    metaTitle: 'Asbestsanierung Marl | Schadstoffsanierung vor Ort | Asbesta',
     metaDescription:
       'Asbest- & Schadstoffsanierung in Marl direkt von unserem Firmensitz. Zertifiziert nach TRGS 519, dokumentiert und freigemessen.',
     heroIntro:
@@ -613,7 +613,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   herten: {
-    metaTitle: 'Asbestsanierung Herten | Schadstoffsanierung TRGS 519',
+    metaTitle: 'Asbestsanierung Herten | Asbesta',
     metaDescription:
       'Asbest- & Schadstoffsanierung in Herten vom zertifizierten Fachbetrieb (TRGS 519). Direkt aus dem Nachbarort Marl - schnell vor Ort. Jetzt anrufen.',
     heroIntro:
@@ -666,9 +666,9 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   gladbeck: {
-    metaTitle: 'Asbestsanierung Gladbeck | Schadstoffsanierung TRGS 519',
+    metaTitle: 'Asbestsanierung Gladbeck | Asbesta',
     metaDescription:
-      'Asbest- & Schadstoffsanierung in Gladbeck: zertifizierter Fachbetrieb nach TRGS 519, Materialanalyse & Luftmessung. Schnell vor Ort ab Marl. Jetzt anfragen.',
+      'Asbest- und Schadstoffsanierung in Gladbeck nach TRGS 519: Materialanalyse und Luftmessung. Schnell vor Ort ab Marl. Jetzt anfragen.',
     heroIntro:
       'Sie benötigen eine Asbest- oder Schadstoffsanierung in Gladbeck? Asbesta ist Ihr zertifizierter Fachbetrieb nach TRGS 519 für die gesamte Emscher-Lippe-Region und von unserem Sitz im benachbarten Marl in rund 25 Minuten bei Ihnen in Mitte, Brauck, Zweckel oder Rentfort. Von der Materialanalyse über die fachgerechte Demontage bis zur Freimessung nach VDI 3492 übernehmen wir Ihr Projekt sicher und behördenkonform.',
     anfahrt:
@@ -719,7 +719,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   gelsenkirchen: {
-    metaTitle: 'Asbestsanierung Gelsenkirchen | Schadstoffsanierung',
+    metaTitle: 'Asbestsanierung Gelsenkirchen | Asbesta',
     metaDescription:
       'Asbest- & Schadstoffsanierung in Gelsenkirchen: zertifizierter Fachbetrieb nach TRGS 519. Zechensiedlungen, Nachkriegsbau, Gewerbe.',
     heroIntro:
@@ -775,9 +775,9 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   bottrop: {
-    metaTitle: 'Asbestsanierung Bottrop | Schadstoffsanierung TRGS 519',
+    metaTitle: 'Asbestsanierung Bottrop | Asbesta',
     metaDescription:
-      'Asbest- & Schadstoffsanierung in Bottrop: zertifizierter Fachbetrieb nach TRGS 519, Materialanalyse, Abbruch & Luftmessung. Jetzt kostenlos beraten lassen.',
+      'Asbest- und Schadstoffsanierung in Bottrop nach TRGS 519: Materialanalyse, Abbruch und Luftmessung. Jetzt kostenlos beraten lassen.',
     heroIntro:
       'Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Bottrop? Asbesta ist Ihr zertifizierter Fachbetrieb nach TRGS 519 - von der Materialanalyse über die sichere Entfernung bis zur Freimessung nach VDI 3492. Von unserem Sitz in Marl sind wir schnell in ganz Bottrop vor Ort, von der Stadtmitte über Welheim bis ins ländliche Kirchhellen.',
     anfahrt: 'ca. 26 km / 25-30 Min ab unserem Standort Marl (über die A52 bzw. A2)',
@@ -831,7 +831,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   essen: {
-    metaTitle: 'Asbestsanierung Essen | Schadstoffsanierung vom Fachbetrieb',
+    metaTitle: 'Asbestsanierung Essen | Asbesta',
     metaDescription:
       'Asbest- & Schadstoffsanierung in Essen: zertifizierter Fachbetrieb nach TRGS 519. Von Rüttenscheid bis Altenessen - kostenlose Beratung. Jetzt anrufen!',
     heroIntro:
@@ -888,9 +888,9 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   oberhausen: {
-    metaTitle: 'Asbestsanierung Oberhausen | Schadstoffsanierung TRGS 519',
+    metaTitle: 'Asbestsanierung Oberhausen | Asbesta',
     metaDescription:
-      'Asbest- & Schadstoffsanierung in Oberhausen: zertifizierter Fachbetrieb nach TRGS 519. Floor-Flex, Welleternit, Fassadenplatten, Luftanalysen. Jetzt anrufen!',
+      'Asbest- und Schadstoffsanierung in Oberhausen nach TRGS 519: Floor-Flex, Welleternit, Fassadenplatten und Luftanalysen. Jetzt anrufen.',
     heroIntro:
       'Sie brauchen in Oberhausen eine sichere Asbest- oder Schadstoffsanierung? Asbesta ist Ihr nach TRGS 519 zertifizierter Fachbetrieb für Alt-Oberhausen, Sterkrade und Osterfeld - von der Materialanalyse über den fachgerechten Ausbau bis zur Freimessung. Vom nahen Marl aus sind wir schnell vor Ort und kümmern uns um die rechtssichere Abwicklung nach GefStoffV.',
     anfahrt: 'ca. 37 km / rund 30 Min ab unserem Standort Marl (über A52/A2 bzw. A42)',
@@ -945,7 +945,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   duesseldorf: {
-    metaTitle: 'Asbestsanierung Düsseldorf | Schadstoffsanierung vom Fachbetrieb',
+    metaTitle: 'Asbestsanierung Düsseldorf | Asbesta',
     metaDescription:
       'Asbest- & Schadstoffsanierung in Düsseldorf: zertifizierter Fachbetrieb nach TRGS 519, Materialanalyse & Luftmessung.',
     heroIntro:
@@ -1003,7 +1003,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   koeln: {
-    metaTitle: 'Asbestsanierung Köln | Schadstoffsanierung TRGS 519',
+    metaTitle: 'Asbestsanierung Köln | Asbesta',
     metaDescription:
       'Asbest- & Schadstoffsanierung in Köln vom zertifizierten Fachbetrieb (TRGS 519). Materialanalyse, Floor-Flex, Welleternit & Luftmessung. Jetzt anfragen!',
     heroIntro:
@@ -1058,7 +1058,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   recklinghausen: {
-    metaTitle: 'Asbestsanierung Recklinghausen | Schadstoffe TRGS 519',
+    metaTitle: 'Asbestsanierung Recklinghausen | Asbesta',
     metaDescription:
       'Asbest- & Schadstoffsanierung in Recklinghausen vom zertifizierten Fachbetrieb (TRGS 519). Aus der Nachbarstadt Marl in 15 Min vor Ort. Jetzt anfragen.',
     heroIntro:
@@ -1114,9 +1114,9 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   dorsten: {
-    metaTitle: 'Asbestsanierung Dorsten | Schadstoffsanierung TRGS 519',
+    metaTitle: 'Asbestsanierung Dorsten | Asbesta',
     metaDescription:
-      'Asbest- & Schadstoffsanierung in Dorsten vom zertifizierten Fachbetrieb (TRGS 519). Direkt aus Marl - schnell vor Ort in Wulfen, Hervest & Co. Jetzt beraten.',
+      'Asbest- und Schadstoffsanierung in Dorsten nach TRGS 519. Direkt aus Marl, schnell vor Ort in Wulfen, Hervest und Co. Jetzt beraten lassen.',
     heroIntro:
       'Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Dorsten? Asbesta ist Ihr zertifizierter Fachbetrieb nach TRGS 519 - mit Sitz im benachbarten Marl sind wir in rund 15 bis 20 Minuten bei Ihnen vor Ort, ob in der historischen Altstadt, in den Zechensiedlungen von Hervest und Wulfen oder im ländlichen Norden um Lembeck und Rhade. Von der Materialanalyse über die sichere Entfernung bis zur abschließenden Freimessung übernehmen wir alles aus einer Hand.',
     anfahrt:
@@ -1170,9 +1170,9 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   bochum: {
-    metaTitle: 'Asbestsanierung Bochum | Schadstoffsanierung TRGS 519',
+    metaTitle: 'Asbestsanierung Bochum | Asbesta',
     metaDescription:
-      'Asbest- & Schadstoffsanierung in Bochum vom zertifizierten Fachbetrieb (TRGS 519). Materialanalyse, sicherer Rückbau & Freimessung. Schnell vor Ort ab Marl.',
+      'Asbest- und Schadstoffsanierung in Bochum nach TRGS 519: Materialanalyse, sicherer Rückbau und Freimessung. Schnell vor Ort ab Marl.',
     heroIntro:
       'Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Bochum? Asbesta ist Ihr zertifizierter Fachbetrieb nach TRGS 519 - von unserem Sitz im benachbarten Marl sind wir in rund 30 Minuten bei Ihnen, ob in der Innenstadt, in Wattenscheid, Langendreer oder Querenburg. Von der Materialanalyse über den staubdichten Rückbau bis zur Freimessung nach VDI 3492 übernehmen wir Ihr Projekt sicher und behördenkonform aus einer Hand.',
     anfahrt:
@@ -1226,7 +1226,7 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   datteln: {
-    metaTitle: 'Asbestsanierung Datteln | Schadstoffsanierung TRGS 519',
+    metaTitle: 'Asbestsanierung Datteln | Asbesta',
     metaDescription:
       'Asbest- & Schadstoffsanierung in Datteln vom zertifizierten Fachbetrieb (TRGS 519). Aus der Nachbarstadt Marl in 12 Min vor Ort. Jetzt kostenlos anfragen.',
     heroIntro:
@@ -1336,9 +1336,9 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   'castrop-rauxel': {
-    metaTitle: 'Asbestsanierung Castrop-Rauxel | Schadstoffsanierung TRGS 519',
+    metaTitle: 'Asbestsanierung Castrop-Rauxel | Asbesta',
     metaDescription:
-      'Asbest- & Schadstoffsanierung in Castrop-Rauxel vom zertifizierten Fachbetrieb (TRGS 519). Materialanalyse, Freimessung & Entsorgung. Schnell vor Ort ab Marl.',
+      'Asbest- und Schadstoffsanierung in Castrop-Rauxel nach TRGS 519: Materialanalyse, Freimessung und Entsorgung. Schnell vor Ort ab Marl.',
     heroIntro:
       'Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Castrop-Rauxel? Asbesta ist Ihr zertifizierter Fachbetrieb nach TRGS 519 für die ehemalige Bergbaustadt im Kreis Recklinghausen - von unserem Sitz im benachbarten Marl sind wir in rund 25 Minuten bei Ihnen, ob in Castrop-Mitte, Ickern, Habinghorst oder Henrichenburg. Von der Materialprobe über die staubdichte Demontage bis zur Freimessung nach VDI 3492 übernehmen wir Ihr Projekt sicher und behördenkonform aus einer Hand.',
     anfahrt:
@@ -1392,9 +1392,9 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   dortmund: {
-    metaTitle: 'Asbestsanierung Dortmund | Schadstoffsanierung TRGS 519',
+    metaTitle: 'Asbestsanierung Dortmund | Asbesta',
     metaDescription:
-      'Asbest- & Schadstoffsanierung in Dortmund vom zertifizierten Fachbetrieb (TRGS 519): Materialanalyse, sichere Demontage & Freimessung. Ab Marl schnell vor Ort.',
+      'Asbest- und Schadstoffsanierung in Dortmund nach TRGS 519: Materialanalyse, sichere Demontage und Freimessung. Ab Marl schnell vor Ort.',
     heroIntro:
       'Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Dortmund? Asbesta ist Ihr zertifizierter Fachbetrieb nach TRGS 519 für die größte Stadt Westfalens – von unserem Sitz im benachbarten Marl sind wir über die A2/A45 in rund 30 bis 35 Minuten bei Ihnen, ob in der Innenstadt, in Hörde, Aplerbeck oder Eving. Von der Materialprobe über die staubdichte Demontage bis zur Freimessung nach VDI 3492 übernehmen wir Ihr Projekt sicher und behördenkonform.',
     anfahrt:
@@ -1449,9 +1449,9 @@ export const standorteDetail: Record<string, StandortDetail> = {
     ],
   },
   duisburg: {
-    metaTitle: 'Asbestsanierung Duisburg | Schadstoffsanierung TRGS 519',
+    metaTitle: 'Asbestsanierung Duisburg | Asbesta',
     metaDescription:
-      'Asbest- & Schadstoffsanierung in Duisburg: zertifizierter Fachbetrieb nach TRGS 519. Werkssiedlungen, Hütten- & Hafenbestand, Materialanalyse & Luftmessung.',
+      'Asbest- und Schadstoffsanierung in Duisburg nach TRGS 519: Werkssiedlungen und Hafenbestand, Materialanalyse und Luftmessung. Jetzt anfragen.',
     heroIntro:
       'Sie benötigen eine fachgerechte Asbest- oder Schadstoffsanierung in Duisburg? Asbesta ist Ihr nach TRGS 519 zertifizierter Fachbetrieb - von der Materialanalyse über die abgeschottete Sanierung bis zur Freimessung nach VDI 3492. Ob Arbeitersiedlung in Marxloh, Nachkriegsbau in Meiderich oder Gewerbeobjekt am Hafen: Wir arbeiten staubdicht, behördenkonform und übernehmen die komplette Abwicklung für Sie. Von unserem Sitz im nahen Marl sind wir nach rund 40 Minuten Anfahrt bei Ihnen vor Ort.',
     anfahrt:
