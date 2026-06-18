@@ -158,12 +158,42 @@ export const standorte: readonly Standort[] = [
     slug: 'bielefeld',
     name: 'Bielefeld',
     region: 'Ostwestfalen-Lippe',
-    nearby: ['hamm', 'dortmund'],
+    nearby: ['guetersloh', 'herford', 'detmold'],
   },
   {
     slug: 'remscheid',
     name: 'Remscheid',
     region: 'Bergisches Land',
     nearby: ['solingen', 'wuppertal', 'duesseldorf'],
+  },
+  {
+    slug: 'guetersloh',
+    name: 'Gütersloh',
+    region: 'Ostwestfalen-Lippe',
+    nearby: ['bielefeld', 'herford', 'paderborn'],
+  },
+  {
+    slug: 'detmold',
+    name: 'Detmold',
+    region: 'Ostwestfalen-Lippe',
+    nearby: ['bielefeld', 'herford', 'paderborn'],
+  },
+  {
+    slug: 'herford',
+    name: 'Herford',
+    region: 'Ostwestfalen-Lippe',
+    nearby: ['bielefeld', 'guetersloh', 'minden'],
+  },
+  {
+    slug: 'paderborn',
+    name: 'Paderborn',
+    region: 'Ostwestfalen-Lippe',
+    nearby: ['guetersloh', 'detmold', 'bielefeld'],
+  },
+  {
+    slug: 'minden',
+    name: 'Minden',
+    region: 'Ostwestfalen-Lippe',
+    nearby: ['herford', 'bielefeld', 'guetersloh'],
   },
 ];

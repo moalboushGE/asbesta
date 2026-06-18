@@ -1,4 +1,5 @@
 /** Einzigartiger Lokal-Content je Standort (SSOT). Generiert aus dem Content-Workflow. */
+import { owlStandortDetail } from './standorte-owl';
 
 export interface StandortFaq {
   readonly frage: string;
@@ -1505,4 +1506,5 @@ export const standorteDetail: Record<string, StandortDetail> = {
       },
     ],
   },
+  ...owlStandortDetail,
 };
