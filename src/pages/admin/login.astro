@@ -1,0 +1,108 @@
+---
+export const prerender = false;
+import '@fontsource/barlow/400.css';
+import '@fontsource/barlow/600.css';
+import '@fontsource/barlow/900.css';
+import '../../styles/global.css';
+import { Icon } from 'astro-icon/components';
+import { passwordOk, issueToken, COOKIE, MAXAGE_SEC, adminKonfiguriert } from '../../lib/admin-auth';
+
+type Fail = { c: number; until: number };
+const g = globalThis as unknown as { __asbestaLoginFails?: Map<string, Fail> };
+g.__asbestaLoginFails ??= new Map<string, Fail>();
+const fails = g.__asbestaLoginFails;
+
+const konfiguriert = adminKonfiguriert();
+
+async function handleLogin(): Promise<string> {
+  if (!konfiguriert) return 'Server nicht konfiguriert (ADMIN_PASSWORD / ADMIN_SESSION_SECRET fehlen).';
+  // Letzten (rechten) X-Forwarded-For-Eintrag nehmen: den setzt der vertrauenswürdige Railway-Proxy,
+  // er ist – anders als der linke Wert – nicht client-fälschbar.
+  const ip = (Astro.request.headers.get('x-forwarded-for') ?? '').split(',').pop()?.trim() || 'unknown';
+  const rec = fails.get(ip);
+  if (rec && rec.until > Date.now()) return 'Zu viele Fehlversuche. Bitte in einigen Minuten erneut versuchen.';
+  const form = await Astro.request.formData();
+  if (passwordOk(String(form.get('password') ?? ''))) {
+    fails.delete(ip);
+    Astro.cookies.set(COOKIE, issueToken(), {
+      httpOnly: true,
+      secure: (Astro.request.headers.get('x-forwarded-proto') ?? '').includes('https'),
+      sameSite: 'lax',
+      path: '/',
+      maxAge: MAXAGE_SEC,
+    });
+    return '';
+  }
+  const n = (rec?.c ?? 0) + 1;
+  if (fails.size > 5000) fails.clear(); // harte Obergrenze gegen Speicherwachstum
+  fails.set(ip, { c: n, until: n >= 5 ? Date.now() + 15 * 60 * 1000 : 0 });
+  return 'Falsches Passwort.';
+}
+
+let fehler = '';
+if (Astro.request.method === 'POST') {
+  fehler = await handleLogin();
+  if (konfiguriert && fehler === '') return Astro.redirect('/admin/');
+}
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Anmelden · Asbesta Admin</title>
+  </head>
+  <body class="grid min-h-screen place-items-center bg-gray-50 px-4 text-gray-700">
+    <main class="w-full max-w-sm">
+      <div class="mb-6 text-center">
+        <span class="mx-auto grid h-11 w-11 place-items-center rounded-xl bg-ink-900 font-display text-lg font-extrabold text-white">
+          A
+        </span>
+        <h1 class="mt-4 text-2xl">Admin-Anmeldung</h1>
+        <p class="mt-1 text-sm text-gray-500">Interner Bereich – nur für Asbesta.</p>
+      </div>
+
+      <form method="POST" class="rounded-[var(--radius-card)] border border-gray-200 bg-white p-6 shadow-soft">
+        {
+          fehler && (
+            <p class="mb-4 flex items-start gap-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700" role="alert">
+              <Icon name="lucide:triangle-alert" class="mt-0.5 h-4 w-4 shrink-0" />
+              {fehler}
+            </p>
+          )
+        }
+        {/* Verstecktes Username-Feld – nur für Passwort-Manager/A11y; serverseitig ignoriert. */}
+        <input
+          type="text"
+          name="username"
+          value="asbesta-admin"
+          autocomplete="username"
+          class="hidden"
+          tabindex="-1"
+          aria-hidden="true"
+          readonly
+        />
+        <label for="password" class="block text-sm font-semibold text-ink-900">Passwort</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          autocomplete="current-password"
+          autofocus
+          class="mt-2 w-full rounded-lg border border-gray-200 px-3 py-2.5 text-ink-900 outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100"
+        />
+        <button
+          type="submit"
+          class="mt-5 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700"
+        >
+          <Icon name="lucide:log-in" class="h-4 w-4" />
+          Anmelden
+        </button>
+      </form>
+    </main>
+  </body>
+</html>

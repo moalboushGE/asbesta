@@ -15,9 +15,16 @@ export default defineConfig({
   // (eigener Express-Server fuer Security-Header + 301-Redirects + statische Auslieferung, Railway-tauglich).
   output: 'static',
   adapter: node({ mode: 'middleware' }),
+  // CSRF: Astros eingebauter checkOrigin vergleicht gegen url.origin, das im middleware-mode hinter
+  // dem Railway-Proxy fälschlich http statt https ist (TLS am Proxy terminiert) → würde legitime
+  // Form-POSTs (Admin-Login/-Mutationen) mit 403 ablehnen. Der Origin-Check passiert daher explizit
+  // in src/middleware.ts (Origin-Host == Request-Host) zusätzlich zum SameSite=Lax-Session-Cookie.
+  security: { checkOrigin: false },
   integrations: [
     icon(),
     sitemap({
+      // /admin nie in die Sitemap (ist ohnehin on-demand/prerender=false, hier doppelt abgesichert).
+      filter: (page) => !/\/admin(\/|$)/.test(page),
       serialize(item) {
         const path = new URL(item.url).pathname;
         let priority = 0.7;

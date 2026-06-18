@@ -1,0 +1,99 @@
+---
+export const prerender = false;
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import LeadListe from '../../../components/admin/LeadListe.astro';
+import { Icon } from 'astro-icon/components';
+import { listLeads, STATUS, type Lead, type ListFilter } from '../../../lib/leads';
+import { statusMeta } from '../../../lib/admin-format';
+
+const status = Astro.url.searchParams.get('status') ?? '';
+const typ = Astro.url.searchParams.get('typ') ?? '';
+const q = Astro.url.searchParams.get('q') ?? '';
+
+let leads: Lead[] = [];
+let dbFehler = '';
+try {
+  const filter: ListFilter = {};
+  if (status) filter.status = status;
+  if (typ) filter.typ = typ;
+  if (q) filter.q = q;
+  leads = await listLeads(filter);
+} catch (e) {
+  dbFehler = e instanceof Error ? e.message : 'Datenbank nicht erreichbar.';
+}
+
+const statusOptionen = [
+  { v: '', l: 'Offen & erledigt' },
+  { v: 'offen', l: 'Nur offene' },
+  ...STATUS.map((s) => ({ v: s, l: statusMeta(s).label })),
+  { v: 'alle', l: 'Alle (inkl. Spam)' },
+];
+const typOptionen = [
+  { v: '', l: 'Alle Typen' },
+  { v: 'anfrage', l: 'Anfrage' },
+  { v: 'rueckruf', l: 'Rückruf' },
+];
+---
+
+<AdminLayout title="Anfragen" aktiv="anfragen">
+  <div class="flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <h1 class="text-2xl sm:text-3xl">Anfragen</h1>
+      <p class="mt-1 text-sm text-gray-500">{leads.length} {leads.length === 1 ? 'Eintrag' : 'Einträge'}</p>
+    </div>
+    <a
+      href="/api/admin/export.csv"
+      class="inline-flex min-h-11 items-center gap-2 rounded-full border border-gray-200 bg-white px-5 py-2.5 text-sm font-semibold text-ink-900 transition-colors hover:border-red-600 hover:text-red-700"
+    >
+      <Icon name="lucide:download" class="h-4 w-4" />CSV-Export
+    </a>
+  </div>
+
+  <form
+    method="GET"
+    data-admin-filter
+    class="mt-6 grid gap-3 rounded-[var(--radius-card)] border border-gray-200 bg-white p-4 sm:grid-cols-[1fr_auto_auto_auto]"
+  >
+    <label class="relative block">
+      <span class="sr-only">Suche</span>
+      <Icon name="lucide:search" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+      <input
+        type="search"
+        name="q"
+        value={q}
+        placeholder="Name, E-Mail, Telefon, Ort …"
+        class="min-h-11 w-full rounded-lg border border-gray-200 pl-9 pr-3 text-sm text-ink-900 outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100"
+      />
+    </label>
+    <select
+      name="status"
+      class="min-h-11 rounded-lg border border-gray-200 px-3 text-sm text-ink-900 outline-none focus:border-red-600"
+    >
+      {statusOptionen.map((o) => <option value={o.v} selected={status === o.v}>{o.l}</option>)}
+    </select>
+    <select
+      name="typ"
+      class="min-h-11 rounded-lg border border-gray-200 px-3 text-sm text-ink-900 outline-none focus:border-red-600"
+    >
+      {typOptionen.map((o) => <option value={o.v} selected={typ === o.v}>{o.l}</option>)}
+    </select>
+    <button
+      type="submit"
+      class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-ink-900 px-5 text-sm font-semibold text-white transition-colors hover:bg-ink-800"
+    >
+      <Icon name="lucide:filter" class="h-4 w-4" />Filtern
+    </button>
+  </form>
+
+  <div class="mt-5">
+    {
+      dbFehler ? (
+        <p class="rounded-[var(--radius-card)] border border-gray-200 bg-white px-4 py-10 text-center text-sm text-gray-500">
+          Datenbank nicht erreichbar. Bitte DATABASE_URL in Railway prüfen.
+        </p>
+      ) : (
+        <LeadListe leads={leads} leer="Keine Anfragen zu diesem Filter." />
+      )
+    }
+  </div>
+</AdminLayout>

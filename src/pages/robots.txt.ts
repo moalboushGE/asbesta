@@ -20,9 +20,11 @@ export const GET: APIRoute = (context) => {
   const blocks = [
     'User-agent: *',
     'Allow: /',
+    'Disallow: /admin',
     '',
     '# AI-/Retrieval-Crawler ausdruecklich erlaubt',
-    ...AI_BOTS.flatMap((bot) => [`User-agent: ${bot}`, 'Allow: /', '']),
+    // Eigene Gruppe je Bot erbt die *-Regeln NICHT -> Disallow /admin hier wiederholen.
+    ...AI_BOTS.flatMap((bot) => [`User-agent: ${bot}`, 'Allow: /', 'Disallow: /admin', '']),
     `Sitemap: ${origin}/sitemap-index.xml`,
     `# Maschinenlesbare Uebersicht fuer LLMs: ${origin}/llms.txt`,
     '',

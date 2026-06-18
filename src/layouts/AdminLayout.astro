@@ -1,0 +1,74 @@
+---
+// Schlankes Admin-Shell: KEIN Marketing-Header/Footer, KEIN Tracking, noindex.
+// Wiederverwendet Marke (Barlow/Tokens/global.css). Alle Admin-Seiten sind prerender=false.
+import '@fontsource/barlow/400.css';
+import '@fontsource/barlow/600.css';
+import '@fontsource/barlow/700.css';
+import '@fontsource/barlow/900.css';
+import '../styles/global.css';
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  readonly title: string;
+  readonly aktiv?: 'uebersicht' | 'anfragen';
+}
+const { title, aktiv } = Astro.props;
+
+const nav = [
+  { key: 'uebersicht', label: 'Übersicht', href: '/admin/', icon: 'lucide:layout-dashboard' },
+  { key: 'anfragen', label: 'Anfragen', href: '/admin/anfragen/', icon: 'lucide:inbox' },
+] as const;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} · Asbesta Admin</title>
+  </head>
+  <body class="min-h-screen bg-gray-50 text-gray-700">
+    <header class="border-b border-gray-200 bg-ink-900 text-white">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 lg:px-8">
+        <a href="/admin/" class="inline-flex items-center gap-2 font-display text-lg font-extrabold tracking-tight">
+          <span class="grid h-7 w-7 place-items-center rounded-md bg-red-600 text-sm text-white">A</span>
+          Asbesta <span class="font-sans text-sm font-medium text-white/60">Admin</span>
+        </a>
+        <nav class="flex items-center gap-1 text-sm">
+          {
+            nav.map((n) => (
+              <a
+                href={n.href}
+                class:list={[
+                  'inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 transition-colors',
+                  aktiv === n.key ? 'bg-white/15 text-white' : 'text-white/70 hover:bg-white/10 hover:text-white',
+                ]}
+              >
+                <Icon name={n.icon} class="h-4 w-4" />
+                <span class="hidden sm:inline">{n.label}</span>
+              </a>
+            ))
+          }
+          <form method="POST" action="/api/admin/aktion/" class="ml-1">
+            <input type="hidden" name="aktion" value="logout" />
+            <button
+              type="submit"
+              class="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              <Icon name="lucide:log-out" class="h-4 w-4" />
+              <span class="hidden sm:inline">Abmelden</span>
+            </button>
+          </form>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4 py-8 lg:px-8 lg:py-10">
+      <slot />
+    </main>
+
+    <script src="/scripts/admin.js" defer is:inline></script>
+  </body>
+</html>

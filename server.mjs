@@ -67,6 +67,16 @@ app.use((req, res, next) => {
   next();
 });
 
+// 1a) Admin-Bereich: nie indexieren, nie cachen (enthaelt Lead-/Personendaten). Greift auch fuer
+// /api/admin-JSON. Das eigentliche Auth-Gate liegt in der Astro-Middleware (src/middleware.ts).
+app.use((req, res, next) => {
+  if (req.path === '/admin' || req.path.startsWith('/admin/') || req.path.startsWith('/api/admin')) {
+    res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+    res.setHeader('Cache-Control', 'no-store, max-age=0');
+  }
+  next();
+});
+
 // 1b) Cloudflare-Konfigdateien nie oeffentlich ausliefern (auf Railway irrelevant)
 app.use((req, res, next) => {
   const p = stripSlash(req.path);

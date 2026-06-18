@@ -1,0 +1,51 @@
+---
+import { Icon } from 'astro-icon/components';
+import StatusBadge from './StatusBadge.astro';
+import { relativeKurz } from '../../lib/admin-format';
+import type { Lead } from '../../lib/leads';
+
+interface Props {
+  readonly leads: readonly Lead[];
+  readonly leer?: string;
+}
+const { leads, leer = 'Keine Anfragen gefunden.' } = Astro.props;
+---
+
+{
+  leads.length === 0 ? (
+    <p class="rounded-[var(--radius-card)] border border-dashed border-gray-200 bg-white px-4 py-10 text-center text-sm text-gray-500">
+      {leer}
+    </p>
+  ) : (
+    <ul class="divide-y divide-gray-100 overflow-hidden rounded-[var(--radius-card)] border border-gray-200 bg-white">
+      {leads.map((l) => (
+        <li>
+          <a
+            href={`/admin/anfragen/${l.id}/`}
+            class="flex items-center gap-3 px-4 py-3.5 transition-colors hover:bg-gray-50"
+          >
+            <span class="min-w-0 flex-1">
+              <span class="flex flex-wrap items-center gap-2">
+                <span class="truncate font-sans font-semibold text-ink-900">{l.name || '(ohne Namen)'}</span>
+                <StatusBadge status={l.status} />
+                {l.typ === 'rueckruf' && (
+                  <span class="inline-flex items-center gap-1 rounded-full bg-red-50 px-2 py-0.5 text-[11px] font-semibold text-red-700">
+                    <Icon name="lucide:phone-call" class="h-3 w-3" />
+                    Rückruf
+                  </span>
+                )}
+              </span>
+              <span class="mt-0.5 block truncate text-xs text-gray-500">
+                {[l.dienstleistung, l.ort, l.quelle_kanal].filter(Boolean).join(' · ') || '—'}
+              </span>
+            </span>
+            <span class="shrink-0 text-right">
+              <span class="block text-xs text-gray-400">{relativeKurz(l.created_at)}</span>
+              <Icon name="lucide:chevron-right" class="ml-auto mt-1 h-4 w-4 text-gray-300" />
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  )
+}
