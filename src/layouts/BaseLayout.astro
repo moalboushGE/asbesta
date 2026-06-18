@@ -1,8 +1,11 @@
 ---
-import '@fontsource-variable/inter';
-import '@fontsource-variable/fraunces';
-import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
-import frauncesWoff2 from '@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2?url';
+import '@fontsource/barlow/400.css';
+import '@fontsource/barlow/500.css';
+import '@fontsource/barlow/600.css';
+import '@fontsource/barlow/700.css';
+import '@fontsource/barlow/800.css';
+import barlowBody from '@fontsource/barlow/files/barlow-latin-400-normal.woff2?url';
+import barlowHeading from '@fontsource/barlow/files/barlow-latin-800-normal.woff2?url';
 import '../styles/global.css';
 import Header from '../components/patterns/Header.astro';
 import Footer from '../components/patterns/Footer.astro';
@@ -46,8 +49,8 @@ const ogImageIsDefault = !ogImageProp;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preload" href={interWoff2} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={frauncesWoff2} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={barlowBody} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={barlowHeading} as="font" type="font/woff2" crossorigin />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>

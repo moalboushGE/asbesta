@@ -20,6 +20,9 @@ importers:
       '@fontsource-variable/inter':
         specifier: latest
         version: 5.2.8
+      '@fontsource/barlow':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@iconify-json/lucide':
         specifier: latest
         version: 1.2.111
@@ -464,6 +467,9 @@ packages:
 
   '@fontsource-variable/inter@5.2.8':
     resolution: {integrity: sha512-kOfP2D+ykbcX/P3IFnokOhVRNoTozo5/JxhAIVYLpea/UBmCQ/YWPBfWIDuBImXX/15KH+eKh4xpEUyS2sQQGQ==}
+
+  '@fontsource/barlow@5.2.8':
+    resolution: {integrity: sha512-iuFOnY4OI2cd1STrJ3NdJNzWjhcwv6JarmqfdoZzAmz9g0jTVjES86MNbuBxqVR3ydbTEjo4opEl24GXScRM7w==}
 
   '@humanfs/core@0.19.2':
     resolution: {integrity: sha512-UhXNm+CFMWcbChXywFwkmhqjs3PRCmcSa/hfBgLIb7oQ5HNb1wS0icWsGtSAUNgefHeI+eBrA8I1fxmbHsGdvA==}
@@ -3861,6 +3867,8 @@ snapshots:
   '@fontsource-variable/fraunces@5.2.9': {}
 
   '@fontsource-variable/inter@5.2.8': {}
+
+  '@fontsource/barlow@5.2.8': {}
 
   '@humanfs/core@0.19.2':
     dependencies:

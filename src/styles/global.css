@@ -2,14 +2,15 @@
 
 /* Design-Tokens als Single Source of Truth – Marke: Schwarz + Rot + Weiss (Logo). */
 @theme {
-  /* Brand-Rot (Logo-Akzent / CTA) */
-  --color-red-50: #fdeceb;
-  --color-red-100: #fbd5d2;
-  --color-red-300: #f08c84;
-  --color-red-500: #e2231a;
-  --color-red-600: #c81912;
-  --color-red-700: #a8140e;
-  --color-red-800: #7c0e09;
+  /* Brand-Rot – am Logo-Rot (#fd0003) ausgerichtet: kräftig/vivid, aber AA-lesbar
+     (Weiss auf red-600 ~5:1, red-700-Text auf Weiss ~6,5:1). */
+  --color-red-50: #fff0ee;
+  --color-red-100: #ffd7d4;
+  --color-red-300: #f9786f;
+  --color-red-500: #f5000a;
+  --color-red-600: #e00510;
+  --color-red-700: #bf0512;
+  --color-red-800: #8f040d;
 
   /* Ink / Schwarz (Logo-Schwarz – Header, dunkle Sektionen, Overlays) */
   --color-ink-700: #333;
@@ -38,9 +39,9 @@
   --color-danger: #b42318;
   --color-info: #175cd3;
 
-  /* Typografie */
-  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Fraunces Variable', ui-serif, Georgia, 'Times New Roman', serif;
+  /* Typografie – Barlow (wie alte Seite & Logo-Grotesk), Headings schwer (800). */
+  --font-sans: 'Barlow', system-ui, sans-serif;
+  --font-display: 'Barlow', system-ui, sans-serif;
 
   /* Radius */
   --radius-btn: 0.5rem;
@@ -66,9 +67,8 @@
   h3 {
     color: var(--color-ink-900);
     font-family: var(--font-display);
-    font-weight: 600;
-    font-optical-sizing: auto;
-    letter-spacing: -0.01em;
+    font-weight: 800;
+    letter-spacing: -0.02em;
     text-wrap: balance;
   }
 
@@ -118,7 +118,7 @@
 }
 
 @utility shadow-soft-red {
-  box-shadow: 0 18px 46px -20px rgb(168 20 14 / 50%);
+  box-shadow: 0 18px 46px -20px rgb(224 5 16 / 50%);
 }
 
 /* Editorial-Akzentlinie unter der Hero-Headline (waechst einmalig von links auf). */

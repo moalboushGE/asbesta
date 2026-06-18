@@ -25,6 +25,7 @@
     "@astrojs/sitemap": "latest",
     "@fontsource-variable/fraunces": "^5.2.9",
     "@fontsource-variable/inter": "latest",
+    "@fontsource/barlow": "^5.2.8",
     "@iconify-json/lucide": "latest",
     "astro": "latest",
     "astro-icon": "latest",
