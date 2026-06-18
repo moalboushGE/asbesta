@@ -1,6 +1,7 @@
 /** Einzigartiger Combo-Content je Leistung-x-Stadt (SSOT). Generiert aus dem Content-Workflow.
  *  Key = "<leistung-slug>/<stadt-slug>". */
 import { owlKombi } from './standorte-owl';
+import { owlKombiFill } from './standorte-owl-fill';
 import { muensterlandKombi } from './standorte-muensterland';
 
 export interface KombiFaq {
@@ -7801,5 +7802,6 @@ export const kombiDetail: Record<string, KombiDetail> = {
     ],
   },
   ...owlKombi,
+  ...owlKombiFill,
   ...muensterlandKombi,
 };

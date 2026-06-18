@@ -354,6 +354,33 @@
 /pak-sanierung-bocholt                              /leistungen/pak-sanierung/bocholt/          301
 /kmf-sanierung-bocholt                              /leistungen/kmf-sanierung/bocholt/          301
 
+# --- Alt-Schema Root: OWL-Vollmatrix-Ergaenzung (exakte Kombi-Ziele) ---
+/abbrucharbeiten-guetersloh                         /leistungen/abbrucharbeiten/guetersloh/     301
+/asbestzement-ausbauen-guetersloh                   /leistungen/asbestzement-ausbauen/guetersloh/ 301
+/asbesthaltigen-bitumkleber-entfernen-guetersloh    /leistungen/bitumenkleber-entfernen/guetersloh/ 301
+/floorflex-entfernen-guetersloh                     /leistungen/floor-flex-entfernen/guetersloh/ 301
+/pak-sanierung-guetersloh                           /leistungen/pak-sanierung/guetersloh/       301
+/abbrucharbeiten-detmold                            /leistungen/abbrucharbeiten/detmold/        301
+/asbestzement-ausbauen-detmold                      /leistungen/asbestzement-ausbauen/detmold/  301
+/asbesthaltigen-bitumkleber-entfernen-detmold       /leistungen/bitumenkleber-entfernen/detmold/ 301
+/floorflex-entfernen-detmold                        /leistungen/floor-flex-entfernen/detmold/   301
+/pak-sanierung-detmold                              /leistungen/pak-sanierung/detmold/          301
+/abbrucharbeiten-herford                            /leistungen/abbrucharbeiten/herford/        301
+/asbestzement-ausbauen-herford                      /leistungen/asbestzement-ausbauen/herford/  301
+/asbesthaltigen-bitumkleber-entfernen-herford       /leistungen/bitumenkleber-entfernen/herford/ 301
+/floorflex-entfernen-herford                        /leistungen/floor-flex-entfernen/herford/   301
+/pak-sanierung-herford                              /leistungen/pak-sanierung/herford/          301
+/abbrucharbeiten-paderborn                          /leistungen/abbrucharbeiten/paderborn/      301
+/asbestzement-ausbauen-paderborn                    /leistungen/asbestzement-ausbauen/paderborn/ 301
+/asbesthaltigen-bitumkleber-entfernen-paderborn     /leistungen/bitumenkleber-entfernen/paderborn/ 301
+/floorflex-entfernen-paderborn                      /leistungen/floor-flex-entfernen/paderborn/ 301
+/pak-sanierung-paderborn                            /leistungen/pak-sanierung/paderborn/        301
+/abbrucharbeiten-minden                             /leistungen/abbrucharbeiten/minden/         301
+/asbestzement-ausbauen-minden                       /leistungen/asbestzement-ausbauen/minden/   301
+/asbesthaltigen-bitumkleber-entfernen-minden        /leistungen/bitumenkleber-entfernen/minden/ 301
+/floorflex-entfernen-minden                         /leistungen/floor-flex-entfernen/minden/    301
+/pak-sanierung-minden                               /leistungen/pak-sanierung/minden/           301
+
 # --- Alt-Schema Long-Tail: alle uebrigen Staedte -> Leistungs-Hub (Splat) ---
 /asbesthaltigen-bitumkleber-entfernen-*             /leistungen/bitumenkleber-entfernen/      301
 /wellternitplatten-ausbauen-*                       /leistungen/welleternit-ausbauen/         301
