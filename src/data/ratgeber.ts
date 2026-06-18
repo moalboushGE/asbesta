@@ -5,6 +5,7 @@ import heroAsbestdach from '../assets/images/leistungen/welleternit-ausbauen.jpg
 import heroErkennen from '../assets/images/leistungen/materialanalyse.jpg';
 import heroBoden from '../assets/images/leistungen/floor-flex-entfernen.jpg';
 import { ratgeberFigure } from './ratgeber-content';
+import { neueArtikel } from './ratgeber-neu';
 
 export interface RatgeberFaq {
   readonly frage: string;
@@ -743,6 +744,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
       },
     ],
   },
+  ...neueArtikel,
 ];
 
 export function getArtikel(slug: string): RatgeberArtikel | undefined {

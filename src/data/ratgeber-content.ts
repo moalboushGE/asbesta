@@ -6,6 +6,7 @@ import { leistungImage } from './images';
 import dachAsbest from '../assets/images/ratgeber/dach-asbestzement.jpg';
 import boden from '../assets/images/ratgeber/boden.jpg';
 import heroDach from '../assets/images/ratgeber/hero-dach.jpg';
+import { neuerContent } from './ratgeber-neu';
 
 export interface TocItem {
   readonly id: string;
@@ -2975,6 +2976,7 @@ export const ratgeberContent: Record<string, RatgeberContent> = {
     ],
   },
   // Wird über den Content-Workflow befüllt. Handgebaute Beiträge bleiben eigene .astro-Dateien.
+  ...neuerContent,
 };
 
 export function getContent(slug: string): RatgeberContent | undefined {

@@ -110,6 +110,30 @@ export const RATGEBER_RELATED: Record<string, readonly string[]> = {
   'asbest-hauskauf': ['asbest-erkennen', 'asbestsanierung-pflicht-kosten-ablauf', 'gefstoffv-novelle-2024'],
   'gefstoffv-novelle-2024': ['asbestsanierung-pflicht-kosten-ablauf', 'asbest-hauskauf', 'asbest-entsorgen'],
   'asbest-bodenbelag': ['asbest-putz-fliesenkleber-spachtelmasse', 'asbest-erkennen', 'asbestsanierung-pflicht-kosten-ablauf'],
+  'asbest-mietwohnung-rechte': ['asbest-erkennen', 'asbest-hauskauf', 'asbestsanierung-pflicht-kosten-ablauf'],
+  'asbestdach-vor-photovoltaik': [
+    'asbestdach-foerderung-neues-dach',
+    'asbestdach-entsorgen-kosten-ablauf',
+    'asbest-fassadenplatten-erkennen',
+  ],
+  'asbest-schornstein-ofenrohr-heizung': ['nachtspeicherofen-asbest-entsorgen', 'asbest-erkennen', 'asbest-entsorgen'],
+  'asbest-arbeitsplatz-arbeitgeberpflichten': [
+    'gefstoffv-novelle-2024',
+    'asbestkataster-schadstoffkataster',
+    'asbestsanierung-pflicht-kosten-ablauf',
+  ],
+  'asbest-exposition-sofortmassnahmen': ['asbest-erkennen', 'asbestsanierung-pflicht-kosten-ablauf', 'asbest-entsorgen'],
+  'asbestkataster-schadstoffkataster': [
+    'gefstoffv-novelle-2024',
+    'asbest-arbeitsplatz-arbeitgeberpflichten',
+    'asbest-hauskauf',
+  ],
+  'asbest-wellplatten-gartenhaus-kleinmengen': [
+    'asbestdach-entsorgen-kosten-ablauf',
+    'asbest-entsorgen',
+    'asbestdach-foerderung-neues-dach',
+  ],
+  'asbest-versicherung': ['asbestdach-entsorgen-kosten-ablauf', 'asbest-hauskauf', 'asbestsanierung-pflicht-kosten-ablauf'],
 };
 
 /** Verwandte Ratgeber-Slugs zu einem Beitrag (leer, wenn nicht kuratiert -> Layout-Fallback). */
