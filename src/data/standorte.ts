@@ -196,4 +196,34 @@ export const standorte: readonly Standort[] = [
     region: 'Ostwestfalen-Lippe',
     nearby: ['herford', 'bielefeld', 'guetersloh'],
   },
+  {
+    slug: 'borken',
+    name: 'Borken',
+    region: 'Kreis Borken',
+    nearby: ['bocholt', 'coesfeld', 'ahaus'],
+  },
+  {
+    slug: 'duelmen',
+    name: 'Dülmen',
+    region: 'Kreis Coesfeld',
+    nearby: ['coesfeld', 'haltern', 'marl'],
+  },
+  {
+    slug: 'coesfeld',
+    name: 'Coesfeld',
+    region: 'Kreis Coesfeld',
+    nearby: ['duelmen', 'borken', 'ahaus'],
+  },
+  {
+    slug: 'ahaus',
+    name: 'Ahaus',
+    region: 'Kreis Borken',
+    nearby: ['borken', 'coesfeld', 'bocholt'],
+  },
+  {
+    slug: 'bocholt',
+    name: 'Bocholt',
+    region: 'Kreis Borken',
+    nearby: ['borken', 'ahaus', 'coesfeld'],
+  },
 ];
