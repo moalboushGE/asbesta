@@ -43,3 +43,7 @@ resp-*.png
 zerzifizeirung/
 asbesta-schadstoffsanierung.de-Coverage-*/
 asbesta-schadstoffsanierung.de-Performance-on-Search-*/
+
+# versehentlich abgelegte Screenshots im Root
+/image.png
+/*.png
