@@ -57,9 +57,30 @@ const SECURITY_HEADERS = {
 
 const app = express();
 app.disable('x-powered-by');
+app.set('trust proxy', true);
 
 // gzip/brotli fuer Text-Antworten (HTML/CSS/JS/JSON/SVG) – kleinere Transfers, besseres FCP/LCP.
 app.use(compression());
+
+// 0) Host-/Protokoll-Kanonisierung: apex/http -> https://www (canonical/Sitemap zeigen auf www).
+// NUR die echte Domain wird kanonisiert; Railway-Preview (*.up.railway.app) und localhost bleiben
+// unberuehrt, damit Vorschau & lokale Entwicklung funktionieren. Verhindert Duplicate-Host-Indexierung.
+const CANON_HOST = 'www.asbesta-schadstoffsanierung.de';
+app.use((req, res, next) => {
+  const host = String(req.headers['x-forwarded-host'] || req.headers.host || '')
+    .split(',')[0]
+    .split(':')[0]
+    .trim()
+    .toLowerCase();
+  const proto = String(req.headers['x-forwarded-proto'] || (req.socket.encrypted ? 'https' : 'http'))
+    .split(',')[0]
+    .trim();
+  const istEchteDomain = host === CANON_HOST || host === 'asbesta-schadstoffsanierung.de';
+  if (istEchteDomain && (host !== CANON_HOST || proto !== 'https')) {
+    return res.redirect(301, `https://${CANON_HOST}${req.originalUrl}`);
+  }
+  next();
+});
 
 // 1) Security-Header auf jede Antwort
 app.use((req, res, next) => {

@@ -6,8 +6,8 @@ import Breadcrumb from '../components/patterns/Breadcrumb.astro';
 import Figure from '../components/ui/Figure.astro';
 import CtaSection from '../components/sections/CtaSection.astro';
 import { buildArticleGraph } from '../lib/schema';
-import { leistungenFuerRatgeber } from '../lib/related';
-import { type RatgeberArtikel, ratgeberArtikel } from '../data/ratgeber';
+import { leistungenFuerRatgeber, verwandteRatgeber } from '../lib/related';
+import { type RatgeberArtikel, ratgeberArtikel, getArtikel } from '../data/ratgeber';
 import { leistungen } from '../data/leistungen';
 import { qualifikationen } from '../data/site';
 
@@ -38,19 +38,34 @@ const graph = buildArticleGraph({
   description: artikel.metaDescription,
   path,
   image: heroOg,
+  imageWidth: artikel.heroImage.width,
+  imageHeight: artikel.heroImage.height,
+  kategorie: artikel.kategorie,
   datePublished: artikel.datePublished,
   dateModified: artikel.dateModified,
   author: artikel.author,
   faqs: artikel.faqs,
 });
 
+const aktualisiert =
+  artikel.dateModified && artikel.dateModified !== artikel.datePublished
+    ? new Intl.DateTimeFormat('de-DE', { day: 'numeric', month: 'long', year: 'numeric' }).format(
+        new Date(artikel.dateModified),
+      )
+    : null;
+
 const verwandt = leistungenFuerRatgeber(artikel.slug)
   .slice(0, 3)
   .map((slug) => leistungen.find((l) => l.slug === slug))
   .filter((l) => l !== undefined);
 
-// Weitere Beiträge: aktuelle andere Ratgeber (Array ist neueste-zuerst sortiert).
-const weitereBeitraege = ratgeberArtikel.filter((a) => a.slug !== artikel.slug).slice(0, 3);
+// Weitere Beiträge: thematisch verwandte Ratgeber (Fallback: neueste 3).
+const verwandteSlugs = verwandteRatgeber(artikel.slug);
+const weitereBeitraege = (
+  verwandteSlugs.length > 0
+    ? verwandteSlugs.map((s) => getArtikel(s)).filter((a) => a !== undefined)
+    : ratgeberArtikel.filter((a) => a.slug !== artikel.slug).slice(0, 3)
+).filter((a) => a.slug !== artikel.slug);
 const kernNachweis = qualifikationen[0]?.title ?? 'Sachkunde nach TRGS 519, Anlage 3';
 ---
 
@@ -91,6 +106,14 @@ const kernNachweis = qualifikationen[0]?.title ?? 'Sachkunde nach TRGS 519, Anla
           <time datetime={artikel.datePublished}>{datum}</time>
           <span aria-hidden="true">·</span>
           <span>{artikel.lesezeitMin} min Lesezeit</span>
+          {
+            aktualisiert && (
+              <>
+                <span aria-hidden="true">·</span>
+                <span>Aktualisiert am {aktualisiert}</span>
+              </>
+            )
+          }
         </div>
       </div>
     </header>
@@ -206,6 +229,15 @@ const kernNachweis = qualifikationen[0]?.title ?? 'Sachkunde nach TRGS 519, Anla
           >
             <Icon name="lucide:map-pin" class="h-4 w-4 text-red-600" />
             Asbestsanierung in Ihrer Stadt (NRW)
+          </a>
+        </li>
+        <li>
+          <a
+            href="/wissen/"
+            class="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3.5 py-1.5 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
+          >
+            <Icon name="lucide:book-marked" class="h-4 w-4 text-red-600" />
+            Begriffe &amp; Daten im Wissens-Glossar
           </a>
         </li>
       </ul>

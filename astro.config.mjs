@@ -25,6 +25,13 @@ export default defineConfig({
     sitemap({
       // /admin nie in die Sitemap (ist ohnehin on-demand/prerender=false, hier doppelt abgesichert).
       filter: (page) => !/\/admin(\/|$)/.test(page),
+      // Maschinenlesbare GEO/KI-Endpunkte als eigenstaendige Ressourcen in die Sitemap aufnehmen.
+      customPages: [
+        'https://www.asbesta-schadstoffsanierung.de/facts.json',
+        'https://www.asbesta-schadstoffsanierung.de/entities.json',
+        'https://www.asbesta-schadstoffsanierung.de/llms.txt',
+        'https://www.asbesta-schadstoffsanierung.de/llms-full.txt',
+      ],
       serialize(item) {
         const path = new URL(item.url).pathname;
         let priority = 0.7;
@@ -53,7 +60,7 @@ export default defineConfig({
         }
         // Fester Release-Stempel statt new Date(): sonst springen bei JEDEM Deploy alle lastmod-Werte
         // auf "jetzt" und Google verwirft das Signal. Bei echten Inhaltsupdates manuell anheben.
-        return { ...item, priority, changefreq, lastmod: '2026-06-11T00:00:00+00:00' };
+        return { ...item, priority, changefreq, lastmod: '2026-06-18T00:00:00+00:00' };
       },
     }),
   ],

@@ -71,6 +71,52 @@ export function ratgeberFuer(leistungSlug: string): readonly string[] {
   return RATGEBER_MAP[leistungSlug] ?? DEFAULT_RATGEBER;
 }
 
+/** Themen-Zuordnung Ratgeber -> verwandte Ratgeber (Topical-Cluster statt „immer die neuesten 3"). */
+export const RATGEBER_RELATED: Record<string, readonly string[]> = {
+  'asbest-erkennen': [
+    'asbest-fassadenplatten-erkennen',
+    'asbest-putz-fliesenkleber-spachtelmasse',
+    'asbestsanierung-pflicht-kosten-ablauf',
+  ],
+  'asbestsanierung-pflicht-kosten-ablauf': ['asbest-entsorgen', 'gefstoffv-novelle-2024', 'asbest-hauskauf'],
+  'asbest-entsorgen': [
+    'asbestdach-entsorgen-kosten-ablauf',
+    'mineralwolle-kmf-entsorgen',
+    'asbestsanierung-pflicht-kosten-ablauf',
+  ],
+  'asbest-fassadenplatten-erkennen': [
+    'asbestdach-entsorgen-kosten-ablauf',
+    'asbestdach-foerderung-neues-dach',
+    'asbest-erkennen',
+  ],
+  'spritzasbest-erkennen-sanieren': ['asbest-erkennen', 'asbestsanierung-pflicht-kosten-ablauf', 'asbest-entsorgen'],
+  'asbestdach-foerderung-neues-dach': [
+    'asbestdach-entsorgen-kosten-ablauf',
+    'asbest-fassadenplatten-erkennen',
+    'asbest-entsorgen',
+  ],
+  'asbestdach-entsorgen-kosten-ablauf': [
+    'asbestdach-foerderung-neues-dach',
+    'asbest-fassadenplatten-erkennen',
+    'asbest-entsorgen',
+  ],
+  'nachtspeicherofen-asbest-entsorgen': ['asbest-entsorgen', 'asbest-erkennen', 'asbestsanierung-pflicht-kosten-ablauf'],
+  'asbest-putz-fliesenkleber-spachtelmasse': [
+    'asbest-erkennen',
+    'asbest-bodenbelag',
+    'asbestsanierung-pflicht-kosten-ablauf',
+  ],
+  'mineralwolle-kmf-entsorgen': ['asbest-entsorgen', 'asbest-erkennen', 'gefstoffv-novelle-2024'],
+  'asbest-hauskauf': ['asbest-erkennen', 'asbestsanierung-pflicht-kosten-ablauf', 'gefstoffv-novelle-2024'],
+  'gefstoffv-novelle-2024': ['asbestsanierung-pflicht-kosten-ablauf', 'asbest-hauskauf', 'asbest-entsorgen'],
+  'asbest-bodenbelag': ['asbest-putz-fliesenkleber-spachtelmasse', 'asbest-erkennen', 'asbestsanierung-pflicht-kosten-ablauf'],
+};
+
+/** Verwandte Ratgeber-Slugs zu einem Beitrag (leer, wenn nicht kuratiert -> Layout-Fallback). */
+export function verwandteRatgeber(slug: string): readonly string[] {
+  return RATGEBER_RELATED[slug] ?? [];
+}
+
 /** Reverse: passende Leistungs-Slugs zu einem Ratgeber-Beitrag (aus der gepflegten Kuratierung). */
 export function leistungenFuerRatgeber(ratgeberSlug: string): readonly string[] {
   const treffer = Object.entries(RATGEBER_MAP)

@@ -29,6 +29,11 @@ export interface WissensFaq {
   readonly antwort: string;
 }
 
+export interface Kostenfaktor {
+  readonly faktor: string;
+  readonly einfluss: string;
+}
+
 /** Glossar – Stoffe, Verfahren und Dokumente rund um Asbest- & Schadstoffsanierung. */
 export const definitionen: readonly Definition[] = [
   {
@@ -89,6 +94,7 @@ export const definitionen: readonly Definition[] = [
     term: 'TRGS 519',
     definition:
       'Technische Regeln für Gefahrstoffe „Asbest – Abbruch-, Sanierungs- und Instandhaltungsarbeiten". Sie legen Sachkunde, Schutzmaßnahmen und Anzeigepflichten für Arbeiten an asbesthaltigen Materialien fest.',
+    sameAs: ['https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519'],
     kategorie: 'Dokument',
   },
   {
@@ -116,6 +122,7 @@ export const regelwerke: readonly Regelwerk[] = [
     description:
       'Verbindliche Technische Regel für alle Arbeiten an asbesthaltigen Materialien: Sachkunde, Schutzmaßnahmen, Anzeige- und Dokumentationspflichten.',
     appliesTo: 'Asbest',
+    sameAs: ['https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519'],
   },
   {
     code: 'TRGS 521',
@@ -123,6 +130,7 @@ export const regelwerke: readonly Regelwerk[] = [
     description:
       'Regelt den Schutz vor alten künstlichen Mineralfasern (KMF). Betrifft alte Dämmwolle, nicht Asbest.',
     appliesTo: 'Künstliche Mineralfaser (KMF)',
+    sameAs: ['https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-521'],
   },
   {
     code: 'TRGS 524',
@@ -130,6 +138,7 @@ export const regelwerke: readonly Regelwerk[] = [
     description:
       'Technische Regel für Arbeiten in schadstoffbelasteten Bereichen, etwa bei Bodenkontaminationen oder Altlasten.',
     appliesTo: 'kontaminierte Bereiche',
+    sameAs: ['https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-524'],
   },
   {
     code: 'VDI 3492',
@@ -178,6 +187,17 @@ export const kernfakten: readonly Kernfakt[] = [
     aussage:
       'Nach der Sanierung belegt eine Freimessung der Raumluft nach VDI 3492 die gefahrlose Wiedernutzung der Räume.',
   },
+];
+
+/** Ehrliche Kostenfaktoren (KEINE erfundenen Preise/Ranges – nur belegbare Einflussgrößen).
+ *  Für KI-Antworten auf „Was kostet …?" als strukturierte Faktorenliste. */
+export const kostenfaktoren: readonly Kostenfaktor[] = [
+  { faktor: 'Material', einfluss: 'Floor-Flex, Putz, Welleternit oder Spritzasbest unterscheiden sich stark im Aufwand.' },
+  { faktor: 'Menge / Fläche', einfluss: 'Je größer die zu sanierende Fläche, desto höher Arbeits- und Entsorgungsaufwand.' },
+  { faktor: 'Zugänglichkeit', einfluss: 'Schwer erreichbare Bauteile (Dach, Schacht, enge Räume) erhöhen den Aufwand.' },
+  { faktor: 'Schutzaufwand', einfluss: 'Schwarz-Weiß-Schleuse und Unterdruckhaltung sind bei Faserfreisetzung Pflicht und kostenrelevant.' },
+  { faktor: 'Entsorgungsmenge', einfluss: 'Asbesthaltiger Abfall (AVV 17 06 05*) wird als gefährlicher Abfall mit Nachweis entsorgt.' },
+  { faktor: 'Anzeige & Dokumentation', einfluss: 'Anzeigepflichtige Sanierungen erfordern Behördenanzeige, Freimessung und Schlussdokumentation.' },
 ];
 
 /** Kuratierte Kern-FAQ (kanonischer Wortlaut für den Datensatz – bewusst eigenständig formuliert,

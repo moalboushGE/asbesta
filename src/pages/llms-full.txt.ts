@@ -3,7 +3,7 @@ import { site } from '../data/site';
 import { leistungen } from '../data/leistungen';
 import { leistungenDetail } from '../data/leistungen-detail';
 import { standorte } from '../data/standorte';
-import { definitionen, regelwerke, kernfakten, wissensFaqs } from '../data/wissen';
+import { definitionen, regelwerke, kernfakten, kostenfaktoren, wissensFaqs } from '../data/wissen';
 import { resolveOrigin } from '../lib/origin';
 
 // llms-full.txt: ausfuehrlicher Volltext (Firma + alle Leistungen + Wissensbasis) fuer LLM-Kontext.
@@ -30,6 +30,7 @@ export const GET: APIRoute = (context) => {
     .map((r) => `### ${r.code} — ${r.name}\n${r.description}\nBetrifft: ${r.appliesTo}`)
     .join('\n\n');
   const fakten = kernfakten.map((k) => `- ${k.aussage}`).join('\n');
+  const kosten = kostenfaktoren.map((k) => `- **${k.faktor}**: ${k.einfluss}`).join('\n');
   const faq = wissensFaqs.map((f) => `**${f.frage}**\n${f.antwort}`).join('\n\n');
 
   const md = `# ${site.legalName} — Volltext
@@ -56,6 +57,10 @@ ${regeln}
 ## Kernfakten
 
 ${fakten}
+
+## Kosten (Einflussfaktoren, keine Pauschalpreise)
+
+${kosten}
 
 ## Häufige Fragen (Q&A)
 

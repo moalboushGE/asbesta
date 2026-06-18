@@ -57,7 +57,7 @@ export const standorte: readonly Standort[] = [
     region: 'Rheinland',
     nearby: ['koeln', 'oberhausen', 'essen'],
   },
-  { slug: 'koeln', name: 'Köln', region: 'Rheinland', nearby: ['duesseldorf'] },
+  { slug: 'koeln', name: 'Köln', region: 'Rheinland', nearby: ['duesseldorf', 'neuss', 'aachen'] },
   {
     slug: 'recklinghausen',
     name: 'Recklinghausen',

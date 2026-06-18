@@ -5,7 +5,7 @@ import { leistungenDetail } from '../data/leistungen-detail';
 import { ratgeberArtikel } from '../data/ratgeber';
 import { standorte } from '../data/standorte';
 import { bewertungAggregat, googleReviewsUrl } from '../data/bewertungen';
-import { definitionen, regelwerke, wissenLicense } from '../data/wissen';
+import { definitionen, regelwerke, kernfakten, kostenfaktoren, wissenLicense } from '../data/wissen';
 import { resolveOrigin } from '../lib/origin';
 
 // facts.json: maschinenlesbare Firmenfakten (Single Source of Truth fuer AI-Crawler & Entwickler).
@@ -78,6 +78,17 @@ const regulations = regelwerke.map((r) => ({
   ...(r.sameAs && r.sameAs.length > 0 ? { sameAs: r.sameAs } : {}),
 }));
 
+const keyFacts = kernfakten.map((k) => k.aussage);
+const costFactors = kostenfaktoren.map((k) => ({ factor: k.faktor, influence: k.einfluss }));
+const serviceArea = {
+  region: 'Nordrhein-Westfalen',
+  statement: `Asbesta saniert im gesamten Einzugsgebiet Nordrhein-Westfalen, u. a. in ${standorte
+    .slice(0, 8)
+    .map((s) => s.name)
+    .join(', ')} und weiteren Städten.`,
+  cities: standorte.map((s) => s.name),
+};
+
 export const GET: APIRoute = (context) => {
   const origin = resolveOrigin(context.site);
   const facts = {
@@ -91,6 +102,9 @@ export const GET: APIRoute = (context) => {
     services: leistungen.map((l) => ({ slug: l.slug, name: l.title, summary: l.summary, url: `${origin}/leistungen/${l.slug}/` })),
     glossary,
     regulations,
+    keyFacts,
+    costFactors,
+    serviceArea,
     faq: buildFaq(origin),
     disclaimer:
       'Arbeiten an asbesthaltigen Materialien dürfen in Deutschland nur durch sachkundige Fachbetriebe nach TRGS 519 ausgeführt werden.',

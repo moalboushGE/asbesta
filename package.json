@@ -18,7 +18,11 @@
     "stylelint": "stylelint \"src/**/*.css\"",
     "knip": "knip",
     "check": "pnpm typecheck && pnpm lint && pnpm stylelint",
-    "shoot": "node scripts/shoot.mjs"
+    "shoot": "node scripts/shoot.mjs",
+    "indexnow": "node scripts/indexnow-submit.mjs",
+    "seo:inventory": "node scripts/seo-inventory.mjs",
+    "seo:inspection": "node scripts/gsc-inspection-list.mjs",
+    "seo:links": "node scripts/link-redirect-checker.mjs"
   },
   "dependencies": {
     "@astrojs/node": "^10.1.4",

@@ -5,27 +5,20 @@ import SchemaGraph from '../../components/schema/SchemaGraph.astro';
 import Breadcrumb from '../../components/patterns/Breadcrumb.astro';
 import Figure from '../../components/ui/Figure.astro';
 import { ratgeberArtikel } from '../../data/ratgeber';
-import { breadcrumbNode } from '../../lib/schema';
+import { buildCollectionGraph } from '../../lib/schema';
 
 const title = 'Ratgeber: Asbest & Schadstoffsanierung | Asbesta';
 const description =
   'Fundierte Ratgeber rund um Asbest- und Schadstoffsanierung: Pflichten, Kosten, Ablauf und Praxiswissen vom zertifizierten Fachbetrieb aus NRW.';
 
 const origin = Astro.site?.origin ?? 'https://www.asbesta-schadstoffsanierung.de';
-const graph = [
-  {
-    '@type': 'CollectionPage',
-    '@id': origin + '/ratgeber/',
-    url: origin + '/ratgeber/',
-    name: 'Ratgeber',
-    description,
-    isPartOf: { '@id': origin + '/#organization' },
-  },
-  breadcrumbNode(origin, [
-    { name: 'Start', url: '/' },
-    { name: 'Ratgeber', url: '/ratgeber/' },
-  ]),
-];
+const graph = buildCollectionGraph(origin, {
+  name: 'Ratgeber',
+  crumb: 'Ratgeber',
+  description,
+  path: '/ratgeber/',
+  items: ratgeberArtikel.map((a) => ({ name: a.title, url: origin + '/ratgeber/' + a.slug + '/' })),
+});
 
 const fmt = (iso: string): string =>
   new Intl.DateTimeFormat('de-DE', { day: 'numeric', month: 'long', year: 'numeric' }).format(
@@ -40,7 +33,7 @@ const fmt = (iso: string): string =>
     <div class="mx-auto max-w-6xl px-4 py-12 lg:px-8 lg:py-16">
       <Breadcrumb items={[{ name: 'Start', href: '/' }, { name: 'Ratgeber' }]} />
       <p class="mt-6 text-sm font-semibold uppercase tracking-wider text-red-700">Ratgeber</p>
-      <h1 class="mt-2 text-4xl sm:text-5xl">Wissen rund um Asbest &amp; Schadstoffe</h1>
+      <h1 class="mt-2 text-4xl sm:text-5xl">Ratgeber rund um Asbest &amp; Schadstoffe</h1>
       <p class="mt-5 max-w-2xl text-lg text-gray-700">
         Klar erklärt, fachlich fundiert und aus der Praxis: Pflichten, Kosten und Abläufe rund um die
         Asbest- und Schadstoffsanierung – damit Sie sicher entscheiden können.

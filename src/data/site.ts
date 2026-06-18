@@ -17,6 +17,8 @@ export interface Qualifikation {
   readonly title: string;
   /** Ausstellende Stelle. */
   readonly issuer: string;
+  /** Offizielle URL der ausstellenden Stelle (nur verifizierte Domains – E-E-A-T-Verankerung). */
+  readonly issuerUrl?: string;
   /** Kurze, ehrliche Einordnung (wozu der Nachweis berechtigt). */
   readonly note: string;
   /** ISO-Datum (YYYY-MM-DD), bis wann der Nachweis nachweislich gültig ist – falls zutreffend. */
@@ -41,6 +43,7 @@ export const qualifikationen: readonly Qualifikation[] = [
     id: 'trgs-519-anlage-3',
     title: 'Sachkunde Asbest nach TRGS 519, Anlage 3',
     issuer: 'Haus der Technik e.V., Essen',
+    issuerUrl: 'https://www.hdt.de',
     note: 'Der „große“ Sachkundenachweis für Abbruch-, Sanierungs- und Instandhaltungsarbeiten mit Asbest – von der Bezirksregierung Düsseldorf anerkannt. Durch die Pflicht-Fortbildung 03/2025 verlängert.',
     validUntil: '2031-03-12',
     images: ['trgs-519-anlage-3-erwerb', 'trgs-519-anlage-3-fortbildung'],
@@ -49,6 +52,7 @@ export const qualifikationen: readonly Qualifikation[] = [
     id: 'asbestzement-anlage-4c',
     title: 'Sachkunde Asbestzement & schwach gebundene Asbestprodukte',
     issuer: 'BG BAU – Berufsgenossenschaft der Bauwirtschaft',
+    issuerUrl: 'https://www.bgbau.de',
     note: 'Sachkunde für Arbeiten an Asbestzementprodukten und ASI-Arbeiten geringen Umfangs nach TRGS 519, Anhang I (Anlage 4 C) – anerkannt von der Bezirksregierung Düsseldorf.',
     images: ['asbestzement-anlage-4c'],
   },
@@ -56,6 +60,7 @@ export const qualifikationen: readonly Qualifikation[] = [
     id: 'kontaminierte-bereiche-524',
     title: 'Sachkunde für Arbeiten in kontaminierten Bereichen',
     issuer: 'BG BAU – Berufsgenossenschaft der Bauwirtschaft',
+    issuerUrl: 'https://www.bgbau.de',
     note: 'Sachkunde nach DGUV Regel 101-004 (Anhang 6 A) – erfüllt die Fachkundeanforderungen nach Anlage 2 A/2 B der TRGS 524.',
     images: ['kontaminierte-bereiche-524'],
   },

@@ -1,6 +1,8 @@
 import type { APIRoute } from 'astro';
 import { site } from '../data/site';
 import { leistungen } from '../data/leistungen';
+import { ratgeberArtikel } from '../data/ratgeber';
+import { standorte } from '../data/standorte';
 import { definitionen, regelwerke } from '../data/wissen';
 import { resolveOrigin } from '../lib/origin';
 
@@ -17,6 +19,12 @@ export const GET: APIRoute = (context) => {
     })
     .join('\n');
   const regelLinks = regelwerke.map((r) => `- **${r.code}** – ${r.name}: ${r.description}`).join('\n');
+  const ratgeberLinks = ratgeberArtikel
+    .map((a) => `- [${a.title}](${origin}/ratgeber/${a.slug}/): ${a.excerpt}`)
+    .join('\n');
+  const standortLinks = standorte
+    .map((s) => `- [Asbest- & Schadstoffsanierung in ${s.name}](${origin}/standorte/${s.slug}/)`)
+    .join('\n');
 
   const md = `# ${site.legalName}
 
@@ -41,6 +49,12 @@ ${glossarLinks}
 
 ## Regelwerke
 ${regelLinks}
+
+## Ratgeber
+${ratgeberLinks}
+
+## Standorte
+${standortLinks}
 
 ## Maschinenlesbare Daten
 - [Strukturierte Fakten (JSON)](${origin}/facts.json)

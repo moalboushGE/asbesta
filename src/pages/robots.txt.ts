@@ -26,7 +26,13 @@ export const GET: APIRoute = (context) => {
     // Eigene Gruppe je Bot erbt die *-Regeln NICHT -> Disallow /admin hier wiederholen.
     ...AI_BOTS.flatMap((bot) => [`User-agent: ${bot}`, 'Allow: /', 'Disallow: /admin', '']),
     `Sitemap: ${origin}/sitemap-index.xml`,
-    `# Maschinenlesbare Uebersicht fuer LLMs: ${origin}/llms.txt`,
+    '',
+    '# Maschinenlesbare Daten fuer LLMs/KI (GEO):',
+    `# LLM-Index: ${origin}/llms.txt`,
+    `# LLM-Volltext: ${origin}/llms-full.txt`,
+    `# Strukturierte Fakten (JSON): ${origin}/facts.json`,
+    `# Knowledge Graph (JSON-LD): ${origin}/entities.json`,
+    `# Wissensdatenbank (Dataset): ${origin}/wissen/`,
     '',
   ];
   return new Response(blocks.join('\n'), {

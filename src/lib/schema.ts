@@ -19,6 +19,15 @@ export interface Crumb {
 const ORG_ID = '#organization';
 const PERSON_ID = '#owner';
 
+/** NRW als Servicegebiet inkl. konkreter Einsatzstädte (belegbar aus standorte) – stärkeres Local-Signal. */
+function nrwAreaServed(): Record<string, unknown> {
+  return {
+    '@type': 'AdministrativeArea',
+    name: 'Nordrhein-Westfalen',
+    containsPlace: standorte.map((s) => ({ '@type': 'City', name: s.name })),
+  };
+}
+
 /** Inhaber als Person-Knoten mit echten, nachgewiesenen Qualifikationen (E-E-A-T). */
 function personNode(origin: string): Record<string, unknown> {
   return {
@@ -33,7 +42,7 @@ function personNode(origin: string): Record<string, unknown> {
       '@type': 'EducationalOccupationalCredential',
       name: q.title,
       credentialCategory: 'certification',
-      recognizedBy: { '@type': 'Organization', name: q.issuer },
+      recognizedBy: { '@type': 'Organization', name: q.issuer, ...(q.issuerUrl ? { url: q.issuerUrl } : {}) },
       url: origin + '/ueber-uns/#qualifikationen',
       ...(q.validUntil ? { description: `Gültig bis ${q.validUntil}.` } : {}),
     })),
@@ -73,8 +82,8 @@ function organizationNode(origin: string, opts?: { withReviews?: boolean }): Rec
     knowsLanguage: ['de'],
     telephone,
     email: site.email,
-    image: origin + '/og.png',
-    logo: origin + '/logo.png',
+    image: { '@type': 'ImageObject', url: origin + '/og.png', width: 1200, height: 630 },
+    logo: { '@type': 'ImageObject', url: origin + '/logo.png' },
     address: {
       '@type': 'PostalAddress',
       streetAddress: site.address.street,
@@ -94,7 +103,7 @@ function organizationNode(origin: string, opts?: { withReviews?: boolean }): Rec
       areaServed: 'DE',
       availableLanguage: ['de'],
     },
-    sameAs: [googleReviewsUrl],
+    sameAs: [googleReviewsUrl, site.whatsapp.href],
   };
   // aggregateRating + review NUR wo die echten Rezensionen auch sichtbar sind (Startseite) – Google-Policy.
   if (opts?.withReviews) {
@@ -140,6 +149,7 @@ export function buildCollectionGraph(
   const url = origin + args.path;
   return [
     organizationNode(origin),
+    personNode(origin),
     {
       '@type': 'CollectionPage',
       '@id': url,
@@ -189,10 +199,8 @@ export function buildBasicPageGraph(
   if (args.withPerson) {
     page.about = { '@id': origin + '/' + PERSON_ID };
   }
-  const graph: unknown[] = [organizationNode(origin), page];
-  if (args.withPerson) {
-    graph.push(personNode(origin));
-  }
+  // personNode immer mitgeben: organizationNode referenziert #owner via founder.
+  const graph: unknown[] = [organizationNode(origin), personNode(origin), page];
   graph.push(
     breadcrumbNode(origin, [
       { name: 'Start', url: '/' },
@@ -202,8 +210,8 @@ export function buildBasicPageGraph(
   return graph;
 }
 
-export function faqNode(faqs: readonly FaqItem[]): Record<string, unknown> {
-  return {
+export function faqNode(faqs: readonly FaqItem[], url?: string): Record<string, unknown> {
+  const node: Record<string, unknown> = {
     '@type': 'FAQPage',
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
@@ -211,6 +219,13 @@ export function faqNode(faqs: readonly FaqItem[]): Record<string, unknown> {
       acceptedAnswer: { '@type': 'Answer', text: faq.antwort },
     })),
   };
+  if (url) {
+    node['@id'] = url + '#faq';
+    node.url = url;
+    node.inLanguage = 'de-DE';
+    node.isPartOf = { '@id': url };
+  }
+  return node;
 }
 
 export interface ServiceGraphArgs {
@@ -229,12 +244,14 @@ export function buildServiceGraph(args: ServiceGraphArgs): unknown[] {
     organizationNode(args.origin),
     {
       '@type': 'Service',
+      '@id': url + '#service',
       name: args.title,
       serviceType: args.title,
       description: args.description,
       provider: { '@id': args.origin + '/' + ORG_ID },
-      areaServed: { '@type': 'AdministrativeArea', name: 'Nordrhein-Westfalen' },
+      areaServed: nrwAreaServed(),
       url,
+      mainEntityOfPage: { '@id': url },
     },
     {
       '@type': 'WebPage',
@@ -244,6 +261,7 @@ export function buildServiceGraph(args: ServiceGraphArgs): unknown[] {
       description: args.description,
       inLanguage: 'de-DE',
       isPartOf: { '@id': args.origin + '/' + ORG_ID },
+      mainEntity: { '@id': url + '#service' },
       speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
     },
     personNode(args.origin),
@@ -257,7 +275,7 @@ export function buildServiceGraph(args: ServiceGraphArgs): unknown[] {
     graph.push(howToNode(args.title, args.ablauf));
   }
   if (args.faqs.length > 0) {
-    graph.push(faqNode(args.faqs));
+    graph.push(faqNode(args.faqs, url));
   }
   return graph;
 }
@@ -277,11 +295,14 @@ export function buildLocationGraph(args: LocationGraphArgs): unknown[] {
     organizationNode(args.origin),
     {
       '@type': 'Service',
+      '@id': url + '#service',
       name: `Asbest- und Schadstoffsanierung ${args.city}`,
       serviceType: 'Schadstoffsanierung',
+      description: args.description,
       provider: { '@id': args.origin + '/' + ORG_ID },
       areaServed: { '@type': 'City', name: args.city },
       url,
+      mainEntityOfPage: { '@id': url },
     },
     {
       '@type': 'WebPage',
@@ -291,6 +312,7 @@ export function buildLocationGraph(args: LocationGraphArgs): unknown[] {
       description: args.description,
       inLanguage: 'de-DE',
       isPartOf: { '@id': args.origin + '/' + ORG_ID },
+      mainEntity: { '@id': url + '#service' },
       speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
     },
     personNode(args.origin),
@@ -301,7 +323,7 @@ export function buildLocationGraph(args: LocationGraphArgs): unknown[] {
     ]),
   ];
   if (args.faqs.length > 0) {
-    graph.push(faqNode(args.faqs));
+    graph.push(faqNode(args.faqs, url));
   }
   return graph;
 }
@@ -322,11 +344,14 @@ export function buildServiceLocationGraph(args: ServiceLocationGraphArgs): unkno
     organizationNode(args.origin),
     {
       '@type': 'Service',
+      '@id': url + '#service',
       name: `${args.leistungTitle} ${args.city}`,
       serviceType: args.leistungTitle,
+      description: args.description,
       provider: { '@id': args.origin + '/' + ORG_ID },
       areaServed: { '@type': 'City', name: args.city },
       url,
+      mainEntityOfPage: { '@id': url },
     },
     {
       '@type': 'WebPage',
@@ -336,6 +361,7 @@ export function buildServiceLocationGraph(args: ServiceLocationGraphArgs): unkno
       description: args.description,
       inLanguage: 'de-DE',
       isPartOf: { '@id': args.origin + '/' + ORG_ID },
+      mainEntity: { '@id': url + '#service' },
       speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
     },
     personNode(args.origin),
@@ -347,7 +373,7 @@ export function buildServiceLocationGraph(args: ServiceLocationGraphArgs): unkno
     ]),
   ];
   if (args.faqs.length > 0) {
-    graph.push(faqNode(args.faqs));
+    graph.push(faqNode(args.faqs, url));
   }
   return graph;
 }
@@ -359,6 +385,11 @@ export interface ArticleGraphArgs {
   readonly path: string;
   /** Absolute Bild-URL (z. B. origin + Hero-Pfad). */
   readonly image: string;
+  /** Bildmaße für ein ImageObject (empfohlen für Article-Rich-Results). */
+  readonly imageWidth?: number;
+  readonly imageHeight?: number;
+  /** Rubrik (z. B. „Ratgeber Asbest") -> articleSection. */
+  readonly kategorie?: string;
   /** ISO-Datum (YYYY-MM-DD). */
   readonly datePublished: string;
   readonly dateModified: string;
@@ -376,7 +407,11 @@ export function buildArticleGraph(args: ArticleGraphArgs): unknown[] {
       '@id': url + '#article',
       headline: args.title,
       description: args.description,
-      image: args.image,
+      image:
+        args.imageWidth && args.imageHeight
+          ? { '@type': 'ImageObject', url: args.image, width: args.imageWidth, height: args.imageHeight }
+          : args.image,
+      ...(args.kategorie ? { articleSection: args.kategorie } : {}),
       datePublished: args.datePublished,
       dateModified: args.dateModified,
       author: { '@id': args.origin + '/' + PERSON_ID },
@@ -402,7 +437,7 @@ export function buildArticleGraph(args: ArticleGraphArgs): unknown[] {
     ]),
   ];
   if (args.faqs.length > 0) {
-    graph.push(faqNode(args.faqs));
+    graph.push(faqNode(args.faqs, url));
   }
   return graph;
 }
@@ -506,12 +541,15 @@ export function buildWissenGraph(origin: string): unknown[] {
       inLanguage: 'de-DE',
       isPartOf: { '@id': origin + '/' + ORG_ID },
       about: { '@id': url + '#dataset' },
+      author: { '@id': origin + '/' + PERSON_ID },
+      reviewedBy: { '@id': origin + '/' + PERSON_ID },
+      dateModified: wissenMeta.dateModified,
       speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
     },
     datasetNode(origin),
     definedTermSetNode(origin, definitionen),
     ...definedTermNodes(origin, definitionen),
-    { ...faqNode(wissensFaqs), '@id': url + '#faq', url },
+    faqNode(wissensFaqs, url),
     breadcrumbNode(origin, [
       { name: 'Start', url: '/' },
       { name: 'Wissen', url: '/wissen/' },
@@ -531,7 +569,7 @@ export function buildEntitiesGraph(origin: string): unknown[] {
       serviceType: l.title,
       url: origin + '/leistungen/' + l.slug + '/',
       provider: { '@id': origin + '/' + ORG_ID },
-      areaServed: { '@type': 'AdministrativeArea', name: 'Nordrhein-Westfalen' },
+      areaServed: nrwAreaServed(),
     })),
     definedTermSetNode(origin, definitionen),
     ...definedTermNodes(origin, definitionen),
@@ -544,6 +582,7 @@ export function buildHomeGraph(origin: string): unknown[] {
   const orgId = origin + '/' + ORG_ID;
   return [
     organizationNode(origin, { withReviews: true }),
+    personNode(origin),
     {
       '@type': 'WebSite',
       '@id': origin + '/#website',
