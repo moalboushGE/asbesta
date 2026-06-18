@@ -1,15 +1,14 @@
 // Scroll-Reveal (cross-browser, abhaengigkeitsfrei). Extern -> CSP `script-src 'self'`-konform.
-// Setzt frueh die Klasse `reveal-on` an <html> (verhindert FOUC) und blendet `.reveal`-Elemente
-// per IntersectionObserver gestaffelt ein. Bei prefers-reduced-motion / ohne JS bleibt alles sichtbar.
+// Die FOUC-Klasse `reveal-on` setzt bereits ein synchrones Inline-Snippet im <head> (vor dem Paint);
+// dieses Script wird per defer geladen und blendet `.reveal`-Elemente per IntersectionObserver
+// gestaffelt ein. Bei prefers-reduced-motion / ohne JS bleibt alles sichtbar.
 (function () {
-  var root = document.documentElement;
   try {
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   } catch (e) {
     /* matchMedia nicht verfuegbar -> Inhalte bleiben sichtbar */
     return;
   }
-  root.classList.add('reveal-on');
 
   function setup() {
     var nodes = document.querySelectorAll('.reveal');

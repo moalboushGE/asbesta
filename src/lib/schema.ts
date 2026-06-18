@@ -1,7 +1,7 @@
 import { site, owner, qualifikationen } from '../data/site';
 import { leistungen } from '../data/leistungen';
 import { standorte } from '../data/standorte';
-import { bewertungen, bewertungAggregat, googleReviewsUrl } from '../data/bewertungen';
+import { googleReviewsUrl } from '../data/bewertungen';
 import { definitionen, wissenMeta, wissenLicense, wissensFaqs, type Definition } from '../data/wissen';
 
 /** JSON-LD-Builder (framework-frei, unit-testbar – Plan Kap. 8.1). */
@@ -68,9 +68,12 @@ function howToNode(
 }
 
 /** Vollständiger, sitewide identischer LocalBusiness-Knoten (Entity-Hub für SEO/GEO).
- *  Bewusst OHNE openingHours/priceRange/sameAs – diese erst eintragen, wenn echte Daten
- *  bzw. ein Google-Business-Profil vorliegen (keine erfundenen Angaben). */
-function organizationNode(origin: string, opts?: { withReviews?: boolean }): Record<string, unknown> {
+ *  Bewusst OHNE openingHours/priceRange – diese erst eintragen, wenn echte Daten vorliegen.
+ *  Bewusst OHNE aggregateRating/review am Org-Knoten: Selbst-ausgespielte (aus dem Google-
+ *  Profil aggregierte) Bewertungen sind laut Google-Review-Snippet-Policy nicht stern-fähig
+ *  und ein Risiko für eine manuelle Maßnahme. Die echten Rezensionen bleiben sichtbar auf der
+ *  Startseite gerendert; die Verbindung läuft ehrlich über sameAs auf das Google-Business-Profil. */
+function organizationNode(origin: string): Record<string, unknown> {
   const telephone = site.phone.href.replace('tel:', '');
   const node: Record<string, unknown> = {
     '@type': ['Organization', 'HomeAndConstructionBusiness'],
@@ -105,22 +108,6 @@ function organizationNode(origin: string, opts?: { withReviews?: boolean }): Rec
     },
     sameAs: [googleReviewsUrl, site.whatsapp.href],
   };
-  // aggregateRating + review NUR wo die echten Rezensionen auch sichtbar sind (Startseite) – Google-Policy.
-  if (opts?.withReviews) {
-    node.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: bewertungAggregat.rating,
-      reviewCount: bewertungAggregat.anzahl,
-      bestRating: 5,
-      worstRating: 1,
-    };
-    node.review = bewertungen.map((b) => ({
-      '@type': 'Review',
-      author: { '@type': 'Person', name: b.name },
-      reviewRating: { '@type': 'Rating', ratingValue: b.rating, bestRating: 5 },
-      reviewBody: b.text,
-    }));
-  }
   return node;
 }
 
@@ -581,7 +568,7 @@ export function buildEntitiesGraph(origin: string): unknown[] {
 export function buildHomeGraph(origin: string): unknown[] {
   const orgId = origin + '/' + ORG_ID;
   return [
-    organizationNode(origin, { withReviews: true }),
+    organizationNode(origin),
     personNode(origin),
     {
       '@type': 'WebSite',

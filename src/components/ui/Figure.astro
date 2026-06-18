@@ -3,9 +3,11 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
 /**
- * Einheitlicher Bild-Wrapper um astro:assets <Image>.
+ * Einheitlicher Bild-Wrapper um astro:assets <Image> (WebP, quality-gedrosselt auf 62).
  * Garantiert festes Seitenverhältnis (CLS-sicher), object-cover und Marken-Radius.
  * `priority` markiert das LCP-Bild (eager + fetchpriority high); sonst lazy.
+ * Hinweis: AVIF bewusst NICHT genutzt – bei gleicher quality liefert sharp hier größere
+ * Dateien als WebP (andere Quality-Skala), und Astros <Picture> erlaubt keine per-Format-quality.
  */
 interface Props {
   readonly src: ImageMetadata;
@@ -44,6 +46,8 @@ const {
     alt={alt}
     widths={[...widths]}
     sizes={sizes}
+    format="webp"
+    quality={62}
     loading={priority ? 'eager' : 'lazy'}
     fetchpriority={priority ? 'high' : 'auto'}
     decoding={priority ? 'auto' : 'async'}
