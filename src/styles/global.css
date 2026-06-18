@@ -89,27 +89,52 @@
   }
 }
 
-/* Sanfte Scroll-Reveal-Animation – reine CSS (kein JS), nur bei Browser-Support und ohne reduzierte Bewegung. */
-/* Bewusst nur Transform (kein Opacity-Fade): so bleiben Inhalte fuer Kontrast/Assistive
-   stets sichtbar, auch wenn sie unter der Falz noch nicht „enthuellt" sind. */
-@keyframes reveal-rise {
-  from {
-    transform: translateY(20px);
+/* Scroll-Reveal (sanftes Einblenden + Aufsteigen), gestaffelt via --reveal-delay.
+   Progressive Enhancement: nur wenn das externe public/scripts/reveal.js die Klasse
+   `reveal-on` an <html> setzt, starten Elemente versteckt – sonst (kein JS / reduzierte
+   Bewegung) sind alle Inhalte sofort sichtbar. Cross-Browser (IntersectionObserver). */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-on .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
   }
 
-  to {
-    transform: translateY(0);
+  .reveal-on .reveal.is-visible {
+    opacity: 1;
+    transform: none;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .reveal {
-      animation: reveal-rise linear both;
-      animation-timeline: view();
-      animation-range: entry 0% cover 18%;
-    }
+/* Weiche, leicht warme Tiefe (Marken-„soft"-Look) – als Utility (variant-faehig: hover:shadow-soft). */
+@utility shadow-soft {
+  box-shadow:
+    0 14px 40px -18px rgb(20 20 20 / 25%),
+    0 4px 12px -8px rgb(20 20 20 / 12%);
+}
+
+@utility shadow-soft-red {
+  box-shadow: 0 18px 46px -20px rgb(168 20 14 / 50%);
+}
+
+/* Editorial-Akzentlinie unter der Hero-Headline (waechst einmalig von links auf). */
+@keyframes underline-grow {
+  from {
+    transform: scaleX(0);
   }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.hero-rule {
+  transform-origin: left center;
+  animation: underline-grow 0.8s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* Rendering-Performance auf langen Seiten: nicht sichtbare Bereiche werden uebersprungen. */

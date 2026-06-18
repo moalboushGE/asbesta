@@ -2,7 +2,7 @@
 /** Marken-Button. Default Rot (Marke); Notfall-Variante Signal-Orange. Tap-Target >= 44 px. */
 interface Props {
   readonly href: string;
-  readonly variant?: 'primary' | 'emergency' | 'ghost';
+  readonly variant?: 'primary' | 'emergency' | 'ghost' | 'dark-outline';
   readonly class?: string;
 }
 
@@ -15,6 +15,7 @@ const variants: Record<NonNullable<Props['variant']>, string> = {
   primary: 'bg-red-600 text-white hover:bg-red-700 active:bg-red-800',
   emergency: 'bg-signal-600 text-white hover:bg-signal-500 active:bg-signal-600',
   ghost: 'border border-gray-200 bg-white text-ink-900 hover:border-red-600 hover:text-red-700',
+  'dark-outline': 'border border-white/25 bg-white/5 text-white hover:bg-white/10 hover:border-white/50',
 };
 ---
 

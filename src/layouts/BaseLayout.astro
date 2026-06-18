@@ -59,6 +59,8 @@ const ogImage = `${origin}/og.png`;
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={title} />
     <meta name="theme-color" content="#141414" />
+    {/* Reveal frueh aktivieren (verhindert FOUC); extern -> CSP-konform, winzig & gecacht. */}
+    <script src="/scripts/reveal.js" is:inline></script>
     <slot name="head" />
   </head>
   <body>

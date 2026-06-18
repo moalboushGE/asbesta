@@ -13,12 +13,24 @@ const heroTiles = heroSlugs
 ---
 
 <section class="relative overflow-hidden bg-gradient-to-br from-red-50 via-white to-gray-50">
+  {/* Dekorative, weiche Formen (rein visuell) */}
   <div
-    class="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-24"
+    aria-hidden="true"
+    class="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-red-200/40 blur-3xl"
+  >
+  </div>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute -bottom-40 left-1/3 h-80 w-80 rounded-full bg-red-100/40 blur-3xl"
+  >
+  </div>
+
+  <div
+    class="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 lg:grid-cols-2 lg:gap-14 lg:px-8 lg:py-24"
   >
     <div>
       <p
-        class="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-xs font-semibold text-ink-900 shadow-sm ring-1 ring-gray-200"
+        class="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-xs font-semibold text-ink-900 shadow-soft ring-1 ring-gray-200"
       >
         <span class="relative flex h-2 w-2">
           <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75"></span>
@@ -26,54 +38,70 @@ const heroTiles = heroSlugs
         </span>
         Termine kurzfristig – auch im Notfall
       </p>
-      <h1 class="mt-6 text-5xl leading-[1.03] sm:text-6xl lg:text-7xl">
+      <h1 class="mt-6 text-5xl leading-[1.02] sm:text-6xl lg:text-7xl">
         Asbest? <span class="text-red-600">Wir holen Sie da raus.</span>
       </h1>
+      <div class="hero-rule mt-5 h-1.5 w-24 rounded-full bg-red-600" aria-hidden="true"></div>
       <p class="mt-5 font-display text-2xl text-gray-500 sm:text-3xl">
         Schnell, sicher &amp; professionell saniert.
       </p>
       <p class="mt-6 max-w-xl text-lg text-gray-700">{site.intro}</p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <Button href="/kontakt/" variant="primary">
+        <Button href="/kontakt/" variant="primary" class="shadow-soft-red">
           <Icon name="lucide:clipboard-list" class="h-4 w-4" />Kostenlose Anfrage
         </Button>
         <Button href={site.phone.href} variant="ghost">
           <Icon name="lucide:phone" class="h-4 w-4 text-red-600" />{site.phone.display}
         </Button>
       </div>
-      <div class="mt-6 flex flex-wrap gap-2">
+      <div class="mt-6 flex flex-wrap gap-2.5">
         {
           heroTiles.map((l) => (
             <a
               href={`/leistungen/${l.slug}/`}
-              class="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white/70 px-3.5 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:border-red-300 hover:text-red-700"
+              class="group inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 py-1.5 pl-1.5 pr-4 text-sm font-medium text-gray-700 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-red-300 hover:text-red-700 hover:shadow-soft"
             >
-              <Icon name={l.icon} class="h-4 w-4 text-red-600" />
+              <span class="grid h-7 w-7 place-items-center rounded-full bg-red-50 text-red-700 transition-transform group-hover:scale-110">
+                <Icon name={l.icon} class="h-4 w-4" />
+              </span>
               {l.title}
             </a>
           ))
         }
       </div>
-      <div class="mt-7 flex items-center gap-2 text-sm text-gray-700">
-        <Icon name="lucide:shield-check" class="h-5 w-5 shrink-0 text-red-600" aria-hidden="true" />
-        <span>
-          <span class="font-semibold text-ink-900">Inhabergeführt</span> · zertifiziert nach TRGS 519 ·
-          voll versichert
-        </span>
-      </div>
+      <ul class="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-sm text-gray-700">
+        <li class="inline-flex items-center gap-1.5">
+          <Icon name="lucide:shield-check" class="h-4 w-4 shrink-0 text-red-600" aria-hidden="true" />
+          <span class="font-semibold text-ink-900">Sachkunde nach TRGS 519</span>
+        </li>
+        <li class="inline-flex items-center gap-1.5">
+          <Icon name="lucide:wallet" class="h-4 w-4 shrink-0 text-red-600" aria-hidden="true" />Fairer
+          Festpreis
+        </li>
+        <li class="inline-flex items-center gap-1.5">
+          <Icon name="lucide:clock" class="h-4 w-4 shrink-0 text-red-600" aria-hidden="true" />Antwort
+          in 24 Stunden
+        </li>
+      </ul>
     </div>
 
     <div class="relative">
+      {/* getoentes Panel hinter dem Foto -> Editorial-Ueberlappung */}
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 hidden translate-x-5 translate-y-5 rounded-[var(--radius-card)] bg-gradient-to-br from-red-100 to-red-50 lg:block"
+      >
+      </div>
       <Figure
         src={heroImage.src}
         alt={heroImage.alt}
         aspect="4/3"
         priority
         sizes="(min-width: 1024px) 42vw, 100vw"
-        class="shadow-xl ring-1 ring-black/5"
+        class="shadow-soft ring-1 ring-black/5"
       >
         <div
-          class="absolute bottom-4 left-4 flex items-center gap-3 rounded-[var(--radius-card)] bg-white/95 px-4 py-3 shadow-lg ring-1 ring-gray-200 backdrop-blur"
+          class="absolute bottom-4 left-4 flex items-center gap-3 rounded-[var(--radius-card)] bg-white/95 px-4 py-3 shadow-soft ring-1 ring-gray-200 backdrop-blur"
         >
           <span class="grid h-10 w-10 place-items-center rounded-full bg-red-50 text-red-700">
             <Icon name="lucide:badge-check" class="h-5 w-5" />

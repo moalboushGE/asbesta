@@ -16,17 +16,24 @@ import Figure from '../ui/Figure.astro';
         ablauf.map((s, i) => {
           const img = ablaufImage(i);
           return (
-            <li class="overflow-hidden rounded-[var(--radius-card)] border border-gray-200 bg-white">
-              <Figure
-                src={img.src}
-                alt={img.alt}
-                aspect="4/3"
-                rounded={false}
-                sizes="(min-width: 768px) 18vw, (min-width: 640px) 45vw, 100vw"
-              />
+            <li
+              class="ablauf-step reveal group overflow-hidden rounded-[var(--radius-card)] border border-gray-200 bg-white transition-all hover:-translate-y-1 hover:shadow-soft"
+              style={`--reveal-delay: ${i * 80}ms`}
+            >
+              <div class="relative">
+                <Figure
+                  src={img.src}
+                  alt={img.alt}
+                  aspect="4/3"
+                  rounded={false}
+                  sizes="(min-width: 768px) 18vw, (min-width: 640px) 45vw, 100vw"
+                />
+                <span class="absolute left-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-red-600 font-display text-sm font-bold text-white shadow-soft">
+                  {s.nr}
+                </span>
+              </div>
               <div class="p-5">
-                <span class="font-display text-3xl font-semibold text-red-600">{s.nr}</span>
-                <h3 class="mt-2 font-sans text-base font-semibold text-ink-900">{s.title}</h3>
+                <h3 class="font-sans text-base font-semibold text-ink-900">{s.title}</h3>
                 <p class="mt-1.5 text-sm text-gray-700">{s.text}</p>
               </div>
             </li>
@@ -35,4 +42,13 @@ import Figure from '../ui/Figure.astro';
       }
     </ol>
   </div>
+
+  <style>
+    .ablauf-step :global(img) {
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ablauf-step:hover :global(img) {
+      transform: scale(1.06);
+    }
+  </style>
 </section>

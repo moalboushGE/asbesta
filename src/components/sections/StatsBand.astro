@@ -9,14 +9,25 @@ const stats = [
 ];
 ---
 
-<section aria-label="Kennzahlen" class="border-y border-gray-200 bg-gray-50">
-  <div
-    class="reveal mx-auto grid max-w-6xl grid-cols-2 divide-x divide-y divide-gray-200 lg:grid-cols-4 lg:divide-y-0"
-  >
+<section aria-label="Kennzahlen" class="bg-gray-50">
+  <div class="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-4 py-14 lg:grid-cols-4 lg:px-8">
     {
-      stats.map((s) => (
-        <div class="flex flex-col items-center gap-2 px-4 py-8 text-center">
-          <Icon name={s.icon} class="h-6 w-6 text-red-600" />
+      stats.map((s, i) => (
+        <div
+          class:list={[
+            'reveal flex flex-col items-center gap-3 rounded-[var(--radius-card)] border p-6 text-center transition-all hover:-translate-y-1 hover:shadow-soft',
+            i === 0 ? 'border-red-200 bg-red-50/60' : 'border-gray-200 bg-white',
+          ]}
+          style={`--reveal-delay: ${i * 80}ms`}
+        >
+          <span
+            class:list={[
+              'grid h-12 w-12 place-items-center rounded-full',
+              i === 0 ? 'bg-red-600 text-white' : 'bg-red-50 text-red-700',
+            ]}
+          >
+            <Icon name={s.icon} class="h-6 w-6" />
+          </span>
           <span class="font-display text-3xl font-extrabold text-ink-900 sm:text-4xl">{s.value}</span>
           <span class="text-sm text-gray-700">{s.label}</span>
         </div>

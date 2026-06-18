@@ -4,21 +4,36 @@ import { site } from '../../data/site';
 import Button from '../ui/Button.astro';
 ---
 
-<section id="kontakt" class="bg-ink-900">
-  <div class="reveal mx-auto max-w-6xl px-4 py-16 text-center lg:px-8 lg:py-20">
-    <h2 class="text-3xl text-white sm:text-4xl">Jetzt kostenlose Anfrage stellen</h2>
+<section id="kontakt" class="relative overflow-hidden bg-ink-900">
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-red-600/25 blur-3xl"
+  >
+  </div>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute -bottom-32 right-1/4 h-80 w-80 rounded-full bg-red-700/20 blur-3xl"
+  >
+  </div>
+  <div class="reveal relative mx-auto max-w-6xl px-4 py-16 text-center lg:px-8 lg:py-24">
+    <p class="text-sm font-semibold uppercase tracking-wider text-red-300">
+      Kostenlos &amp; unverbindlich
+    </p>
+    <h2 class="mt-3 text-3xl text-white sm:text-4xl lg:text-5xl">
+      Jetzt <span class="text-red-300">kostenlose Anfrage</span> stellen
+    </h2>
     <p class="mx-auto mt-4 max-w-xl text-white/70">
       {site.responseTime}. Kostenfreie Besichtigung vor Ort, transparenter Festpreis – ohne
       versteckte Kosten.
     </p>
-    <div class="mt-8 flex flex-wrap justify-center gap-3">
-      <Button href="/kontakt/" variant="primary">
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <Button href="/kontakt/" variant="primary" class="shadow-soft-red">
         <Icon name="lucide:clipboard-list" class="h-4 w-4" />Kostenlose Anfrage
       </Button>
-      <Button href={site.phone.href} variant="primary">
+      <Button href={site.phone.href} variant="dark-outline">
         <Icon name="lucide:phone" class="h-4 w-4" />{site.phone.display}
       </Button>
-      <Button href={site.whatsapp.href} variant="primary">
+      <Button href={site.whatsapp.href} variant="dark-outline">
         <Icon name="lucide:message-circle" class="h-4 w-4" />WhatsApp
       </Button>
     </div>

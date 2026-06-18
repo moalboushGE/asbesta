@@ -36,38 +36,50 @@ const punkte = [
         verlassen können.
       </p>
     </div>
-    <div class="mt-10 grid gap-4 md:grid-cols-3">
+    <div class="mt-10 grid gap-5 md:grid-cols-3">
       {
-        punkte.map((p) => (
+        punkte.map((p, i) => (
           <div
             class:list={[
-              'rounded-[var(--radius-card)] p-7',
+              'reveal group relative overflow-hidden rounded-[var(--radius-card)] p-7 transition-all hover:-translate-y-1 hover:shadow-soft',
               p.dark ? 'bg-ink-900 text-white' : 'border border-gray-200 bg-white',
             ]}
+            style={`--reveal-delay: ${i * 90}ms`}
           >
-            <div class="flex items-center justify-between">
-              <span
-                class:list={[
-                  'grid h-11 w-11 place-items-center rounded-lg',
-                  p.dark ? 'bg-white/10 text-red-300' : 'bg-red-50 text-red-700',
-                ]}
-              >
-                <Icon name={p.icon} class="h-6 w-6" />
-              </span>
+            <span
+              aria-hidden="true"
+              class:list={[
+                'pointer-events-none absolute -right-1 -top-5 font-display text-9xl font-extrabold leading-none',
+                p.dark ? 'text-white/10' : 'text-red-600/10',
+              ]}
+            >
+              {p.nr}
+            </span>
+            {!p.dark && (
               <span
                 aria-hidden="true"
-                class:list={[
-                  'font-display text-3xl font-extrabold',
-                  p.dark ? 'text-red-300' : 'text-red-600',
-                ]}
-              >
-                {p.nr}
-              </span>
-            </div>
-            <h3 class:list={['mt-5 font-sans text-lg font-semibold', p.dark ? 'text-white' : 'text-ink-900']}>
+                class="absolute inset-x-0 top-0 h-1 rounded-t-[var(--radius-card)] bg-red-600"
+              />
+            )}
+            <span
+              class:list={[
+                'relative grid h-12 w-12 place-items-center rounded-full transition-transform group-hover:scale-110',
+                p.dark ? 'bg-white/10 text-red-300' : 'bg-red-50 text-red-700',
+              ]}
+            >
+              <Icon name={p.icon} class="h-6 w-6" />
+            </span>
+            <h3
+              class:list={[
+                'relative mt-5 font-sans text-lg font-semibold',
+                p.dark ? 'text-white' : 'text-ink-900',
+              ]}
+            >
               {p.title}
             </h3>
-            <p class:list={['mt-2 text-sm', p.dark ? 'text-white/70' : 'text-gray-700']}>{p.text}</p>
+            <p class:list={['relative mt-2 text-sm', p.dark ? 'text-white/70' : 'text-gray-700']}>
+              {p.text}
+            </p>
           </div>
         ))
       }

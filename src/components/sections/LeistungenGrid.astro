@@ -4,7 +4,7 @@ import { leistungen } from '../../data/leistungen';
 ---
 
 <section id="leistungen" class="bg-white">
-  <div class="reveal mx-auto max-w-6xl px-4 py-16 lg:px-8 lg:py-24">
+  <div class="mx-auto max-w-6xl px-4 py-16 lg:px-8 lg:py-24">
     <div class="max-w-2xl">
       <p class="text-sm font-semibold uppercase tracking-wider text-red-700">Leistungen</p>
       <h2 class="mt-2 text-3xl sm:text-4xl">Alles aus einer Hand – vom Gutachten bis zur Übergabe</h2>
@@ -14,23 +14,31 @@ import { leistungen } from '../../data/leistungen';
       </p>
     </div>
 
-    <ul class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <ul class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {
         leistungen.map((l, index) => (
-          <li>
+          <li class="reveal" style={`--reveal-delay: ${(index % 3) * 80}ms`}>
             <a
               href={`/leistungen/${l.slug}/`}
               class:list={[
-                'group flex h-full flex-col rounded-[var(--radius-card)] border bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-red-600 hover:shadow-lg',
-                index === 0 ? 'border-red-600 ring-1 ring-red-600' : 'border-gray-200',
+                'group flex h-full flex-col rounded-[var(--radius-card)] border p-6 transition-all hover:-translate-y-1 hover:shadow-soft',
+                index === 0
+                  ? 'border-2 border-red-600 bg-red-50/50'
+                  : 'border-gray-200 bg-white hover:border-red-300',
               ]}
             >
-              <span class="grid h-11 w-11 place-items-center rounded-lg bg-red-50 text-red-700">
+              {index === 0 && (
+                <span class="mb-3 inline-flex w-fit items-center gap-1 rounded-full bg-red-600 px-2.5 py-1 text-xs font-semibold text-white">
+                  <Icon name="lucide:star" class="h-3.5 w-3.5" />
+                  Schwerpunkt
+                </span>
+              )}
+              <span class="grid h-12 w-12 place-items-center rounded-full bg-red-50 text-red-700 transition-transform group-hover:scale-110">
                 <Icon name={l.icon} class="h-6 w-6" />
               </span>
               <h3 class="mt-4 font-sans text-lg font-semibold text-ink-900">{l.title}</h3>
               <p class="mt-2 flex-1 text-sm text-gray-700">{l.summary}</p>
-              <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-red-700">
+              <span class="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-red-50 px-3.5 py-1.5 text-sm font-semibold text-red-700 transition-colors group-hover:bg-red-600 group-hover:text-white">
                 Mehr erfahren
                 <Icon
                   name="lucide:arrow-right"
