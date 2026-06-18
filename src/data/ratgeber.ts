@@ -12,6 +12,12 @@ export interface RatgeberFaq {
   readonly antwort: string;
 }
 
+/** Externe Primärquelle (nur verifizierte amtliche/Norm-URLs) – E-E-A-T. */
+export interface Quelle {
+  readonly label: string;
+  readonly url: string;
+}
+
 export interface RatgeberArtikel {
   readonly slug: string;
   readonly title: string;
@@ -28,6 +34,8 @@ export interface RatgeberArtikel {
   readonly heroImage: ImageMetadata;
   readonly heroAlt: string;
   readonly faqs: readonly RatgeberFaq[];
+  /** Optionale externe Primärquellen (am Beitragsende gerendert). */
+  readonly quellen?: readonly Quelle[];
 }
 
 export const ratgeberArtikel: readonly RatgeberArtikel[] = [
@@ -143,6 +151,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: 'asbestdach-foerderung-neues-dach',
+    quellen: [{"label":"Bundesförderung für effiziente Gebäude (BAFA)","url":"https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/effiziente_gebaeude_node.html"},{"label":"TRGS 519 (BAuA)","url":"https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519"}],
     title: 'Asbestdach-Förderung: Zuschuss fürs neue Dach',
     metaTitle: 'Asbestdach-Förderung & Steuerbonus 2026 | Asbesta',
     metaDescription:
@@ -151,7 +160,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
       'Eine reine Asbest-Förderung gibt es nicht – aber wer das Asbestdach durch ein gedämmtes Dach ersetzt, kann clever fördern lassen. So nutzen Sie BAFA, KfW und Steuerbonus optimal.',
     kategorie: 'Ratgeber Asbest',
     datePublished: '2026-06-14',
-    dateModified: '2026-06-14',
+    dateModified: '2026-06-18',
     author: 'Abdul-Rahman Omeirat',
     authorRole: 'Sachkundiger nach TRGS 519, Anlage 3',
     lesezeitMin: 12,
@@ -363,6 +372,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: 'asbest-hauskauf',
+    quellen: [{"label":"Gefahrstoffverordnung (Gesetze im Internet)","url":"https://www.gesetze-im-internet.de/gefstoffv_2010/"},{"label":"TRGS 519 (BAuA)","url":"https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519"}],
     title: 'Asbest beim Hauskauf: Pflichten, Risiken & Kosten',
     metaTitle: 'Asbest beim Hauskauf: Pflichten, Risiken & Kosten | Asbesta',
     metaDescription:
@@ -371,7 +381,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
       'Ältere Häuser sind günstig – bergen aber oft Asbest. Welche Aufklärungspflichten der Verkäufer hat, warum "gekauft wie gesehen" Sie nicht immer schützt und wie Sie mit einem Gutachten vor dem Kauf und cleverer Verhandlung teure Überraschungen vermeiden.',
     kategorie: 'Ratgeber Asbest',
     datePublished: '2026-06-11',
-    dateModified: '2026-06-11',
+    dateModified: '2026-06-18',
     author: 'Abdul-Rahman Omeirat',
     authorRole: 'Sachkundiger nach TRGS 519, Anlage 3',
     lesezeitMin: 12,
@@ -418,6 +428,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: 'gefstoffv-novelle-2024',
+    quellen: [{"label":"Gefahrstoffverordnung (Gesetze im Internet)","url":"https://www.gesetze-im-internet.de/gefstoffv_2010/"},{"label":"TRGS 519 (BAuA)","url":"https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519"}],
     title: 'GefStoffV-Novelle 2024: die neuen Asbest-Pflichten erklärt',
     metaTitle: 'GefStoffV-Novelle 2024: neue Asbest-Pflichten | Asbesta',
     metaDescription:
@@ -426,7 +437,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
       'Seit Dezember 2024 gilt die novellierte Gefahrstoffverordnung mit neuen Asbest-Pflichten. Wir erklären verständlich die Erkundungs- und Informationspflicht bei Gebäuden vor 1993, die Aufgaben von Eigentümern, Hausverwaltungen und Handwerkern – und die wichtigsten Praxisschritte.',
     kategorie: 'Ratgeber Asbest',
     datePublished: '2026-06-11',
-    dateModified: '2026-06-11',
+    dateModified: '2026-06-18',
     author: 'Abdul-Rahman Omeirat',
     authorRole: 'Sachkundiger nach TRGS 519, Anlage 3',
     lesezeitMin: 12,
@@ -474,6 +485,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: 'asbest-entsorgen',
+    quellen: [{"label":"TRGS 519 (BAuA)","url":"https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519"},{"label":"Gefahrstoffverordnung (Gesetze im Internet)","url":"https://www.gesetze-im-internet.de/gefstoffv_2010/"}],
     title: 'Asbest entsorgen: Kosten, Vorschriften & der richtige Weg',
     metaTitle: 'Asbest entsorgen: Kosten, Vorschriften & Weg | Asbesta',
     metaDescription:
@@ -482,7 +494,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
       'Asbest ist gefährlicher Abfall und gehört weder in den Hausmüll noch in den Bauschuttcontainer. Wie Sie asbesthaltige Abfälle staubdicht verpacken, korrekt deklarieren (AVV 17 06 05*) und über zugelassene Deponien entsorgen lassen – mit Kostenorientierung, Bußgeld-Warnung und dem Unterschied zwischen privater Kleinmenge und Fachbetrieb.',
     kategorie: 'Ratgeber Asbest',
     datePublished: '2026-06-11',
-    dateModified: '2026-06-11',
+    dateModified: '2026-06-18',
     author: 'Abdul-Rahman Omeirat',
     authorRole: 'Sachkundiger nach TRGS 519, Anlage 3',
     lesezeitMin: 12,

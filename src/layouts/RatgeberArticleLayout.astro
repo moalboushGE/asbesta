@@ -207,6 +207,31 @@ const kernNachweis = qualifikationen[0]?.title ?? 'Sachkunde nach TRGS 519, Anla
         </div>
       </div>
 
+      {
+        artikel.quellen && artikel.quellen.length > 0 && (
+          <div class="mt-10 rounded-[var(--radius-card)] border border-gray-200 bg-gray-50 p-5">
+            <p class="flex items-center gap-2 font-sans text-sm font-semibold text-ink-900">
+              <Icon name="lucide:book-marked" class="h-4 w-4 text-red-600" />
+              Quellen &amp; weiterführende Informationen
+            </p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-700">
+              {artikel.quellen.map((q) => (
+                <li>
+                  <a
+                    href={q.url}
+                    target="_blank"
+                    rel="noopener"
+                    class="font-medium text-red-700 underline-offset-2 hover:underline"
+                  >
+                    {q.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+
       <h2 class="mt-12 text-xl">Passende Leistungen</h2>
       <ul class="mt-4 flex flex-wrap gap-2">
         {
@@ -214,7 +239,7 @@ const kernNachweis = qualifikationen[0]?.title ?? 'Sachkunde nach TRGS 519, Anla
             <li>
               <a
                 href={`/leistungen/${l.slug}/`}
-                class="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3.5 py-1.5 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
+                class="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white min-h-11 px-3.5 py-2 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
               >
                 <Icon name={l.icon} class="h-4 w-4 text-red-600" />
                 {l.title}
@@ -225,7 +250,7 @@ const kernNachweis = qualifikationen[0]?.title ?? 'Sachkunde nach TRGS 519, Anla
         <li>
           <a
             href="/standorte/"
-            class="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3.5 py-1.5 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
+            class="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white min-h-11 px-3.5 py-2 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
           >
             <Icon name="lucide:map-pin" class="h-4 w-4 text-red-600" />
             Asbestsanierung in Ihrer Stadt (NRW)
@@ -234,7 +259,7 @@ const kernNachweis = qualifikationen[0]?.title ?? 'Sachkunde nach TRGS 519, Anla
         <li>
           <a
             href="/wissen/"
-            class="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3.5 py-1.5 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
+            class="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white min-h-11 px-3.5 py-2 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
           >
             <Icon name="lucide:book-marked" class="h-4 w-4 text-red-600" />
             Begriffe &amp; Daten im Wissens-Glossar

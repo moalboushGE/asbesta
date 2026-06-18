@@ -154,7 +154,7 @@ const bild = leistungImage(detail.leistung);
                 <li>
                   <a
                     href={hasKombi ? `/leistungen/${l.slug}/${detail.stadt}/` : `/leistungen/${l.slug}/`}
-                    class="inline-flex rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
+                    class="inline-flex rounded-full border border-gray-200 bg-white min-h-11 items-center px-3 py-2 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
                   >
                     {hasKombi ? `${l.title} ${stadtName}` : l.title}
                   </a>
@@ -185,7 +185,7 @@ const bild = leistungImage(detail.leistung);
               <li>
                 <a
                   href={`/leistungen/${detail.leistung}/${n.slug}/`}
-                  class="inline-flex rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
+                  class="inline-flex rounded-full border border-gray-200 bg-white min-h-11 items-center px-3 py-2 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
                 >
                   {leistungTitle} {n.name}
                 </a>
