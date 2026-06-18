@@ -32,14 +32,14 @@ export const RATGEBER_MAP: Record<string, readonly string[]> = {
     'asbestsanierung-pflicht-kosten-ablauf',
   ],
   materialanalyse: [
-    'asbest-putz-fliesenkleber-spachtelmasse',
+    'asbest-testen-lassen',
     'asbest-erkennen',
-    'asbest-hauskauf',
+    'asbest-putz-fliesenkleber-spachtelmasse',
   ],
   'luftanalysen-vdi-3492': [
-    'spritzasbest-erkennen-sanieren',
+    'asbest-testen-lassen',
     'asbestsanierung-pflicht-kosten-ablauf',
-    'gefstoffv-novelle-2024',
+    'spritzasbest-erkennen-sanieren',
   ],
   asbestsanierung: [
     'spritzasbest-erkennen-sanieren',
@@ -74,8 +74,13 @@ export function ratgeberFuer(leistungSlug: string): readonly string[] {
 /** Themen-Zuordnung Ratgeber -> verwandte Ratgeber (Topical-Cluster statt „immer die neuesten 3"). */
 export const RATGEBER_RELATED: Record<string, readonly string[]> = {
   'asbest-erkennen': [
+    'asbest-testen-lassen',
     'asbest-fassadenplatten-erkennen',
     'asbest-putz-fliesenkleber-spachtelmasse',
+  ],
+  'asbest-testen-lassen': [
+    'asbest-erkennen',
+    'asbest-fassadenplatten-erkennen',
     'asbestsanierung-pflicht-kosten-ablauf',
   ],
   'asbestsanierung-pflicht-kosten-ablauf': ['asbest-entsorgen', 'gefstoffv-novelle-2024', 'asbest-hauskauf'],
