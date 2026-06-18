@@ -9,9 +9,12 @@ import CtaSection from '../../../components/sections/CtaSection.astro';
 import { site } from '../../../data/site';
 import { leistungImage } from '../../../data/images';
 import { leistungen } from '../../../data/leistungen';
-import { standorte } from '../../../data/standorte';
+import { standorte, type Standort } from '../../../data/standorte';
 import { kombiDetail } from '../../../data/kombi-detail';
 import { buildServiceLocationGraph } from '../../../lib/schema';
+import { ratgeberFuer } from '../../../lib/related';
+import { getArtikel } from '../../../data/ratgeber';
+import ExpertReviewLine from '../../../components/patterns/ExpertReviewLine.astro';
 
 export function getStaticPaths() {
   return Object.entries(kombiDetail).map(([key, detail]) => {
@@ -38,9 +41,18 @@ const graph = buildServiceLocationGraph({
   path,
   faqs: detail.comboFaqs,
 });
-const weitereInStadt = leistungen.filter(
-  (l) => l.slug !== detail.leistung && kombiDetail[`${l.slug}/${detail.stadt}`],
-);
+// Alle anderen Leistungen zeigen (auch ohne eigene Kombi-Seite) – bindet die kombilosen
+// Leistungen (Materialanalyse, Luftanalysen, …) in den Lokalcluster ein.
+const weitereInStadt = leistungen.filter((l) => l.slug !== detail.leistung);
+// Gleiche Leistung in Nachbarstädten (horizontale Vernetzung des Lokalclusters).
+const nachbarKombis = (stadt?.nearby ?? [])
+  .map((slug) => standorte.find((s) => s.slug === slug))
+  .filter((n): n is Standort => n !== undefined)
+  .filter((n) => kombiDetail[`${detail.leistung}/${n.slug}`]);
+const ratgeber = ratgeberFuer(detail.leistung)
+  .slice(0, 2)
+  .map((slug) => getArtikel(slug))
+  .filter((a) => a !== undefined);
 const bild = leistungImage(detail.leistung);
 ---
 
@@ -110,8 +122,8 @@ const bild = leistungImage(detail.leistung);
     <h2 class="mt-12 text-2xl">Häufige Fragen: {leistungTitle} in {stadtName}</h2>
     <div class="cv-auto mt-5 divide-y divide-gray-200 border-y border-gray-200">
       {
-        detail.comboFaqs.map((faq) => (
-          <details class="group py-4">
+        detail.comboFaqs.map((faq, i) => (
+          <details class="group py-4" open={i === 0}>
             <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-sans font-semibold text-ink-900 [&::-webkit-details-marker]:hidden">
               <span>{faq.frage}</span>
               <Icon
@@ -124,6 +136,8 @@ const bild = leistungImage(detail.leistung);
         ))
       }
     </div>
+
+    <ExpertReviewLine />
   </article>
 
   {
@@ -132,13 +146,74 @@ const bild = leistungImage(detail.leistung);
         <div class="mx-auto max-w-4xl px-4 py-10 lg:px-8">
           <h2 class="text-xl">Weitere Leistungen in {stadtName}</h2>
           <ul class="mt-4 flex flex-wrap gap-2">
-            {weitereInStadt.map((l) => (
+            {weitereInStadt.map((l) => {
+              const hasKombi = kombiDetail[`${l.slug}/${detail.stadt}`];
+              return (
+                <li>
+                  <a
+                    href={hasKombi ? `/leistungen/${l.slug}/${detail.stadt}/` : `/leistungen/${l.slug}/`}
+                    class="inline-flex rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
+                  >
+                    {hasKombi ? `${l.title} ${stadtName}` : l.title}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+          <p class="mt-5 flex flex-wrap gap-x-5 gap-y-1 text-sm font-semibold text-red-700">
+            <a href="/leistungen/" class="inline-flex items-center gap-1 hover:underline">
+              Alle Leistungen<Icon name="lucide:arrow-right" class="h-4 w-4" />
+            </a>
+            <a href="/standorte/" class="inline-flex items-center gap-1 hover:underline">
+              Alle Standorte in NRW<Icon name="lucide:arrow-right" class="h-4 w-4" />
+            </a>
+          </p>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    nachbarKombis.length > 0 && (
+      <section class="border-t border-gray-200 bg-white">
+        <div class="mx-auto max-w-4xl px-4 py-10 lg:px-8">
+          <h2 class="text-xl">{leistungTitle} in der Nähe von {stadtName}</h2>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            {nachbarKombis.map((n) => (
               <li>
                 <a
-                  href={`/leistungen/${l.slug}/${detail.stadt}/`}
+                  href={`/leistungen/${detail.leistung}/${n.slug}/`}
                   class="inline-flex rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
                 >
-                  {l.title} {stadtName}
+                  {leistungTitle} {n.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    ratgeber.length > 0 && (
+      <section class="border-t border-gray-200 bg-gray-50">
+        <div class="mx-auto max-w-4xl px-4 py-10 lg:px-8">
+          <h2 class="text-xl">Passende Ratgeber</h2>
+          <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+            {ratgeber.map((a) => (
+              <li>
+                <a
+                  href={`/ratgeber/${a.slug}/`}
+                  class="group flex h-full flex-col rounded-[var(--radius-card)] border border-gray-200 bg-white p-4 transition-colors hover:border-red-600"
+                >
+                  <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-red-700">
+                    <Icon name="lucide:book-open" class="h-3.5 w-3.5" />
+                    {a.kategorie}
+                  </span>
+                  <span class="mt-2 font-sans text-sm font-semibold text-ink-900 group-hover:text-red-700">
+                    {a.title}
+                  </span>
                 </a>
               </li>
             ))}

@@ -14,6 +14,8 @@ import { standorteDetail } from '../../data/standorte-detail';
 import { leistungen } from '../../data/leistungen';
 import { kombiDetail } from '../../data/kombi-detail';
 import { buildLocationGraph } from '../../lib/schema';
+import { getArtikel } from '../../data/ratgeber';
+import ExpertReviewLine from '../../components/patterns/ExpertReviewLine.astro';
 
 export function getStaticPaths() {
   return standorte.flatMap((s) => {
@@ -35,7 +37,10 @@ const graph = buildLocationGraph({
 const nachbarn = stadt.nearby
   .map((slug) => standorte.find((s) => s.slug === slug))
   .filter((s): s is Standort => s !== undefined);
-const topLeistungen = leistungen.slice(0, 6);
+const topLeistungen = leistungen;
+const ratgeber = ['asbest-erkennen', 'asbestsanierung-pflicht-kosten-ablauf', 'gefstoffv-novelle-2024']
+  .map((slug) => getArtikel(slug))
+  .filter((a) => a !== undefined);
 const stadtIndex = standorte.findIndex((s) => s.slug === stadt.slug);
 const bild = stadtImage(stadtIndex < 0 ? 0 : stadtIndex);
 ---
@@ -108,7 +113,9 @@ const bild = stadtImage(stadtIndex < 0 ? 0 : stadtIndex);
             >
               <Icon name={l.icon} class="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
               <span>
-                <span class="font-sans font-semibold text-ink-900">{l.title}</span>
+                <span class="font-sans font-semibold text-ink-900">
+                  {kombiDetail[`${l.slug}/${stadt.slug}`] ? `${l.title} in ${stadt.name}` : l.title}
+                </span>
                 <span class="mt-0.5 block text-sm text-gray-700">{l.summary}</span>
               </span>
             </a>
@@ -125,8 +132,8 @@ const bild = stadtImage(stadtIndex < 0 ? 0 : stadtIndex);
     <h2 class="mt-12 text-2xl">Häufige Fragen aus {stadt.name}</h2>
     <div class="cv-auto mt-5 divide-y divide-gray-200 border-y border-gray-200">
       {
-        detail.localFaqs.map((faq) => (
-          <details class="group py-4">
+        detail.localFaqs.map((faq, i) => (
+          <details class="group py-4" open={i === 0}>
             <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-sans font-semibold text-ink-900 [&::-webkit-details-marker]:hidden">
               <span>{faq.frage}</span>
               <Icon
@@ -139,7 +146,37 @@ const bild = stadtImage(stadtIndex < 0 ? 0 : stadtIndex);
         ))
       }
     </div>
+
+    <ExpertReviewLine />
   </article>
+
+  {
+    ratgeber.length > 0 && (
+      <section class="border-t border-gray-200 bg-white">
+        <div class="mx-auto max-w-4xl px-4 py-10 lg:px-8">
+          <h2 class="text-xl">Ratgeber rund um Asbest</h2>
+          <ul class="mt-4 grid gap-3 sm:grid-cols-3">
+            {ratgeber.map((a) => (
+              <li>
+                <a
+                  href={`/ratgeber/${a.slug}/`}
+                  class="group flex h-full flex-col rounded-[var(--radius-card)] border border-gray-200 p-4 transition-colors hover:border-red-600"
+                >
+                  <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-red-700">
+                    <Icon name="lucide:book-open" class="h-3.5 w-3.5" />
+                    {a.kategorie}
+                  </span>
+                  <span class="mt-2 font-sans text-sm font-semibold text-ink-900 group-hover:text-red-700">
+                    {a.title}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
 
   <AblaufSteps />
 

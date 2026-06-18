@@ -22,6 +22,7 @@ function personNode(origin: string): Record<string, unknown> {
   return {
     '@type': 'Person',
     '@id': origin + '/' + PERSON_ID,
+    url: origin + '/ueber-uns/#qualifikationen',
     name: owner.name,
     jobTitle: owner.role,
     worksFor: { '@id': origin + '/' + ORG_ID },
@@ -31,7 +32,26 @@ function personNode(origin: string): Record<string, unknown> {
       name: q.title,
       credentialCategory: 'certification',
       recognizedBy: { '@type': 'Organization', name: q.issuer },
+      url: origin + '/ueber-uns/#qualifikationen',
       ...(q.validUntil ? { description: `Gültig bis ${q.validUntil}.` } : {}),
+    })),
+  };
+}
+
+/** HowTo-Knoten aus den Ablaufschritten einer Leistung – macht den Sanierungsprozess maschinenlesbar. */
+function howToNode(
+  name: string,
+  steps: readonly { titel: string; text: string }[],
+): Record<string, unknown> {
+  return {
+    '@type': 'HowTo',
+    name: `Ablauf: ${name}`,
+    inLanguage: 'de-DE',
+    step: steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.titel,
+      text: s.text,
     })),
   };
 }
@@ -47,6 +67,8 @@ function organizationNode(origin: string): Record<string, unknown> {
     name: site.legalName,
     alternateName: site.name,
     url: origin + '/',
+    slogan: site.claim,
+    knowsLanguage: ['de'],
     telephone,
     email: site.email,
     image: origin + '/og.png',
@@ -177,6 +199,8 @@ export interface ServiceGraphArgs {
   readonly description: string;
   readonly path: string;
   readonly faqs: readonly FaqItem[];
+  /** Ablaufschritte der Leistung -> HowTo-Knoten (optional). */
+  readonly ablauf?: readonly { titel: string; text: string }[];
 }
 
 export function buildServiceGraph(args: ServiceGraphArgs): unknown[] {
@@ -198,14 +222,20 @@ export function buildServiceGraph(args: ServiceGraphArgs): unknown[] {
       url,
       name: args.title,
       description: args.description,
+      inLanguage: 'de-DE',
       isPartOf: { '@id': args.origin + '/' + ORG_ID },
+      speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
     },
+    personNode(args.origin),
     breadcrumbNode(args.origin, [
       { name: 'Start', url: '/' },
       { name: 'Leistungen', url: '/leistungen/' },
       { name: args.title, url: args.path },
     ]),
   ];
+  if (args.ablauf && args.ablauf.length > 0) {
+    graph.push(howToNode(args.title, args.ablauf));
+  }
   if (args.faqs.length > 0) {
     graph.push(faqNode(args.faqs));
   }
@@ -239,8 +269,11 @@ export function buildLocationGraph(args: LocationGraphArgs): unknown[] {
       url,
       name: `Asbest- und Schadstoffsanierung in ${args.city}`,
       description: args.description,
+      inLanguage: 'de-DE',
       isPartOf: { '@id': args.origin + '/' + ORG_ID },
+      speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
     },
+    personNode(args.origin),
     breadcrumbNode(args.origin, [
       { name: 'Start', url: '/' },
       { name: 'Standorte', url: '/standorte/' },
@@ -281,8 +314,11 @@ export function buildServiceLocationGraph(args: ServiceLocationGraphArgs): unkno
       url,
       name: `${args.leistungTitle} in ${args.city}`,
       description: args.description,
+      inLanguage: 'de-DE',
       isPartOf: { '@id': args.origin + '/' + ORG_ID },
+      speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
     },
+    personNode(args.origin),
     breadcrumbNode(args.origin, [
       { name: 'Start', url: '/' },
       { name: 'Leistungen', url: '/leistungen/' },
@@ -335,7 +371,9 @@ export function buildArticleGraph(args: ArticleGraphArgs): unknown[] {
       url,
       name: args.title,
       description: args.description,
+      inLanguage: 'de-DE',
       isPartOf: { '@id': args.origin + '/' + ORG_ID },
+      speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
     },
     breadcrumbNode(args.origin, [
       { name: 'Start', url: '/' },

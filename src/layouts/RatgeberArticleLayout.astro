@@ -6,8 +6,10 @@ import Breadcrumb from '../components/patterns/Breadcrumb.astro';
 import Figure from '../components/ui/Figure.astro';
 import CtaSection from '../components/sections/CtaSection.astro';
 import { buildArticleGraph } from '../lib/schema';
-import type { RatgeberArtikel } from '../data/ratgeber';
+import { leistungenFuerRatgeber } from '../lib/related';
+import { type RatgeberArtikel, ratgeberArtikel } from '../data/ratgeber';
 import { leistungen } from '../data/leistungen';
+import { qualifikationen } from '../data/site';
 
 interface TocItem {
   readonly id: string;
@@ -29,24 +31,38 @@ const datum = new Intl.DateTimeFormat('de-DE', {
   year: 'numeric',
 }).format(new Date(artikel.datePublished));
 
+const heroOg = new URL(artikel.heroImage.src, origin).href;
 const graph = buildArticleGraph({
   origin,
   title: artikel.title,
   description: artikel.metaDescription,
   path,
-  image: origin + '/og.png',
+  image: heroOg,
   datePublished: artikel.datePublished,
   dateModified: artikel.dateModified,
   author: artikel.author,
   faqs: artikel.faqs,
 });
 
-const verwandt = ['asbestsanierung', 'welleternit-ausbauen', 'materialanalyse']
+const verwandt = leistungenFuerRatgeber(artikel.slug)
+  .slice(0, 3)
   .map((slug) => leistungen.find((l) => l.slug === slug))
   .filter((l) => l !== undefined);
+
+// Weitere Beiträge: aktuelle andere Ratgeber (Array ist neueste-zuerst sortiert).
+const weitereBeitraege = ratgeberArtikel.filter((a) => a.slug !== artikel.slug).slice(0, 3);
+const kernNachweis = qualifikationen[0]?.title ?? 'Sachkunde nach TRGS 519, Anlage 3';
 ---
 
-<BaseLayout title={artikel.metaTitle} description={artikel.metaDescription} ogType="article">
+<BaseLayout
+  title={artikel.metaTitle}
+  description={artikel.metaDescription}
+  ogType="article"
+  ogImage={heroOg}
+  articlePublished={artikel.datePublished}
+  articleModified={artikel.dateModified}
+  articleAuthor={artikel.author}
+>
   <SchemaGraph slot="head" graph={graph} />
 
   <article>
@@ -125,8 +141,8 @@ const verwandt = ['asbestsanierung', 'welleternit-ausbauen', 'materialanalyse']
       <h2 class="mt-12 text-2xl sm:text-3xl">Häufige Fragen</h2>
       <div class="cv-auto mt-5 divide-y divide-gray-200 border-y border-gray-200">
         {
-          artikel.faqs.map((faq) => (
-            <details class="group py-4">
+          artikel.faqs.map((faq, i) => (
+            <details class="group py-4" open={i === 0}>
               <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-sans font-semibold text-ink-900 [&::-webkit-details-marker]:hidden">
                 <span>{faq.frage}</span>
                 <Icon
@@ -156,6 +172,15 @@ const verwandt = ['asbestsanierung', 'welleternit-ausbauen', 'materialanalyse']
             unser Wissen aus der Praxis weiter. Dieser Beitrag dient der Orientierung und ersetzt
             keine rechtliche Beratung im Einzelfall.
           </p>
+          <p class="mt-2 text-sm">
+            <span class="text-gray-500">Nachweis: {kernNachweis}.</span>{' '}
+            <a
+              href="/ueber-uns/#qualifikationen"
+              class="font-semibold text-red-700 underline-offset-2 hover:underline"
+            >
+              Qualifikationen &amp; Nachweise ansehen
+            </a>
+          </p>
         </div>
       </div>
 
@@ -180,10 +205,36 @@ const verwandt = ['asbestsanierung', 'welleternit-ausbauen', 'materialanalyse']
             class="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3.5 py-1.5 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
           >
             <Icon name="lucide:map-pin" class="h-4 w-4 text-red-600" />
-            Unsere Standorte
+            Asbestsanierung in Ihrer Stadt (NRW)
           </a>
         </li>
       </ul>
+
+      {
+        weitereBeitraege.length > 0 && (
+          <>
+            <h2 class="mt-12 text-xl">Weitere Beiträge</h2>
+            <ul class="mt-4 grid gap-3 sm:grid-cols-3">
+              {weitereBeitraege.map((a) => (
+                <li>
+                  <a
+                    href={`/ratgeber/${a.slug}/`}
+                    class="group flex h-full flex-col rounded-[var(--radius-card)] border border-gray-200 bg-white p-4 transition-colors hover:border-red-600"
+                  >
+                    <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-red-700">
+                      <Icon name="lucide:book-open" class="h-3.5 w-3.5" />
+                      {a.kategorie}
+                    </span>
+                    <span class="mt-2 font-sans text-sm font-semibold text-ink-900 group-hover:text-red-700">
+                      {a.title}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )
+      }
     </section>
 
     <div class="mt-12">

@@ -1,0 +1,22 @@
+---
+import { Icon } from 'astro-icon/components';
+import { owner } from '../../data/site';
+
+/** Sichtbares E-E-A-T-Signal: benennt den fachlich verantwortlichen, sachkundigen Inhaber.
+ *  Rein faktisch aus den belegten Qualifikationen – KEINE Pruef-/Datums-Behauptung. */
+---
+
+<aside
+  class="mt-12 flex items-start gap-3 rounded-[var(--radius-card)] border border-gray-200 bg-gray-50 p-4 text-sm"
+>
+  <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-red-50 text-red-700">
+    <Icon name="lucide:badge-check" class="h-5 w-5" />
+  </span>
+  <p class="text-gray-700">
+    Fachlich verantwortet von <a
+      href="/ueber-uns/#qualifikationen"
+      class="font-semibold text-ink-900 underline-offset-2 hover:text-red-700 hover:underline"
+      >{owner.name}</a
+    > – {owner.role}.
+  </p>
+</aside>

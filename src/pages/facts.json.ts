@@ -1,12 +1,38 @@
 import type { APIRoute } from 'astro';
 import { site, owner, qualifikationen } from '../data/site';
 import { leistungen } from '../data/leistungen';
+import { leistungenDetail } from '../data/leistungen-detail';
+import { ratgeberArtikel } from '../data/ratgeber';
 import { standorte } from '../data/standorte';
 import { resolveOrigin } from '../lib/origin';
 
 // facts.json: maschinenlesbare Firmenfakten (Single Source of Truth fuer AI-Crawler & Entwickler).
 export const GET: APIRoute = (context) => {
   const origin = resolveOrigin(context.site);
+
+  // Frage-Antwort-Wissen aus den echten Leistungs- & Ratgeber-FAQs (KI-Zitierfaehigkeit).
+  // Kombi-FAQs bewusst ausgelassen (Near-Duplicate-Vermeidung).
+  const faq = [
+    ...leistungen.flatMap((l) => {
+      const d = leistungenDetail[l.slug];
+      return d
+        ? d.faqs.map((f) => ({
+            question: f.frage,
+            answer: f.antwort,
+            topic: l.title,
+            source: `${origin}/leistungen/${l.slug}/`,
+          }))
+        : [];
+    }),
+    ...ratgeberArtikel.flatMap((a) =>
+      a.faqs.map((f) => ({
+        question: f.frage,
+        answer: f.antwort,
+        topic: a.title,
+        source: `${origin}/ratgeber/${a.slug}/`,
+      })),
+    ),
+  ];
 
   const facts = {
     updated: '2026-06-18',
@@ -50,6 +76,7 @@ export const GET: APIRoute = (context) => {
       summary: l.summary,
       url: `${origin}/leistungen/${l.slug}/`,
     })),
+    faq,
     disclaimer:
       'Arbeiten an asbesthaltigen Materialien dürfen in Deutschland nur durch sachkundige Fachbetriebe nach TRGS 519 ausgeführt werden.',
   };

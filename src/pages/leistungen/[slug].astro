@@ -13,72 +13,8 @@ import { standorte } from '../../data/standorte';
 import { kombiDetail } from '../../data/kombi-detail';
 import { getArtikel } from '../../data/ratgeber';
 import { buildServiceGraph } from '../../lib/schema';
-
-/** Relevante Ratgeber je Leistung (bidirektionale Verlinkung Leistung -> Ratgeber). */
-const RATGEBER_MAP: Record<string, readonly string[]> = {
-  'welleternit-ausbauen': [
-    'asbestdach-foerderung-neues-dach',
-    'asbestdach-entsorgen-kosten-ablauf',
-    'asbest-entsorgen',
-  ],
-  'fassadenplatten-ausbauen': [
-    'asbest-fassadenplatten-erkennen',
-    'asbestdach-entsorgen-kosten-ablauf',
-    'asbest-entsorgen',
-  ],
-  'asbestzement-ausbauen': [
-    'asbest-fassadenplatten-erkennen',
-    'asbest-entsorgen',
-    'asbestdach-entsorgen-kosten-ablauf',
-  ],
-  'floor-flex-entfernen': [
-    'asbest-bodenbelag',
-    'asbest-erkennen',
-    'asbestsanierung-pflicht-kosten-ablauf',
-  ],
-  'bitumenkleber-entfernen': [
-    'asbest-bodenbelag',
-    'asbest-putz-fliesenkleber-spachtelmasse',
-    'asbest-entsorgen',
-  ],
-  'cushion-vinyl-entfernen': [
-    'asbest-bodenbelag',
-    'asbest-erkennen',
-    'asbestsanierung-pflicht-kosten-ablauf',
-  ],
-  materialanalyse: [
-    'asbest-putz-fliesenkleber-spachtelmasse',
-    'asbest-erkennen',
-    'asbest-hauskauf',
-  ],
-  'luftanalysen-vdi-3492': [
-    'spritzasbest-erkennen-sanieren',
-    'asbestsanierung-pflicht-kosten-ablauf',
-    'gefstoffv-novelle-2024',
-  ],
-  asbestsanierung: [
-    'spritzasbest-erkennen-sanieren',
-    'asbestsanierung-pflicht-kosten-ablauf',
-    'nachtspeicherofen-asbest-entsorgen',
-  ],
-  abbrucharbeiten: [
-    'asbestsanierung-pflicht-kosten-ablauf',
-    'asbest-entsorgen',
-    'gefstoffv-novelle-2024',
-  ],
-  'kmf-sanierung': ['mineralwolle-kmf-entsorgen', 'asbest-erkennen', 'gefstoffv-novelle-2024'],
-  'pak-sanierung': ['asbestsanierung-pflicht-kosten-ablauf', 'asbest-erkennen', 'asbest-entsorgen'],
-  'fensterbaenke-ausbauen': [
-    'asbest-erkennen',
-    'asbestsanierung-pflicht-kosten-ablauf',
-    'asbest-entsorgen',
-  ],
-};
-const DEFAULT_RATGEBER = [
-  'asbest-erkennen',
-  'asbestsanierung-pflicht-kosten-ablauf',
-  'asbest-entsorgen',
-];
+import { ratgeberFuer } from '../../lib/related';
+import ExpertReviewLine from '../../components/patterns/ExpertReviewLine.astro';
 
 export function getStaticPaths() {
   return leistungen.flatMap((l) => {
@@ -96,11 +32,12 @@ const graph = buildServiceGraph({
   description: detail.metaDescription,
   path,
   faqs: detail.faqs,
+  ablauf: detail.ablauf,
 });
 const bild = leistungImage(leistung.slug);
 const weitere = leistungen.filter((l) => l.slug !== leistung.slug).slice(0, 6);
 const kombiStaedte = standorte.filter((s) => kombiDetail[`${leistung.slug}/${s.slug}`]);
-const ratgeber = (RATGEBER_MAP[leistung.slug] ?? DEFAULT_RATGEBER)
+const ratgeber = ratgeberFuer(leistung.slug)
   .map((slug) => getArtikel(slug))
   .filter((a) => a !== undefined);
 ---
@@ -187,8 +124,8 @@ const ratgeber = (RATGEBER_MAP[leistung.slug] ?? DEFAULT_RATGEBER)
     <h2 class="mt-12 text-2xl">Häufige Fragen</h2>
     <div class="cv-auto mt-5 divide-y divide-gray-200 border-y border-gray-200">
       {
-        detail.faqs.map((faq) => (
-          <details class="group py-4">
+        detail.faqs.map((faq, i) => (
+          <details class="group py-4" open={i === 0}>
             <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-sans font-semibold text-ink-900 [&::-webkit-details-marker]:hidden">
               <span>{faq.frage}</span>
               <Icon
@@ -201,6 +138,8 @@ const ratgeber = (RATGEBER_MAP[leistung.slug] ?? DEFAULT_RATGEBER)
         ))
       }
     </div>
+
+    <ExpertReviewLine />
   </article>
 
   {
