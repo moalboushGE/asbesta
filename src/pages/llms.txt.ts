@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { site } from '../data/site';
 import { leistungen } from '../data/leistungen';
+import { definitionen, regelwerke } from '../data/wissen';
 import { resolveOrigin } from '../lib/origin';
 
 // llms.txt (Konvention llmstxt.org): kompakter, kuratierter Einstieg fuer LLMs.
@@ -9,6 +10,13 @@ export const GET: APIRoute = (context) => {
   const leistungsLinks = leistungen
     .map((l) => `- [${l.title}](${origin}/leistungen/${l.slug}/): ${l.summary}`)
     .join('\n');
+  const glossarLinks = definitionen
+    .map((d) => {
+      const label = d.abbr ? `${d.term} (${d.abbr})` : d.term;
+      return `- **${label}**: ${d.definition}`;
+    })
+    .join('\n');
+  const regelLinks = regelwerke.map((r) => `- **${r.code}** – ${r.name}: ${r.description}`).join('\n');
 
   const md = `# ${site.legalName}
 
@@ -24,12 +32,21 @@ ${leistungsLinks}
 ## Wichtige Seiten
 - [Startseite](${origin}/)
 - [Alle Leistungen](${origin}/leistungen/)
+- [Wissensdatenbank (Datensatz)](${origin}/wissen/)
+- [Ratgeber](${origin}/ratgeber/)
 - [Kontakt](${origin}/kontakt/)
+
+## Glossar / Definitionen
+${glossarLinks}
+
+## Regelwerke
+${regelLinks}
 
 ## Maschinenlesbare Daten
 - [Strukturierte Fakten (JSON)](${origin}/facts.json)
-- [Entitäten (JSON)](${origin}/entities.json)
+- [Entitäten / Knowledge Graph (JSON-LD)](${origin}/entities.json)
 - [Volltext fuer LLMs](${origin}/llms-full.txt)
+- [Wissens-Datensatz (HTML, schema.org/Dataset)](${origin}/wissen/)
 
 ## Hinweis
 Asbest ist gesundheitsgefaehrdend. Arbeiten an asbesthaltigen Materialien duerfen in Deutschland nur durch sachkundige Fachbetriebe nach TRGS 519 ausgefuehrt werden.

@@ -3209,7 +3209,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'gelsenkirchen',
     metaTitle: 'Welleternit ausbauen in Gelsenkirchen | Asbesta',
     metaDescription:
-      'Wellasbestplatten in Gelsenkirchen fachgerecht ausbauen: Garagen, Schuppen, Hallen. Zertifiziert nach TRGS 519/521. Jetzt Termin anfragen: +49 2365 2960630.',
+      'Wellasbestplatten in Gelsenkirchen fachgerecht ausbauen: Garagen, Schuppen, Hallen. Zertifiziert nach TRGS 519. Jetzt Termin anfragen: +49 2365 2960630.',
     intro:
       'In Gelsenkirchen sitzt das asbesthaltige Welleternit fast immer auf den Nebengebäuden der Bergbau- und Nachkriegsbebauung: Garagenhöfe der Zechensiedlungen, Geräteschuppen in den Schrebergärten und alte Werkhallen im Industriegürtel. Wir bauen diese Wellasbestplatten staubarm und behördlich angemeldet aus, von Buer bis Schalke.',
     lokalServiceKontext: [

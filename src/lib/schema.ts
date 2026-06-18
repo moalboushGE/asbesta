@@ -2,6 +2,7 @@ import { site, owner, qualifikationen } from '../data/site';
 import { leistungen } from '../data/leistungen';
 import { standorte } from '../data/standorte';
 import { bewertungen, bewertungAggregat, googleReviewsUrl } from '../data/bewertungen';
+import { definitionen, wissenMeta, wissenLicense, wissensFaqs, type Definition } from '../data/wissen';
 
 /** JSON-LD-Builder (framework-frei, unit-testbar – Plan Kap. 8.1). */
 
@@ -404,6 +405,138 @@ export function buildArticleGraph(args: ArticleGraphArgs): unknown[] {
     graph.push(faqNode(args.faqs));
   }
   return graph;
+}
+
+// ---------------------------------------------------------------------------
+// Wissen / Dataset (GEO): DefinedTermSet, Dataset und Graph-Assembler.
+// ---------------------------------------------------------------------------
+const WISSEN_PATH = '/wissen/';
+const TERMSET_ID = '#wissen-termset';
+
+function slugifyTerm(s: string): string {
+  return s
+    .toLowerCase()
+    .replace(/ä/g, 'ae')
+    .replace(/ö/g, 'oe')
+    .replace(/ü/g, 'ue')
+    .replace(/ß/g, 'ss')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-/, '')
+    .replace(/-$/, '');
+}
+
+function termId(origin: string, term: string): string {
+  return origin + WISSEN_PATH + '#term-' + slugifyTerm(term);
+}
+
+/** Glossar-Begriffe als DefinedTerm-Knoten (auch von entities.json wiederverwendet). */
+export function definedTermNodes(origin: string, defs: readonly Definition[]): Record<string, unknown>[] {
+  return defs.map((d) => {
+    const node: Record<string, unknown> = {
+      '@type': 'DefinedTerm',
+      '@id': termId(origin, d.term),
+      name: d.abbr ? `${d.term} (${d.abbr})` : d.term,
+      description: d.definition,
+      inDefinedTermSet: { '@id': origin + WISSEN_PATH + TERMSET_ID },
+    };
+    if (d.kategorie === 'Dokument') node.termCode = d.abbr ?? d.term;
+    if (d.sameAs && d.sameAs.length > 0) node.sameAs = [...d.sameAs];
+    return node;
+  });
+}
+
+export function definedTermSetNode(origin: string, defs: readonly Definition[]): Record<string, unknown> {
+  return {
+    '@type': 'DefinedTermSet',
+    '@id': origin + WISSEN_PATH + TERMSET_ID,
+    name: 'Glossar: Asbest- & Schadstoffsanierung',
+    inLanguage: 'de',
+    hasDefinedTerm: defs.map((d) => ({ '@id': termId(origin, d.term) })),
+  };
+}
+
+/** schema.org/Dataset für /wissen/ – Google-Dataset-Search-fähig; verweist per @id auf Org/Owner. */
+export function datasetNode(origin: string): Record<string, unknown> {
+  const url = origin + WISSEN_PATH;
+  const node: Record<string, unknown> = {
+    '@type': 'Dataset',
+    '@id': url + '#dataset',
+    name: wissenMeta.name, // Pflichtfeld
+    description: wissenMeta.description, // Pflichtfeld
+    url,
+    identifier: url,
+    inLanguage: wissenMeta.inLanguage,
+    datePublished: wissenMeta.datePublished,
+    dateModified: wissenMeta.dateModified,
+    keywords: [...wissenMeta.keywords],
+    isAccessibleForFree: wissenLicense.isAccessibleForFree,
+    creator: { '@id': origin + '/' + ORG_ID },
+    publisher: { '@id': origin + '/' + ORG_ID },
+    maintainer: { '@id': origin + '/' + PERSON_ID },
+    spatialCoverage: {
+      '@type': 'AdministrativeArea',
+      name: 'Nordrhein-Westfalen',
+      containsPlace: standorte.map((s) => ({ '@type': 'City', name: s.name })),
+    },
+    about: definitionen.map((d) => ({ '@id': termId(origin, d.term) })),
+    hasPart: [{ '@id': url + '#faq' }, { '@id': origin + WISSEN_PATH + TERMSET_ID }],
+    distribution: [
+      { '@type': 'DataDownload', name: 'Strukturierte Fakten (JSON)', encodingFormat: 'application/json', contentUrl: origin + '/facts.json' },
+      { '@type': 'DataDownload', name: 'Entitäten / Knowledge Graph (JSON-LD)', encodingFormat: 'application/ld+json', contentUrl: origin + '/entities.json' },
+      { '@type': 'DataDownload', name: 'LLM-Index (Text)', encodingFormat: 'text/plain', contentUrl: origin + '/llms.txt' },
+      { '@type': 'DataDownload', name: 'LLM-Volltext (Text)', encodingFormat: 'text/plain', contentUrl: origin + '/llms-full.txt' },
+    ],
+  };
+  if (wissenLicense.license) node.license = wissenLicense.license;
+  return node;
+}
+
+/** Voller /wissen/-Graph: Org + Person + WebPage + Dataset + DefinedTermSet + Terms + FAQPage + Breadcrumb. */
+export function buildWissenGraph(origin: string): unknown[] {
+  const url = origin + WISSEN_PATH;
+  return [
+    organizationNode(origin),
+    personNode(origin),
+    {
+      '@type': 'WebPage',
+      '@id': url,
+      url,
+      name: wissenMeta.name,
+      description: wissenMeta.description,
+      inLanguage: 'de-DE',
+      isPartOf: { '@id': origin + '/' + ORG_ID },
+      about: { '@id': url + '#dataset' },
+      speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
+    },
+    datasetNode(origin),
+    definedTermSetNode(origin, definitionen),
+    ...definedTermNodes(origin, definitionen),
+    { ...faqNode(wissensFaqs), '@id': url + '#faq', url },
+    breadcrumbNode(origin, [
+      { name: 'Start', url: '/' },
+      { name: 'Wissen', url: '/wissen/' },
+    ]),
+  ];
+}
+
+/** entities.json als valides JSON-LD @graph: Org + Person + Services + DefinedTermSet/Terms + Dataset. */
+export function buildEntitiesGraph(origin: string): unknown[] {
+  return [
+    organizationNode(origin),
+    personNode(origin),
+    ...leistungen.map((l) => ({
+      '@type': 'Service',
+      '@id': origin + '/leistungen/' + l.slug + '/#service',
+      name: l.title,
+      serviceType: l.title,
+      url: origin + '/leistungen/' + l.slug + '/',
+      provider: { '@id': origin + '/' + ORG_ID },
+      areaServed: { '@type': 'AdministrativeArea', name: 'Nordrhein-Westfalen' },
+    })),
+    definedTermSetNode(origin, definitionen),
+    ...definedTermNodes(origin, definitionen),
+    datasetNode(origin),
+  ];
 }
 
 /** Voller Startseiten-Graph: Entity-Hub (Organization/LocalBusiness) + WebSite + WebPage (speakable). */

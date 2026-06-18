@@ -104,6 +104,7 @@ export const site = {
     { label: 'Leistungen', href: '/leistungen/' },
     { label: 'Standorte', href: '/standorte/' },
     { label: 'Ratgeber', href: '/ratgeber/' },
+    { label: 'Wissen', href: '/wissen/' },
     { label: 'Über uns', href: '/ueber-uns/' },
     { label: 'Kontakt', href: '/kontakt/' },
   ] as readonly NavItem[],

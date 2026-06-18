@@ -35,6 +35,10 @@ export default defineConfig({
         } else if (path === '/leistungen/' || path === '/standorte/') {
           priority = 0.9;
           changefreq = 'weekly';
+        } else if (path === '/wissen/') {
+          // Wissensdatenbank (Dataset-Hub) – wichtig für GEO/SEO.
+          priority = 0.8;
+          changefreq = 'weekly';
         } else if (path === '/kontakt/' || path === '/ratgeber/') {
           priority = 0.8;
           // Ratgeber-Artikel (/ratgeber/[slug]/) erben den Default 0.7 / monthly.

@@ -1,79 +1,17 @@
 import type { APIRoute } from 'astro';
-import { site, owner, qualifikationen } from '../data/site';
-import { leistungen } from '../data/leistungen';
-import { standorte } from '../data/standorte';
-import { bewertungAggregat, googleReviewsUrl } from '../data/bewertungen';
 import { resolveOrigin } from '../lib/origin';
+import { buildEntitiesGraph } from '../lib/schema';
 
-// entities.json: Entitaeten + sameAs-Verknuepfungen fuer Entity-/Knowledge-Graph (GEO).
+// entities.json: valides JSON-LD (@context + @graph) – Entitäten + sameAs für Entity-/Knowledge-Graph (GEO).
+// Organization, Person (Inhaber + Credentials), Services, DefinedTermSet/DefinedTerms (mit Definitionen)
+// und der Dataset-Knoten – aufgebaut aus denselben Buildern wie das On-Page-Schema (DRY).
 export const GET: APIRoute = (context) => {
   const origin = resolveOrigin(context.site);
-
-  const konzepte = [
-    { name: 'Asbest', sameAs: ['https://de.wikipedia.org/wiki/Asbest'] },
-    { name: 'Asbestsanierung', sameAs: ['https://de.wikipedia.org/wiki/Asbestsanierung'] },
-    {
-      name: 'Kuenstliche Mineralfaser (KMF)',
-      sameAs: ['https://de.wikipedia.org/wiki/K%C3%BCnstliche_Mineralfaser'],
-    },
-    {
-      name: 'Polyzyklische aromatische Kohlenwasserstoffe (PAK)',
-      sameAs: [
-        'https://de.wikipedia.org/wiki/Polycyclische_aromatische_Kohlenwasserstoffe',
-      ],
-    },
-    { name: 'TRGS 519', sameAs: [] as string[] },
-    { name: 'VDI 3492', sameAs: [] as string[] },
-    { name: 'Gefahrstoffverordnung', sameAs: ['https://de.wikipedia.org/wiki/Gefahrstoffverordnung'] },
-  ];
-
-  const data = {
-    updated: '2026-06-18',
-    entities: [
-      {
-        type: ['Organization', 'HomeAndConstructionBusiness'],
-        name: site.legalName,
-        url: origin + '/',
-        areaServed: 'Nordrhein-Westfalen, Schwerpunkt Ruhrgebiet / Emscher-Lippe-Region und Rheinland',
-        serviceCities: standorte.map((s) => s.name),
-        sameAs: [googleReviewsUrl],
-        aggregateRating: {
-          ratingValue: bewertungAggregat.rating,
-          reviewCount: bewertungAggregat.anzahl,
-          bestRating: 5,
-          source: 'Google',
-        },
-        knowsAbout: leistungen.map((l) => l.title),
-        founder: owner.name,
-        location: {
-          name: 'Marl',
-          sameAs: 'https://de.wikipedia.org/wiki/Marl',
-        },
-      },
-      {
-        type: 'Person',
-        name: owner.name,
-        jobTitle: owner.role,
-        worksFor: site.legalName,
-        knowsAbout: ['Asbestsanierung', 'Schadstoffsanierung', 'TRGS 519', 'TRGS 524'],
-        hasCredential: qualifikationen.map((q) => ({
-          type: 'EducationalOccupationalCredential',
-          name: q.title,
-          recognizedBy: q.issuer,
-          ...(q.validUntil ? { validUntil: q.validUntil } : {}),
-        })),
-      },
-      ...leistungen.map((l) => ({
-        type: 'Service',
-        name: l.title,
-        url: `${origin}/leistungen/${l.slug}/`,
-        provider: site.legalName,
-      })),
-      ...konzepte.map((k) => ({ type: 'DefinedTerm', name: k.name, sameAs: k.sameAs })),
-    ],
+  const doc = {
+    '@context': 'https://schema.org',
+    '@graph': buildEntitiesGraph(origin),
   };
-
-  return new Response(JSON.stringify(data, null, 2), {
+  return new Response(JSON.stringify(doc, null, 2), {
     headers: { 'Content-Type': 'application/json; charset=utf-8' },
   });
 };

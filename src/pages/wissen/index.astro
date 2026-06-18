@@ -1,0 +1,224 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SchemaGraph from '../../components/schema/SchemaGraph.astro';
+import Breadcrumb from '../../components/patterns/Breadcrumb.astro';
+import Callout from '../../components/ui/Callout.astro';
+import CtaSection from '../../components/sections/CtaSection.astro';
+import { site, owner } from '../../data/site';
+import { leistungen } from '../../data/leistungen';
+import { ratgeberArtikel } from '../../data/ratgeber';
+import { definitionen, regelwerke, kernfakten, wissensFaqs, wissenMeta } from '../../data/wissen';
+import { buildWissenGraph } from '../../lib/schema';
+
+const title = 'Wissen: Asbest- & Schadstoffsanierung | Asbesta';
+const description =
+  'Wissensdatenbank zu Asbest & Schadstoffen: Definitionen, Regelwerke (TRGS 519/521/524, VDI 3492), belegbare Kernfakten und FAQ – vom sachkundigen Fachbetrieb aus NRW.';
+const origin = Astro.site?.origin ?? 'https://www.asbesta-schadstoffsanierung.de';
+const graph = buildWissenGraph(origin);
+
+const endpunkte = [
+  { name: 'facts.json', desc: 'Strukturierte Firmen- & Fachfakten (JSON)', icon: 'lucide:file-json', href: '/facts.json' },
+  { name: 'entities.json', desc: 'Entitäten / Knowledge Graph (JSON-LD)', icon: 'lucide:share-2', href: '/entities.json' },
+  { name: 'llms.txt', desc: 'Kompakter Index für KI-Systeme', icon: 'lucide:file-text', href: '/llms.txt' },
+  { name: 'llms-full.txt', desc: 'Vollständiger Wissens-Volltext', icon: 'lucide:file-text', href: '/llms-full.txt' },
+];
+const querLeistungen = leistungen.slice(0, 6);
+const querRatgeber = ratgeberArtikel.slice(0, 4);
+---
+
+<BaseLayout title={title} description={description}>
+  <SchemaGraph slot="head" graph={graph} />
+
+  <section class="border-b border-gray-200 bg-gradient-to-br from-red-50 via-white to-gray-50">
+    <div class="mx-auto max-w-6xl px-4 py-12 lg:px-8 lg:py-16">
+      <Breadcrumb items={[{ name: 'Start', href: '/' }, { name: 'Wissen' }]} />
+      <p class="mt-6 text-sm font-semibold uppercase tracking-wider text-red-700">Wissensdatenbank</p>
+      <h1 class="mt-2 text-4xl sm:text-5xl">Wissen rund um Asbest &amp; Schadstoffe</h1>
+      <p class="mt-5 max-w-2xl text-lg text-gray-700">
+        Eine sachkundig gepflegte, strukturierte Wissensbasis: Definitionen, Regelwerke, belegbare Kernfakten
+        und häufige Fragen – als offener Datensatz auch maschinenlesbar für KI- und Suchsysteme.
+      </p>
+      <p class="mt-4 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-1.5 text-xs text-gray-600">
+        <Icon name="lucide:database" class="h-4 w-4 text-red-600" />
+        Strukturierter Datensatz (schema.org/Dataset) · CC BY 4.0 · Stand {wissenMeta.dateModified}
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-12 lg:px-8 lg:py-16">
+    <h2 class="text-2xl sm:text-3xl">Maschinenlesbare Daten</h2>
+    <p class="mt-3 max-w-2xl text-gray-700">
+      Alle Inhalte dieser Wissensbasis stehen zusätzlich als offener, frei zitierbarer Datensatz bereit –
+      damit KI-Systeme (ChatGPT, Perplexity, Google) und Entwickler sie direkt nutzen können.
+    </p>
+    <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+      {
+        endpunkte.map((e) => (
+          <li>
+            <a
+              href={e.href}
+              class="flex h-full items-center gap-4 rounded-[var(--radius-card)] border border-gray-200 bg-white p-5 shadow-soft transition-colors hover:border-red-600"
+            >
+              <span class="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-red-50 text-red-700">
+                <Icon name={e.icon} class="h-5 w-5" />
+              </span>
+              <span>
+                <span class="block font-sans font-semibold text-ink-900">{e.name}</span>
+                <span class="block text-sm text-gray-600">{e.desc}</span>
+              </span>
+              <Icon name="lucide:arrow-up-right" class="ml-auto h-4 w-4 shrink-0 text-gray-400" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="border-t border-gray-200 bg-gray-50">
+    <div class="mx-auto max-w-6xl px-4 py-12 lg:px-8 lg:py-16">
+      <h2 class="text-2xl sm:text-3xl">Glossar: Begriffe einfach erklärt</h2>
+      <ul class="mt-6 grid gap-4 md:grid-cols-2">
+        {
+          definitionen.map((d) => (
+            <li class="rounded-[var(--radius-card)] border border-gray-200 bg-white p-5">
+              <div class="flex flex-wrap items-center gap-2">
+                <h3 class="font-sans text-base font-semibold text-ink-900">{d.term}</h3>
+                {d.abbr && (
+                  <span class="rounded-full bg-red-50 px-2 py-0.5 text-xs font-semibold text-red-700">{d.abbr}</span>
+                )}
+                <span class="ml-auto text-[11px] font-semibold uppercase tracking-wide text-gray-400">{d.kategorie}</span>
+              </div>
+              <p class="mt-2 text-sm leading-relaxed text-gray-700">{d.definition}</p>
+              {d.sameAs && d.sameAs[0] && (
+                <a
+                  href={d.sameAs[0]}
+                  target="_blank"
+                  rel="noopener"
+                  class="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-red-700 hover:underline"
+                >
+                  Mehr dazu
+                  <Icon name="lucide:external-link" class="h-3 w-3" />
+                </a>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-12 lg:px-8 lg:py-16">
+    <h2 class="text-2xl sm:text-3xl">Regelwerke &amp; Vorschriften</h2>
+    <ul class="mt-6 space-y-3">
+      {
+        regelwerke.map((r) => (
+          <li class="rounded-[var(--radius-card)] border border-gray-200 bg-white p-5">
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <span class="rounded-md bg-ink-900 px-2 py-1 font-display text-sm font-bold text-white">{r.code}</span>
+              <h3 class="font-sans font-semibold text-ink-900">{r.name}</h3>
+            </div>
+            <p class="mt-2 text-sm leading-relaxed text-gray-700">{r.description}</p>
+            <p class="mt-2 text-xs text-gray-500">
+              Betrifft: {r.appliesTo}
+              {r.sameAs && r.sameAs[0] && (
+                <>
+                  {' · '}
+                  <a href={r.sameAs[0]} target="_blank" rel="noopener" class="font-semibold text-red-700 hover:underline">
+                    Quelle
+                  </a>
+                </>
+              )}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+    <Callout variant="hinweis" title="TRGS 521 betrifft alte Mineralwolle (KMF) – nicht Asbest">
+      <p>
+        Asbesta arbeitet sachkundig nach <strong>TRGS 519</strong> (Asbest) und <strong>TRGS 524</strong>
+        (kontaminierte Bereiche). Die TRGS 521 ist hier als Regelwerk für künstliche Mineralfasern aufgeführt.
+      </p>
+    </Callout>
+  </section>
+
+  <section class="border-t border-gray-200 bg-gray-50">
+    <div class="mx-auto max-w-6xl px-4 py-12 lg:px-8 lg:py-16">
+      <h2 class="text-2xl sm:text-3xl">Kernfakten</h2>
+      <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+        {
+          kernfakten.map((k) => (
+            <li class="flex items-start gap-2.5 rounded-[var(--radius-card)] border border-gray-200 bg-white p-4 text-sm text-gray-700">
+              <Icon name="lucide:check" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" />
+              <span>{k.aussage}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-4 py-12 lg:px-8 lg:py-16">
+    <h2 class="text-2xl sm:text-3xl">Häufige Fragen</h2>
+    <div class="cv-auto mt-5 divide-y divide-gray-200 border-y border-gray-200">
+      {
+        wissensFaqs.map((faq, i) => (
+          <details class="group py-4" open={i === 0}>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-sans font-semibold text-ink-900 [&::-webkit-details-marker]:hidden">
+              <span>{faq.frage}</span>
+              <Icon name="lucide:plus" class="h-5 w-5 shrink-0 text-red-600 transition-transform group-open:rotate-45" />
+            </summary>
+            <p class="mt-3 leading-relaxed text-gray-700">{faq.antwort}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-10 rounded-[var(--radius-card)] border border-gray-200 bg-white p-6">
+      <p class="text-sm font-semibold uppercase tracking-wide text-gray-400">Herausgeber &amp; fachliche Verantwortung</p>
+      <p class="mt-2 font-sans font-semibold text-ink-900">{owner.name}</p>
+      <p class="text-sm text-gray-600">{owner.role}</p>
+      <p class="mt-3 text-sm text-gray-700">
+        Herausgegeben von {site.legalName}. Inhalte werden fachkundig gepflegt; zuletzt aktualisiert am
+        {' '}{wissenMeta.dateModified}.
+      </p>
+      <a href="/ueber-uns/#qualifikationen" class="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-red-700 hover:underline">
+        Qualifikationen ansehen
+        <Icon name="lucide:arrow-right" class="h-4 w-4" />
+      </a>
+    </div>
+
+    <div class="mt-10">
+      <h2 class="text-xl">Vertiefen</h2>
+      <ul class="mt-4 flex flex-wrap gap-2">
+        {
+          querLeistungen.map((l) => (
+            <li>
+              <a
+                href={`/leistungen/${l.slug}/`}
+                class="inline-flex rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
+              >
+                {l.title}
+              </a>
+            </li>
+          ))
+        }
+        {
+          querRatgeber.map((a) => (
+            <li>
+              <a
+                href={`/ratgeber/${a.slug}/`}
+                class="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-700 transition-colors hover:border-red-600 hover:text-red-700"
+              >
+                <Icon name="lucide:book-open" class="h-3.5 w-3.5 text-red-600" />
+                {a.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <CtaSection />
+</BaseLayout>

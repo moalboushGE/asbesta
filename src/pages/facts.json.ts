@@ -5,88 +5,96 @@ import { leistungenDetail } from '../data/leistungen-detail';
 import { ratgeberArtikel } from '../data/ratgeber';
 import { standorte } from '../data/standorte';
 import { bewertungAggregat, googleReviewsUrl } from '../data/bewertungen';
+import { definitionen, regelwerke, wissenLicense } from '../data/wissen';
 import { resolveOrigin } from '../lib/origin';
 
 // facts.json: maschinenlesbare Firmenfakten (Single Source of Truth fuer AI-Crawler & Entwickler).
-export const GET: APIRoute = (context) => {
-  const origin = resolveOrigin(context.site);
 
-  // Frage-Antwort-Wissen aus den echten Leistungs- & Ratgeber-FAQs (KI-Zitierfaehigkeit).
-  // Kombi-FAQs bewusst ausgelassen (Near-Duplicate-Vermeidung).
-  const faq = [
+// Frage-Antwort-Wissen aus den echten Leistungs- & Ratgeber-FAQs (KI-Zitierfaehigkeit).
+// Kombi-FAQs bewusst ausgelassen (Near-Duplicate-Vermeidung).
+function buildFaq(origin: string): unknown[] {
+  return [
     ...leistungen.flatMap((l) => {
       const d = leistungenDetail[l.slug];
       return d
-        ? d.faqs.map((f) => ({
-            question: f.frage,
-            answer: f.antwort,
-            topic: l.title,
-            source: `${origin}/leistungen/${l.slug}/`,
-          }))
+        ? d.faqs.map((f) => ({ question: f.frage, answer: f.antwort, topic: l.title, source: `${origin}/leistungen/${l.slug}/` }))
         : [];
     }),
     ...ratgeberArtikel.flatMap((a) =>
-      a.faqs.map((f) => ({
-        question: f.frage,
-        answer: f.antwort,
-        topic: a.title,
-        source: `${origin}/ratgeber/${a.slug}/`,
-      })),
+      a.faqs.map((f) => ({ question: f.frage, answer: f.antwort, topic: a.title, source: `${origin}/ratgeber/${a.slug}/` })),
     ),
   ];
+}
 
-  const facts = {
-    updated: '2026-06-18',
-    organization: {
-      name: site.legalName,
-      shortName: site.name,
-      url: origin + '/',
-      telephone: site.phone.display,
-      whatsapp: site.whatsapp.href,
-      email: site.email,
-      address: {
-        street: site.address.street,
-        postalCode: site.address.zip,
-        city: site.address.city,
-        region: site.address.region,
-        country: site.address.country,
-      },
-      areaServed: 'Nordrhein-Westfalen, Schwerpunkt Ruhrgebiet / Emscher-Lippe-Region und Rheinland',
-      serviceCities: standorte.map((s) => s.name),
-      certifications: site.certifications,
-      owner: {
-        name: owner.name,
-        role: owner.role,
-        credentials: qualifikationen.map((q) => ({
-          name: q.title,
-          issuer: q.issuer,
-          ...(q.validUntil ? { validUntil: q.validUntil } : {}),
-        })),
-      },
-      ownerLed: true,
-      insurance: 'Betriebshaftpflicht',
-      documentation: 'Freimessung nach VDI 3492 + Entsorgungsnachweis',
-      responseTime: site.responseTime,
-      rating: {
-        value: bewertungAggregat.rating,
-        count: bewertungAggregat.anzahl,
-        scale: 5,
-        source: 'Google',
-        url: googleReviewsUrl,
-      },
-      sameAs: [googleReviewsUrl],
+function buildOrganization(origin: string): Record<string, unknown> {
+  return {
+    name: site.legalName,
+    shortName: site.name,
+    url: origin + '/',
+    telephone: site.phone.display,
+    whatsapp: site.whatsapp.href,
+    email: site.email,
+    address: {
+      street: site.address.street,
+      postalCode: site.address.zip,
+      city: site.address.city,
+      region: site.address.region,
+      country: site.address.country,
     },
-    services: leistungen.map((l) => ({
-      slug: l.slug,
-      name: l.title,
-      summary: l.summary,
-      url: `${origin}/leistungen/${l.slug}/`,
-    })),
-    faq,
+    areaServed: 'Nordrhein-Westfalen, Schwerpunkt Ruhrgebiet / Emscher-Lippe-Region und Rheinland',
+    serviceCities: standorte.map((s) => s.name),
+    certifications: site.certifications,
+    owner: {
+      name: owner.name,
+      role: owner.role,
+      credentials: qualifikationen.map((q) => ({
+        name: q.title,
+        issuer: q.issuer,
+        ...(q.validUntil ? { validUntil: q.validUntil } : {}),
+      })),
+    },
+    ownerLed: true,
+    insurance: 'Betriebshaftpflicht',
+    documentation: 'Freimessung nach VDI 3492 + Entsorgungsnachweis',
+    responseTime: site.responseTime,
+    rating: { value: bewertungAggregat.rating, count: bewertungAggregat.anzahl, scale: 5, source: 'Google', url: googleReviewsUrl },
+    sameAs: [googleReviewsUrl],
+  };
+}
+
+const glossary = definitionen.map((d) => ({
+  term: d.term,
+  ...(d.abbr ? { abbr: d.abbr } : {}),
+  definition: d.definition,
+  category: d.kategorie,
+  ...(d.sameAs && d.sameAs.length > 0 ? { sameAs: d.sameAs } : {}),
+}));
+
+const regulations = regelwerke.map((r) => ({
+  code: r.code,
+  name: r.name,
+  description: r.description,
+  appliesTo: r.appliesTo,
+  ...(r.sameAs && r.sameAs.length > 0 ? { sameAs: r.sameAs } : {}),
+}));
+
+export const GET: APIRoute = (context) => {
+  const origin = resolveOrigin(context.site);
+  const facts = {
+    schemaVersion: '1.1',
+    updated: '2026-06-18',
+    language: 'de',
+    dataset: origin + '/wissen/',
+    license: wissenLicense.license,
+    isAccessibleForFree: wissenLicense.isAccessibleForFree,
+    organization: buildOrganization(origin),
+    services: leistungen.map((l) => ({ slug: l.slug, name: l.title, summary: l.summary, url: `${origin}/leistungen/${l.slug}/` })),
+    glossary,
+    regulations,
+    faq: buildFaq(origin),
     disclaimer:
       'Arbeiten an asbesthaltigen Materialien dürfen in Deutschland nur durch sachkundige Fachbetriebe nach TRGS 519 ausgeführt werden.',
   };
-
   return new Response(JSON.stringify(facts, null, 2), {
     headers: { 'Content-Type': 'application/json; charset=utf-8' },
   });

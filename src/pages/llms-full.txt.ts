@@ -3,9 +3,10 @@ import { site } from '../data/site';
 import { leistungen } from '../data/leistungen';
 import { leistungenDetail } from '../data/leistungen-detail';
 import { standorte } from '../data/standorte';
+import { definitionen, regelwerke, kernfakten, wissensFaqs } from '../data/wissen';
 import { resolveOrigin } from '../lib/origin';
 
-// llms-full.txt: ausfuehrlicher Volltext (Firma + alle Leistungen) fuer LLM-Kontext.
+// llms-full.txt: ausfuehrlicher Volltext (Firma + alle Leistungen + Wissensbasis) fuer LLM-Kontext.
 export const GET: APIRoute = (context) => {
   const origin = resolveOrigin(context.site);
 
@@ -19,6 +20,18 @@ export const GET: APIRoute = (context) => {
     })
     .join('\n\n---\n\n');
 
+  const glossar = definitionen
+    .map((d) => {
+      const label = d.abbr ? `${d.term} (${d.abbr})` : d.term;
+      return `### ${label}\n${d.definition}`;
+    })
+    .join('\n\n');
+  const regeln = regelwerke
+    .map((r) => `### ${r.code} — ${r.name}\n${r.description}\nBetrifft: ${r.appliesTo}`)
+    .join('\n\n');
+  const fakten = kernfakten.map((k) => `- ${k.aussage}`).join('\n');
+  const faq = wissensFaqs.map((f) => `**${f.frage}**\n${f.antwort}`).join('\n\n');
+
   const md = `# ${site.legalName} — Volltext
 
 ${site.intro}
@@ -31,6 +44,22 @@ Kennzahlen: ${site.stats.map((s) => `${s.value} ${s.label}`).join(', ')}.
 ## Leistungen im Detail
 
 ${services}
+
+## Glossar / Definitionen
+
+${glossar}
+
+## Regelwerke
+
+${regeln}
+
+## Kernfakten
+
+${fakten}
+
+## Häufige Fragen (Q&A)
+
+${faq}
 `;
 
   return new Response(md, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });

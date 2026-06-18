@@ -683,7 +683,7 @@ export const ratgeberContent: Record<string, RatgeberContent> = {
       },
       {
         type: 'p',
-        html: 'Asbesta ist Ihr inhabergeführter, nach <strong>TRGS 519/521/524</strong> zertifizierter Fachbetrieb für Asbest- und Schadstoffsanierung aus Marl – tätig in ganz Nordrhein-Westfalen. Wir begutachten verdächtige Spritzasbestschichten, veranlassen Material- und Luftanalysen, bewerten die Dringlichkeit und sanieren fachgerecht bis zur dokumentierten Freigabe. Schildern Sie uns Ihren Fall über unser <a href="/kontakt/">Kontaktformular</a> oder rufen Sie uns direkt an unter <strong>+49 2365 2960630</strong> – wir beraten Sie ehrlich und nennen Ihnen nach einer kostenlosen Besichtigung einen verbindlichen Festpreis.',
+        html: 'Asbesta ist Ihr inhabergeführter, nach <strong>TRGS 519/524</strong> zertifizierter Fachbetrieb für Asbest- und Schadstoffsanierung aus Marl – tätig in ganz Nordrhein-Westfalen. Wir begutachten verdächtige Spritzasbestschichten, veranlassen Material- und Luftanalysen, bewerten die Dringlichkeit und sanieren fachgerecht bis zur dokumentierten Freigabe. Schildern Sie uns Ihren Fall über unser <a href="/kontakt/">Kontaktformular</a> oder rufen Sie uns direkt an unter <strong>+49 2365 2960630</strong> – wir beraten Sie ehrlich und nennen Ihnen nach einer kostenlosen Besichtigung einen verbindlichen Festpreis.',
       },
     ],
   },
@@ -1323,7 +1323,7 @@ export const ratgeberContent: Record<string, RatgeberContent> = {
       },
       {
         type: 'p',
-        html: 'Asbesta ist Ihr inhabergeführter, nach TRGS 519/521/524 zertifizierter Fachbetrieb aus Marl – tätig in ganz NRW. Wir übernehmen den kompletten Ablauf von der Besichtigung über den staubarmen Ausbau bis zur Entsorgung mit Nachweis. Mehr zu unseren Leistungen finden Sie unter <a href="/leistungen/asbestsanierung/">Asbestsanierung</a> und <a href="/leistungen/abbrucharbeiten/">Abbrucharbeiten</a>. Vereinbaren Sie jetzt Ihre kostenlose Besichtigung über unser <a href="/kontakt/">Kontaktformular</a> oder rufen Sie uns direkt an unter <strong>+49 2365 2960630</strong> – wir nennen Ihnen einen verbindlichen Festpreis für die fachgerechte Entsorgung Ihres Nachtspeicherofens.',
+        html: 'Asbesta ist Ihr inhabergeführter, nach TRGS 519/524 zertifizierter Fachbetrieb aus Marl – tätig in ganz NRW. Wir übernehmen den kompletten Ablauf von der Besichtigung über den staubarmen Ausbau bis zur Entsorgung mit Nachweis. Mehr zu unseren Leistungen finden Sie unter <a href="/leistungen/asbestsanierung/">Asbestsanierung</a> und <a href="/leistungen/abbrucharbeiten/">Abbrucharbeiten</a>. Vereinbaren Sie jetzt Ihre kostenlose Besichtigung über unser <a href="/kontakt/">Kontaktformular</a> oder rufen Sie uns direkt an unter <strong>+49 2365 2960630</strong> – wir nennen Ihnen einen verbindlichen Festpreis für die fachgerechte Entsorgung Ihres Nachtspeicherofens.',
       },
     ],
   },
@@ -2352,7 +2352,7 @@ export const ratgeberContent: Record<string, RatgeberContent> = {
       },
       {
         type: 'p',
-        html: 'Asbest beim Hauskauf ist Vertrauenssache – sowohl bei der Diagnose als auch bei einer späteren Sanierung. Ein zertifizierter Fachbetrieb bringt die Sachkunde nach TRGS 519/521/524, die fachgerechte Probenahme, die Anzeige bei der Behörde, eine rechtssichere Entsorgung mit Nachweis und die abschließende Freimessung mit – alles aus einer Hand. Das schützt Ihre Gesundheit, erfüllt die gesetzlichen Pflichten und liefert Ihnen eine belastbare Dokumentation, die im Kauf- wie im Verkaufsfall bares Geld wert ist. Auch <a href="/leistungen/abbrucharbeiten/">Rückbau- und Abbrucharbeiten</a> gehören dazu, wenn ein Bauteil komplett entfernt wird.',
+        html: 'Asbest beim Hauskauf ist Vertrauenssache – sowohl bei der Diagnose als auch bei einer späteren Sanierung. Ein zertifizierter Fachbetrieb bringt die Sachkunde nach TRGS 519/524, die fachgerechte Probenahme, die Anzeige bei der Behörde, eine rechtssichere Entsorgung mit Nachweis und die abschließende Freimessung mit – alles aus einer Hand. Das schützt Ihre Gesundheit, erfüllt die gesetzlichen Pflichten und liefert Ihnen eine belastbare Dokumentation, die im Kauf- wie im Verkaufsfall bares Geld wert ist. Auch <a href="/leistungen/abbrucharbeiten/">Rückbau- und Abbrucharbeiten</a> gehören dazu, wenn ein Bauteil komplett entfernt wird.',
       },
       {
         type: 'p',
@@ -2970,7 +2970,7 @@ export const ratgeberContent: Record<string, RatgeberContent> = {
       },
       {
         type: 'p',
-        html: 'Asbesta ist Ihr inhabergeführter Fachbetrieb für <a href="/leistungen/asbestsanierung/">Asbestsanierung</a> und Schadstoffentsorgung in ganz Nordrhein-Westfalen – zertifiziert nach TRGS 519/521/524, von der ersten Materialprobe bis zur dokumentierten Deponie-Anlieferung. Ob <a href="/leistungen/welleternit-ausbauen/">Welleternit-Dach</a>, Fassadenplatten oder Bodenbelag: Wir beraten Sie ehrlich, verpacken staubdicht und nennen Ihnen einen fairen Festpreis inklusive aller Entsorgungskosten. <a href="/kontakt/">Jetzt kostenlose Anfrage stellen.</a>',
+        html: 'Asbesta ist Ihr inhabergeführter Fachbetrieb für <a href="/leistungen/asbestsanierung/">Asbestsanierung</a> und Schadstoffentsorgung in ganz Nordrhein-Westfalen – zertifiziert nach TRGS 519/524, von der ersten Materialprobe bis zur dokumentierten Deponie-Anlieferung. Ob <a href="/leistungen/welleternit-ausbauen/">Welleternit-Dach</a>, Fassadenplatten oder Bodenbelag: Wir beraten Sie ehrlich, verpacken staubdicht und nennen Ihnen einen fairen Festpreis inklusive aller Entsorgungskosten. <a href="/kontakt/">Jetzt kostenlose Anfrage stellen.</a>',
       },
     ],
   },
