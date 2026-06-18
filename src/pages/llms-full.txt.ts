@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro';
 import { site } from '../data/site';
 import { leistungen } from '../data/leistungen';
 import { leistungenDetail } from '../data/leistungen-detail';
+import { ratgeberArtikel } from '../data/ratgeber';
 import { standorte } from '../data/standorte';
 import { definitionen, regelwerke, kernfakten, kostenfaktoren, wissensFaqs } from '../data/wissen';
 import { resolveOrigin } from '../lib/origin';
@@ -23,9 +24,19 @@ export const GET: APIRoute = (context) => {
   const glossar = definitionen
     .map((d) => {
       const label = d.abbr ? `${d.term} (${d.abbr})` : d.term;
-      return `### ${label}\n${d.definition}`;
+      const synonyme = d.altLabel && d.altLabel.length > 0 ? `\nAuch genannt: ${d.altLabel.join(', ')}.` : '';
+      return `### ${label}\n${d.definition}${synonyme}`;
     })
     .join('\n\n');
+  const ratgeber = ratgeberArtikel
+    .map((a) => {
+      const faqs = a.faqs.map((f) => `**${f.frage}**\n${f.antwort}`).join('\n\n');
+      return `### ${a.title}\nURL: ${origin}/ratgeber/${a.slug}/\n\n${a.excerpt}\n\n${faqs}`;
+    })
+    .join('\n\n---\n\n');
+  const standorteListe = standorte
+    .map((s) => `- ${s.name} (${s.region}): ${origin}/standorte/${s.slug}/`)
+    .join('\n');
   const regeln = regelwerke
     .map((r) => `### ${r.code} — ${r.name}\n${r.description}\nBetrifft: ${r.appliesTo}`)
     .join('\n\n');
@@ -46,6 +57,10 @@ Kennzahlen: ${site.stats.map((s) => `${s.value} ${s.label}`).join(', ')}.
 
 ${services}
 
+## Standorte (eigene Stadtseiten)
+
+${standorteListe}
+
 ## Glossar / Definitionen
 
 ${glossar}
@@ -65,6 +80,10 @@ ${kosten}
 ## Häufige Fragen (Q&A)
 
 ${faq}
+
+## Ratgeber (Fachbeiträge mit Q&A)
+
+${ratgeber}
 `;
 
   return new Response(md, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });

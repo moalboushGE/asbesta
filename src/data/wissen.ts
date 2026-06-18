@@ -7,6 +7,8 @@ export interface Definition {
   readonly term: string;
   readonly abbr?: string;
   readonly definition: string;
+  /** Alternative Bezeichnungen / Suchsynonyme (z. B. „Freimessung" ↔ „Raumluftmessung"). */
+  readonly altLabel?: readonly string[];
   /** Nur verifizierte externe Referenz (Wikipedia/offiziell) – im Zweifel weglassen. */
   readonly sameAs?: readonly string[];
   readonly kategorie: 'Stoff' | 'Verfahren' | 'Dokument';
@@ -47,7 +49,15 @@ export const definitionen: readonly Definition[] = [
     term: 'Asbestsanierung',
     definition:
       'Das fachgerechte Entfernen asbesthaltiger Materialien nach TRGS 519 unter definierten Schutzmaßnahmen – inklusive Entsorgung als gefährlicher Abfall und abschließender Freimessung der Raumluft.',
+    altLabel: ['Asbestentfernung', 'Asbest entfernen', 'Asbestmaterialentfernung', 'Asbestrückbau'],
     sameAs: ['https://de.wikipedia.org/wiki/Asbestsanierung'],
+    kategorie: 'Verfahren',
+  },
+  {
+    term: 'Materialanalyse',
+    definition:
+      'Laboruntersuchung einer entnommenen Materialprobe auf Asbest nach VDI 3866. Sie weist eindeutig nach, ob ein Bauteil asbesthaltig ist – die Grundlage jeder fachgerechten Planung vor dem Eingriff.',
+    altLabel: ['Asbest-Test', 'Asbestuntersuchung', 'Asbestanalyse', 'Materialprobe', 'Asbest testen'],
     kategorie: 'Verfahren',
   },
   {
@@ -61,6 +71,7 @@ export const definitionen: readonly Definition[] = [
     abbr: 'KMF',
     definition:
       'Sammelbegriff für künstlich hergestellte glasige Silikatfasern wie alte Glas- und Steinwolle. Ältere Dämmwollen (vor 1996/2000) können krebsverdächtig sein; der Umgang ist in der TRGS 521 geregelt.',
+    altLabel: ['KMF-Entfernung', 'KMF-Sanierung', 'alte Mineralwolle entfernen', 'Glaswolle entsorgen', 'Steinwolle entsorgen'],
     sameAs: ['https://de.wikipedia.org/wiki/K%C3%BCnstliche_Mineralfaser'],
     kategorie: 'Stoff',
   },
@@ -76,6 +87,7 @@ export const definitionen: readonly Definition[] = [
     term: 'Freimessung',
     definition:
       'Messung der Raumluft nach Abschluss der Sanierung gemäß VDI 3492. Sie weist nach, dass die Faserkonzentration unter dem Grenzwert liegt und die Räume gefahrlos wieder genutzt werden dürfen.',
+    altLabel: ['Raumluftmessung', 'Abnahmemessung', 'Luftanalyse', 'Endkontrolle nach Sanierung'],
     kategorie: 'Verfahren',
   },
   {
@@ -160,6 +172,22 @@ export const regelwerke: readonly Regelwerk[] = [
     description:
       'Kennzeichnet asbesthaltige Baustoffe als gefährlichen Abfall (das Sternchen markiert „gefährlich"). Maßgeblich für die Entsorgung mit Nachweis.',
     appliesTo: 'Entsorgung asbesthaltiger Abfälle',
+    sameAs: ['https://de.wikipedia.org/wiki/Abfallverzeichnis-Verordnung'],
+  },
+  {
+    code: 'AVV 17 06 01*',
+    name: 'Abfallschlüssel für asbesthaltiges Dämmmaterial',
+    description:
+      'Kennzeichnet Dämmmaterial, das Asbest enthält, als gefährlichen Abfall. Relevant z. B. für asbesthaltige Rohr- und Behälterisolierungen.',
+    appliesTo: 'Entsorgung asbesthaltigen Dämmmaterials',
+    sameAs: ['https://de.wikipedia.org/wiki/Abfallverzeichnis-Verordnung'],
+  },
+  {
+    code: 'AVV 17 06 03*',
+    name: 'Abfallschlüssel für sonstiges gefährliches Dämmmaterial',
+    description:
+      'Kennzeichnet anderes Dämmmaterial, das aus gefährlichen Stoffen besteht oder solche enthält – etwa alte künstliche Mineralfasern (KMF) vor 1996/2000. Kein Asbest, aber ebenfalls gefährlicher Abfall.',
+    appliesTo: 'Entsorgung alter Mineralwolle / KMF (TRGS 521)',
     sameAs: ['https://de.wikipedia.org/wiki/Abfallverzeichnis-Verordnung'],
   },
 ];
@@ -276,7 +304,7 @@ export const wissenMeta = {
   ],
   inLanguage: 'de',
   datePublished: '2026-06-18',
-  dateModified: '2026-06-18',
+  dateModified: '2026-06-19',
 } as const;
 
 /** Lizenz des Datensatzes: CC BY 4.0 – frei zitierbar mit Quellenangabe (gut für KI/GEO). */

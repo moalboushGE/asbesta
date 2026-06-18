@@ -461,6 +461,7 @@ export function definedTermNodes(origin: string, defs: readonly Definition[]): R
       description: d.definition,
       inDefinedTermSet: { '@id': origin + WISSEN_PATH + TERMSET_ID },
     };
+    if (d.altLabel && d.altLabel.length > 0) node.alternateName = [...d.altLabel];
     if (d.kategorie === 'Dokument') node.termCode = d.abbr ?? d.term;
     if (d.sameAs && d.sameAs.length > 0) node.sameAs = [...d.sameAs];
     return node;

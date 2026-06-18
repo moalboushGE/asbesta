@@ -65,6 +65,7 @@ function buildOrganization(origin: string): Record<string, unknown> {
 const glossary = definitionen.map((d) => ({
   term: d.term,
   ...(d.abbr ? { abbr: d.abbr } : {}),
+  ...(d.altLabel && d.altLabel.length > 0 ? { alternateName: d.altLabel } : {}),
   definition: d.definition,
   category: d.kategorie,
   ...(d.sameAs && d.sameAs.length > 0 ? { sameAs: d.sameAs } : {}),
@@ -82,18 +83,18 @@ const keyFacts = kernfakten.map((k) => k.aussage);
 const costFactors = kostenfaktoren.map((k) => ({ factor: k.faktor, influence: k.einfluss }));
 const serviceArea = {
   region: 'Nordrhein-Westfalen',
-  statement: `Asbesta saniert im gesamten Einzugsgebiet Nordrhein-Westfalen, u. a. in ${standorte
-    .slice(0, 8)
+  statement: `Asbesta saniert im gesamten Einzugsgebiet Nordrhein-Westfalen in ${standorte.length} Städten mit eigener Standortseite – im Ruhrgebiet und der Emscher-Lippe-Region, im Rheinland und Bergischen Land, in Ostwestfalen-Lippe und im Münsterland (u. a. ${standorte
+    .slice(0, 12)
     .map((s) => s.name)
-    .join(', ')} und weiteren Städten.`,
+    .join(', ')} und weitere).`,
   cities: standorte.map((s) => s.name),
 };
 
 export const GET: APIRoute = (context) => {
   const origin = resolveOrigin(context.site);
   const facts = {
-    schemaVersion: '1.1',
-    updated: '2026-06-18',
+    schemaVersion: '1.2',
+    updated: '2026-06-19',
     language: 'de',
     dataset: origin + '/wissen/',
     license: wissenLicense.license,
