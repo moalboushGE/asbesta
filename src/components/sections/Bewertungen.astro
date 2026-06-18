@@ -1,61 +1,106 @@
 ---
 import { Icon } from 'astro-icon/components';
+import GoogleG from '../ui/GoogleG.astro';
 import { bewertungen, bewertungAggregat, googleReviewsUrl } from '../../data/bewertungen';
 
 /** Echte Google-Rezensionen (Social Proof). Rendert nichts, wenn keine Bewertungen vorliegen –
  *  so wird nie eine leere/erfundene Sektion gezeigt. */
 const hat = bewertungen.length > 0;
+const ratingFmt = bewertungAggregat.rating.toLocaleString('de-DE', { minimumFractionDigits: 1 });
+
+/** Initialen aus dem (echten) Namen – fuer das Avatar-Kuerzel (max. 2 Buchstaben). */
+function initialen(name: string): string {
+  return name
+    .split(/\s+/)
+    .map((w) => w.replace(/[^\p{L}]/gu, '')[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join('')
+    .toUpperCase();
+}
+
+/** On-brand, tonale Avatar-Farben – deterministisch nach Position (kein Zufall, stabil im Build). */
+const avatarStyles = [
+  'bg-ink-900 text-white',
+  'bg-red-600 text-white',
+  'bg-red-50 text-red-700',
+  'bg-gray-100 text-ink-900',
+];
 ---
 
 {
   hat && (
     <section id="bewertungen" class="bg-gray-50">
       <div class="mx-auto max-w-6xl px-4 py-16 lg:px-8 lg:py-20">
-        <div class="flex flex-wrap items-end justify-between gap-5">
+        <div class="flex flex-wrap items-end justify-between gap-6">
           <div class="max-w-2xl">
             <p class="text-sm font-semibold uppercase tracking-wider text-red-700">Bewertungen</p>
             <h2 class="mt-2 text-3xl sm:text-4xl">Das sagen unsere Kundinnen und Kunden</h2>
+            <p class="mt-3 inline-flex items-center gap-2 text-sm text-gray-500">
+              <Icon name="lucide:shield-check" class="h-4 w-4 shrink-0 text-red-600" />
+              Echte, auf Google öffentlich nachprüfbare Bewertungen
+            </p>
           </div>
+
           <a
             href={googleReviewsUrl}
             target="_blank"
             rel="noopener"
-            class="inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white px-5 py-2.5 shadow-soft transition-colors hover:border-red-300"
+            class="group inline-flex items-center gap-4 rounded-2xl border border-gray-200 bg-white px-6 py-4 shadow-soft transition-transform hover:-translate-y-0.5"
+            aria-label={`${ratingFmt} von 5 Sternen aus ${bewertungAggregat.anzahl} Google-Rezensionen – auf Google ansehen`}
           >
-            <span class="font-display text-2xl font-extrabold text-ink-900">
-              {bewertungAggregat.rating.toLocaleString('de-DE', { minimumFractionDigits: 1 })}
-            </span>
-            <span class="leading-tight">
-              <span class="block text-lg leading-none tracking-tight text-red-600" aria-hidden="true">
-                ★★★★★
+            <GoogleG class="h-9 w-9 shrink-0" />
+            <span class="block">
+              <span class="flex items-baseline gap-2">
+                <span class="font-display text-3xl font-extrabold leading-none text-ink-900">{ratingFmt}</span>
+                <span class="text-lg leading-none tracking-tight text-red-600" aria-hidden="true">
+                  ★★★★★
+                </span>
               </span>
-              <span class="block text-xs text-gray-500">{bewertungAggregat.anzahl} Google-Rezensionen</span>
+              <span class="mt-1.5 block text-xs text-gray-500">
+                {bewertungAggregat.anzahl} Google-Rezensionen · Ø {ratingFmt} von 5
+              </span>
             </span>
           </a>
         </div>
 
-        <ul class="mt-9 grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <ul class="mt-10 grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {bewertungen.map((b, i) => (
             <li
-              class="reveal flex flex-col rounded-[var(--radius-card)] border border-gray-200 bg-white p-6 shadow-soft"
-              style={`--reveal-delay: ${(i % 3) * 70}ms`}
+              class="reveal flex flex-col rounded-[var(--radius-card)] border border-gray-200 bg-white p-6 shadow-soft transition-transform hover:-translate-y-1"
+              style={`--reveal-delay: ${(i % 3) * 80}ms`}
             >
-              <div class="flex items-center justify-between">
-                <span class="text-base leading-none tracking-tight text-red-600" aria-label={`${b.rating} von 5 Sternen`}>
-                  ★★★★★
+              <div class="flex items-center gap-3">
+                <span
+                  class={`grid h-11 w-11 shrink-0 place-items-center rounded-full font-display text-sm font-extrabold ${avatarStyles[i % avatarStyles.length]}`}
+                  aria-hidden="true"
+                >
+                  {initialen(b.name)}
                 </span>
-                <span class="text-[11px] font-semibold uppercase tracking-wide text-gray-400">Google</span>
+                <span class="min-w-0">
+                  <span class="block truncate font-sans text-sm font-semibold text-ink-900">{b.name}</span>
+                  <span class="block text-xs text-gray-500">{b.zeit}</span>
+                </span>
               </div>
+
+              <span
+                class="mt-4 text-base leading-none tracking-tight text-red-600"
+                aria-label={`${b.rating} von 5 Sternen`}
+              >
+                ★★★★★
+              </span>
+
               <p class="mt-3 text-sm leading-relaxed text-gray-700">„{b.text}“</p>
-              <div class="mt-4 flex items-center justify-between gap-3 border-t border-gray-100 pt-3">
-                <span class="font-sans text-sm font-semibold text-ink-900">{b.name}</span>
-                <span class="shrink-0 text-xs text-gray-500">{b.zeit}</span>
+
+              <div class="mt-5 flex items-center gap-1.5 border-t border-gray-100 pt-3 text-xs text-gray-400">
+                <GoogleG class="h-3.5 w-3.5 shrink-0" />
+                Verifizierte Google-Rezension
               </div>
             </li>
           ))}
         </ul>
 
-        <p class="mt-7 text-sm">
+        <p class="mt-8 text-sm">
           <a
             href={googleReviewsUrl}
             target="_blank"
