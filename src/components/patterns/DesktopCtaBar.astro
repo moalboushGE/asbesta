@@ -1,6 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { site } from '../../data/site';
+import { site, waLink } from '../../data/site';
+
+const waText = 'Hallo Asbesta, ich habe eine Anfrage zur Asbest-/Schadstoffsanierung.';
 ---
 
 <!-- Persistente Conversion-Leiste (Desktop). Body-Ebene, eigener backdrop-blur unkritisch. -->
@@ -19,12 +21,14 @@ import { site } from '../../data/site';
     <div class="flex items-center gap-2">
       <a
         href={site.phone.href}
+        data-conv="call"
         class="inline-flex items-center gap-2 rounded-full border border-gray-200 px-4 py-2 text-sm font-semibold text-ink-900 transition-colors hover:border-red-600 hover:text-red-700"
       >
         <Icon name="lucide:phone" class="h-4 w-4 text-red-600" />{site.phone.display}
       </a>
       <a
-        href={site.whatsapp.href}
+        href={waLink(waText)}
+        data-conv="whatsapp"
         class="inline-flex items-center gap-2 rounded-full border border-gray-200 px-4 py-2 text-sm font-semibold text-ink-900 transition-colors hover:border-red-600 hover:text-red-700"
       >
         <Icon name="lucide:message-circle" class="h-4 w-4 text-red-600" />WhatsApp

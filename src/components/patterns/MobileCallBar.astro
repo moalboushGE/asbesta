@@ -1,23 +1,33 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { site } from '../../data/site';
+import { site, waLink } from '../../data/site';
+
+const waText = 'Hallo Asbesta, ich habe eine Anfrage zur Asbest-/Schadstoffsanierung.';
 ---
 
 <!-- Mobile Sticky-Leiste: bewusst auf Body-Ebene (nicht im Header mit backdrop-blur,
      da backdrop-filter sonst den Bezugsrahmen fuer position:fixed bildet). -->
-<div
-  class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-gray-200 bg-white md:hidden"
->
-  <a
-    href={site.phone.href}
-    class="flex items-center justify-center gap-2 py-3 text-sm font-semibold text-ink-900"
-  >
-    <Icon name="lucide:phone" class="h-5 w-5 text-red-600" />Anrufen
-  </a>
-  <a
-    href={site.whatsapp.href}
-    class="flex items-center justify-center gap-2 border-l border-gray-200 py-3 text-sm font-semibold text-ink-900"
-  >
-    <Icon name="lucide:message-circle" class="h-5 w-5 text-red-600" />WhatsApp
-  </a>
+<div class="fixed inset-x-0 bottom-0 z-40 border-t border-gray-200 bg-white md:hidden">
+  <p class="bg-gray-50 py-1 text-center text-[11px] text-gray-600">
+    Kostenlos &amp; unverbindlich · Antwort in 24 Stunden
+  </p>
+  <div class="grid grid-cols-2">
+    <a
+      href={site.phone.href}
+      data-conv="call"
+      class="flex flex-col items-center justify-center py-2 leading-tight text-ink-900"
+    >
+      <span class="flex items-center gap-1.5 text-sm font-semibold">
+        <Icon name="lucide:phone" class="h-4 w-4 text-red-600" />Anrufen
+      </span>
+      <span class="text-[11px] text-gray-500">{site.phone.display}</span>
+    </a>
+    <a
+      href={waLink(waText)}
+      data-conv="whatsapp"
+      class="flex items-center justify-center gap-2 border-l border-gray-200 py-2 text-sm font-semibold text-ink-900"
+    >
+      <Icon name="lucide:message-circle" class="h-5 w-5 text-red-600" />WhatsApp
+    </a>
+  </div>
 </div>

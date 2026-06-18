@@ -2056,7 +2056,7 @@ export const ratgeberContent: Record<string, RatgeberContent> = {
       },
       {
         type: 'p',
-        html: 'Asbesta ist Ihr inhabergeführter, zertifizierter Fachbetrieb für Asbest- und Schadstoffsanierung aus Marl, tätig in ganz Nordrhein-Westfalen und nach TRGS 519, 521 und 524 zertifiziert. Möchten Sie alte Mineralwolle sicher und rechtskonform loswerden? Fordern Sie jetzt Ihre kostenlose Besichtigung an: telefonisch unter <strong>+49 2365 2960630</strong> oder bequem über unser <a href="/kontakt/">Kontaktformular</a>. Wir prüfen Ihr Material, klären die Einstufung und nennen Ihnen einen verbindlichen Festpreis.',
+        html: 'Asbesta ist Ihr inhabergeführter, zertifizierter Fachbetrieb für Asbest- und Schadstoffsanierung aus Marl, tätig in ganz Nordrhein-Westfalen und nach TRGS 519 und 524 zertifiziert. Möchten Sie alte Mineralwolle sicher und rechtskonform loswerden? Fordern Sie jetzt Ihre kostenlose Besichtigung an: telefonisch unter <strong>+49 2365 2960630</strong> oder bequem über unser <a href="/kontakt/">Kontaktformular</a>. Wir prüfen Ihr Material, klären die Einstufung und nennen Ihnen einen verbindlichen Festpreis.',
       },
     ],
   },
@@ -2677,7 +2677,7 @@ export const ratgeberContent: Record<string, RatgeberContent> = {
       },
       {
         type: 'p',
-        html: 'Asbesta ist ein inhabergeführter Fachbetrieb mit Sitz in Marl und ist in ganz NRW tätig. Wir sind <strong>zertifiziert nach TRGS 519, 521 und 524</strong> und begleiten Sie von der ersten Einschätzung über die <a href="/leistungen/materialanalyse/">Materialanalyse</a> und <a href="/leistungen/luftanalysen-vdi-3492/">Luftmessung nach VDI 3492</a> bis zur dokumentierten <a href="/leistungen/asbestsanierung/">Asbestsanierung</a>. So erfüllen Sie die neuen Pflichten der Gefahrstoffverordnung rechtssicher und stressfrei.',
+        html: 'Asbesta ist ein inhabergeführter Fachbetrieb mit Sitz in Marl und ist in ganz NRW tätig. Wir sind <strong>zertifiziert nach TRGS 519 und 524</strong> und begleiten Sie von der ersten Einschätzung über die <a href="/leistungen/materialanalyse/">Materialanalyse</a> und <a href="/leistungen/luftanalysen-vdi-3492/">Luftmessung nach VDI 3492</a> bis zur dokumentierten <a href="/leistungen/asbestsanierung/">Asbestsanierung</a>. So erfüllen Sie die neuen Pflichten der Gefahrstoffverordnung rechtssicher und stressfrei.',
       },
       {
         type: 'p',

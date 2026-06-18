@@ -1,0 +1,86 @@
+---
+import { Icon } from 'astro-icon/components';
+import { site, waLink } from '../../data/site';
+
+/** Kontextualisierte Inline-Anfragebox (Leistung/Ort vorbelegt) – fängt den Lead direkt
+ *  am Punkt höchsten Interesses, ohne Extra-Klick. Nutzt denselben /api/anfrage/-Endpoint
+ *  und den globalen Formular-Handler (public/scripts/anfrage-form.js). */
+interface Props {
+  readonly dienstleistung?: string;
+  readonly ort?: string;
+  readonly heading?: string;
+}
+const {
+  dienstleistung = '',
+  ort = '',
+  heading = 'Schnelle Anfrage – Festpreis nach kostenloser Besichtigung',
+} = Astro.props;
+
+const kontext = [dienstleistung, ort].filter(Boolean).join(' in ');
+const defaultNachricht = kontext
+  ? `Bitte um ein unverbindliches Festpreis-Angebot für ${kontext}.`
+  : '';
+const waText = `Hallo Asbesta, ich interessiere mich für ${kontext || 'Asbest-/Schadstoffsanierung'} und bitte um ein Angebot.`;
+const field =
+  'w-full rounded-[var(--radius-btn)] border border-gray-200 bg-white px-3 py-2.5 text-sm text-ink-900 placeholder:text-gray-400 focus-visible:border-red-600 focus-visible:outline-none';
+---
+
+<section class="border-t border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-4xl px-4 py-10 lg:px-8">
+    <div class="rounded-[var(--radius-card)] border border-gray-200 bg-white p-6 shadow-soft">
+      <h2 class="text-xl">{heading}</h2>
+      <p class="mt-2 text-sm text-gray-700">
+        Antwort in 24 Stunden. Lieber direkt? <a
+          href={site.phone.href}
+          data-conv="call"
+          class="font-semibold text-red-700 hover:underline">{site.phone.display}</a
+        > · <a href={waLink(waText)} data-conv="whatsapp" class="font-semibold text-red-700 hover:underline"
+          >WhatsApp</a
+        >
+      </p>
+
+      <form class="mt-5 space-y-3" novalidate data-anfrage-form>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+        <input type="hidden" name="ts" />
+        <input type="hidden" name="typ" value="anfrage" />
+        <input type="hidden" name="dienstleistung" value={dienstleistung} />
+        <input type="hidden" name="utm_source" />
+        <input type="hidden" name="utm_medium" />
+        <input type="hidden" name="utm_campaign" />
+        <input type="hidden" name="gclid" />
+        <input type="hidden" name="landingpage" />
+        <input type="hidden" name="referrer" />
+
+        <div class="grid gap-3 sm:grid-cols-2">
+          <input class={field} name="name" required placeholder="Name*" autocomplete="name" aria-label="Name" />
+          <input class={field} name="telefon" type="tel" placeholder="Telefon" autocomplete="tel" aria-label="Telefon" />
+          <input class={field} name="email" type="email" required placeholder="E-Mail*" autocomplete="email" aria-label="E-Mail" />
+          <input class={field} name="ort" value={ort} placeholder="Ort" autocomplete="address-level2" aria-label="Ort" />
+        </div>
+        <textarea class={field} name="nachricht" rows="2" required aria-label="Nachricht">{defaultNachricht}</textarea>
+
+        <label class="flex items-start gap-2 text-xs text-gray-600">
+          <input type="checkbox" name="einwilligung" value="ja" required class="mt-0.5 h-4 w-4" />
+          <span>
+            Ich willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden
+            (<a href="/datenschutz/" class="text-red-700 underline">Datenschutz</a>).*
+          </span>
+        </label>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <button
+            type="submit"
+            class="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-semibold text-white shadow-soft-red transition-colors hover:bg-red-700"
+          >
+            <Icon name="lucide:clipboard-list" class="h-4 w-4" />Kostenlose Anfrage senden
+          </button>
+          <span class="inline-flex items-center gap-1 text-xs text-gray-500">
+            <Icon name="lucide:shield-check" class="h-3.5 w-3.5 text-red-600" />Kostenlos &amp;
+            unverbindlich
+          </span>
+        </div>
+        <p data-status role="status" aria-live="polite" class="text-sm font-medium text-gray-700"></p>
+      </form>
+    </div>
+  </div>
+</section>

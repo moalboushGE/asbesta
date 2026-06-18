@@ -16,6 +16,7 @@ import { kombiDetail } from '../../data/kombi-detail';
 import { buildLocationGraph } from '../../lib/schema';
 import { getArtikel } from '../../data/ratgeber';
 import ExpertReviewLine from '../../components/patterns/ExpertReviewLine.astro';
+import MiniAnfrage from '../../components/sections/MiniAnfrage.astro';
 
 export function getStaticPaths() {
   return standorte.flatMap((s) => {
@@ -201,6 +202,8 @@ const bild = stadtImage(stadtIndex < 0 ? 0 : stadtIndex);
       </section>
     )
   }
+
+  <MiniAnfrage ort={stadt.name} />
 
   <CtaSection />
 </BaseLayout>

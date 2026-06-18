@@ -64,10 +64,7 @@ export const GET: APIRoute = (context) => {
       },
       ownerLed: true,
       insurance: 'Betriebshaftpflicht',
-      stats: {
-        projects: '1000+',
-        yearsExperience: '15+',
-      },
+      documentation: 'Freimessung nach VDI 3492 + Entsorgungsnachweis',
       responseTime: site.responseTime,
     },
     services: leistungen.map((l) => ({

@@ -1,7 +1,9 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { site } from '../../data/site';
+import { site, waLink } from '../../data/site';
 import Button from '../ui/Button.astro';
+
+const waText = 'Hallo Asbesta, ich habe eine Anfrage zur Asbest-/Schadstoffsanierung.';
 ---
 
 <section id="kontakt" class="relative overflow-hidden bg-ink-900">
@@ -33,7 +35,7 @@ import Button from '../ui/Button.astro';
       <Button href={site.phone.href} variant="dark-outline">
         <Icon name="lucide:phone" class="h-4 w-4" />{site.phone.display}
       </Button>
-      <Button href={site.whatsapp.href} variant="dark-outline">
+      <Button href={waLink(waText)} variant="dark-outline">
         <Icon name="lucide:message-circle" class="h-4 w-4" />WhatsApp
       </Button>
     </div>

@@ -94,11 +94,11 @@ export const site = {
     supervisoryAuthority:
       'Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)',
   },
-  certifications: ['TRGS 519', 'TRGS 521', 'TRGS 524', 'Fachbetrieb nach GefStoffV'],
+  certifications: ['TRGS 519', 'TRGS 524', 'Fachbetrieb nach GefStoffV'],
   stats: [
-    { value: '1.000+', label: 'abgeschlossene Projekte' },
-    { value: '15+', label: 'Jahre Erfahrung' },
-    { value: '100 %', label: 'zertifiziert & versichert' },
+    { value: 'TRGS 519', label: 'sachkundig nach Anlage 3' },
+    { value: '100 %', label: 'dokumentiert & freigemessen' },
+    { value: 'NRW', label: 'im Einsatz in ganz Nordrhein-Westfalen' },
   ] as readonly Stat[],
   nav: [
     { label: 'Leistungen', href: '/leistungen/' },
@@ -108,3 +108,8 @@ export const site = {
     { label: 'Kontakt', href: '/kontakt/' },
   ] as readonly NavItem[],
 } as const;
+
+/** WhatsApp-Deep-Link mit optional vorbelegter Nachricht (Conversion: niedrigschwelliger Einstieg). */
+export function waLink(text?: string): string {
+  return text ? `${site.whatsapp.href}?text=${encodeURIComponent(text)}` : site.whatsapp.href;
+}

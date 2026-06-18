@@ -1,13 +1,15 @@
 ---
+import { Icon } from 'astro-icon/components';
 import { leistungen } from '../../data/leistungen';
-import { site } from '../../data/site';
+import { site, waLink } from '../../data/site';
 
+const waText = 'Hallo Asbesta, ich habe eine Anfrage zur Asbest-/Schadstoffsanierung.';
 const field =
   'mt-1 w-full rounded-[var(--radius-btn)] border border-gray-200 bg-white px-3 py-2.5 text-ink-900 placeholder:text-gray-400 focus-visible:border-red-600 focus-visible:outline-none';
 const labelCls = 'block text-sm font-semibold text-ink-900';
 ---
 
-<form id="anfrage-form" class="space-y-4" novalidate>
+<form id="anfrage-form" class="space-y-4" novalidate data-anfrage-form>
   <!-- Honeypot (fuer Menschen unsichtbar) -->
   <input
     type="text"
@@ -18,6 +20,13 @@ const labelCls = 'block text-sm font-semibold text-ink-900';
     aria-hidden="true"
   />
   <input type="hidden" name="ts" />
+  <input type="hidden" name="typ" value="anfrage" />
+  <input type="hidden" name="utm_source" />
+  <input type="hidden" name="utm_medium" />
+  <input type="hidden" name="utm_campaign" />
+  <input type="hidden" name="gclid" />
+  <input type="hidden" name="landingpage" />
+  <input type="hidden" name="referrer" />
 
   <div class="grid gap-4 sm:grid-cols-2">
     <div>
@@ -65,13 +74,26 @@ const labelCls = 'block text-sm font-semibold text-ink-900';
     class="inline-flex min-h-11 items-center justify-center gap-2 rounded-[var(--radius-btn)] bg-red-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700"
     >Anfrage senden</button
   >
+  <p class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-gray-500">
+    <span class="inline-flex items-center gap-1">
+      <Icon name="lucide:shield-check" class="h-3.5 w-3.5 text-red-600" />Kostenlos &amp; unverbindlich
+    </span>
+    <span class="inline-flex items-center gap-1">
+      <Icon name="lucide:badge-check" class="h-3.5 w-3.5 text-red-600" />Sachkunde TRGS 519
+    </span>
+    <span class="inline-flex items-center gap-1">
+      <Icon name="lucide:clock" class="h-3.5 w-3.5 text-red-600" />Antwort in 24 h
+    </span>
+    <span class="inline-flex items-center gap-1">
+      <Icon name="lucide:lock" class="h-3.5 w-3.5 text-red-600" />Daten nur an uns
+    </span>
+  </p>
 
-  <p id="anfrage-status" role="status" aria-live="polite" class="text-sm font-medium text-gray-700"></p>
+  <p data-status role="status" aria-live="polite" class="text-sm font-medium text-gray-700"></p>
   <p class="text-xs text-gray-500">
-    Lieber direkt? Telefon <a href={site.phone.href} class="text-red-700">{site.phone.display}</a> ·
-    Fotos gern per <a href={site.whatsapp.href} class="text-red-700">WhatsApp</a>. Pflichtfelder*
+    Lieber direkt? Telefon
+    <a href={site.phone.href} class="text-red-700" data-conv="call">{site.phone.display}</a> · Fotos
+    gern per <a href={waLink(waText)} class="text-red-700" data-conv="whatsapp">WhatsApp</a>.
+    Pflichtfelder*
   </p>
 </form>
-
-<!-- Externer Handler (public/scripts/) statt Inline-Script -> CSP-konform (script-src 'self'). -->
-<script type="module" src="/scripts/anfrage-form.js" is:inline></script>

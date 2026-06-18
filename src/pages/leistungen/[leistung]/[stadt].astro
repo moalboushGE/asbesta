@@ -15,6 +15,7 @@ import { buildServiceLocationGraph } from '../../../lib/schema';
 import { ratgeberFuer } from '../../../lib/related';
 import { getArtikel } from '../../../data/ratgeber';
 import ExpertReviewLine from '../../../components/patterns/ExpertReviewLine.astro';
+import MiniAnfrage from '../../../components/sections/MiniAnfrage.astro';
 
 export function getStaticPaths() {
   return Object.entries(kombiDetail).map(([key, detail]) => {
@@ -222,6 +223,8 @@ const bild = leistungImage(detail.leistung);
       </section>
     )
   }
+
+  <MiniAnfrage dienstleistung={leistungTitle} ort={stadtName} />
 
   <CtaSection />
 </BaseLayout>

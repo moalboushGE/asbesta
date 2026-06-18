@@ -15,6 +15,7 @@ import { getArtikel } from '../../data/ratgeber';
 import { buildServiceGraph } from '../../lib/schema';
 import { ratgeberFuer } from '../../lib/related';
 import ExpertReviewLine from '../../components/patterns/ExpertReviewLine.astro';
+import MiniAnfrage from '../../components/sections/MiniAnfrage.astro';
 
 export function getStaticPaths() {
   return leistungen.flatMap((l) => {
@@ -211,4 +212,6 @@ const ratgeber = ratgeberFuer(leistung.slug)
       </ul>
     </div>
   </section>
+
+  <MiniAnfrage dienstleistung={leistung.title} />
 </BaseLayout>
