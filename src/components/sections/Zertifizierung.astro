@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 
-/** `ownerHint`: blendet einen dezenten Verweis auf die persönlichen Sachkunde-Nachweise ein (z. B. Startseite). */
+/** `ownerHint`: blendet die hervorgehobene Inhaber-Sachkunde-Trustkarte ein (z. B. Startseite). */
 interface Props {
   readonly ownerHint?: boolean;
 }
@@ -15,40 +15,57 @@ const items = [
 ];
 ---
 
-<section class="bg-red-50/40">
-  <div class="mx-auto max-w-6xl px-4 py-14 lg:px-8">
-    <p class="text-sm font-semibold uppercase tracking-wider text-red-700">Geprüfte Qualität</p>
-    <h2 class="mt-2 text-2xl sm:text-3xl">Zertifizierung &amp; Nachweise</h2>
-    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+<section class="bg-gradient-to-b from-red-50/50 to-white">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:grid-cols-5 lg:px-8 lg:py-20">
+    <div class="lg:col-span-2">
+      <p class="text-sm font-semibold uppercase tracking-wider text-red-700">Geprüfte Qualität</p>
+      <h2 class="mt-2 text-3xl sm:text-4xl">Zertifizierung &amp; Nachweise</h2>
+      <p class="mt-4 text-gray-700">
+        Wir arbeiten nach allen relevanten Regelwerken der Gefahrstoffverordnung – jede
+        anzeigepflichtige Sanierung wird dokumentiert und nach VDI 3492 freigemessen.
+      </p>
+
+      {
+        ownerHint && (
+          <div class="mt-7 flex items-start gap-4 rounded-[var(--radius-card)] border border-red-100 bg-white p-5 shadow-soft">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-red-600 text-white">
+              <Icon name="lucide:badge-check" class="h-6 w-6" />
+            </span>
+            <div>
+              <p class="font-sans text-sm font-semibold text-ink-900">
+                Inhaber persönlich sachkundig
+              </p>
+              <p class="mt-1 text-sm text-gray-700">
+                Sachkunde nach TRGS 519, Anlage 3 – behördlich anerkannt, gültig bis 2031.
+              </p>
+              <a
+                href="/ueber-uns/#qualifikationen"
+                class="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-red-700 hover:underline"
+              >
+                Nachweise ansehen
+                <Icon name="lucide:arrow-right" class="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        )
+      }
+    </div>
+
+    <ul class="grid gap-4 sm:grid-cols-2 lg:col-span-3">
       {
         items.map((item, i) => (
-          <div
-            class="reveal group relative overflow-hidden rounded-[var(--radius-card)] border border-gray-200 bg-white p-5 transition-all hover:-translate-y-1 hover:shadow-soft"
+          <li
+            class="reveal group rounded-[var(--radius-card)] border border-gray-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-soft"
             style={`--reveal-delay: ${i * 80}ms`}
           >
-            <span aria-hidden="true" class="absolute inset-x-0 top-0 h-0.5 bg-red-600" />
             <span class="grid h-12 w-12 place-items-center rounded-full bg-red-50 text-red-700 transition-transform group-hover:scale-110">
               <Icon name={item.icon} class="h-6 w-6" />
             </span>
-            <span class="mt-3 block font-sans text-sm font-semibold text-ink-900">{item.title}</span>
-            <span class="mt-0.5 block text-sm text-gray-500">{item.sub}</span>
-          </div>
+            <p class="mt-3 font-sans text-sm font-semibold text-ink-900">{item.title}</p>
+            <p class="mt-0.5 text-sm text-gray-500">{item.sub}</p>
+          </li>
         ))
       }
-    </div>
-    {
-      ownerHint && (
-        <p class="mt-6 text-sm text-gray-700">
-          <Icon name="lucide:user-check" class="mr-1.5 -mt-0.5 inline h-4 w-4 text-red-700" />
-          Geleitet vom sachkundigen Inhaber – Sachkunde nach TRGS 519, Anlage 3 (gültig bis 2031).{' '}
-          <a
-            href="/ueber-uns/#qualifikationen"
-            class="font-semibold text-red-700 underline-offset-2 hover:underline"
-          >
-            Nachweise ansehen
-          </a>
-        </p>
-      )
-    }
+    </ul>
   </div>
 </section>
