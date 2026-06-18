@@ -1,8 +1,12 @@
 ---
-import { site } from '../../data/site';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import logo from '../../assets/asbesta-logo.jpeg';
+import { site, owner, waLink } from '../../data/site';
 import { standorte } from '../../data/standorte';
 import { leistungen } from '../../data/leistungen';
 import { getArtikel } from '../../data/ratgeber';
+import { bewertungAggregat, googleReviewsUrl } from '../../data/bewertungen';
 
 const topLeistungen = leistungen.slice(0, 8);
 const footerRatgeber = [
@@ -13,14 +17,140 @@ const footerRatgeber = [
 ]
   .map((slug) => getArtikel(slug))
   .filter((a) => a !== undefined);
+
+const waText = 'Hallo Asbesta, ich habe eine Anfrage zur Asbest-/Schadstoffsanierung.';
+const trust = [
+  { icon: 'lucide:shield-check', label: 'Sachkunde TRGS 519, Anlage 3' },
+  { icon: 'lucide:award', label: 'Fachbetrieb nach GefStoffV' },
+  { icon: 'lucide:wind', label: 'Freimessung nach VDI 3492' },
+  { icon: 'lucide:badge-check', label: 'Voll betriebshaftpflichtversichert' },
+];
+const ratingFmt = bewertungAggregat.rating.toLocaleString('de-DE', { minimumFractionDigits: 1 });
 ---
 
 <footer class="border-t border-gray-200 bg-white">
-  <div class="border-b border-gray-200">
-    <div class="mx-auto max-w-6xl px-4 py-8 lg:px-8">
-      <h2 class="font-sans text-sm font-semibold text-ink-900">Einsatzgebiet</h2>
-      <ul class="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-500">
-        <li><a href="/standorte/" class="font-semibold text-ink-900 hover:text-red-700">Alle Standorte</a></li>
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-12 lg:px-8">
+    {/* Marke + Kontakt + Bewertung */}
+    <div class="sm:col-span-2 lg:col-span-4">
+      <a href="/" class="inline-flex" aria-label="Asbesta Schadstoffsanierung – Startseite">
+        <Image src={logo} alt="Asbesta Schadstoffsanierung" width={320} class="h-10 w-auto" />
+      </a>
+      <p class="mt-4 max-w-xs text-sm text-gray-500">
+        Inhabergeführter Fachbetrieb für Asbest- und Schadstoffsanierung – aus Marl, im Einsatz in
+        ganz Nordrhein-Westfalen.
+      </p>
+
+      <a
+        href={googleReviewsUrl}
+        target="_blank"
+        rel="noopener"
+        class="mt-5 inline-flex items-center gap-2.5 rounded-full border border-gray-200 px-4 py-2 transition-colors hover:border-red-300"
+      >
+        <span class="font-display text-lg font-extrabold text-ink-900">{ratingFmt}</span>
+        <span class="leading-tight">
+          <span class="block text-sm leading-none text-red-600" aria-hidden="true">★★★★★</span>
+          <span class="block text-[11px] text-gray-500">{bewertungAggregat.anzahl} Google-Rezensionen</span>
+        </span>
+      </a>
+
+      <address class="mt-5 space-y-2 text-sm not-italic text-gray-600">
+        <p class="flex items-start gap-2">
+          <Icon name="lucide:map-pin" class="mt-0.5 h-4 w-4 shrink-0 text-red-600" />
+          {site.address.street}, {site.address.zip} {site.address.city}
+        </p>
+        <p class="flex items-center gap-2">
+          <Icon name="lucide:phone" class="h-4 w-4 shrink-0 text-red-600" />
+          <a href={site.phone.href} data-conv="call" class="font-semibold text-ink-900 hover:text-red-700">
+            {site.phone.display}
+          </a>
+        </p>
+        <p class="flex items-center gap-2">
+          <Icon name="lucide:message-circle" class="h-4 w-4 shrink-0 text-red-600" />
+          <a href={waLink(waText)} data-conv="whatsapp" class="hover:text-red-700">WhatsApp</a>
+        </p>
+        <p class="flex items-center gap-2">
+          <Icon name="lucide:mail" class="h-4 w-4 shrink-0 text-red-600" />
+          <a href={`mailto:${site.email}`} class="hover:text-red-700">{site.email}</a>
+        </p>
+      </address>
+    </div>
+
+    {/* Leistungen */}
+    <div class="lg:col-span-3">
+      <h2 class="font-sans text-sm font-semibold text-ink-900">Leistungen</h2>
+      <ul class="mt-3 space-y-1.5 text-sm text-gray-500">
+        {
+          topLeistungen.map((l) => (
+            <li>
+              <a href={`/leistungen/${l.slug}/`} class="hover:text-red-700">
+                {l.title}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a href="/leistungen/" class="font-semibold text-ink-900 hover:text-red-700">Alle Leistungen</a>
+        </li>
+      </ul>
+    </div>
+
+    {/* Ratgeber */}
+    <div class="lg:col-span-3">
+      <h2 class="font-sans text-sm font-semibold text-ink-900">Ratgeber</h2>
+      <ul class="mt-3 space-y-1.5 text-sm text-gray-500">
+        {
+          footerRatgeber.map((a) => (
+            <li>
+              <a href={`/ratgeber/${a.slug}/`} class="hover:text-red-700">
+                {a.title}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a href="/ratgeber/" class="font-semibold text-ink-900 hover:text-red-700">Alle Ratgeber</a>
+        </li>
+      </ul>
+    </div>
+
+    {/* Unternehmen + Rechtliches */}
+    <div class="lg:col-span-2">
+      <h2 class="font-sans text-sm font-semibold text-ink-900">Unternehmen</h2>
+      <ul class="mt-3 space-y-1.5 text-sm text-gray-500">
+        <li><a href="/ueber-uns/" class="hover:text-red-700">Über uns</a></li>
+        <li><a href="/standorte/" class="hover:text-red-700">Standorte</a></li>
+        <li><a href="/kontakt/" class="hover:text-red-700">Kontakt</a></li>
+      </ul>
+      <h2 class="mt-6 font-sans text-sm font-semibold text-ink-900">Rechtliches</h2>
+      <ul class="mt-3 space-y-1.5 text-sm text-gray-500">
+        <li><a href="/impressum/" class="hover:text-red-700">Impressum</a></li>
+        <li><a href="/datenschutz/" class="hover:text-red-700">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+
+  {/* Trust-Leiste */}
+  <div class="border-t border-gray-200 bg-gray-50">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-4 lg:px-8">
+      {
+        trust.map((t) => (
+          <span class="inline-flex items-center gap-1.5 text-xs text-gray-600">
+            <Icon name={t.icon} class="h-4 w-4 shrink-0 text-red-600" />
+            {t.label}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+
+  {/* Einsatzgebiet (kompakt, alle Städte) */}
+  <div class="border-t border-gray-200">
+    <div class="mx-auto max-w-6xl px-4 py-6 lg:px-8">
+      <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">Einsatzgebiet in NRW</p>
+      <ul class="mt-2.5 flex flex-wrap gap-x-3 gap-y-1.5 text-xs text-gray-500">
+        <li>
+          <a href="/standorte/" class="font-semibold text-ink-900 hover:text-red-700">Alle Standorte</a>
+        </li>
         {
           standorte.map((s) => (
             <li>
@@ -33,78 +163,17 @@ const footerRatgeber = [
       </ul>
     </div>
   </div>
-  <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
-    <div class="sm:col-span-2 lg:col-span-1">
-      <span class="font-display text-lg font-semibold text-ink-900">ASBESTA</span>
-      <p class="mt-2 text-sm text-gray-500">
-        {site.legalName} – inhabergeführter Fachbetrieb für Asbest- und Schadstoffsanierung.
+
+  {/* Bottom-Bar (dunkel) – pb klärt den Abstand zur fixen Sticky-CTA-Leiste (mobil höher) */}
+  <div class="bg-ink-900 pb-[5.5rem] pt-5 text-xs text-white/70 md:pb-16">
+    <div
+      class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 text-center sm:flex-row sm:text-left lg:px-8"
+    >
+      <p>© 2026 {site.legalName} · Inhaber {owner.name}</p>
+      <p class="flex gap-5">
+        <a href="/impressum/" class="hover:text-white">Impressum</a>
+        <a href="/datenschutz/" class="hover:text-white">Datenschutz</a>
       </p>
-      <ul class="mt-4 space-y-1 text-sm text-gray-500">
-        <li><a href="/ueber-uns/" class="hover:text-red-700">Über uns</a></li>
-        <li><a href="/kontakt/" class="hover:text-red-700">Kontakt</a></li>
-        <li><a href="/impressum/" class="hover:text-red-700">Impressum</a></li>
-        <li><a href="/datenschutz/" class="hover:text-red-700">Datenschutz</a></li>
-      </ul>
     </div>
-
-    <div>
-      <h2 class="font-sans text-sm font-semibold text-ink-900">Leistungen</h2>
-      <ul class="mt-3 space-y-1 text-sm text-gray-500">
-        {
-          topLeistungen.map((l) => (
-            <li>
-              <a href={`/leistungen/${l.slug}/`} class="hover:text-red-700">
-                {l.title}
-              </a>
-            </li>
-          ))
-        }
-        <li>
-          <a href="/leistungen/" class="font-semibold text-ink-900 hover:text-red-700">
-            Alle Leistungen
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div>
-      <h2 class="font-sans text-sm font-semibold text-ink-900">Ratgeber</h2>
-      <ul class="mt-3 space-y-1 text-sm text-gray-500">
-        {
-          footerRatgeber.map((a) => (
-            <li>
-              <a href={`/ratgeber/${a.slug}/`} class="hover:text-red-700">
-                {a.title}
-              </a>
-            </li>
-          ))
-        }
-        <li>
-          <a href="/ratgeber/" class="font-semibold text-ink-900 hover:text-red-700">
-            Alle Ratgeber
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div>
-      <h2 class="font-sans text-sm font-semibold text-ink-900">Kontakt</h2>
-      <address class="mt-3 space-y-1 text-sm not-italic text-gray-500">
-        <p>{site.address.street}</p>
-        <p>{site.address.zip} {site.address.city}</p>
-        <p><a href={site.phone.href} class="hover:text-red-700">{site.phone.display}</a></p>
-        <p><a href={`mailto:${site.email}`} class="hover:text-red-700">{site.email}</a></p>
-      </address>
-      <h2 class="mt-5 font-sans text-sm font-semibold text-ink-900">Zertifizierung</h2>
-      <ul class="mt-3 space-y-1 text-sm text-gray-500">
-        {site.certifications.map((c) => <li>{c}</li>)}
-      </ul>
-    </div>
-  </div>
-
-  <div
-    class="border-t border-gray-200 py-5 pb-[4.5rem] text-center text-xs text-gray-500 md:pb-5"
-  >
-    © 2026 {site.legalName}. Alle Rechte vorbehalten.
   </div>
 </footer>

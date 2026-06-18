@@ -29,6 +29,7 @@
     "@iconify-json/lucide": "latest",
     "astro": "latest",
     "astro-icon": "latest",
+    "compression": "^1.8.1",
     "express": "^5.2.1",
     "sharp": "^0.34.5"
   },

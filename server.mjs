@@ -4,6 +4,7 @@
 // On-demand-Routen (z. B. /api/anfrage) an den Astro-SSR-Handler (@astrojs/node middleware mode).
 // Start: `node server.mjs`. Lauscht auf process.env.PORT (Railway setzt das) / HOST 0.0.0.0.
 import express from 'express';
+import compression from 'compression';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import fs from 'node:fs';
@@ -56,6 +57,9 @@ const SECURITY_HEADERS = {
 
 const app = express();
 app.disable('x-powered-by');
+
+// gzip/brotli fuer Text-Antworten (HTML/CSS/JS/JSON/SVG) – kleinere Transfers, besseres FCP/LCP.
+app.use(compression());
 
 // 1) Security-Header auf jede Antwort
 app.use((req, res, next) => {
