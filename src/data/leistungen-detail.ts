@@ -649,7 +649,7 @@ export const leistungenDetail: Record<string, LeistungDetail> = {
   },
   "kmf-sanierung": {
     "metaTitle": "KMF-Sanierung nach TRGS 521 in NRW | Asbesta",
-    "metaDescription": "Alte Mineralwolle (Glas- und Steinwolle) fachgerecht ausbauen und entsorgen nach TRGS 521. Asbesta saniert KMF in ganz NRW mit Festpreis, Staubschutz und.",
+    "metaDescription": "Alte Mineralwolle (Glas- und Steinwolle) fachgerecht ausbauen und entsorgen nach TRGS 521. Asbesta saniert KMF in ganz NRW – mit Festpreis und Staubschutz.",
     "heroIntro": "Alte Glas- und Steinwolle vor 1996 gilt als krebsverdächtig und darf nur staubarm und fachgerecht ausgebaut werden. Asbesta saniert künstliche Mineralfasern (KMF) in ganz NRW nach TRGS 521 - mit Staubschutz, sachkundigem Personal und lückenlosem Entsorgungsnachweis.",
     "einleitung": [
       "Künstliche Mineralfasern (KMF) sind Dämmstoffe aus Glaswolle, Steinwolle oder Schlackenwolle, die jahrzehntelang zur Wärme- und Schalldämmung verbaut wurden - in Dachschrägen, Zwischendecken, Trockenbauwänden, Rohrleitungen, hinter Heizkörpern und in technischen Anlagen. Entscheidend für die Gefährdungsbeurteilung ist das Alter: Mineralwolle, die vor 1996 hergestellt wurde, enthält häufig sogenannte 'alte' Fasern, die wegen ihrer Geometrie und Beständigkeit als krebsverdächtig (Kategorie 1B/2) eingestuft sind. Erst seit Juni 2000 dürfen in Deutschland nur noch biologisch abbaubare, nachweislich unbedenkliche Mineralfasern in den Verkehr gebracht werden, die das RAL-Gütezeichen tragen.",
@@ -774,7 +774,7 @@ export const leistungenDetail: Record<string, LeistungDetail> = {
     ]
   },
   "luftanalysen-vdi-3492": {
-    "metaTitle": "Raumluftmessung nach VDI 3492 in NRW | Asbesta",
+    "metaTitle": "Luftanalysen & Freimessung VDI 3492 | Asbesta",
     "metaDescription": "Luftanalysen und Freimessung nach VDI 3492 in ganz NRW: Bestimmung der Asbestfaserkonzentration in der Raumluft durch den Fachbetrieb Asbesta. Jetzt anfragen.",
     "heroIntro": "Mit der Raumluftmessung nach VDI 3492 weisen wir nach, ob in der Innenraumluft anorganische Faserstäube - insbesondere Asbestfasern - vorhanden sind. So belegen wir messtechnisch, dass ein Raum nach einer Sanierung wieder gefahrlos genutzt werden kann.",
     "einleitung": [

@@ -73,7 +73,7 @@ export const leistungen: readonly Leistung[] = [
   {
     slug: 'kmf-sanierung',
     title: 'KMF-Sanierung',
-    summary: 'Künstliche Mineralfasern fachgerecht ausbauen und entsorgen.',
+    summary: 'Künstliche Mineralfasern und alte Mineralwolle fachgerecht entfernen (KMF-Entfernung).',
     icon: 'lucide:wind',
   },
   {
@@ -84,7 +84,7 @@ export const leistungen: readonly Leistung[] = [
   },
   {
     slug: 'luftanalysen-vdi-3492',
-    title: 'Luftanalysen VDI 3492',
+    title: 'Luftanalysen & Freimessung VDI 3492',
     summary: 'Raumluftmessung und Freimessung nach VDI 3492.',
     icon: 'lucide:gauge',
   },
