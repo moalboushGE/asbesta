@@ -39,6 +39,16 @@ import { site } from '../data/site';
     (GefStoffV); sachkundig nach TRGS 519 und 524. Betriebshaftpflichtversicherung vorhanden.
   </p>
 
+  {
+    site.legal.craftChamber && (
+      <p>
+        Zuständige Handwerkskammer: {site.legal.craftChamber}. Eingetragen in der Handwerksrolle
+        ({site.legal.craftTitle}), Registernummer {site.legal.craftRegisterNo}. Es gelten die
+        berufsrechtlichen Regelungen der Handwerksordnung (HwO).
+      </p>
+    )
+  }
+
   <h2>Verbraucherstreitbeilegung</h2>
   <p>
     Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer

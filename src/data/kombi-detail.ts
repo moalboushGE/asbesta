@@ -4220,7 +4220,7 @@ export const kombiDetail: Record<string, KombiDetail> = {
     stadt: 'duesseldorf',
     metaTitle: 'Asbestzement ausbauen in Düsseldorf | Asbesta',
     metaDescription:
-      'Asbestzement in Düsseldorf fachgerecht ausbauen: Fassadenplatten, Rohre und Lüftungskanäle nach TRGS 519. Jetzt anfragen: 02365 2960630.',
+      'Asbestzement in Düsseldorf fachgerecht ausbauen: Fassadenplatten, Rohre und Lüftungskanäle nach TRGS 519. Jetzt anfragen: +49 2365 2960630.',
     intro:
       'In Düsseldorf trifft man Asbestzement vor allem an Fassaden, Dachverkleidungen und in der Haustechnik von Gebäuden der 1950er- bis frühen 1990er-Jahre. Wir bauen diese Faserzement-Bauteile zerstörungsarm und nach TRGS 519 aus, vom Hochhaus in Garath bis zum Altbau in Bilk.',
     lokalServiceKontext: [

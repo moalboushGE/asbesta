@@ -37,15 +37,17 @@ import { site } from '../data/site';
   <h2>4. Kontaktaufnahme</h2>
   <p>
     Wenn Sie uns per Kontaktformular, E-Mail, Telefon oder WhatsApp kontaktieren, verarbeiten wir die
-    von Ihnen übermittelten Daten (z. B. Name, Kontaktdaten, Ort, gewünschte Leistung, Nachricht sowie
-    optional hochgeladene Bilder) zur Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. b bzw. f DSGVO).
+    von Ihnen übermittelten Daten (z. B. Name, Kontaktdaten, Ort, gewünschte Leistung, Nachricht) zur
+    Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. b bzw. f DSGVO).
     Die Daten werden gelöscht, sobald sie nicht mehr erforderlich sind und keine gesetzlichen
     Aufbewahrungsfristen entgegenstehen.
   </p>
   <p>
     Der technische Versand Ihrer Formularnachricht an unser Postfach erfolgt über den Dienstleister
     Brevo (Brevo GmbH, Köln) als Auftragsverarbeiter; ein Auftragsverarbeitungsvertrag wird
-    geschlossen. Übermittelt werden ausschließlich die von Ihnen im Formular angegebenen Daten.
+    geschlossen. Brevo hat seinen Sitz in Köln (EU); die Verarbeitung erfolgt innerhalb der EU.
+    Übermittelt werden ausschließlich die von Ihnen im Formular angegebenen Daten. Einzelheiten zur
+    Verarbeitung bei Brevo: <a href="https://www.brevo.com/de/legal/privacy/" rel="noopener">Datenschutzerklärung von Brevo</a>.
   </p>
   <h3>Speicherung und Verwaltung Ihrer Anfrage</h3>
   <p>
@@ -84,7 +86,7 @@ import { site } from '../data/site';
 
   <h2>6. Reichweitenmessung</h2>
   <p>
-    Derzeit setzen wir keine Webanalyse- oder Tracking-Dienste ein. Sollte künftig eine cookielose,
+    Derzeit setzen wir keine Cookies und keine Webanalyse- oder Tracking-Dienste ein. Sollte künftig eine cookielose,
     datensparsame Reichweitenmessung aktiviert werden, die keine zur Wiedererkennung nutzbaren
     Identifier setzt und keine Nutzerprofile bildet, erfolgt dies auf Grundlage von Art. 6 Abs. 1 lit. f
     DSGVO (Interesse an einer datensparsamen Reichweitenanalyse); diese Datenschutzerklärung wird dann
@@ -100,7 +102,12 @@ import { site } from '../data/site';
   </ul>
   <p>
     Zudem haben Sie das Recht auf Beschwerde bei einer Aufsichtsbehörde, für uns zuständig:
-    {site.legal.supervisoryAuthority}.
+    <a href="https://www.ldi.nrw.de/" rel="noopener">{site.legal.supervisoryAuthority}</a>.
+  </p>
+  <p>
+    Zur Ausübung dieser Rechte genügt eine formlose Nachricht an
+    <a href={`mailto:${site.email}`}>{site.email}</a>; wir beantworten Ihr Anliegen innerhalb der
+    gesetzlichen Frist von einem Monat (Art. 12 Abs. 3 DSGVO).
   </p>
 
   <h2>8. Aktualität</h2>

@@ -98,6 +98,11 @@ export const site = {
     ustId: '',
     supervisoryAuthority:
       'Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)',
+    // Handwerksrolle/-kammer nach § 5 DDG – erst befüllen, wenn vom Inhaber bestätigt
+    // (Impressum blendet die Sektion bis dahin automatisch aus, wie bei ustId).
+    craftChamber: '',
+    craftRegisterNo: '',
+    craftTitle: '',
   },
   certifications: ['TRGS 519', 'TRGS 524', 'Fachbetrieb nach GefStoffV'],
   stats: [

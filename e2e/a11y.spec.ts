@@ -10,6 +10,8 @@ const pages = [
   { name: 'Standort', path: '/standorte/aachen/' },
   { name: 'Ratgeber-Artikel', path: '/ratgeber/asbest-bodenbelag/' },
   { name: 'Kontakt', path: '/kontakt/' },
+  { name: 'Impressum', path: '/impressum/' },
+  { name: 'Datenschutz', path: '/datenschutz/' },
 ];
 
 for (const p of pages) {
