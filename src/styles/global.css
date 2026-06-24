@@ -104,6 +104,13 @@
   }
 }
 
+/* Fehlerhafte Formularfelder sichtbar markieren (ergaenzend zu aria-invalid + Textmeldung). */
+input[aria-invalid='true'],
+textarea[aria-invalid='true'],
+select[aria-invalid='true'] {
+  border-color: var(--color-red-600);
+}
+
 /* Scroll-Reveal (sanftes Einblenden + Aufsteigen), gestaffelt via --reveal-delay.
    Progressive Enhancement: nur wenn das externe public/scripts/reveal.js die Klasse
    `reveal-on` an <html> setzt, starten Elemente versteckt – sonst (kein JS / reduzierte

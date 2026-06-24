@@ -1,8 +1,17 @@
 // Asbesta-Formulare (Haupt-Kontaktformular + Inline-Mini-Anfragen + Rückruf).
 // Greift auf jedes <form data-anfrage-form>: Anti-Spam-Zeitstempel, Quelle/UTM-Befüllung,
-// asynchroner Versand an /api/anfrage/, sichtbarer Erfolgs-Zustand, Conversion-Event.
+// barrierefreie Pflichtfeld-Validierung (aria-invalid + Fokus), asynchroner Versand an
+// /api/anfrage/, sichtbarer Erfolgs-Zustand, Conversion-Event.
 // Extern (public/) -> CSP `script-src 'self'`-konform.
 (function () {
+  var LABELS = {
+    name: 'Name',
+    email: 'E-Mail',
+    telefon: 'Telefon',
+    nachricht: 'Nachricht',
+    einwilligung: 'Einwilligung zur Datenverarbeitung',
+  };
+
   function captureSource(form) {
     var stored = {};
     try {
@@ -47,37 +56,106 @@
     return div;
   }
 
-  function init(form) {
-    var tsInput = form.querySelector('input[name="ts"]');
+  function feld(form, name) {
+    return form.querySelector('[name="' + name + '"]');
+  }
+
+  function leer(form, name) {
+    var el = feld(form, name);
+    return !el || !String(el.value || '').trim();
+  }
+
+  // Pflichtfelder je Typ -> Liste fehlender Feldnamen (spiegelt die Server-Validierung).
+  function fehlendeFelder(form, typ) {
+    var fehlt = [];
+    if (typ === 'rueckruf') {
+      if (leer(form, 'name')) fehlt.push('name');
+      if (leer(form, 'telefon')) fehlt.push('telefon');
+    } else {
+      if (leer(form, 'name')) fehlt.push('name');
+      if (leer(form, 'email')) fehlt.push('email');
+      if (leer(form, 'nachricht')) fehlt.push('nachricht');
+    }
+    var ein = feld(form, 'einwilligung');
+    if (!ein || !ein.checked) fehlt.push('einwilligung');
+    return fehlt;
+  }
+
+  function clearErrors(form) {
+    var marked = form.querySelectorAll('[aria-invalid="true"]');
+    for (var i = 0; i < marked.length; i++) {
+      marked[i].removeAttribute('aria-invalid');
+      marked[i].removeAttribute('aria-describedby');
+    }
+  }
+
+  function zeigeFehler(form, fehlt, statusEl) {
+    var labels = fehlt.map(function (n) {
+      return LABELS[n] || n;
+    });
+    statusEl.textContent = 'Bitte ergänzen Sie: ' + labels.join(', ') + '.';
+    for (var i = 0; i < fehlt.length; i++) {
+      var el = feld(form, fehlt[i]);
+      if (!el) continue;
+      el.setAttribute('aria-invalid', 'true');
+      el.setAttribute('aria-describedby', statusEl.id);
+    }
+    var first = feld(form, fehlt[0]);
+    if (first && typeof first.focus === 'function') first.focus();
+  }
+
+  function sende(form, typ, setStatus) {
+    setStatus('Wird gesendet …');
+    fetch('/api/anfrage/', { method: 'POST', body: new FormData(form) })
+      .then(function (r) {
+        return r.json();
+      })
+      .then(function (data) {
+        if (data && data.ok) {
+          if (typeof window.asbestaTrack === 'function') window.asbestaTrack('form_submit', { typ: typ });
+          form.replaceWith(successBlock(typ));
+        } else {
+          setStatus('Bitte prüfen Sie Ihre Eingaben – oder rufen Sie uns an: +49 2365 2960630.');
+        }
+      })
+      .catch(function () {
+        setStatus('Senden derzeit nicht möglich. Bitte rufen Sie uns an: +49 2365 2960630.');
+      });
+  }
+
+  function init(form, index) {
+    var tsInput = feld(form, 'ts');
     if (tsInput) tsInput.value = String(Date.now());
     captureSource(form);
     var statusEl = form.querySelector('[data-status]');
+    if (statusEl && !statusEl.id) statusEl.id = 'anfrage-status-' + index;
     function setStatus(m) {
       if (statusEl) statusEl.textContent = m;
     }
+
+    // Korrigiertes Feld räumt seinen Fehlerzustand sofort ab.
+    form.addEventListener('input', function (e) {
+      var t = e.target;
+      if (t && t.getAttribute && t.getAttribute('aria-invalid') === 'true') {
+        t.removeAttribute('aria-invalid');
+        t.removeAttribute('aria-describedby');
+      }
+    });
+
     form.addEventListener('submit', function (event) {
       event.preventDefault();
-      setStatus('Wird gesendet …');
-      var typInput = form.querySelector('input[name="typ"]');
+      var typInput = feld(form, 'typ');
       var typ = typInput ? typInput.value || 'anfrage' : 'anfrage';
-      fetch('/api/anfrage/', { method: 'POST', body: new FormData(form) })
-        .then(function (r) {
-          return r.json();
-        })
-        .then(function (data) {
-          if (data && data.ok) {
-            if (typeof window.asbestaTrack === 'function') window.asbestaTrack('form_submit', { typ: typ });
-            form.replaceWith(successBlock(typ));
-          } else {
-            setStatus('Bitte prüfen Sie Ihre Eingaben – oder rufen Sie uns an: +49 2365 2960630.');
-          }
-        })
-        .catch(function () {
-          setStatus('Senden derzeit nicht möglich. Bitte rufen Sie uns an: +49 2365 2960630.');
-        });
+      clearErrors(form);
+      var fehlt = fehlendeFelder(form, typ);
+      if (fehlt.length && statusEl) {
+        zeigeFehler(form, fehlt, statusEl);
+        return;
+      }
+      sende(form, typ, setStatus);
     });
   }
 
   var forms = document.querySelectorAll('form[data-anfrage-form]');
-  for (var i = 0; i < forms.length; i++) init(forms[i]);
+  for (var i = 0; i < forms.length; i++) init(forms[i], i);
 })();

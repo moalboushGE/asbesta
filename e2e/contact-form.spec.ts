@@ -20,8 +20,11 @@ test('Kontaktformular: erfolgreiche Anfrage zeigt Dank-Block (API gemockt)', asy
   await expect(page.locator(FORM)).toHaveCount(0);
 });
 
-test('Kontaktformular: leere Pflichtfelder ergeben Fehlerhinweis (echte API, 400)', async ({ page }) => {
+test('Kontaktformular: leere Pflichtfelder werden barrierefrei markiert', async ({ page }) => {
   await page.goto('/kontakt/');
   await page.click(`${FORM} button[type="submit"]`);
-  await expect(page.locator(`${FORM} [data-status]`)).toContainText('Bitte prüfen Sie Ihre Eingaben');
+  const name = page.locator(`${FORM} input[name="name"]`);
+  await expect(name).toHaveAttribute('aria-invalid', 'true');
+  await expect(name).toBeFocused();
+  await expect(page.locator(`${FORM} [data-status]`)).toContainText('Bitte ergänzen Sie');
 });
