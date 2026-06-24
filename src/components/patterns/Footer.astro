@@ -147,14 +147,21 @@ const ratingFmt = bewertungAggregat.rating.toLocaleString('de-DE', { minimumFrac
   <div class="border-t border-gray-200">
     <div class="mx-auto max-w-6xl px-4 py-6 lg:px-8">
       <p class="text-xs font-semibold uppercase tracking-wider text-gray-500">Einsatzgebiet in NRW</p>
-      <ul class="mt-2.5 flex flex-wrap gap-x-3 gap-y-1.5 text-xs text-gray-500">
+      <ul class="mt-2.5 flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-500">
         <li>
-          <a href="/standorte/" class="font-semibold text-ink-900 hover:text-red-700">Alle Standorte</a>
+          <a
+            href="/standorte/"
+            class="inline-flex min-h-6 items-center font-semibold text-ink-900 hover:text-red-700"
+            >Alle Standorte</a
+          >
         </li>
         {
           standorte.map((s) => (
             <li>
-              <a href={`/standorte/${s.slug}/`} class="hover:text-red-700">
+              <a
+                href={`/standorte/${s.slug}/`}
+                class="inline-flex min-h-6 items-center px-0.5 hover:text-red-700"
+              >
                 {s.name}
               </a>
             </li>

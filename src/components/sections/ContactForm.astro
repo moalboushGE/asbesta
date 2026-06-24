@@ -92,8 +92,9 @@ const labelCls = 'block text-sm font-semibold text-ink-900';
   <p data-status role="status" aria-live="polite" class="text-sm font-medium text-gray-700"></p>
   <p class="text-xs text-gray-500">
     Lieber direkt? Telefon
-    <a href={site.phone.href} class="text-red-700" data-conv="call">{site.phone.display}</a> · Fotos
-    gern per <a href={waLink(waText)} class="text-red-700" data-conv="whatsapp">WhatsApp</a>.
+    <a href={site.phone.href} class="text-red-700 underline" data-conv="call">{site.phone.display}</a> ·
+    Fotos gern per
+    <a href={waLink(waText)} class="text-red-700 underline" data-conv="whatsapp">WhatsApp</a>.
     Pflichtfelder*
   </p>
 </form>

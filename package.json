@@ -22,7 +22,8 @@
     "indexnow": "node scripts/indexnow-submit.mjs",
     "seo:inventory": "node scripts/seo-inventory.mjs",
     "seo:inspection": "node scripts/gsc-inspection-list.mjs",
-    "seo:links": "node scripts/link-redirect-checker.mjs"
+    "seo:links": "node scripts/link-redirect-checker.mjs",
+    "test:e2e": "astro build && playwright test"
   },
   "dependencies": {
     "@astrojs/node": "^10.1.4",
@@ -40,7 +41,9 @@
   },
   "devDependencies": {
     "@astrojs/check": "latest",
+    "@axe-core/playwright": "^4.12.1",
     "@eslint/js": "latest",
+    "@playwright/test": "1.60.0",
     "@tailwindcss/vite": "latest",
     "@types/pg": "^8.20.0",
     "astro-eslint-parser": "latest",

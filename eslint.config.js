@@ -43,4 +43,9 @@ export default tseslint.config(
     files: ['src/lib/schema.ts'],
     rules: { 'max-lines': 'off' },
   },
+  {
+    // E2E-/A11y-Tests: lange Setup-/Ausfuell-Funktionen sind hier normal.
+    files: ['e2e/**/*.ts', 'playwright.config.ts'],
+    rules: { 'max-lines-per-function': 'off', 'max-lines': 'off' },
+  },
 );
