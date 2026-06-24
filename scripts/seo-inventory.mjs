@@ -31,13 +31,17 @@ const files = await htmlFiles(root);
 
 for (const f of files) {
   const rel = path.relative(root, f).replace(/\\/g, '/');
+  // Statische Notfall-/Wartungsseite ist bewusst kein indexierbarer Content (noindex, kein Schema) -> ausnehmen.
+  if (/(^|\/)wartung\.html$/.test(rel)) continue;
   const html = await readFile(f, 'utf8');
   const title = grab(html, /<title>([^<]*)<\/title>/);
   const desc = grab(html, /<meta name="description" content="([^"]*)"/);
   const canon = grab(html, /<link rel="canonical" href="([^"]*)"/);
   const robots = grab(html, /<meta name="robots" content="([^"]*)"/);
   const ld = (html.match(/application\/ld\+json/g) || []).length;
-  const isLegalOr404 = /404|admin/.test(rel);
+  // Bewusst nicht indexierte Seiten: 404, Admin, sowie die Datenschutz-Erklaerung solange sie Entwurf
+  // ist (noindex via draft-Flag) – wird indexierbar, sobald draft=false gesetzt wird.
+  const isLegalOr404 = /404|admin|datenschutz/.test(rel);
 
   if (!title) problems.push([rel, 'kein <title>']);
   else if (title.length > 60) problems.push([rel, `title ${title.length} Z. (>60)`]);
