@@ -11,8 +11,10 @@ const AI_BOTS = [
   'Google-Extended',
   'ClaudeBot',
   'Claude-Web',
+  'Claude-SearchBot',
   'Applebot-Extended',
   'CCBot',
+  'Bingbot',
 ];
 
 export const GET: APIRoute = (context) => {
