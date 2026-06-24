@@ -1,0 +1,55 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { site } from '../data/site';
+---
+
+<LegalLayout
+  title="Erklärung zur Barrierefreiheit"
+  description="Erklärung zur Barrierefreiheit der Website der Asbesta Schadstoffsanierung – Stand der WCAG-2.2-AA-Konformität, bekannte Einschränkungen und Feedback-Möglichkeit."
+>
+  <h2>Unser Anspruch</h2>
+  <p>
+    Wir möchten, dass diese Website von möglichst allen Menschen genutzt werden kann, und orientieren
+    uns an den <strong>Web Content Accessibility Guidelines (WCAG) 2.2 auf Stufe AA</strong>. Diese
+    Erklärung geben wir <strong>freiwillig</strong> ab: Als Informations- und Anfrageseite ohne
+    verbindlichen Online-Vertragsabschluss unterliegt die Website voraussichtlich nicht den Pflichten
+    des Barrierefreiheitsstärkungsgesetzes (BFSG); Barrierefreiheit ist uns dennoch wichtig. Diese
+    Erklärung gilt für die Website unter www.asbesta-schadstoffsanierung.de.
+  </p>
+
+  <h2>Stand der Konformität</h2>
+  <p>
+    Nach unserer Selbstbewertung ist die Website <strong>weitgehend konform</strong> mit WCAG 2.2 AA.
+    Wir prüfen laufend automatisiert (axe-core über alle Seitentypen – ohne kritische oder ernste
+    Verstöße) sowie strukturell und manuell. Eine abschließende Prüfung mit assistiven Technologien
+    (Screenreader) und auf realen Geräten steht noch aus.
+  </p>
+
+  <h2>Umgesetzte Maßnahmen</h2>
+  <ul>
+    <li>Semantische Struktur mit Landmarken und „Zum Inhalt springen"-Link</li>
+    <li>Vollständige Tastaturbedienbarkeit mit sichtbaren Fokus-Indikatoren</li>
+    <li>Ausreichende Farbkontraste sowie gut erreichbare Klick-/Tippziele auf Mobilgeräten</li>
+    <li>Aussagekräftige Alternativtexte für Bilder</li>
+    <li>Formularfelder mit Beschriftung und barrierefreier Fehlerkennzeichnung</li>
+    <li>Berücksichtigung der Einstellung „reduzierte Bewegung" (<code>prefers-reduced-motion</code>)</li>
+  </ul>
+
+  <h2>Bekannte Einschränkungen</h2>
+  <p>
+    Einzelne Inhalte sind möglicherweise noch nicht vollständig optimiert; insbesondere die
+    abschließende Prüfung mit Screenreadern und auf realen Geräten ist noch in Arbeit. Wir verbessern
+    die Zugänglichkeit fortlaufend.
+  </p>
+
+  <h2>Feedback &amp; Kontakt</h2>
+  <p>
+    Sind Ihnen Barrieren aufgefallen oder benötigen Sie Inhalte in einer zugänglichen Form? Bitte
+    melden Sie sich – Telefon <a href={site.phone.href}>{site.phone.display}</a>, E-Mail
+    <a href={`mailto:${site.email}`}>{site.email}</a>. Wir antworten in der Regel innerhalb weniger
+    Werktage und bessern gemeldete Barrieren zeitnah nach.
+  </p>
+
+  <h2>Stand dieser Erklärung</h2>
+  <p>Diese Erklärung wurde am 2026-06-24 erstellt und wird bei Änderungen aktualisiert.</p>
+</LegalLayout>

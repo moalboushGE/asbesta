@@ -12,6 +12,7 @@ const pages = [
   { name: 'Kontakt', path: '/kontakt/' },
   { name: 'Impressum', path: '/impressum/' },
   { name: 'Datenschutz', path: '/datenschutz/' },
+  { name: 'Barrierefreiheit', path: '/barrierefreiheit/' },
 ];
 
 for (const p of pages) {
