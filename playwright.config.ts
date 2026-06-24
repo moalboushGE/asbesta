@@ -7,7 +7,8 @@ export default defineConfig({
   testDir: 'e2e',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: 0,
+  // 1 Retry gegen transiente webServer-Start-/Timing-Flakes (Pre-Launch-Härtung).
+  retries: 1,
   reporter: 'list',
   use: {
     baseURL: 'http://localhost:4321',

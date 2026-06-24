@@ -60,7 +60,7 @@ export default defineConfig({
         }
         // Fester Release-Stempel statt new Date(): sonst springen bei JEDEM Deploy alle lastmod-Werte
         // auf "jetzt" und Google verwirft das Signal. Bei echten Inhaltsupdates manuell anheben.
-        return { ...item, priority, changefreq, lastmod: '2026-06-18T00:00:00+00:00' };
+        return { ...item, priority, changefreq, lastmod: '2026-06-24T00:00:00+00:00' };
       },
     }),
   ],
