@@ -123,6 +123,64 @@ export const definitionen: readonly Definition[] = [
     sameAs: ['https://de.wikipedia.org/wiki/Gefahrstoffverordnung'],
     kategorie: 'Dokument',
   },
+  {
+    term: 'Chrysotil',
+    definition:
+      'Weißasbest – die mit Abstand am häufigsten verarbeitete Asbestart aus der Serpentin-Gruppe. Verbaut in Asbestzement, Bodenbelägen, Klebern und Dichtungen; wie alle Asbestarten krebserzeugend.',
+    altLabel: ['Weißasbest'],
+    sameAs: ['https://de.wikipedia.org/wiki/Chrysotil'],
+    kategorie: 'Stoff',
+  },
+  {
+    term: 'Asbestzement',
+    definition:
+      'Fest gebundenes Gemisch aus Zement und Asbestfasern – verwendet für Wellplatten (Welleternit), Fassadenplatten, Rohre und Blumenkästen. Solange intakt unauffällig; beim Bearbeiten, Brechen oder Abbruch werden Fasern frei.',
+    altLabel: ['Faserzement', 'Welleternit', 'Eternit', 'Wellasbest'],
+    sameAs: ['https://de.wikipedia.org/wiki/Faserzement'],
+    kategorie: 'Stoff',
+  },
+  {
+    term: 'Floor-Flex-Platten',
+    definition:
+      'Harte Vinyl-Asbest-Bodenplatten (meist 25×25 cm), bis 1993 millionenfach verlegt. Der oft schwarze Bitumenkleber darunter kann ebenfalls asbesthaltig sein. Gefährlich vor allem beim Entfernen, Bohren oder Schleifen.',
+    altLabel: ['Vinyl-Asbest-Platten', 'Cushion-Vinyl', 'PVC-Asbest-Platten'],
+    kategorie: 'Stoff',
+  },
+  {
+    term: 'Bitumenkleber',
+    definition:
+      'Schwarzer, harter Klebstoff unter alten Bodenbelägen. Er kann asbesthaltig (TRGS 519) oder teer-/PAK-haltig (TRGS 524/551) sein – welcher Schadstoff vorliegt, klärt nur eine Materialanalyse.',
+    altLabel: ['schwarzer Kleber', 'Schwarzkleber'],
+    kategorie: 'Stoff',
+  },
+  {
+    term: 'Asbestkataster',
+    definition:
+      'Systematische Bestandsaufnahme aller asbest- und schadstoffhaltigen Materialien eines Gebäudes mit Lage, Zustand und Dringlichkeit. Grundlage für die Sanierungsplanung und die Erkundungspflicht bei Gebäuden vor 1993.',
+    altLabel: ['Schadstoffkataster', 'Gebäudeschadstoffkataster'],
+    kategorie: 'Dokument',
+  },
+  {
+    term: 'Sachkundenachweis',
+    definition:
+      'Behördlich anerkannter Nachweis der Sachkunde nach TRGS 519 (Anlage 3 für Abbruch-, Sanierungs- und Instandhaltungsarbeiten). Pflicht für die verantwortliche Leitung asbestbezogener Arbeiten.',
+    altLabel: ['Sachkunde nach TRGS 519'],
+    kategorie: 'Dokument',
+  },
+  {
+    term: 'Personenschleuse',
+    definition:
+      'Mehrkammerige Schleuse am Übergang vom Schwarz- in den Weißbereich. Beschäftigte werden beim Verlassen des Sanierungsbereichs entstaubt und legen die Schutzkleidung kontrolliert ab. Teil der Schwarz-Weiß-Anlage.',
+    altLabel: ['Dekontaminationsschleuse'],
+    kategorie: 'Verfahren',
+  },
+  {
+    term: 'Abfallschlüssel 17 06 05*',
+    definition:
+      'Europäischer Abfallschlüssel (AVV) für asbesthaltige Baustoffe. Das Sternchen kennzeichnet gefährlichen Abfall, der getrennt, deklariert und mit Entsorgungsnachweis über zugelassene Annahmestellen entsorgt werden muss.',
+    altLabel: ['AVV 17 06 05*', 'AVV-Code Asbest'],
+    kategorie: 'Dokument',
+  },
 ];
 
 /** Einschlägige Regelwerke und Schlüssel. TRGS 521 ist hier ausschließlich als Regelwerk (alte

@@ -99,6 +99,19 @@ function organizationNode(origin: string): Record<string, unknown> {
     founder: { '@id': origin + '/' + PERSON_ID },
     areaServed: ['Nordrhein-Westfalen', ...standorte.map((s) => s.name)],
     knowsAbout: leistungen.map((l) => l.title),
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Asbest- und Schadstoffsanierung',
+      itemListElement: leistungen.map((l) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: l.title,
+          serviceType: l.title,
+          url: origin + '/leistungen/' + l.slug + '/',
+        },
+      })),
+    },
     contactPoint: {
       '@type': 'ContactPoint',
       telephone,
