@@ -275,7 +275,7 @@ export const regelwerke: readonly Regelwerk[] = [
 
 /** Belegbare Kernfakten (keine erfundenen Kennzahlen). */
 export const kernfakten: readonly Kernfakt[] = [
-  { aussage: 'Asbest ist in Deutschland seit 1993 verboten (Herstellungs- und Verwendungsverbot).' },
+  { aussage: 'Asbest ist in Deutschland seit dem 31. Oktober 1993 verboten (Herstellungs- und Verwendungsverbot).' },
   {
     aussage:
       'Asbestfasern sind lungengängig und können Asbestose sowie Lungen- und Rippenfellkrebs (Mesotheliom) verursachen.',
@@ -315,7 +315,7 @@ export const wissensFaqs: readonly WissensFaq[] = [
   {
     frage: 'Ist Asbest in Deutschland verboten?',
     antwort:
-      'Ja. Herstellung und Verwendung von Asbest sind in Deutschland seit 1993 verboten. In Bestandsgebäuden ist Asbest aber weiterhin verbaut und muss bei Arbeiten fachgerecht entfernt werden.',
+      'Ja. Herstellung und Verwendung von Asbest sind in Deutschland seit dem 31. Oktober 1993 verboten. In Bestandsgebäuden ist Asbest aber weiterhin verbaut und muss bei Arbeiten fachgerecht entfernt werden.',
   },
   {
     frage: 'Woran erkenne ich, ob in meinem Gebäude Asbest verbaut ist?',
@@ -385,7 +385,7 @@ export const wissenMeta = {
   ],
   inLanguage: 'de',
   datePublished: '2026-06-18',
-  dateModified: '2026-06-19',
+  dateModified: '2026-06-25',
 } as const;
 
 /** Lizenz des Datensatzes: CC BY 4.0 – frei zitierbar mit Quellenangabe (gut für KI/GEO). */

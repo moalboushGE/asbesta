@@ -5,7 +5,7 @@ import { leistungenDetail } from '../data/leistungen-detail';
 import { ratgeberArtikel } from '../data/ratgeber';
 import { standorte } from '../data/standorte';
 import { bewertungAggregat, googleReviewsUrl } from '../data/bewertungen';
-import { definitionen, regelwerke, kernfakten, kostenfaktoren, wissenLicense } from '../data/wissen';
+import { definitionen, regelwerke, kernfakten, kostenfaktoren, wissenLicense, wissenMeta } from '../data/wissen';
 import { resolveOrigin } from '../lib/origin';
 
 // facts.json: maschinenlesbare Firmenfakten (Single Source of Truth fuer AI-Crawler & Entwickler).
@@ -94,7 +94,7 @@ export const GET: APIRoute = (context) => {
   const origin = resolveOrigin(context.site);
   const facts = {
     schemaVersion: '1.2',
-    updated: '2026-06-25',
+    updated: wissenMeta.dateModified,
     language: 'de',
     dataset: origin + '/wissen/',
     license: wissenLicense.license,

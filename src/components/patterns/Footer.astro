@@ -44,6 +44,7 @@ const ratingFmt = bewertungAggregat.rating.toLocaleString('de-DE', { minimumFrac
         href={googleReviewsUrl}
         target="_blank"
         rel="noopener"
+        aria-label={`Bewertung ${ratingFmt} von 5 Sternen aus ${bewertungAggregat.anzahl} Google-Rezensionen`}
         class="mt-5 inline-flex items-center gap-2.5 rounded-full border border-gray-200 px-4 py-2 transition-colors hover:border-red-300"
       >
         <span class="font-display text-lg font-extrabold text-ink-900">{ratingFmt}</span>

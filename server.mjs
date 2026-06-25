@@ -131,6 +131,11 @@ app.use(
         res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
       } else if (filePath.endsWith('.html')) {
         res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+      } else if (/\.(?:js|png|svg|webmanifest|ico)$/.test(filePath)) {
+        // Stabile, NICHT content-gehashte Assets (Skripte, Icons, Logo, Manifest): kurze TTL statt
+        // 'immutable' (Namen tragen keinen Hash), aber stale-while-revalidate spart Roundtrips bei
+        // Wiederholbesuch/Folgenavigation. Bei Aenderung greift nach max-age die Revalidierung.
+        res.setHeader('Cache-Control', 'public, max-age=86400, stale-while-revalidate=604800');
       }
     },
   }),

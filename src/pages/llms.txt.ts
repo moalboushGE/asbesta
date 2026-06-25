@@ -40,6 +40,8 @@ ${leistungsLinks}
 ## Wichtige Seiten
 - [Startseite](${origin}/)
 - [Alle Leistungen](${origin}/leistungen/)
+- [Über uns / Inhaber & Qualifikationen](${origin}/ueber-uns/)
+- [Standorte / Einsatzgebiet NRW](${origin}/standorte/)
 - [Wissensdatenbank (Datensatz)](${origin}/wissen/)
 - [Ratgeber](${origin}/ratgeber/)
 - [Kontakt](${origin}/kontakt/)

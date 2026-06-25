@@ -24,7 +24,10 @@ export default defineConfig({
     icon(),
     sitemap({
       // /admin nie in die Sitemap (ist ohnehin on-demand/prerender=false, hier doppelt abgesichert).
-      filter: (page) => !/\/admin(\/|$)/.test(page),
+      // /datenschutz/ ist bis zur anwaltlichen Freigabe als draft auf noindex,follow gesetzt (LegalLayout) –
+      // daher aus der Sitemap nehmen, sonst meldet GSC "Uebermittelte URL als 'noindex' gekennzeichnet".
+      // Nach Freigabe (draft-Flag in datenschutz.astro entfernt) datenschutz hier wieder loeschen.
+      filter: (page) => !/\/(admin|datenschutz)(\/|$)/.test(page),
       // Maschinenlesbare GEO/KI-Endpunkte als eigenstaendige Ressourcen in die Sitemap aufnehmen.
       customPages: [
         'https://www.asbesta-schadstoffsanierung.de/facts.json',
@@ -60,7 +63,7 @@ export default defineConfig({
         }
         // Fester Release-Stempel statt new Date(): sonst springen bei JEDEM Deploy alle lastmod-Werte
         // auf "jetzt" und Google verwirft das Signal. Bei echten Inhaltsupdates manuell anheben.
-        return { ...item, priority, changefreq, lastmod: '2026-06-24T00:00:00+00:00' };
+        return { ...item, priority, changefreq, lastmod: '2026-06-25T00:00:00+00:00' };
       },
     }),
   ],
