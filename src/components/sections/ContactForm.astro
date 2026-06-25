@@ -31,19 +31,19 @@ const labelCls = 'block text-sm font-semibold text-ink-900';
   <div class="grid gap-4 sm:grid-cols-2">
     <div>
       <label class={labelCls} for="f-name">Name*</label>
-      <input class={field} id="f-name" name="name" required maxlength="100" autocomplete="name" />
+      <input class={field} id="f-name" name="name" required maxlength="100" autocomplete="name" enterkeyhint="next" />
     </div>
     <div>
       <label class={labelCls} for="f-telefon">Telefon</label>
-      <input class={field} id="f-telefon" name="telefon" type="tel" maxlength="40" autocomplete="tel" />
+      <input class={field} id="f-telefon" name="telefon" type="tel" inputmode="tel" maxlength="40" autocomplete="tel" enterkeyhint="next" />
     </div>
     <div>
       <label class={labelCls} for="f-email">E-Mail*</label>
-      <input class={field} id="f-email" name="email" type="email" required maxlength="150" autocomplete="email" />
+      <input class={field} id="f-email" name="email" type="email" inputmode="email" required maxlength="150" autocomplete="email" enterkeyhint="next" />
     </div>
     <div>
       <label class={labelCls} for="f-ort">Ort</label>
-      <input class={field} id="f-ort" name="ort" maxlength="100" autocomplete="address-level2" />
+      <input class={field} id="f-ort" name="ort" maxlength="100" autocomplete="address-level2" enterkeyhint="next" />
     </div>
   </div>
 

@@ -52,10 +52,10 @@ const field =
         <input type="hidden" name="referrer" />
 
         <div class="grid gap-3 sm:grid-cols-2">
-          <input class={field} name="name" required maxlength="100" placeholder="Name*" autocomplete="name" aria-label="Name" />
-          <input class={field} name="telefon" type="tel" maxlength="40" placeholder="Telefon" autocomplete="tel" aria-label="Telefon" />
-          <input class={field} name="email" type="email" required maxlength="150" placeholder="E-Mail*" autocomplete="email" aria-label="E-Mail" />
-          <input class={field} name="ort" value={ort} maxlength="100" placeholder="Ort" autocomplete="address-level2" aria-label="Ort" />
+          <input class={field} name="name" required maxlength="100" placeholder="Name*" autocomplete="name" aria-label="Name" enterkeyhint="next" />
+          <input class={field} name="telefon" type="tel" inputmode="tel" maxlength="40" placeholder="Telefon" autocomplete="tel" aria-label="Telefon" enterkeyhint="next" />
+          <input class={field} name="email" type="email" inputmode="email" required maxlength="150" placeholder="E-Mail*" autocomplete="email" aria-label="E-Mail" enterkeyhint="next" />
+          <input class={field} name="ort" value={ort} maxlength="100" placeholder="Ort" autocomplete="address-level2" aria-label="Ort" enterkeyhint="next" />
         </div>
         <textarea class={field} name="nachricht" rows="2" required maxlength="2000" aria-label="Nachricht">{defaultNachricht}</textarea>
 

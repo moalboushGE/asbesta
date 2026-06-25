@@ -2,7 +2,7 @@ import { site, owner, qualifikationen } from '../data/site';
 import { leistungen } from '../data/leistungen';
 import { standorte } from '../data/standorte';
 import { googleReviewsUrl } from '../data/bewertungen';
-import { definitionen, wissenMeta, wissenLicense, wissensFaqs, type Definition } from '../data/wissen';
+import { definitionen, regelwerke, kostenfaktoren, wissenMeta, wissenLicense, wissensFaqs, type Definition, type Regelwerk } from '../data/wissen';
 
 /** JSON-LD-Builder (framework-frei, unit-testbar – Plan Kap. 8.1). */
 
@@ -491,6 +491,39 @@ export function definedTermSetNode(origin: string, defs: readonly Definition[]):
   };
 }
 
+const REGELWERK_TERMSET_ID = '#wissen-regelwerke';
+
+function regulationId(origin: string, code: string): string {
+  return origin + WISSEN_PATH + '#regelwerk-' + slugifyTerm(code);
+}
+
+/** Regelwerke (TRGS/VDI/GefStoffV/AVV) als DefinedTerm-Entitäten – maschinenlesbar mit amtlichen sameAs. */
+export function regulationNodes(origin: string, regs: readonly Regelwerk[]): Record<string, unknown>[] {
+  return regs.map((r) => {
+    const node: Record<string, unknown> = {
+      '@type': 'DefinedTerm',
+      '@id': regulationId(origin, r.code),
+      name: r.name,
+      termCode: r.code,
+      description: r.description,
+      inLanguage: 'de',
+      inDefinedTermSet: { '@id': origin + WISSEN_PATH + REGELWERK_TERMSET_ID },
+    };
+    if (r.sameAs && r.sameAs.length > 0) node.sameAs = [...r.sameAs];
+    return node;
+  });
+}
+
+export function regulationSetNode(origin: string, regs: readonly Regelwerk[]): Record<string, unknown> {
+  return {
+    '@type': 'DefinedTermSet',
+    '@id': origin + WISSEN_PATH + REGELWERK_TERMSET_ID,
+    name: 'Regelwerke & Vorschriften: Asbest- & Schadstoffsanierung',
+    inLanguage: 'de',
+    hasDefinedTerm: regs.map((r) => ({ '@id': regulationId(origin, r.code) })),
+  };
+}
+
 /** schema.org/Dataset für /wissen/ – Google-Dataset-Search-fähig; verweist per @id auf Org/Owner. */
 export function datasetNode(origin: string): Record<string, unknown> {
   const url = origin + WISSEN_PATH;
@@ -515,7 +548,12 @@ export function datasetNode(origin: string): Record<string, unknown> {
       containsPlace: standorte.map((s) => ({ '@type': 'City', name: s.name })),
     },
     about: definitionen.map((d) => ({ '@id': termId(origin, d.term) })),
-    hasPart: [{ '@id': url + '#faq' }, { '@id': origin + WISSEN_PATH + TERMSET_ID }],
+    variableMeasured: kostenfaktoren.map((k) => ({
+      '@type': 'PropertyValue',
+      name: k.faktor,
+      description: k.einfluss,
+    })),
+    hasPart: [{ '@id': url + '#faq' }, { '@id': origin + WISSEN_PATH + TERMSET_ID }, { '@id': origin + WISSEN_PATH + REGELWERK_TERMSET_ID }],
     distribution: [
       { '@type': 'DataDownload', name: 'Strukturierte Fakten (JSON)', encodingFormat: 'application/json', contentUrl: origin + '/facts.json' },
       { '@type': 'DataDownload', name: 'Entitäten / Knowledge Graph (JSON-LD)', encodingFormat: 'application/ld+json', contentUrl: origin + '/entities.json' },
@@ -551,6 +589,8 @@ export function buildWissenGraph(origin: string): unknown[] {
     definedTermSetNode(origin, definitionen),
     ...definedTermNodes(origin, definitionen),
     faqNode(wissensFaqs, url),
+    regulationSetNode(origin, regelwerke),
+    ...regulationNodes(origin, regelwerke),
     breadcrumbNode(origin, [
       { name: 'Start', url: '/' },
       { name: 'Wissen', url: '/wissen/' },
@@ -574,6 +614,8 @@ export function buildEntitiesGraph(origin: string): unknown[] {
     })),
     definedTermSetNode(origin, definitionen),
     ...definedTermNodes(origin, definitionen),
+    regulationSetNode(origin, regelwerke),
+    ...regulationNodes(origin, regelwerke),
     datasetNode(origin),
   ];
 }
