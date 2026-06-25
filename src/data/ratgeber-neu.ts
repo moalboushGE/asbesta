@@ -282,9 +282,111 @@ export const neueArtikel: readonly RatgeberArtikel[] = [
       },
     ],
   },
+  {
+    slug: "asbest-hausabriss-abbruch",
+    quellen: [
+      { label: "TRGS 519 (BAuA)", url: "https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519" },
+      { label: "Gefahrstoffverordnung (Gesetze im Internet)", url: "https://www.gesetze-im-internet.de/gefstoffv_2010/" },
+    ],
+    title: "Asbest beim Hausabriss: Erst erkunden und sanieren, dann abreißen",
+    metaTitle: "Asbest beim Hausabriss & Abbruch | Asbesta",
+    metaDescription:
+      "Vor dem Abriss eines Altbaus muss Asbest erkundet und entfernt werden. So laufen selektiver Rückbau, Anzeige und Entsorgung nach TRGS 519 ab.",
+    excerpt:
+      "Ein Gebäude aus der Zeit vor 1993 reißt man nicht einfach ab: Asbest und andere Schadstoffe müssen vorher erkundet und fachgerecht entfernt werden. Wie selektiver Rückbau, behördliche Anzeige und getrennte Entsorgung nach TRGS 519 ablaufen – verständlich erklärt.",
+    kategorie: "Ratgeber Asbest",
+    datePublished: "2026-06-25",
+    dateModified: "2026-06-25",
+    author: "Abdul-Rahman Omeirat",
+    authorRole: "Sachkundiger nach TRGS 519, Anlage 3",
+    lesezeitMin: 9,
+    heroImage: leistungImage("abbrucharbeiten").src,
+    heroAlt:
+      "Teilrückbau eines Altbaus mit Bagger, im Vordergrund fachgerecht getrennte Bauteile vor dem Abbruch",
+    faqs: [
+      {
+        frage: "Muss ein Haus vor dem Abriss auf Asbest untersucht werden?",
+        antwort:
+          "Ja. Bei Gebäuden, die vor dem Asbestverbot am 31. Oktober 1993 errichtet wurden, ist vor Abbruch- oder Umbauarbeiten eine Schadstofferkundung Teil der Gefährdungsbeurteilung. Erst wenn bekannt ist, wo Asbest steckt, darf gearbeitet werden – ein blindes Abreißen würde große Mengen Fasern freisetzen und ist unzulässig.",
+      },
+      {
+        frage: "Was ist ein selektiver Rückbau?",
+        antwort:
+          "Beim selektiven (auch: getrennten) Rückbau werden Schadstoffe und Materialarten nacheinander und getrennt ausgebaut, statt das Gebäude in einem Zug einzureißen. Asbesthaltige Bauteile kommen zuerst und fachgerecht nach TRGS 519 heraus; erst danach folgt der eigentliche Abbruch des schadstofffreien Rohbaus. Das schützt Mensch und Umwelt und ermöglicht eine saubere Entsorgung.",
+      },
+      {
+        frage: "Wer darf den Asbest vor dem Abriss entfernen?",
+        antwort:
+          "Die Asbestentfernung dürfen nur sachkundige Fachbetriebe nach TRGS 519 ausführen. Den anschließenden Abbruch des dann schadstofffreien Gebäudes kann ein Abbruchunternehmen übernehmen. Umfangreichere Asbestarbeiten sind zudem vorab bei der zuständigen Behörde – in Nordrhein-Westfalen der Bezirksregierung – anzuzeigen.",
+      },
+      {
+        frage: "Wo steckt in einem Abbruchobjekt typischerweise Asbest?",
+        antwort:
+          "In Gebäuden vor 1993 praktisch überall: Dach- und Fassadenplatten (Welleternit), Bodenbeläge mit Floor-Flex und Bitumenkleber, Putze, Spachtelmassen und Fliesenkleber, Rohrleitungen und -isolierungen, Dichtungen, Brandschutzverkleidungen und Spritzasbest. Eine systematische Schadstofferkundung mit Materialproben deckt die belasteten Bauteile vor dem Rückbau auf.",
+      },
+      {
+        frage: "Wie wird der Abbruchabfall mit Asbest entsorgt?",
+        antwort:
+          "Asbesthaltige Bauteile werden getrennt von den übrigen Bauabfällen erfasst, staubarm ausgebaut, angefeuchtet und in zugelassenen Big-Bags oder verschweißten Folien verpackt. Sie tragen den Abfallschlüssel AVV 17 06 05* (gefährlicher Abfall) und gehen über zertifizierte Entsorger auf eine zugelassene Deponie – dokumentiert mit Entsorgungsnachweis.",
+      },
+      {
+        frage: "Was kostet die Asbestsanierung vor einem Abriss?",
+        antwort:
+          "Das lässt sich nicht pauschal beziffern. Die Kosten hängen von Art und Menge der asbesthaltigen Bauteile, der Gebäudegröße, der Zugänglichkeit sowie dem Schutz- und Entsorgungsaufwand ab. Einen verbindlichen Festpreis nennen wir nach einer kostenlosen Besichtigung und – wo nötig – einer Schadstofferkundung mit Materialproben.",
+      },
+    ],
+  },
 ];
 
 export const neuerContent: Record<string, RatgeberContent> = {
+  "asbest-hausabriss-abbruch": {
+    toc: [
+      { id: "warum", label: "Warum Asbest vor dem Abriss raus muss" },
+      { id: "erkundung", label: "Schadstofferkundung: Pflicht vor dem Abbruch" },
+      { id: "wo", label: "Wo Asbest im Abbruchobjekt steckt" },
+      { id: "selektiv", label: "Selektiver Rückbau statt Komplettabriss" },
+      { id: "ablauf", label: "Der Ablauf Schritt für Schritt" },
+      { id: "entsorgung", label: "Getrennte Entsorgung und Nachweis" },
+      { id: "kosten", label: "Was kostet es?" },
+      { id: "fazit", label: "Fazit" },
+    ],
+    body: [
+      { type: "p", html: "Ein altes Haus abreißen oder entkernen klingt nach Bagger und schneller Sache. Bei Gebäuden aus der Zeit vor dem deutschen <strong>Asbestverbot am 31. Oktober 1993</strong> ist es das nicht: Asbest und andere Schadstoffe müssen <strong>vor</strong> dem eigentlichen Abbruch erkundet und fachgerecht entfernt werden. Wer blind einreißt, setzt enorme Mengen lungengängiger Fasern frei und kontaminiert den gesamten Bauschutt. Dieser Ratgeber erklärt, warum die Reihenfolge entscheidend ist und wie der Rückbau nach TRGS 519 Schritt für Schritt abläuft." },
+      { type: "h2", id: "warum", text: "Warum Asbest vor dem Abriss raus muss" },
+      { type: "p", html: "Solange asbesthaltige Bauteile intakt verbaut sind, ist der Asbest meist fest gebunden. Beim mechanischen Abbruch – Einreißen, Brechen, Greifern – werden die Fasern jedoch massenhaft freigesetzt und verteilen sich über die gesamte Baustelle und die Nachbarschaft. Zugleich vermischt sich der Asbest mit dem übrigen Bauschutt, der dadurch ebenfalls zu gefährlichem Abfall wird. Aus Arbeits-, Umwelt- und Kostengründen gilt deshalb: erst die Schadstoffe sauber heraus, dann abreißen." },
+      { type: "h2", id: "erkundung", text: "Schadstofferkundung: Pflicht vor dem Abbruch" },
+      { type: "p", html: "Vor Abbruch- oder Umbauarbeiten an einem Gebäude mit Asbestverdacht muss der Bestand auf Asbest und weitere Schadstoffe erkundet werden – das ist Teil der Gefährdungsbeurteilung nach Gefahrstoffverordnung und TRGS 519. Die Erkundung sichtet Bauunterlagen und Baujahr, nimmt verdächtige Materialien auf und bestätigt den Verdacht über Laboranalysen. Das Ergebnis wird in einem Schadstoffkataster festgehalten, das Art, Ort und Menge der belasteten Bauteile dokumentiert." },
+      { type: "callout", variant: "hinweis", title: "Erkundung ist die Grundlage für alles Weitere", html: "Ohne belastbare Schadstofferkundung lässt sich der Rückbau weder sicher planen noch sauber kalkulieren. Wie ein solches Kataster aufgebaut ist, lesen Sie im Ratgeber <a href=\"/ratgeber/asbestkataster-schadstoffkataster/\">Asbestkataster &amp; Schadstoffkataster</a>; aktuelle rechtliche Entwicklungen erklärt der Beitrag zur <a href=\"/ratgeber/gefstoffv-novelle-2024/\">GefStoffV-Novelle</a>." },
+      { type: "h2", id: "wo", text: "Wo Asbest im Abbruchobjekt steckt" },
+      { type: "p", html: "In Gebäuden vor 1993 kann Asbest an sehr vielen Stellen verbaut sein. Eine gute Erkundung prüft systematisch unter anderem:" },
+      { type: "ul", items: [
+        "Dach und Fassade: Welleternit, Dach- und Fassadenplatten aus Asbestzement",
+        "Böden: Floor-Flex-Platten, Cushion-Vinyl und schwarzer Bitumenkleber",
+        "Wände und Decken: Putze, Spachtelmassen, Fliesenkleber, Spritzasbest",
+        "Haustechnik: Rohrleitungen und -isolierungen, Dichtungen, Lüftungskanäle",
+        "Brandschutz: Verkleidungen, Brandschutzplatten und -klappen",
+      ] },
+      { type: "figure", image: "abbrucharbeiten", alt: "Fachgerechter, schadstoffgetrennter Rückbau eines Altbaus durch Fachkräfte in Schutzausrüstung" },
+      { type: "h2", id: "selektiv", text: "Selektiver Rückbau statt Komplettabriss" },
+      { type: "p", html: "Statt das Gebäude in einem Zug einzureißen, erfolgt der Rückbau <strong>selektiv</strong>: Schadstoffe und Materialarten werden nacheinander und getrennt ausgebaut. Die asbesthaltigen Bauteile kommen zuerst und fachgerecht nach TRGS 519 heraus – erst danach folgt der Abbruch des nun schadstofffreien Rohbaus. Das hält die Faserfreisetzung minimal, hält die Abfallströme sauber getrennt und senkt die Entsorgungskosten, weil nicht der gesamte Bauschutt als asbesthaltig gilt." },
+      { type: "h2", id: "ablauf", text: "Der Ablauf Schritt für Schritt" },
+      { type: "ol", items: [
+        "Schadstofferkundung mit Materialproben und Schadstoffkataster.",
+        "Planung und – bei anzeigepflichtigen Arbeiten – Anzeige bei der zuständigen Behörde.",
+        "Einrichtung: Arbeitsbereich abgrenzen, sichern und bei Bedarf unter Unterdruck setzen.",
+        "Asbestsanierung: staubarmer Ausbau der asbesthaltigen Bauteile nach TRGS 519.",
+        "Kontrolle: Feinreinigung und – bei Innenräumen – Freimessung der Raumluft nach VDI 3492.",
+        "Abbruch: Rückbau des schadstofffreien Gebäudes durch das Abbruchunternehmen.",
+        "Entsorgung: getrennte, dokumentierte Entsorgung aller Abfallfraktionen.",
+      ] },
+      { type: "h2", id: "entsorgung", text: "Getrennte Entsorgung und Nachweis" },
+      { type: "p", html: "Asbesthaltige Bauteile werden getrennt vom übrigen Bauschutt erfasst, angefeuchtet, nicht zerbrochen und in reißfesten, zugelassenen Big-Bags oder verschweißten Folien verpackt. Sie tragen den Abfallschlüssel <strong>AVV 17 06 05*</strong> und gehen über zertifizierte Entsorger auf eine zugelassene Deponie. Die Entsorgung wird durchgehend dokumentiert, sodass Sie einen lückenlosen Nachweis erhalten. Mehr dazu im Ratgeber <a href=\"/ratgeber/asbest-entsorgen/\">Asbest entsorgen</a>." },
+      { type: "h2", id: "kosten", text: "Was kostet es?" },
+      { type: "p", html: "Einen Pauschalpreis gibt es nicht. Maßgeblich sind Art und Menge der asbesthaltigen Bauteile, die Gebäudegröße, die Zugänglichkeit sowie der Schutz- und Entsorgungsaufwand. Seriös lässt sich der Preis erst nach der Schadstofferkundung und einer Besichtigung beziffern – pauschale Internet-Quadratmeterpreise führen in die Irre. Grundlage jeder verlässlichen Kalkulation ist die <a href=\"/leistungen/materialanalyse/\">Materialanalyse</a>." },
+      { type: "h2", id: "fazit", text: "Fazit" },
+      { type: "p", html: "Der Abriss eines Altbaus beginnt nicht mit dem Bagger, sondern mit der Schadstofferkundung. Wer Asbest vor dem Abbruch fachgerecht entfernen lässt, schützt Gesundheit und Umwelt, hält die Abfallströme sauber und spart am Ende Geld. Wir übernehmen die Asbestsanierung im selektiven Rückbau nach TRGS 519 inklusive Entsorgungsnachweis – mehr dazu unter <a href=\"/leistungen/abbrucharbeiten/\">Abbruch- &amp; Rückbauarbeiten</a>. Für eine kostenlose Besichtigung mit Festpreis nutzen Sie unser <a href=\"/kontakt/\">Kontaktformular</a>." },
+    ],
+  },
   "asbestzement-rohre-erkennen-entsorgen": {
     toc: [
       { id: "wo-verbaut", label: "Wo Asbestzement-Rohre verbaut wurden" },
