@@ -228,9 +228,118 @@ export const neueArtikel: readonly RatgeberArtikel[] = [
     heroAlt: "Beschädigtes Asbestzement-Wellplattendach eines Wohnhauses nach einem Sturm mit verrutschten und gebrochenen Platten",
     faqs: [{"frage":"Zahlt die Gebäudeversicherung die Asbestsanierung?","antwort":"Die Gebäudeversicherung zahlt einen versicherten Schaden – etwa durch Sturm, Hagel oder Feuer –, nicht aber die Beseitigung des Asbests an sich. Ist Ihr Dach durch ein versichertes Ereignis beschädigt und enthält Ihre Police eine Mehrkostenklausel, werden die asbestbedingten Zusatzkosten der Entsorgung oft anteilig übernommen, meist bis zu einem Höchstbetrag. Eine freiwillige Sanierung ohne Schadensfall ist hingegen Sache des Eigentümers."},{"frage":"Was ist eine Mehrkostenklausel und warum ist sie bei Asbest wichtig?","antwort":"Die Mehrkostenklausel deckt zusätzliche Kosten, die durch behördliche Auflagen oder eine notwendige Dekontamination und Entsorgung entstehen. Bei Asbest ist sie entscheidend, weil beschädigte Platten nur fachgerecht nach TRGS 519 demontiert und als gefährlicher Abfall entsorgt werden dürfen – das ist deutlich teurer als eine normale Dachreparatur. Ohne diese Klausel bleiben Sie auf den Mehrkosten oft sitzen. Prüfen Sie zusätzlich die Höchstgrenze."},{"frage":"Mein Asbestdach wurde durch Sturm beschädigt – was übernimmt die Versicherung?","antwort":"Wenn Sturm als versicherte Gefahr vereinbart ist (meist ab Windstärke 8), ist die Reparatur des beschädigten Dachbereichs grundsätzlich ein Leistungsfall. Die asbestbedingten Mehrkosten greifen nur, soweit eine Mehrkostenklausel das hergibt. Reguliert wird in der Regel nur der tatsächlich beschädigte Bereich, nicht das gesamte Dach. Was genau gilt, steht in Ihren individuellen Versicherungsbedingungen."},{"frage":"Kann ich mein altes Asbestdach über die Versicherung erneuern lassen?","antwort":"Nein, wenn kein versicherter Schaden vorliegt. Ein Dach, das nur durch Alter und Witterung undicht geworden ist, gilt als Verschleiß und ist nicht gedeckt. Auch eine freiwillige Vorsorge-Sanierung zahlt keine Gebäudeversicherung. Für solche geplanten Maßnahmen lohnt eher der Blick auf Förderprogramme, etwa im Rahmen einer energetischen Sanierung. Dies ist eine Orientierung und ersetzt keine Versicherungsberatung im Einzelfall."},{"frage":"Wie dokumentiere ich einen Schaden am Asbestdach richtig?","antwort":"Melden Sie den Schaden umgehend, notieren Sie die Schadennummer und machen Sie Fotos sowie Videos aus mehreren Perspektiven mit erkennbarem Datum. Sichern Sie bei Sturm einen Beleg über die Windstärke. Entsorgen Sie nichts voreilig, und betreten oder bewegen Sie gebrochene Asbestplatten nicht selbst. Holen Sie ein Fachbetriebs-Angebot ein, das die Asbest-Mehrkosten gesondert ausweist, und bewahren Sie alle Belege und den Entsorgungsnachweis auf."},{"frage":"Wer haftet, wenn herabfallende Asbestplatten andere schädigen?","antwort":"Hier kommt in der Regel die Haus- und Grundbesitzerhaftpflicht ins Spiel: Sie reguliert Schäden, die von Ihrem Gebäude bei Dritten verursacht werden, etwa wenn Plattenteile auf ein Nachbargrundstück oder einen Passanten fallen. Die Sanierung Ihres eigenen Daches ersetzt sie jedoch nicht. Welche Police im konkreten Fall greift, hängt vom Einzelvertrag ab und sollte mit dem Versicherer geklärt werden."},{"frage":"Sollte ich vor einem Schaden meine Police prüfen lassen?","antwort":"Unbedingt. Klären Sie vorab, welche Gefahren versichert sind, ob eine Mehrkostenklausel für Dekontamination und Entsorgung besteht, bis zu welchem Höchstbetrag diese gilt und wie hoch der Selbstbehalt ist. Prüfen Sie auch, ob Asbest ausdrücklich ausgeschlossen ist. Bei Unklarheit fragen Sie Ihren Versicherer oder einen unabhängigen Berater schriftlich an. So vermeiden Sie im Ernstfall langwierige Diskussionen."}],
   },
+  {
+    slug: "asbestzement-rohre-erkennen-entsorgen",
+    quellen: [
+      { label: "TRGS 519 (BAuA)", url: "https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519" },
+      { label: "Gefahrstoffverordnung (Gesetze im Internet)", url: "https://www.gesetze-im-internet.de/gefstoffv_2010/" },
+    ],
+    title: "Asbestzement-Rohre und Eternitrohre erkennen und fachgerecht entsorgen",
+    metaTitle: "Asbestzement-Rohre erkennen & entsorgen | Asbesta",
+    metaDescription:
+      "Alte Eternit-/Asbestzement-Rohre (Abwasser, Regen, Lüftung) erkennen: Warum Sägen und Brechen tabu sind und wie die Entsorgung nach TRGS 519 abläuft.",
+    excerpt:
+      "Graue Faserzement-Rohre wurden bis 1993 als Abwasser-, Regen-, Lüftungs- und sogar Wasserleitung millionenfach verbaut. Wie Sie Asbestzement-Rohre erkennen, warum Sägen, Bohren und Brechen tabu sind und wie der fachgerechte Ausbau samt Entsorgung nach TRGS 519 abläuft – ehrlich erklärt.",
+    kategorie: "Ratgeber Asbest",
+    datePublished: "2026-06-25",
+    dateModified: "2026-06-25",
+    author: "Abdul-Rahman Omeirat",
+    authorRole: "Sachkundiger nach TRGS 519, Anlage 3",
+    lesezeitMin: 9,
+    heroImage: leistungImage("asbestzement-ausbauen").src,
+    heroAlt:
+      "Alte graue Asbestzement-Rohre und Rohrstücke auf einer Baustelle, bereit zur fachgerechten Demontage",
+    faqs: [
+      {
+        frage: "Woran erkenne ich ein Asbestzement-Rohr?",
+        antwort:
+          "Ein erster Anhaltspunkt ist das Baujahr: Faserzement-Rohre aus der Zeit vor dem Asbestverbot am 31. Oktober 1993 enthalten in aller Regel Asbest. Typisch sind eine graue, zementartige Oberfläche, eine im Bruch leicht faserige Struktur und der Einsatz als Abwasser-, Regen-, Lüftungs- oder Druckrohr. Optische Merkmale liefern aber nur einen Verdacht – Sicherheit gibt ausschließlich eine Laboranalyse einer fachgerecht entnommenen Materialprobe.",
+      },
+      {
+        frage: "Sind alte Asbestzement-Rohre gefährlich?",
+        antwort:
+          "Im intakten Zustand ist der Asbest fest in der Zementmatrix gebunden, sodass kaum Fasern frei werden. Kritisch wird es, sobald das Rohr bearbeitet wird – durch Sägen, Flexen, Bohren, Brechen oder Hochdruckreinigen. Dann entstehen lungengängige Fasern. Auch stark verwitterte oder innen korrodierte Rohre können mit der Zeit Fasern abgeben und sollten fachlich beurteilt werden.",
+      },
+      {
+        frage: "Sind Asbestfasern im Trinkwasser aus alten Leitungen gefährlich?",
+        antwort:
+          "Nach derzeitigem wissenschaftlichem Kenntnisstand gilt die orale Aufnahme von Asbestfasern über Trinkwasser als deutlich weniger kritisch als das Einatmen; einen gesundheitsbasierten Grenzwert für Asbest im Trinkwasser gibt es deshalb nicht. Das gesundheitliche Hauptrisiko ist die Inhalation von Fasern. Problematisch wird es daher vor allem bei Arbeiten an den Leitungen – etwa beim Schneiden oder Brechen alter Druckrohre.",
+      },
+      {
+        frage: "Darf ich ein Asbestzement-Rohr selbst absägen oder entfernen?",
+        antwort:
+          "Nein. Sägen, Flexen, Bohren, Brechen und Hochdruckreinigen sind bei Asbestzement unzulässig, weil dabei Fasern freigesetzt werden. Solche Arbeiten an asbesthaltigen Materialien dürfen nur sachkundige Fachbetriebe nach TRGS 519 ausführen. Für Laien gilt: das intakte Rohr unverändert belassen und im Zweifel einen Fachbetrieb hinzuziehen.",
+      },
+      {
+        frage: "Wie wird ein Asbestzement-Rohr entsorgt?",
+        antwort:
+          "Asbesthaltige Rohre sind gefährlicher Abfall mit dem Abfallschlüssel AVV 17 06 05*. Sie werden möglichst ganz ausgebaut, nicht zerbrochen, angefeuchtet und in zugelassenen, reißfesten Big-Bags oder verschweißten Folien verpackt. Der Transport zu einer dafür zugelassenen Deponie erfolgt durch zertifizierte Entsorger und wird lückenlos dokumentiert, sodass Sie einen Entsorgungsnachweis erhalten.",
+      },
+      {
+        frage: "Was kostet der Ausbau von Asbestzement-Rohren?",
+        antwort:
+          "Einen seriösen Pauschalpreis gibt es nicht. Die Kosten hängen von Länge und Durchmesser der Rohre, der Zugänglichkeit (etwa im Erdreich, Schacht oder Dachboden), dem nötigen Schutzaufwand und der Entsorgungsmenge ab. Einen verbindlichen Festpreis erhalten Sie erst nach einer kostenlosen Besichtigung, bei der wir den konkreten Aufwand vor Ort aufnehmen.",
+      },
+    ],
+  },
 ];
 
 export const neuerContent: Record<string, RatgeberContent> = {
+  "asbestzement-rohre-erkennen-entsorgen": {
+    toc: [
+      { id: "wo-verbaut", label: "Wo Asbestzement-Rohre verbaut wurden" },
+      { id: "erkennen", label: "Asbestzement-Rohre erkennen" },
+      { id: "gefahr", label: "Wie gefährlich sind alte Rohre?" },
+      { id: "trinkwasser", label: "Sonderfall: Asbest in Wasserleitungen" },
+      { id: "verboten", label: "Was Sie auf keinen Fall tun dürfen" },
+      { id: "ausbau", label: "Fachgerechter Ausbau nach TRGS 519" },
+      { id: "entsorgung", label: "Entsorgung und Nachweis" },
+      { id: "fazit", label: "Fazit" },
+    ],
+    body: [
+      { type: "p", html: "Ein verwittertes graues Fallrohr an der Hauswand, ein altes Abwasserrohr im Keller, eine Versorgungsleitung im Garten, die beim Aushub zum Vorschein kommt: <strong>Faserzement-Rohre</strong> – oft unter dem Markennamen Eternit bekannt – wurden bis zum deutschen Asbestverbot am <strong>31. Oktober 1993</strong> in großen Mengen verbaut. Wer an ihnen arbeitet, ohne es zu wissen, setzt lungengängige Fasern frei. Dieser Ratgeber erklärt, wo solche Rohre stecken, wie Sie sie erkennen, warum jede mechanische Bearbeitung tabu ist und wie der fachgerechte Ausbau samt Entsorgung nach TRGS 519 abläuft." },
+      { type: "h2", id: "wo-verbaut", text: "Wo Asbestzement-Rohre verbaut wurden" },
+      { type: "p", html: "Asbestzement war preiswert, druckfest, korrosions- und brandbeständig – ideale Eigenschaften für Rohre. Entsprechend breit war der Einsatz, von der Gebäudeentwässerung bis zu erdverlegten Versorgungsleitungen. In Gebäuden und auf Grundstücken aus der Zeit vor 1993 sind diese Rohre bis heute häufig anzutreffen." },
+      { type: "table", headers: ["Rohrtyp", "Typische Verwendung"], rows: [
+        ["Abwasser- und Fallrohre", "Gebäudeentwässerung, Regenfallrohre an der Fassade"],
+        ["Druck-/Wasserleitungen", "Trinkwasser- und Versorgungsleitungen im Erdreich"],
+        ["Lüftungs- und Entlüftungsrohre", "Sanitär-Entlüftung, Be- und Entlüftung"],
+        ["Schornstein- und Abgasrohre", "Innenrohre alter Kamine und Heizungsabgase"],
+        ["Kabelschutz- und Leerrohre", "Schutzrohre für erdverlegte Kabel und Leitungen"],
+      ] },
+      { type: "h2", id: "erkennen", text: "Asbestzement-Rohre erkennen" },
+      { type: "p", html: "Das wichtigste Indiz ist das Baujahr: Stammt das Rohr aus der Zeit vor 1993, ist Asbest sehr wahrscheinlich. Optisch sind die Rohre meist hell- bis mittelgrau, hart und zementartig; an einer Bruchkante zeigt sich oft eine leicht faserige Struktur. Verlässlich unterscheiden lässt sich asbesthaltiger Faserzement von neuerem, asbestfreiem Material mit bloßem Auge jedoch nicht – mehr dazu im Ratgeber <a href=\"/ratgeber/asbest-erkennen/\">Asbest erkennen</a>." },
+      { type: "callout", variant: "tipp", title: "Im Zweifel: Materialprobe statt Vermutung", html: "Sicherheit gibt nur eine Laboranalyse. Eine fachgerecht entnommene Materialprobe kostet wenig und beendet jede Rätselei. Wie das sicher und staubfrei abläuft, erklärt unsere <a href=\"/leistungen/materialanalyse/\">Materialanalyse</a> – und der Ratgeber <a href=\"/ratgeber/asbest-testen-lassen/\">Asbest testen lassen</a>." },
+      { type: "h2", id: "gefahr", text: "Wie gefährlich sind alte Rohre?" },
+      { type: "p", html: "Asbestzement zählt zu den <strong>fest gebundenen</strong> Asbestprodukten: Die Fasern sind in der Zementmatrix eingeschlossen und werden im intakten Zustand kaum freigesetzt. Ein unbeschädigtes, in Ruhe gelassenes Rohr ist daher vergleichsweise wenig kritisch. Gefährlich wird es, sobald das Material bearbeitet oder zerstört wird – beim Sägen, Flexen, Bohren, Brechen oder Hochdruckreinigen entstehen große Mengen lungengängiger Fasern. Auch stark verwitterte Rohre oder von innen korrodierte Druckleitungen können mit der Zeit Fasern abgeben." },
+      { type: "h2", id: "trinkwasser", text: "Sonderfall: Asbest in Wasserleitungen" },
+      { type: "p", html: "Viele fragen sich, ob Asbestfasern im Trinkwasser aus alten Asbestzement-Leitungen gefährlich sind. Nach derzeitigem wissenschaftlichem Kenntnisstand gilt die <strong>orale Aufnahme</strong> von Asbestfasern über das Trinkwasser als deutlich weniger kritisch als das Einatmen; einen gesundheitsbasierten Grenzwert für Asbest im Trinkwasser gibt es deshalb nicht. Das gesundheitliche Hauptrisiko bleibt die <strong>Inhalation</strong> von Fasern. Genau deshalb ist nicht das durchfließende Wasser das eigentliche Problem, sondern jede Arbeit an der Leitung selbst: Wird ein altes Druckrohr geschnitten, gebohrt oder gebrochen, werden Fasern frei – solche Arbeiten gehören in die Hände eines Fachbetriebs." },
+      { type: "h2", id: "verboten", text: "Was Sie auf keinen Fall tun dürfen" },
+      { type: "p", html: "Bei Asbestzement ist jede Tätigkeit verboten, die Fasern freisetzt. Für Heimwerkerinnen und Heimwerker bedeutet das konkret: Finger weg von allen mechanischen Eingriffen." },
+      { type: "ul", items: [
+        "Nicht sägen, flexen, schleifen oder bohren – das setzt die meisten Fasern frei.",
+        "Nicht brechen oder fallen lassen; Rohre möglichst ganz lassen.",
+        "Nicht mit dem Hochdruckreiniger säubern – Fasern werden mit dem Wasser verteilt.",
+        "Bruchstücke nicht im Hausmüll, Bauschutt oder über den Wertstoffhof entsorgen.",
+      ] },
+      { type: "callout", variant: "warnung", title: "Arbeiten an Asbest sind dem Fachbetrieb vorbehalten", html: "Abbruch-, Sanierungs- und Instandhaltungsarbeiten an asbesthaltigen Materialien dürfen in Deutschland nur sachkundige Fachbetriebe nach <strong>TRGS 519</strong> ausführen. Umfangreichere Arbeiten sind zudem vorab bei der zuständigen Behörde – in Nordrhein-Westfalen der Bezirksregierung – anzuzeigen." },
+      { type: "h2", id: "ausbau", text: "Fachgerechter Ausbau nach TRGS 519" },
+      { type: "p", html: "Der sichere Ausbau folgt einem klaren, staubarmen Ablauf. Ziel ist, die Rohre möglichst unzerstört und ohne Faserfreisetzung zu bergen:" },
+      { type: "ol", items: [
+        "Begehung und Materialprobe: Verdacht durch Laboranalyse bestätigen, Aufwand und Schutzmaßnahmen festlegen.",
+        "Vorbereitung: Arbeitsbereich abgrenzen und sichern; bei anzeigepflichtigen Arbeiten die Behördenanzeige stellen.",
+        "Faserbindung: Rohre und Verbindungen anfeuchten bzw. mit einem Restfaserbindemittel behandeln.",
+        "Demontage: Rohre an den Verbindungen lösen und möglichst im Ganzen ausbauen – nicht brechen oder kürzen.",
+        "Verpackung: Material staubdicht in zugelassene Big-Bags oder verschweißte Folie verpacken und kennzeichnen.",
+        "Feinreinigung: Arbeitsbereich abschließend reinigen; bei Innenräumen ggf. Freimessung der Raumluft.",
+      ] },
+      { type: "figure", image: "asbestzement-ausbauen", alt: "Fachgerechter, staubarmer Ausbau asbesthaltiger Faserzement-Bauteile durch eine Fachkraft in Schutzausrüstung" },
+      { type: "h2", id: "entsorgung", text: "Entsorgung und Nachweis" },
+      { type: "p", html: "Asbesthaltige Rohre sind <strong>gefährlicher Abfall</strong> und tragen den Abfallschlüssel <strong>AVV 17 06 05*</strong>. Sie werden in reißfesten, zugelassenen Big-Bags oder doppelt verschweißten Folien zu einer dafür zugelassenen Deponie gebracht – der Transport erfolgt durch zertifizierte Entsorger. Über den gesamten Weg wird die Entsorgung dokumentiert, sodass Sie am Ende einen lückenlosen Nachweis in der Hand halten. Grundsätzliches zur Abfalleinstufung und zu den Wegen lesen Sie im Ratgeber <a href=\"/ratgeber/asbest-entsorgen/\">Asbest entsorgen</a>." },
+      { type: "h2", id: "fazit", text: "Fazit" },
+      { type: "p", html: "Alte Asbestzement- und Eternitrohre sind im intakten, unberührten Zustand kein akuter Notfall – aber jeder mechanische Eingriff macht sie gefährlich. Wer ein Rohr verdächtigt, lässt es zunächst in Ruhe, klärt den Verdacht über eine Materialprobe und überlässt Ausbau und Entsorgung einem sachkundigen Fachbetrieb. Wir übernehmen den staubarmen Ausbau nach TRGS 519 inklusive Entsorgungsnachweis – mehr dazu unter <a href=\"/leistungen/asbestzement-ausbauen/\">Asbestzement ausbauen</a>. Eine kostenlose Besichtigung mit Festpreis vereinbaren Sie jederzeit über unser <a href=\"/kontakt/\">Kontaktformular</a>." },
+    ],
+  },
   "asbest-testen-lassen": {
     toc: [
       { id: "warum-test", label: "Wann ein Asbest-Test sinnvoll ist" },
