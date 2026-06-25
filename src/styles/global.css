@@ -104,6 +104,23 @@
   }
 }
 
+/* Performance: nur 400/600/900 als Barlow-Schnitte geladen (~66 KB / ~35 % leichter pro Seite).
+   Die selten genutzten Utility-Schnitte werden deterministisch auf geladene Gewichte gemappt –
+   zusammen mit `font-synthesis-weight: none` (oben) verhindert das Faux-/Fallback-Rendering.
+   500 (font-medium) → 600, 700 (font-bold) → 600, 800 (font-extrabold) → 900.
+   Unlayered: schlaegt die Tailwind-Utility-Layer ohne !important. */
+.font-medium {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+.font-extrabold {
+  font-weight: 900;
+}
+
 /* Fehlerhafte Formularfelder sichtbar markieren (ergaenzend zu aria-invalid + Textmeldung). */
 input[aria-invalid='true'],
 textarea[aria-invalid='true'],

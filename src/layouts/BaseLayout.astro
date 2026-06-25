@@ -1,9 +1,8 @@
 ---
+// Performance: nur 3 Schriftschnitte laden (400 Body, 600 Akzent, 900 Headings) statt 6.
+// 500/700/800 werden in global.css auf geladene Schnitte gemappt (kein Faux-Rendering).
 import '@fontsource/barlow/400.css';
-import '@fontsource/barlow/500.css';
 import '@fontsource/barlow/600.css';
-import '@fontsource/barlow/700.css';
-import '@fontsource/barlow/800.css';
 import '@fontsource/barlow/900.css';
 import barlowBody from '@fontsource/barlow/files/barlow-latin-400-normal.woff2?url';
 import barlowHeading from '@fontsource/barlow/files/barlow-latin-900-normal.woff2?url';
