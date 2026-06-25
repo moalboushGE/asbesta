@@ -41,6 +41,7 @@ export interface RatgeberArtikel {
 export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   {
     slug: 'asbest-fassadenplatten-erkennen',
+    quellen: [{"label":"TRGS 519 (BAuA)","url":"https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519"},{"label":"Gefahrstoffverordnung (Gesetze im Internet)","url":"https://www.gesetze-im-internet.de/gefstoffv_2010/"}],
     title: 'Asbest in Fassadenplatten erkennen und sicher entfernen',
     metaTitle: 'Asbest-Fassadenplatten erkennen & entfernen | Asbesta',
     metaDescription:
@@ -96,6 +97,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: 'spritzasbest-erkennen-sanieren',
+    quellen: [{"label":"TRGS 519 (BAuA)","url":"https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519"},{"label":"Gefahrstoffverordnung (Gesetze im Internet)","url":"https://www.gesetze-im-internet.de/gefstoffv_2010/"}],
     title: 'Spritzasbest erkennen und sicher sanieren lassen',
     metaTitle: 'Spritzasbest erkennen & sanieren | Asbesta',
     metaDescription:
@@ -207,6 +209,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: 'nachtspeicherofen-asbest-entsorgen',
+    quellen: [{"label":"TRGS 519 (BAuA)","url":"https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519"},{"label":"Gefahrstoffverordnung (Gesetze im Internet)","url":"https://www.gesetze-im-internet.de/gefstoffv_2010/"}],
     title: 'Nachtspeicherofen mit Asbest fachgerecht entsorgen',
     metaTitle: 'Nachtspeicherofen mit Asbest entsorgen | Asbesta',
     metaDescription:
@@ -262,6 +265,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: 'asbest-putz-fliesenkleber-spachtelmasse',
+    quellen: [{"label":"TRGS 519 (BAuA)","url":"https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519"},{"label":"Gefahrstoffverordnung (Gesetze im Internet)","url":"https://www.gesetze-im-internet.de/gefstoffv_2010/"}],
     title: 'Asbest in Putz, Fliesenkleber & Spachtelmasse erkennen',
     metaTitle: 'Asbest in Putz & Fliesenkleber erkennen | Asbesta',
     metaDescription:
@@ -317,6 +321,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: 'mineralwolle-kmf-entsorgen',
+    quellen: [{"label":"TRGS 521 (BAuA)","url":"https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-521"},{"label":"Gefahrstoffverordnung (Gesetze im Internet)","url":"https://www.gesetze-im-internet.de/gefstoffv_2010/"}],
     title: 'Alte Mineralwolle entsorgen: Pflichten, Schutz, Kosten',
     metaTitle: 'Alte Mineralwolle (KMF) entsorgen | Asbesta',
     metaDescription:
@@ -541,6 +546,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: 'asbest-bodenbelag',
+    quellen: [{"label":"TRGS 519 (BAuA)","url":"https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519"},{"label":"Gefahrstoffverordnung (Gesetze im Internet)","url":"https://www.gesetze-im-internet.de/gefstoffv_2010/"}],
     title: 'Asbest im Bodenbelag: Floor-Flex, Cushion-Vinyl & schwarzer Kleber',
     metaTitle: 'Asbest im Bodenbelag erkennen & entfernen | Asbesta',
     metaDescription:
@@ -595,6 +601,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: 'asbest-erkennen',
+    quellen: [{"label":"TRGS 519 (BAuA)","url":"https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519"},{"label":"Gefahrstoffverordnung (Gesetze im Internet)","url":"https://www.gesetze-im-internet.de/gefstoffv_2010/"}],
     title: 'Asbest erkennen: Baujahr, Fundorte & Materialprobe',
     metaTitle: 'Asbest erkennen: Baujahr, Fundorte, Materialprobe | Asbesta',
     metaDescription:
@@ -649,6 +656,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: 'asbestdach-entsorgen-kosten-ablauf',
+    quellen: [{"label":"TRGS 519 (BAuA)","url":"https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519"},{"label":"Gefahrstoffverordnung (Gesetze im Internet)","url":"https://www.gesetze-im-internet.de/gefstoffv_2010/"}],
     title: 'Asbestdach entsorgen: Erkennen, Kosten, Pflicht & Ablauf',
     metaTitle: 'Asbestdach entsorgen: Kosten, Pflicht & Ablauf | Asbesta',
     metaDescription:
@@ -704,6 +712,7 @@ export const ratgeberArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: 'asbestsanierung-pflicht-kosten-ablauf',
+    quellen: [{"label":"TRGS 519 (BAuA)","url":"https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519"},{"label":"Gefahrstoffverordnung (Gesetze im Internet)","url":"https://www.gesetze-im-internet.de/gefstoffv_2010/"}],
     title: 'Asbestsanierung: Pflicht, Kosten & Ablauf',
     metaTitle: 'Asbestsanierung: Pflicht, Kosten & Ablauf | Asbesta',
     metaDescription:

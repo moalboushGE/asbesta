@@ -70,6 +70,10 @@ export const neueArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: "asbest-mietwohnung-rechte",
+    quellen: [
+      { label: 'BAuA – TRGS 519 (Asbest)', url: 'https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519' },
+      { label: 'GefStoffV – Gefahrstoffverordnung', url: 'https://www.gesetze-im-internet.de/gefstoffv_2010/' },
+    ],
     title: "Asbest in der Mietwohnung: Rechte, Pflichten und richtiges Vorgehen",
     metaTitle: "Asbest in der Mietwohnung: Rechte | Asbesta",
     metaDescription: "Asbest in der Mietwohnung entdeckt? Was Mieter dürfen, welche Pflichten der Vermieter hat und wie Sie richtig vorgehen – ehrlich erklärt vom Fachbetrieb.",
@@ -86,6 +90,10 @@ export const neueArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: "asbestdach-vor-photovoltaik",
+    quellen: [
+      { label: 'BAuA – TRGS 519 (Asbest)', url: 'https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519' },
+      { label: 'GefStoffV – Gefahrstoffverordnung', url: 'https://www.gesetze-im-internet.de/gefstoffv_2010/' },
+    ],
     title: "Asbestdach und Photovoltaik: erst sanieren, dann Module",
     metaTitle: "Asbestdach und Photovoltaik: erst sanieren | Asbesta",
     metaDescription: "Photovoltaik aufs Asbestdach? Bohren setzt Fasern frei und ist nach TRGS 519 tabu. Warum das Welleternit erst raus muss, Ablauf, Förderung & Kosten 2026.",
@@ -102,6 +110,10 @@ export const neueArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: "asbest-schornstein-ofenrohr-heizung",
+    quellen: [
+      { label: 'BAuA – TRGS 519 (Asbest)', url: 'https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519' },
+      { label: 'GefStoffV – Gefahrstoffverordnung', url: 'https://www.gesetze-im-internet.de/gefstoffv_2010/' },
+    ],
     title: "Asbest in Schornstein, Ofenrohr und alten Heizungsdichtungen",
     metaTitle: "Asbest in Schornstein & Ofenrohr erkennen | Asbesta",
     metaDescription: "Ofenkitt, Dichtschnüre, Ofenrohr-Dichtungen, Schornstein-Manschetten: So erkennen Sie Asbest an Heizung und Ofen im Altbau und lassen ihn sicher entfernen.",
@@ -118,6 +130,10 @@ export const neueArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: "asbest-arbeitsplatz-arbeitgeberpflichten",
+    quellen: [
+      { label: 'GefStoffV – Gefahrstoffverordnung', url: 'https://www.gesetze-im-internet.de/gefstoffv_2010/' },
+      { label: 'BAuA – TRGS 519 (Asbest)', url: 'https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519' },
+    ],
     title: "Asbest am Arbeitsplatz: Pflichten des Arbeitgebers nach GefStoffV",
     metaTitle: "Asbest am Arbeitsplatz: Arbeitgeberpflichten | Asbesta",
     metaDescription: "Asbest im Gebäude? Was Arbeitgeber, Verwalter und Facility-Manager nach GefStoffV tun müssen: Gefährdungsbeurteilung, Erkundung, Schutz, Doku. Klar erklärt.",
@@ -134,6 +150,10 @@ export const neueArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: "asbest-exposition-sofortmassnahmen",
+    quellen: [
+      { label: 'BAuA – TRGS 519 (Asbest)', url: 'https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519' },
+      { label: 'GefStoffV – Gefahrstoffverordnung', url: 'https://www.gesetze-im-internet.de/gefstoffv_2010/' },
+    ],
     title: "Versehentlich in Asbest gebohrt? Sofortmaßnahmen Schritt für Schritt",
     metaTitle: "Asbest-Kontakt: Sofortmaßnahmen | Asbesta",
     metaDescription: "Versehentlich in Asbest gebohrt oder geflext? Diese Sofortmaßnahmen ordnen das Risiko ehrlich ein und zeigen Schritt für Schritt, was jetzt zu tun ist.",
@@ -150,6 +170,10 @@ export const neueArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: "asbestkataster-schadstoffkataster",
+    quellen: [
+      { label: 'GefStoffV – Gefahrstoffverordnung', url: 'https://www.gesetze-im-internet.de/gefstoffv_2010/' },
+      { label: 'BAuA – TRGS 519 (Asbest)', url: 'https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519' },
+    ],
     title: "Asbest- und Schadstoffkataster: strukturierte Bestandserfassung für Eigentümer und Verwalter",
     metaTitle: "Schadstoffkataster: Inhalt & Nutzen | Asbesta",
     metaDescription: "Was ein Asbest- und Schadstoffkataster ist, wann es nötig wird und wie es erstellt wird. Praxisleitfaden für Verwalter und Eigentümer – jetzt informieren.",
@@ -166,6 +190,10 @@ export const neueArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: "asbest-wellplatten-gartenhaus-kleinmengen",
+    quellen: [
+      { label: 'BAuA – TRGS 519 (Asbest)', url: 'https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519' },
+      { label: 'GefStoffV – Gefahrstoffverordnung', url: 'https://www.gesetze-im-internet.de/gefstoffv_2010/' },
+    ],
     title: "Asbest-Wellplatten am Gartenhaus: Regeln und Kleinmengen-Entsorgung",
     metaTitle: "Asbest-Wellplatten Gartenhaus entsorgen | Asbesta",
     metaDescription: "Asbest-Wellplatten am Gartenhaus, Carport oder Schuppen: Was bei Kleinmengen erlaubt ist, warum Selbstabbau heikel bleibt und wie die legale Entsorgung läuft.",
@@ -182,6 +210,10 @@ export const neueArtikel: readonly RatgeberArtikel[] = [
   },
   {
     slug: "asbest-versicherung",
+    quellen: [
+      { label: 'BAuA – TRGS 519 (Asbest)', url: 'https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519' },
+      { label: 'GefStoffV – Gefahrstoffverordnung', url: 'https://www.gesetze-im-internet.de/gefstoffv_2010/' },
+    ],
     title: "Asbest und Versicherung: Was die Gebäudeversicherung zahlt",
     metaTitle: "Asbest & Versicherung: Was zahlt die Police? | Asbesta",
     metaDescription: "Zahlt die Gebäudeversicherung bei Sturm- oder Brandschaden am Asbestdach? Was gedeckt ist, worauf Sie achten und wie Sie den Schaden dokumentieren.",

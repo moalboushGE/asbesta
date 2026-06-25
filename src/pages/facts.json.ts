@@ -94,7 +94,7 @@ export const GET: APIRoute = (context) => {
   const origin = resolveOrigin(context.site);
   const facts = {
     schemaVersion: '1.2',
-    updated: '2026-06-19',
+    updated: '2026-06-25',
     language: 'de',
     dataset: origin + '/wissen/',
     license: wissenLicense.license,
