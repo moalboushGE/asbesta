@@ -23,6 +23,7 @@ const defaultNachricht = kontext
 const waText = `Hallo Asbesta, ich interessiere mich für ${kontext || 'Asbest-/Schadstoffsanierung'} und bitte um ein Angebot.`;
 const field =
   'w-full rounded-[var(--radius-btn)] border border-gray-200 bg-white px-3 py-2.5 text-sm text-ink-900 placeholder:text-gray-400 focus-visible:border-red-600';
+const labelCls = 'mb-0.5 block text-xs font-semibold text-ink-900';
 ---
 
 <section class="border-t border-gray-200 bg-gray-50">
@@ -52,12 +53,27 @@ const field =
         <input type="hidden" name="referrer" />
 
         <div class="grid gap-3 sm:grid-cols-2">
-          <input class={field} name="name" required maxlength="100" placeholder="Name*" autocomplete="name" aria-label="Name" enterkeyhint="next" />
-          <input class={field} name="telefon" type="tel" inputmode="tel" maxlength="40" placeholder="Telefon" autocomplete="tel" aria-label="Telefon" enterkeyhint="next" />
-          <input class={field} name="email" type="email" inputmode="email" required maxlength="150" placeholder="E-Mail*" autocomplete="email" aria-label="E-Mail" enterkeyhint="next" />
-          <input class={field} name="ort" value={ort} maxlength="100" placeholder="Ort" autocomplete="address-level2" aria-label="Ort" enterkeyhint="next" />
+          <div>
+            <label class={labelCls} for="m-name">Name*</label>
+            <input class={field} id="m-name" name="name" required maxlength="100" autocomplete="name" enterkeyhint="next" />
+          </div>
+          <div>
+            <label class={labelCls} for="m-telefon">Telefon</label>
+            <input class={field} id="m-telefon" name="telefon" type="tel" inputmode="tel" maxlength="40" autocomplete="tel" enterkeyhint="next" />
+          </div>
+          <div>
+            <label class={labelCls} for="m-email">E-Mail*</label>
+            <input class={field} id="m-email" name="email" type="email" inputmode="email" required maxlength="150" autocomplete="email" enterkeyhint="next" />
+          </div>
+          <div>
+            <label class={labelCls} for="m-ort">Ort</label>
+            <input class={field} id="m-ort" name="ort" value={ort} maxlength="100" autocomplete="address-level2" enterkeyhint="next" />
+          </div>
         </div>
-        <textarea class={field} name="nachricht" rows="2" required maxlength="2000" aria-label="Nachricht">{defaultNachricht}</textarea>
+        <div>
+          <label class={labelCls} for="m-nachricht">Nachricht*</label>
+          <textarea class={field} id="m-nachricht" name="nachricht" rows="2" required maxlength="2000">{defaultNachricht}</textarea>
+        </div>
 
         <label class="flex items-start gap-2 text-xs text-gray-600">
           <input type="checkbox" name="einwilligung" value="ja" required class="mt-0.5 h-4 w-4" />
