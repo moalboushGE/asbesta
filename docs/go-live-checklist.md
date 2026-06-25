@@ -19,6 +19,8 @@
 - ✅ Self-referencing Canonical; `noindex` nur bewusst (404, Admin, Datenschutz-Entwurf, Wartungsseite).
 - ✅ Sitemap-Index + `lastmod` 2026-06-24; `robots.txt` (AI-Bots erlaubt, nur `/admin` gesperrt).
 - ✅ JSON-LD `@graph` valide je Seitentyp (419/419 Content-Seiten).
+- ✅ GEO-/@id-Konsistenz geprüft (Tag 94): kanonische @ids (ORG_ID/PERSON_ID) ohne dangling-Refs;
+  `sameAs` über entities.json/facts.json konsistent (`wa.me` aus `sameAs` entfernt – ist Kontaktfeld, kein Identitäts-`sameAs`); NAP identisch.
 - ✅ **Redirect-Migration (RK1):** 362 Quellen 301→200, 0 Ketten; 105 real rankende Alt-URLs zu 100 % gedeckt (`docs/abnahme-phase-5.md`).
 - ✅ OG-/Twitter-Tags + Assets (`og.png`, Icons, Manifest) im Build vorhanden.
 - ⏳ Nach Cutover: GSC/Bing-Property der Live-Domain verifizieren, Sitemap einreichen, IndexNow.

@@ -106,7 +106,7 @@ function organizationNode(origin: string): Record<string, unknown> {
       areaServed: 'DE',
       availableLanguage: ['de'],
     },
-    sameAs: [googleReviewsUrl, site.whatsapp.href],
+    sameAs: [googleReviewsUrl],
   };
   return node;
 }
