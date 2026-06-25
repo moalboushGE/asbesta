@@ -204,6 +204,55 @@ export const definitionen: readonly Definition[] = [
     altLabel: ['kumulative Asbestdosis'],
     kategorie: 'Gesundheit',
   },
+  {
+    term: 'Krokydolith',
+    definition:
+      'Blauasbest – eine besonders gefährliche Asbestart aus der Amphibolgruppe. Die geraden, sehr dünnen und biobeständigen Fasern dringen tief in die Lunge ein und gelten als stark krebserzeugend. Wurde u. a. in Spritzasbest und Hochtemperatur-Isolierungen verwendet.',
+    altLabel: ['Blauasbest'],
+    sameAs: ['https://de.wikipedia.org/wiki/Krokydolith'],
+    kategorie: 'Stoff',
+  },
+  {
+    term: 'Amosit',
+    definition:
+      'Braunasbest aus der Amphibolgruppe (asbestförmiger Grunerit). Spröde, gerade Fasern; vor allem in Spritzasbest, Brandschutz- und Dämmplatten verbaut. Wie alle Amphibolasbeste gesundheitlich besonders kritisch.',
+    altLabel: ['Braunasbest'],
+    sameAs: ['https://de.wikipedia.org/wiki/Amosit'],
+    kategorie: 'Stoff',
+  },
+  {
+    term: 'Eternit',
+    definition:
+      'Bekannter Markenname für Faserzement. Bis zum Asbestverbot 1993 enthielten Eternit-Produkte – vor allem Well-, Dach- und Fassadenplatten – Asbest (Asbestzement). Heute hergestellte Eternit-Produkte sind asbestfrei; bei Altbeständen aus der Zeit vor 1993 ist von Asbest auszugehen.',
+    altLabel: ['Eternitplatten', 'Welleternit', 'Eternit-Wellplatten'],
+    sameAs: ['https://de.wikipedia.org/wiki/Eternit'],
+    kategorie: 'Stoff',
+  },
+  {
+    term: 'ASI-Arbeiten',
+    abbr: 'ASI',
+    definition:
+      'Abbruch-, Sanierungs- und Instandhaltungsarbeiten an asbesthaltigen Materialien – der zentrale Anwendungsbereich der TRGS 519. Solche Arbeiten dürfen nur von sachkundigen Fachbetrieben mit den dort geregelten Schutzmaßnahmen ausgeführt werden.',
+    altLabel: ['Abbruch-, Sanierungs- und Instandhaltungsarbeiten'],
+    sameAs: ['https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519'],
+    kategorie: 'Verfahren',
+  },
+  {
+    term: 'Anzeigepflicht',
+    definition:
+      'Pflicht, Asbest-ASI-Arbeiten vor Beginn der zuständigen Behörde – in Nordrhein-Westfalen der Bezirksregierung – schriftlich anzuzeigen. Die Anzeige nach TRGS 519 muss rechtzeitig, in der Regel mindestens sieben Tage vor Arbeitsbeginn, vorliegen und nennt u. a. Arbeitsverfahren und Schutzmaßnahmen.',
+    altLabel: ['Behördenanzeige', 'Asbestsanierung anzeigen'],
+    sameAs: ['https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519'],
+    kategorie: 'Dokument',
+  },
+  {
+    term: 'Arbeitsmedizinische Vorsorge',
+    definition:
+      'Ärztliche Vorsorge für Personen mit Asbestkontakt. Wegen der langen Latenzzeit asbestbedingter Erkrankungen ist auch nach Ende der Tätigkeit eine nachgehende Vorsorge vorgesehen; sie dient der Früherkennung von Asbestose sowie Lungen- und Rippenfellkrebs.',
+    altLabel: ['nachgehende Vorsorge', 'Vorsorgeuntersuchung Asbest'],
+    sameAs: ['https://de.wikipedia.org/wiki/Arbeitsmedizinische_Vorsorge'],
+    kategorie: 'Gesundheit',
+  },
 ];
 
 /** Einschlägige Regelwerke und Schlüssel. TRGS 521 ist hier ausschließlich als Regelwerk (alte
