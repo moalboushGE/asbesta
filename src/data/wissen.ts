@@ -72,7 +72,7 @@ export const definitionen: readonly Definition[] = [
     definition:
       'Sammelbegriff für künstlich hergestellte glasige Silikatfasern wie alte Glas- und Steinwolle. Ältere Dämmwollen (vor 1996/2000) können krebsverdächtig sein; der Umgang ist in der TRGS 521 geregelt.',
     altLabel: ['KMF-Entfernung', 'KMF-Sanierung', 'alte Mineralwolle entfernen', 'Glaswolle entsorgen', 'Steinwolle entsorgen'],
-    sameAs: ['https://de.wikipedia.org/wiki/K%C3%BCnstliche_Mineralfaser'],
+    sameAs: ['https://de.wikipedia.org/wiki/Mineralwolle'],
     kategorie: 'Stoff',
   },
   {
