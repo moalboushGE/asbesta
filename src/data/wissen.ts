@@ -11,7 +11,7 @@ export interface Definition {
   readonly altLabel?: readonly string[];
   /** Nur verifizierte externe Referenz (Wikipedia/offiziell) – im Zweifel weglassen. */
   readonly sameAs?: readonly string[];
-  readonly kategorie: 'Stoff' | 'Verfahren' | 'Dokument';
+  readonly kategorie: 'Stoff' | 'Verfahren' | 'Dokument' | 'Gesundheit';
 }
 
 export interface Regelwerk {
@@ -180,6 +180,29 @@ export const definitionen: readonly Definition[] = [
       'Europäischer Abfallschlüssel (AVV) für asbesthaltige Baustoffe. Das Sternchen kennzeichnet gefährlichen Abfall, der getrennt, deklariert und mit Entsorgungsnachweis über zugelassene Annahmestellen entsorgt werden muss.',
     altLabel: ['AVV 17 06 05*', 'AVV-Code Asbest'],
     kategorie: 'Dokument',
+  },
+  {
+    term: 'Asbestose',
+    definition:
+      'Durch eingeatmete Asbestfasern verursachte Vernarbung (Fibrose) des Lungengewebes. Eine anerkannte Berufskrankheit, die meist erst Jahrzehnte nach der Faserbelastung auftritt und die Atemfunktion dauerhaft einschränkt.',
+    altLabel: ['Asbeststaublunge'],
+    sameAs: ['https://de.wikipedia.org/wiki/Asbestose'],
+    kategorie: 'Gesundheit',
+  },
+  {
+    term: 'Mesotheliom',
+    definition:
+      'Bösartiger Tumor des Rippen- oder Bauchfells, der nahezu ausschließlich durch Asbest verursacht wird. Die Latenzzeit zwischen Faserbelastung und Erkrankung beträgt oft 20 bis 40 Jahre.',
+    altLabel: ['Rippenfellkrebs', 'Pleuramesotheliom'],
+    sameAs: ['https://de.wikipedia.org/wiki/Mesotheliom'],
+    kategorie: 'Gesundheit',
+  },
+  {
+    term: 'Faserjahre',
+    definition:
+      'Maß für die kumulierte berufliche Asbest-Faserbelastung (Faserkonzentration multipliziert mit der Expositionsdauer). Es dient der arbeitsmedizinischen Bewertung und der Anerkennung asbestbedingter Berufskrankheiten.',
+    altLabel: ['kumulative Asbestdosis'],
+    kategorie: 'Gesundheit',
   },
 ];
 
