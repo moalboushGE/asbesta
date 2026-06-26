@@ -1,11 +1,14 @@
 ---
-// Performance: nur 3 Schriftschnitte laden (400 Body, 600 Akzent, 900 Headings) statt 6.
-// 500/700/800 werden in global.css auf geladene Schnitte gemappt (kein Faux-Rendering).
-import '@fontsource/barlow/400.css';
-import '@fontsource/barlow/600.css';
-import '@fontsource/barlow/900.css';
+// Performance: nur 3 Schriftschnitte (400 Body, 600 Akzent, 900 Headings), self-gehostet mit
+// font-display: optional -> KEIN Font-Swap-Reflow (CLS-stabil; Barlow ist vorgeladen). 500/700/800
+// werden in global.css auf geladene Schnitte gemappt. Latin + Latin-Ext decken deutschen Content;
+// seltene Zeichen (Vietnamesisch, Sterne) nutzen den metrik-angepassten Fallback aus global.css.
 import barlowBody from '@fontsource/barlow/files/barlow-latin-400-normal.woff2?url';
 import barlowHeading from '@fontsource/barlow/files/barlow-latin-900-normal.woff2?url';
+import barlowAccent from '@fontsource/barlow/files/barlow-latin-600-normal.woff2?url';
+import barlowExt400 from '@fontsource/barlow/files/barlow-latin-ext-400-normal.woff2?url';
+import barlowExt600 from '@fontsource/barlow/files/barlow-latin-ext-600-normal.woff2?url';
+import barlowExt900 from '@fontsource/barlow/files/barlow-latin-ext-900-normal.woff2?url';
 import '../styles/global.css';
 import Header from '../components/patterns/Header.astro';
 import Footer from '../components/patterns/Footer.astro';
@@ -42,6 +45,23 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : As
 const origin = Astro.site?.origin ?? 'https://www.asbesta-schadstoffsanierung.de';
 const ogImage = ogImageProp ?? `${origin}/og.png`;
 const ogImageIsDefault = !ogImageProp;
+
+// Self-gehostete @font-face mit font-display: optional (siehe Import-Kommentar). Per set:html in den
+// <head> injiziert, damit die echten Build-URLs in src: stehen (CSS-Variablen sind in @font-face ungültig).
+const LATIN =
+  'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD';
+const LATIN_EXT =
+  'U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF';
+const fontFace = (weight: number, url: string, range: string): string =>
+  `@font-face{font-family:'Barlow';font-style:normal;font-weight:${weight};font-display:optional;src:url(${url}) format('woff2');unicode-range:${range}}`;
+const fontFaces = [
+  fontFace(400, barlowBody, LATIN),
+  fontFace(400, barlowExt400, LATIN_EXT),
+  fontFace(600, barlowAccent, LATIN),
+  fontFace(600, barlowExt600, LATIN_EXT),
+  fontFace(900, barlowHeading, LATIN),
+  fontFace(900, barlowExt900, LATIN_EXT),
+].join('');
 ---
 
 <!doctype html>
@@ -51,6 +71,7 @@ const ogImageIsDefault = !ogImageProp;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preload" href={barlowBody} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={barlowHeading} as="font" type="font/woff2" crossorigin />
+    <style set:html={fontFaces}></style>
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
