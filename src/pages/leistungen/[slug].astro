@@ -13,7 +13,7 @@ import { standorte } from '../../data/standorte';
 import { kombiDetail } from '../../data/kombi-detail';
 import { getArtikel } from '../../data/ratgeber';
 import { buildServiceGraph } from '../../lib/schema';
-import { ratgeberFuer } from '../../lib/related';
+import { ratgeberFuer, leistungEntities } from '../../lib/related';
 import ExpertReviewLine from '../../components/patterns/ExpertReviewLine.astro';
 import MiniAnfrage from '../../components/sections/MiniAnfrage.astro';
 
@@ -34,6 +34,7 @@ const graph = buildServiceGraph({
   path,
   faqs: detail.faqs,
   ablauf: detail.ablauf,
+  ...leistungEntities(leistung.slug),
 });
 const bild = leistungImage(leistung.slug);
 // Alle Geschwister-Leistungen verlinken (volle interne Vernetzung; vorher slice(0,6) ließ

@@ -236,6 +236,10 @@ export interface ServiceGraphArgs {
   readonly faqs: readonly FaqItem[];
   /** Ablaufschritte der Leistung -> HowTo-Knoten (optional). */
   readonly ablauf?: readonly { titel: string; text: string }[];
+  /** Kuratierte Entity-Verknuepfung (nur reale definitionen[].term / regelwerke[].code; wird gefiltert). */
+  readonly aboutTerms?: readonly string[];
+  readonly mentionsTerms?: readonly string[];
+  readonly mentionsRegs?: readonly string[];
 }
 
 export function buildServiceGraph(args: ServiceGraphArgs): unknown[] {
@@ -252,6 +256,7 @@ export function buildServiceGraph(args: ServiceGraphArgs): unknown[] {
       areaServed: nrwAreaServed(),
       url,
       mainEntityOfPage: { '@id': url },
+      ...entityRefs(args.origin, args.aboutTerms, args.mentionsTerms, args.mentionsRegs),
     },
     {
       '@type': 'WebPage',
@@ -395,6 +400,31 @@ export interface ArticleGraphArgs {
   readonly dateModified: string;
   readonly author: string;
   readonly faqs: readonly FaqItem[];
+  /** Kuratierte Entity-Verknuepfung (nur reale definitionen[].term / regelwerke[].code; wird gefiltert). */
+  readonly aboutTerms?: readonly string[];
+  readonly mentionsTerms?: readonly string[];
+  readonly mentionsRegs?: readonly string[];
+}
+
+/** about/mentions-Refs aus kuratierten Term-/Regelwerk-Namen – nur real existierende Entitaeten
+ *  (Typo-sicher gefiltert). Cross-Document-@id-Refs auf die kanonischen Knoten (/wissen/ + entities.json). */
+function entityRefs(
+  origin: string,
+  aboutTerms?: readonly string[],
+  mentionsTerms?: readonly string[],
+  mentionsRegs?: readonly string[],
+): Record<string, unknown> {
+  const aboutNames = (aboutTerms ?? []).filter((t) => definitionen.some((d) => d.term === t));
+  const mTermNames = (mentionsTerms ?? []).filter((t) => definitionen.some((d) => d.term === t));
+  const mRegCodes = (mentionsRegs ?? []).filter((c) => regelwerke.some((r) => r.code === c));
+  const mentions = [
+    ...mTermNames.map((t) => ({ '@id': termId(origin, t) })),
+    ...mRegCodes.map((c) => ({ '@id': regulationId(origin, c) })),
+  ];
+  const out: Record<string, unknown> = {};
+  if (aboutNames.length > 0) out.about = aboutNames.map((t) => ({ '@id': termId(origin, t) }));
+  if (mentions.length > 0) out.mentions = mentions;
+  return out;
 }
 
 /** Ratgeber-Beitrag: Article (E-E-A-T) + WebPage + Breadcrumb + optional FAQPage. */
@@ -418,6 +448,7 @@ export function buildArticleGraph(args: ArticleGraphArgs): unknown[] {
       publisher: { '@id': args.origin + '/' + ORG_ID },
       mainEntityOfPage: url,
       inLanguage: 'de-DE',
+      ...entityRefs(args.origin, args.aboutTerms, args.mentionsTerms, args.mentionsRegs),
     },
     personNode(args.origin),
     {
@@ -428,6 +459,7 @@ export function buildArticleGraph(args: ArticleGraphArgs): unknown[] {
       description: args.description,
       inLanguage: 'de-DE',
       isPartOf: { '@id': args.origin + '/' + ORG_ID },
+      mainEntity: { '@id': url + '#article' },
       speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
     },
     breadcrumbNode(args.origin, [

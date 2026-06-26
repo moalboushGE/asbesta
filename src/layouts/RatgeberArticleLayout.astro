@@ -6,7 +6,7 @@ import Breadcrumb from '../components/patterns/Breadcrumb.astro';
 import Figure from '../components/ui/Figure.astro';
 import CtaSection from '../components/sections/CtaSection.astro';
 import { buildArticleGraph } from '../lib/schema';
-import { leistungenFuerRatgeber, verwandteRatgeber } from '../lib/related';
+import { leistungenFuerRatgeber, verwandteRatgeber, ratgeberEntities } from '../lib/related';
 import { type RatgeberArtikel, ratgeberArtikel, getArtikel } from '../data/ratgeber';
 import { leistungen } from '../data/leistungen';
 import { qualifikationen } from '../data/site';
@@ -45,6 +45,7 @@ const graph = buildArticleGraph({
   dateModified: artikel.dateModified,
   author: artikel.author,
   faqs: artikel.faqs,
+  ...ratgeberEntities(artikel.slug),
 });
 
 const aktualisiert =
