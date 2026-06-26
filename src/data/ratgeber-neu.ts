@@ -336,9 +336,117 @@ export const neueArtikel: readonly RatgeberArtikel[] = [
       },
     ],
   },
+  {
+    slug: "asbest-fensterbaenke-erkennen-entfernen",
+    quellen: [
+      { label: "TRGS 519 (BAuA)", url: "https://www.baua.de/DE/Angebote/Regelwerk/TRGS/TRGS-519" },
+      { label: "Gefahrstoffverordnung (Gesetze im Internet)", url: "https://www.gesetze-im-internet.de/gefstoffv_2010/" },
+    ],
+    title: "Asbest in Fensterbänken erkennen und beim Fenstertausch sicher entfernen",
+    metaTitle: "Asbest-Fensterbänke erkennen & entfernen | Asbesta",
+    metaDescription:
+      "Alte Außenfensterbänke aus Asbestzement: Wie Sie sie erkennen, warum gerade der Fenstertausch riskant ist und wie der Ausbau nach TRGS 519 sicher abläuft.",
+    excerpt:
+      "Graue Außenfensterbänke aus Asbestzement sitzen an unzähligen Häusern vor 1993 – und werden beim Fenstertausch oft ahnungslos abgeflext oder herausgebrochen. Wie Sie sie erkennen, warum die Renovierung der kritische Moment ist und wie der staubarme Ausbau nach TRGS 519 abläuft.",
+    kategorie: "Ratgeber Asbest",
+    datePublished: "2026-06-26",
+    dateModified: "2026-06-26",
+    author: "Abdul-Rahman Omeirat",
+    authorRole: "Sachkundiger nach TRGS 519, Anlage 3",
+    lesezeitMin: 8,
+    heroImage: leistungImage("fensterbaenke-ausbauen").src,
+    heroAlt:
+      "Graue Asbestzement-Außenfensterbank an einer Altbaufassade, daneben ein Fenster im Austausch",
+    faqs: [
+      {
+        frage: "Können alte Fensterbänke Asbest enthalten?",
+        antwort:
+          "Ja. Vor allem graue Außenfensterbänke aus Asbestzement wurden bis zum Asbestverbot am 31. Oktober 1993 millionenfach verbaut. Auch in alten Fensterkitten und Dichtungsmassen rund um die Fenster kann Asbest stecken. Sicher klären lässt sich das nur über eine Laboranalyse einer fachgerecht entnommenen Materialprobe.",
+      },
+      {
+        frage: "Woran erkenne ich eine Asbestzement-Fensterbank?",
+        antwort:
+          "Typisch ist eine graue, harte, zementartige Bank mit oft leicht faseriger Bruchkante, meist als Außenfensterbank an Gebäuden vor 1993. Optische Merkmale liefern aber nur einen Verdacht – Faserzement mit Asbest unterscheidet sich mit bloßem Auge nicht zuverlässig von neuerem, asbestfreiem Material. Eindeutig ist nur der Labornachweis.",
+      },
+      {
+        frage: "Warum ist gerade der Fenstertausch kritisch?",
+        antwort:
+          "Beim Austausch alter Fenster werden die Fensterbänke fast immer entfernt – häufig durch Abflexen, Abstemmen oder Herausbrechen. Genau dabei werden lungengängige Asbestfasern freigesetzt. Viele Eigentümer und Handwerker treffen den Asbest hier ahnungslos. Deshalb sollte vor einer Fenstersanierung an Altbauten der Asbestverdacht geklärt werden.",
+      },
+      {
+        frage: "Darf ich eine Asbest-Fensterbank selbst ausbauen?",
+        antwort:
+          "Nein. Flexen, Bohren, Abstemmen und Brechen sind bei Asbestzement unzulässig, weil dabei Fasern frei werden. Solche Arbeiten dürfen nur sachkundige Fachbetriebe nach TRGS 519 ausführen. Für Laien gilt: die intakte Bank nicht bearbeiten und im Zweifel einen Fachbetrieb hinzuziehen.",
+      },
+      {
+        frage: "Wie werden Asbest-Fensterbänke entsorgt?",
+        antwort:
+          "Asbesthaltige Fensterbänke sind gefährlicher Abfall mit dem Abfallschlüssel AVV 17 06 05*. Sie werden möglichst ganz ausgebaut, nicht zerbrochen, angefeuchtet und in zugelassenen Big-Bags oder verschweißten Folien verpackt. Der Transport zu einer zugelassenen Deponie erfolgt durch zertifizierte Entsorger und wird mit Entsorgungsnachweis dokumentiert.",
+      },
+      {
+        frage: "Was kostet der Austausch einer Asbest-Fensterbank?",
+        antwort:
+          "Einen Pauschalpreis gibt es nicht. Die Kosten hängen von Anzahl und Lage der Bänke, der Zugänglichkeit (Gerüst, Geschoss), dem Schutzaufwand und der Entsorgungsmenge ab. Einen verbindlichen Festpreis nennen wir nach einer kostenlosen Besichtigung – oft sinnvoll gebündelt mit dem geplanten Fenstertausch.",
+      },
+    ],
+  },
 ];
 
 export const neuerContent: Record<string, RatgeberContent> = {
+  "asbest-fensterbaenke-erkennen-entfernen": {
+    toc: [
+      { id: "warum", label: "Warum Fensterbänke oft Asbest enthalten" },
+      { id: "erkennen", label: "Asbest-Fensterbänke erkennen" },
+      { id: "fenstertausch", label: "Der kritische Moment: der Fenstertausch" },
+      { id: "gefahr", label: "Wie gefährlich sind die Bänke?" },
+      { id: "verboten", label: "Was Sie nicht selbst tun dürfen" },
+      { id: "ablauf", label: "Fachgerechter Ausbau und Entsorgung" },
+      { id: "kosten", label: "Was kostet es?" },
+      { id: "fazit", label: "Fazit" },
+    ],
+    body: [
+      { type: "p", html: "Sie sitzen unscheinbar unter fast jedem Fenster und werden bei der Sanierung gern übersehen: <strong>Außenfensterbänke aus Asbestzement</strong>. Bis zum deutschen Asbestverbot am <strong>31. Oktober 1993</strong> wurden sie millionenfach verbaut. Gefährlich werden sie genau dann, wenn alte Fenster ausgetauscht werden und die Bänke ahnungslos abgeflext oder herausgebrochen werden. Dieser Ratgeber zeigt, wie Sie Asbest-Fensterbänke erkennen, warum der Fenstertausch der heikle Moment ist und wie der staubarme Ausbau nach TRGS 519 abläuft." },
+      { type: "h2", id: "warum", text: "Warum Fensterbänke oft Asbest enthalten" },
+      { type: "p", html: "Asbestzement war wetterfest, formstabil und günstig – ideale Eigenschaften für Außenfensterbänke, die Regen und Frost ausgesetzt sind. Entsprechend häufig findet man sie an Gebäuden, die vor 1993 errichtet oder modernisiert wurden. Asbest kann im Fensterbereich aber nicht nur in der Bank selbst stecken, sondern auch in angrenzenden Materialien." },
+      { type: "ul", items: [
+        "Außenfensterbänke aus grauem Asbestzement (häufigster Fall)",
+        "Alte Fensterkitte und Dichtungs- bzw. Fugenmassen rund um den Rahmen",
+        "Brüstungs- und Anschlussplatten unterhalb der Fenster",
+        "Spachtel- und Ausgleichsmassen an der Laibung",
+      ] },
+      { type: "h2", id: "erkennen", text: "Asbest-Fensterbänke erkennen" },
+      { type: "p", html: "Das wichtigste Indiz ist das Baujahr: Stammt die Bank aus der Zeit vor 1993, ist Asbest wahrscheinlich. Optisch sind Asbestzement-Bänke meist grau, hart und zementartig, an einer Bruchkante oft leicht faserig. Verlässlich von neuerem, asbestfreiem Faserzement unterscheiden lässt sich das mit bloßem Auge nicht – Sicherheit gibt nur die Laboranalyse. Wie Sie verdächtige Materialien grob einordnen, lesen Sie im Ratgeber <a href=\"/ratgeber/asbest-erkennen/\">Asbest erkennen</a>." },
+      { type: "callout", variant: "tipp", title: "Vor der Fenstersanierung Probe nehmen lassen", html: "Eine fachgerecht entnommene Materialprobe kostet wenig und schafft Klarheit, bevor Handwerker die Bank anrühren. Wie das sicher und staubfrei abläuft, zeigt unsere <a href=\"/leistungen/materialanalyse/\">Materialanalyse</a>." },
+      { type: "h2", id: "fenstertausch", text: "Der kritische Moment: der Fenstertausch" },
+      { type: "p", html: "Der mit Abstand häufigste Anlass für eine Faserfreisetzung ist die <strong>Fenstererneuerung</strong>. Beim Ausbau der alten Fenster werden die Fensterbänke fast immer mit entfernt – und dabei oft abgeflext, abgestemmt oder herausgebrochen. Genau diese Bearbeitung setzt die Fasern frei. Wer eine energetische Fenstersanierung an einem Altbau plant, sollte den Asbestverdacht deshalb <strong>vorher</strong> klären und die Bänke gegebenenfalls fachgerecht ausbauen lassen, statt sie nebenbei zu zerstören." },
+      { type: "h2", id: "gefahr", text: "Wie gefährlich sind die Bänke?" },
+      { type: "p", html: "Asbestzement gehört zu den <strong>fest gebundenen</strong> Asbestprodukten: Im intakten Zustand sind die Fasern in der Zementmatrix eingebunden und werden kaum frei. Eine unbeschädigte, in Ruhe gelassene Bank ist daher vergleichsweise wenig kritisch. Gefährlich wird es, sobald gebohrt, geflext, gebrochen oder hochdruckgereinigt wird – oder wenn die Bank stark verwittert und brüchig ist." },
+      { type: "h2", id: "verboten", text: "Was Sie nicht selbst tun dürfen" },
+      { type: "p", html: "Bei Asbestzement ist jede faserfreisetzende Tätigkeit verboten. Für Heimwerkerinnen und Heimwerker heißt das konkret:" },
+      { type: "ul", items: [
+        "Nicht flexen, abstemmen, bohren oder brechen.",
+        "Nicht mit dem Hochdruckreiniger säubern.",
+        "Die Bank nicht im Hausmüll oder Bauschutt entsorgen.",
+        "Im Zweifel die intakte Bank belassen und einen Fachbetrieb hinzuziehen.",
+      ] },
+      { type: "callout", variant: "warnung", title: "Asbestarbeiten gehören in Fachhand", html: "Abbruch-, Sanierungs- und Instandhaltungsarbeiten an asbesthaltigen Materialien dürfen in Deutschland nur sachkundige Fachbetriebe nach <strong>TRGS 519</strong> ausführen. Umfangreichere Arbeiten sind zudem vorab bei der zuständigen Behörde – in Nordrhein-Westfalen der Bezirksregierung – anzuzeigen." },
+      { type: "h2", id: "ablauf", text: "Fachgerechter Ausbau und Entsorgung" },
+      { type: "p", html: "Der sichere Ausbau ist schnell erklärt und folgt einem staubarmen Ablauf:" },
+      { type: "ol", items: [
+        "Verdacht per Materialprobe im Labor bestätigen.",
+        "Arbeitsbereich abgrenzen und sichern; bei anzeigepflichtigen Arbeiten die Behörde informieren.",
+        "Bank und Anschlüsse anfeuchten bzw. mit Restfaserbindemittel behandeln.",
+        "Die Fensterbank möglichst im Ganzen lösen – nicht brechen oder flexen.",
+        "Material staubdicht in zugelassene Big-Bags oder verschweißte Folie verpacken und kennzeichnen.",
+        "Bereich feinreinigen; danach kann die neue, asbestfreie Bank gesetzt werden.",
+      ] },
+      { type: "p", html: "Asbesthaltige Fensterbänke sind <strong>gefährlicher Abfall</strong> mit dem Abfallschlüssel <strong>AVV 17 06 05*</strong>. Sie gehen über zertifizierte Entsorger auf eine zugelassene Deponie – lückenlos dokumentiert. Grundsätzliches zu den Entsorgungswegen lesen Sie im Ratgeber <a href=\"/ratgeber/asbest-entsorgen/\">Asbest entsorgen</a>; verwandte Asbestzement-Bauteile behandelt der Beitrag zu <a href=\"/ratgeber/asbest-fassadenplatten-erkennen/\">Asbest-Fassadenplatten</a>." },
+      { type: "h2", id: "kosten", text: "Was kostet es?" },
+      { type: "p", html: "Einen Pauschalpreis gibt es nicht. Maßgeblich sind Anzahl und Lage der Bänke, die Zugänglichkeit (Geschoss, Gerüst), der Schutzaufwand und die Entsorgungsmenge. Oft ist es sinnvoll, den Ausbau direkt mit dem geplanten Fenstertausch zu bündeln. Einen verbindlichen Festpreis erhalten Sie nach einer kostenlosen Besichtigung vor Ort." },
+      { type: "h2", id: "fazit", text: "Fazit" },
+      { type: "p", html: "Asbest-Fensterbänke sind im intakten Zustand kein akuter Notfall – aber der Fenstertausch macht sie zur Gefahr, wenn sie ahnungslos zerstört werden. Wer vor der Sanierung den Verdacht klärt und den Ausbau einem sachkundigen Fachbetrieb überlässt, schützt Gesundheit und Umwelt. Wir übernehmen den staubarmen Ausbau nach TRGS 519 inklusive Entsorgungsnachweis – mehr dazu unter <a href=\"/leistungen/fensterbaenke-ausbauen/\">Fensterbänke ausbauen</a>. Eine kostenlose Besichtigung mit Festpreis vereinbaren Sie über unser <a href=\"/kontakt/\">Kontaktformular</a>." },
+    ],
+  },
   "asbest-hausabriss-abbruch": {
     toc: [
       { id: "warum", label: "Warum Asbest vor dem Abriss raus muss" },
