@@ -5,7 +5,7 @@
 //   2) [INDEXNOW_KEY=<32-stelliger-key>] node scripts/indexnow-submit.mjs
 // Beim ersten Lauf wird ein Key erzeugt und nach public/<key>.txt geschrieben – diese Datei MUSS
 // committet/deployt werden, damit sie unter https://<host>/<key>.txt erreichbar ist (IndexNow-Verifikation).
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { randomUUID } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -13,7 +13,20 @@ import { fileURLToPath } from 'node:url';
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const HOST = process.env.INDEXNOW_HOST || 'www.asbesta-schadstoffsanierung.de';
 const ORIGIN = `https://${HOST}`;
-const KEY = process.env.INDEXNOW_KEY || randomUUID().replace(/-/g, '');
+// Key-Quelle (stabil): ENV INDEXNOW_KEY > vorhandene public/<32hex>.txt > neu erzeugt.
+// So bleibt der Key ueber Laeufe/Deploys konstant (IndexNow verlangt eine stabile Key-Datei).
+async function resolveStableKey() {
+  if (process.env.INDEXNOW_KEY) return process.env.INDEXNOW_KEY.trim();
+  try {
+    const files = await readdir(path.join(root, 'public'));
+    const existing = files.find((f) => /^[a-f0-9]{32}\.txt$/i.test(f));
+    if (existing) return (await readFile(path.join(root, 'public', existing), 'utf8')).trim();
+  } catch {
+    /* public/ noch ohne Key-Datei – Key wird neu erzeugt */
+  }
+  return randomUUID().replace(/-/g, '');
+}
+const KEY = await resolveStableKey();
 
 await writeFile(path.join(root, 'public', `${KEY}.txt`), KEY, 'utf8');
 
