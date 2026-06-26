@@ -36,7 +36,9 @@ const graph = buildServiceGraph({
   ablauf: detail.ablauf,
 });
 const bild = leistungImage(leistung.slug);
-const weitere = leistungen.filter((l) => l.slug !== leistung.slug).slice(0, 6);
+// Alle Geschwister-Leistungen verlinken (volle interne Vernetzung; vorher slice(0,6) ließ
+// fensterbaenke-/cushion-vinyl-/luftanalysen-Seiten ohne Sibling-Inbound-Links – Near-Orphans).
+const weitere = leistungen.filter((l) => l.slug !== leistung.slug);
 const kombiStaedte = standorte.filter((s) => kombiDetail[`${leistung.slug}/${s.slug}`]);
 const ratgeber = ratgeberFuer(leistung.slug)
   .map((slug) => getArtikel(slug))

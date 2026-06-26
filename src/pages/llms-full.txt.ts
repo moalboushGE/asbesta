@@ -4,7 +4,8 @@ import { leistungen } from '../data/leistungen';
 import { leistungenDetail } from '../data/leistungen-detail';
 import { ratgeberArtikel } from '../data/ratgeber';
 import { standorte } from '../data/standorte';
-import { definitionen, regelwerke, kernfakten, kostenfaktoren, wissensFaqs } from '../data/wissen';
+import { standorteDetail } from '../data/standorte-detail';
+import { definitionen, regelwerke, kernfakten, kostenfaktoren, wissensFaqs, wissenMeta } from '../data/wissen';
 import { resolveOrigin } from '../lib/origin';
 
 // llms-full.txt: ausfuehrlicher Volltext (Firma + alle Leistungen + Wissensbasis) fuer LLM-Kontext.
@@ -17,7 +18,10 @@ export const GET: APIRoute = (context) => {
       const intro = d ? d.heroIntro : l.summary;
       const body = d ? d.einleitung.join('\n\n') : '';
       const umfang = d ? d.leistungsumfang.map((x) => `- ${x}`).join('\n') : '';
-      return `### ${l.title}\nURL: ${origin}/leistungen/${l.slug}/\n\n${intro}\n\n${body}\n\nLeistungsumfang:\n${umfang}`;
+      const ablaufSteps =
+        d && d.ablauf && d.ablauf.length > 0 ? d.ablauf.map((s, i) => `${i + 1}. ${s.titel}: ${s.text}`).join('\n') : '';
+      const ablauf = ablaufSteps ? `\n\nAblauf:\n${ablaufSteps}` : '';
+      return `### ${l.title}\nURL: ${origin}/leistungen/${l.slug}/\n\n${intro}\n\n${body}\n\nLeistungsumfang:\n${umfang}${ablauf}`;
     })
     .join('\n\n---\n\n');
 
@@ -31,12 +35,25 @@ export const GET: APIRoute = (context) => {
   const ratgeber = ratgeberArtikel
     .map((a) => {
       const faqs = a.faqs.map((f) => `**${f.frage}**\n${f.antwort}`).join('\n\n');
-      return `### ${a.title}\nURL: ${origin}/ratgeber/${a.slug}/\n\n${a.excerpt}\n\n${faqs}`;
+      return `### ${a.title} (Stand: ${a.dateModified})\nURL: ${origin}/ratgeber/${a.slug}/\n\n${a.excerpt}\n\n${faqs}`;
     })
     .join('\n\n---\n\n');
   const standorteListe = standorte
     .map((s) => `- ${s.name} (${s.region}): ${origin}/standorte/${s.slug}/`)
     .join('\n');
+  // Zitierfaehige Lokal-Q&A je Stadt (Service vor Ort + zustaendige Behoerde) in den LLM-Volltext.
+  const standorteFaqs = standorte
+    .map((s) => {
+      const d = standorteDetail[s.slug];
+      if (!d || !d.localFaqs) return null;
+      const faqs = d.localFaqs
+        .filter((f) => /behörde|behoerde/i.test(f.frage) || /asbesta/i.test(f.frage))
+        .map((f) => `**${f.frage}**\n${f.antwort}`)
+        .join('\n\n');
+      return faqs ? `### ${s.name} (${s.region})\nURL: ${origin}/standorte/${s.slug}/\n\n${faqs}` : null;
+    })
+    .filter((x): x is string => x !== null)
+    .join('\n\n---\n\n');
   const regeln = regelwerke
     .map((r) => `### ${r.code} — ${r.name}\n${r.description}\nBetrifft: ${r.appliesTo}`)
     .join('\n\n');
@@ -45,6 +62,7 @@ export const GET: APIRoute = (context) => {
   const faq = wissensFaqs.map((f) => `**${f.frage}**\n${f.antwort}`).join('\n\n');
 
   const md = `# ${site.legalName} — Volltext
+Stand: ${wissenMeta.dateModified}
 
 ${site.intro}
 
@@ -60,6 +78,10 @@ ${services}
 ## Standorte (eigene Stadtseiten)
 
 ${standorteListe}
+
+## Lokale Fragen je Standort (Service vor Ort & zuständige Behörde)
+
+${standorteFaqs}
 
 ## Glossar / Definitionen
 

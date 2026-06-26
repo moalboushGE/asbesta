@@ -14,7 +14,7 @@ export const RATGEBER_MAP: Record<string, readonly string[]> = {
   'asbestzement-ausbauen': [
     'asbest-fassadenplatten-erkennen',
     'asbest-entsorgen',
-    'asbestdach-entsorgen-kosten-ablauf',
+    'asbestzement-rohre-erkennen-entsorgen',
   ],
   'floor-flex-entfernen': [
     'asbest-bodenbelag',
@@ -49,13 +49,13 @@ export const RATGEBER_MAP: Record<string, readonly string[]> = {
   abbrucharbeiten: [
     'asbestsanierung-pflicht-kosten-ablauf',
     'asbest-entsorgen',
-    'gefstoffv-novelle-2024',
+    'asbest-hausabriss-abbruch',
   ],
   'kmf-sanierung': ['mineralwolle-kmf-entsorgen', 'asbest-erkennen', 'gefstoffv-novelle-2024'],
   'pak-sanierung': ['asbestsanierung-pflicht-kosten-ablauf', 'asbest-erkennen', 'asbest-entsorgen'],
   'fensterbaenke-ausbauen': [
+    'asbest-fensterbaenke-erkennen-entfernen',
     'asbest-erkennen',
-    'asbestsanierung-pflicht-kosten-ablauf',
     'asbest-entsorgen',
   ],
 };
@@ -90,8 +90,8 @@ export const RATGEBER_RELATED: Record<string, readonly string[]> = {
     'asbestsanierung-pflicht-kosten-ablauf',
   ],
   'asbest-fassadenplatten-erkennen': [
+    'asbestzement-rohre-erkennen-entsorgen',
     'asbestdach-entsorgen-kosten-ablauf',
-    'asbestdach-foerderung-neues-dach',
     'asbest-erkennen',
   ],
   'spritzasbest-erkennen-sanieren': ['asbest-erkennen', 'asbestsanierung-pflicht-kosten-ablauf', 'asbest-entsorgen'],
@@ -139,6 +139,21 @@ export const RATGEBER_RELATED: Record<string, readonly string[]> = {
     'asbestdach-foerderung-neues-dach',
   ],
   'asbest-versicherung': ['asbestdach-entsorgen-kosten-ablauf', 'asbest-hauskauf', 'asbestsanierung-pflicht-kosten-ablauf'],
+  'asbestzement-rohre-erkennen-entsorgen': [
+    'asbest-fassadenplatten-erkennen',
+    'asbestdach-entsorgen-kosten-ablauf',
+    'asbest-entsorgen',
+  ],
+  'asbest-hausabriss-abbruch': [
+    'asbestsanierung-pflicht-kosten-ablauf',
+    'asbest-entsorgen',
+    'gefstoffv-novelle-2024',
+  ],
+  'asbest-fensterbaenke-erkennen-entfernen': [
+    'asbest-erkennen',
+    'asbest-putz-fliesenkleber-spachtelmasse',
+    'asbest-entsorgen',
+  ],
 };
 
 /** Verwandte Ratgeber-Slugs zu einem Beitrag (leer, wenn nicht kuratiert -> Layout-Fallback). */

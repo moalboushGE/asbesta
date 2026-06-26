@@ -3,7 +3,7 @@ import { site } from '../data/site';
 import { leistungen } from '../data/leistungen';
 import { ratgeberArtikel } from '../data/ratgeber';
 import { standorte } from '../data/standorte';
-import { definitionen, regelwerke } from '../data/wissen';
+import { definitionen, regelwerke, wissenMeta } from '../data/wissen';
 import { resolveOrigin } from '../lib/origin';
 
 // llms.txt (Konvention llmstxt.org): kompakter, kuratierter Einstieg fuer LLMs.
@@ -20,7 +20,7 @@ export const GET: APIRoute = (context) => {
     .join('\n');
   const regelLinks = regelwerke.map((r) => `- **${r.code}** – ${r.name}: ${r.description}`).join('\n');
   const ratgeberLinks = ratgeberArtikel
-    .map((a) => `- [${a.title}](${origin}/ratgeber/${a.slug}/): ${a.excerpt}`)
+    .map((a) => `- [${a.title}](${origin}/ratgeber/${a.slug}/) (Stand: ${a.dateModified}): ${a.excerpt}`)
     .join('\n');
   const standortLinks = standorte
     .map((s) => `- [Asbest- & Schadstoffsanierung in ${s.name}](${origin}/standorte/${s.slug}/)`)
@@ -30,7 +30,7 @@ export const GET: APIRoute = (context) => {
 
 > ${site.intro}
 
-Inhabergefuehrter Fachbetrieb aus Marl fuer ganz Nordrhein-Westfalen. Zertifiziert nach ${site.certifications.join(', ')}. Kennzahlen: ${site.stats.map((s) => `${s.value} ${s.label}`).join(', ')}.
+Inhabergefuehrter Fachbetrieb aus Marl fuer ganz Nordrhein-Westfalen. Zertifiziert nach ${site.certifications.join(', ')}. Kennzahlen: ${site.stats.map((s) => `${s.value} ${s.label}`).join(', ')}. Stand: ${wissenMeta.dateModified}.
 
 Kontakt: Telefon ${site.phone.display}, WhatsApp ${site.whatsapp.href}, ${site.address.street}, ${site.address.zip} ${site.address.city}.
 
