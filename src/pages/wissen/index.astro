@@ -25,6 +25,20 @@ const endpunkte = [
 ];
 const querLeistungen = leistungen;
 const querRatgeber = ratgeberArtikel.slice(0, 4);
+// Kontextuelle interne Verlinkung der Glossarbegriffe auf die passende Leistung/Ratgeber-Seite
+// (beschreibender Anker = Begriff). Nur verifiziert existierende Routen -> Linkjuice vom Topical-Hub.
+const GLOSSAR_INTERN: Record<string, string> = {
+  Asbestsanierung: '/leistungen/asbestsanierung/',
+  Materialanalyse: '/leistungen/materialanalyse/',
+  'Künstliche Mineralfaser': '/leistungen/kmf-sanierung/',
+  'Polyzyklische aromatische Kohlenwasserstoffe': '/leistungen/pak-sanierung/',
+  Freimessung: '/leistungen/luftanalysen-vdi-3492/',
+  Asbestzement: '/leistungen/asbestzement-ausbauen/',
+  'Floor-Flex-Platten': '/leistungen/floor-flex-entfernen/',
+  Bitumenkleber: '/leistungen/bitumenkleber-entfernen/',
+  Eternit: '/leistungen/welleternit-ausbauen/',
+  Spritzasbest: '/ratgeber/spritzasbest-erkennen-sanieren/',
+};
 ---
 
 <BaseLayout title={title} description={description}>
@@ -80,29 +94,41 @@ const querRatgeber = ratgeberArtikel.slice(0, 4);
       <h2 class="text-2xl sm:text-3xl">Glossar: Begriffe einfach erklärt</h2>
       <ul class="mt-6 grid gap-4 md:grid-cols-2">
         {
-          definitionen.map((d) => (
-            <li class="rounded-[var(--radius-card)] border border-gray-200 bg-white p-5">
-              <div class="flex flex-wrap items-center gap-2">
-                <h3 class="font-sans text-base font-semibold text-ink-900">{d.term}</h3>
-                {d.abbr && (
-                  <span class="rounded-full bg-red-50 px-2 py-0.5 text-xs font-semibold text-red-700">{d.abbr}</span>
+          definitionen.map((d) => {
+            const intern = GLOSSAR_INTERN[d.term];
+            return (
+              <li class="rounded-[var(--radius-card)] border border-gray-200 bg-white p-5">
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="font-sans text-base font-semibold text-ink-900">{d.term}</h3>
+                  {d.abbr && (
+                    <span class="rounded-full bg-red-50 px-2 py-0.5 text-xs font-semibold text-red-700">{d.abbr}</span>
+                  )}
+                  <span class="ml-auto text-[11px] font-semibold uppercase tracking-wide text-gray-500">{d.kategorie}</span>
+                </div>
+                <p class="mt-2 text-sm leading-relaxed text-gray-700">{d.definition}</p>
+                {intern && (
+                  <a
+                    href={intern}
+                    class="mt-3 mr-4 inline-flex items-center gap-1 text-xs font-semibold text-red-700 hover:underline"
+                  >
+                    {d.term} bei Asbesta
+                    <Icon name="lucide:arrow-right" class="h-3 w-3" />
+                  </a>
                 )}
-                <span class="ml-auto text-[11px] font-semibold uppercase tracking-wide text-gray-500">{d.kategorie}</span>
-              </div>
-              <p class="mt-2 text-sm leading-relaxed text-gray-700">{d.definition}</p>
-              {d.sameAs && d.sameAs[0] && (
-                <a
-                  href={d.sameAs[0]}
-                  target="_blank"
-                  rel="noopener"
-                  class="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-red-700 hover:underline"
-                >
-                  Mehr dazu
-                  <Icon name="lucide:external-link" class="h-3 w-3" />
-                </a>
-              )}
-            </li>
-          ))
+                {d.sameAs && d.sameAs[0] && (
+                  <a
+                    href={d.sameAs[0]}
+                    target="_blank"
+                    rel="noopener"
+                    class="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-red-700 hover:underline"
+                  >
+                    Mehr dazu
+                    <Icon name="lucide:external-link" class="h-3 w-3" />
+                  </a>
+                )}
+              </li>
+            );
+          })
         }
       </ul>
     </div>
