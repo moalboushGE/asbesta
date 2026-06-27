@@ -3,6 +3,7 @@
 Relaunch der Website der **Asbesta Schadstoffsanierung** (Marl, NRW) – Astro (SSG) + Tailwind v4.
 Strategie & Vorgaben: siehe [`100-Tage-Relaunch-Plan.md`](./100-Tage-Relaunch-Plan.md) und
 [`Projekt-Briefing.md`](./Projekt-Briefing.md).
+Architektur- & Ordner-Doku für Entwickler/KI: [`CLAUDE.md`](./CLAUDE.md) (Root) sowie je Ordner eine eigene `CLAUDE.md`.
 
 ## Voraussetzungen
 
