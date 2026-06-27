@@ -26,6 +26,23 @@ const FROM_EMAIL = 'anfrage@asbesta-schadstoffsanierung.de';
 const FROM_NAME = 'Asbesta Website';
 const BREVO_URL = 'https://api.brevo.com/v3/smtp/email';
 
+// Einfaches In-Memory-Rate-Limit pro IP-Hash (lang laufender Node-Server): bremst Abuse/DoS,
+// grosszuegig genug fuer echte Mehrfach-Anfragen. Single-Instance-Scope (Railway).
+const RATE_MAX = 12;
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+const rateHits = new Map<string, number[]>();
+function rateLimited(ipHash: string): boolean {
+  if (!ipHash) return false;
+  const now = Date.now();
+  const hits = (rateHits.get(ipHash) ?? []).filter((t) => now - t < RATE_WINDOW_MS);
+  hits.push(now);
+  rateHits.set(ipHash, hits);
+  if (rateHits.size > 5000) {
+    for (const [k, v] of rateHits) if (!v.some((t) => now - t < RATE_WINDOW_MS)) rateHits.delete(k);
+  }
+  return hits.length > RATE_MAX;
+}
+
 /** 'honeypot' (still als ok behandeln), 'spam' (Zeitfalle) oder null. */
 function spamCheck(get: Get): string | null {
   if (get('website')) return 'honeypot';
@@ -142,6 +159,12 @@ function mailFehler(mailOk: boolean, istSpam: boolean, hatKey: boolean): string 
 }
 
 export const POST: APIRoute = async ({ request }) => {
+  if (rateLimited(hashIp(clientIp(request)))) {
+    return json(
+      { ok: false, error: 'Zu viele Anfragen in kurzer Zeit. Bitte später erneut versuchen oder rufen Sie uns an: +49 2365 2960630.' },
+      429,
+    );
+  }
   let form: FormData;
   try {
     form = await request.formData();

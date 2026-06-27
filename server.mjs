@@ -156,9 +156,22 @@ app.use((req, res) => {
   }
 });
 
+// Startup-Check: fehlende Pflicht-ENV frueh sichtbar machen (statt Silent-Failure beim ersten
+// Lead-Submit / Admin-Login). Bricht NICHT ab – statische Seiten funktionieren auch ohne.
+function pruefeEnv() {
+  const fehlend = ['DATABASE_URL', 'BREVO_API_KEY', 'ADMIN_PASSWORD', 'ADMIN_SESSION_SECRET'].filter(
+    (k) => !process.env[k],
+  );
+  if (fehlend.length) {
+    // eslint-disable-next-line no-console
+    console.warn(`[WARN] Fehlende Pflicht-ENV (Funktionen eingeschraenkt): ${fehlend.join(', ')}`);
+  }
+}
+
 const port = process.env.PORT || 4321;
 const host = process.env.HOST || '0.0.0.0';
 app.listen(port, host, () => {
+  pruefeEnv();
   // eslint-disable-next-line no-console
   console.log(`Asbesta-Server laeuft auf http://${host}:${port}`);
 });
