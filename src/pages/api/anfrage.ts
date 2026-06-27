@@ -42,6 +42,25 @@ function pflichtfelderFehlen(get: Get, typ: string): boolean {
     : !get('name') || !get('email') || !get('nachricht');
 }
 
+// Einfache, robuste Format-Pruefung (zusaetzlich zur Pflichtfeld-Pruefung): verhindert kaputte
+// Reply-To-Adressen und Datenmuell in der Lead-DB. Telefon nur grob (>= 6 Ziffern) – formattolerant.
+function istGueltigeEmail(s: string): boolean {
+  // Bewusst ohne backtracking-anfaellige Regex (ReDoS-sicher): Laenge, genau ein @, Domain mit Punkt.
+  if (s.length > 254 || s.indexOf(' ') !== -1) return false;
+  const at = s.indexOf('@');
+  if (at < 1 || s.indexOf('@', at + 1) !== -1) return false;
+  const domain = s.slice(at + 1);
+  const dot = domain.lastIndexOf('.');
+  return dot > 0 && dot < domain.length - 1;
+}
+function formatFehler(get: Get): string | null {
+  const email = get('email');
+  if (email && !istGueltigeEmail(email)) return 'Bitte geben Sie eine gültige E-Mail-Adresse an.';
+  const telefon = get('telefon');
+  if (telefon && telefon.replace(/\D/g, '').length < 6) return 'Bitte geben Sie eine gültige Telefonnummer an.';
+  return null;
+}
+
 function buildBody(get: Get, typ: string, to: string): Record<string, unknown> {
   const coreLines = CORE.filter((f) => get(f)).map((f) => `${f}: ${get(f)}`);
   const metaLines = META.filter((f) => get(f)).map((f) => `${f}: ${get(f)}`);
@@ -137,6 +156,10 @@ export const POST: APIRoute = async ({ request }) => {
   const typ = get('typ') || 'anfrage';
   if (pflichtfelderFehlen(get, typ)) {
     return json({ ok: false, error: 'Bitte Pflichtfelder ausfuellen und Einwilligung erteilen.' }, 400);
+  }
+  const formatErr = formatFehler(get);
+  if (formatErr) {
+    return json({ ok: false, error: formatErr }, 400);
   }
 
   // Zeitfalle: speichern (echte Kunden nicht verlieren), als Spam markieren, NICHT mailen.

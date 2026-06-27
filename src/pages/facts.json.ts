@@ -4,6 +4,7 @@ import { leistungen } from '../data/leistungen';
 import { leistungenDetail } from '../data/leistungen-detail';
 import { ratgeberArtikel } from '../data/ratgeber';
 import { standorte } from '../data/standorte';
+import { standorteDetail } from '../data/standorte-detail';
 import { bewertungAggregat, googleReviewsUrl } from '../data/bewertungen';
 import { definitionen, regelwerke, kernfakten, kostenfaktoren, wissenLicense, wissenMeta } from '../data/wissen';
 import { resolveOrigin } from '../lib/origin';
@@ -81,13 +82,31 @@ const regulations = regelwerke.map((r) => ({
 
 const keyFacts = kernfakten.map((k) => k.aussage);
 const costFactors = kostenfaktoren.map((k) => ({ factor: k.faktor, influence: k.einfluss }));
+// Zuständige Arbeitsschutzbehörde je Stadt – faktentreu aus dem bestehenden Standort-FAQ-Text
+// abgeleitet (jede „zuständige Behörde"-FAQ nennt genau eine Bezirksregierung), nicht aus dem Gedächtnis.
+const BEZ_RE = /Bezirksregierung (Düsseldorf|Köln|Münster|Arnsberg|Detmold)/;
+function behoerdeFuer(slug: string): string | null {
+  const d = standorteDetail[slug];
+  if (!d || !d.localFaqs) return null;
+  const behoerdeFaqs = d.localFaqs.filter((f) => /behörde/i.test(f.frage)).map((f) => f.antwort);
+  const texte = behoerdeFaqs.length > 0 ? behoerdeFaqs : d.localFaqs.map((f) => f.antwort);
+  for (const text of texte) {
+    const m = BEZ_RE.exec(text);
+    if (m) return 'Bezirksregierung ' + m[1];
+  }
+  return null;
+}
+
 const serviceArea = {
   region: 'Nordrhein-Westfalen',
   statement: `Asbesta saniert im gesamten Einzugsgebiet Nordrhein-Westfalen in ${standorte.length} Städten mit eigener Standortseite – im Ruhrgebiet und der Emscher-Lippe-Region, im Rheinland und Bergischen Land, in Ostwestfalen-Lippe und im Münsterland (u. a. ${standorte
     .slice(0, 12)
     .map((s) => s.name)
     .join(', ')} und weitere).`,
-  cities: standorte.map((s) => s.name),
+  cities: standorte.map((s) => {
+    const behoerde = behoerdeFuer(s.slug);
+    return behoerde ? { name: s.name, region: s.region, asbestAnzeigeBehoerde: behoerde } : { name: s.name, region: s.region };
+  }),
 };
 
 export const GET: APIRoute = (context) => {

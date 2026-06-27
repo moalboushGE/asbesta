@@ -101,10 +101,20 @@
       el.setAttribute('aria-describedby', statusEl.id);
     }
     var first = feld(form, fehlt[0]);
-    if (first && typeof first.focus === 'function') first.focus();
+    if (first && typeof first.focus === 'function') {
+      try {
+        first.focus({ preventScroll: true });
+      } catch (e) {
+        first.focus();
+      }
+      // Fehlerfeld zentriert einscrollen, falls außerhalb des sichtbaren Bereichs.
+      if (typeof first.scrollIntoView === 'function') first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }
 
   function sende(form, typ, setStatus) {
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) btn.disabled = true; // Doppel-Submit verhindern
     setStatus('Wird gesendet …');
     fetch('/api/anfrage/', { method: 'POST', body: new FormData(form) })
       .then(function (r) {
@@ -115,10 +125,17 @@
           if (typeof window.asbestaTrack === 'function') window.asbestaTrack('form_submit', { typ: typ });
           form.replaceWith(successBlock(typ));
         } else {
-          setStatus('Bitte prüfen Sie Ihre Eingaben – oder rufen Sie uns an: +49 2365 2960630.');
+          if (btn) btn.disabled = false;
+          // Spezifische Server-Meldung (z. B. ungültige E-Mail) anzeigen, sonst generischer Hinweis.
+          setStatus(
+            data && data.error
+              ? data.error
+              : 'Bitte prüfen Sie Ihre Eingaben – oder rufen Sie uns an: +49 2365 2960630.',
+          );
         }
       })
       .catch(function () {
+        if (btn) btn.disabled = false;
         setStatus('Senden derzeit nicht möglich. Bitte rufen Sie uns an: +49 2365 2960630.');
       });
   }
